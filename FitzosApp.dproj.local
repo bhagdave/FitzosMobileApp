@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013/09/06 22:23:48.000.479,C:\Users\Dave\Documents\RAD Studio\Projects\FitzosApp\untMainForm.fmx=C:\Users\Dave\Documents\RAD Studio\Projects\Unit2.fmx</Transaction>
+    <Transaction>2013/09/06 22:23:57.000.277,C:\Users\Dave\Documents\RAD Studio\Projects\FitzosApp\FitzosApp.dproj=C:\Users\Dave\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2013/09/12 21:00:54.000.224,C:\Users\Dave\Documents\RAD Studio\Projects\StoneacreChat\untFrmSignUp.fmx=C:\Users\Dave\Documents\RAD Studio\Projects\FitzosApp\Unit1.fmx</Transaction>
+    <Transaction>2013/10/04 21:50:41.000.562,C:\Users\Dave\Documents\RAD Studio\Projects\FitzosApp\untAthleteWelcome.fmx=C:\Users\Dave\Documents\RAD Studio\Projects\FitzosApp\Unit1.fmx</Transaction>
+    <Transaction>2013/10/05 15:12:26.000.354,C:\Users\Dave\Documents\RAD Studio\Projects\FitzosApp\Unit1.fmx=C:\Users\Dave\Documents\RAD Studio\Projects\FitzosApp\untAthleteProfile.fmx</Transaction>
+  </Transactions>
+	<MobileDevice>015d21d5491bee0a</MobileDevice>
+</BorlandProject>

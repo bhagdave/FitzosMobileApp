@@ -1,0 +1,329 @@
+object frmAthleteProfile: TfrmAthleteProfile
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop]
+  DesignerMobile = True
+  DesignerWidth = 384
+  DesignerHeight = 592
+  DesignerDeviceName = 'Google Nexus 4'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object pnlProfile: TPanel
+    Height = 569.000000000000000000
+    Width = 385.000000000000000000
+    TabOrder = 0
+    object lblCaption: TLabel
+      Align = alTop
+      Height = 23.000000000000000000
+      Text = 'Athlete Profile'
+      Width = 385.000000000000000000
+      Trimming = ttCharacter
+    end
+    object edtAge: TEdit
+      Touch.InteractiveGestures = [igLongTap, igDoubleTap]
+      Align = alTop
+      TabOrder = 1
+      Text = '42'
+      Position.Y = 23.000000000000000000
+      Width = 385.000000000000000000
+      Height = 32.000000000000000000
+      TextPrompt = 'Age'
+      KillFocusByReturn = False
+    end
+    object gbGender: TGroupBox
+      Align = alTop
+      Height = 70.000000000000000000
+      Position.Y = 55.000000000000000000
+      Text = 'Gender'
+      Width = 385.000000000000000000
+      TabOrder = 2
+      object btnMale: TRadioButton
+        Align = alFitLeft
+        Height = 60.123291015625000000
+        Position.Y = 5.000000000000000000
+        TabOrder = 0
+        Text = 'Male'
+        Width = 385.000000000000000000
+      end
+      object btnFemale: TRadioButton
+        Align = alFitRight
+        Height = 70.000000000000000000
+        Position.X = 158.893798828125000000
+        TabOrder = 1
+        Text = 'Female'
+        Width = 226.106201171875000000
+      end
+    end
+    object edtLocation: TEdit
+      Touch.InteractiveGestures = [igLongTap, igDoubleTap]
+      Align = alTop
+      TabOrder = 3
+      Position.Y = 125.000000000000000000
+      Width = 385.000000000000000000
+      Height = 32.000000000000000000
+      TextPrompt = 'Location'
+      KillFocusByReturn = False
+    end
+    object edtNickName: TEdit
+      Touch.InteractiveGestures = [igLongTap, igDoubleTap]
+      Align = alTop
+      TabOrder = 4
+      Text = 'Gilly'
+      Position.Y = 157.000000000000000000
+      Width = 385.000000000000000000
+      Height = 32.000000000000000000
+      TextPrompt = 'Nickname'
+      KillFocusByReturn = False
+    end
+  end
+  object restServer: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'UTF-8, *;q=0.8'
+    AcceptEncoding = 'identity'
+    BaseURL = 'http://beta.fitzos.com/api'
+    ContentType = 'application/x-www-form-urlencoded'
+    Params = <>
+    HandleRedirects = True
+    Left = 80
+    Top = 192
+  end
+  object openSession: TRESTRequest
+    Client = restServer
+    Params = <
+      item
+        name = 'name'
+        Value = 'mobile'
+      end
+      item
+        name = 'key'
+        Value = 'eu47rh485u3485'
+      end>
+    Resource = 'openSession'
+    Response = restData
+    Left = 56
+    Top = 248
+  end
+  object restData: TRESTResponse
+    RootElement = 'Result'
+    Left = 160
+    Top = 192
+  end
+  object restAdapter: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = cdsAthlete
+    FieldDefs = <>
+    Response = restData
+    Left = 232
+    Top = 192
+  end
+  object cdsAthlete: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'dob'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'gender'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'zip'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'country'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'language'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'nickname'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'height'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'weight'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'bmi'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'body_fat_percentage'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'units'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'activity'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'show_status'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'show_progress'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'find_trainer'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'show_tables'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'search'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'message'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'age'
+        DataType = ftString
+        Size = 255
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 56
+    Top = 296
+    Data = {
+      490300009619E0BD010000001800000018000100000003000000DE0202696402
+      0049000000010005574944544802000200FF0003646F62020049000000010005
+      574944544802000200FF000667656E6465720200490000000100055749445448
+      02000200FF00046E616D65020049000000010005574944544802000200FF0003
+      7A6970020049000000010005574944544802000200FF0007636F756E74727902
+      0049000000010005574944544802000200FF00086C616E677561676502004900
+      0000010005574944544802000200FF00086E69636B6E616D6502004900000001
+      0005574944544802000200FF0006686569676874020049000000010005574944
+      544802000200FF00067765696768740200490000000100055749445448020002
+      00FF0003626D69020049000000010005574944544802000200FF0013626F6479
+      5F6661745F70657263656E746167650200490000000100055749445448020002
+      00FF0005756E697473020049000000010005574944544802000200FF00086163
+      746976697479020049000000010005574944544802000200FF00086C6F636174
+      696F6E020049000000010005574944544802000200FF0005696D616765020049
+      000000010005574944544802000200FF000B73686F775F737461747573020049
+      000000010005574944544802000200FF000D73686F775F70726F677265737302
+      0049000000010005574944544802000200FF000C66696E645F747261696E6572
+      020049000000010005574944544802000200FF000B73686F775F7461626C6573
+      020049000000010005574944544802000200FF00067365617263680200490000
+      00010005574944544802000200FF00076D657373616765020049000000010005
+      574944544802000200FF00096D656D6265725F69640200490000000100055749
+      44544802000200FF0003616765020049000000010005574944544802000200FF
+      0001000A4348414E47455F4C4F47040082000300000001000000000000000400
+      00000400000000000001003201000004004D616C650400446176650100000100
+      00010000050047696C6C790400312E36350400302E30300100000400302E3030
+      06004D65747269630100000400596F726B010000010000010000010000010000
+      01000001000001003102003432}
+  end
+  object getAthlete: TRESTRequest
+    Client = restServer
+    Method = rmPOST
+    Params = <
+      item
+        name = 'access_name'
+        Value = 'mobile'
+      end
+      item
+        name = 'api_key'
+        Value = 'bloomers'
+      end
+      item
+        name = 'id'
+        Value = '1'
+      end>
+    Resource = 'getAthleteDetails'
+    Response = restData
+    Left = 128
+    Top = 248
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = cdsAthlete
+    ScopeMappings = <>
+    Left = 176
+    Top = 272
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'age'
+      Control = edtAge
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'nickname'
+      Control = edtNickName
+      Track = False
+    end
+  end
+end
