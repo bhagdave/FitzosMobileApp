@@ -3,7 +3,7 @@ unit untAPI;
 interface
 
 uses
-  SysUtils, DBXJSON, System.Classes, IdHTTP, IdSSL, IdSSLOpenSSL, untJSONFunctions,IdBaseComponent, IdComponent, IdTCPConnection,
+  SysUtils, DBXJSON, System.Classes, IdHTTP, IdSSL, IdSSLOpenSSL,IdBaseComponent, IdComponent, IdTCPConnection,
   IdTCPClient,IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, FMX.Dialogs;
 
 type
@@ -67,50 +67,50 @@ var
   options  : TStringList;
   response : String;
 begin
-  options := TStringList.Create;
-  options.Add('name=' + ACCESS_NAME);
-  options.Add('key=' + API_KEY);
-  response := HTTPClient.Post('http://beta.fitzos.com/api/openSession',options);
-  if (checkJsonStatus(response) = 'OK') then
-  begin
-    sSessionKey := getResultValue(response);
-    sSessionKey := StringReplace(sSessionKey,'"','',[rfReplaceAll]);
-    result := True;
-  end
-  else
-  begin
-    showmessage(response);
-    result := False;
-  end;
-  FreeAndNil(options);
+//  options := TStringList.Create;
+//  options.Add('name=' + ACCESS_NAME);
+//  options.Add('key=' + API_KEY);
+//  response := HTTPClient.Post('http://beta.fitzos.com/api/openSession',options);
+//  if (checkJsonStatus(response) = 'OK') then
+//  begin
+//    sSessionKey := getResultValue(response);
+//    sSessionKey := StringReplace(sSessionKey,'"','',[rfReplaceAll]);
+//    result := True;
+//  end
+//  else
+//  begin
+//    showmessage(response);
+//    result := False;
+//  end;
+//  FreeAndNil(options);
 end;
 
 function TAPI.signUp(username, email, password, confirmpassword : String): String;
 var
   options : TStringList;
 begin
-  if (sSessionKey = '') then
-    openSession();
-  options := TStringList.Create;
-  options.Add('access_name=mobile');
-  options.Add('api_key=' + sSessionKey);
-  options.Add('name=' + username);
-  options.Add('email=' + email);
-  options.Add('password=' + password);
-  options.Add('confirm_password=' + ConfirmPassword);
-
-  result := httpClient.Post('http://beta.fitzos.com/api/createMember',options);
-  if (checkJsonStatus(result) = 'OK') then
-  begin
-    // show a message to activate
-    ShowMessage('Account created please check your email for activation instructions.');
-  end
-  else
-  begin
-    // show a message
-    ShowMessage('Unable to create account...');
-  end;
-  FreeAndNil(options);
+//  if (sSessionKey = '') then
+//    openSession();
+//  options := TStringList.Create;
+//  options.Add('access_name=mobile');
+//  options.Add('api_key=' + sSessionKey);
+//  options.Add('name=' + username);
+//  options.Add('email=' + email);
+//  options.Add('password=' + password);
+//  options.Add('confirm_password=' + ConfirmPassword);
+//
+//  result := httpClient.Post('http://beta.fitzos.com/api/createMember',options);
+//  if (checkJsonStatus(result) = 'OK') then
+//  begin
+//    // show a message to activate
+//    ShowMessage('Account created please check your email for activation instructions.');
+//  end
+//  else
+//  begin
+//    // show a message
+//    ShowMessage('Unable to create account...');
+//  end;
+//  FreeAndNil(options);
 end;
 
 end.
