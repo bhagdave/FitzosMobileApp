@@ -8,7 +8,7 @@ uses
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
   IdTCPClient, FMX.Memo, untAPI, untFrmSignUp, IdHTTP,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON,
-  untAthleteWelcome;
+  untAthleteWelcome, FMX.Objects;
 
 type
   TfrmMain = class(TForm)
@@ -17,6 +17,7 @@ type
     edtPassword: TEdit;
     btnLogin: TButton;
     btnSignup: TButton;
+    txtWelcomeMessage: TText;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
