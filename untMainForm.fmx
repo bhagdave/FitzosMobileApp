@@ -5901,7 +5901,6 @@ object frmMain: TfrmMain
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   FullScreen = True
-  OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 320
   DesignerHeight = 480
@@ -6277,7 +6276,6 @@ object frmMain: TfrmMain
     TabOrder = 3
     Text = 'Login'
     Width = 320.000000000000000000
-    OnClick = btnLoginClick
   end
   object btnSignup: TButton
     Align = Top
@@ -6286,7 +6284,6 @@ object frmMain: TfrmMain
     TabOrder = 4
     Text = 'Signup Here'
     Width = 320.000000000000000000
-    OnClick = btnSignupClick
   end
   object txtWelcomeMessage: TText
     Align = Top
