@@ -46,6 +46,9 @@ object dmdDataModule: TdmdDataModule
       end
       item
         name = 'password'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'login'
     Response = respLogin

@@ -41,7 +41,7 @@ begin
   dmdDataModule.openSession;
   // create a signature
   signature := dmdDataModule.md5(edtUsername.Text + dmdDataModule.reqOpenSession.Params[1].Value + edtPassword.Text);
-  showmessage(signature);
+//  showmessage(signature);
   dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := signature;
   dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
@@ -50,7 +50,8 @@ end;
 
 procedure TfrmMain.loginComplete;
 begin
-//s
+  // check if valid or invalid...
+
 end;
 
 end.
