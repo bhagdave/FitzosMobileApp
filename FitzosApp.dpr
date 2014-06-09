@@ -5,13 +5,15 @@ uses
   FMX.Forms,
   untMainForm in 'untMainForm.pas' {frmMain},
   untDataModule in 'untDataModule.pas' {dmdDataModule: TDataModule},
-  untBaseForm in 'untBaseForm.pas' {frmBase};
+  untBaseForm in 'untBaseForm.pas' {frmBase},
+  untNotifications in 'untNotifications.pas' {frmNotifications};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TdmdDataModule, dmdDataModule);
-  Application.Run;
+  AApplication.CreateForm(TfrmMain, frmMain);
+  AApplication.CreateForm(TdmdDataModule, dmdDataModule);
+  AApplication.CreateForm(TfrmNotifications, frmNotifications);
+  lication.Run;
 end.

@@ -195,6 +195,10 @@
         <DCCReference Include="untBaseForm.pas">
             <Form>frmBase</Form>
         </DCCReference>
+        <DCCReference Include="untNotifications.pas">
+            <Form>frmNotifications</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
