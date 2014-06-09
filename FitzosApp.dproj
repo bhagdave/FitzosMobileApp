@@ -199,6 +199,54 @@
             <Form>frmNotifications</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="untFriends.pas">
+            <Form>frmFriends</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untEvents.pas">
+            <Form>frmEvents</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untTeams.pas">
+            <Form>frmTeams</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untNotification.pas">
+            <Form>frmNotification</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untSearch.pas">
+            <Form>frmSearch</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untFriend.pas">
+            <Form>frmFriend</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untEvent.pas">
+            <Form>frmEvent</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untTeam.pas">
+            <Form>frmTeam</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untTeamCreate.pas">
+            <Form>frmTeamCreate</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untEventCreation.pas">
+            <Form>frmEventCreation</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untSettings.pas">
+            <Form>frmSettings</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="untProfile.pas">
+            <Form>frmProfile</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
