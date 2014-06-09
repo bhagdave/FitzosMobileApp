@@ -4,15 +4,13 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   untMainForm in 'untMainForm.pas' {frmMain},
-  untFrmSignUp in 'untFrmSignUp.pas' {frmSignUp},
-  untAPI in 'untAPI.pas',
-  untAthleteWelcome in 'untAthleteWelcome.pas' {frmAthleteWelcome},
-  untAthleteProfile in 'untAthleteProfile.pas' {frmAthleteProfile};
+  untDataModule in 'untDataModule.pas' {dmdDataModule: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TdmdDataModule, dmdDataModule);
   Application.Run;
 end.

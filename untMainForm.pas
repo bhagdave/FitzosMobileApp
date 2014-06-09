@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Layouts,
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
-  IdTCPClient, FMX.Memo, IdHTTP,
+  IdTCPClient, FMX.Memo, IdHTTP, untDataModule,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON, FMX.Objects;
 
 type
@@ -17,6 +17,7 @@ type
     btnLogin: TButton;
     btnSignup: TButton;
     txtWelcomeMessage: TText;
+    procedure btnLoginClick(Sender: TObject);
   private
     { Private declarations }
     sUserSalt   : String;
@@ -30,8 +31,12 @@ var
 implementation
 
 {$R *.fmx}
-Const
-ACCESS_NAME = 'mobile';
-API_KEY     = 'eu47rh485u3485';
+
+procedure TfrmMain.btnLoginClick(Sender: TObject);
+begin
+  //  open a session first.....
+  dmdDataModule.openSession;
+  showmessage(dmdDataModule.sessionKey);
+end;
 
 end.
