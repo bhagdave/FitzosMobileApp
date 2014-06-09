@@ -7,7 +7,6 @@ object dmdDataModule: TdmdDataModule
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
     BaseURL = 'http://local.fitzos/api'
-    ContentType = 'application/x-www-form-urlencoded'
     Params = <>
     HandleRedirects = True
     Left = 32
@@ -32,9 +31,31 @@ object dmdDataModule: TdmdDataModule
     Top = 72
   end
   object respOpenSession: TRESTResponse
-    ContentType = 'text/html'
     RootElement = 'Result'
     Left = 32
+    Top = 128
+  end
+  object reqLogin: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'signature'
+      end
+      item
+        name = 'username'
+      end
+      item
+        name = 'password'
+      end>
+    Resource = 'login'
+    Response = respLogin
+    SynchronizedEvents = False
+    Left = 120
+    Top = 72
+  end
+  object respLogin: TRESTResponse
+    RootElement = 'result'
+    Left = 120
     Top = 128
   end
 end

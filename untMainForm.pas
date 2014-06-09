@@ -21,6 +21,7 @@ type
   private
     { Private declarations }
     sUserSalt   : String;
+    procedure loginComplete;
   public
     { Public declarations }
   end;
@@ -33,10 +34,23 @@ implementation
 {$R *.fmx}
 
 procedure TfrmMain.btnLoginClick(Sender: TObject);
+var
+  signature : string;
 begin
   //  open a session first.....
   dmdDataModule.openSession;
-  showmessage(dmdDataModule.sessionKey);
+  // create a signature
+  signature := dmdDataModule.md5(edtUsername.Text + dmdDataModule.reqOpenSession.Params[1].Value + edtPassword.Text);
+  showmessage(signature);
+  dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := signature;
+  dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
+  dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
+  dmdDataModule.reqLogin.ExecuteAsync(self.loginComplete);
+end;
+
+procedure TfrmMain.loginComplete;
+begin
+//s
 end;
 
 end.

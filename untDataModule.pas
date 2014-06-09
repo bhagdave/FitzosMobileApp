@@ -4,19 +4,22 @@ interface
 
 uses
   System.SysUtils, System.Classes, IPPeerClient, REST.Client,
-  Data.Bind.Components, Data.Bind.ObjectScope;
+  Data.Bind.Components, Data.Bind.ObjectScope,IdHashMessageDigest,idHash;
 
 type
   TdmdDataModule = class(TDataModule)
     restAPI: TRESTClient;
     reqOpenSession: TRESTRequest;
     respOpenSession: TRESTResponse;
+    reqLogin: TRESTRequest;
+    respLogin: TRESTResponse;
   private
     { Private declarations }
     sSessionKey : String;
   public
     { Public declarations }
     function openSession : Boolean;
+    function md5(input: String) : String;
     property sessionKey : String  read sSessionKey;
   end;
 
@@ -31,6 +34,18 @@ implementation
 
 { TdmdDataModule }
 
+
+function TdmdDataModule.md5(input: String): String;
+var
+  idmd5 : TIdHashMessageDigest5;
+begin
+  idmd5 := TIdHashMessageDigest5.Create;
+  try
+    result := idmd5.HashStringAsHex(input);
+  finally
+    idmd5.Free;
+  end;
+end;
 
 function TdmdDataModule.openSession: Boolean;
 begin
