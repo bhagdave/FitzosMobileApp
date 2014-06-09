@@ -21,7 +21,6 @@ type
     btnFriends: TCornerButton;
     imgSearch: TImage;
     pnlCenter: TPanel;
-    procedure imgSearchClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,9 +34,4 @@ implementation
 
 {$R *.fmx}
 
-eprocedure TfrmBase.imgSearchClick(Sender: TObject);
-begin
-
-end;
-
-nd.
+end.

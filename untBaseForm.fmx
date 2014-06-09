@@ -158,7 +158,6 @@ object frmBase: TfrmBase
         Position.X = 240.000000000000000000
         Position.Y = -6.000000000000000000
         Width = 42.000000000000000000
-        OnClick = imgSearchClick
       end
     end
     object btnProfile: TSpeedButton

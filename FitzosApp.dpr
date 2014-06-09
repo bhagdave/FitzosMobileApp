@@ -24,8 +24,8 @@ uses
 
 begin
   Application.Initialize;
-  AApplication.CreateForm(TfrmMain, frmMain);
-  AApplication.CreateForm(TdmdDataModule, dmdDataModule);
-  AApplication.CreateForm(TfrmNotifications, frmNotifications);
-  lication.Run;
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TdmdDataModule, dmdDataModule);
+  Application.CreateForm(TfrmNotifications, frmNotifications);
+  Application.Run;
 end.
