@@ -6,7 +6,7 @@ object dmdDataModule: TdmdDataModule
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
-    BaseURL = 'http://local.fitzos/api'
+    BaseURL = 'http://beta.fitzos.com/api'
     Params = <>
     HandleRedirects = True
     Left = 32

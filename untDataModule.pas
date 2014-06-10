@@ -50,6 +50,7 @@ end;
 function TdmdDataModule.openSession: Boolean;
 begin
     reqOpenSession.Execute;
+    reqOpenSession.Params.ParameterByName('key').Value :=  md5(reqOpenSession.Params.ParameterByName('key').Value + reqOpenSession.Params.ParameterByName('name').Value);
     sSessionKey := respOpenSession.Content;
     openSession := true;
 end;
