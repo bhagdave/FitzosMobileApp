@@ -43,13 +43,17 @@ begin
   dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
   dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
+  dmdDataModule.reqLogin.Params.ParameterByName('key').Value  := dmdDataModule.sessionKey;
   dmdDataModule.reqLogin.ExecuteAsync(self.loginComplete);
 end;
 
 procedure TfrmMain.loginComplete;
 begin
   // check if valid or invalid...
-
+  if dmdDataModule.respLogin.Content = 'OK' then
+    showmessage('Login success')
+  else
+    showmessage('Login failure');
 end;
 
 end.

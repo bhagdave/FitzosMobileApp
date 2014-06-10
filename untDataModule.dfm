@@ -57,7 +57,7 @@ object dmdDataModule: TdmdDataModule
     Top = 72
   end
   object respLogin: TRESTResponse
-    RootElement = 'result'
+    RootElement = 'Status'
     Left = 120
     Top = 128
   end
