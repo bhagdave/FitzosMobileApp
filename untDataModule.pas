@@ -20,6 +20,7 @@ type
     { Public declarations }
     function openSession : Boolean;
     function md5(input: String) : String;
+    function signature(method: String): String;
     property sessionKey : String  read sSessionKey;
   end;
 
@@ -33,7 +34,9 @@ implementation
 {$R *.dfm}
 
 { TdmdDataModule }
-
+const
+  API_NAME = 'mobile';
+  API_KEY  = 'eu47rh485u3485';
 
 function TdmdDataModule.md5(input: String): String;
 var
@@ -53,6 +56,11 @@ begin
     reqOpenSession.Params.ParameterByName('key').Value :=  md5(reqOpenSession.Params.ParameterByName('key').Value + reqOpenSession.Params.ParameterByName('name').Value);
     sSessionKey := respOpenSession.Content;
     openSession := true;
+end;
+
+function TdmdDataModule.signature(method: String): String;
+begin
+  result := dmdDataModule.md5(API_NAME + API_KEY + method);
 end;
 
 end.

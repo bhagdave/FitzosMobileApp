@@ -39,10 +39,8 @@ var
 begin
   //  open a session first.....
   dmdDataModule.openSession;
-  // create a signature
-  signature := dmdDataModule.md5(edtUsername.Text + dmdDataModule.reqOpenSession.Params[1].Value + edtPassword.Text);
 //  showmessage(signature);
-  dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := signature;
+  dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
   dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
   dmdDataModule.reqLogin.ExecuteAsync(self.loginComplete);
