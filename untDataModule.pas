@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, IPPeerClient, REST.Client,
-  Data.Bind.Components, Data.Bind.ObjectScope,IdHashMessageDigest,idHash;
+  Data.Bind.Components, Data.Bind.ObjectScope,IdHashMessageDigest,idHash,System.JSON;
 
 type
   TdmdDataModule = class(TDataModule)
@@ -37,6 +37,7 @@ implementation
 const
   API_NAME = 'mobile';
   API_KEY  = 'eu47rh485u3485';
+  API_COMBINED = 'eu47rh485u3485mobile';
 
 function TdmdDataModule.md5(input: String): String;
 var
@@ -51,16 +52,24 @@ begin
 end;
 
 function TdmdDataModule.openSession: Boolean;
+var
+  lJSONObject : TJSONValue;
 begin
+    reqOpenSession.Params.ParameterByName('key').Value  :=  self.md5(API_COMBINED);
+    reqOpenSession.Params.ParameterByName('name').Value :=  API_NAME;
     reqOpenSession.Execute;
-    reqOpenSession.Params.ParameterByName('key').Value :=  md5(reqOpenSession.Params.ParameterByName('key').Value + reqOpenSession.Params.ParameterByName('name').Value);
-    sSessionKey := respOpenSession.Content;
+    try
+      lJSONObject := respOpenSession.JSONValue;
+      sSessionKey := lJSONObject.getValue<String>('Result');
+    finally
+      lJSONObject.Free;
+    end;
     openSession := true;
 end;
 
 function TdmdDataModule.signature(method: String): String;
 begin
-  result := dmdDataModule.md5(API_NAME + API_KEY + method);
+  result := self.md5(API_NAME + API_KEY + method);
 end;
 
 end.

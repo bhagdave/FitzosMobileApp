@@ -18,11 +18,9 @@ object dmdDataModule: TdmdDataModule
     Params = <
       item
         name = 'name'
-        Value = 'mobile'
       end
       item
         name = 'key'
-        Value = 'eu47rh485u3485'
       end>
     Resource = 'openSession'
     Response = respOpenSession

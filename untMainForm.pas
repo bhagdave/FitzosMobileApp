@@ -39,7 +39,6 @@ var
 begin
   //  open a session first.....
   dmdDataModule.openSession;
-//  showmessage(signature);
   dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
   dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
@@ -53,7 +52,7 @@ begin
   if dmdDataModule.respLogin.Content = 'OK' then
     showmessage('Login success')
   else
-    showmessage('Login failure');
+    showmessage(dmdDataModule.respLogin.Content);
 end;
 
 end.
