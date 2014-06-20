@@ -21,6 +21,10 @@ type
     btnFriends: TCornerButton;
     imgSearch: TImage;
     pnlCenter: TPanel;
+    procedure btnEventsClick(Sender: TObject);
+    procedure btnTeamsClick(Sender: TObject);
+    procedure btnNotificationsClick(Sender: TObject);
+    procedure btnFriendsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,5 +37,67 @@ var
 implementation
 
 {$R *.fmx}
+uses
+  untEvents, untTeams, untNotifications, untFriends;
+
+procedure TfrmBase.btnEventsClick(Sender: TObject);
+var
+  frmEvents : TfrmEvents;
+begin
+    frmEvents := TfrmEvents.Create(self);
+    frmEvents.ShowModal(
+      procedure(ModalResult: TModalResult)
+      begin
+        if ModalResult = mrOK then
+        begin
+        end;
+      end);
+    frmEvents.Free;
+end;
+
+procedure TfrmBase.btnFriendsClick(Sender: TObject);
+var
+  frmFriends : TfrmFriends;
+begin
+    frmFriends := TfrmFriends.Create(self);
+    frmFriends.ShowModal(
+      procedure(ModalResult: TModalResult)
+      begin
+        if ModalResult = mrOK then
+        begin
+        end;
+      end);
+    frmFriends.Free;
+end;
+
+procedure TfrmBase.btnNotificationsClick(Sender: TObject);
+var
+  frmNotifications : TfrmNotifications;
+begin
+    frmNotifications := TfrmNotifications.Create(self);
+    frmNotifications.ShowModal(
+      procedure(ModalResult: TModalResult)
+      begin
+        if ModalResult = mrOK then
+        begin
+        end;
+      end);
+    frmNotifications.Free;
+end;
+
+procedure TfrmBase.btnTeamsClick(Sender: TObject);
+var
+  frmTeams : TfrmTeams;
+begin
+    frmTeams := TfrmTeams.Create(self);
+    frmTeams.ShowModal(
+      procedure(ModalResult: TModalResult)
+      begin
+        if ModalResult = mrOK then
+        begin
+        end;
+      end);
+    frmTeams.Free;
+end;
 
 end.
