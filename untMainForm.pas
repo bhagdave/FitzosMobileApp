@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Layouts,
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
-  IdTCPClient, FMX.Memo, IdHTTP, untDataModule,
+  IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON, FMX.Objects;
 
 type
@@ -49,11 +49,16 @@ end;
 procedure TfrmMain.loginComplete;
 var
   bLoggedIn : Boolean;
+  frmNotification: TfrmNotifications;
 begin
   // check if valid or invalid... by getting the datamodule to check.
   bLoggedIn := dmdDataModule.checkLogin;
   if bLoggedIn then
-    showmessage('Login success')
+  begin
+    frmNotification := TfrmNotifications.Create(self);
+    frmNotification.ShowModal;
+    frmNotification.Free;
+  end
   else
     showmessage(dmdDataModule.respLogin.Content);
 end;
