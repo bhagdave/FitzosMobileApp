@@ -56,7 +56,13 @@ begin
   if bLoggedIn then
   begin
     frmNotification := TfrmNotifications.Create(self);
-    frmNotification.ShowModal;
+    frmNotification.ShowModal(
+      procedure(ModalResult: TModalResult)
+      begin
+        if ModalResult = mrOK then
+        begin
+        end;
+      end);
     frmNotification.Free;
   end
   else

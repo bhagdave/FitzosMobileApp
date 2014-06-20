@@ -49,9 +49,10 @@ var
   lJSONPair   : TJSONPair;
   lResult,lStatus,lItem  : TJsonValue;
 begin
+  result := false;
     try
       lJSONObject := TJSONObject.Create();
-      lJSONObject.Parse(TEncoding.ASCII.GetBytes(respOpenSession.Content),0);
+      lJSONObject.Parse(TEncoding.ASCII.GetBytes(respLogin.Content),0);
       lResult := lJSONObject.Get('Result').JsonValue;
       lStatus := lJSONObject.Get('Status').JsonValue;
       if (lStatus.Value = 'OK') then
