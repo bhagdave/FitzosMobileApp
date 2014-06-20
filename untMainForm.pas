@@ -39,6 +39,7 @@ var
 begin
   //  open a session first.....
   dmdDataModule.openSession;
+  showmessage(dmdDataModule.sessionKey);
   dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
   dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;

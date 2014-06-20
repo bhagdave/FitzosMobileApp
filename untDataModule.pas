@@ -53,14 +53,18 @@ end;
 
 function TdmdDataModule.openSession: Boolean;
 var
-  lJSONObject : TJSONValue;
+  lJSONObject : TJSONObject;
+  lJSONPair   : TJSONPair;
+  lJSONValue,lResult  : TJsonValue;
 begin
     reqOpenSession.Params.ParameterByName('key').Value  :=  self.md5(API_COMBINED);
     reqOpenSession.Params.ParameterByName('name').Value :=  API_NAME;
     reqOpenSession.Execute;
     try
-      lJSONObject := respOpenSession.JSONValue;
-      sSessionKey := lJSONObject.getValue<String>('Result');
+      lJSONObject := TJSONObject.Create();
+      lJSONObject.Parse(TEncoding.ASCII.GetBytes(respOpenSession.Content),0);
+      lResult:=lJSONObject.Get('Result').JsonValue;
+      sSessionKey := lResult.Value;
     finally
       lJSONObject.Free;
     end;
