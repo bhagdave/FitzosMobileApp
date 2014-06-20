@@ -39,7 +39,6 @@ var
 begin
   //  open a session first.....
   dmdDataModule.openSession;
-  showmessage(dmdDataModule.sessionKey);
   dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
   dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
@@ -48,9 +47,12 @@ begin
 end;
 
 procedure TfrmMain.loginComplete;
+var
+  bLoggedIn : Boolean;
 begin
-  // check if valid or invalid...
-  if dmdDataModule.respLogin.Content = 'OK' then
+  // check if valid or invalid... by getting the datamodule to check.
+  bLoggedIn := dmdDataModule.checkLogin;
+  if bLoggedIn then
     showmessage('Login success')
   else
     showmessage(dmdDataModule.respLogin.Content);
