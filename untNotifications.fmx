@@ -81,6 +81,9 @@ inherited frmNotifications: TfrmNotifications
           end>
       end
     end
+    inherited lblCaption: TLabel
+      Text = 'Notifications'
+    end
   end
   inherited pnlCenter: TPanel
     TabOrder = 5

@@ -81,5 +81,8 @@ inherited frmFriends: TfrmFriends
           end>
       end
     end
+    inherited lblCaption: TLabel
+      Text = 'Friends'
+    end
   end
 end

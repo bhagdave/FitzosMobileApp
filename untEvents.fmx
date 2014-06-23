@@ -81,5 +81,9 @@ inherited frmEvents: TfrmEvents
           end>
       end
     end
+    inherited lblCaption: TLabel
+      Text = 'Events'
+      Width = 384.000000000000000000
+    end
   end
 end

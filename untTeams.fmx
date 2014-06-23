@@ -81,5 +81,8 @@ inherited frmTeams: TfrmTeams
           end>
       end
     end
+    inherited lblCaption: TLabel
+      Text = 'Teams'
+    end
   end
 end
