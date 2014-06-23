@@ -15,7 +15,7 @@ object frmBase: TfrmBase
   DesignerOSVersion = ''
   object barTop: TToolBar
     Height = 48.000000000000000000
-    Position.Y = 49.000000000000000000
+    Position.Y = 57.000000000000000000
     TabOrder = 1
     Width = 384.000000000000000000
     object btnEvents: TCornerButton
@@ -75,16 +75,15 @@ object frmBase: TfrmBase
   end
   object pnlTop: TPanel
     Align = MostTop
-    Height = 49.000000000000000000
+    Height = 57.000000000000000000
     Width = 384.000000000000000000
     TabOrder = 3
     object edtSearch: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
-      Anchors = [akLeft, akTop, akRight]
+      Align = Top
       TabOrder = 1
-      Position.X = 32.000000000000000000
-      Position.Y = 8.000000000000000000
-      Width = 289.000000000000000000
+      Position.Y = 23.000000000000000000
+      Width = 384.000000000000000000
       Height = 32.000000000000000000
       TextPrompt = 'Search'
       object imgSearch: TImage
@@ -159,9 +158,9 @@ object frmBase: TfrmBase
               CF60F7D777A1F39D2192F9D81EFEDF01FC0B685982027C30FB5B000000004945
               4E44AE426082}
           end>
-        Height = 39.000000000000000000
-        Position.X = 240.000000000000000000
-        Position.Y = -6.000000000000000000
+        Align = Right
+        Height = 32.000000000000000000
+        Position.X = 342.000000000000000000
         Width = 42.000000000000000000
       end
     end
@@ -284,10 +283,16 @@ object frmBase: TfrmBase
         Width = 50.000000000000000000
       end
     end
+    object lblCaption: TLabel
+      Align = MostTop
+      Height = 23.000000000000000000
+      Text = 'Base Form'
+      Width = 384.000000000000000000
+    end
   end
   object pnlCenter: TPanel
     Align = Client
-    Height = 422.000000000000000000
+    Height = 414.000000000000000000
     Width = 384.000000000000000000
     TabOrder = 4
   end

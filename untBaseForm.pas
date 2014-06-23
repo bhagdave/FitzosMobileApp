@@ -21,6 +21,7 @@ type
     btnFriends: TCornerButton;
     imgSearch: TImage;
     pnlCenter: TPanel;
+    lblCaption: TLabel;
     procedure btnEventsClick(Sender: TObject);
     procedure btnTeamsClick(Sender: TObject);
     procedure btnNotificationsClick(Sender: TObject);
