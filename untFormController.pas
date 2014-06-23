@@ -3,15 +3,15 @@ unit untFormController;
 interface
 
 uses
-  untBaseForm,System.Generics.Collections,SysUtils;
+  untBaseForm,System.Generics.Collections,SysUtils,FMX.Dialogs,untIntFormController, fmx.forms;
 
 type
-  TFormController = class
+  TFormController = class(TInterfacedobject, iFrmController)
     private
       frmList : TList<TFrmBase>;
       function checkList(className : TClass):Integer;
     public
-      function showForm(className : TClass): TFrmBase;
+      function showForm(className : TClass): TForm;
       constructor Create; overload;
       destructor Destroy; override;
   end;
@@ -19,6 +19,8 @@ type
 implementation
 
 { TFormController }
+uses
+  RTTI;
 
 function TFormController.checkList(className: TClass): Integer;
 var
@@ -47,10 +49,12 @@ begin
   inherited;
 end;
 
-function TFormController.showForm(className : TClass): TFrmBase;
+function TFormController.showForm(className : TClass): TForm;
 var
   tmpForm : tFrmBase;
   iForm   : Integer;
+  c: TRttiContext;
+  t: TRttiType;
 begin
   if className.InheritsFrom(tFrmBase) then
   begin
@@ -58,10 +62,17 @@ begin
     iForm := checkList(className);
     if (iForm = 0) then
     begin
-      // if not create the form
-      tmpForm := TfrmBase(className).Create(nil);
-      // add to our collection
-      frmList.Add(tmpForm);
+      try
+        c := TRttiContext.Create;
+        t := c.GetType(className);
+        // if not create the form
+        tmpForm := TfrmBase(t.AsInstance.MetaclassType).Create(nil);
+        // add to our collection
+        frmList.Add(tmpForm);
+        c.Free;
+      except on E: Exception do
+        showmessage('We have bombed trying to create a form!');
+      end;
     end
     else
     begin

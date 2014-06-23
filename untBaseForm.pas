@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
-  FMX.Objects, FMX.StdCtrls;
+  FMX.Objects, FMX.StdCtrls,untIntFormController;
 
 type
   TfrmBase = class(TForm)
@@ -27,8 +27,10 @@ type
     procedure btnFriendsClick(Sender: TObject);
   private
     { Private declarations }
+    formController : iFrmController;
   public
     { Public declarations }
+    constructor create(ifc : iFrmController);
   end;
 
 var
@@ -38,66 +40,31 @@ implementation
 
 {$R *.fmx}
 uses
-  untEvents, untTeams, untNotifications, untFriends;
+  untEvents, untTeams, untNotifications, untFriends, untFormController;
 
 procedure TfrmBase.btnEventsClick(Sender: TObject);
-var
-  frmEvents : TfrmEvents;
 begin
-    frmEvents := TfrmEvents.Create(self);
-    frmEvents.ShowModal(
-      procedure(ModalResult: TModalResult)
-      begin
-        if ModalResult = mrOK then
-        begin
-        end;
-      end);
-    frmEvents.Free;
+  formController.showForm(TfrmEvents);
 end;
 
 procedure TfrmBase.btnFriendsClick(Sender: TObject);
-var
-  frmFriends : TfrmFriends;
 begin
-    frmFriends := TfrmFriends.Create(self);
-    frmFriends.ShowModal(
-      procedure(ModalResult: TModalResult)
-      begin
-        if ModalResult = mrOK then
-        begin
-        end;
-      end);
-    frmFriends.Free;
+  formController.showForm(TfrmFriends);
 end;
 
 procedure TfrmBase.btnNotificationsClick(Sender: TObject);
-var
-  frmNotifications : TfrmNotifications;
 begin
-    frmNotifications := TfrmNotifications.Create(self);
-    frmNotifications.ShowModal(
-      procedure(ModalResult: TModalResult)
-      begin
-        if ModalResult = mrOK then
-        begin
-        end;
-      end);
-    frmNotifications.Free;
+  formController.showForm(TfrmNotifications);
 end;
 
 procedure TfrmBase.btnTeamsClick(Sender: TObject);
-var
-  frmTeams : TfrmTeams;
 begin
-    frmTeams := TfrmTeams.Create(self);
-    frmTeams.ShowModal(
-      procedure(ModalResult: TModalResult)
-      begin
-        if ModalResult = mrOK then
-        begin
-        end;
-      end);
-    frmTeams.Free;
+  formController.showForm(TfrmTeams);
+end;
+
+constructor TfrmBase.create(ifc: iFrmController);
+begin
+  formController := ifc;
 end;
 
 end.

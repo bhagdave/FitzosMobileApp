@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Layouts,
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
-  IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications,
+  IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications, untFormController,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON, FMX.Objects;
 
 type
@@ -18,12 +18,15 @@ type
     btnSignup: TButton;
     txtWelcomeMessage: TText;
     procedure btnLoginClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
     sUserSalt   : String;
+    fController : TFormController;
     procedure loginComplete;
   public
     { Public declarations }
+    constructor create; overload;
   end;
 
 var
@@ -32,6 +35,8 @@ var
 implementation
 
 {$R *.fmx}
+uses
+  untBaseForm;
 
 procedure TfrmMain.btnLoginClick(Sender: TObject);
 var
@@ -46,24 +51,25 @@ begin
   dmdDataModule.reqLogin.ExecuteAsync(self.loginComplete);
 end;
 
+constructor TfrmMain.create;
+begin
+  fController := TFormController.Create;
+end;
+
+procedure TfrmMain.FormDestroy(Sender: TObject);
+begin
+  fController.Free;
+end;
+
 procedure TfrmMain.loginComplete;
 var
   bLoggedIn : Boolean;
-  frmNotification: TfrmNotifications;
 begin
   // check if valid or invalid... by getting the datamodule to check.
   bLoggedIn := dmdDataModule.checkLogin;
   if bLoggedIn then
   begin
-    frmNotification := TfrmNotifications.Create(self);
-    frmNotification.ShowModal(
-      procedure(ModalResult: TModalResult)
-      begin
-        if ModalResult = mrOK then
-        begin
-        end;
-      end);
-    frmNotification.Free;
+    fController.showForm(TfrmNotifications);
   end
   else
     showmessage(dmdDataModule.respLogin.Content);
