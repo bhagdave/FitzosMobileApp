@@ -27,6 +27,7 @@ type
     procedure btnTeamsClick(Sender: TObject);
     procedure btnNotificationsClick(Sender: TObject);
     procedure btnFriendsClick(Sender: TObject);
+    procedure btnProfileClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,6 +56,11 @@ end;
 procedure TfrmBase.btnNotificationsClick(Sender: TObject);
 begin
     showNewForm('TfrmNotifications');
+end;
+
+procedure TfrmBase.btnProfileClick(Sender: TObject);
+begin
+  showNewForm('TfrmProfile');
 end;
 
 procedure TfrmBase.btnTeamsClick(Sender: TObject);
