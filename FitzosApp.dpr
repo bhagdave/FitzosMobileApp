@@ -18,7 +18,8 @@ uses
   untTeamCreate in 'untTeamCreate.pas' {frmTeamCreate},
   untEventCreation in 'untEventCreation.pas' {frmEventCreation},
   untSettings in 'untSettings.pas' {frmSettings},
-  untProfile in 'untProfile.pas' {frmProfile};
+  untProfile in 'untProfile.pas' {frmProfile},
+  untFormController in 'untFormController.pas';
 
 {$R *.res}
 
