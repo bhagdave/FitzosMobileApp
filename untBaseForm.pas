@@ -22,6 +22,7 @@ type
     imgSearch: TImage;
     pnlCenter: TPanel;
     lblCaption: TLabel;
+    StyleBook1: TStyleBook;
     procedure btnEventsClick(Sender: TObject);
     procedure btnTeamsClick(Sender: TObject);
     procedure btnNotificationsClick(Sender: TObject);
