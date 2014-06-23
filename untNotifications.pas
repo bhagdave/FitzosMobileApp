@@ -22,4 +22,7 @@ implementation
 
 {$R *.fmx}
 
+initialization
+RegisterFMXClasses([TfrmNotifications]);
+
 end.

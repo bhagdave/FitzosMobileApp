@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
-  FMX.Objects, FMX.StdCtrls,untIntFormController;
+  FMX.Objects, FMX.StdCtrls;
 
 type
   TfrmBase = class(TForm)
@@ -27,10 +27,8 @@ type
     procedure btnFriendsClick(Sender: TObject);
   private
     { Private declarations }
-    formController : iFrmController;
   public
     { Public declarations }
-    constructor create(ifc : iFrmController);
   end;
 
 var
@@ -40,31 +38,26 @@ implementation
 
 {$R *.fmx}
 uses
-  untEvents, untTeams, untNotifications, untFriends, untFormController;
+  untMainForm;
 
 procedure TfrmBase.btnEventsClick(Sender: TObject);
 begin
-  formController.showForm(TfrmEvents);
+    showNewForm('TfrmEvents');
 end;
 
 procedure TfrmBase.btnFriendsClick(Sender: TObject);
 begin
-  formController.showForm(TfrmFriends);
+    showNewForm('TfrmFriends');
 end;
 
 procedure TfrmBase.btnNotificationsClick(Sender: TObject);
 begin
-  formController.showForm(TfrmNotifications);
+    showNewForm('TfrmNotifications');
 end;
 
 procedure TfrmBase.btnTeamsClick(Sender: TObject);
 begin
-  formController.showForm(TfrmTeams);
-end;
-
-constructor TfrmBase.create(ifc: iFrmController);
-begin
-  formController := ifc;
+    showNewForm('TfrmTeams');
 end;
 
 end.

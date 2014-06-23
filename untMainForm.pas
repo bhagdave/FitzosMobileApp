@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Layouts,
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
-  IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications, untFormController,
+  IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON, FMX.Objects;
 
 type
@@ -18,16 +18,15 @@ type
     btnSignup: TButton;
     txtWelcomeMessage: TText;
     procedure btnLoginClick(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
     sUserSalt   : String;
-    fController : TFormController;
     procedure loginComplete;
   public
     { Public declarations }
-    constructor create; overload;
   end;
+
+  procedure showNewForm(ClassName : String);
 
 var
   frmMain: TfrmMain;
@@ -37,6 +36,19 @@ implementation
 {$R *.fmx}
 uses
   untBaseForm;
+
+procedure showNewForm(ClassName : String);
+var ObjClass: TFmxObjectClass;
+    NewForm: TCustomForm;
+begin
+  ObjClass := TFmxObjectClass(GetClass(ClassName));
+  if ObjClass <> nil then
+  begin
+    NewForm := ObjClass.Create(Application) as TCustomForm;
+    if Assigned(NewForm) then
+      NewForm.Show;
+  end
+end;
 
 procedure TfrmMain.btnLoginClick(Sender: TObject);
 var
@@ -51,15 +63,6 @@ begin
   dmdDataModule.reqLogin.ExecuteAsync(self.loginComplete);
 end;
 
-constructor TfrmMain.create;
-begin
-  fController := TFormController.Create;
-end;
-
-procedure TfrmMain.FormDestroy(Sender: TObject);
-begin
-  fController.Free;
-end;
 
 procedure TfrmMain.loginComplete;
 var
@@ -69,7 +72,7 @@ begin
   bLoggedIn := dmdDataModule.checkLogin;
   if bLoggedIn then
   begin
-    fController.showForm(TfrmNotifications);
+    showNewForm('TfrmNotifications');
   end
   else
     showmessage(dmdDataModule.respLogin.Content);

@@ -20,5 +20,7 @@ var
 implementation
 
 {$R *.fmx}
+initialization
+RegisterFMXClasses([TfrmSettings]);
 
 end.
