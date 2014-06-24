@@ -120,6 +120,7 @@ inherited frmNotifications: TfrmNotifications
       TabOrder = 1
       Width = 384.000000000000000000
       object grdNotifications: TGridPanelLayout
+        Align = MostTop
         Height = 97.000000000000000000
         HitTest = False
         Width = 384.000000000000000000

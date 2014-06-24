@@ -70,32 +70,48 @@ object dmdDataModule: TdmdDataModule
       end
       item
         name = 'id'
+        Value = '2'
       end>
-    Resource = 'index/notifications/getMemberNotifications'
+    Resource = 'notifications/getMemberNotifications'
     Response = respNotifications
     SynchronizedEvents = False
     Left = 200
     Top = 72
   end
   object respNotifications: TRESTResponse
+    ContentType = 'text/html'
     Left = 200
     Top = 128
   end
   object rdsaNotifications: TRESTResponseDataSetAdapter
-    Dataset = tblNotifications
+    Dataset = cdsNotifications
     FieldDefs = <>
     Response = respNotifications
     Left = 200
     Top = 184
   end
-  object tblNotifications: TFDMemTable
-    FetchOptions.AssignedValues = [evMode]
-    FetchOptions.Mode = fmAll
-    ResourceOptions.AssignedValues = [rvSilentMode]
-    ResourceOptions.SilentMode = True
-    UpdateOptions.AssignedValues = [uvCheckRequired]
-    UpdateOptions.CheckRequired = False
-    Left = 192
-    Top = 240
+  object cdsNotifications: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'Status'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'Message'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'Result'
+        DataType = ftString
+        Size = 255
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 200
+    Top = 248
   end
 end

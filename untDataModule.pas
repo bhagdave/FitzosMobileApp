@@ -20,7 +20,7 @@ type
     reqNotifications: TRESTRequest;
     respNotifications: TRESTResponse;
     rdsaNotifications: TRESTResponseDataSetAdapter;
-    tblNotifications: TFDMemTable;
+    cdsNotifications: TClientDataSet;
   private
     { Private declarations }
     sSessionKey : String;
