@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, untDataModule, FMX.Layouts,
   FMX.ListView.Types, FMX.ListView, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components,
-  Data.Bind.DBScope, Fmx.Bind.Grid, Data.Bind.Grid, FMX.Grid;
+  Data.Bind.DBScope, Fmx.Bind.Grid, Data.Bind.Grid, FMX.Grid,System.JSON;
 
 type
   TfrmNotifications = class(TfrmBase)
@@ -31,14 +31,42 @@ implementation
 {$R *.fmx}
 
 procedure TfrmNotifications.FormShow(Sender: TObject);
+var
+  lJSONObject : TJSONObject;
+  lJSONPair   : TJSONPair;
+  lResult,lStatus,lItem  : TJsonValue;
 begin
   inherited;
-  // Open up the data.
-  dmdDataModule.reqNotifications.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-  dmdDataModule.reqNotifications.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMemberNotifications');
-  dmdDataModule.reqNotifications.Params.ParameterByName('key').Value := dmdDatamodule.getApiKey;
-  dmdDataModule.reqNotifications.Execute;
-  dmdDataModule.cdsNotifications.Open;
+  with dmdDataModule do
+  begin
+    // Open up the data.
+    rdsaNotifications.ClearDataSet;
+    cdsNotifications.Close;
+    respNotifications.Content.Empty;
+    reqNotifications.ClearBody;
+    reqNotifications.Params.ParameterByName('id').Value := memberId;
+    reqNotifications.Params.ParameterByName('signature').Value := signature('getMemberNotifications');
+    reqNotifications.Params.ParameterByName('key').Value := getApiKey;
+    reqNotifications.Execute;
+    try
+      lJSONObject := TJSONObject.Create();
+      lJSONObject.Parse(TEncoding.ASCII.GetBytes(respNotifications.Content),0);
+      lResult := lJSONObject.Get('Result').JsonValue;
+      lStatus := lJSONObject.Get('Status').JsonValue;
+      if (lStatus.Value = 'OK') then
+      begin
+        rdsaNotifications.Response := respNotifications;
+        cdsNotifications.Open;
+      end
+      else
+    finally
+      lJSONObject.Free;
+      lStatus.Free;
+      lResult.Free;
+    end;
+
+    cdsNotifications.Open;
+  end;
 end;
 
 initialization

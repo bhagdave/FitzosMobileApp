@@ -87,7 +87,6 @@ object dmdDataModule: TdmdDataModule
     Active = True
     Dataset = cdsNotifications
     FieldDefs = <>
-    Response = respNotifications
     RootElement = 'Result'
     Left = 200
     Top = 184
