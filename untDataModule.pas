@@ -5,7 +5,10 @@ interface
 uses
   System.SysUtils, System.Classes, IPPeerClient, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope,IdHashMessageDigest,idHash,System.JSON,
-  REST.Response.Adapter;
+  REST.Response.Adapter, Data.DB, Datasnap.DBClient, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TdmdDataModule = class(TDataModule)
@@ -17,6 +20,7 @@ type
     reqNotifications: TRESTRequest;
     respNotifications: TRESTResponse;
     rdsaNotifications: TRESTResponseDataSetAdapter;
+    tblNotifications: TFDMemTable;
   private
     { Private declarations }
     sSessionKey : String;
@@ -27,8 +31,11 @@ type
     function openSession : Boolean;
     function checkLogin : Boolean;
     function md5(input: String) : String;
+    function getApiKey() : String;
     function signature(method: String): String;
     property sessionKey : String  read sSessionKey;
+    property memberId : String read sMemberSalt;
+    property memberType : String read sMemberType;
   end;
 
 var
@@ -73,6 +80,11 @@ begin
       lStatus.Free;
       lResult.Free;
     end;
+end;
+
+function TdmdDataModule.getApiKey: String;
+begin
+  result := API_KEY;
 end;
 
 function TdmdDataModule.md5(input: String): String;

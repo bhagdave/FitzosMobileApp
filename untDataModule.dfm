@@ -61,7 +61,17 @@ object dmdDataModule: TdmdDataModule
   end
   object reqNotifications: TRESTRequest
     Client = restAPI
-    Params = <>
+    Params = <
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end
+      item
+        name = 'id'
+      end>
+    Resource = 'index/notifications/getMemberNotifications'
     Response = respNotifications
     SynchronizedEvents = False
     Left = 200
@@ -72,8 +82,20 @@ object dmdDataModule: TdmdDataModule
     Top = 128
   end
   object rdsaNotifications: TRESTResponseDataSetAdapter
+    Dataset = tblNotifications
     FieldDefs = <>
+    Response = respNotifications
     Left = 200
     Top = 184
+  end
+  object tblNotifications: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 192
+    Top = 240
   end
 end
