@@ -59,6 +59,9 @@ begin
         cdsNotifications.Open;
       end
       else
+      begin
+        showmessage(respNotifications.Content);
+      end;
     finally
       lJSONObject.Free;
       lStatus.Free;
