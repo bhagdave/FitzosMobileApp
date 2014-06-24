@@ -14,6 +14,9 @@ type
     respOpenSession: TRESTResponse;
     reqLogin: TRESTRequest;
     respLogin: TRESTResponse;
+    reqNotifications: TRESTRequest;
+    respNotifications: TRESTResponse;
+    rdsaNotifications: TRESTResponseDataSetAdapter;
   private
     { Private declarations }
     sSessionKey : String;

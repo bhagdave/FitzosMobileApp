@@ -59,4 +59,21 @@ object dmdDataModule: TdmdDataModule
     Left = 120
     Top = 128
   end
+  object reqNotifications: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Response = respNotifications
+    SynchronizedEvents = False
+    Left = 200
+    Top = 72
+  end
+  object respNotifications: TRESTResponse
+    Left = 200
+    Top = 128
+  end
+  object rdsaNotifications: TRESTResponseDataSetAdapter
+    FieldDefs = <>
+    Left = 200
+    Top = 184
+  end
 end
