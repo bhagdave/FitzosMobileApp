@@ -60,6 +60,7 @@ var
   sFrom   : String;
 begin
   inherited;
+  sFrom := 'From Administrator';
   // where did the message come from....
   if dmdDataModule.cdsNotifications.FieldByName('from_table').AsString = 'member' then
   begin
@@ -88,7 +89,36 @@ begin
           showmessage(respMember.Content);
       end;
     end;
+  end
+  else if dmdDataModule.cdsNotifications.FieldByName('from_table').AsString = 'member' then
+  begin
+    // get the member
+    // Open up the data.
+    with dmdDataModule do
+    begin
+      // Open up the data.
+      rdsaTeam.ClearDataSet;
+      cdsTeam.Close;
+      respTeam.Content.Empty;
+      reqTeam.ClearBody;
+      reqTeam.Params.ParameterByName('id').Value := cdsNotifications.FieldByName('from_key').AsString;
+      reqTeam.Params.ParameterByName('signature').Value := signature('getTeam');
+      reqTeam.Params.ParameterByName('key').Value := getApiKey;
+      reqTeam.Execute;
+      sResult := getResultString(respTeam.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaTeam.Response := respTeam;
+          cdsTeam.Open;
+          sFrom := 'The notification came from the team ' + cdsTeam.FieldByName('name').AsString;
+      end
+      else
+      begin
+          showmessage(respMember.Content);
+      end;
+    end;
   end;
+  lblFrom.text := sFrom;
 end;
 
 initialization
