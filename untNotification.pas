@@ -9,6 +9,9 @@ uses
 
 type
   TfrmNotification = class(TfrmBase)
+    lblNotification: TLabel;
+    panelFrom: TPanel;
+    lblFrom: TLabel;
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }

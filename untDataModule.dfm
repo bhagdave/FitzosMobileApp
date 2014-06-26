@@ -188,6 +188,7 @@ object dmdDataModule: TdmdDataModule
     Params = <
       item
         name = 'id'
+        Value = '9'
       end>
     Resource = 'members/getMember'
     Response = respMember
@@ -196,10 +197,13 @@ object dmdDataModule: TdmdDataModule
     Top = 72
   end
   object respMember: TRESTResponse
+    ContentType = 'text/html'
     Left = 288
     Top = 128
   end
   object rsdaMember: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = cdsMember
     FieldDefs = <>
     Response = respMember
     RootElement = 'Result'
@@ -207,9 +211,22 @@ object dmdDataModule: TdmdDataModule
     Top = 192
   end
   object cdsMember: TClientDataSet
+    Active = True
     Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'JSONNull'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
     Params = <>
+    StoreDefs = True
     Left = 296
     Top = 248
+    Data = {
+      580000009619E0BD0100000018000000010001000000030000005600084A534F
+      4E4E756C6C02004A000000010005574944544802000200FE0101000A4348414E
+      47455F4C4F4704008200030000000100000000000000040000000401}
   end
 end
