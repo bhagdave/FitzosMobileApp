@@ -1,7 +1,7 @@
 object dmdDataModule: TdmdDataModule
   OldCreateOrder = False
-  Height = 420
-  Width = 560
+  Height = 635
+  Width = 1008
   object restAPI: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
@@ -182,5 +182,34 @@ object dmdDataModule: TdmdDataModule
       6F0075006E0064006500720073003C002F0061003E0006007900650073002600
       32003000310034002D00300035002D00300037002000300030003A0030003000
       3A003000300002003000}
+  end
+  object reqMember: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+      end>
+    Resource = 'members/getMember'
+    Response = respMember
+    SynchronizedEvents = False
+    Left = 288
+    Top = 72
+  end
+  object respMember: TRESTResponse
+    Left = 288
+    Top = 128
+  end
+  object rsdaMember: TRESTResponseDataSetAdapter
+    FieldDefs = <>
+    Response = respMember
+    RootElement = 'Result'
+    Left = 296
+    Top = 192
+  end
+  object cdsMember: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 296
+    Top = 248
   end
 end

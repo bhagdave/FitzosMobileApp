@@ -21,6 +21,10 @@ type
     respNotifications: TRESTResponse;
     rdsaNotifications: TRESTResponseDataSetAdapter;
     cdsNotifications: TClientDataSet;
+    reqMember: TRESTRequest;
+    respMember: TRESTResponse;
+    rsdaMember: TRESTResponseDataSetAdapter;
+    cdsMember: TClientDataSet;
   private
     { Private declarations }
     sSessionKey : String;
