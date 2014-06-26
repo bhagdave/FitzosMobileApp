@@ -17,6 +17,8 @@ type
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
     procedure FormShow(Sender: TObject);
+    procedure lvNotificationsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -29,12 +31,12 @@ var
 implementation
 
 {$R *.fmx}
+uses
+  untMainForm;
 
 procedure TfrmNotifications.FormShow(Sender: TObject);
 var
-  lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
-  lResult,lStatus,lItem  : TJsonValue;
+  sResult : String;
 begin
   inherited;
   with dmdDataModule do
@@ -48,28 +50,25 @@ begin
     reqNotifications.Params.ParameterByName('signature').Value := signature('getMemberNotifications');
     reqNotifications.Params.ParameterByName('key').Value := getApiKey;
     reqNotifications.Execute;
-    try
-      lJSONObject := TJSONObject.Create();
-      lJSONObject.Parse(TEncoding.ASCII.GetBytes(respNotifications.Content),0);
-      lResult := lJSONObject.Get('Result').JsonValue;
-      lStatus := lJSONObject.Get('Status').JsonValue;
-      if (lStatus.Value = 'OK') then
-      begin
+    sResult := getResultString(respNotifications.Content);
+    if (sResult = 'OK') then
+    begin
         rdsaNotifications.Response := respNotifications;
         cdsNotifications.Open;
-      end
-      else
-      begin
+    end
+    else
+    begin
         showmessage(respNotifications.Content);
-      end;
-    finally
-      lJSONObject.Free;
-      lStatus.Free;
-      lResult.Free;
     end;
-
-    cdsNotifications.Open;
   end;
+end;
+
+procedure TfrmNotifications.lvNotificationsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+begin
+  inherited;
+  // how do I get the item id being clicked...
+  showNewForm('TfrmNotification');
 end;
 
 initialization

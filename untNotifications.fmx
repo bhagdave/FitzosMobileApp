@@ -129,6 +129,7 @@ inherited frmNotifications: TfrmNotifications
       ItemAppearanceObjects.HeaderObjects.Text.TextAlign = Center
       ItemAppearanceObjects.HeaderObjects.Text.VertAlign = Center
       ItemAppearanceObjects.FooterObjects.Text.Visible = False
+      OnItemClick = lvNotificationsItemClick
     end
   end
   object BindSourceDB1: TBindSourceDB
