@@ -254,4 +254,111 @@ object dmdDataModule: TdmdDataModule
     Left = 408
     Top = 248
   end
+  object reqTeam: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '7'
+      end>
+    Resource = 'teams/getTeam'
+    Response = respTeam
+    SynchronizedEvents = False
+    Left = 544
+    Top = 81
+  end
+  object respTeam: TRESTResponse
+    ContentType = 'text/html'
+    Left = 544
+    Top = 136
+  end
+  object rdsaTeam: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = cdsTeam
+    FieldDefs = <>
+    Response = respTeam
+    RootElement = 'Result'
+    Left = 544
+    Top = 192
+  end
+  object cdsTeam: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'owner'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 536
+    Top = 248
+    Data = {
+      9E0100009619E0BD01000000180000000B000100000003000000660102696402
+      004A000000010005574944544802000200FE01046E616D6502004A0000000100
+      05574944544802000200FE0107636F6E74656E7402004A000000010005574944
+      544802000200FE01046461746502004A000000010005574944544802000200FE
+      010661637469766502004A000000010005574944544802000200FE010A646174
+      655F616464656402004A000000010005574944544802000200FE010D6C617374
+      5F6D6F64696669656402004A000000010005574944544802000200FE0105696D
+      61676502004A000000010005574944544802000200FE01056F776E657202004A
+      000000010005574944544802000200FE01067075626C696302004A0000000100
+      05574944544802000200FE010873706F72745F696402004A0000000100055749
+      44544802000200FE0101000A4348414E47455F4C4F4704008200030000000100
+      000000000000040000000450540002003700140034006B00200046006F006F00
+      7400650072007300060079006500730004003100300006007900650073000200
+      3400}
+  end
 end

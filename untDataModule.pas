@@ -29,6 +29,10 @@ type
     respGeneric: TRESTResponse;
     rdsaGeneric: TRESTResponseDataSetAdapter;
     cdsGeneric: TClientDataSet;
+    reqTeam: TRESTRequest;
+    respTeam: TRESTResponse;
+    rdsaTeam: TRESTResponseDataSetAdapter;
+    cdsTeam: TClientDataSet;
   private
     { Private declarations }
     sSessionKey : String;
