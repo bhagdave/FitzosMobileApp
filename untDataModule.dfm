@@ -201,7 +201,7 @@ object dmdDataModule: TdmdDataModule
     Left = 288
     Top = 128
   end
-  object rsdaMember: TRESTResponseDataSetAdapter
+  object rdsaMember: TRESTResponseDataSetAdapter
     Active = True
     Dataset = cdsMember
     FieldDefs = <>

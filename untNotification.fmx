@@ -92,20 +92,59 @@ inherited frmNotification: TfrmNotification
       StyledSettings = [Family, Size, FontColor]
       Height = 49.000000000000000000
       TextSettings.Font.Style = [fsBold]
+      Text = 
+        'You have been invited to the team <a href='#39'/team/view/28'#39'>RYP Fo' +
+        'unders</a>'
       Width = 360.000000000000000000
     end
-    object panelFrom: TPanel
-      Align = Top
-      Height = 120.000000000000000000
-      Position.Y = 49.000000000000000000
-      Width = 360.000000000000000000
+    object btnRead: TButton
+      Align = MostBottom
+      Height = 44.000000000000000000
+      Position.Y = 370.000000000000000000
       TabOrder = 2
-      object lblFrom: TLabel
-        Align = Top
-        Height = 23.000000000000000000
-        Text = 'From'
-        Width = 360.000000000000000000
-      end
+      Text = 'Mark Read'
+      Width = 360.000000000000000000
+      OnClick = btnReadClick
+    end
+    object lblFrom: TLabel
+      Align = Top
+      Height = 23.000000000000000000
+      Position.Y = 49.000000000000000000
+      Text = 'From'
+      Width = 360.000000000000000000
+    end
+    object lblDate: TLabel
+      Align = Top
+      Height = 23.000000000000000000
+      Position.Y = 72.000000000000000000
+      Text = '2014-05-07 00:00:00'
+      Width = 360.000000000000000000
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmdDataModule.cdsNotifications
+    ScopeMappings = <>
+    Left = 168
+    Top = 272
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'notification'
+      Component = lblNotification
+      ComponentProperty = 'Text'
+    end
+    object LinkPropertyToFieldText2: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'date_added'
+      Component = lblDate
+      ComponentProperty = 'Text'
     end
   end
 end

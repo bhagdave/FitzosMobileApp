@@ -23,7 +23,7 @@ type
     cdsNotifications: TClientDataSet;
     reqMember: TRESTRequest;
     respMember: TRESTResponse;
-    rsdaMember: TRESTResponseDataSetAdapter;
+    rdsaMember: TRESTResponseDataSetAdapter;
     cdsMember: TClientDataSet;
   private
     { Private declarations }
