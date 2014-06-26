@@ -189,6 +189,12 @@ object dmdDataModule: TdmdDataModule
       item
         name = 'id'
         Value = '9'
+      end
+      item
+        name = 'key'
+      end
+      item
+        name = 'signature'
       end>
     Resource = 'members/getMember'
     Response = respMember
@@ -260,6 +266,12 @@ object dmdDataModule: TdmdDataModule
       item
         name = 'id'
         Value = '7'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'teams/getTeam'
     Response = respTeam

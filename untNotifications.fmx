@@ -1,6 +1,7 @@
 inherited frmNotifications: TfrmNotifications
   Caption = 'Notifications'
   ClientWidth = 384
+  OnActivate = FormActivate
   OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 384

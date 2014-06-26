@@ -44,11 +44,12 @@ begin
   begin
       rdsaGeneric.ClearDataSet;
       respGeneric.Content.Empty;
+      reqGeneric.Params.Clear;
       reqGeneric.ClearBody;
       reqGeneric.Resource := 'notifications/markRead';
-      reqGeneric.Params.ParameterByName('id').Value := cdsNotifications.FieldByName('id').AsString;
-      reqGeneric.Params.ParameterByName('signature').Value := signature('markRead');
-      reqGeneric.Params.ParameterByName('key').Value := getApiKey;
+      reqGeneric.Params.addItem('id',cdsNotifications.FieldByName('id').AsString);
+      reqGeneric.Params.addItem('signature',signature('markRead'));
+      reqGeneric.Params.addItem('key',getApiKey);
       reqGeneric.Execute;
       btnRead.Enabled := false;
   end;
