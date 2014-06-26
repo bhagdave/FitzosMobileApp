@@ -27,6 +27,7 @@ type
   end;
 
   procedure showNewForm(ClassName : String);
+  function getResultString(Content : String):String;
 
 var
   frmMain: TfrmMain;
@@ -36,7 +37,24 @@ implementation
 
 {$R *.fmx}
 uses
-  untBaseForm;
+  untBaseForm,System.JSON;
+
+function getResultString(Content : String):String;
+var
+  lJSONObject : TJSONObject;
+  lJSONPair   : TJSONPair;
+  lStatus     : TJsonValue;
+begin
+    try
+      lJSONObject := TJSONObject.Create();
+      lJSONObject.Parse(TEncoding.ASCII.GetBytes(Content),0);
+      lStatus := lJSONObject.Get('Status').JsonValue;
+      result  := lStatus.Value;
+    finally
+      lJSONObject.Free;
+      lStatus.Free;
+    end;
+end;
 
 procedure showNewForm(ClassName : String);
 var ObjClass: TFmxObjectClass;
