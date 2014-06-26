@@ -229,4 +229,29 @@ object dmdDataModule: TdmdDataModule
       4E4E756C6C02004A000000010005574944544802000200FE0101000A4348414E
       47455F4C4F4704008200030000000100000000000000040000000401}
   end
+  object reqGeneric: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Response = respGeneric
+    SynchronizedEvents = False
+    Left = 416
+    Top = 81
+  end
+  object respGeneric: TRESTResponse
+    Left = 416
+    Top = 136
+  end
+  object rdsaGeneric: TRESTResponseDataSetAdapter
+    Dataset = cdsGeneric
+    FieldDefs = <>
+    Response = respGeneric
+    Left = 416
+    Top = 192
+  end
+  object cdsGeneric: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 408
+    Top = 248
+  end
 end

@@ -25,6 +25,10 @@ type
     respMember: TRESTResponse;
     rdsaMember: TRESTResponseDataSetAdapter;
     cdsMember: TClientDataSet;
+    reqGeneric: TRESTRequest;
+    respGeneric: TRESTResponse;
+    rdsaGeneric: TRESTResponseDataSetAdapter;
+    cdsGeneric: TClientDataSet;
   private
     { Private declarations }
     sSessionKey : String;
