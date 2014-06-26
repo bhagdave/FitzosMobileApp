@@ -40,6 +40,18 @@ procedure TfrmNotification.btnReadClick(Sender: TObject);
 begin
   inherited;
   // ok we need to send a markedread call
+  with dmdDataModule do
+  begin
+      rdsaGeneric.ClearDataSet;
+      respGeneric.Content.Empty;
+      reqGeneric.ClearBody;
+      reqGeneric.Resource := 'notifications/markRead';
+      reqGeneric.Params.ParameterByName('id').Value := cdsNotifications.FieldByName('id').AsString;
+      reqGeneric.Params.ParameterByName('signature').Value := signature('markRead');
+      reqGeneric.Params.ParameterByName('key').Value := getApiKey;
+      reqGeneric.Execute;
+      btnRead.Enabled := false;
+  end;
 end;
 
 procedure TfrmNotification.FormShow(Sender: TObject);
