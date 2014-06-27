@@ -373,4 +373,117 @@ object dmdDataModule: TdmdDataModule
       7400650072007300060079006500730004003100300006007900650073000200
       3400}
   end
+  object reqMemberTeams: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '7'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'teams/getTeam'
+    Response = respMemberTeams
+    SynchronizedEvents = False
+    Left = 672
+    Top = 89
+  end
+  object respMemberTeams: TRESTResponse
+    ContentType = 'text/html'
+    Left = 672
+    Top = 144
+  end
+  object rdsaMemberTeams: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = cdsMemberTeams
+    FieldDefs = <>
+    Response = respMemberTeams
+    RootElement = 'Result'
+    Left = 672
+    Top = 200
+  end
+  object cdsMemberTeams: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'owner'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 664
+    Top = 256
+    Data = {
+      9E0100009619E0BD01000000180000000B000100000003000000660102696402
+      004A000000010005574944544802000200FE01046E616D6502004A0000000100
+      05574944544802000200FE0107636F6E74656E7402004A000000010005574944
+      544802000200FE01046461746502004A000000010005574944544802000200FE
+      010661637469766502004A000000010005574944544802000200FE010A646174
+      655F616464656402004A000000010005574944544802000200FE010D6C617374
+      5F6D6F64696669656402004A000000010005574944544802000200FE0105696D
+      61676502004A000000010005574944544802000200FE01056F776E657202004A
+      000000010005574944544802000200FE01067075626C696302004A0000000100
+      05574944544802000200FE010873706F72745F696402004A0000000100055749
+      44544802000200FE0101000A4348414E47455F4C4F4704008200030000000100
+      000000000000040000000450540002003700140034006B00200046006F006F00
+      7400650072007300060079006500730004003100300006007900650073000200
+      3400}
+  end
 end

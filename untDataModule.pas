@@ -33,6 +33,10 @@ type
     respTeam: TRESTResponse;
     rdsaTeam: TRESTResponseDataSetAdapter;
     cdsTeam: TClientDataSet;
+    reqMemberTeams: TRESTRequest;
+    respMemberTeams: TRESTResponse;
+    rdsaMemberTeams: TRESTResponseDataSetAdapter;
+    cdsMemberTeams: TClientDataSet;
   private
     { Private declarations }
     sSessionKey : String;
