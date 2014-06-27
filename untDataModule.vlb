@@ -13,9 +13,6 @@ Coordinates=240,551,98,33
 [respLogin]
 Coordinates=229,10,85,267
 
-[cdsNotifications]
-Coordinates=10,287,94,267
-
 [reqNotifications]
 Coordinates=424,10,92,123
 
@@ -26,7 +23,7 @@ Coordinates=10,10,98,267
 Coordinates=220,287,50,69
 
 []
-Coordinates=69,592,104,87
+Coordinates=15,296,88,69
 
 [respMemberTeams]
 Coordinates=190,287,108,267
@@ -77,9 +74,15 @@ Coordinates=336,571,70,51
 Coordinates=476,396,132,33
 
 [fdmMemberTeams]
-Coordinates=800,90,105,87
+Coordinates=915,100,105,33
 Visible=True
 
 [fdmMemberTeamsid]
 Coordinates=554,292,114,33
+
+[dsMemberTeams]
+Coordinates=800,90,98,105
+
+[fdmNotifications]
+Coordinates=113,306,88,69
 

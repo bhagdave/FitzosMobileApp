@@ -47,7 +47,7 @@ begin
       reqGeneric.Params.Clear;
       reqGeneric.ClearBody;
       reqGeneric.Resource := 'notifications/markRead';
-      reqGeneric.Params.addItem('id',cdsNotifications.FieldByName('id').AsString);
+      reqGeneric.Params.addItem('id',fdmNotifications.FieldByName('id').AsString);
       reqGeneric.Params.addItem('signature',signature('markRead'));
       reqGeneric.Params.addItem('key',getApiKey);
       reqGeneric.Execute;
@@ -63,7 +63,7 @@ begin
   inherited;
   sFrom := 'From Administrator';
   // where did the message come from....
-  if dmdDataModule.cdsNotifications.FieldByName('from_table').AsString = 'member' then
+  if dmdDataModule.fdmNotifications.FieldByName('from_table').AsString = 'member' then
   begin
     // get the member
     // Open up the data.
@@ -74,7 +74,7 @@ begin
       cdsMember.Close;
       respMember.Content.Empty;
       reqMember.ClearBody;
-      reqMember.Params.ParameterByName('id').Value := cdsNotifications.FieldByName('from_key').AsString;
+      reqMember.Params.ParameterByName('id').Value := fdmNotifications.FieldByName('from_key').AsString;
       reqMember.Params.ParameterByName('signature').Value := signature('getMember');
       reqMember.Params.ParameterByName('key').Value := getApiKey;
       reqMember.Execute;
@@ -91,7 +91,7 @@ begin
       end;
     end;
   end
-  else if dmdDataModule.cdsNotifications.FieldByName('from_table').AsString = 'member' then
+  else if dmdDataModule.fdmNotifications.FieldByName('from_table').AsString = 'member' then
   begin
     // get the member
     // Open up the data.
@@ -102,7 +102,7 @@ begin
       cdsTeam.Close;
       respTeam.Content.Empty;
       reqTeam.ClearBody;
-      reqTeam.Params.ParameterByName('id').Value := cdsNotifications.FieldByName('from_key').AsString;
+      reqTeam.Params.ParameterByName('id').Value := fdmNotifications.FieldByName('from_key').AsString;
       reqTeam.Params.ParameterByName('signature').Value := signature('getTeam');
       reqTeam.Params.ParameterByName('key').Value := getApiKey;
       reqTeam.Execute;

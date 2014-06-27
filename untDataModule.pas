@@ -20,7 +20,6 @@ type
     reqNotifications: TRESTRequest;
     respNotifications: TRESTResponse;
     rdsaNotifications: TRESTResponseDataSetAdapter;
-    cdsNotifications: TClientDataSet;
     reqMember: TRESTRequest;
     respMember: TRESTResponse;
     rdsaMember: TRESTResponseDataSetAdapter;
@@ -40,6 +39,20 @@ type
     fdmMemberTeamsid: TWideStringField;
     fdmMemberTeamsname: TWideStringField;
     dsMemberTeams: TBindSourceDB;
+    fdmNotifications: TFDMemTable;
+    fdmNotificationsid: TWideStringField;
+    fdmNotificationsfrom_table: TWideStringField;
+    fdmNotificationsfrom_key: TWideStringField;
+    fdmNotificationsto_table: TWideStringField;
+    fdmNotificationsto_key: TWideStringField;
+    fdmNotificationsnotification: TWideStringField;
+    fdmNotificationsparent_id: TWideStringField;
+    fdmNotificationspublished: TWideStringField;
+    fdmNotificationsdate_added: TWideStringField;
+    fdmNotificationsimage: TWideStringField;
+    fdmNotificationsread: TWideStringField;
+    fdmNotificationstype: TWideStringField;
+    dsNotifications: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;

@@ -85,103 +85,12 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaNotifications: TRESTResponseDataSetAdapter
     Active = True
-    Dataset = cdsNotifications
+    Dataset = fdmNotifications
     FieldDefs = <>
+    Response = respNotifications
     RootElement = 'Result'
     Left = 200
     Top = 184
-  end
-  object cdsNotifications: TClientDataSet
-    Active = True
-    Aggregates = <>
-    FieldDefs = <
-      item
-        Name = 'id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'from_table'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'from_key'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'to_table'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'to_key'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'notification'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'parent_id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'published'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'date_added'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'image'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'read'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'type'
-        DataType = ftWideString
-        Size = 255
-      end>
-    IndexDefs = <>
-    Params = <>
-    StoreDefs = True
-    Left = 128
-    Top = 248
-    Data = {
-      860200009619E0BD01000000180000000C0001000000030000008C0102696402
-      004A000000010005574944544802000200FE010A66726F6D5F7461626C650200
-      4A000000010005574944544802000200FE010866726F6D5F6B657902004A0000
-      00010005574944544802000200FE0108746F5F7461626C6502004A0000000100
-      05574944544802000200FE0106746F5F6B657902004A00000001000557494454
-      4802000200FE010C6E6F74696669636174696F6E02004A000000010005574944
-      544802000200FE0109706172656E745F696402004A0000000100055749445448
-      02000200FE01097075626C697368656402004A00000001000557494454480200
-      0200FE010A646174655F616464656402004A0000000100055749445448020002
-      00FE0105696D61676502004A000000010005574944544802000200FE01047265
-      616402004A000000010005574944544802000200FE01047479706502004A0000
-      00010005574944544802000200FE0101000A4348414E47455F4C4F4704008200
-      03000000010000000000000004000000040010440400390032000C006D006500
-      6D006200650072000400310030000C006D0065006D0062006500720002003900
-      940059006F0075002000680061007600650020006200650065006E0020006900
-      6E0076006900740065006400200074006F002000740068006500200074006500
-      61006D0020003C006100200068007200650066003D0027002F00740065006100
-      6D002F0076006900650077002F003200380027003E0052005900500020004600
-      6F0075006E0064006500720073003C002F0061003E0006007900650073002600
-      32003000310034002D00300035002D00300037002000300030003A0030003000
-      3A003000300002003000}
   end
   object reqMember: TRESTRequest
     Client = restAPI
@@ -443,5 +352,133 @@ object dmdDataModule: TdmdDataModule
     ScopeMappings = <>
     Left = 680
     Top = 320
+  end
+  object fdmNotifications: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'from_table'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'from_key'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'to_table'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'to_key'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'notification'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'parent_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'published'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'read'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'type'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 200
+    Top = 256
+    object fdmNotificationsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmNotificationsfrom_table: TWideStringField
+      FieldName = 'from_table'
+      Size = 255
+    end
+    object fdmNotificationsfrom_key: TWideStringField
+      FieldName = 'from_key'
+      Size = 255
+    end
+    object fdmNotificationsto_table: TWideStringField
+      FieldName = 'to_table'
+      Size = 255
+    end
+    object fdmNotificationsto_key: TWideStringField
+      FieldName = 'to_key'
+      Size = 255
+    end
+    object fdmNotificationsnotification: TWideStringField
+      FieldName = 'notification'
+      Size = 255
+    end
+    object fdmNotificationsparent_id: TWideStringField
+      FieldName = 'parent_id'
+      Size = 255
+    end
+    object fdmNotificationspublished: TWideStringField
+      FieldName = 'published'
+      Size = 255
+    end
+    object fdmNotificationsdate_added: TWideStringField
+      FieldName = 'date_added'
+      Size = 255
+    end
+    object fdmNotificationsimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmNotificationsread: TWideStringField
+      FieldName = 'read'
+      Size = 255
+    end
+    object fdmNotificationstype: TWideStringField
+      FieldName = 'type'
+      Size = 255
+    end
+  end
+  object dsNotifications: TBindSourceDB
+    DataSet = fdmNotifications
+    ScopeMappings = <>
+    Left = 200
+    Top = 312
   end
 end

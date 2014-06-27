@@ -97,3 +97,6 @@ Visible=True
 [lblFrom]
 Coordinates=580,508,52,51
 
+[dmdDataModule.fdmMemberTeams]
+Visible=False
+

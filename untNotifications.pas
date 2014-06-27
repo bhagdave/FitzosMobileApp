@@ -13,7 +13,6 @@ uses
 type
   TfrmNotifications = class(TfrmBase)
     lvNotifications: TListView;
-    BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
     procedure FormShow(Sender: TObject);
@@ -50,7 +49,7 @@ begin
   begin
     // Open up the data.
     rdsaNotifications.ClearDataSet;
-    cdsNotifications.Close;
+    fdmNotifications.Close;
     respNotifications.Content.Empty;
     reqNotifications.ClearBody;
     reqNotifications.Params.ParameterByName('id').Value := memberId;
@@ -61,7 +60,7 @@ begin
     if (sResult = 'OK') then
     begin
         rdsaNotifications.Response := respNotifications;
-        cdsNotifications.Open;
+        fdmNotifications.Open;
     end;
   end;
 end;
