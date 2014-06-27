@@ -53,6 +53,7 @@ begin
       reqGeneric.Execute;
       btnRead.Enabled := false;
   end;
+  close;
 end;
 
 procedure TfrmNotification.FormShow(Sender: TObject);

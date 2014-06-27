@@ -23,7 +23,7 @@ Coordinates=10,10,98,267
 Coordinates=220,287,50,69
 
 []
-Coordinates=15,296,88,69
+Coordinates=336,571,70,51
 
 [respMemberTeams]
 Coordinates=190,287,108,267
@@ -66,9 +66,6 @@ Coordinates=336,143,85,267
 
 [reqMemberTeams]
 Coordinates=336,1,102,123
-
-[cdsGeneric]
-Coordinates=336,571,70,51
 
 [fdmMemberTeamsname]
 Coordinates=476,396,132,33

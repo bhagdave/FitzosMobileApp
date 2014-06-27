@@ -27,7 +27,6 @@ type
     reqGeneric: TRESTRequest;
     respGeneric: TRESTResponse;
     rdsaGeneric: TRESTResponseDataSetAdapter;
-    cdsGeneric: TClientDataSet;
     reqTeam: TRESTRequest;
     respTeam: TRESTResponse;
     rdsaTeam: TRESTResponseDataSetAdapter;
@@ -53,6 +52,7 @@ type
     fdmNotificationsread: TWideStringField;
     fdmNotificationstype: TWideStringField;
     dsNotifications: TBindSourceDB;
+    fdmGeneric: TFDMemTable;
   private
     { Private declarations }
     sSessionKey : String;

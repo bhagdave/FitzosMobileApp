@@ -157,17 +157,11 @@ object dmdDataModule: TdmdDataModule
     Top = 136
   end
   object rdsaGeneric: TRESTResponseDataSetAdapter
-    Dataset = cdsGeneric
+    Dataset = fdmGeneric
     FieldDefs = <>
     Response = respGeneric
     Left = 416
     Top = 192
-  end
-  object cdsGeneric: TClientDataSet
-    Aggregates = <>
-    Params = <>
-    Left = 408
-    Top = 248
   end
   object reqTeam: TRESTRequest
     Client = restAPI
@@ -480,5 +474,15 @@ object dmdDataModule: TdmdDataModule
     ScopeMappings = <>
     Left = 200
     Top = 312
+  end
+  object fdmGeneric: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 416
+    Top = 248
   end
 end
