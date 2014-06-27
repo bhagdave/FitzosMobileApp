@@ -50,7 +50,7 @@ Coordinates=620,10,184,267
 Coordinates=182,342,175,123
 
 [dmdDataModule.cdsNotifications]
-Coordinates=228,10,156,303
+Coordinates=228,10,156,285
 Visible=False
 
 [dmdDataModule.reqLogin]
@@ -71,18 +71,54 @@ Visible=True
 LayerNames=dmdDataModule.cdsNotifications
 
 [lvNotifications]
-Coordinates=970,140,89,141
+Coordinates=970,140,89,177
 Visible=True
 
 [dmdDataModule.dscNotifications]
 Coordinates=842,1,177,267
 
 [BindSourceDB1]
-Coordinates=228,10,156,303
+Coordinates=228,10,156,285
 
 [BindingsList1]
 Coordinates=209,296,82,33
 
 [Module Settings]
 ModelLayerNames=dmdDataModule.cdsNotifications
+
+[dmdDataModule.cdsMember]
+Coordinates=686,572,154,69
+
+[dmdDataModule.cdsGeneric]
+Coordinates=686,296,153,51
+
+[dmdDataModule.reqGeneric]
+Coordinates=686,366,151,69
+
+[dmdDataModule.cdsMemberTeams]
+Coordinates=461,296,187,249
+
+[dmdDataModule.respMember]
+Coordinates=422,590,158,267
+
+[dmdDataModule.reqMemberTeams]
+Coordinates=191,286,185,123
+
+[dmdDataModule.respGeneric]
+Coordinates=263,734,157,267
+
+[dmdDataModule.reqTeam]
+Coordinates=61,521,140,123
+
+[dmdDataModule.respMemberTeams]
+Coordinates=0,0,191,267
+
+[dmdDataModule.reqMember]
+Coordinates=32,286,152,123
+
+[dmdDataModule.cdsTeam]
+Coordinates=210,447,141,249
+
+[dmdDataModule.respTeam]
+Coordinates=210,1,145,267
 

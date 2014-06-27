@@ -62,10 +62,6 @@ begin
     begin
         rdsaNotifications.Response := respNotifications;
         cdsNotifications.Open;
-    end
-    else
-    begin
-        showmessage(respNotifications.Content);
     end;
   end;
 end;
