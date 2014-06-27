@@ -545,13 +545,13 @@ object dmdDataModule: TdmdDataModule
     Resource = 'teams/getTeamMembers'
     Response = respTeamMembers
     SynchronizedEvents = False
-    Left = 808
-    Top = 97
+    Left = 48
+    Top = 361
   end
   object respTeamMembers: TRESTResponse
     ContentType = 'text/html'
-    Left = 808
-    Top = 152
+    Left = 48
+    Top = 416
   end
   object rdsaTeamMembers: TRESTResponseDataSetAdapter
     Active = True
@@ -559,8 +559,8 @@ object dmdDataModule: TdmdDataModule
     FieldDefs = <>
     Response = respTeamMembers
     RootElement = 'Result'
-    Left = 808
-    Top = 208
+    Left = 48
+    Top = 472
   end
   object fdmTeamMembers: TFDMemTable
     Active = True
@@ -658,8 +658,8 @@ object dmdDataModule: TdmdDataModule
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
     StoreDefs = True
-    Left = 808
-    Top = 272
+    Left = 48
+    Top = 536
     object fdmTeamMembersid: TWideStringField
       FieldName = 'id'
       Size = 255
@@ -728,5 +728,226 @@ object dmdDataModule: TdmdDataModule
       FieldName = 'image'
       Size = 255
     end
+  end
+  object dsTeamMembers: TBindSourceDB
+    DataSet = fdmTeamMembers
+    ScopeMappings = <>
+    Left = 56
+    Top = 584
+  end
+  object reqTeamEvents: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '21'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'teams/getTeamEvents'
+    Response = respTeamEvents
+    SynchronizedEvents = False
+    Left = 168
+    Top = 361
+  end
+  object respTeamEvents: TRESTResponse
+    ContentType = 'text/html'
+    Left = 168
+    Top = 416
+  end
+  object rdsaTeamEvents: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmTeamEvents
+    FieldDefs = <>
+    Response = respTeamEvents
+    RootElement = 'Result'
+    Left = 168
+    Top = 472
+  end
+  object fdmTeamEvents: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'published'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'type'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sub_type'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'team_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'time'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'end_time'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'end_date'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 168
+    Top = 536
+    object fdmTeamEventsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmTeamEventsname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmTeamEventscontent: TWideStringField
+      FieldName = 'content'
+      Size = 255
+    end
+    object fdmTeamEventsdate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmTeamEventspublished: TWideStringField
+      FieldName = 'published'
+      Size = 255
+    end
+    object fdmTeamEventsdate_added: TWideStringField
+      FieldName = 'date_added'
+      Size = 255
+    end
+    object fdmTeamEventslast_modified: TWideStringField
+      FieldName = 'last_modified'
+      Size = 255
+    end
+    object fdmTeamEventsimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmTeamEventstype: TWideStringField
+      FieldName = 'type'
+      Size = 255
+    end
+    object fdmTeamEventssub_type: TWideStringField
+      FieldName = 'sub_type'
+      Size = 255
+    end
+    object fdmTeamEventspublic: TWideStringField
+      FieldName = 'public'
+      Size = 255
+    end
+    object fdmTeamEventsteam_id: TWideStringField
+      FieldName = 'team_id'
+      Size = 255
+    end
+    object fdmTeamEventstime: TWideStringField
+      FieldName = 'time'
+      Size = 255
+    end
+    object fdmTeamEventsmember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmTeamEventslocation: TWideStringField
+      FieldName = 'location'
+      Size = 255
+    end
+    object fdmTeamEventsend_time: TWideStringField
+      FieldName = 'end_time'
+      Size = 255
+    end
+    object fdmTeamEventssport_id: TWideStringField
+      FieldName = 'sport_id'
+      Size = 255
+    end
+    object fdmTeamEventsend_date: TWideStringField
+      FieldName = 'end_date'
+      Size = 255
+    end
+  end
+  object dsTeamEvents: TBindSourceDB
+    DataSet = fdmTeamEvents
+    ScopeMappings = <>
+    Left = 168
+    Top = 584
   end
 end

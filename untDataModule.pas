@@ -85,6 +85,30 @@ type
     fdmTeamMembersemail: TWideStringField;
     fdmTeamMemberspassword: TWideStringField;
     fdmTeamMembersimage: TWideStringField;
+    dsTeamMembers: TBindSourceDB;
+    reqTeamEvents: TRESTRequest;
+    respTeamEvents: TRESTResponse;
+    rdsaTeamEvents: TRESTResponseDataSetAdapter;
+    fdmTeamEvents: TFDMemTable;
+    fdmTeamEventsid: TWideStringField;
+    fdmTeamEventsname: TWideStringField;
+    fdmTeamEventscontent: TWideStringField;
+    fdmTeamEventsdate: TWideStringField;
+    fdmTeamEventspublished: TWideStringField;
+    fdmTeamEventsdate_added: TWideStringField;
+    fdmTeamEventslast_modified: TWideStringField;
+    fdmTeamEventsimage: TWideStringField;
+    fdmTeamEventstype: TWideStringField;
+    fdmTeamEventssub_type: TWideStringField;
+    fdmTeamEventspublic: TWideStringField;
+    fdmTeamEventsteam_id: TWideStringField;
+    fdmTeamEventstime: TWideStringField;
+    fdmTeamEventsmember_id: TWideStringField;
+    fdmTeamEventslocation: TWideStringField;
+    fdmTeamEventsend_time: TWideStringField;
+    fdmTeamEventssport_id: TWideStringField;
+    fdmTeamEventsend_date: TWideStringField;
+    dsTeamEvents: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;
