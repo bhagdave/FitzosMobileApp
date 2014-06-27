@@ -111,23 +111,5 @@ inherited frmTeam: TfrmTeam
   end
   inherited pnlCenter: TPanel
     Width = 384.000000000000000000
-    object btnCreate: TButton
-      Align = MostBottom
-      Height = 44.000000000000000000
-      Position.Y = 370.000000000000000000
-      TabOrder = 1
-      Text = 'Create Team'
-      Width = 384.000000000000000000
-    end
-    object lvTeams: TListView
-      ItemAppearanceClassName = 'TListItemAppearance'
-      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
-      HeaderAppearanceClassName = 'TListHeaderObjects'
-      FooterAppearanceClassName = 'TListHeaderObjects'
-      Align = Client
-      Height = 370.000000000000000000
-      TabOrder = 2
-      Width = 384.000000000000000000
-    end
   end
 end

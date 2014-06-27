@@ -9,8 +9,6 @@ uses
 
 type
   TfrmTeam = class(TfrmBase)
-    btnCreate: TButton;
-    lvTeams: TListView;
   private
     { Private declarations }
   public
