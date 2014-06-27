@@ -950,4 +950,147 @@ object dmdDataModule: TdmdDataModule
     Left = 168
     Top = 584
   end
+  object reqTeamWall: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '28'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'teams/getTeamWall'
+    Response = respTeamWall
+    SynchronizedEvents = False
+    Left = 264
+    Top = 369
+  end
+  object respTeamWall: TRESTResponse
+    ContentType = 'text/html'
+    Left = 264
+    Top = 424
+  end
+  object rdsaTeamWall: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmTeamWall
+    FieldDefs = <>
+    Response = respTeamWall
+    RootElement = 'Result'
+    Left = 264
+    Top = 480
+  end
+  object fdmTeamWall: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'team_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'message'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'deleted'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'memberId'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 264
+    Top = 528
+    object fdmTeamWallid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmTeamWallteam_id: TWideStringField
+      FieldName = 'team_id'
+      Size = 255
+    end
+    object fdmTeamWallmessage: TWideStringField
+      FieldName = 'message'
+      Size = 255
+    end
+    object fdmTeamWallimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmTeamWalldate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmTeamWalldeleted: TWideStringField
+      FieldName = 'deleted'
+      Size = 255
+    end
+    object fdmTeamWallmember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmTeamWallfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 255
+    end
+    object fdmTeamWalllast_name: TWideStringField
+      FieldName = 'last_name'
+      Size = 255
+    end
+    object fdmTeamWallmemberId: TWideStringField
+      FieldName = 'memberId'
+      Size = 255
+    end
+  end
+  object dsTeamWall: TBindSourceDB
+    DataSet = fdmTeamWall
+    ScopeMappings = <>
+    Left = 264
+    Top = 584
+  end
 end

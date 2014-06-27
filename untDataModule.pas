@@ -109,6 +109,21 @@ type
     fdmTeamEventssport_id: TWideStringField;
     fdmTeamEventsend_date: TWideStringField;
     dsTeamEvents: TBindSourceDB;
+    reqTeamWall: TRESTRequest;
+    respTeamWall: TRESTResponse;
+    rdsaTeamWall: TRESTResponseDataSetAdapter;
+    fdmTeamWall: TFDMemTable;
+    fdmTeamWallid: TWideStringField;
+    fdmTeamWallteam_id: TWideStringField;
+    fdmTeamWallmessage: TWideStringField;
+    fdmTeamWallimage: TWideStringField;
+    fdmTeamWalldate: TWideStringField;
+    fdmTeamWalldeleted: TWideStringField;
+    fdmTeamWallmember_id: TWideStringField;
+    fdmTeamWallfirst_name: TWideStringField;
+    fdmTeamWalllast_name: TWideStringField;
+    fdmTeamWallmemberId: TWideStringField;
+    dsTeamWall: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;
