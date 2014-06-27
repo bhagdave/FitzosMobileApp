@@ -66,9 +66,6 @@ Coordinates=1078,342,152,123
 [dmdDataModule.reqNotifications]
 Coordinates=236,674,175,123
 
-[dmdDataModule.cdsMemberTeams]
-Coordinates=851,674,187,87
-
 [dmdDataModule.respTeam]
 Coordinates=840,10,145,267
 
@@ -83,12 +80,6 @@ Coordinates=10,674,185,123
 
 [dmdDataModule.respMemberTeams]
 Coordinates=607,10,191,267
-
-[dmdDataModule.cdsGeneric]
-Coordinates=443,830,153,51
-
-[dmdDataModule.cdsNotifications]
-Coordinates=10,342,177,267
 
 [dmdDataModule.cdsMember]
 Coordinates=10,830,154,69
@@ -128,4 +119,7 @@ EditingLayerName=
 
 [dmdDataModule.dsMemberTeams]
 Coordinates=836,502,181,105
+
+[dmdDataModule.]
+Coordinates=443,830,153,51
 

@@ -1,7 +1,7 @@
 object dmdDataModule: TdmdDataModule
   OldCreateOrder = False
   Height = 635
-  Width = 1008
+  Width = 1021
   object restAPI: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
@@ -275,6 +275,50 @@ object dmdDataModule: TdmdDataModule
       000000000000040000000450540002003700140034006B00200046006F006F00
       7400650072007300060079006500730004003100300006007900650073000200
       3400}
+    object cdsTeamid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object cdsTeamname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object cdsTeamcontent: TWideStringField
+      FieldName = 'content'
+      Size = 255
+    end
+    object cdsTeamdate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object cdsTeamactive: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object cdsTeamdate_added: TWideStringField
+      FieldName = 'date_added'
+      Size = 255
+    end
+    object cdsTeamlast_modified: TWideStringField
+      FieldName = 'last_modified'
+      Size = 255
+    end
+    object cdsTeamimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object cdsTeamowner: TWideStringField
+      FieldName = 'owner'
+      Size = 255
+    end
+    object cdsTeampublic: TWideStringField
+      FieldName = 'public'
+      Size = 255
+    end
+    object cdsTeamsport_id: TWideStringField
+      FieldName = 'sport_id'
+      Size = 255
+    end
   end
   object reqMemberTeams: TRESTRequest
     Client = restAPI
@@ -484,5 +528,205 @@ object dmdDataModule: TdmdDataModule
     UpdateOptions.CheckRequired = False
     Left = 416
     Top = 248
+  end
+  object reqTeamMembers: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '28'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'teams/getTeamMembers'
+    Response = respTeamMembers
+    SynchronizedEvents = False
+    Left = 808
+    Top = 97
+  end
+  object respTeamMembers: TRESTResponse
+    ContentType = 'text/html'
+    Left = 808
+    Top = 152
+  end
+  object rdsaTeamMembers: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmTeamMembers
+    FieldDefs = <>
+    Response = respTeamMembers
+    RootElement = 'Result'
+    Left = 808
+    Top = 208
+  end
+  object fdmTeamMembers: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'team_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'status'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'requested_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'invited_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'approved_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'removed_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'left_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'language'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'salt'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'email'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'password'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 808
+    Top = 272
+    object fdmTeamMembersid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmTeamMembersmember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmTeamMembersteam_id: TWideStringField
+      FieldName = 'team_id'
+      Size = 255
+    end
+    object fdmTeamMembersstatus: TWideStringField
+      FieldName = 'status'
+      Size = 255
+    end
+    object fdmTeamMembersrequested_date: TWideStringField
+      FieldName = 'requested_date'
+      Size = 255
+    end
+    object fdmTeamMembersinvited_date: TWideStringField
+      FieldName = 'invited_date'
+      Size = 255
+    end
+    object fdmTeamMembersapproved_date: TWideStringField
+      FieldName = 'approved_date'
+      Size = 255
+    end
+    object fdmTeamMembersremoved_date: TWideStringField
+      FieldName = 'removed_date'
+      Size = 255
+    end
+    object fdmTeamMembersleft_date: TWideStringField
+      FieldName = 'left_date'
+      Size = 255
+    end
+    object fdmTeamMembersactive: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object fdmTeamMembersfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 255
+    end
+    object fdmTeamMemberslast_name: TWideStringField
+      FieldName = 'last_name'
+      Size = 255
+    end
+    object fdmTeamMemberslanguage: TWideStringField
+      FieldName = 'language'
+      Size = 255
+    end
+    object fdmTeamMemberssalt: TWideStringField
+      FieldName = 'salt'
+      Size = 255
+    end
+    object fdmTeamMembersemail: TWideStringField
+      FieldName = 'email'
+      Size = 255
+    end
+    object fdmTeamMemberspassword: TWideStringField
+      FieldName = 'password'
+      Size = 255
+    end
+    object fdmTeamMembersimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
   end
 end

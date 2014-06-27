@@ -119,6 +119,7 @@ inherited frmTeams: TfrmTeams
       TabOrder = 0
       Text = 'Create Team'
       Width = 384.000000000000000000
+      OnClick = btnCreateClick
     end
     object lvTeams: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
@@ -130,6 +131,7 @@ inherited frmTeams: TfrmTeams
       TabOrder = 2
       Width = 384.000000000000000000
       CanSwipeDelete = False
+      OnItemClick = lvTeamsItemClick
     end
   end
   object BindSourceDB1: TBindSourceDB

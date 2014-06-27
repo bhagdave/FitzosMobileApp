@@ -18,6 +18,9 @@ type
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
     procedure FormShow(Sender: TObject);
+    procedure btnCreateClick(Sender: TObject);
+    procedure lvTeamsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -33,6 +36,12 @@ uses
   untMainForm;
 
 {$R *.fmx}
+procedure TfrmTeams.btnCreateClick(Sender: TObject);
+begin
+  inherited;
+  showNewForm('TfrmTeamCreate');
+end;
+
 procedure TfrmTeams.FormShow(Sender: TObject);
 var
   sResult : String;
@@ -63,6 +72,13 @@ begin
     end;
   end;
     lvTeams.items.EndUpdate;
+end;
+
+procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+begin
+  inherited;
+  showNewForm('TfrmTeam');
 end;
 
 initialization

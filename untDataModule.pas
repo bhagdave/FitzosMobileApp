@@ -53,6 +53,38 @@ type
     fdmNotificationstype: TWideStringField;
     dsNotifications: TBindSourceDB;
     fdmGeneric: TFDMemTable;
+    cdsTeamid: TWideStringField;
+    cdsTeamname: TWideStringField;
+    cdsTeamcontent: TWideStringField;
+    cdsTeamdate: TWideStringField;
+    cdsTeamactive: TWideStringField;
+    cdsTeamdate_added: TWideStringField;
+    cdsTeamlast_modified: TWideStringField;
+    cdsTeamimage: TWideStringField;
+    cdsTeamowner: TWideStringField;
+    cdsTeampublic: TWideStringField;
+    cdsTeamsport_id: TWideStringField;
+    reqTeamMembers: TRESTRequest;
+    respTeamMembers: TRESTResponse;
+    rdsaTeamMembers: TRESTResponseDataSetAdapter;
+    fdmTeamMembers: TFDMemTable;
+    fdmTeamMembersid: TWideStringField;
+    fdmTeamMembersmember_id: TWideStringField;
+    fdmTeamMembersteam_id: TWideStringField;
+    fdmTeamMembersstatus: TWideStringField;
+    fdmTeamMembersrequested_date: TWideStringField;
+    fdmTeamMembersinvited_date: TWideStringField;
+    fdmTeamMembersapproved_date: TWideStringField;
+    fdmTeamMembersremoved_date: TWideStringField;
+    fdmTeamMembersleft_date: TWideStringField;
+    fdmTeamMembersactive: TWideStringField;
+    fdmTeamMembersfirst_name: TWideStringField;
+    fdmTeamMemberslast_name: TWideStringField;
+    fdmTeamMemberslanguage: TWideStringField;
+    fdmTeamMemberssalt: TWideStringField;
+    fdmTeamMembersemail: TWideStringField;
+    fdmTeamMemberspassword: TWideStringField;
+    fdmTeamMembersimage: TWideStringField;
   private
     { Private declarations }
     sSessionKey : String;
