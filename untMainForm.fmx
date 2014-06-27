@@ -6247,6 +6247,7 @@ object frmMain: TfrmMain
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     Align = Top
     TabOrder = 1
+    KeyboardType = EmailAddress
     TextSettings.FontColor = claWhite
     Position.Y = 169.000000000000000000
     Width = 320.000000000000000000

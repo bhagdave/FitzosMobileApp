@@ -8,7 +8,7 @@ uses
   REST.Response.Adapter, Data.DB, Datasnap.DBClient, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, Data.Bind.DBScope;
 
 type
   TdmdDataModule = class(TDataModule)
@@ -36,7 +36,10 @@ type
     reqMemberTeams: TRESTRequest;
     respMemberTeams: TRESTResponse;
     rdsaMemberTeams: TRESTResponseDataSetAdapter;
-    cdsMemberTeams: TClientDataSet;
+    fdmMemberTeams: TFDMemTable;
+    fdmMemberTeamsid: TWideStringField;
+    fdmMemberTeamsname: TWideStringField;
+    dsMemberTeams: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;
