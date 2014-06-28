@@ -6239,7 +6239,6 @@ object frmMain: TfrmMain
       842C8D10FF0FB370E8FC9AA937480000000049454E44AE426082}
     Height = 73.000000000000000000
     HitTest = False
-    Opacity = 0.500000000000000000
     TabOrder = 0
     Width = 320.000000000000000000
   end
@@ -6249,7 +6248,7 @@ object frmMain: TfrmMain
     TabOrder = 1
     KeyboardType = EmailAddress
     TextSettings.FontColor = claWhite
-    Position.Y = 169.000000000000000000
+    Position.Y = 129.000000000000000000
     Width = 320.000000000000000000
     Height = 30.000000000000000000
     TextPrompt = 'Username'
@@ -6261,7 +6260,7 @@ object frmMain: TfrmMain
     TabOrder = 2
     Password = True
     TextSettings.FontColor = claWhite
-    Position.Y = 199.000000000000000000
+    Position.Y = 159.000000000000000000
     Width = 320.000000000000000000
     Height = 30.000000000000000000
     TextPrompt = 'Password'
@@ -6270,7 +6269,7 @@ object frmMain: TfrmMain
   object btnLogin: TButton
     Align = Top
     Height = 48.000000000000000000
-    Position.Y = 229.000000000000000000
+    Position.Y = 189.000000000000000000
     TabOrder = 3
     Text = 'Login'
     Width = 320.000000000000000000
@@ -6279,18 +6278,18 @@ object frmMain: TfrmMain
   object btnSignup: TButton
     Align = Top
     Height = 48.000000000000000000
-    Position.Y = 277.000000000000000000
+    Position.Y = 237.000000000000000000
     TabOrder = 4
     Text = 'Signup Here'
     Width = 320.000000000000000000
   end
   object txtWelcomeMessage: TText
     Align = Top
-    Height = 96.000000000000000000
+    Height = 56.000000000000000000
     Position.Y = 73.000000000000000000
     Text = 
       'Team and group focused workouts, events and competitions allowin' +
-      'g athletes to reahc their next peak'
+      'g athletes to reach their next peak'
     TextSettings.FontColor = claAqua
     Width = 320.000000000000000000
   end
