@@ -132,6 +132,7 @@ type
     fdmTeamowner: TWideStringField;
     fdmTeampublic: TWideStringField;
     fdmTeamsport_id: TWideStringField;
+    dsTeam: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;

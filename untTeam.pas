@@ -19,17 +19,18 @@ type
     lvWall: TListView;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkPropertyToFieldText: TLinkPropertyToField;
-    LinkPropertyToFieldText2: TLinkPropertyToField;
     LinkListControlToField1: TLinkListControlToField;
     LinkListControlToField2: TLinkListControlToField;
     LinkListControlToField3: TLinkListControlToField;
+    LinkPropertyToFieldText: TLinkPropertyToField;
+    LinkPropertyToFieldText2: TLinkPropertyToField;
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     procedure getTeamWall(sTeam : String);
     procedure getTeamMembers(sTeam : String);
     procedure getTeamEvents(sTeam : String);
+    procedure getTeam(sTeam: String);
   public
     { Public declarations }
   end;
@@ -48,10 +49,38 @@ var
   sTeam : String;
 begin
   inherited;
-  sTeam := dmdDataModule.fdmMemberTeamsid.AsString;
+//  sTeam := dmdDataModule.fdmMemberTeamsid.AsString;
+  sTeam := Id;
+  getTeam(sTeam);
   getTeamWall(sTeam);
   getTeamMembers(sTeam);
   getTeamEvents(sTeam);
+end;
+
+
+
+procedure TfrmTeam.getTeam(sTeam: String);
+var
+  sResult : String;
+begin
+  with dmdDataModule do
+  begin
+      // Open up the data.
+      rdsaTeam.ClearDataSet;
+      fdmTeam.Close;
+      respTeam.Content.Empty;
+      reqTeam.ClearBody;
+      reqTeam.Params.ParameterByName('id').Value := sTeam;
+      reqTeam.Params.ParameterByName('signature').Value := signature('getTeamEvents');
+      reqTeam.Params.ParameterByName('key').Value := getApiKey;
+      reqTeam.Execute;
+      sResult := getResultString(respTeam.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaTeam.Response := respTeam;
+          fdmTeam.Open;
+      end;
+  end;
 end;
 
 procedure TfrmTeam.getTeamEvents(sTeam: String);

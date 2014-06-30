@@ -149,9 +149,6 @@ Coordinates=710,269,184,267
 Coordinates=890,60,181,375
 LayerNames=team
 
-[dmdDataModule.cdsMember]
-Coordinates=932,1,154,69
-
 [dmdDataModule.dsNotifications]
 Coordinates=710,1269,171,285
 
@@ -179,17 +176,28 @@ Coordinates=465,573,145,267
 [dmdDataModule.restAPI]
 Coordinates=1155,159,133,69
 
-[dmdDataModule.cdsTeam]
-Coordinates=440,60,127,267
-LayerNames=team
-Visible=False
-
 [dmdDataModule.respNotifications]
 Coordinates=465,1,181,267
 
 [BindSourceDB1]
-Coordinates=440,60,127,267
+Coordinates=440,60,92,51
 
 [BindingsList1]
 Coordinates=147,249,82,33
+
+[dmdDataModule.]
+Coordinates=440,60,127,267
+LayerNames=team
+Visible=False
+
+[dmdDataModule.fdmTeam]
+Visible=False
+Coordinates=510,10,136,267
+
+[dmdDataModule.dsTeam]
+Coordinates=510,10,136,267
+LayerNames=team
+
+[dmdDataModule.fdmMember]
+Coordinates=525,878,155,195
 

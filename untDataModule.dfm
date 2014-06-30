@@ -1149,4 +1149,10 @@ object dmdDataModule: TdmdDataModule
       Size = 255
     end
   end
+  object dsTeam: TBindSourceDB
+    DataSet = fdmTeam
+    ScopeMappings = <>
+    Left = 536
+    Top = 304
+  end
 end
