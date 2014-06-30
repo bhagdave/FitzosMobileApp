@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
-  FMX.Objects, FMX.StdCtrls, untDataModule;
+  FMX.Objects, FMX.StdCtrls, untDataModule, Data.Bind.Components, System.RTTI;
 
 type
   TfrmBase = class(TForm)
@@ -32,6 +32,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    function getSelectedValue(AObject : TObject): TValue;
   end;
 
 var
@@ -66,6 +67,14 @@ end;
 procedure TfrmBase.btnTeamsClick(Sender: TObject);
 begin
     showNewForm('TfrmTeams');
+end;
+
+function TfrmBase.getSelectedValue(AObject: TObject): TValue;
+var
+  LEditor : IBindListEditorCommon;
+begin
+  LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
+  Result := Leditor.SelectedValue;
 end;
 
 end.

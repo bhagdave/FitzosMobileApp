@@ -16,7 +16,7 @@ type
     lvTeams: TListView;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkListControlToField1: TLinkListControlToField;
+    LinkFillControlToField: TLinkFillControlToField;
     procedure FormShow(Sender: TObject);
     procedure btnCreateClick(Sender: TObject);
     procedure lvTeamsItemClick(const Sender: TObject;
@@ -76,8 +76,12 @@ end;
 
 procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;
   const AItem: TListViewItem);
+var
+  LValue : TValue;
 begin
   inherited;
+  LValue := GetSelectedValue(lvTeams);
+  showmessage(Lvalue.ToString);
   showNewForm('TfrmTeam');
 end;
 
