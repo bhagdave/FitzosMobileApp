@@ -72,7 +72,7 @@ begin
     begin
       // Open up the data.
       rdsaMember.ClearDataSet;
-      cdsMember.Close;
+      fdmMember.Close;
       respMember.Content.Empty;
       reqMember.ClearBody;
       reqMember.Params.ParameterByName('id').Value := fdmNotifications.FieldByName('from_key').AsString;
@@ -83,8 +83,8 @@ begin
       if (sResult = 'OK') then
       begin
           rdsaMember.Response := respMember;
-          cdsMember.Open;
-          sFrom := 'The notification came from ' + cdsMember.FieldByName('first_name').AsString;
+          fdmMember.Open;
+          sFrom := 'The notification came from ' + fdmMember.FieldByName('first_name').AsString;
       end
       else
       begin
@@ -100,7 +100,7 @@ begin
     begin
       // Open up the data.
       rdsaTeam.ClearDataSet;
-      cdsTeam.Close;
+      fdmTeam.Close;
       respTeam.Content.Empty;
       reqTeam.ClearBody;
       reqTeam.Params.ParameterByName('id').Value := fdmNotifications.FieldByName('from_key').AsString;
@@ -111,8 +111,8 @@ begin
       if (sResult = 'OK') then
       begin
           rdsaTeam.Response := respTeam;
-          cdsTeam.Open;
-          sFrom := 'The notification came from the team ' + cdsTeam.FieldByName('name').AsString;
+          fdmTeam.Open;
+          sFrom := 'The notification came from the team ' + fdmTeam.FieldByName('name').AsString;
       end
       else
       begin

@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Classes, IPPeerClient, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope,IdHashMessageDigest,idHash,System.JSON,
-  REST.Response.Adapter, Data.DB, Datasnap.DBClient, FireDAC.Stan.Intf,
+  REST.Response.Adapter, Data.DB, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, Data.Bind.DBScope;
@@ -23,14 +23,12 @@ type
     reqMember: TRESTRequest;
     respMember: TRESTResponse;
     rdsaMember: TRESTResponseDataSetAdapter;
-    cdsMember: TClientDataSet;
     reqGeneric: TRESTRequest;
     respGeneric: TRESTResponse;
     rdsaGeneric: TRESTResponseDataSetAdapter;
     reqTeam: TRESTRequest;
     respTeam: TRESTResponse;
     rdsaTeam: TRESTResponseDataSetAdapter;
-    cdsTeam: TClientDataSet;
     reqMemberTeams: TRESTRequest;
     respMemberTeams: TRESTResponse;
     rdsaMemberTeams: TRESTResponseDataSetAdapter;
@@ -53,17 +51,6 @@ type
     fdmNotificationstype: TWideStringField;
     dsNotifications: TBindSourceDB;
     fdmGeneric: TFDMemTable;
-    cdsTeamid: TWideStringField;
-    cdsTeamname: TWideStringField;
-    cdsTeamcontent: TWideStringField;
-    cdsTeamdate: TWideStringField;
-    cdsTeamactive: TWideStringField;
-    cdsTeamdate_added: TWideStringField;
-    cdsTeamlast_modified: TWideStringField;
-    cdsTeamimage: TWideStringField;
-    cdsTeamowner: TWideStringField;
-    cdsTeampublic: TWideStringField;
-    cdsTeamsport_id: TWideStringField;
     reqTeamMembers: TRESTRequest;
     respTeamMembers: TRESTResponse;
     rdsaTeamMembers: TRESTResponseDataSetAdapter;
@@ -124,6 +111,27 @@ type
     fdmTeamWalllast_name: TWideStringField;
     fdmTeamWallmemberId: TWideStringField;
     dsTeamWall: TBindSourceDB;
+    fdmMember: TFDMemTable;
+    fdmTeam: TFDMemTable;
+    fdmMemberid: TWideStringField;
+    fdmMemberactive: TWideStringField;
+    fdmMemberfirst_name: TWideStringField;
+    fdmMemberlast_name: TWideStringField;
+    fdmMemberlanguage: TWideStringField;
+    fdmMembersalt: TWideStringField;
+    fdmMemberemail: TWideStringField;
+    fdmMemberimage: TWideStringField;
+    fdmTeamid: TWideStringField;
+    fdmTeamname: TWideStringField;
+    fdmTeamcontent: TWideStringField;
+    fdmTeamdate: TWideStringField;
+    fdmTeamactive: TWideStringField;
+    fdmTeamdate_added: TWideStringField;
+    fdmTeamlast_modified: TWideStringField;
+    fdmTeamimage: TWideStringField;
+    fdmTeamowner: TWideStringField;
+    fdmTeampublic: TWideStringField;
+    fdmTeamsport_id: TWideStringField;
   private
     { Private declarations }
     sSessionKey : String;

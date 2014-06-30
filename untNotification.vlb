@@ -100,3 +100,15 @@ Coordinates=580,508,52,51
 [dmdDataModule.fdmMemberTeams]
 Visible=False
 
+[dmdDataModule.fdmNotifications]
+Visible=False
+
+[dmdDataModule.fdmTeamMembers]
+Visible=False
+
+[dmdDataModule.fdmTeamEvents]
+Visible=False
+
+[dmdDataModule.fdmTeamWall]
+Visible=False
+
