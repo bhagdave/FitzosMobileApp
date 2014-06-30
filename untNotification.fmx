@@ -5,7 +5,7 @@ inherited frmNotification: TfrmNotification
   OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 360
-  DesignerHeight = 567
+  DesignerHeight = 592
   DesignerDeviceName = 'Google Nexus 5'
   DesignerOrientation = 0
   DesignerOSVersion = ''
@@ -117,9 +117,6 @@ inherited frmNotification: TfrmNotification
       StyledSettings = [Family, Size, FontColor]
       Height = 49.000000000000000000
       TextSettings.Font.Style = [fsBold]
-      Text = 
-        'You have been invited to the team <a href='#39'/team/view/28'#39'>RYP Fo' +
-        'unders</a>'
       Width = 360.000000000000000000
     end
     object btnRead: TButton
@@ -142,7 +139,6 @@ inherited frmNotification: TfrmNotification
       Align = Top
       Height = 23.000000000000000000
       Position.Y = 72.000000000000000000
-      Text = '2014-05-07 00:00:00'
       Width = 360.000000000000000000
     end
   end
@@ -158,14 +154,14 @@ inherited frmNotification: TfrmNotification
     Top = 5
     object LinkPropertyToFieldText: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
+      DataSource = dmdDataModule.dsNotifications
       FieldName = 'notification'
       Component = lblNotification
       ComponentProperty = 'Text'
     end
     object LinkPropertyToFieldText2: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
+      DataSource = dmdDataModule.dsNotifications
       FieldName = 'date_added'
       Component = lblDate
       ComponentProperty = 'Text'

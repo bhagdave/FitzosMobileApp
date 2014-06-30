@@ -44,8 +44,9 @@ Coordinates=627,438,62,51
 Coordinates=10,10,184,267
 
 [lblNotification]
-Coordinates=174,438,82,51
+Coordinates=550,100,82,51
 Visible=True
+LayerNames=Notification
 
 [dmdDataModule.respNotifications]
 Coordinates=204,10,181,267
@@ -76,13 +77,13 @@ Coordinates=10,287,141,141
 Coordinates=697,287,133,69
 
 [dmdDataModule.reqMember]
-Coordinates=535,287,152,87
+Coordinates=535,287,152,123
 
 []
 Coordinates=699,438,66,33
 
 [BindSourceDB1]
-Coordinates=720,10,156,285
+Coordinates=720,10,92,51
 
 [BindingsList1]
 Coordinates=580,393,82,33
@@ -91,24 +92,100 @@ Coordinates=580,393,82,33
 Coordinates=521,588,55,51
 
 [lblDate]
-Coordinates=580,578,48,51
+Coordinates=570,180,48,51
 Visible=True
+LayerNames=Notification
 
 [lblFrom]
 Coordinates=580,508,52,51
 
 [dmdDataModule.fdmMemberTeams]
 Visible=False
+Coordinates=1370,560,181,105
 
 [dmdDataModule.fdmNotifications]
 Visible=False
+Coordinates=350,60,171,285
 
 [dmdDataModule.fdmTeamMembers]
 Visible=False
+Coordinates=1110,660,181,375
 
 [dmdDataModule.fdmTeamEvents]
 Visible=False
+Coordinates=49,572,170,393
 
 [dmdDataModule.fdmTeamWall]
 Visible=False
+Coordinates=850,950,157,249
+
+[dmdDataModule.fdmMember]
+Coordinates=660,800,155,195
+
+[dmdDataModule.respTeam]
+Coordinates=49,286,145,267
+
+[dmdDataModule.reqTeamMembers]
+Coordinates=1830,240,185,123
+
+[dmdDataModule.dsMemberTeams]
+Coordinates=1370,560,181,105
+
+[dmdDataModule.dsTeamEvents]
+Coordinates=49,572,170,393
+
+[dmdDataModule.respGeneric]
+Coordinates=1470,730,157,267
+
+[dmdDataModule.dsNotifications]
+Coordinates=350,60,171,285
+LayerNames=Notification
+
+[dmdDataModule.fdmTeam]
+Coordinates=870,570,136,267
+Visible=False
+
+[dmdDataModule.reqMemberTeams]
+Coordinates=1590,260,185,123
+
+[dmdDataModule.reqGeneric]
+Coordinates=122,1003,151,69
+
+[dmdDataModule.respMemberTeams]
+Coordinates=407,296,191,267
+
+[dmdDataModule.respTeamMembers]
+Coordinates=1150,320,191,267
+
+[dmdDataModule.respTeamEvents]
+Coordinates=0,0,179,267
+
+[dmdDataModule.fdmGeneric]
+Coordinates=281,1003,154,51
+
+[dmdDataModule.reqTeamEvents]
+Coordinates=228,591,174,123
+
+[dmdDataModule.dsTeamWall]
+Coordinates=850,950,157,249
+
+[dmdDataModule.dsTeamMembers]
+Coordinates=1110,660,181,375
+
+[dmdDataModule.reqTeam]
+Coordinates=407,1,140,123
+
+[dmdDataModule.reqTeamWall]
+Coordinates=470,860,161,123
+
+[dmdDataModule.respTeamWall]
+Coordinates=1190,10,167,267
+
+[dmdDataModule.dsTeam]
+Coordinates=870,570,136,267
+
+[Module Settings]
+ModelLayerNames=Notification
+ActiveLayerNames=Notification
+EditingLayerName=Notification
 

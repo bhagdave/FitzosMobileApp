@@ -14,10 +14,10 @@ type
     lblNotification: TLabel;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkPropertyToFieldText: TLinkPropertyToField;
     btnRead: TButton;
     lblFrom: TLabel;
     lblDate: TLabel;
+    LinkPropertyToFieldText: TLinkPropertyToField;
     LinkPropertyToFieldText2: TLinkPropertyToField;
     procedure FormShow(Sender: TObject);
     procedure btnReadClick(Sender: TObject);
@@ -66,6 +66,7 @@ begin
   // where did the message come from....
   // can we get to the correct record.
   dmdDataModule.fdmNotifications.Locate('id',ID,[]);
+  showmessage('Id is ' + ID + ' Message is ' + dmdDataModule.fdmNotifications.FieldByName('notification').AsString);
   if dmdDataModule.fdmNotifications.FieldByName('from_table').AsString = 'member' then
   begin
     // get the member
