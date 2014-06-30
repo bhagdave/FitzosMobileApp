@@ -64,6 +64,8 @@ begin
   inherited;
   sFrom := 'From Administrator';
   // where did the message come from....
+  // can we get to the correct record.
+  dmdDataModule.fdmNotifications.Locate('id',ID,[]);
   if dmdDataModule.fdmNotifications.FieldByName('from_table').AsString = 'member' then
   begin
     // get the member

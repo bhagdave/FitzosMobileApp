@@ -73,7 +73,7 @@ begin
   inherited;
   LValue := GetSelectedValue(lvNotifications);
   showNewFormWithId('TfrmNotification',lValue.ToString);
-  showNewForm('TfrmNotification');
+//  showNewForm('TfrmNotification');
 end;
 
 initialization

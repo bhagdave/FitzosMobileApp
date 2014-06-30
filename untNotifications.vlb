@@ -83,9 +83,6 @@ Coordinates=209,296,82,33
 [Module Settings]
 ModelLayerNames=dmdDataModule.cdsNotifications
 
-[dmdDataModule.cdsMember]
-Coordinates=899,564,154,69
-
 [dmdDataModule.cdsGeneric]
 Coordinates=243,697,153,51
 
@@ -113,9 +110,6 @@ Coordinates=529,10,191,267
 [dmdDataModule.reqMember]
 Coordinates=578,287,152,123
 
-[dmdDataModule.cdsTeam]
-Coordinates=177,287,141,249
-
 [dmdDataModule.respTeam]
 Coordinates=921,10,145,267
 
@@ -131,7 +125,7 @@ Visible=False
 Coordinates=195,564,181,105
 
 [dmdDataModule.]
-Coordinates=575,564,171,69
+Coordinates=177,287,141,249
 
 [dmdDataModule.dsNotifications]
 Coordinates=580,410,171,285
