@@ -14,7 +14,7 @@ type
   TfrmNotifications = class(TfrmBase)
     lvNotifications: TListView;
     BindingsList1: TBindingsList;
-    LinkListControlToField1: TLinkListControlToField;
+    LinkFillControlToField: TLinkFillControlToField;
     procedure FormShow(Sender: TObject);
     procedure lvNotificationsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -67,9 +67,12 @@ end;
 
 procedure TfrmNotifications.lvNotificationsItemClick(const Sender: TObject;
   const AItem: TListViewItem);
+var
+  LValue : TValue;
 begin
   inherited;
-  // how do I get the item id being clicked...
+  LValue := GetSelectedValue(lvNotifications);
+  showNewFormWithId('TfrmNotification',lValue.ToString);
   showNewForm('TfrmNotification');
 end;
 

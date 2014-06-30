@@ -138,10 +138,43 @@ Coordinates=580,410,171,285
 
 [dmdDataModule.fdmTeamMembers]
 Visible=False
+Coordinates=632,714,181,375
 
 [dmdDataModule.fdmTeamEvents]
 Visible=False
+Coordinates=403,296,170,393
 
 [dmdDataModule.fdmTeamWall]
 Visible=False
+Coordinates=18,296,157,249
+
+[dmdDataModule.fdmGeneric]
+Coordinates=247,727,154,51
+
+[dmdDataModule.respTeamWall]
+Coordinates=198,1,167,267
+
+[dmdDataModule.dsTeamEvents]
+Coordinates=403,296,170,393
+
+[dmdDataModule.respTeamEvents]
+Coordinates=0,0,179,267
+
+[dmdDataModule.reqTeamWall]
+Coordinates=758,571,161,123
+
+[dmdDataModule.reqTeamEvents]
+Coordinates=949,296,174,123
+
+[dmdDataModule.respTeamMembers]
+Coordinates=403,1,191,267
+
+[dmdDataModule.dsTeamMembers]
+Coordinates=632,714,181,375
+
+[dmdDataModule.dsTeamWall]
+Coordinates=18,296,157,249
+
+[dmdDataModule.reqTeamMembers]
+Coordinates=789,429,185,123
 

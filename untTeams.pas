@@ -64,6 +64,7 @@ begin
     begin
         rdsaMemberTeams.Response := respMemberTeams;
         fdmMemberTeams.Open;
+        showmessage(IntToStr(fdmMemberTeams.RecordCount));
     end
     else
     begin
@@ -80,8 +81,7 @@ var
 begin
   inherited;
   LValue := GetSelectedValue(lvTeams);
-  showmessage(Lvalue.ToString);
-  showNewForm('TfrmTeam');
+  showNewFormWithId('TfrmTeam',lValue.ToString);
 end;
 
 initialization
