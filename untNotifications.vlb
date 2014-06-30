@@ -136,3 +136,12 @@ Coordinates=575,564,171,69
 [dmdDataModule.dsNotifications]
 Coordinates=580,410,171,285
 
+[dmdDataModule.fdmTeamMembers]
+Visible=False
+
+[dmdDataModule.fdmTeamEvents]
+Visible=False
+
+[dmdDataModule.fdmTeamWall]
+Visible=False
+
