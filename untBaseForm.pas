@@ -30,9 +30,13 @@ type
     procedure btnProfileClick(Sender: TObject);
   private
     { Private declarations }
+    fId : String;
+    procedure setId(sId : String);
   public
     { Public declarations }
     function getSelectedValue(AObject : TObject): TValue;
+    property Id : String read fId write setId;
+
   end;
 
 var
@@ -75,6 +79,11 @@ var
 begin
   LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
   Result := Leditor.SelectedValue;
+end;
+
+procedure TfrmBase.setId(sId: String);
+begin
+  fId := sId;
 end;
 
 end.
