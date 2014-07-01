@@ -55,14 +55,7 @@ Visible=True
 LayerNames=team
 
 []
-Coordinates=147,249,82,33
-
-[lvWall]
 Coordinates=10,70,89,141
-LayerNames=team
-
-[lvMembers]
-Coordinates=610,190,89,141
 LayerNames=team
 Visible=True
 
@@ -200,4 +193,30 @@ LayerNames=team
 
 [dmdDataModule.fdmMember]
 Coordinates=525,878,155,195
+
+[lblEvents]
+Coordinates=247,514,60,51
+
+[vsbScroller]
+Coordinates=311,514,70,33
+
+[layTeam]
+Coordinates=711,1,55,33
+
+[expMembers]
+Coordinates=168,514,77,51
+
+[lvMembers]
+Coordinates=691,53,89,141
+LayerNames=team
+
+[lblDebug]
+Coordinates=198,675,58,51
+
+[lvWwall]
+Coordinates=48,184,89,141
+LayerNames=team
+
+[expWall]
+Coordinates=257,675,53,51
 

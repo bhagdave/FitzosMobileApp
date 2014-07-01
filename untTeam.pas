@@ -14,20 +14,22 @@ type
     pnlTeam: TPanel;
     lblName: TLabel;
     lblContent: TLabel;
-    lvMembers: TListView;
     lvEvents: TListView;
-    lvWall: TListView;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkListControlToField1: TLinkListControlToField;
-    LinkListControlToField2: TLinkListControlToField;
-    LinkListControlToField3: TLinkListControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
     LinkPropertyToFieldText2: TLinkPropertyToField;
     vsbScroller: TVertScrollBox;
     lblEvents: TLabel;
-    lblMembers: TLabel;
-    lblWall: TLabel;
+    layTeam: TLayout;
+    LinkFillControlToField: TLinkFillControlToField;
+    expMembers: TExpander;
+    lvMembers: TListView;
+    expWall: TExpander;
+    lvWwall: TListView;
+    lblDebug: TLabel;
+    LinkFillControlToField1: TLinkFillControlToField;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
@@ -55,6 +57,7 @@ begin
   inherited;
 //  sTeam := dmdDataModule.fdmMemberTeamsid.AsString;
   sTeam := Id;
+  lblDebug.Text := sTeam;
   getTeam(sTeam);
   getTeamWall(sTeam);
   getTeamMembers(sTeam);
