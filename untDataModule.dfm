@@ -1289,4 +1289,219 @@ object dmdDataModule: TdmdDataModule
     Left = 384
     Top = 560
   end
+  object reqEvents: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '9'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'events/getEventsForMember'
+    Response = respEvents
+    SynchronizedEvents = False
+    Left = 480
+    Top = 360
+  end
+  object respEvents: TRESTResponse
+    ContentType = 'text/html'
+    Left = 480
+    Top = 408
+  end
+  object rdsaEvents: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmEvents
+    FieldDefs = <>
+    Response = respEvents
+    RootElement = 'Result'
+    Left = 480
+    Top = 464
+  end
+  object fdmEvents: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'published'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'type'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sub_type'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'team_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'time'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'end_time'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'end_date'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 480
+    Top = 512
+    object fdmEventsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmEventsname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmEventscontent: TWideStringField
+      FieldName = 'content'
+      Size = 255
+    end
+    object fdmEventsdate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmEventspublished: TWideStringField
+      FieldName = 'published'
+      Size = 255
+    end
+    object fdmEventsdate_added: TWideStringField
+      FieldName = 'date_added'
+      Size = 255
+    end
+    object fdmEventslast_modified: TWideStringField
+      FieldName = 'last_modified'
+      Size = 255
+    end
+    object fdmEventsimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmEventstype: TWideStringField
+      FieldName = 'type'
+      Size = 255
+    end
+    object fdmEventssub_type: TWideStringField
+      FieldName = 'sub_type'
+      Size = 255
+    end
+    object fdmEventspublic: TWideStringField
+      FieldName = 'public'
+      Size = 255
+    end
+    object fdmEventsteam_id: TWideStringField
+      FieldName = 'team_id'
+      Size = 255
+    end
+    object fdmEventstime: TWideStringField
+      FieldName = 'time'
+      Size = 255
+    end
+    object fdmEventsmember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmEventslocation: TWideStringField
+      FieldName = 'location'
+      Size = 255
+    end
+    object fdmEventsend_time: TWideStringField
+      FieldName = 'end_time'
+      Size = 255
+    end
+    object fdmEventssport_id: TWideStringField
+      FieldName = 'sport_id'
+      Size = 255
+    end
+    object fdmEventsend_date: TWideStringField
+      FieldName = 'end_date'
+      Size = 255
+    end
+  end
+  object dsEvents: TBindSourceDB
+    DataSet = fdmEvents
+    ScopeMappings = <>
+    Left = 472
+    Top = 560
+  end
 end

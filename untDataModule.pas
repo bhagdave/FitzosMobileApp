@@ -147,6 +147,29 @@ type
     fdmFriendspassword: TWideStringField;
     fdmFriendsimage: TWideStringField;
     dsFriends: TBindSourceDB;
+    reqEvents: TRESTRequest;
+    respEvents: TRESTResponse;
+    rdsaEvents: TRESTResponseDataSetAdapter;
+    fdmEvents: TFDMemTable;
+    fdmEventsid: TWideStringField;
+    fdmEventsname: TWideStringField;
+    fdmEventscontent: TWideStringField;
+    fdmEventsdate: TWideStringField;
+    fdmEventspublished: TWideStringField;
+    fdmEventsdate_added: TWideStringField;
+    fdmEventslast_modified: TWideStringField;
+    fdmEventsimage: TWideStringField;
+    fdmEventstype: TWideStringField;
+    fdmEventssub_type: TWideStringField;
+    fdmEventspublic: TWideStringField;
+    fdmEventsteam_id: TWideStringField;
+    fdmEventstime: TWideStringField;
+    fdmEventsmember_id: TWideStringField;
+    fdmEventslocation: TWideStringField;
+    fdmEventsend_time: TWideStringField;
+    fdmEventssport_id: TWideStringField;
+    fdmEventsend_date: TWideStringField;
+    dsEvents: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;
