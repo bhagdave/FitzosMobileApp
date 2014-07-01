@@ -414,7 +414,6 @@ object dmdDataModule: TdmdDataModule
     Active = True
     Dataset = fdmTeamMembers
     FieldDefs = <>
-    Response = respTeamMembers
     RootElement = 'Result'
     Left = 48
     Top = 472
@@ -620,7 +619,6 @@ object dmdDataModule: TdmdDataModule
     Active = True
     Dataset = fdmTeamEvents
     FieldDefs = <>
-    Response = respTeamEvents
     RootElement = 'Result'
     Left = 168
     Top = 472
@@ -835,7 +833,6 @@ object dmdDataModule: TdmdDataModule
     Active = True
     Dataset = fdmTeamWall
     FieldDefs = <>
-    Response = respTeamWall
     RootElement = 'Result'
     Left = 264
     Top = 480
