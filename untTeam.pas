@@ -25,6 +25,9 @@ type
     LinkPropertyToFieldText: TLinkPropertyToField;
     LinkPropertyToFieldText2: TLinkPropertyToField;
     vsbScroller: TVertScrollBox;
+    lblEvents: TLabel;
+    lblMembers: TLabel;
+    lblWall: TLabel;
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }

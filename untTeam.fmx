@@ -118,7 +118,7 @@ inherited frmTeam: TfrmTeam
       TabOrder = 2
       Width = 384.000000000000000000
       object pnlTeam: TPanel
-        Align = Top
+        Align = MostTop
         Height = 65.000000000000000000
         Width = 384.000000000000000000
         TabOrder = 0
@@ -142,9 +142,9 @@ inherited frmTeam: TfrmTeam
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
-        Align = Top
+        Align = MostTop
         Height = 136.000000000000000000
-        Position.Y = 194.000000000000000000
+        Position.Y = 88.000000000000000000
         TabOrder = 1
         Width = 384.000000000000000000
       end
@@ -153,9 +153,9 @@ inherited frmTeam: TfrmTeam
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
-        Align = Top
+        Align = MostBottom
         Height = 81.000000000000000000
-        Position.Y = 330.000000000000000000
+        Position.Y = 333.000000000000000000
         TabOrder = 2
         Width = 384.000000000000000000
       end
@@ -166,8 +166,32 @@ inherited frmTeam: TfrmTeam
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Top
         Height = 129.000000000000000000
-        Position.Y = 65.000000000000000000
+        Position.Y = 247.000000000000000000
         TabOrder = 3
+        Width = 384.000000000000000000
+      end
+      object lblEvents: TLabel
+        Align = MostTop
+        Height = 23.000000000000000000
+        Position.Y = 65.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Events'
+        Width = 384.000000000000000000
+      end
+      object lblMembers: TLabel
+        Align = Top
+        Height = 23.000000000000000000
+        Position.Y = 224.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Members'
+        Width = 384.000000000000000000
+      end
+      object lblWall: TLabel
+        Align = Bottom
+        Height = 23.000000000000000000
+        Position.Y = 310.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Wall'
         Width = 384.000000000000000000
       end
     end
