@@ -133,6 +133,20 @@ type
     fdmTeampublic: TWideStringField;
     fdmTeamsport_id: TWideStringField;
     dsTeam: TBindSourceDB;
+    reqFriends: TRESTRequest;
+    respFriends: TRESTResponse;
+    rdsaFriends: TRESTResponseDataSetAdapter;
+    fdmFriends: TFDMemTable;
+    fdmFriendsid: TWideStringField;
+    fdmFriendsactive: TWideStringField;
+    fdmFriendsfirst_name: TWideStringField;
+    fdmFriendslast_name: TWideStringField;
+    fdmFriendslanguage: TWideStringField;
+    fdmFriendssalt: TWideStringField;
+    fdmFriendsemail: TWideStringField;
+    fdmFriendspassword: TWideStringField;
+    fdmFriendsimage: TWideStringField;
+    dsFriends: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;

@@ -66,7 +66,6 @@ begin
   // where did the message come from....
   // can we get to the correct record.
   dmdDataModule.fdmNotifications.Locate('id',ID,[]);
-  showmessage('Id is ' + ID + ' Message is ' + dmdDataModule.fdmNotifications.FieldByName('notification').AsString);
   if dmdDataModule.fdmNotifications.FieldByName('from_table').AsString = 'member' then
   begin
     // get the member

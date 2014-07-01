@@ -2,6 +2,7 @@ inherited frmTeam: TfrmTeam
   Caption = 'Team'
   ClientHeight = 567
   ClientWidth = 384
+  OnActivate = FormActivate
   OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 384

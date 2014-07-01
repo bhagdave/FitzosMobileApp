@@ -31,6 +31,7 @@ type
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
     procedure FormShow(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
     procedure getTeamWall(sTeam : String);
@@ -50,6 +51,12 @@ uses
   untMainForm;
 
 {$R *.fmx}
+procedure TfrmTeam.FormActivate(Sender: TObject);
+begin
+  inherited;
+  self.FormShow(sender);
+end;
+
 procedure TfrmTeam.FormShow(Sender: TObject);
 var
   sTeam : String;
@@ -135,7 +142,10 @@ begin
       reqTeamMembers.Params.ParameterByName('id').Value := sTeam;
       reqTeamMembers.Params.ParameterByName('signature').Value := signature('getTeamMembers');
       reqTeamMembers.Params.ParameterByName('key').Value := getApiKey;
-      reqTeamMembers.Execute;
+      try
+        reqTeamMembers.Execute;
+      except on E: Exception do
+      end;
       sResult := getResultString(respTeamMembers.Content);
       if (sResult = 'OK') then
       begin
@@ -159,7 +169,10 @@ begin
       reqTeamWall.Params.ParameterByName('id').Value := sTeam;
       reqTeamWall.Params.ParameterByName('signature').Value := signature('getTeamWall');
       reqTeamWall.Params.ParameterByName('key').Value := getApiKey;
-      reqTeamWall.Execute;
+      try
+        reqTeamWall.Execute;
+      except on E: Exception do
+      end;
       sResult := getResultString(respTeamWall.Content);
       if (sResult = 'OK') then
       begin

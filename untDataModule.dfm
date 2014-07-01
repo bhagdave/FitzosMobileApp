@@ -1155,4 +1155,138 @@ object dmdDataModule: TdmdDataModule
     Left = 536
     Top = 304
   end
+  object reqFriends: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '9'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'members/getFriends'
+    Response = respFriends
+    SynchronizedEvents = False
+    Left = 384
+    Top = 360
+  end
+  object respFriends: TRESTResponse
+    ContentType = 'text/html'
+    Left = 384
+    Top = 416
+  end
+  object rdsaFriends: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmFriends
+    FieldDefs = <>
+    Response = respFriends
+    RootElement = 'Result'
+    Left = 392
+    Top = 464
+  end
+  object fdmFriends: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'language'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'salt'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'email'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'password'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 384
+    Top = 512
+    object fdmFriendsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmFriendsactive: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object fdmFriendsfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 255
+    end
+    object fdmFriendslast_name: TWideStringField
+      FieldName = 'last_name'
+      Size = 255
+    end
+    object fdmFriendslanguage: TWideStringField
+      FieldName = 'language'
+      Size = 255
+    end
+    object fdmFriendssalt: TWideStringField
+      FieldName = 'salt'
+      Size = 255
+    end
+    object fdmFriendsemail: TWideStringField
+      FieldName = 'email'
+      Size = 255
+    end
+    object fdmFriendspassword: TWideStringField
+      FieldName = 'password'
+      Size = 255
+    end
+    object fdmFriendsimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+  end
+  object dsFriends: TBindSourceDB
+    DataSet = fdmFriends
+    ScopeMappings = <>
+    Left = 384
+    Top = 560
+  end
 end
