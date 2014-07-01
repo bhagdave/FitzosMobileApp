@@ -87,3 +87,6 @@ Visible=False
 [fdmTeamWall]
 Visible=False
 
+[fdmTeam]
+Visible=False
+
