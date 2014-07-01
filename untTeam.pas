@@ -99,12 +99,18 @@ begin
       // Open up the data.
       rdsaTeamEvents.ClearDataSet;
       fdmTeamEvents.Close;
+      fdmTeamEvents.Active := false;
+      fdmTeamEvents.FetchOnDemand := false;
       respTeamEvents.Content.Empty;
       reqTeamEvents.ClearBody;
       reqTeamEvents.Params.ParameterByName('id').Value := sTeam;
       reqTeamEvents.Params.ParameterByName('signature').Value := signature('getTeamEvents');
       reqTeamEvents.Params.ParameterByName('key').Value := getApiKey;
-      reqTeamEvents.Execute;
+      try
+        reqTeamEvents.Execute;
+      except on E: Exception do
+        // we are empty.. ignore - Very Naughty I know.
+      end;
       sResult := getResultString(respTeamEvents.Content);
       if (sResult = 'OK') then
       begin
@@ -125,6 +131,7 @@ begin
       fdmTeamMembers.Close;
       respTeamMembers.Content.Empty;
       reqTeamMembers.ClearBody;
+      rdsaTeamMembers.Active := false;
       reqTeamMembers.Params.ParameterByName('id').Value := sTeam;
       reqTeamMembers.Params.ParameterByName('signature').Value := signature('getTeamMembers');
       reqTeamMembers.Params.ParameterByName('key').Value := getApiKey;
