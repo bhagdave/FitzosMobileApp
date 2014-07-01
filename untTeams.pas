@@ -64,7 +64,6 @@ begin
     begin
         rdsaMemberTeams.Response := respMemberTeams;
         fdmMemberTeams.Open;
-        showmessage(IntToStr(fdmMemberTeams.RecordCount));
     end
     else
     begin

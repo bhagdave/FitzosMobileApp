@@ -172,3 +172,6 @@ Coordinates=652,1,157,249
 [dmdDataModule.reqTeamWall]
 Coordinates=1085,1,161,123
 
+[dmdDataModule.fdmTeam]
+Visible=False
+
