@@ -15,7 +15,6 @@ type
     lvNotifications: TListView;
     BindingsList1: TBindingsList;
     LinkFillControlToField: TLinkFillControlToField;
-    procedure FormShow(Sender: TObject);
     procedure lvNotificationsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure FormActivate(Sender: TObject);
@@ -35,12 +34,6 @@ uses
   untMainForm;
 
 procedure TfrmNotifications.FormActivate(Sender: TObject);
-begin
-  inherited;
-  formShow(Sender);
-end;
-
-procedure TfrmNotifications.FormShow(Sender: TObject);
 var
   sResult : String;
 begin

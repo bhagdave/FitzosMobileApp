@@ -172,3 +172,12 @@ Coordinates=18,296,157,249
 [dmdDataModule.reqTeamMembers]
 Coordinates=789,429,185,123
 
+[dmdDataModule.fdmTeam]
+Visible=False
+
+[dmdDataModule.fdmFriends]
+Visible=False
+
+[dmdDataModule.fdmEvents]
+Visible=False
+

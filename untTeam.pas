@@ -30,7 +30,6 @@ type
     lblDebug: TLabel;
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
-    procedure FormShow(Sender: TObject);
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
@@ -52,12 +51,6 @@ uses
 
 {$R *.fmx}
 procedure TfrmTeam.FormActivate(Sender: TObject);
-begin
-  inherited;
-  self.FormShow(sender);
-end;
-
-procedure TfrmTeam.FormShow(Sender: TObject);
 var
   sTeam : String;
 begin
@@ -70,8 +63,6 @@ begin
   getTeamMembers(sTeam);
   getTeamEvents(sTeam);
 end;
-
-
 
 procedure TfrmTeam.getTeam(sTeam: String);
 var

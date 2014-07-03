@@ -17,10 +17,10 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkFillControlToField: TLinkFillControlToField;
-    procedure FormShow(Sender: TObject);
     procedure btnCreateClick(Sender: TObject);
     procedure lvTeamsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,7 +42,7 @@ begin
   showNewForm('TfrmTeamCreate');
 end;
 
-procedure TfrmTeams.FormShow(Sender: TObject);
+procedure TfrmTeams.FormActivate(Sender: TObject);
 var
   sResult : String;
 begin

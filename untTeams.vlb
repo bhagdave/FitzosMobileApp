@@ -175,3 +175,9 @@ Coordinates=1085,1,161,123
 [dmdDataModule.fdmTeam]
 Visible=False
 
+[dmdDataModule.fdmFriends]
+Visible=False
+
+[dmdDataModule.fdmEvents]
+Visible=False
+

@@ -170,3 +170,6 @@ Coordinates=939,215,181,267
 [BindingsList1]
 Coordinates=334,80,82,33
 
+[dmdDataModule.fdmEvents]
+Visible=False
+

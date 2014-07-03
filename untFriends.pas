@@ -14,7 +14,7 @@ type
     lvFriends: TListView;
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
-    procedure FormShow(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,7 +29,7 @@ uses
   untMainForm;
 
 {$R *.fmx}
-procedure TfrmFriends.FormShow(Sender: TObject);
+procedure TfrmFriends.FormActivate(Sender: TObject);
 var
   sResult : String;
 begin

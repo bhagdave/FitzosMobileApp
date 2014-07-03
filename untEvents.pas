@@ -15,6 +15,7 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     procedure FormShow(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,7 +32,7 @@ uses
 {$R *.fmx}
 { TfrmEvents }
 
-procedure TfrmEvents.FormShow(Sender: TObject);
+procedure TfrmEvents.FormActivate(Sender: TObject);
 var
   sResult : String;
 begin
