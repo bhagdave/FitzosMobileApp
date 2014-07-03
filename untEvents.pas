@@ -14,7 +14,6 @@ type
     lvEvents: TListView;
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
-    procedure FormShow(Sender: TObject);
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }

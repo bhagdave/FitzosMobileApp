@@ -3,7 +3,6 @@ inherited frmEvents: TfrmEvents
   ClientHeight = 567
   ClientWidth = 384
   OnActivate = FormActivate
-  OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 384
   DesignerHeight = 592
