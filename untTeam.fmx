@@ -120,7 +120,7 @@ inherited frmTeam: TfrmTeam
       Width = 384.000000000000000000
       object pnlTeam: TPanel
         Align = MostTop
-        Height = 65.000000000000000000
+        Height = 33.000000000000000000
         Width = 368.000000000000000000
         TabOrder = 0
         object lblName: TLabel
@@ -131,25 +131,11 @@ inherited frmTeam: TfrmTeam
           TextSettings.HorzAlign = Center
           Width = 368.000000000000000000
         end
-        object lblContent: TLabel
-          Align = Top
-          AutoSize = True
-          Height = 15.000000000000000000
-          Position.Y = 23.000000000000000000
-          Width = 368.000000000000000000
-        end
-        object lblDebug: TLabel
-          Height = 23.000000000000000000
-          Position.X = 16.000000000000000000
-          Position.Y = 40.000000000000000000
-          Text = 'PLEASE IGNORE ME'
-          Width = 289.000000000000000000
-        end
       end
       object layTeam: TLayout
         Align = Top
         Height = 800.000000000000000000
-        Position.Y = 65.000000000000000000
+        Position.Y = 33.000000000000000000
         Width = 368.000000000000000000
         TabOrder = 1
         object lblEvents: TLabel
@@ -230,13 +216,6 @@ inherited frmTeam: TfrmTeam
       DataSource = dmdDataModule.dsTeam
       FieldName = 'name'
       Component = lblName
-      ComponentProperty = 'Text'
-    end
-    object LinkPropertyToFieldText2: TLinkPropertyToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsTeam
-      FieldName = 'content'
-      Component = lblContent
       ComponentProperty = 'Text'
     end
     object LinkFillControlToField: TLinkFillControlToField

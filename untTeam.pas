@@ -13,12 +13,10 @@ type
   TfrmTeam = class(TfrmBase)
     pnlTeam: TPanel;
     lblName: TLabel;
-    lblContent: TLabel;
     lvEvents: TListView;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkPropertyToFieldText: TLinkPropertyToField;
-    LinkPropertyToFieldText2: TLinkPropertyToField;
     vsbScroller: TVertScrollBox;
     lblEvents: TLabel;
     layTeam: TLayout;
@@ -27,7 +25,6 @@ type
     lvMembers: TListView;
     expWall: TExpander;
     lvWwall: TListView;
-    lblDebug: TLabel;
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
@@ -57,7 +54,6 @@ begin
   inherited;
 //  sTeam := dmdDataModule.fdmMemberTeamsid.AsString;
   sTeam := Id;
-  lblDebug.Text := sTeam;
   getTeam(sTeam);
   getTeamWall(sTeam);
   getTeamMembers(sTeam);

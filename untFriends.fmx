@@ -120,6 +120,7 @@ inherited frmFriends: TfrmFriends
       Height = 414.000000000000000000
       TabOrder = 0
       Width = 384.000000000000000000
+      OnItemClick = lvFriendsItemClick
     end
   end
   object BindingsList1: TBindingsList

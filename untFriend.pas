@@ -9,6 +9,8 @@ uses
 
 type
   TfrmFriend = class(TfrmBase)
+    lblDebug: TLabel;
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -21,6 +23,12 @@ var
 implementation
 
 {$R *.fmx}
+procedure TfrmFriend.FormActivate(Sender: TObject);
+begin
+  inherited;
+  lblDebug.Text := id;
+end;
+
 initialization
 RegisterFMXClasses([TfrmFriend]);
 

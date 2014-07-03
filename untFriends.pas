@@ -15,6 +15,8 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
+    procedure lvFriendsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -52,6 +54,17 @@ begin
         fdmFriends.Open;
     end;
   end;
+end;
+
+procedure TfrmFriends.lvFriendsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  LValue : TValue;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvFriends);
+  showNewFormWithId('TfrmFriend',lValue.ToString);
+//  showNewForm('TfrmNotification');
 end;
 
 initialization

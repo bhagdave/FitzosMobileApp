@@ -49,13 +49,8 @@ LayerNames=team
 [pnlTeam]
 Coordinates=161,71,56,33
 
-[lblContent]
-Coordinates=10,10,65,51
-Visible=True
-LayerNames=team
-
 []
-Coordinates=10,70,89,141
+Coordinates=10,10,65,51
 LayerNames=team
 Visible=True
 
@@ -209,9 +204,6 @@ Coordinates=168,514,77,51
 [lvMembers]
 Coordinates=691,53,89,141
 LayerNames=team
-
-[lblDebug]
-Coordinates=198,675,58,51
 
 [lvWwall]
 Coordinates=48,184,89,141
