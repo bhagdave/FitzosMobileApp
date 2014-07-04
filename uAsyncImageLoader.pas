@@ -111,24 +111,21 @@ if (Working=False) AND (LastURL<>URL) AND (URL<>'') then
     function: Boolean
     begin
       // Runs in seperate thread
-      try
+//      try
         IdHTTP.Get(URL,M);
-      except on E: Exception do begin  end;
-      end;
+//      except on E: Exception do begin  end;
+//      end;
       Result := True;
     end,
     procedure(AResult: Boolean)
     begin
       // Runs in main thread
       // process the result from above
-       try
         M.Seek(0,0);
         Image.Bitmap.LoadFromStream(M);
         Timer.Enabled := False;
         ProgressBar.Visible := False;
         Image.Visible := True;
-       except on E: Exception do begin  end;
-       end;
        M.DisposeOf;
        if not Pooled then
          RemovePool;
@@ -140,9 +137,6 @@ if (Working=False) AND (LastURL<>URL) AND (URL<>'') then
     begin
       // Runs in main thread
       // do something if there is an exception
-       try
-       except on E: Exception do begin  end;
-       end;
        Timer.Enabled := False;
        ProgressBar.Visible := False;
        M.DisposeOf;

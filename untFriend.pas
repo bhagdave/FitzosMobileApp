@@ -5,20 +5,23 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  untBaseForm, FMX.Objects, FMX.Edit, untDataModule, uAsyncImageLoader ;
+  untBaseForm, FMX.Objects, FMX.Edit, untDataModule, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP ;
 
 type
   TfrmFriend = class(TfrmBase)
     lblDebug: TLabel;
     pnlMemberDetails: TPanel;
     lblName: TLabel;
-    AsyncImageLoader1: TAsyncImageLoader;
+    imgUser: TImage;
+    IdHTTPImage: TIdHTTP;
     procedure FormActivate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     procedure getProfile();
     procedure getMember();
+    procedure loadPicture(sURL : String);
   public
     { Public declarations }
   end;
@@ -36,18 +39,17 @@ uses
 
 procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
-//  lblDebug.Text := id;
-//  getMember();
+  lblDebug.Text := id;
+  getMember();
 //  getProfile();
 end;
 
 procedure TfrmFriend.FormShow(Sender: TObject);
-var
-  sURL : String;
+//var
+//  sURL : String;
 begin
 //  inherited;
-  sURL := 'http://www.stoneacre.co.uk/assets/images/fuel-and-go-pricing.jpg';
-  asyncImageLoader1.GetURL('http://www.stoneacre.co.uk/assets/images/fuel-and-go-pricing.jpg');
+//  sURL := 'http://www.stoneacre.co.uk/assets/images/fuel-and-go-pricing.jpg';
 end;
 
 procedure TfrmFriend.getMember;
@@ -72,10 +74,8 @@ begin
           rdsaMember.Response := respMember;
           fdmMember.Open;
           sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
+          loadPicture(sURL);
           lblDebug.Text := sURL;
-          AsyncImageLoader1.Pooled := True;
-          sURL := 'http://beta.fitzos.com/assets/images/members/970608_10151672126170610_2055971908_n.jpg';
-          asyncImageLoader1.GetURL('http://beta.fitzos.com/assets/images/members/970608_10151672126170610_2055971908_n.jpg');
       end;
   end;
 end;
@@ -99,6 +99,17 @@ begin
           fdmGeneric.Open;
       end;
   end;
+end;
+
+procedure TfrmFriend.loadPicture(sURL : String);
+var
+    M: TMemoryStream;
+begin
+    M := TMemoryStream.Create();
+    IdHTTPImage.Get(sURL,M);
+    M.Seek(0,0);
+    imgUser.Bitmap.LoadFromStream(M);
+    m.DisposeOf;
 end;
 
 initialization
