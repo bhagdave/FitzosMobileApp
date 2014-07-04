@@ -6,7 +6,9 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, untDataModule, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP ;
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Data.Bind.EngExt,
+  Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
+  Data.Bind.Components, Data.Bind.DBScope ;
 
 type
   TfrmFriend = class(TfrmBase)
@@ -14,8 +16,10 @@ type
     lblName: TLabel;
     imgUser: TImage;
     IdHTTPImage: TIdHTTP;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkPropertyToFieldText: TLinkPropertyToField;
     procedure FormActivate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     procedure getProfile();
@@ -39,15 +43,7 @@ uses
 procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
   getMember();
-//  getProfile();
-end;
-
-procedure TfrmFriend.FormShow(Sender: TObject);
-//var
-//  sURL : String;
-begin
-//  inherited;
-//  sURL := 'http://www.stoneacre.co.uk/assets/images/fuel-and-go-pricing.jpg';
+  getProfile();
 end;
 
 procedure TfrmFriend.getMember;
@@ -85,9 +81,9 @@ begin
   with dmdDataModule do
   begin
     reqGeneric.Resource := 'athletes/loadProfile';
-    reqGeneric.Params.ParameterByName('id').Value := id;
-    reqGeneric.Params.ParameterByName('signature').Value := signature('loadProfile');
-    reqGeneric.Params.ParameterByName('key').Value := getAPIKey();
+    reqGeneric.Params.addItem('id',id);
+    reqGeneric.Params.AddItem('signature',signature('loadProfile'));
+    reqGeneric.Params.AddItem('key',getAPIKey());
     reqGeneric.Execute;
     sResult := getResultString(respGeneric.Content);
       if (sResult = 'OK') then
