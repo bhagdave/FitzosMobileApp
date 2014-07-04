@@ -226,8 +226,6 @@ begin
         result := false;
     finally
       lJSONObject.Free;
-      lStatus.Free;
-      lResult.Free;
     end;
 end;
 
@@ -271,8 +269,6 @@ begin
         openSession := false;
     finally
       lJSONObject.Free;
-      lResult.Free;
-      lStatus.Free;
     end;
 end;
 

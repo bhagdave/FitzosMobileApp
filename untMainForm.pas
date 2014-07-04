@@ -53,7 +53,6 @@ begin
       result  := lStatus.Value;
     finally
       lJSONObject.Free;
-      lStatus.Free;
     end;
 end;
 
