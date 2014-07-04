@@ -1,0 +1,24 @@
+object AsyncImageLoader: TAsyncImageLoader
+  Height = 260.000000000000000000
+  Width = 320.000000000000000000
+  object ProgressBar: TProgressBar
+    Align = alVertCenter
+    Locked = True
+    Height = 32.000000000000000000
+    Orientation = orHorizontal
+    Margins.Left = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 114.000000000000000000
+    Width = 310.000000000000000000
+  end
+  object Image: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = alContents
+    Locked = True
+    Height = 260.000000000000000000
+    Width = 320.000000000000000000
+  end
+end

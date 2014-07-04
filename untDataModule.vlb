@@ -90,3 +90,9 @@ Visible=False
 [fdmTeam]
 Visible=False
 
+[fdmFriends]
+Visible=False
+
+[fdmEvents]
+Visible=False
+
