@@ -18,8 +18,7 @@ uses
   untTeamCreate in 'untTeamCreate.pas' {frmTeamCreate},
   untEventCreation in 'untEventCreation.pas' {frmEventCreation},
   untSettings in 'untSettings.pas' {frmSettings},
-  untProfile in 'untProfile.pas' {frmProfile},
-  uAsyncImageLoader in 'uAsyncImageLoader.pas' {AsyncImageLoader: TFrame};
+  untProfile in 'untProfile.pas' {frmProfile};
 
 {$R *.res}
 

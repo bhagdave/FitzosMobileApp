@@ -94,31 +94,25 @@ inherited frmFriend: TfrmFriend
   end
   inherited pnlCenter: TPanel
     Height = 307.000000000000000000
-    object lblDebug: TLabel
-      Align = Top
-      Height = 49.000000000000000000
-      Text = 'lblDebug'
-      Width = 320.000000000000000000
-    end
     object pnlMemberDetails: TPanel
-      Height = 225.000000000000000000
-      Position.Y = 48.000000000000000000
-      Width = 377.000000000000000000
+      Align = Client
+      Height = 307.000000000000000000
+      Width = 320.000000000000000000
       TabOrder = 1
       object lblName: TLabel
         Align = Top
         Height = 23.000000000000000000
         Text = 'lblName'
-        Width = 377.000000000000000000
+        Width = 320.000000000000000000
       end
       object imgUser: TImage
         MultiResBitmap = <
           item
           end>
-        Height = 121.000000000000000000
-        Position.X = 16.000000000000000000
-        Position.Y = 32.000000000000000000
-        Width = 241.000000000000000000
+        Anchors = [akLeft, akTop, akRight]
+        Height = 150.000000000000000000
+        Position.X = 170.000000000000000000
+        Width = 150.000000000000000000
       end
     end
   end

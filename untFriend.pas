@@ -10,7 +10,6 @@ uses
 
 type
   TfrmFriend = class(TfrmBase)
-    lblDebug: TLabel;
     pnlMemberDetails: TPanel;
     lblName: TLabel;
     imgUser: TImage;
@@ -39,7 +38,6 @@ uses
 
 procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
-  lblDebug.Text := id;
   getMember();
 //  getProfile();
 end;
@@ -75,7 +73,6 @@ begin
           fdmMember.Open;
           sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
           loadPicture(sURL);
-          lblDebug.Text := sURL;
       end;
   end;
 end;
