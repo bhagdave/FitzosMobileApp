@@ -3,7 +3,7 @@ unit untTeam;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
@@ -28,6 +28,8 @@ type
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
+    procedure lvEventsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
     procedure getTeamWall(sTeam : String);
@@ -167,6 +169,16 @@ begin
           fdmTeamWall.Open;
       end;
   end;
+end;
+
+procedure TfrmTeam.lvEventsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  LValue : TValue;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvEvents);
+  showNewFormWithId('TfrmEvent');
 end;
 
 initialization
