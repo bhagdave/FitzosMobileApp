@@ -19,6 +19,8 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkPropertyToFieldText: TLinkPropertyToField;
+    lblGender: TLabel;
+    lblNickname: TLabel;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
@@ -90,6 +92,8 @@ begin
       begin
           rdsaGeneric.Response := respGeneric;
           fdmGeneric.Open;
+          lblGender.Text := fdmGeneric.FieldByName('gender').AsString;
+          lblNickname.Text := fdmGeneric.FieldByName('nickname').AsString;
       end;
   end;
 end;
