@@ -178,7 +178,7 @@ var
 begin
   inherited;
   LValue := GetSelectedValue(lvEvents);
-  showNewFormWithId('TfrmEvent');
+  showNewFormWithId('TfrmEvent',LValue.ToString);
 end;
 
 initialization
