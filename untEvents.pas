@@ -3,7 +3,7 @@ unit untEvents;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
@@ -15,6 +15,8 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
+    procedure lvEventsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -54,6 +56,16 @@ begin
         fdmEvents.Open;
     end;
   end;
+end;
+
+procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  LValue : TValue;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvEvents);
+  showNewFormWithId('TfrmEvent',LValue.ToString);
 end;
 
 initialization
