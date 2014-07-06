@@ -127,6 +127,13 @@ inherited frmFriend: TfrmFriend
         Text = 'lblNickname'
         Width = 320.000000000000000000
       end
+      object lblAge: TLabel
+        Align = Top
+        Height = 21.000000000000000000
+        Position.Y = 65.000000000000000000
+        Text = 'lblAge'
+        Width = 320.000000000000000000
+      end
     end
   end
   object IdHTTPImage: TIdHTTP

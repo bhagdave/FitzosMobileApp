@@ -21,6 +21,7 @@ type
     LinkPropertyToFieldText: TLinkPropertyToField;
     lblGender: TLabel;
     lblNickname: TLabel;
+    lblAge: TLabel;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
@@ -78,6 +79,8 @@ end;
 procedure TfrmFriend.getProfile;
 var
   sResult : String;
+  iDX     : Integer;
+  sTemp   : String;
 begin
   // ok lets try and get some data
   with dmdDataModule do
@@ -94,6 +97,7 @@ begin
           fdmGeneric.Open;
           lblGender.Text := fdmGeneric.FieldByName('gender').AsString;
           lblNickname.Text := fdmGeneric.FieldByName('nickname').AsString;
+          lblAge.Text := fdmGeneric.FieldByName('age').AsString;
       end;
   end;
 end;

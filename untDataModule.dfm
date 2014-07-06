@@ -141,6 +141,7 @@ object dmdDataModule: TdmdDataModule
     Dataset = fdmGeneric
     FieldDefs = <>
     Response = respGeneric
+    RootElement = 'Result'
     Left = 416
     Top = 192
   end
