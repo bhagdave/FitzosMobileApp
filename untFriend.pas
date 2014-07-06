@@ -102,11 +102,14 @@ procedure TfrmFriend.loadPicture(sURL : String);
 var
     M: TMemoryStream;
 begin
+  try
     M := TMemoryStream.Create();
     IdHTTPImage.Get(sURL,M);
     M.Seek(0,0);
     imgUser.Bitmap.LoadFromStream(M);
     m.DisposeOf;
+  except on E: Exception do
+  end;
 end;
 
 initialization
