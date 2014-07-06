@@ -18,7 +18,8 @@ uses
   untTeamCreate in 'untTeamCreate.pas' {frmTeamCreate},
   untEventCreation in 'untEventCreation.pas' {frmEventCreation},
   untSettings in 'untSettings.pas' {frmSettings},
-  untProfile in 'untProfile.pas' {frmProfile};
+  untProfile in 'untProfile.pas' {frmProfile},
+  untEventDataModule in 'untEventDataModule.pas' {dmdEvent: TDataModule};
 
 {$R *.res}
 
@@ -27,5 +28,6 @@ begin
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmdDataModule, dmdDataModule);
   Application.CreateForm(TfrmNotifications, frmNotifications);
+  Application.CreateForm(TdmdEvent, dmdEvent);
   Application.Run;
 end.
