@@ -175,7 +175,8 @@ inherited frmTeam: TfrmTeam
             Align = Client
             Height = 175.000000000000000000
             TabOrder = 0
-            Width = 368.000000000000000000
+            Width = 200.000000000000000000
+            OnItemClick = lvMembersItemClick
           end
         end
         object expWall: TExpander

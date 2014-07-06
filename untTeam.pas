@@ -30,6 +30,8 @@ type
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure lvMembersItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
     procedure getTeamWall(sTeam : String);
@@ -179,6 +181,16 @@ begin
   inherited;
   LValue := GetSelectedValue(lvEvents);
   showNewFormWithId('TfrmEvent',LValue.ToString);
+end;
+
+procedure TfrmTeam.lvMembersItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  LValue : TValue;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvMembers);
+  showNewFormWithId('TfrmFriend',LValue.ToString);
 end;
 
 initialization
