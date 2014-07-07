@@ -138,8 +138,19 @@ object dmdEvent: TdmdEvent
   end
   object reqAttending: TRESTRequest
     Client = restAPI
-    Params = <>
-    Response = respEvent
+    Params = <
+      item
+        name = 'key'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'id'
+        Value = '17'
+      end>
+    Resource = 'events/getMembersAttending'
+    Response = respAttending
     SynchronizedEvents = False
     Left = 160
     Top = 24
@@ -150,6 +161,7 @@ object dmdEvent: TdmdEvent
   end
   object rdsaAttending: TRESTResponseDataSetAdapter
     FieldDefs = <>
+    Response = respAttending
     Left = 160
     Top = 128
   end
