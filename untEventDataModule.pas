@@ -36,6 +36,9 @@ type
     fdmEventend_date: TWideStringField;
     fdmEventfirst_name: TWideStringField;
     fdmEventlast_name: TWideStringField;
+    reqAttending: TRESTRequest;
+    respAttending: TRESTResponse;
+    rdsaAttending: TRESTResponseDataSetAdapter;
   private
     { Private declarations }
   public

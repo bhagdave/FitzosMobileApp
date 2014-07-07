@@ -32,12 +32,10 @@ object dmdEvent: TdmdEvent
     Top = 16
   end
   object respEvent: TRESTResponse
-    ContentType = 'text/html'
     Left = 96
     Top = 64
   end
   object rdsaEvent: TRESTResponseDataSetAdapter
-    Active = True
     Dataset = fdmEvent
     FieldDefs = <>
     Response = respEvent
@@ -46,108 +44,7 @@ object dmdEvent: TdmdEvent
     Top = 112
   end
   object fdmEvent: TFDMemTable
-    Active = True
-    FieldDefs = <
-      item
-        Name = 'id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'name'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'content'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'date'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'published'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'date_added'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'last_modified'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'image'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'type'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'sub_type'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'public'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'team_id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'time'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'member_id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'location'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'end_time'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'sport_id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'end_date'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'first_name'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'last_name'
-        DataType = ftWideString
-        Size = 255
-      end>
+    FieldDefs = <>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
@@ -238,5 +135,22 @@ object dmdEvent: TdmdEvent
       FieldName = 'last_name'
       Size = 255
     end
+  end
+  object reqAttending: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Response = respEvent
+    SynchronizedEvents = False
+    Left = 160
+    Top = 24
+  end
+  object respAttending: TRESTResponse
+    Left = 160
+    Top = 72
+  end
+  object rdsaAttending: TRESTResponseDataSetAdapter
+    FieldDefs = <>
+    Left = 160
+    Top = 128
   end
 end
