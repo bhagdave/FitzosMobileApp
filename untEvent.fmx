@@ -1,31 +1,27 @@
 inherited frmEvent: TfrmEvent
   Caption = 'Event'
-  ClientHeight = 567
-  ClientWidth = 384
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 4'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 384.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 292.000000000000000000
-    end
-  end
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 519.000000000000000000
-    Width = 384.000000000000000000
-    inherited btnFriends: TCornerButton
-      Position.X = 292.000000000000000000
+    Position.Y = 412.000000000000000000
+    object btnEdit: TButton
+      Align = HorzCenter
+      Height = 54.000000000000000000
+      Position.X = 144.000000000000000000
+      TabOrder = 3
+      Text = 'Edit '
+      Visible = False
+      Width = 57.000000000000000000
     end
   end
   inherited pnlTop: TPanel
-    Width = 384.000000000000000000
     inherited edtSearch: TEdit
-      Width = 335.000000000000000000
       inherited imgSearch: TImage
         MultiResBitmap = <
           item
@@ -98,27 +94,21 @@ inherited frmEvent: TfrmEvent
               5A043CCACBF0D283DBE0D4B130CA7C610FFFEF00F81750BF807C8CB8AAE80000
               000049454E44AE426082}
           end>
-        Position.X = 293.000000000000000000
       end
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 335.000000000000000000
     end
     inherited lblCaption: TLabel
       Text = ''
-      Width = 384.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 414.000000000000000000
-    Width = 384.000000000000000000
+    Height = 307.000000000000000000
     object lblName: TLabel
       Align = Top
       StyledSettings = [Family, Size, Style]
       Height = 23.000000000000000000
       TextSettings.FontColor = claWhitesmoke
       TextSettings.HorzAlign = Center
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
     end
     object lblContent: TLabel
       Align = Top
@@ -126,7 +116,7 @@ inherited frmEvent: TfrmEvent
       Height = 50.000000000000000000
       Position.Y = 23.000000000000000000
       TextSettings.FontColor = claWhitesmoke
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
     end
     object lblDate: TLabel
       Align = Top
@@ -135,7 +125,7 @@ inherited frmEvent: TfrmEvent
       Position.Y = 73.000000000000000000
       TextSettings.FontColor = claWhitesmoke
       TextSettings.HorzAlign = Center
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
     end
     object expAttending: TExpander
       Align = Top
@@ -144,7 +134,7 @@ inherited frmEvent: TfrmEvent
       Position.Y = 96.000000000000000000
       ShowCheck = False
       Text = 'Attending'
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       TabOrder = 0
       ContentSize = '152'
       object lvAttending: TListView
@@ -167,8 +157,8 @@ inherited frmEvent: TfrmEvent
       Position.Y = 121.000000000000000000
       ShowCheck = False
       Text = 'Event Wall'
-      Width = 384.000000000000000000
-      TabOrder = 2
+      Width = 320.000000000000000000
+      TabOrder = 1
       ContentSize = '111'
       object lvWall: TListView
         ItemAppearanceClassName = 'TListItemAppearance'

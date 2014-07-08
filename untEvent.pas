@@ -29,6 +29,7 @@ type
     lvWall: TListView;
     BindSourceDB3: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
+    btnEdit: TButton;
     procedure FormActivate(Sender: TObject);
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -78,6 +79,9 @@ begin
   end;
   getAttending();
   getWall();
+  getOwner();
+  if bOwner then
+    btnEdit.Visible := true;
 end;
 
 procedure TfrmEvent.getAttending;
@@ -94,7 +98,10 @@ begin
       reqAttending.Params.ParameterByName('id').Value := id;
       reqAttending.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
       reqAttending.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      reqAttending.Execute;
+      try
+        reqAttending.Execute;
+      except on E: Exception do
+      end;
       sResult := getResultString(respAttending.Content);
       if (sResult = 'OK') then
       begin
@@ -120,6 +127,7 @@ begin
     sResult := getResultString(respGeneric.Content);
       if (sResult = 'OK') then
       begin
+        showmessage(respGeneric.Content);
         bOwner := getResultBoolean(respGeneric.Content,'Result');
       end;
   end;
@@ -139,7 +147,10 @@ begin
       reqWall.Params.ParameterByName('id').Value := id;
       reqWall.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
       reqWall.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      reqWall.Execute;
+      try
+        reqWall.Execute;
+      except on E: Exception do
+      end;
       sResult := getResultString(respWall.Content);
       if (sResult = 'OK') then
       begin
