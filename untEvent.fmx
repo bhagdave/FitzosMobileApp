@@ -156,12 +156,14 @@ inherited frmEvent: TfrmEvent
         Height = 152.000000000000000000
         TabOrder = 0
         Width = 384.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Detail
         OnItemClick = lvAttendingItemClick
       end
     end
     object expWall: TExpander
       Align = Top
-      Height = 136.000000000000000000
+      Height = 25.000000000000000000
+      IsExpanded = False
       Position.Y = 121.000000000000000000
       ShowCheck = False
       Text = 'Event Wall'
@@ -177,6 +179,7 @@ inherited frmEvent: TfrmEvent
         Height = 111.000000000000000000
         TabOrder = 0
         Width = 384.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
       end
     end
   end
