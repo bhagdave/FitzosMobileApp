@@ -30,15 +30,18 @@ type
     BindSourceDB3: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
     btnEdit: TButton;
+    btnPost: TButton;
     procedure FormActivate(Sender: TObject);
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
   private
     { Private declarations }
     bOwner : Boolean;
+    bAttending : Boolean;
     procedure getAttending;
     procedure getWall;
     procedure getOwner;
+    procedure isAttending;
   public
     { Public declarations }
   end;
@@ -81,7 +84,14 @@ begin
   getWall();
   getOwner();
   if bOwner then
-    btnEdit.Visible := true;
+    btnEdit.Visible := true
+  else
+    btnEdit.Visible := false;
+  isAttending();
+  if bAttending then
+    btnPost.Visible := true
+  else
+    btnPost.Visible := false;
 end;
 
 procedure TfrmEvent.getAttending;
@@ -156,6 +166,27 @@ begin
       begin
           rdsaWall.Response := respWall;
           fdmWall.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEvent.isAttending;
+var
+  sResult : String;
+begin
+  // ok lets try and get some data
+  with dmdDataModule do
+  begin
+    reqGeneric.Resource := 'r/events/isAttendee';
+    reqGeneric.Params.addItem('id',memberId);
+    reqGeneric.Params.addItem('event',id);
+    reqGeneric.Params.AddItem('signature',signature('isOwner'));
+    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Execute;
+    sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+        bAttending := getResultBoolean(respGeneric.Content,'Result');
       end;
   end;
 end;

@@ -1,7 +1,7 @@
 object dmdEvent: TdmdEvent
   OldCreateOrder = False
-  Height = 284
-  Width = 404
+  Height = 321
+  Width = 567
   object restAPI: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
