@@ -39,6 +39,34 @@ type
     reqAttending: TRESTRequest;
     respAttending: TRESTResponse;
     rdsaAttending: TRESTResponseDataSetAdapter;
+    fdmAttending: TFDMemTable;
+    fdmAttendingid: TWideStringField;
+    fdmAttendingevent_id: TWideStringField;
+    fdmAttendingmember_id: TWideStringField;
+    fdmAttendingpaid: TWideStringField;
+    fdmAttendingcancelled: TWideStringField;
+    fdmAttendingdob: TWideStringField;
+    fdmAttendinggender: TWideStringField;
+    fdmAttendingname: TWideStringField;
+    fdmAttendingzip: TWideStringField;
+    fdmAttendingcountry: TWideStringField;
+    fdmAttendinglanguage: TWideStringField;
+    fdmAttendingnickname: TWideStringField;
+    fdmAttendingheight: TWideStringField;
+    fdmAttendingweight: TWideStringField;
+    fdmAttendingbmi: TWideStringField;
+    fdmAttendingbody_fat_percentage: TWideStringField;
+    fdmAttendingunits: TWideStringField;
+    fdmAttendingactivity: TWideStringField;
+    fdmAttendinglocation: TWideStringField;
+    fdmAttendingimage: TWideStringField;
+    fdmAttendingshow_status: TWideStringField;
+    fdmAttendingshow_progress: TWideStringField;
+    fdmAttendingfind_trainer: TWideStringField;
+    fdmAttendingshow_tables: TWideStringField;
+    fdmAttendingsearch: TWideStringField;
+    fdmAttendingmessage: TWideStringField;
+    fdmAttendingage: TWideStringField;
   private
     { Private declarations }
   public

@@ -156,13 +156,274 @@ object dmdEvent: TdmdEvent
     Top = 24
   end
   object respAttending: TRESTResponse
+    ContentType = 'text/html'
     Left = 160
     Top = 72
   end
   object rdsaAttending: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmAttending
     FieldDefs = <>
     Response = respAttending
+    RootElement = 'Result'
     Left = 160
     Top = 128
+  end
+  object fdmAttending: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'event_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'paid'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'cancelled'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'dob'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'gender'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'zip'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'country'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'language'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'nickname'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'height'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'weight'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'bmi'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'body_fat_percentage'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'units'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'activity'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_status'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_progress'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'find_trainer'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_tables'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'search'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'message'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'age'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 152
+    Top = 176
+    object fdmAttendingid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmAttendingevent_id: TWideStringField
+      FieldName = 'event_id'
+      Size = 255
+    end
+    object fdmAttendingmember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmAttendingpaid: TWideStringField
+      FieldName = 'paid'
+      Size = 255
+    end
+    object fdmAttendingcancelled: TWideStringField
+      FieldName = 'cancelled'
+      Size = 255
+    end
+    object fdmAttendingdob: TWideStringField
+      FieldName = 'dob'
+      Size = 255
+    end
+    object fdmAttendinggender: TWideStringField
+      FieldName = 'gender'
+      Size = 255
+    end
+    object fdmAttendingname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmAttendingzip: TWideStringField
+      FieldName = 'zip'
+      Size = 255
+    end
+    object fdmAttendingcountry: TWideStringField
+      FieldName = 'country'
+      Size = 255
+    end
+    object fdmAttendinglanguage: TWideStringField
+      FieldName = 'language'
+      Size = 255
+    end
+    object fdmAttendingnickname: TWideStringField
+      FieldName = 'nickname'
+      Size = 255
+    end
+    object fdmAttendingheight: TWideStringField
+      FieldName = 'height'
+      Size = 255
+    end
+    object fdmAttendingweight: TWideStringField
+      FieldName = 'weight'
+      Size = 255
+    end
+    object fdmAttendingbmi: TWideStringField
+      FieldName = 'bmi'
+      Size = 255
+    end
+    object fdmAttendingbody_fat_percentage: TWideStringField
+      FieldName = 'body_fat_percentage'
+      Size = 255
+    end
+    object fdmAttendingunits: TWideStringField
+      FieldName = 'units'
+      Size = 255
+    end
+    object fdmAttendingactivity: TWideStringField
+      FieldName = 'activity'
+      Size = 255
+    end
+    object fdmAttendinglocation: TWideStringField
+      FieldName = 'location'
+      Size = 255
+    end
+    object fdmAttendingimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmAttendingshow_status: TWideStringField
+      FieldName = 'show_status'
+      Size = 255
+    end
+    object fdmAttendingshow_progress: TWideStringField
+      FieldName = 'show_progress'
+      Size = 255
+    end
+    object fdmAttendingfind_trainer: TWideStringField
+      FieldName = 'find_trainer'
+      Size = 255
+    end
+    object fdmAttendingshow_tables: TWideStringField
+      FieldName = 'show_tables'
+      Size = 255
+    end
+    object fdmAttendingsearch: TWideStringField
+      FieldName = 'search'
+      Size = 255
+    end
+    object fdmAttendingmessage: TWideStringField
+      FieldName = 'message'
+      Size = 255
+    end
+    object fdmAttendingage: TWideStringField
+      FieldName = 'age'
+      Size = 255
+    end
   end
 end

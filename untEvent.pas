@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.Components, Data.Bind.DBScope, untDataModule;
+  Data.Bind.Components, Data.Bind.DBScope, untDataModule, FMX.ListView.Types,
+  FMX.ListView;
 
 type
   TfrmEvent = class(TfrmBase)
@@ -20,9 +21,16 @@ type
     lblDate: TLabel;
     LinkPropertyToFieldText3: TLinkPropertyToField;
     LinkPropertyToFieldText4: TLinkPropertyToField;
+    expAttending: TExpander;
+    lvAttending: TListView;
+    BindSourceDB2: TBindSourceDB;
+    LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
+    procedure lvAttendingItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
+    procedure getAttending;
   public
     { Public declarations }
   end;
@@ -61,6 +69,41 @@ begin
 //          loadPicture(sURL);
       end;
   end;
+  getAttending();
+end;
+
+procedure TfrmEvent.getAttending;
+var
+  sResult : String;
+begin
+  with dmdEvent do
+  begin
+      // Open up the data.
+      rdsaAttending.ClearDataSet;
+      fdmAttending.Close;
+      respAttending.Content.Empty;
+      reqAttending.ClearBody;
+      reqAttending.Params.ParameterByName('id').Value := id;
+      reqAttending.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
+      reqAttending.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+      reqAttending.Execute;
+      sResult := getResultString(respAttending.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaAttending.Response := respAttending;
+          fdmAttending.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEvent.lvAttendingItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  LValue : TValue;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvAttending);
+  showNewFormWithId('TfrmFriend',lValue.ToString);
 end;
 
 initialization
