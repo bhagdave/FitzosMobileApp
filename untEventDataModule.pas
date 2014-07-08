@@ -81,6 +81,10 @@ type
     fdmWallfirst_name: TWideStringField;
     fdmWalllast_name: TWideStringField;
     fdmWallmemberId: TWideStringField;
+    fdmGeneric: TFDMemTable;
+    rdsaGeneric: TRESTResponseDataSetAdapter;
+    respGeneric: TRESTResponse;
+    reqGeneric: TRESTRequest;
   private
     { Private declarations }
   public

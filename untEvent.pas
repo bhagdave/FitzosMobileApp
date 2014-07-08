@@ -34,8 +34,10 @@ type
       const AItem: TListViewItem);
   private
     { Private declarations }
+    bOwner : Boolean;
     procedure getAttending;
     procedure getWall;
+    procedure getOwner;
   public
     { Public declarations }
   end;
@@ -98,6 +100,27 @@ begin
       begin
           rdsaAttending.Response := respAttending;
           fdmAttending.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEvent.getOwner;
+var
+  sResult : String;
+begin
+  // ok lets try and get some data
+  with dmdDataModule do
+  begin
+    reqGeneric.Resource := 'r/events/isOwner';
+    reqGeneric.Params.addItem('id',memberId);
+    reqGeneric.Params.addItem('event',id);
+    reqGeneric.Params.AddItem('signature',signature('isOwner'));
+    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Execute;
+    sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+        bOwner := getResultBoolean(respGeneric.Content,'Result');
       end;
   end;
 end;

@@ -563,4 +563,34 @@ object dmdEvent: TdmdEvent
       Size = 255
     end
   end
+  object fdmGeneric: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 308
+    Top = 192
+  end
+  object rdsaGeneric: TRESTResponseDataSetAdapter
+    Dataset = fdmGeneric
+    FieldDefs = <>
+    Response = respGeneric
+    RootElement = 'Result'
+    Left = 308
+    Top = 136
+  end
+  object respGeneric: TRESTResponse
+    Left = 308
+    Top = 80
+  end
+  object reqGeneric: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Response = respGeneric
+    SynchronizedEvents = False
+    Left = 308
+    Top = 25
+  end
 end
