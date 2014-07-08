@@ -426,4 +426,141 @@ object dmdEvent: TdmdEvent
       Size = 255
     end
   end
+  object reqWall: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '17'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'events/getWall'
+    Response = respWall
+    SynchronizedEvents = False
+    Left = 232
+    Top = 24
+  end
+  object respWall: TRESTResponse
+    ContentType = 'text/html'
+    Left = 240
+    Top = 80
+  end
+  object rdsaWall: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmWall
+    FieldDefs = <>
+    Response = respWall
+    RootElement = 'Result'
+    Left = 240
+    Top = 136
+  end
+  object fdmWall: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'event_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'message'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'deleted'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'memberId'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 240
+    Top = 192
+    object fdmWallid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmWallevent_id: TWideStringField
+      FieldName = 'event_id'
+      Size = 255
+    end
+    object fdmWallmessage: TWideStringField
+      FieldName = 'message'
+      Size = 255
+    end
+    object fdmWallimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmWalldate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmWalldeleted: TWideStringField
+      FieldName = 'deleted'
+      Size = 255
+    end
+    object fdmWallmember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmWallfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 255
+    end
+    object fdmWalllast_name: TWideStringField
+      FieldName = 'last_name'
+      Size = 255
+    end
+    object fdmWallmemberId: TWideStringField
+      FieldName = 'memberId'
+      Size = 255
+    end
+  end
 end

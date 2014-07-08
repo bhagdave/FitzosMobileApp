@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.Components, Data.Bind.DBScope, untDataModule, FMX.ListView.Types,
+  Data.Bind.Components, Data.Bind.DBScope, FMX.ListView.Types,
   FMX.ListView;
 
 type
@@ -25,12 +25,17 @@ type
     lvAttending: TListView;
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField1: TLinkFillControlToField;
+    expWall: TExpander;
+    lvWall: TListView;
+    BindSourceDB3: TBindSourceDB;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
   private
     { Private declarations }
     procedure getAttending;
+    procedure getWall;
   public
     { Public declarations }
   end;
@@ -41,7 +46,7 @@ var
 implementation
 
 uses
-  untMainForm;
+  untMainForm, untDataModule;
 
 {$R *.fmx}
 procedure TfrmEvent.FormActivate(Sender: TObject);
@@ -70,6 +75,7 @@ begin
       end;
   end;
   getAttending();
+  getWall();
 end;
 
 procedure TfrmEvent.getAttending;
@@ -92,6 +98,30 @@ begin
       begin
           rdsaAttending.Response := respAttending;
           fdmAttending.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEvent.getWall;
+var
+  sResult : String;
+begin
+  with dmdEvent do
+  begin
+      // Open up the data.
+      rdsaWall.ClearDataSet;
+      fdmWall.Close;
+      respWall.Content.Empty;
+      reqWall.ClearBody;
+      reqWall.Params.ParameterByName('id').Value := id;
+      reqWall.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
+      reqWall.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+      reqWall.Execute;
+      sResult := getResultString(respWall.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaWall.Response := respWall;
+          fdmWall.Open;
       end;
   end;
 end;

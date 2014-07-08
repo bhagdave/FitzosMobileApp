@@ -145,7 +145,7 @@ inherited frmEvent: TfrmEvent
       ShowCheck = False
       Text = 'Attending'
       Width = 384.000000000000000000
-      TabOrder = 1
+      TabOrder = 0
       ContentSize = '152'
       object lvAttending: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
@@ -157,6 +157,26 @@ inherited frmEvent: TfrmEvent
         TabOrder = 0
         Width = 384.000000000000000000
         OnItemClick = lvAttendingItemClick
+      end
+    end
+    object expWall: TExpander
+      Align = Top
+      Height = 136.000000000000000000
+      Position.Y = 121.000000000000000000
+      ShowCheck = False
+      Text = 'Event Wall'
+      Width = 384.000000000000000000
+      TabOrder = 2
+      ContentSize = '111'
+      object lvWall: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Height = 111.000000000000000000
+        TabOrder = 0
+        Width = 384.000000000000000000
       end
     end
   end
@@ -212,11 +232,29 @@ inherited frmEvent: TfrmEvent
       FillHeaderFieldName = 'nickname'
       FillBreakGroups = <>
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvWall
+      Track = True
+      FillDataSource = BindSourceDB3
+      FillDisplayFieldName = 'message'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'first_name'
+      FillBreakGroups = <>
+    end
   end
   object BindSourceDB2: TBindSourceDB
     DataSet = dmdEvent.fdmAttending
     ScopeMappings = <>
     Left = 88
     Top = 344
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = dmdEvent.fdmWall
+    ScopeMappings = <>
+    Left = 176
+    Top = 272
   end
 end

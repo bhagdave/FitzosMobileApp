@@ -67,6 +67,20 @@ type
     fdmAttendingsearch: TWideStringField;
     fdmAttendingmessage: TWideStringField;
     fdmAttendingage: TWideStringField;
+    reqWall: TRESTRequest;
+    respWall: TRESTResponse;
+    rdsaWall: TRESTResponseDataSetAdapter;
+    fdmWall: TFDMemTable;
+    fdmWallid: TWideStringField;
+    fdmWallevent_id: TWideStringField;
+    fdmWallmessage: TWideStringField;
+    fdmWallimage: TWideStringField;
+    fdmWalldate: TWideStringField;
+    fdmWalldeleted: TWideStringField;
+    fdmWallmember_id: TWideStringField;
+    fdmWallfirst_name: TWideStringField;
+    fdmWalllast_name: TWideStringField;
+    fdmWallmemberId: TWideStringField;
   private
     { Private declarations }
   public
