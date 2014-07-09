@@ -32,6 +32,8 @@ type
     procedure FormActivate(Sender: TObject);
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure btnPostClick(Sender: TObject);
+    procedure btnPostWallClick(Sender: TObject);
   private
     { Private declarations }
     bOwner : Boolean;
@@ -53,6 +55,25 @@ uses
   untMainForm, untDataModule;
 
 {$R *.fmx}
+procedure TfrmEvent.btnPostClick(Sender: TObject);
+var
+  sMessage : String;
+begin
+  inherited;
+  sMessage := inputbox('Wall Message','Please enter your post','');
+  if (sMessage <> '') then
+  begin
+    //
+  end;
+end;
+
+procedure TfrmEvent.btnPostWallClick(Sender: TObject);
+begin
+  inherited;
+//  if True then
+//
+end;
+
 procedure TfrmEvent.FormActivate(Sender: TObject);
 var
   sResult : String;
