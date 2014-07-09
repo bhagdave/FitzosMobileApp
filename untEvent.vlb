@@ -43,10 +43,6 @@ Coordinates=257,342,67,33
 [dmdEvent.reqEvent]
 Coordinates=154,10,111,123
 
-[lblName]
-Coordinates=230,150,54,51
-Visible=True
-
 [dmdEvent.respEvent]
 Coordinates=10,10,116,267
 
@@ -54,7 +50,8 @@ Coordinates=10,10,116,267
 Coordinates=291,10,103,69
 
 []
-Coordinates=145,222,82,33
+Coordinates=230,150,54,51
+Visible=True
 
 [lblContent]
 Coordinates=145,152,65,51

@@ -12,11 +12,9 @@ uses
 
 type
   TfrmEvent = class(TfrmBase)
-    lblName: TLabel;
     lblContent: TLabel;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkPropertyToFieldText: TLinkPropertyToField;
     LinkPropertyToFieldText2: TLinkPropertyToField;
     lblDate: TLabel;
     LinkPropertyToFieldText3: TLinkPropertyToField;
@@ -137,7 +135,6 @@ begin
     sResult := getResultString(respGeneric.Content);
       if (sResult = 'OK') then
       begin
-        showmessage(respGeneric.Content);
         bOwner := getResultBoolean(respGeneric.Content,'Result');
       end;
   end;

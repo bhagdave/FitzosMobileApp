@@ -2,8 +2,8 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Main Form'
-  ClientHeight = 460
-  ClientWidth = 320
+  ClientHeight = 567
+  ClientWidth = 360
   Fill.Bitmap.Bitmap.PNG = {
     89504E470D0A1A0A0000000D49484452000001F4000001F30806000000D6D3EF
     32000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
@@ -5902,11 +5902,11 @@ object frmMain: TfrmMain
   FormFactor.Devices = [Desktop, iPhone, iPad]
   FullScreen = True
   DesignerMobile = True
-  DesignerWidth = 320
-  DesignerHeight = 480
-  DesignerDeviceName = 'iPhone'
+  DesignerWidth = 360
+  DesignerHeight = 592
+  DesignerDeviceName = 'Google Nexus 5'
   DesignerOrientation = 0
-  DesignerOSVersion = '7'
+  DesignerOSVersion = ''
   object imgLogo: TImageControl
     Align = Top
     Bitmap.PNG = {
@@ -6240,7 +6240,7 @@ object frmMain: TfrmMain
     Height = 57.000000000000000000
     HitTest = False
     TabOrder = 0
-    Width = 320.000000000000000000
+    Width = 360.000000000000000000
   end
   object edtUsername: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -6248,9 +6248,10 @@ object frmMain: TfrmMain
     TabOrder = 1
     KeyboardType = EmailAddress
     Text = 'dave_gill@blueyonder.co.uk'
+    TextSettings.FontColor = claWhitesmoke
     Position.Y = 113.000000000000000000
-    Width = 320.000000000000000000
-    Height = 30.000000000000000000
+    Width = 360.000000000000000000
+    Height = 32.000000000000000000
     TextPrompt = 'Username'
     StyledSettings = [Family, Size, Style]
   end
@@ -6260,28 +6261,29 @@ object frmMain: TfrmMain
     TabOrder = 2
     Password = True
     Text = 'h6redmine'
-    Position.Y = 143.000000000000000000
-    Width = 320.000000000000000000
-    Height = 30.000000000000000000
+    TextSettings.FontColor = claWhitesmoke
+    Position.Y = 145.000000000000000000
+    Width = 360.000000000000000000
+    Height = 32.000000000000000000
     TextPrompt = 'Password'
     StyledSettings = [Family, Size, Style]
   end
   object btnLogin: TButton
     Align = Top
     Height = 48.000000000000000000
-    Position.Y = 173.000000000000000000
+    Position.Y = 177.000000000000000000
     TabOrder = 3
     Text = 'Login'
-    Width = 320.000000000000000000
+    Width = 360.000000000000000000
     OnClick = btnLoginClick
   end
   object btnSignup: TButton
     Align = Top
     Height = 48.000000000000000000
-    Position.Y = 221.000000000000000000
+    Position.Y = 225.000000000000000000
     TabOrder = 4
     Text = 'Signup Here'
-    Width = 320.000000000000000000
+    Width = 360.000000000000000000
   end
   object txtWelcomeMessage: TText
     Align = Top
@@ -6291,6 +6293,6 @@ object frmMain: TfrmMain
       'Team and group focused workouts, events and competitions allowin' +
       'g athletes to reach their next peak'
     TextSettings.FontColor = claAqua
-    Width = 320.000000000000000000
+    Width = 360.000000000000000000
   end
 end
