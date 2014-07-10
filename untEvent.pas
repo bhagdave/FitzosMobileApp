@@ -228,7 +228,7 @@ begin
     sResult := getResultString(respGeneric.Content);
       if (sResult = 'OK') then
       begin
-        bOwner := getResultBoolean(respGeneric.Content,'Result');
+        getWall();
       end;
   end;
 end;
