@@ -33,7 +33,6 @@ type
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnPostClick(Sender: TObject);
-    procedure btnPostWallClick(Sender: TObject);
   private
     { Private declarations }
     bOwner : Boolean;
@@ -42,6 +41,7 @@ type
     procedure getWall;
     procedure getOwner;
     procedure isAttending;
+    procedure postWallMessage(sMessage:String);
   public
     { Public declarations }
   end;
@@ -63,15 +63,8 @@ begin
   sMessage := inputbox('Wall Message','Please enter your post','');
   if (sMessage <> '') then
   begin
-    //
+    postWallMessage(sMessage);
   end;
-end;
-
-procedure TfrmEvent.btnPostWallClick(Sender: TObject);
-begin
-  inherited;
-//  if True then
-//
 end;
 
 procedure TfrmEvent.FormActivate(Sender: TObject);
@@ -217,6 +210,27 @@ begin
   inherited;
   LValue := GetSelectedValue(lvAttending);
   showNewFormWithId('TfrmFriend',lValue.ToString);
+end;
+
+procedure TfrmEvent.postWallMessage(sMessage: String);
+var
+  sResult : String;
+begin
+  with dmdDataModule do
+  begin
+    reqGeneric.Resource := 'r/events/addWallPostAPI';
+    reqGeneric.Params.addItem('member_id',memberId);
+    reqGeneric.Params.addItem('event_id',id);
+    reqGeneric.Params.AddItem('message',sMessage);
+    reqGeneric.Params.AddItem('signature',signature('isOwner'));
+    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Execute;
+    sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+        bOwner := getResultBoolean(respGeneric.Content,'Result');
+      end;
+  end;
 end;
 
 initialization
