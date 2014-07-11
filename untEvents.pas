@@ -14,9 +14,11 @@ type
     lvEvents: TListView;
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
+    btnCreateEvent: TButton;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure btnCreateEventClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +34,12 @@ uses
   untMainForm;
 {$R *.fmx}
 { TfrmEvents }
+
+procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
+begin
+  inherited;
+  showNewForm('TfrmEventCreation');
+end;
 
 procedure TfrmEvents.FormActivate(Sender: TObject);
 var

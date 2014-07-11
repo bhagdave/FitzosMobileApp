@@ -5,12 +5,18 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  untBaseForm, FMX.Objects, FMX.Edit;
+  untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, FMX.Layouts;
 
 type
   TfrmEventCreation = class(TfrmBase)
+    vsbDetails: TVertScrollBox;
+    Layout1: TLayout;
+    edtName: TEdit;
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
+    procedure getAttending;
+    procedure getWall;
   public
     { Public declarations }
   end;
@@ -20,7 +26,73 @@ var
 
 implementation
 
+uses
+  untMainForm, untDataModule;
+
 {$R *.fmx}
+procedure TfrmEventCreation.FormActivate(Sender: TObject);
+begin
+  inherited;
+  if id <> '' then
+  begin
+    // Get data!
+  end;
+end;
+
+procedure TfrmEventCreation.getAttending;
+var
+  sResult : String;
+begin
+  with dmdEvent do
+  begin
+      // Open up the data.
+      rdsaAttending.ClearDataSet;
+      fdmAttending.Close;
+      respAttending.Content.Empty;
+      reqAttending.ClearBody;
+      reqAttending.Params.ParameterByName('id').Value := id;
+      reqAttending.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
+      reqAttending.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+      try
+        reqAttending.Execute;
+      except on E: Exception do
+      end;
+      sResult := getResultString(respAttending.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaAttending.Response := respAttending;
+          fdmAttending.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEventCreation.getWall;
+var
+  sResult : String;
+begin
+  with dmdEvent do
+  begin
+      // Open up the data.
+      rdsaWall.ClearDataSet;
+      fdmWall.Close;
+      respWall.Content.Empty;
+      reqWall.ClearBody;
+      reqWall.Params.ParameterByName('id').Value := id;
+      reqWall.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
+      reqWall.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+      try
+        reqWall.Execute;
+      except on E: Exception do
+      end;
+      sResult := getResultString(respWall.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaWall.Response := respWall;
+          fdmWall.Open;
+      end;
+  end;
+end;
+
 initialization
 RegisterFMXClasses([TfrmEventCreation]);
 
