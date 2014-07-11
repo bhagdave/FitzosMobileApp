@@ -24,6 +24,8 @@ type
     { Public declarations }
   end;
 
+var
+  frmNotifications:TfrmNotifications;
 
 implementation
 

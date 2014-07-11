@@ -5,13 +5,25 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, FMX.Layouts;
+  untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, FMX.Layouts, FMX.Memo,
+  FMX.DateTimeCtrls, FMX.ListBox;
 
 type
   TfrmEventCreation = class(TfrmBase)
     vsbDetails: TVertScrollBox;
-    Layout1: TLayout;
+    lyoEvent: TLayout;
     edtName: TEdit;
+    memContent: TMemo;
+    lblDescription: TLabel;
+    edtDate: TDateEdit;
+    lyoDate: TLayout;
+    lblStartDate: TLabel;
+    cbPublished: TCheckBox;
+    cboType: TComboBox;
+    cboFee: TComboBox;
+    edtStartTime: TTimeEdit;
+    lyoStartTime: TLayout;
+    lblStartTime: TLabel;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
@@ -35,6 +47,7 @@ begin
   begin
     // Get data!
   end;
+  edtDate.Align := TAlignLayout.client;
 end;
 
 procedure TfrmEventCreation.getAttending;
