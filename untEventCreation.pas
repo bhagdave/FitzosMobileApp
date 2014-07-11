@@ -16,7 +16,7 @@ type
     memContent: TMemo;
     lblDescription: TLabel;
     edtDate: TDateEdit;
-    lyoDate: TLayout;
+    lyoStartDate: TLayout;
     lblStartDate: TLabel;
     cbPublished: TCheckBox;
     cboType: TComboBox;
@@ -24,6 +24,15 @@ type
     edtStartTime: TTimeEdit;
     lyoStartTime: TLayout;
     lblStartTime: TLabel;
+    edtLocation: TEdit;
+    cboTeam: TComboBox;
+    cboSport: TComboBox;
+    lyoEndDate: TLayout;
+    edtEndDate: TDateEdit;
+    lblEndDate: TLabel;
+    lyoEndTime: TLayout;
+    edtEndTime: TTimeEdit;
+    lblEndTime: TLabel;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
