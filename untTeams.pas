@@ -27,9 +27,6 @@ type
     { Public declarations }
   end;
 
-var
-  frmTeams: TfrmTeams;
-
 implementation
 
 uses

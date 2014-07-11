@@ -21,8 +21,6 @@ type
     { Public declarations }
   end;
 
-var
-  frmEventCreation: TfrmEventCreation;
 
 implementation
 

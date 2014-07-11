@@ -23,8 +23,6 @@ type
     { Public declarations }
   end;
 
-var
-  frmFriends: TfrmFriends;
 
 implementation
 uses

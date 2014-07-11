@@ -189,3 +189,9 @@ ModelLayerNames=Notification
 ActiveLayerNames=Notification
 EditingLayerName=Notification
 
+[dmdDataModule.fdmFriends]
+Visible=False
+
+[dmdDataModule.fdmEvents]
+Visible=False
+

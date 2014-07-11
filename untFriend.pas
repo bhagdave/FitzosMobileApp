@@ -32,8 +32,6 @@ type
     { Public declarations }
   end;
 
-var
-  frmFriend: TfrmFriend;
 
 implementation
 

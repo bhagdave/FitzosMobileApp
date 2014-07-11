@@ -14,9 +14,6 @@ type
     { Public declarations }
   end;
 
-var
-  frmProfile: TfrmProfile;
-
 implementation
 
 {$R *.fmx}

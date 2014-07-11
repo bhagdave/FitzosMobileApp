@@ -46,9 +46,6 @@ type
     { Public declarations }
   end;
 
-var
-  frmEvent: TfrmEvent;
-
 implementation
 
 uses

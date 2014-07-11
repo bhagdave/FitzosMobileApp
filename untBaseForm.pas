@@ -39,9 +39,6 @@ type
 
   end;
 
-var
-  frmBase: TfrmBase;
-
 implementation
 
 {$R *.fmx}
