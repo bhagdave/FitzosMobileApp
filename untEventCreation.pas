@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, FMX.Layouts, FMX.Memo,
-  FMX.DateTimeCtrls, FMX.ListBox;
+  FMX.DateTimeCtrls, FMX.ListBox,REST.Client;
 
 type
   TfrmEventCreation = class(TfrmBase)
@@ -42,10 +42,12 @@ type
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
+    procedure btnSubmitClick(Sender: TObject);
   private
     { Private declarations }
     procedure getAttending;
     procedure getWall;
+    procedure addParams(request : TRestRequest);
   public
     { Public declarations }
   end;
@@ -57,11 +59,51 @@ uses
   untMainForm, untDataModule;
 
 {$R *.fmx}
+procedure TfrmEventCreation.addParams(request: TRestRequest);
+begin
+  request.Params.AddItem('name',edtName.Text);
+  request.Params.AddItem('content',memContent.Lines.GetText);
+  request.Params.AddItem('date',DateToStr(edtDate.Date));
+  request.Params.AddItem('published','value');
+  request.Params.AddItem('type',cboType.Items[cboType.ItemIndex]);
+  request.Params.AddItem('sub_type','value');
+  request.Params.AddItem('public','value');
+  request.Params.AddItem('team_id','value');
+  request.Params.AddItem('member_id','value');
+  request.Params.AddItem('time','value');
+  request.Params.AddItem('location','value');
+  request.Params.AddItem('end_time','value');
+  request.Params.AddItem('end_date','value');
+  request.Params.AddItem('sport_id','value');
+end;
+
 procedure TfrmEventCreation.btnNextClick(Sender: TObject);
 begin
   inherited;
-  expDetails.IsExpanded := false;
-  expTimes.IsExpanded := true;
+  if edtName.Text <> '' then
+  begin
+    expDetails.IsExpanded := false;
+    expTimes.IsExpanded := true;
+  end
+  else
+    showmessage('Please enter a name for the event');
+end;
+
+procedure TfrmEventCreation.btnSubmitClick(Sender: TObject);
+begin
+  inherited;
+// if we have an id then updatre otherwise insert
+  if id <> '' then
+  begin
+    // update
+  end
+  else
+  begin
+    // insert
+    addParams(dmdEvent.reqCreateEvent);
+    dmdEvent.reqCreateEvent.Execute;
+    showmessage(dmdEvent.respCreateEvent.Content);
+  end;
 end;
 
 procedure TfrmEventCreation.btnTimesNextClick(Sender: TObject);

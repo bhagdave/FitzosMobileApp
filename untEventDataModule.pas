@@ -85,6 +85,8 @@ type
     rdsaGeneric: TRESTResponseDataSetAdapter;
     respGeneric: TRESTResponse;
     reqGeneric: TRESTRequest;
+    reqCreateEvent: TRESTRequest;
+    respCreateEvent: TRESTResponse;
   private
     { Private declarations }
   public

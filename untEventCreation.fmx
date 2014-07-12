@@ -346,6 +346,7 @@ inherited frmEventCreation: TfrmEventCreation
             TabOrder = 5
             Text = 'Submit'
             Width = 513.000000000000000000
+            OnClick = btnSubmitClick
           end
         end
       end

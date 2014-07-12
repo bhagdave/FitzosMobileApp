@@ -593,4 +593,18 @@ object dmdEvent: TdmdEvent
     Left = 308
     Top = 25
   end
+  object reqCreateEvent: TRESTRequest
+    Client = restAPI
+    Method = rmPOST
+    Params = <>
+    Resource = 'rest/events'
+    Response = respCreateEvent
+    SynchronizedEvents = False
+    Left = 384
+    Top = 32
+  end
+  object respCreateEvent: TRESTResponse
+    Left = 392
+    Top = 96
+  end
 end
