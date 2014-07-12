@@ -1,7 +1,7 @@
 object dmdEvent: TdmdEvent
   OldCreateOrder = False
   Height = 321
-  Width = 567
+  Width = 631
   object restAPI: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
@@ -604,7 +604,210 @@ object dmdEvent: TdmdEvent
     Top = 32
   end
   object respCreateEvent: TRESTResponse
-    Left = 392
+    Left = 384
+    Top = 88
+  end
+  object reqTeams: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Resource = 'rest/teams'
+    Response = respTeams
+    SynchronizedEvents = False
+    Left = 456
+    Top = 32
+  end
+  object respTeams: TRESTResponse
+    ContentType = 'text/html'
+    Left = 456
+    Top = 88
+  end
+  object rdsaTeams: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmTeams
+    FieldDefs = <>
+    Response = respTeams
+    RootElement = 'Result'
+    Left = 456
+    Top = 144
+  end
+  object fdmTeams: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'owner'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 456
+    Top = 192
+    object fdmTeamsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmTeamsname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmTeamscontent: TWideStringField
+      FieldName = 'content'
+      Size = 255
+    end
+    object fdmTeamsdate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmTeamsactive: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object fdmTeamsdate_added: TWideStringField
+      FieldName = 'date_added'
+      Size = 255
+    end
+    object fdmTeamslast_modified: TWideStringField
+      FieldName = 'last_modified'
+      Size = 255
+    end
+    object fdmTeamsimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmTeamsowner: TWideStringField
+      FieldName = 'owner'
+      Size = 255
+    end
+    object fdmTeamspublic: TWideStringField
+      FieldName = 'public'
+      Size = 255
+    end
+    object fdmTeamssport_id: TWideStringField
+      FieldName = 'sport_id'
+      Size = 255
+    end
+  end
+  object reqSports: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Resource = 'rest/sports'
+    Response = respSports
+    SynchronizedEvents = False
+    Left = 528
+    Top = 40
+  end
+  object respSports: TRESTResponse
+    ContentType = 'text/html'
+    Left = 528
     Top = 96
+  end
+  object rdsaSports: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmSports
+    FieldDefs = <>
+    Response = respSports
+    RootElement = 'Result'
+    Left = 528
+    Top = 152
+  end
+  object fdmSports: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 528
+    Top = 200
+    object fdmSportsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmSportsname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+  end
+  object dsTeams: TBindSourceDB
+    DataSet = fdmTeams
+    ScopeMappings = <>
+    Left = 448
+    Top = 248
+  end
+  object dsSports: TBindSourceDB
+    DataSet = fdmSports
+    ScopeMappings = <>
+    Left = 528
+    Top = 248
   end
 end

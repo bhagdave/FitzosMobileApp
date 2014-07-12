@@ -7,7 +7,7 @@ uses
   Data.Bind.Components, Data.Bind.ObjectScope, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, REST.Response.Adapter;
+  FireDAC.Comp.Client, REST.Response.Adapter, Data.Bind.DBScope;
 
 type
   TdmdEvent = class(TDataModule)
@@ -87,6 +87,29 @@ type
     reqGeneric: TRESTRequest;
     reqCreateEvent: TRESTRequest;
     respCreateEvent: TRESTResponse;
+    reqTeams: TRESTRequest;
+    respTeams: TRESTResponse;
+    rdsaTeams: TRESTResponseDataSetAdapter;
+    fdmTeams: TFDMemTable;
+    fdmTeamsid: TWideStringField;
+    fdmTeamsname: TWideStringField;
+    fdmTeamscontent: TWideStringField;
+    fdmTeamsdate: TWideStringField;
+    fdmTeamsactive: TWideStringField;
+    fdmTeamsdate_added: TWideStringField;
+    fdmTeamslast_modified: TWideStringField;
+    fdmTeamsimage: TWideStringField;
+    fdmTeamsowner: TWideStringField;
+    fdmTeamspublic: TWideStringField;
+    fdmTeamssport_id: TWideStringField;
+    reqSports: TRESTRequest;
+    respSports: TRESTResponse;
+    rdsaSports: TRESTResponseDataSetAdapter;
+    fdmSports: TFDMemTable;
+    fdmSportsid: TWideStringField;
+    fdmSportsname: TWideStringField;
+    dsTeams: TBindSourceDB;
+    dsSports: TBindSourceDB;
   private
     { Private declarations }
   public

@@ -60,21 +60,27 @@ uses
 
 {$R *.fmx}
 procedure TfrmEventCreation.addParams(request: TRestRequest);
+var
+  sPublic : String;
 begin
+  if cbPublished.IsChecked then
+    sPublic := 'yes'
+  else
+    sPublic := 'no';
   request.Params.AddItem('name',edtName.Text);
   request.Params.AddItem('content',memContent.Lines.GetText);
   request.Params.AddItem('date',DateToStr(edtDate.Date));
-  request.Params.AddItem('published','value');
-  request.Params.AddItem('type',cboType.Items[cboType.ItemIndex]);
-  request.Params.AddItem('sub_type','value');
-  request.Params.AddItem('public','value');
-  request.Params.AddItem('team_id','value');
-  request.Params.AddItem('member_id','value');
-  request.Params.AddItem('time','value');
-  request.Params.AddItem('location','value');
-  request.Params.AddItem('end_time','value');
-  request.Params.AddItem('end_date','value');
-  request.Params.AddItem('sport_id','value');
+  request.Params.AddItem('published', sPublic);
+  request.Params.AddItem('type',cboType.Selected.Text);
+  request.Params.AddItem('sub_type',cboFee.Selected.Text);
+  request.Params.AddItem('public','PUBLIC');
+  request.Params.AddItem('team_id',IntToStr(cboTeam.Selected.Tag));
+  request.Params.AddItem('member_id',dmdDataModule.memberId);
+  request.Params.AddItem('time',edtStartTime.Text);
+  request.Params.AddItem('location',edtLocation.Text);
+  request.Params.AddItem('end_time',edtEndTime.Text);
+  request.Params.AddItem('end_date',DateToStr(edtEndDate.Date));
+  request.Params.AddItem('sport_id',IntToStr(cboSport.Selected.Tag));
 end;
 
 procedure TfrmEventCreation.btnNextClick(Sender: TObject);
@@ -96,6 +102,7 @@ begin
   if id <> '' then
   begin
     // update
+
   end
   else
   begin
@@ -114,12 +121,41 @@ begin
 end;
 
 procedure TfrmEventCreation.FormActivate(Sender: TObject);
+var
+  sResult : String;
 begin
   inherited;
   if id <> '' then
   begin
     // Get data!
   end;
+    with dmdEvent do
+    begin
+      // Open up the data.
+      rdsaSports.ClearDataSet;
+      fdmSports.Close;
+      respSports.Content.Empty;
+      reqSports.ClearBody;
+      reqSports.Execute;
+      sResult := getResultString(respSports.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaSports.Response := respSports;
+          fdmSports.Open;
+      end;
+      // Open up the data.
+      rdsaTeams.ClearDataSet;
+      fdmTeams.Close;
+      respTeams.Content.Empty;
+      reqTeams.ClearBody;
+      reqTeams.Execute;
+      sResult := getResultString(respTeams.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaTeams.Response := respTeams;
+          fdmTeams.Open;
+      end;
+    end;
   edtDate.Align := TAlignLayout.client;
   edtEndDate.Align := TAlignLayout.Client;
 end;
