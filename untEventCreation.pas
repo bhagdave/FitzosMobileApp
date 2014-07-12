@@ -33,6 +33,9 @@ type
     lyoEndTime: TLayout;
     edtEndTime: TTimeEdit;
     lblEndTime: TLabel;
+    expTimes: TExpander;
+    expDetails: TExpander;
+    expOptions: TExpander;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
