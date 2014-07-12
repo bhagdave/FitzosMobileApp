@@ -36,7 +36,12 @@ type
     expTimes: TExpander;
     expDetails: TExpander;
     expOptions: TExpander;
+    btnNext: TButton;
+    btnTimesNext: TButton;
+    btnSubmit: TButton;
     procedure FormActivate(Sender: TObject);
+    procedure btnNextClick(Sender: TObject);
+    procedure btnTimesNextClick(Sender: TObject);
   private
     { Private declarations }
     procedure getAttending;
@@ -52,6 +57,20 @@ uses
   untMainForm, untDataModule;
 
 {$R *.fmx}
+procedure TfrmEventCreation.btnNextClick(Sender: TObject);
+begin
+  inherited;
+  expDetails.IsExpanded := false;
+  expTimes.IsExpanded := true;
+end;
+
+procedure TfrmEventCreation.btnTimesNextClick(Sender: TObject);
+begin
+  inherited;
+  expTimes.IsExpanded := false;
+  expOptions.IsExpanded := true;
+end;
+
 procedure TfrmEventCreation.FormActivate(Sender: TObject);
 begin
   inherited;
@@ -60,6 +79,7 @@ begin
     // Get data!
   end;
   edtDate.Align := TAlignLayout.client;
+  edtEndDate.Align := TAlignLayout.Client;
 end;
 
 procedure TfrmEventCreation.getAttending;

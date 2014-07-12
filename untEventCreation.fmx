@@ -119,17 +119,17 @@ inherited frmEventCreation: TfrmEventCreation
       Width = 513.000000000000000000
       object lyoEvent: TLayout
         Align = Top
-        Height = 449.000000000000000000
+        Height = 377.000000000000000000
         Width = 513.000000000000000000
         TabOrder = 0
         object expDetails: TExpander
           Align = Top
-          Height = 200.000000000000000000
+          Height = 169.000000000000000000
           ShowCheck = False
-          Text = 'expDetails'
+          Text = 'Details'
           Width = 513.000000000000000000
           TabOrder = 1
-          ContentSize = '175'
+          ContentSize = '144'
           object edtName: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
@@ -159,24 +159,34 @@ inherited frmEventCreation: TfrmEventCreation
           object edtLocation: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
+            StyleLookup = 'roundededit'
             TabOrder = 3
-            TextSettings.FontColor = claAzure
             Position.Y = 30.000000000000000000
             Width = 513.000000000000000000
             Height = 22.000000000000000000
             TextPrompt = 'Location'
             StyledSettings = [Family, Size, Style]
           end
+          object btnNext: TButton
+            Align = MostBottom
+            Height = 22.000000000000000000
+            Position.Y = 122.000000000000000000
+            TabOrder = 4
+            Text = 'Next'
+            Width = 513.000000000000000000
+            OnClick = btnNextClick
+          end
         end
         object expTimes: TExpander
           Align = Top
-          Height = 200.000000000000000000
-          Position.Y = 200.000000000000000000
+          Height = 25.000000000000000000
+          IsExpanded = False
+          Position.Y = 169.000000000000000000
           ShowCheck = False
-          Text = 'expTimes'
+          Text = 'Times'
           Width = 513.000000000000000000
           TabOrder = 2
-          ContentSize = '175'
+          ContentSize = '199'
           object lyoStartDate: TLayout
             Align = Top
             Height = 44.000000000000000000
@@ -219,9 +229,9 @@ inherited frmEventCreation: TfrmEventCreation
             end
           end
           object lyoEndDate: TLayout
-            Align = Bottom
+            Align = Top
             Height = 44.000000000000000000
-            Position.Y = 87.000000000000000000
+            Position.Y = 88.000000000000000000
             Width = 513.000000000000000000
             TabOrder = 2
             object edtEndDate: TDateEdit
@@ -241,9 +251,9 @@ inherited frmEventCreation: TfrmEventCreation
             end
           end
           object lyoEndTime: TLayout
-            Align = MostBottom
+            Align = Top
             Height = 44.000000000000000000
-            Position.Y = 131.000000000000000000
+            Position.Y = 132.000000000000000000
             Width = 513.000000000000000000
             TabOrder = 3
             object edtEndTime: TTimeEdit
@@ -260,16 +270,26 @@ inherited frmEventCreation: TfrmEventCreation
               Width = 92.999969482421880000
             end
           end
+          object btnTimesNext: TButton
+            Align = MostBottom
+            Height = 22.000000000000000000
+            Position.Y = 177.000000000000000000
+            TabOrder = 4
+            Text = 'Next'
+            Width = 513.000000000000000000
+            OnClick = btnTimesNextClick
+          end
         end
         object expOptions: TExpander
           Align = Top
-          Height = 81.000000000000000000
-          Position.Y = 400.000000000000000000
+          Height = 25.000000000000000000
+          IsExpanded = False
+          Position.Y = 194.000000000000000000
           ShowCheck = False
           Text = 'Options'
           Width = 513.000000000000000000
           TabOrder = 3
-          ContentSize = '56'
+          ContentSize = '150'
           object cbPublished: TCheckBox
             Align = Top
             Height = 19.000000000000000000
@@ -317,6 +337,14 @@ inherited frmEventCreation: TfrmEventCreation
             Height = 22.000000000000000000
             Position.Y = 19.000000000000000000
             TabOrder = 4
+            Width = 513.000000000000000000
+          end
+          object btnSubmit: TButton
+            Align = MostBottom
+            Height = 22.000000000000000000
+            Position.Y = 128.000000000000000000
+            TabOrder = 5
+            Text = 'Submit'
             Width = 513.000000000000000000
           end
         end
