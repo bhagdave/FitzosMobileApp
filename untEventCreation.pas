@@ -6,7 +6,9 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, FMX.Layouts, FMX.Memo,
-  FMX.DateTimeCtrls, FMX.ListBox,REST.Client;
+  FMX.DateTimeCtrls, FMX.ListBox,REST.Client, System.Rtti,
+  System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
+  Fmx.Bind.DBEngExt, Data.Bind.Components;
 
 type
   TfrmEventCreation = class(TfrmBase)
@@ -39,6 +41,9 @@ type
     btnNext: TButton;
     btnTimesNext: TButton;
     btnSubmit: TButton;
+    BindingsList1: TBindingsList;
+    LinkFillControlToField1: TLinkFillControlToField;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
@@ -61,12 +66,17 @@ uses
 {$R *.fmx}
 procedure TfrmEventCreation.addParams(request: TRestRequest);
 var
-  sPublic : String;
+  sPublic, sSport, sTeam : String;
+  lValue : TValue;
 begin
   if cbPublished.IsChecked then
     sPublic := 'yes'
   else
     sPublic := 'no';
+  lValue := GetSelectedValue(cboTeam);
+  sTeam := lValue.ToString;
+  lValue := GetSelectedValue(cboSport);
+  sSport := lValue.ToString;
   request.Params.AddItem('name',edtName.Text);
   request.Params.AddItem('content',memContent.Lines.GetText);
   request.Params.AddItem('date',DateToStr(edtDate.Date));
@@ -74,13 +84,13 @@ begin
   request.Params.AddItem('type',cboType.Selected.Text);
   request.Params.AddItem('sub_type',cboFee.Selected.Text);
   request.Params.AddItem('public','PUBLIC');
-  request.Params.AddItem('team_id',IntToStr(cboTeam.Selected.Tag));
+  request.Params.AddItem('team_id',sTeam);
   request.Params.AddItem('member_id',dmdDataModule.memberId);
   request.Params.AddItem('time',edtStartTime.Text);
   request.Params.AddItem('location',edtLocation.Text);
   request.Params.AddItem('end_time',edtEndTime.Text);
   request.Params.AddItem('end_date',DateToStr(edtEndDate.Date));
-  request.Params.AddItem('sport_id',IntToStr(cboSport.Selected.Tag));
+  request.Params.AddItem('sport_id',sSport);
 end;
 
 procedure TfrmEventCreation.btnNextClick(Sender: TObject);
