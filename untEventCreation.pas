@@ -113,6 +113,8 @@ begin
   if id <> '' then
   begin
     // update
+    addParams(dmdEvent.reqUpdateEvent);
+    dmdEvent.reqUpdateEvent.Execute;
     showmessage('Event updated!');
     formActivate(sender);
   end

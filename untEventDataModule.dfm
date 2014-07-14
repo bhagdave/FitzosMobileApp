@@ -1,7 +1,7 @@
 object dmdEvent: TdmdEvent
   OldCreateOrder = False
   Height = 321
-  Width = 631
+  Width = 834
   object restAPI: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
@@ -746,5 +746,19 @@ object dmdEvent: TdmdEvent
     ScopeMappings = <>
     Left = 528
     Top = 248
+  end
+  object reqUpdateEvent: TRESTRequest
+    Client = restAPI
+    Method = rmPUT
+    Params = <>
+    Resource = 'rest/events'
+    Response = respUpdateEvent
+    SynchronizedEvents = False
+    Left = 616
+    Top = 56
+  end
+  object respUpdateEvent: TRESTResponse
+    Left = 608
+    Top = 112
   end
 end

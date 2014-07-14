@@ -101,6 +101,8 @@ type
     fdmSportsname: TWideStringField;
     dsTeams: TBindSourceDB;
     dsSports: TBindSourceDB;
+    reqUpdateEvent: TRESTRequest;
+    respUpdateEvent: TRESTResponse;
   private
     { Private declarations }
   public
