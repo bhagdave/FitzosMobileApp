@@ -33,6 +33,7 @@ type
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnPostClick(Sender: TObject);
+    procedure btnEditClick(Sender: TObject);
   private
     { Private declarations }
     bOwner : Boolean;
@@ -55,6 +56,12 @@ uses
   untMainForm, untDataModule;
 
 {$R *.fmx}
+procedure TfrmEvent.btnEditClick(Sender: TObject);
+begin
+  inherited;
+  showNewFormWithId('TfrmEventCreation',id);
+end;
+
 procedure TfrmEvent.btnPostClick(Sender: TObject);
 var
   sMessage : String;

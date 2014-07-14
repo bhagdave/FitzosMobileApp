@@ -190,7 +190,7 @@ inherited frmEventCreation: TfrmEventCreation
           object lyoStartDate: TLayout
             Align = Top
             Height = 44.000000000000000000
-            Width = 513.000000000000000000
+            Width = 200.000000000000000000
             TabOrder = 0
             object edtDate: TDateEdit
               Anchors = [akLeft, akTop, akRight, akBottom]
@@ -198,7 +198,7 @@ inherited frmEventCreation: TfrmEventCreation
               Position.X = 144.000000000000000000
               Position.Y = 8.000000000000000000
               TabOrder = 0
-              Width = 362.000000000000000000
+              Width = 49.000000000000000000
             end
             object lblStartDate: TLabel
               Align = FitLeft
@@ -211,13 +211,13 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             Height = 44.000000000000000000
             Position.Y = 44.000000000000000000
-            Width = 513.000000000000000000
+            Width = 200.000000000000000000
             TabOrder = 1
             object edtStartTime: TTimeEdit
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
-              Width = 420.000030517578100000
+              Width = 107.000030517578100000
             end
             object lblStartTime: TLabel
               Align = FitLeft
@@ -230,7 +230,7 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             Height = 44.000000000000000000
             Position.Y = 88.000000000000000000
-            Width = 513.000000000000000000
+            Width = 200.000000000000000000
             TabOrder = 2
             object edtEndDate: TDateEdit
               Anchors = [akLeft, akTop, akRight, akBottom]
@@ -238,7 +238,7 @@ inherited frmEventCreation: TfrmEventCreation
               Position.X = 144.000000000000000000
               Position.Y = 8.000000000000000000
               TabOrder = 0
-              Width = 362.000000000000000000
+              Width = 49.000000000000000000
             end
             object lblEndDate: TLabel
               Align = FitLeft
@@ -251,13 +251,13 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             Height = 44.000000000000000000
             Position.Y = 132.000000000000000000
-            Width = 513.000000000000000000
+            Width = 200.000000000000000000
             TabOrder = 3
             object edtEndTime: TTimeEdit
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
-              Width = 420.000030517578100000
+              Width = 107.000030517578100000
             end
             object lblEndTime: TLabel
               Align = FitLeft
@@ -272,7 +272,7 @@ inherited frmEventCreation: TfrmEventCreation
             Position.Y = 177.000000000000000000
             TabOrder = 4
             Text = 'Next'
-            Width = 513.000000000000000000
+            Width = 200.000000000000000000
             OnClick = btnTimesNextClick
           end
         end
@@ -453,6 +453,13 @@ inherited frmEventCreation: TfrmEventCreation
       FillExpressions = <>
       FillHeaderExpressions = <>
       FillBreakGroups = <>
+    end
+    object LinkControlToField7: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'location'
+      Control = edtLocation
+      Track = False
     end
   end
   object BindSourceDB1: TBindSourceDB

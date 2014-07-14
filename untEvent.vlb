@@ -245,3 +245,9 @@ Coordinates=829,1,161,123
 [BindSourceDB3]
 Coordinates=470,510,92,249
 
+[dmdEvent.fdmTeams]
+Visible=False
+
+[dmdEvent.fdmSports]
+Visible=False
+

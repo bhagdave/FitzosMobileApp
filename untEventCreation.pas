@@ -53,6 +53,7 @@ type
     LinkControlToField6: TLinkControlToField;
     LinkFillControlToField3: TLinkFillControlToField;
     LinkFillControlToField4: TLinkFillControlToField;
+    LinkControlToField7: TLinkControlToField;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
@@ -149,6 +150,8 @@ var
   sResult : String;
 begin
   inherited;
+  edtDate.Align := TAlignLayout.client;
+  edtEndDate.Align := TAlignLayout.Client;
   if id <> '' then
   begin
     // Get data!
@@ -161,44 +164,42 @@ begin
       reqEvent.Params.ParameterByName('id').Value := Id;
       reqEvent.Execute;
     end;
-  end;
-    with dmdEvent do
-    begin
-      // Open up the data.
-      rdsaSports.ClearDataSet;
-      fdmSports.Close;
-      respSports.Content.Empty;
-      reqSports.ClearBody;
-      reqSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-      reqSports.Execute;
-      sResult := getResultString(respSports.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaSports.Response := respSports;
-          fdmSports.Open;
-      end;
-      // Open up the data.
-      rdsaTeams.ClearDataSet;
-      fdmTeams.Close;
-      respTeams.Content.Empty;
-      reqTeams.ClearBody;
-      reqTeams.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-      reqTeams.Execute;
-      sResult := getResultString(respTeams.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaTeams.Response := respTeams;
-          fdmTeams.Open;
-      end;
-    end;
-  edtDate.Align := TAlignLayout.client;
-  edtEndDate.Align := TAlignLayout.Client;
-  if (id = '') then
+  end
+  else
   begin
+    // just when inserting...
     edtDate.Data := '';
     edtEndDate.Data := '';
   end;
-
+  with dmdEvent do
+  begin
+    // Open up the data.
+    rdsaSports.ClearDataSet;
+    fdmSports.Close;
+    respSports.Content.Empty;
+    reqSports.ClearBody;
+    reqSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
+    reqSports.Execute;
+    sResult := getResultString(respSports.Content);
+    if (sResult = 'OK') then
+    begin
+        rdsaSports.Response := respSports;
+        fdmSports.Open;
+    end;
+    // Open up the data.
+    rdsaTeams.ClearDataSet;
+    fdmTeams.Close;
+    respTeams.Content.Empty;
+    reqTeams.ClearBody;
+    reqTeams.Params.ParameterByName('id').Value := dmdDataModule.memberId;
+    reqTeams.Execute;
+    sResult := getResultString(respTeams.Content);
+    if (sResult = 'OK') then
+    begin
+        rdsaTeams.Response := respTeams;
+        fdmTeams.Open;
+    end;
+  end;
 end;
 
 procedure TfrmEventCreation.getAttending;
