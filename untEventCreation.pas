@@ -22,7 +22,7 @@ type
     lblStartDate: TLabel;
     cbPublished: TCheckBox;
     cboType: TComboBox;
-    cboFee: TComboBox;
+    cboPrivacy: TComboBox;
     edtStartTime: TTimeEdit;
     lyoStartTime: TLayout;
     lblStartTime: TLabel;

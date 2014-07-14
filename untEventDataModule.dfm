@@ -609,8 +609,12 @@ object dmdEvent: TdmdEvent
   end
   object reqTeams: TRESTRequest
     Client = restAPI
-    Params = <>
-    Resource = 'rest/teams'
+    Params = <
+      item
+        name = 'id'
+        Value = '9'
+      end>
+    Resource = 'teams/getMembersTeams'
     Response = respTeams
     SynchronizedEvents = False
     Left = 456
@@ -642,51 +646,6 @@ object dmdEvent: TdmdEvent
         Name = 'name'
         DataType = ftWideString
         Size = 255
-      end
-      item
-        Name = 'content'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'date'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'active'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'date_added'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'last_modified'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'image'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'owner'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'public'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'sport_id'
-        DataType = ftWideString
-        Size = 255
       end>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
@@ -706,47 +665,15 @@ object dmdEvent: TdmdEvent
       FieldName = 'name'
       Size = 255
     end
-    object fdmTeamscontent: TWideStringField
-      FieldName = 'content'
-      Size = 255
-    end
-    object fdmTeamsdate: TWideStringField
-      FieldName = 'date'
-      Size = 255
-    end
-    object fdmTeamsactive: TWideStringField
-      FieldName = 'active'
-      Size = 255
-    end
-    object fdmTeamsdate_added: TWideStringField
-      FieldName = 'date_added'
-      Size = 255
-    end
-    object fdmTeamslast_modified: TWideStringField
-      FieldName = 'last_modified'
-      Size = 255
-    end
-    object fdmTeamsimage: TWideStringField
-      FieldName = 'image'
-      Size = 255
-    end
-    object fdmTeamsowner: TWideStringField
-      FieldName = 'owner'
-      Size = 255
-    end
-    object fdmTeamspublic: TWideStringField
-      FieldName = 'public'
-      Size = 255
-    end
-    object fdmTeamssport_id: TWideStringField
-      FieldName = 'sport_id'
-      Size = 255
-    end
   end
   object reqSports: TRESTRequest
     Client = restAPI
-    Params = <>
-    Resource = 'rest/sports'
+    Params = <
+      item
+        name = 'id'
+        Value = '9'
+      end>
+    Resource = 'members/getSports'
     Response = respSports
     SynchronizedEvents = False
     Left = 528
@@ -775,7 +702,17 @@ object dmdEvent: TdmdEvent
         Size = 255
       end
       item
-        Name = 'name'
+        Name = 'sport'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'from_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'to_date'
         DataType = ftWideString
         Size = 255
       end>
@@ -794,7 +731,7 @@ object dmdEvent: TdmdEvent
       Size = 255
     end
     object fdmSportsname: TWideStringField
-      FieldName = 'name'
+      FieldName = 'sport'
       Size = 255
     end
   end

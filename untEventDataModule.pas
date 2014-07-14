@@ -93,15 +93,6 @@ type
     fdmTeams: TFDMemTable;
     fdmTeamsid: TWideStringField;
     fdmTeamsname: TWideStringField;
-    fdmTeamscontent: TWideStringField;
-    fdmTeamsdate: TWideStringField;
-    fdmTeamsactive: TWideStringField;
-    fdmTeamsdate_added: TWideStringField;
-    fdmTeamslast_modified: TWideStringField;
-    fdmTeamsimage: TWideStringField;
-    fdmTeamsowner: TWideStringField;
-    fdmTeamspublic: TWideStringField;
-    fdmTeamssport_id: TWideStringField;
     reqSports: TRESTRequest;
     respSports: TRESTResponse;
     rdsaSports: TRESTResponseDataSetAdapter;
