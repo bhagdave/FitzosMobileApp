@@ -8,7 +8,7 @@ Coordinates=1070,660,171,285
 
 [dmdDataModule.fdmTeamMembers]
 Visible=False
-Coordinates=310,960,181,375
+Coordinates=520,850,181,375
 
 [dmdDataModule.fdmTeamEvents]
 Visible=False
@@ -43,17 +43,17 @@ Coordinates=327,78,72,51
 Visible=False
 
 [memContent]
-Coordinates=679,1,77,51
+Coordinates=460,140,77,51
 
 [lyoEndTime]
 Coordinates=1030,110,72,33
 Visible=False
 
 [edtStartTime]
-Coordinates=503,78,115,51
+Coordinates=260,80,115,51
 
 [edtName]
-Coordinates=210,230,57,51
+Coordinates=550,100,57,51
 
 [lblCaption]
 Coordinates=88,478,64,51
@@ -87,9 +87,10 @@ Visible=False
 
 [lblDescription]
 Coordinates=327,155,83,51
+Visible=False
 
 [cbPublished]
-Coordinates=910,280,75,51
+Coordinates=810,180,75,51
 
 [lblStartTime]
 Coordinates=246,478,73,51
@@ -100,7 +101,7 @@ Coordinates=990,110,65,33
 Visible=False
 
 [edtDate]
-Coordinates=503,155,115,51
+Coordinates=510,200,115,51
 
 [lyoEndDate]
 Coordinates=920,110,70,33
@@ -153,7 +154,7 @@ Coordinates=679,573,62,33
 Visible=False
 
 [cboSport]
-Coordinates=790,50,84,105
+Coordinates=790,240,84,105
 
 [lblEndTime]
 Coordinates=414,478,69,51
@@ -180,14 +181,14 @@ Coordinates=0,0,62,51
 Visible=False
 
 [cboTeam]
-Coordinates=218,316,84,105
+Coordinates=520,280,84,105
 
 [cboType]
-Coordinates=327,232,84,105
+Coordinates=700,510,84,105
 
 [dmdEvent.fdmTeams]
 Visible=False
-Coordinates=540,470,111,105
+Coordinates=460,400,111,105
 
 [dmdEvent.fdmSports]
 Visible=False
@@ -220,7 +221,7 @@ Coordinates=946,408,115,87
 Visible=False
 
 [dmdEvent.dsTeams]
-Coordinates=540,470,111,105
+Coordinates=460,400,111,105
 
 [dmdEvent.respGeneric]
 Coordinates=503,629,127,267
@@ -277,7 +278,7 @@ Visible=False
 Coordinates=805,56,91,36
 
 [cboPrivacy]
-Coordinates=98,154,84,105
+Coordinates=850,360,84,105
 
 [dmdEvent.respUpdateEvent]
 Coordinates=810,170,151,267
@@ -312,7 +313,7 @@ Coordinates=200,430,145,267
 Visible=False
 
 [dmdDataModule.fdmMember]
-Coordinates=840,350,155,195
+Coordinates=960,310,155,195
 
 [dmdDataModule.respNotifications]
 Coordinates=730,550,181,267

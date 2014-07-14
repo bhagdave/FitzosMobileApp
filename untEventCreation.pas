@@ -47,13 +47,13 @@ type
     BindSourceDB1: TBindSourceDB;
     LinkControlToField1: TLinkControlToField;
     LinkControlToField2: TLinkControlToField;
-    LinkControlToField3: TLinkControlToField;
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
     LinkControlToField6: TLinkControlToField;
     LinkFillControlToField3: TLinkFillControlToField;
     LinkFillControlToField4: TLinkFillControlToField;
     LinkControlToField7: TLinkControlToField;
+    LinkControlToField8: TLinkControlToField;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
@@ -163,6 +163,8 @@ begin
       reqEvent.ClearBody;
       reqEvent.Params.ParameterByName('id').Value := Id;
       reqEvent.Execute;
+      edtName.Text := fdmEvent.FieldByName('name').AsString;
+      edtDate.Date := fdmEvent.FieldByName('date').AsDateTime;
     end;
   end
   else
