@@ -6284,6 +6284,7 @@ object frmMain: TfrmMain
     TabOrder = 4
     Text = 'Signup Here'
     Width = 320.000000000000000000
+    OnClick = btnSignupClick
   end
   object txtWelcomeMessage: TText
     Align = Top

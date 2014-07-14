@@ -18,6 +18,7 @@ type
     btnSignup: TButton;
     txtWelcomeMessage: TText;
     procedure btnLoginClick(Sender: TObject);
+    procedure btnSignupClick(Sender: TObject);
   private
     { Private declarations }
     sUserSalt   : String;
@@ -136,6 +137,11 @@ begin
   dmdDataModule.reqLogin.ExecuteAsync(self.loginComplete);
 end;
 
+
+procedure TfrmMain.btnSignupClick(Sender: TObject);
+begin
+  showNewForm('TfrmSignup');
+end;
 
 procedure TfrmMain.loginComplete;
 var

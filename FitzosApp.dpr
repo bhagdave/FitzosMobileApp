@@ -19,7 +19,8 @@ uses
   untEventCreation in 'untEventCreation.pas' {frmEventCreation},
   untSettings in 'untSettings.pas' {frmSettings},
   untProfile in 'untProfile.pas' {frmProfile},
-  untEventDataModule in 'untEventDataModule.pas' {dmdEvent: TDataModule};
+  untEventDataModule in 'untEventDataModule.pas' {dmdEvent: TDataModule},
+  untSignUpForm in 'untSignUpForm.pas' {frmSignup};
 
 {$R *.res}
 
