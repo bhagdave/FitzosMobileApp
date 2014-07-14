@@ -21,6 +21,14 @@ inherited frmEventCreation: TfrmEventCreation
     inherited btnFriends: TCornerButton
       Position.X = 421.000000000000000000
     end
+    object btnSubmit: TButton
+      Align = Center
+      Height = 44.000000000000000000
+      TabOrder = 4
+      Text = 'Submit'
+      Width = 265.000000000000000000
+      OnClick = btnSubmitClick
+    end
   end
   inherited pnlTop: TPanel
     Width = 513.000000000000000000
@@ -135,6 +143,7 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             StyleLookup = 'roundededit'
             TabOrder = 0
+            TextSettings.FontColor = claWhitesmoke
             Width = 513.000000000000000000
             Height = 30.000000000000000000
             TextPrompt = 'Name'
@@ -161,6 +170,7 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             StyleLookup = 'roundededit'
             TabOrder = 3
+            TextSettings.FontColor = claWhitesmoke
             Position.Y = 30.000000000000000000
             Width = 513.000000000000000000
             Height = 22.000000000000000000
@@ -278,13 +288,13 @@ inherited frmEventCreation: TfrmEventCreation
         end
         object expOptions: TExpander
           Align = Top
-          Height = 191.000000000000000000
+          Height = 239.000000000000000000
           Position.Y = 194.000000000000000000
           ShowCheck = False
           Text = 'Options'
           Width = 513.000000000000000000
           TabOrder = 3
-          ContentSize = '166'
+          ContentSize = '214'
           object cbPublished: TCheckBox
             Align = Top
             Height = 19.000000000000000000
@@ -302,7 +312,7 @@ inherited frmEventCreation: TfrmEventCreation
               'LIVE'
               'VIRTUAL')
             ItemIndex = 0
-            Position.Y = 79.000000000000000000
+            Position.Y = 113.000000000000000000
             TabOrder = 1
             Width = 513.000000000000000000
           end
@@ -315,7 +325,7 @@ inherited frmEventCreation: TfrmEventCreation
               'PRIVATE'
               'PUBLIC')
             ItemIndex = 0
-            Position.Y = 109.000000000000000000
+            Position.Y = 143.000000000000000000
             TabOrder = 2
             Width = 513.000000000000000000
           end
@@ -326,7 +336,7 @@ inherited frmEventCreation: TfrmEventCreation
             Items.Strings = (
               'Soccer/Football'
               'Road Running')
-            Position.Y = 49.000000000000000000
+            Position.Y = 83.000000000000000000
             TabOrder = 3
             Width = 513.000000000000000000
           end
@@ -339,19 +349,26 @@ inherited frmEventCreation: TfrmEventCreation
               'Boston Bikers'
               'RYP Founders'
               'DavesTest')
-            Position.Y = 19.000000000000000000
+            Position.Y = 36.000000000000000000
             TabOrder = 4
             Width = 513.000000000000000000
           end
-        end
-        object btnSubmit: TButton
-          Align = MostBottom
-          Height = 22.000000000000000000
-          Position.Y = 411.000000000000000000
-          TabOrder = 4
-          Text = 'Submit'
-          Width = 513.000000000000000000
-          OnClick = btnSubmitClick
+          object lblTeam: TLabel
+            Align = Top
+            Height = 17.000000000000000000
+            Position.Y = 19.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Team'
+            Width = 513.000000000000000000
+          end
+          object lblSport: TLabel
+            Align = Top
+            Height = 17.000000000000000000
+            Position.Y = 66.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Sport'
+            Width = 513.000000000000000000
+          end
         end
       end
     end
@@ -366,6 +383,7 @@ inherited frmEventCreation: TfrmEventCreation
       DataSource = BindSourceDB1
       FieldName = 'team_id'
       Control = cboTeam
+      Direction = linkDataToControl
       Track = True
       FillDataSource = dmdEvent.dsTeams
       FillValueFieldName = 'id'
@@ -417,13 +435,6 @@ inherited frmEventCreation: TfrmEventCreation
       Control = cbPublished
       Track = True
     end
-    object LinkControlToField6: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'end_date'
-      Control = edtEndDate
-      Track = True
-    end
     object LinkFillControlToField3: TLinkFillControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
@@ -464,7 +475,7 @@ inherited frmEventCreation: TfrmEventCreation
   object BindSourceDB1: TBindSourceDB
     DataSet = dmdEvent.fdmEvent
     ScopeMappings = <>
-    Left = 240
-    Top = 296
+    Left = 248
+    Top = 272
   end
 end

@@ -68,6 +68,7 @@ Visible=False
 
 [edtEndDate]
 Coordinates=327,1,115,51
+Visible=False
 
 [pnlTop]
 Coordinates=11,316,48,33
@@ -102,6 +103,7 @@ Visible=False
 
 [edtDate]
 Coordinates=510,200,115,51
+Visible=False
 
 [lyoEndDate]
 Coordinates=920,110,70,33
@@ -181,7 +183,7 @@ Coordinates=0,0,62,51
 Visible=False
 
 [cboTeam]
-Coordinates=520,280,84,105
+Coordinates=500,230,84,105
 
 [cboType]
 Coordinates=700,510,84,105

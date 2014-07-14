@@ -49,11 +49,12 @@ type
     LinkControlToField2: TLinkControlToField;
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
-    LinkControlToField6: TLinkControlToField;
     LinkFillControlToField3: TLinkFillControlToField;
     LinkFillControlToField4: TLinkFillControlToField;
     LinkControlToField7: TLinkControlToField;
     LinkControlToField8: TLinkControlToField;
+    lblTeam: TLabel;
+    lblSport: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
@@ -62,6 +63,7 @@ type
     { Private declarations }
     procedure getAttending;
     procedure getWall;
+    procedure getSportsAndTeams;
     procedure addParams(request : TRestRequest);
   public
     { Public declarations }
@@ -147,11 +149,15 @@ end;
 
 procedure TfrmEventCreation.FormActivate(Sender: TObject);
 var
-  sResult : String;
+  sResult,sSport : String;
+  iSport, iTeam, iDX : Integer;
 begin
   inherited;
+  iSport := -1;
+  iTeam  := -1;
   edtDate.Align := TAlignLayout.client;
   edtEndDate.Align := TAlignLayout.Client;
+  getSportsAndTeams();
   if id <> '' then
   begin
     // Get data!
@@ -163,8 +169,8 @@ begin
       reqEvent.ClearBody;
       reqEvent.Params.ParameterByName('id').Value := Id;
       reqEvent.Execute;
-      edtName.Text := fdmEvent.FieldByName('name').AsString;
-      edtDate.Date := fdmEvent.FieldByName('date').AsDateTime;
+      edtDate.text := fdmEvent.FieldByName('date').AsString;
+      edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
     end;
   end
   else
@@ -173,6 +179,39 @@ begin
     edtDate.Data := '';
     edtEndDate.Data := '';
   end;
+end;
+
+procedure TfrmEventCreation.getAttending;
+var
+  sResult : String;
+begin
+  with dmdEvent do
+  begin
+      // Open up the data.
+      rdsaAttending.ClearDataSet;
+      fdmAttending.Close;
+      respAttending.Content.Empty;
+      reqAttending.ClearBody;
+      reqAttending.Params.ParameterByName('id').Value := id;
+      reqAttending.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
+      reqAttending.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+      try
+        reqAttending.Execute;
+      except on E: Exception do
+      end;
+      sResult := getResultString(respAttending.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaAttending.Response := respAttending;
+          fdmAttending.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEventCreation.getSportsAndTeams;
+var
+  sResult : String;
+begin
   with dmdEvent do
   begin
     // Open up the data.
@@ -201,33 +240,6 @@ begin
         rdsaTeams.Response := respTeams;
         fdmTeams.Open;
     end;
-  end;
-end;
-
-procedure TfrmEventCreation.getAttending;
-var
-  sResult : String;
-begin
-  with dmdEvent do
-  begin
-      // Open up the data.
-      rdsaAttending.ClearDataSet;
-      fdmAttending.Close;
-      respAttending.Content.Empty;
-      reqAttending.ClearBody;
-      reqAttending.Params.ParameterByName('id').Value := id;
-      reqAttending.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
-      reqAttending.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      try
-        reqAttending.Execute;
-      except on E: Exception do
-      end;
-      sResult := getResultString(respAttending.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaAttending.Response := respAttending;
-          fdmAttending.Open;
-      end;
   end;
 end;
 
