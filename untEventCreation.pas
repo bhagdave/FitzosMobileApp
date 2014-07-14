@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, FMX.Layouts, FMX.Memo,
   FMX.DateTimeCtrls, FMX.ListBox,REST.Client, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
 
 type
   TfrmEventCreation = class(TfrmBase)
@@ -44,6 +44,15 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
+    BindSourceDB1: TBindSourceDB;
+    LinkControlToField1: TLinkControlToField;
+    LinkControlToField2: TLinkControlToField;
+    LinkControlToField3: TLinkControlToField;
+    LinkControlToField4: TLinkControlToField;
+    LinkControlToField5: TLinkControlToField;
+    LinkControlToField6: TLinkControlToField;
+    LinkFillControlToField3: TLinkFillControlToField;
+    LinkFillControlToField4: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
@@ -143,6 +152,15 @@ begin
   if id <> '' then
   begin
     // Get data!
+    with dmdEvent do
+    begin
+      rdsaEvent.ClearDataSet;
+      fdmEvent.Close;
+      respEvent.Content.Empty;
+      reqEvent.ClearBody;
+      reqEvent.Params.ParameterByName('id').Value := Id;
+      reqEvent.Execute;
+    end;
   end;
     with dmdEvent do
     begin
@@ -175,6 +193,12 @@ begin
     end;
   edtDate.Align := TAlignLayout.client;
   edtEndDate.Align := TAlignLayout.Client;
+  if (id = '') then
+  begin
+    edtDate.Data := '';
+    edtEndDate.Data := '';
+  end;
+
 end;
 
 procedure TfrmEventCreation.getAttending;

@@ -193,7 +193,6 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 513.000000000000000000
             TabOrder = 0
             object edtDate: TDateEdit
-              Date = 41831.000000000000000000
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
@@ -215,7 +214,6 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 513.000000000000000000
             TabOrder = 1
             object edtStartTime: TTimeEdit
-              Time = 0.671527777777777700
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
@@ -235,7 +233,6 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 513.000000000000000000
             TabOrder = 2
             object edtEndDate: TDateEdit
-              Date = 41831.000000000000000000
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
@@ -257,7 +254,6 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 513.000000000000000000
             TabOrder = 3
             object edtEndTime: TTimeEdit
-              Time = 0.671527777777777700
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
@@ -331,7 +327,6 @@ inherited frmEventCreation: TfrmEventCreation
             Items.Strings = (
               'Soccer/Football'
               'Road Running')
-            ItemIndex = 1
             Position.Y = 49.000000000000000000
             TabOrder = 3
             Width = 513.000000000000000000
@@ -345,7 +340,6 @@ inherited frmEventCreation: TfrmEventCreation
               'Boston Bikers'
               'RYP Founders'
               'DavesTest')
-            ItemIndex = 0
             Position.Y = 19.000000000000000000
             TabOrder = 4
             Width = 513.000000000000000000
@@ -370,6 +364,8 @@ inherited frmEventCreation: TfrmEventCreation
     Top = 5
     object LinkFillControlToField1: TLinkFillControlToField
       Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'team_id'
       Control = cboTeam
       Track = True
       FillDataSource = dmdEvent.dsTeams
@@ -382,6 +378,8 @@ inherited frmEventCreation: TfrmEventCreation
     end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'sport_id'
       Control = cboSport
       Track = True
       FillDataSource = dmdEvent.dsSports
@@ -392,5 +390,75 @@ inherited frmEventCreation: TfrmEventCreation
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'content'
+      Control = memContent
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'end_time'
+      Control = edtEndTime
+      Track = True
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'date'
+      Control = edtDate
+      Track = True
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'name'
+      Control = edtName
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'published'
+      Control = cbPublished
+      Track = True
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'end_date'
+      Control = edtEndDate
+      Track = True
+    end
+    object LinkFillControlToField3: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'type'
+      Control = cboType
+      Track = True
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField4: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'public'
+      Control = cboPrivacy
+      Track = True
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmdEvent.fdmEvent
+    ScopeMappings = <>
+    Left = 240
+    Top = 296
   end
 end
