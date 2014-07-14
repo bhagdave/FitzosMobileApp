@@ -282,7 +282,8 @@ inherited frmEventCreation: TfrmEventCreation
         end
         object expOptions: TExpander
           Align = Top
-          Height = 191.000000000000000000
+          Height = 25.000000000000000000
+          IsExpanded = False
           Position.Y = 194.000000000000000000
           ShowCheck = False
           Text = 'Options'

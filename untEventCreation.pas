@@ -77,13 +77,14 @@ begin
   sTeam := lValue.ToString;
   lValue := GetSelectedValue(cboSport);
   sSport := lValue.ToString;
+  request.Params.Clear;
   request.Params.AddItem('name',edtName.Text);
   request.Params.AddItem('content',memContent.Lines.GetText);
   request.Params.AddItem('date',DateToStr(edtDate.Date));
   request.Params.AddItem('published', sPublic);
   request.Params.AddItem('type',cboType.Selected.Text);
-  request.Params.AddItem('sub_type',cboFee.Selected.Text);
-  request.Params.AddItem('public','PUBLIC');
+  request.Params.AddItem('public',cboPrivacy.Selected.Text);
+  request.Params.AddItem('sub_type','FREE');
   request.Params.AddItem('team_id',sTeam);
   request.Params.AddItem('member_id',dmdDataModule.memberId);
   request.Params.AddItem('time',edtStartTime.Text);
@@ -112,14 +113,16 @@ begin
   if id <> '' then
   begin
     // update
-
+    showmessage('Event updated!');
+    formActivate(sender);
   end
   else
   begin
     // insert
     addParams(dmdEvent.reqCreateEvent);
     dmdEvent.reqCreateEvent.Execute;
-    showmessage(dmdEvent.respCreateEvent.Content);
+    showmessage('Event created');
+    close;
   end;
 end;
 
@@ -146,6 +149,7 @@ begin
       fdmSports.Close;
       respSports.Content.Empty;
       reqSports.ClearBody;
+      reqSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
       reqSports.Execute;
       sResult := getResultString(respSports.Content);
       if (sResult = 'OK') then
@@ -158,6 +162,7 @@ begin
       fdmTeams.Close;
       respTeams.Content.Empty;
       reqTeams.ClearBody;
+      reqTeams.Params.ParameterByName('id').Value := dmdDataModule.memberId;
       reqTeams.Execute;
       sResult := getResultString(respTeams.Content);
       if (sResult = 'OK') then
