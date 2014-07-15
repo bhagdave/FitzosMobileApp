@@ -20,7 +20,8 @@ uses
   untSettings in 'untSettings.pas' {frmSettings},
   untProfile in 'untProfile.pas' {frmProfile},
   untEventDataModule in 'untEventDataModule.pas' {dmdEvent: TDataModule},
-  untSignUpForm in 'untSignUpForm.pas' {frmSignup};
+  untSignUpForm in 'untSignUpForm.pas' {frmSignup},
+  untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule};
 
 {$R *.res}
 
