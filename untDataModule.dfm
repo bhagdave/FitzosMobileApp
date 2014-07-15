@@ -1505,4 +1505,87 @@ object dmdDataModule: TdmdDataModule
     Left = 472
     Top = 560
   end
+  object reqMemberSports: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '9'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'members/getSports'
+    Response = respMemberSports
+    SynchronizedEvents = False
+    Left = 576
+    Top = 384
+  end
+  object respMemberSports: TRESTResponse
+    ContentType = 'text/html'
+    Left = 584
+    Top = 440
+  end
+  object rdsaMemberSports: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmMemberSports
+    FieldDefs = <>
+    Response = respMemberSports
+    RootElement = 'Result'
+    Left = 584
+    Top = 496
+  end
+  object fdmMemberSports: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'from_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'to_date'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 584
+    Top = 560
+    object fdmMemberSportsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmMemberSportssport: TWideStringField
+      FieldName = 'sport'
+      Size = 255
+    end
+    object fdmMemberSportsfrom_date: TWideStringField
+      FieldName = 'from_date'
+      Size = 255
+    end
+    object fdmMemberSportsto_date: TWideStringField
+      FieldName = 'to_date'
+      Size = 255
+    end
+  end
 end

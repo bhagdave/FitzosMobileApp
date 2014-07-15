@@ -170,6 +170,14 @@ type
     fdmEventssport_id: TWideStringField;
     fdmEventsend_date: TWideStringField;
     dsEvents: TBindSourceDB;
+    reqMemberSports: TRESTRequest;
+    respMemberSports: TRESTResponse;
+    rdsaMemberSports: TRESTResponseDataSetAdapter;
+    fdmMemberSports: TFDMemTable;
+    fdmMemberSportsid: TWideStringField;
+    fdmMemberSportssport: TWideStringField;
+    fdmMemberSportsfrom_date: TWideStringField;
+    fdmMemberSportsto_date: TWideStringField;
   private
     { Private declarations }
     sSessionKey : String;
