@@ -11,6 +11,8 @@ type
     restAPI: TRESTClient;
     reqCheckExists: TRESTRequest;
     respCheckExists: TRESTResponse;
+    reqCreateMember: TRESTRequest;
+    respCreateMember: TRESTResponse;
   private
     { Private declarations }
   public

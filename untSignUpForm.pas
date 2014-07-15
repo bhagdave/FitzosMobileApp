@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.StdCtrls, FMX.ListBox, FMX.Edit,untDmdSignup;
+  FMX.StdCtrls, FMX.ListBox, FMX.Edit,untDmdSignup, Data.Bind.Components,
+  System.Rtti;
 
 type
   TfrmSignup = class(TForm)
@@ -23,6 +24,7 @@ type
   private
     { Private declarations }
     dmdSignup: TdmdSignup;
+    function getSelectedValue(AObject: TObject): TValue;
   public
     { Public declarations }
   end;
@@ -37,6 +39,8 @@ procedure TfrmSignup.btnSignupClick(Sender: TObject);
 var
   sResult : String;
   bExists : Boolean;
+  lValue : TValue;
+  sType : String;
 begin
   // ok lets check to see if the user exists already
   with dmdSignup do
@@ -56,11 +60,30 @@ begin
         else
         begin
           // ok we can process the call
+          lValue := GetSelectedValue(cboType);
+          sType := lValue.ToString;
+          respCreateMember.content.Empty;
+          reqCreateMember.ClearBody;
+          reqCreateMember.Params.AddItem('data[name]',edtName.Text);
+          reqCreateMember.Params.AddItem('data[password]',edtPassword.Text);
+          reqCreateMember.Params.AddItem('data[choice]',sType);
+          reqCreateMember.Params.AddItem('data[email]',edtEmail.Text);
+          reqCreateMember.Execute;
+          sResult := getResultString(respCreateMember.Content);
+          if (sResult = 'OK') then
+          begin
+            showmessage('Please check your email for an activation link.');
+          end
+          else
+          begin
+            showmessage('There was an error creating the account.');
+          end;
+          close;
         end;
       end
       else
       begin
-        showmessage('UNable to connect to server. Please try later!');
+        showmessage('Unable to connect to server. Please try later!');
       end;
   end;
 end;
@@ -73,6 +96,14 @@ end;
 procedure TfrmSignup.FormDestroy(Sender: TObject);
 begin
   dmdSignup.Free;
+end;
+
+function TfrmSignup.getSelectedValue(AObject: TObject): TValue;
+var
+  LEditor : IBindListEditorCommon;
+begin
+  LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
+  Result := Leditor.SelectedValue;
 end;
 
 initialization

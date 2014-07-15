@@ -32,8 +32,26 @@ object dmdSignup: TdmdSignup
     Top = 80
   end
   object respCheckExists: TRESTResponse
-    ContentType = 'text/html'
     Left = 40
     Top = 136
+  end
+  object reqCreateMember: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'r/members/createMember'
+    Response = respCreateMember
+    SynchronizedEvents = False
+    Left = 144
+    Top = 88
+  end
+  object respCreateMember: TRESTResponse
+    Left = 152
+    Top = 144
   end
 end
