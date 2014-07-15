@@ -183,7 +183,8 @@ inherited frmTeam: TfrmTeam
             Align = Client
             Height = 118.000000000000000000
             TabOrder = 0
-            Width = 368.000000000000000000
+            Width = 200.000000000000000000
+            OnClick = lvWwallClick
           end
         end
       end

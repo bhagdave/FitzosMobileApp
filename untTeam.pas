@@ -30,6 +30,7 @@ type
       const AItem: TListViewItem);
     procedure lvMembersItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure lvWwallClick(Sender: TObject);
   private
     { Private declarations }
     procedure getTeamWall(sTeam : String);
@@ -187,6 +188,12 @@ begin
   inherited;
   LValue := GetSelectedValue(lvMembers);
   showNewFormWithId('TfrmFriend',LValue.ToString);
+end;
+
+procedure TfrmTeam.lvWwallClick(Sender: TObject);
+begin
+  inherited;
+  showNewFormWithId('TfrmTeamWall',id);
 end;
 
 initialization

@@ -21,7 +21,7 @@ uses
   untProfile in 'untProfile.pas' {frmProfile},
   untEventDataModule in 'untEventDataModule.pas' {dmdEvent: TDataModule},
   untSignUpForm in 'untSignUpForm.pas' {frmSignup},
-  untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule};
+  untTeamWall in 'untTeamWall.pas' {frmTeamWall};
 
 {$R *.res}
 
