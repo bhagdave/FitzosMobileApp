@@ -11,12 +11,9 @@ uses
 
 type
   TfrmTeam = class(TfrmBase)
-    pnlTeam: TPanel;
-    lblName: TLabel;
     lvEvents: TListView;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkPropertyToFieldText: TLinkPropertyToField;
     vsbScroller: TVertScrollBox;
     lblEvents: TLabel;
     layTeam: TLayout;
@@ -27,6 +24,7 @@ type
     lvWwall: TListView;
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
+    LinkPropertyToFieldText: TLinkPropertyToField;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
