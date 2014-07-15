@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, untDataModule, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.Components, Data.Bind.DBScope ;
+  Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts, FMX.ListView.Types,
+  FMX.ListView ;
 
 type
   TfrmFriend = class(TfrmBase)
@@ -22,11 +23,16 @@ type
     lblGender: TLabel;
     lblNickname: TLabel;
     lblAge: TLabel;
+    grdLayout: TGridPanelLayout;
+    lvSports: TListView;
+    BindSourceDB2: TBindSourceDB;
+    LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
     procedure getProfile();
     procedure getMember();
+    procedure getMemberSports();
     procedure loadPicture(sURL : String);
   public
     { Public declarations }
@@ -44,6 +50,7 @@ uses
 procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
   getMember();
+  getMemberSports();
   getProfile();
 end;
 
@@ -70,6 +77,29 @@ begin
           fdmMember.Open;
           sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
           loadPicture(sURL);
+      end;
+  end;
+end;
+
+procedure TfrmFriend.getMemberSports;
+var
+  sResult : String;
+begin
+  with dmdDataModule do
+  begin
+      rdsaMemberSports.ClearDataSet;
+      fdmMemberSports.Close;
+      respMemberSports.Content.Empty;
+      reqMemberSports.ClearBody;
+      reqMemberSports.Params.ParameterByName('id').Value := id;
+      reqMemberSports.Params.ParameterByName('signature').Value := signature('getSports');
+      reqMemberSports.Params.ParameterByName('key').Value := getApiKey;
+      reqMemberSports.Execute;
+      sResult := getResultString(respMemberSports.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaMemberSports.Response := respMemberSports;
+          fdmMemberSports.Open;
       end;
   end;
 end;
