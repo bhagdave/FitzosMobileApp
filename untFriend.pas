@@ -29,6 +29,7 @@ type
     LinkFillControlToField1: TLinkFillControlToField;
     BeFriend: TButton;
     procedure FormActivate(Sender: TObject);
+    procedure BeFriendClick(Sender: TObject);
   private
     { Private declarations }
     procedure getProfile();
@@ -48,6 +49,33 @@ uses
 
 {$R *.fmx}
 
+
+procedure TfrmFriend.BeFriendClick(Sender: TObject);
+var
+  sResult : String;
+begin
+  inherited;
+  with dmdDataModule do
+  begin
+    reqGeneric.Params.Clear;
+    reqGeneric.Resource := 'r/members/setFriendRequest';
+    reqGeneric.Params.addItem('to',id);
+    reqGeneric.Params.addItem('from',memberId);
+    reqGeneric.Params.AddItem('signature',signature('loadProfile'));
+    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Execute;
+    sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+        showmessage('Friend request requested!');
+        self.close;
+      end
+      else
+      begin
+        showmessage('Friend request failed please try again later!');
+      end;
+  end;
+end;
 
 procedure TfrmFriend.checkIfFriends;
 var

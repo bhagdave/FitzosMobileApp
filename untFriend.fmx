@@ -14,10 +14,11 @@ inherited frmFriend: TfrmFriend
       Align = HorzCenter
       Height = 48.000000000000000000
       Position.X = 123.000000000000000000
-      TabOrder = 4
+      TabOrder = 3
       Text = 'BeFriend'
       Visible = False
       Width = 73.000000000000000000
+      OnClick = BeFriendClick
     end
   end
   inherited pnlTop: TPanel
