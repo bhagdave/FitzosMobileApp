@@ -27,6 +27,7 @@ type
     lvSports: TListView;
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField1: TLinkFillControlToField;
+    BeFriend: TButton;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
@@ -34,6 +35,7 @@ type
     procedure getMember();
     procedure getMemberSports();
     procedure loadPicture(sURL : String);
+    procedure checkIfFriends();
   public
     { Public declarations }
   end;
@@ -47,11 +49,38 @@ uses
 {$R *.fmx}
 
 
+procedure TfrmFriend.checkIfFriends;
+var
+  sResult : String;
+  bFriends : Boolean;
+begin
+  with dmdDataModule do
+  begin
+    reqGeneric.Params.Clear;
+    reqGeneric.Resource := 'r/members/isFriends';
+    reqGeneric.Params.addItem('user',id);
+    reqGeneric.Params.addItem('id',memberId);
+    reqGeneric.Params.AddItem('signature',signature('loadProfile'));
+    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Execute;
+    sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+        bFriends := getResultBoolean(respGeneric.Content,'Result');
+        if not(bFriends) then
+          beFriend.Visible := true
+        else
+          beFriend.Visible := false;
+      end;
+  end;
+end;
+
 procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
   getMember();
   getMemberSports();
   getProfile();
+  checkIfFriends();
 end;
 
 procedure TfrmFriend.getMember;
