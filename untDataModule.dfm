@@ -1591,25 +1591,7 @@ object dmdDataModule: TdmdDataModule
   object reqCreateTeam: TRESTRequest
     Client = restAPI
     Method = rmPOST
-    Params = <
-      item
-        name = 'name'
-      end
-      item
-        name = 'content'
-      end
-      item
-        name = 'active'
-      end
-      item
-        name = 'public'
-      end
-      item
-        name = 'owner'
-      end
-      item
-        name = 'sport_id'
-      end>
+    Params = <>
     Resource = 'rest/teams'
     Response = respCreateTeam
     SynchronizedEvents = False

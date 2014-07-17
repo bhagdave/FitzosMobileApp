@@ -1,5 +1,5 @@
 ﻿[edtName]
-Coordinates=340,150,57,51
+Coordinates=291,177,57,51
 
 [btnTeams]
 Coordinates=414,1450,71,36
@@ -18,8 +18,7 @@ Coordinates=1221,1316,67,51
 Visible=False
 
 [cbPublic]
-Coordinates=848,1316,65,58
-Visible=False
+Coordinates=208,177,57,51
 
 [pnlLayout]
 Coordinates=664,1450,63,33
@@ -30,11 +29,10 @@ Coordinates=221,1450,62,33
 Visible=False
 
 [cboSport]
-Coordinates=240,150,84,105
+Coordinates=10,28,84,105
 
 [cbActive]
-Coordinates=923,1316,65,58
-Visible=False
+Coordinates=10,272,57,51
 
 [StyleBook1]
 Coordinates=344,166,79,36
@@ -112,8 +110,8 @@ Visible=False
 Coordinates=10,10,165,476
 
 [dmdDataModule.reqCreateTeam]
-Coordinates=471,1316,202,80
-Visible=False
+Coordinates=10,177,172,69
+Visible=True
 
 [dmdDataModule.respTeamEvents]
 Coordinates=10,828,179,267
@@ -224,7 +222,7 @@ Coordinates=819,10,167,267
 Visible=False
 
 [dmdDataModule.fdmMemberSports]
-Coordinates=10,10,181,141
+Coordinates=174,10,181,141
 Visible=False
 
 [dmdDataModule.respMemberSports]
@@ -280,7 +278,7 @@ Coordinates=1721,1316,91,33
 Visible=False
 
 [dmdDataModule.dsMemberSports]
-Coordinates=10,10,181,141
+Coordinates=174,10,181,141
 
 [BindingsList1]
 Coordinates=210,1,82,33

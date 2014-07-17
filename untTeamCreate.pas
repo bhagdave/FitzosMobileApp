@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListBox, FMX.Layouts, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Memo;
 
 type
   TfrmTeamCreate = class(TfrmBase)
@@ -22,11 +22,15 @@ type
     pnlCheckBoxes: TGridPanelLayout;
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
+    ToolBar1: TToolBar;
+    lblDescription: TLabel;
+    memContents: TMemo;
     procedure btnSaveClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
     procedure getSports();
+    procedure addParams();
   public
     { Public declarations }
   end;
@@ -37,10 +41,39 @@ implementation
 uses
   untMainForm;
 {$R *.fmx}
+procedure TfrmTeamCreate.addParams;
+var
+  sPublic : String;
+  sActive : String;
+  sSport  : String;
+  lValue : TValue;
+begin
+  if cbPublic.IsChecked then
+    sPublic := 'yes'
+  else
+    sPublic := 'no';
+  if cbActive.IsChecked then
+    sActive := 'yes'
+  else
+    sActive := 'no';
+  lValue := GetSelectedValue(cboSport);
+  sSport := lValue.ToString;
+  dmdDataModule.reqCreateTeam.Params.Clear;
+  dmdDataModule.reqCreateTeam.Params.AddItem('name',edtName.Text);
+  dmdDataModule.reqCreateTeam.Params.AddItem('content',memContents.Lines.GetText);
+  dmdDataModule.reqCreateTeam.Params.AddItem('public', sPublic);
+  dmdDataModule.reqCreateTeam.Params.AddItem('active', sActive);
+  dmdDataModule.reqCreateTeam.Params.AddItem('owner',dmdDataModule.memberId);
+  dmdDataModule.reqCreateTeam.Params.AddItem('sport_id',sSport);
+end;
+
 procedure TfrmTeamCreate.btnSaveClick(Sender: TObject);
 begin
   inherited;
-//
+  addParams;
+  dmdDataModule.reqCreateTeam.Execute;
+  showmessage('Team created!');
+  close;
 end;
 
 procedure TfrmTeamCreate.FormActivate(Sender: TObject);

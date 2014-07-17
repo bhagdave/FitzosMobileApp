@@ -235,6 +235,27 @@ inherited frmTeamCreate: TfrmTeamCreate
         Width = 192.000000000000000000
       end
     end
+    object ToolBar1: TToolBar
+      Height = 40.000000000000000000
+      Position.Y = 140.000000000000000000
+      TabOrder = 4
+      Width = 384.000000000000000000
+      object lblDescription: TLabel
+        Align = Client
+        Height = 40.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Description'
+        Width = 384.000000000000000000
+      end
+    end
+    object memContents: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      Align = Top
+      Height = 133.000000000000000000
+      Position.Y = 180.000000000000000000
+      TabOrder = 5
+      Width = 384.000000000000000000
+    end
   end
   object BindingsList1: TBindingsList
     Methods = <>
