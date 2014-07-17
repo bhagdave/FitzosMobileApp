@@ -9,13 +9,15 @@ uses
 
 type
   TfrmTeamCreate = class(TfrmBase)
-    GridPanelLayout1: TGridPanelLayout;
+    pnlLayout: TGridPanelLayout;
     lblName: TLabel;
     edtName: TEdit;
     lblSport: TLabel;
     cboSport: TComboBox;
     cbActive: TCheckBox;
     cbPublic: TCheckBox;
+    btnSave: TButton;
+    pnlCheckBoxes: TGridPanelLayout;
   private
     { Private declarations }
   public
