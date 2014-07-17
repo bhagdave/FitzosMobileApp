@@ -2,6 +2,7 @@ inherited frmTeamCreate: TfrmTeamCreate
   Caption = 'Team Create'
   ClientHeight = 567
   ClientWidth = 384
+  OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 384
   DesignerHeight = 592
@@ -19,6 +20,14 @@ inherited frmTeamCreate: TfrmTeamCreate
     Width = 384.000000000000000000
     inherited btnFriends: TCornerButton
       Position.X = 292.000000000000000000
+    end
+    object btnSave: TButton
+      Align = Center
+      Height = 44.000000000000000000
+      TabOrder = 4
+      Text = 'Save'
+      Width = 148.000000000000000000
+      OnClick = btnSaveClick
     end
   end
   inherited pnlTop: TPanel
@@ -181,20 +190,12 @@ inherited frmTeamCreate: TfrmTeamCreate
         Width = 246.945343017578100000
       end
     end
-    object btnSave: TButton
-      Align = Bottom
-      Height = 44.000000000000000000
-      Position.Y = 370.000000000000000000
-      TabOrder = 3
-      Text = 'Save'
-      Width = 384.000000000000000000
-    end
     object pnlCheckBoxes: TGridPanelLayout
       Align = Top
       Height = 35.000000000000000000
       Position.Y = 105.000000000000000000
       Width = 384.000000000000000000
-      TabOrder = 4
+      TabOrder = 2
       ColumnCollection = <
         item
           Value = 50.000000000000000000
@@ -233,6 +234,24 @@ inherited frmTeamCreate: TfrmTeamCreate
         Text = 'Public?'
         Width = 192.000000000000000000
       end
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = cboSport
+      Track = True
+      FillDataSource = dmdDataModule.dsMemberSports
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'sport'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
     end
   end
 end

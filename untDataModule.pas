@@ -178,6 +178,9 @@ type
     fdmMemberSportssport: TWideStringField;
     fdmMemberSportsfrom_date: TWideStringField;
     fdmMemberSportsto_date: TWideStringField;
+    reqCreateTeam: TRESTRequest;
+    respCreateTeam: TRESTResponse;
+    dsMemberSports: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;

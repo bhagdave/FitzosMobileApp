@@ -1570,7 +1570,7 @@ object dmdDataModule: TdmdDataModule
     UpdateOptions.CheckRequired = False
     StoreDefs = True
     Left = 584
-    Top = 560
+    Top = 552
     object fdmMemberSportsid: TWideStringField
       FieldName = 'id'
       Size = 255
@@ -1587,5 +1587,43 @@ object dmdDataModule: TdmdDataModule
       FieldName = 'to_date'
       Size = 255
     end
+  end
+  object reqCreateTeam: TRESTRequest
+    Client = restAPI
+    Method = rmPOST
+    Params = <
+      item
+        name = 'name'
+      end
+      item
+        name = 'content'
+      end
+      item
+        name = 'active'
+      end
+      item
+        name = 'public'
+      end
+      item
+        name = 'owner'
+      end
+      item
+        name = 'sport_id'
+      end>
+    Resource = 'rest/teams'
+    Response = respCreateTeam
+    SynchronizedEvents = False
+    Left = 680
+    Top = 400
+  end
+  object respCreateTeam: TRESTResponse
+    Left = 680
+    Top = 456
+  end
+  object dsMemberSports: TBindSourceDB
+    DataSet = fdmMemberSports
+    ScopeMappings = <>
+    Left = 584
+    Top = 600
   end
 end
