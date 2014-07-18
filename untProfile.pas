@@ -38,6 +38,12 @@ type
     cbLeague: TCheckBox;
     cbSearch: TCheckBox;
     cbMessaging: TCheckBox;
+    expOptions: TExpander;
+    expSports: TExpander;
+    expImage: TExpander;
+    vsbScroller: TVertScrollBox;
+    layDetails: TLayout;
+    procedure btnBackClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,6 +53,11 @@ type
 implementation
 
 {$R *.fmx}
+procedure TfrmProfile.btnBackClick(Sender: TObject);
+begin
+  close;
+end;
+
 initialization
 RegisterFMXClasses([TfrmProfile]);
 
