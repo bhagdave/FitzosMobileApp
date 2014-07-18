@@ -79,6 +79,11 @@ begin
   Result := Leditor.SelectedValue;
 end;
 
+procedure TfrmBase.imgAvatarClick(Sender: TObject);
+begin
+//
+end;
+
 procedure TfrmBase.setId(sId: String);
 begin
   fId := sId;
