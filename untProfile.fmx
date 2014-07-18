@@ -40,6 +40,7 @@ object frmProfile: TfrmProfile
       TabOrder = 0
       Text = 'Save'
       Width = 73.000000000000000000
+      OnClick = btnSaveClick
     end
     object btnBack: TButton
       Align = MostLeft
@@ -2661,12 +2662,12 @@ object frmProfile: TfrmProfile
     object layDetails: TLayout
       Align = Top
       Height = 700.000000000000000000
-      Width = 374.000000000000000000
+      Width = 368.000000000000000000
       TabOrder = 0
       object grdLayout: TGridPanelLayout
         Align = Top
         Height = 185.000000000000000000
-        Width = 374.000000000000000000
+        Width = 368.000000000000000000
         TabOrder = 0
         ColumnCollection = <
           item
@@ -2806,21 +2807,21 @@ object frmProfile: TfrmProfile
           Align = Client
           Height = 20.000000000000000000
           Text = 'Age'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object edtAge: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 1
           KeyboardType = NumberPad
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
         object lblGender: TLabel
           Align = Client
           Height = 20.000000000000000000
           Text = 'Gender'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object cboGender: TComboBox
           Align = Client
@@ -2831,39 +2832,39 @@ object frmProfile: TfrmProfile
             'Female'
             'Not sure')
           TabOrder = 3
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
         end
         object lblLocation: TLabel
           Align = Client
           Height = 20.000000000000000000
           Text = 'Location'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object edtLocation: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 5
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
         object lblNickname: TLabel
           Align = Client
           Height = 20.000000000000000000
           Text = 'Nickname'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object edtNickname: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 7
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
         object lblUnits: TLabel
           Align = Client
           Height = 20.000000000000000000
           Text = 'Units'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object cboUnits: TComboBox
           Align = Client
@@ -2873,46 +2874,46 @@ object frmProfile: TfrmProfile
             'metric'
             'imperial')
           TabOrder = 9
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
         end
         object lblHeight: TLabel
           Align = Client
           Height = 20.000000000000000000
           Text = 'Height'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object edtHeight: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 11
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
         object lblWeight: TLabel
           Align = Client
           Height = 20.000000000000000000
           Text = 'Weight'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object edtWeight: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 13
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
         object lblBodyFat: TLabel
           Align = Client
           Height = 20.000000000000000000
           Text = 'Body Fat %'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
         object edtBodyFat: TNumberBox
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 15
           Cursor = crIBeam
-          Width = 260.954498291015600000
+          Width = 256.768066406250000000
           Height = 20.000000000000000000
           VertIncrement = 5.000000000000000000
         end
@@ -2921,7 +2922,7 @@ object frmProfile: TfrmProfile
           Height = 23.000000000000000000
           Position.Y = 160.000000000000000000
           Text = 'Options'
-          Width = 113.045494079589800000
+          Width = 111.231925964355500000
         end
       end
       object expOptions: TExpander
@@ -2931,7 +2932,7 @@ object frmProfile: TfrmProfile
         Position.Y = 235.000000000000000000
         ShowCheck = False
         Text = 'Options'
-        Width = 374.000000000000000000
+        Width = 368.000000000000000000
         TabOrder = 1
         ContentSize = '175'
         object cbStatus: TCheckBox
@@ -2981,7 +2982,7 @@ object frmProfile: TfrmProfile
         Position.Y = 210.000000000000000000
         ShowCheck = False
         Text = 'Your Sports'
-        Width = 374.000000000000000000
+        Width = 368.000000000000000000
         TabOrder = 2
         ContentSize = '175'
       end
@@ -2992,10 +2993,105 @@ object frmProfile: TfrmProfile
         Position.Y = 185.000000000000000000
         ShowCheck = False
         Text = 'Profile Image'
-        Width = 374.000000000000000000
+        Width = 368.000000000000000000
         TabOrder = 3
         ContentSize = '175'
+        object pnlImage: TGridPanelLayout
+          Align = Client
+          Height = 175.000000000000000000
+          Width = 368.000000000000000000
+          TabOrder = 0
+          ColumnCollection = <
+            item
+              Value = 50.000000000000000000
+            end
+            item
+              Value = 50.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = imgProfile
+              Row = 0
+              RowSpan = 2
+            end
+            item
+              Column = 1
+              Control = btnGetImage
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = btnTakePhoto
+              Row = 1
+            end>
+          RowCollection = <
+            item
+              Value = 50.000000000000000000
+            end
+            item
+              Value = 50.000000000000000000
+            end>
+          object imgProfile: TImage
+            MultiResBitmap = <
+              item
+              end>
+            Align = Client
+            Height = 175.000000000000000000
+            Width = 184.000000000000000000
+          end
+          object btnGetImage: TButton
+            Action = TakePhotoFromLibraryAction1
+            Align = Client
+            Height = 87.500000000000000000
+            TabOrder = 1
+            Text = 'Get Photo'
+            Width = 184.000000000000000000
+          end
+          object btnTakePhoto: TButton
+            Action = TakePhotoFromCameraAction1
+            Align = Client
+            Height = 87.500000000000000000
+            TabOrder = 2
+            Text = 'Take Photo'
+            Width = 184.000000000000000000
+          end
+        end
       end
+    end
+  end
+  object IdHTTPImage: TIdHTTP
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 216
+    Top = 347
+  end
+  object IdIOHandlerStream1: TIdIOHandlerStream
+    MaxLineAction = maException
+    Port = 0
+    FreeStreams = False
+    Left = 240
+    Top = 363
+  end
+  object ActionList1: TActionList
+    Left = 80
+    Top = 354
+    object TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction
+      OnDidFinishTaking = TakePhotoFromLibraryAction1DidFinishTaking
+    end
+    object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
+      OnDidFinishTaking = TakePhotoFromCameraAction1DidFinishTaking
     end
   end
 end

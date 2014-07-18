@@ -5,7 +5,10 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Edit, FMX.Layouts, FMX.ListBox;
+  FMX.Edit, FMX.Layouts, FMX.ListBox, IdBaseComponent, IdComponent,
+  IdTCPConnection, IdTCPClient, IdHTTP, IdIOHandler, IdIOHandlerStream,
+  FMX.Objects, System.Actions, FMX.ActnList, FMX.StdActns,
+  FMX.MediaLibrary.Actions;
 
 type
   TfrmProfile = class(TForm)
@@ -43,7 +46,19 @@ type
     expImage: TExpander;
     vsbScroller: TVertScrollBox;
     layDetails: TLayout;
+    IdHTTPImage: TIdHTTP;
+    IdIOHandlerStream1: TIdIOHandlerStream;
+    imgProfile: TImage;
+    pnlImage: TGridPanelLayout;
+    btnGetImage: TButton;
+    ActionList1: TActionList;
+    TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction;
+    btnTakePhoto: TButton;
+    TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
     procedure btnBackClick(Sender: TObject);
+    procedure btnSaveClick(Sender: TObject);
+    procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
+    procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
   private
     { Private declarations }
   public
@@ -51,6 +66,8 @@ type
   end;
 
 implementation
+uses
+  IdMultipartFormData;
 
 {$R *.fmx}
 procedure TfrmProfile.btnBackClick(Sender: TObject);
@@ -58,7 +75,29 @@ begin
   close;
 end;
 
+procedure TfrmProfile.btnSaveClick(Sender: TObject);
+var
+  m : TIdMultipartFormDataStream;
+begin
+  m := TIdMultiPartFormDataStream.Create();
+  m.AddFile('param','filename','type');
+  IdHTTPImage.Post('url',m);
+  m.Free;
+end;
+
+procedure TfrmProfile.TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
+begin
+  imgProfile.Bitmap.Assign(Image);
+end;
+
+procedure TfrmProfile.TakePhotoFromLibraryAction1DidFinishTaking(
+  Image: TBitmap);
+begin
+  imgProfile.Bitmap.Assign(Image);
+end;
+
 initialization
 RegisterFMXClasses([TfrmProfile]);
+
 
 end.
