@@ -28,6 +28,7 @@ type
     procedure btnNotificationsClick(Sender: TObject);
     procedure btnFriendsClick(Sender: TObject);
     procedure btnProfileClick(Sender: TObject);
+    procedure imgAvatarClick(Sender: TObject);
   private
     { Private declarations }
     fId : String;
@@ -62,7 +63,7 @@ end;
 
 procedure TfrmBase.btnProfileClick(Sender: TObject);
 begin
-  showNewForm('TfrmProfile');
+  showNewFormWithId('TfrmProfile',dmdDataModule.memberId);
 end;
 
 procedure TfrmBase.btnTeamsClick(Sender: TObject);
