@@ -77,12 +77,12 @@ end;
 
 procedure TfrmProfile.btnSaveClick(Sender: TObject);
 var
-  m : TIdMultipartFormDataStream;
+  mStream  : TMemoryStream;
 begin
-  m := TIdMultiPartFormDataStream.Create();
-  m.AddFile('param','filename','type');
-  IdHTTPImage.Post('url',m);
-  m.Free;
+  mStream  := TMemoryStream.Create();
+  imgProfile.Bitmap.SaveToStream(mStream);
+  IdHTTPImage.Post('http://beta.fitzos.com/api/profile/image/upload',mStream);
+  mStream.Free;
 end;
 
 procedure TfrmProfile.TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
