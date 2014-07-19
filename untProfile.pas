@@ -8,7 +8,7 @@ uses
   FMX.Edit, FMX.Layouts, FMX.ListBox, IdBaseComponent, IdComponent,
   IdTCPConnection, IdTCPClient, IdHTTP, IdIOHandler, IdIOHandlerStream,
   FMX.Objects, System.Actions, FMX.ActnList, FMX.StdActns,
-  FMX.MediaLibrary.Actions;
+  FMX.MediaLibrary.Actions, untDataModule;
 
 type
   TfrmProfile = class(TForm)
@@ -81,7 +81,7 @@ var
 begin
   mStream  := TMemoryStream.Create();
   imgProfile.Bitmap.SaveToStream(mStream);
-  IdHTTPImage.Post('http://beta.fitzos.com/api/profile/image/upload',mStream);
+  IdHTTPImage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDataModule.memberId,mStream);
   mStream.Free;
 end;
 

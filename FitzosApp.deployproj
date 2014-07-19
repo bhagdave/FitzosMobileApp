@@ -241,6 +241,22 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_114x114.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>FM_ApplicationIcon_114x114.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_768x1024.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>Default-Portrait~ipad.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="iOSDevice\Release\ResourceRules.plist" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>ResourceRules.plist</RemoteName>
@@ -253,6 +269,14 @@
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>Default-Portrait@2x.png</RemoteName>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_2048x1536.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>Default-Landscape@2x~ipad.png</RemoteName>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -282,6 +306,14 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>FM_ApplicationIcon_152x152.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_144x144.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>FM_ApplicationIcon_144x144.png</RemoteName>
@@ -306,6 +338,30 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_144x144.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>FM_ApplicationIcon_144x144.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_50x50.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>FM_SpotlightSearchIcon_50x50.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_29x29.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>FM_SettingIcon_29x29.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_2048x1496.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>Default-Landscape@2x.png</RemoteName>
@@ -318,6 +374,22 @@
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>FM_SpotlightSearchIcon_40x40.png</RemoteName>
             <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_640x960.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>Default@2x.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_1536x2008.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>Default-Portrait@2x.png</RemoteName>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -402,6 +474,14 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_29x29.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>FM_SpotlightSearchIcon_29x29.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="iOSDevice\Release\FitzosApp.dSYM" Condition="'$(Config)'=='Release'">
             <RemoteDir>$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF\</RemoteDir>
             <RemoteName>FitzosApp</RemoteName>
@@ -413,6 +493,14 @@
         <DeployFile Include="iOSDevice\Debug\ResourceRules.plist" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>ResourceRules.plist</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_1024x748.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>Default-Landscape.png</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -669,14 +757,6 @@
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>Default-Landscape@2x~ipad.png</RemoteName>
             <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="iOSSimulator\Debug\FitzosApp.rsm" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp.app\</RemoteDir>
-            <RemoteName>FitzosApp.rsm</RemoteName>
-            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
