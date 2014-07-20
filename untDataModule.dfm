@@ -1608,4 +1608,273 @@ object dmdDataModule: TdmdDataModule
     Left = 584
     Top = 600
   end
+  object reqProfile: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '9'
+      end
+      item
+        name = 'signature'
+      end
+      item
+        name = 'key'
+      end>
+    Resource = 'athletes/getAthlete'
+    Response = respProfile
+    SynchronizedEvents = False
+    Left = 760
+    Top = 88
+  end
+  object respProfile: TRESTResponse
+    ContentType = 'text/html'
+    Left = 768
+    Top = 152
+  end
+  object rdsaProfile: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmProfile
+    FieldDefs = <>
+    Response = respProfile
+    RootElement = 'Result'
+    Left = 768
+    Top = 216
+  end
+  object fdmProfile: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'dob'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'gender'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'zip'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'country'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'language'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'nickname'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'height'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'weight'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'bmi'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'body_fat_percentage'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'units'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'activity'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_status'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_progress'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'find_trainer'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_tables'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'search'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'message'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'age'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 768
+    Top = 272
+    object fdmProfileid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmProfiledob: TWideStringField
+      FieldName = 'dob'
+      Size = 255
+    end
+    object fdmProfilegender: TWideStringField
+      FieldName = 'gender'
+      Size = 255
+    end
+    object fdmProfilename: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmProfilezip: TWideStringField
+      FieldName = 'zip'
+      Size = 255
+    end
+    object fdmProfilecountry: TWideStringField
+      FieldName = 'country'
+      Size = 255
+    end
+    object fdmProfilelanguage: TWideStringField
+      FieldName = 'language'
+      Size = 255
+    end
+    object fdmProfilenickname: TWideStringField
+      FieldName = 'nickname'
+      Size = 255
+    end
+    object fdmProfileheight: TWideStringField
+      FieldName = 'height'
+      Size = 255
+    end
+    object fdmProfileweight: TWideStringField
+      FieldName = 'weight'
+      Size = 255
+    end
+    object fdmProfilebmi: TWideStringField
+      FieldName = 'bmi'
+      Size = 255
+    end
+    object fdmProfilebody_fat_percentage: TWideStringField
+      FieldName = 'body_fat_percentage'
+      Size = 255
+    end
+    object fdmProfileunits: TWideStringField
+      FieldName = 'units'
+      Size = 255
+    end
+    object fdmProfileactivity: TWideStringField
+      FieldName = 'activity'
+      Size = 255
+    end
+    object fdmProfilelocation: TWideStringField
+      FieldName = 'location'
+      Size = 255
+    end
+    object fdmProfileimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmProfileshow_status: TWideStringField
+      FieldName = 'show_status'
+      Size = 255
+    end
+    object fdmProfileshow_progress: TWideStringField
+      FieldName = 'show_progress'
+      Size = 255
+    end
+    object fdmProfilefind_trainer: TWideStringField
+      FieldName = 'find_trainer'
+      Size = 255
+    end
+    object fdmProfileshow_tables: TWideStringField
+      FieldName = 'show_tables'
+      Size = 255
+    end
+    object fdmProfilesearch: TWideStringField
+      FieldName = 'search'
+      Size = 255
+    end
+    object fdmProfilemessage: TWideStringField
+      FieldName = 'message'
+      Size = 255
+    end
+    object fdmProfilemember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmProfileage: TWideStringField
+      FieldName = 'age'
+      Size = 255
+    end
+  end
+  object dsProfile: TBindSourceDB
+    DataSet = fdmProfile
+    ScopeMappings = <>
+    Left = 760
+    Top = 320
+  end
 end

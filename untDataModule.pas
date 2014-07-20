@@ -181,6 +181,35 @@ type
     reqCreateTeam: TRESTRequest;
     respCreateTeam: TRESTResponse;
     dsMemberSports: TBindSourceDB;
+    reqProfile: TRESTRequest;
+    respProfile: TRESTResponse;
+    rdsaProfile: TRESTResponseDataSetAdapter;
+    fdmProfile: TFDMemTable;
+    fdmProfileid: TWideStringField;
+    fdmProfiledob: TWideStringField;
+    fdmProfilegender: TWideStringField;
+    fdmProfilename: TWideStringField;
+    fdmProfilezip: TWideStringField;
+    fdmProfilecountry: TWideStringField;
+    fdmProfilelanguage: TWideStringField;
+    fdmProfilenickname: TWideStringField;
+    fdmProfileheight: TWideStringField;
+    fdmProfileweight: TWideStringField;
+    fdmProfilebmi: TWideStringField;
+    fdmProfilebody_fat_percentage: TWideStringField;
+    fdmProfileunits: TWideStringField;
+    fdmProfileactivity: TWideStringField;
+    fdmProfilelocation: TWideStringField;
+    fdmProfileimage: TWideStringField;
+    fdmProfileshow_status: TWideStringField;
+    fdmProfileshow_progress: TWideStringField;
+    fdmProfilefind_trainer: TWideStringField;
+    fdmProfileshow_tables: TWideStringField;
+    fdmProfilesearch: TWideStringField;
+    fdmProfilemessage: TWideStringField;
+    fdmProfilemember_id: TWideStringField;
+    fdmProfileage: TWideStringField;
+    dsProfile: TBindSourceDB;
   private
     { Private declarations }
     sSessionKey : String;
