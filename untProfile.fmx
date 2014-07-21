@@ -3052,7 +3052,6 @@ object frmProfile: TfrmProfile
             Align = Client
             Height = 87.500000000000000000
             TabOrder = 2
-            Text = 'Take Photo'
             Width = 184.000000000000000000
           end
         end
