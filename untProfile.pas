@@ -68,6 +68,7 @@ type
     LinkControlToField7: TLinkControlToField;
     LinkControlToField8: TLinkControlToField;
     LinkControlToField9: TLinkControlToField;
+    LinkPropertyToFieldText: TLinkPropertyToField;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);

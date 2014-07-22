@@ -2815,6 +2815,7 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 1
           KeyboardType = NumberPad
+          Text = '43'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2832,6 +2833,7 @@ object frmProfile: TfrmProfile
             'Male'
             'Female'
             'Not sure')
+          ItemIndex = 0
           TabOrder = 3
           Width = 256.768066406250000000
         end
@@ -2845,6 +2847,7 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 5
+          Text = 'York, UK'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2858,6 +2861,7 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 7
+          Text = 'Gilly'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2874,6 +2878,7 @@ object frmProfile: TfrmProfile
           Items.Strings = (
             'metric'
             'imperial')
+          ItemIndex = 0
           TabOrder = 9
           Width = 256.768066406250000000
         end
@@ -2887,6 +2892,7 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 11
+          Text = '1.67'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2900,6 +2906,7 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 13
+          Text = '163.00'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -3184,6 +3191,13 @@ object frmProfile: TfrmProfile
       FieldName = 'search'
       Control = cbSearch
       Track = True
+    end
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = dmdDataModule.dsProfile
+      FieldName = 'body_fat_percentage'
+      Component = edtBodyFat
+      ComponentProperty = 'Text'
     end
   end
 end

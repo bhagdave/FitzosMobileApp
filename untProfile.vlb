@@ -7,8 +7,8 @@ Coordinates=673,130,52,58
 Visible=False
 
 [edtBodyFat]
-Coordinates=710,490,80,36
-Visible=False
+Coordinates=60,220,70,51
+ExplicitSubNodes=Text
 
 [cbSearch]
 Coordinates=200,20,60,51
@@ -190,7 +190,7 @@ Coordinates=744,960,210,168
 
 [dmdDataModule.fdmProfile]
 Visible=False
-Coordinates=410,470,141,501
+Coordinates=410,10,141,501
 
 [dmdDataModule.respGeneric]
 Coordinates=10,628,182,322
