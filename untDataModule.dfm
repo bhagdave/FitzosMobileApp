@@ -1633,6 +1633,7 @@ object dmdDataModule: TdmdDataModule
     Top = 152
   end
   object rdsaProfile: TRESTResponseDataSetAdapter
+    Active = True
     Dataset = fdmProfile
     FieldDefs = <>
     Response = respProfile
@@ -1641,7 +1642,128 @@ object dmdDataModule: TdmdDataModule
     Top = 216
   end
   object fdmProfile: TFDMemTable
-    FieldDefs = <>
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'dob'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'gender'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'zip'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'country'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'language'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'nickname'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'height'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'weight'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'bmi'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'body_fat_percentage'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'units'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'activity'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_status'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_progress'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'find_trainer'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'show_tables'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'search'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'message'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'age'
+        DataType = ftWideString
+        Size = 255
+      end>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll

@@ -94,12 +94,19 @@ procedure TfrmProfile.btnSaveClick(Sender: TObject);
 var
   mStream  : TMemoryStream;
   sStream  : TStringStream;
+  multiStream: TIdMultiPartFormDataStream;
 begin
-//  dmdDataModule.reqUpdateProfile.Params.ParameterByName('file').Value
-//  mStream := TMemoryStream.Create();
-//  imgProfile.Bitmap.SaveToStream(mStream);
-//  IdHTTPImage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDataModule.memberId,mStream,sStream);
-//  mStream.Free;
+  multiStream := TIdMultiPartFormDataStream.Create;
+  mStream := TMemoryStream.Create();
+  try
+    imgProfile.Bitmap.SaveToStream(mStream);
+    multiStream.AddFormField('file', 'image/jpeg', '', mStream, 'image1.jpg');
+    multiStream.AddFormField('field2', 'value2');
+    idhttpimage.Post('http://beta.fitzos.com/athlete/saveProfileImage/9', multiStream);
+  finally
+    multiStream.Free;
+    mStream.Free;
+  end;
 end;
 
 procedure TfrmProfile.FormActivate(Sender: TObject);
