@@ -557,3 +557,6 @@ Visible=True
 Coordinates=10,10,98,141
 Visible=True
 
+[fdmProfile]
+Visible=False
+

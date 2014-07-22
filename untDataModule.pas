@@ -210,6 +210,8 @@ type
     fdmProfilemember_id: TWideStringField;
     fdmProfileage: TWideStringField;
     dsProfile: TBindSourceDB;
+    reqUpdateProfile: TRESTRequest;
+    respUpdateProfile: TRESTResponse;
   private
     { Private declarations }
     sSessionKey : String;

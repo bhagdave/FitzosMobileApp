@@ -1877,4 +1877,20 @@ object dmdDataModule: TdmdDataModule
     Left = 760
     Top = 320
   end
+  object reqUpdateProfile: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'file'
+        ContentType = ctIMAGE_JPEG
+      end>
+    Response = respUpdateProfile
+    SynchronizedEvents = False
+    Left = 792
+    Top = 408
+  end
+  object respUpdateProfile: TRESTResponse
+    Left = 792
+    Top = 472
+  end
 end

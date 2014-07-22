@@ -80,13 +80,11 @@ var
   mStream  : TMemoryStream;
   sStream  : TStringStream;
 begin
-  mStream := TMemoryStream.Create();
-  sStream := TStringStream.Create;
-  imgProfile.Bitmap.SaveToStream(mStream);
-  IdHTTPImage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDataModule.memberId,mStream,sStream);
-  showmessage(sStream.DataString);
-  sStream.Free;
-  mStream.Free;
+//  dmdDataModule.reqUpdateProfile.Params.ParameterByName('file').Value
+//  mStream := TMemoryStream.Create();
+//  imgProfile.Bitmap.SaveToStream(mStream);
+//  IdHTTPImage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDataModule.memberId,mStream,sStream);
+//  mStream.Free;
 end;
 
 procedure TfrmProfile.TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
