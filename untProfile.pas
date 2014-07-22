@@ -8,7 +8,8 @@ uses
   FMX.Edit, FMX.Layouts, FMX.ListBox, IdBaseComponent, IdComponent,
   IdTCPConnection, IdTCPClient, IdHTTP, IdIOHandler, IdIOHandlerStream,
   FMX.Objects, System.Actions, FMX.ActnList, FMX.StdActns,
-  FMX.MediaLibrary.Actions, untDataModule;
+  FMX.MediaLibrary.Actions, untDataModule, System.Rtti, System.Bindings.Outputs,
+  Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components;
 
 type
   TfrmProfile = class(TForm)
@@ -55,10 +56,23 @@ type
     TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction;
     btnTakePhoto: TButton;
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
+    BindingsList1: TBindingsList;
+    LinkFillControlToField1: TLinkFillControlToField;
+    LinkFillControlToField2: TLinkFillControlToField;
+    LinkControlToField1: TLinkControlToField;
+    LinkControlToField2: TLinkControlToField;
+    LinkControlToField3: TLinkControlToField;
+    LinkControlToField4: TLinkControlToField;
+    LinkControlToField5: TLinkControlToField;
+    LinkControlToField6: TLinkControlToField;
+    LinkControlToField7: TLinkControlToField;
+    LinkControlToField8: TLinkControlToField;
+    LinkControlToField9: TLinkControlToField;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,7 +81,7 @@ type
 
 implementation
 uses
-  IdMultipartFormData;
+  IdMultipartFormData, untMainForm;
 
 {$R *.fmx}
 procedure TfrmProfile.btnBackClick(Sender: TObject);
@@ -85,6 +99,30 @@ begin
 //  imgProfile.Bitmap.SaveToStream(mStream);
 //  IdHTTPImage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDataModule.memberId,mStream,sStream);
 //  mStream.Free;
+end;
+
+procedure TfrmProfile.FormActivate(Sender: TObject);
+var
+  sResult : String;
+begin
+  with dmdDataModule do
+  begin
+    // Open up the data.
+    rdsaProfile.ClearDataSet;
+    fdmProfile.Close;
+    respProfile.Content.Empty;
+    reqProfile.ClearBody;
+    reqProfile.Params.ParameterByName('id').Value := memberId;
+    reqProfile.Params.ParameterByName('signature').Value := signature('getAthlete');
+    reqProfile.Params.ParameterByName('key').Value := getApiKey;
+    reqProfile.Execute;
+    sResult := getResultString(respProfile.Content);
+    if (sResult = 'OK') then
+    begin
+        rdsaProfile.Response := respNotifications;
+        fdmProfile.Open;
+    end;
+  end;
 end;
 
 procedure TfrmProfile.TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
