@@ -7,11 +7,11 @@ Coordinates=673,130,52,58
 Visible=False
 
 [edtBodyFat]
-Coordinates=60,220,70,51
+Coordinates=60,220,80,58
 ExplicitSubNodes=Text
 
 [cbSearch]
-Coordinates=200,20,60,51
+Coordinates=310,20,69,58
 
 [btnBack]
 Coordinates=191,1426,61,58
@@ -26,7 +26,7 @@ Coordinates=735,130,75,58
 Visible=False
 
 [cbMessaging]
-Coordinates=290,380,79,51
+Coordinates=70,500,90,58
 
 [lblNickname]
 Coordinates=490,20,75,51
@@ -67,13 +67,13 @@ Coordinates=464,490,78,36
 Visible=False
 
 [edtLocation]
-Coordinates=760,470,72,51
+Coordinates=760,470,81,58
 
 [cbLeague]
-Coordinates=670,50,62,51
+Coordinates=670,50,71,58
 
 [cbStatus]
-Coordinates=300,450,57,51
+Coordinates=300,450,65,58
 
 [IdHTTPImage]
 Coordinates=605,485,94,36
@@ -83,14 +83,14 @@ Coordinates=232,1494,55,36
 Visible=False
 
 [cbProgress]
-Coordinates=680,160,71,51
+Coordinates=680,160,79,58
 
 [lblLocation]
 Coordinates=155,521,69,51
 Visible=False
 
 [cboUnits]
-Coordinates=200,270,84,105
+Coordinates=200,270,101,124
 
 [lblWeight]
 Coordinates=421,10,60,51
@@ -123,27 +123,27 @@ Coordinates=907,1426,62,58
 Visible=False
 
 [edtWeight]
-Coordinates=730,370,64,51
+Coordinates=730,370,72,58
 
 [btnTakePhoto]
 Coordinates=549,1426,94,58
 Visible=False
 
 [edtHeight]
-Coordinates=680,260,61,51
+Coordinates=680,260,70,58
 
 [edtNickname]
-Coordinates=760,280,78,51
+Coordinates=760,280,89,58
 
 [edtAge]
-Coordinates=200,440,49,51
+Coordinates=200,440,55,58
 
 [lblUnits]
 Coordinates=599,422,57,58
 Visible=False
 
 [cboGender]
-Coordinates=210,90,84,105
+Coordinates=210,90,101,124
 
 [ActionList1]
 Coordinates=447,490,78,36
@@ -186,7 +186,7 @@ Coordinates=744,960,210,168
 
 [dmdDataModule.fdmProfile]
 Visible=False
-Coordinates=410,10,141,501
+Coordinates=410,10,162,608
 
 [dmdDataModule.respGeneric]
 Coordinates=10,628,182,322
@@ -337,7 +337,7 @@ Coordinates=1923,960,170,146
 Visible=False
 
 [dmdDataModule.dsProfile]
-Coordinates=410,10,141,501
+Coordinates=410,10,162,608
 
 [dmdDataModule.respProfile]
 Coordinates=407,10,174,322

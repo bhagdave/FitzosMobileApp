@@ -2928,8 +2928,7 @@ object frmProfile: TfrmProfile
       end
       object expOptions: TExpander
         Align = Top
-        Height = 25.000000000000000000
-        IsExpanded = False
+        Height = 200.000000000000000000
         Position.Y = 210.000000000000000000
         ShowCheck = False
         Text = 'Options'
@@ -2941,7 +2940,7 @@ object frmProfile: TfrmProfile
           Height = 25.000000000000000000
           TabOrder = 0
           Text = 'Share Status'
-          Width = 200.000000000000000000
+          Width = 368.000000000000000000
         end
         object cbProgress: TCheckBox
           Align = Top
@@ -2949,7 +2948,7 @@ object frmProfile: TfrmProfile
           Position.Y = 25.000000000000000000
           TabOrder = 1
           Text = 'Share Progress'
-          Width = 200.000000000000000000
+          Width = 368.000000000000000000
         end
         object cbLeague: TCheckBox
           Align = Top
@@ -2957,7 +2956,7 @@ object frmProfile: TfrmProfile
           Position.Y = 50.000000000000000000
           TabOrder = 2
           Text = 'Show in league tables'
-          Width = 200.000000000000000000
+          Width = 368.000000000000000000
         end
         object cbSearch: TCheckBox
           Align = Top
@@ -2965,7 +2964,7 @@ object frmProfile: TfrmProfile
           Position.Y = 75.000000000000000000
           TabOrder = 3
           Text = 'Appear in search'
-          Width = 200.000000000000000000
+          Width = 368.000000000000000000
         end
         object cbMessaging: TCheckBox
           Align = Top
@@ -2973,7 +2972,7 @@ object frmProfile: TfrmProfile
           Position.Y = 100.000000000000000000
           TabOrder = 4
           Text = 'Messaging'
-          Width = 200.000000000000000000
+          Width = 368.000000000000000000
         end
       end
       object expImage: TExpander
@@ -3144,34 +3143,6 @@ object frmProfile: TfrmProfile
       FieldName = 'location'
       Control = edtLocation
       Track = False
-    end
-    object LinkControlToField6: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'show_tables'
-      Control = cbLeague
-      Track = True
-    end
-    object LinkControlToField7: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'show_progress'
-      Control = cbProgress
-      Track = True
-    end
-    object LinkControlToField8: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'show_status'
-      Control = cbStatus
-      Track = True
-    end
-    object LinkControlToField9: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'search'
-      Control = cbSearch
-      Track = True
     end
     object LinkPropertyToFieldText: TLinkPropertyToField
       Category = 'Quick Bindings'

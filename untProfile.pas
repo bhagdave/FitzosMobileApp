@@ -63,10 +63,6 @@ type
     LinkControlToField3: TLinkControlToField;
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
-    LinkControlToField6: TLinkControlToField;
-    LinkControlToField7: TLinkControlToField;
-    LinkControlToField8: TLinkControlToField;
-    LinkControlToField9: TLinkControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
