@@ -21,15 +21,16 @@ uses
   untProfile in 'untProfile.pas' {frmProfile},
   untEventDataModule in 'untEventDataModule.pas' {dmdEvent: TDataModule},
   untSignUpForm in 'untSignUpForm.pas' {frmSignup},
-  untTeamWall in 'untTeamWall.pas' {frmTeamWall};
+  untTeamWall in 'untTeamWall.pas' {frmTeamWall},
+  untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmMain, frmMain);
+  AApplication.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmdDataModule, dmdDataModule);
   Application.CreateForm(TfrmNotifications, frmNotifications);
   Application.CreateForm(TdmdEvent, dmdEvent);
-  Application.Run;
+  pplication.Run;
 end.

@@ -25,10 +25,6 @@ Visible=False
 Coordinates=735,130,75,58
 Visible=False
 
-[expSports]
-Coordinates=666,422,72,58
-Visible=False
-
 [cbMessaging]
 Coordinates=290,380,79,51
 
@@ -373,4 +369,8 @@ Visible=False
 
 [BindingsList1]
 Coordinates=170,1,82,33
+
+[]
+Coordinates=666,422,72,58
+Visible=False
 

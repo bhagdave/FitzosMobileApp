@@ -43,7 +43,6 @@ type
     cbSearch: TCheckBox;
     cbMessaging: TCheckBox;
     expOptions: TExpander;
-    expSports: TExpander;
     expImage: TExpander;
     vsbScroller: TVertScrollBox;
     layDetails: TLayout;

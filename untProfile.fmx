@@ -2815,7 +2815,6 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 1
           KeyboardType = NumberPad
-          Text = '43'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2833,7 +2832,6 @@ object frmProfile: TfrmProfile
             'Male'
             'Female'
             'Not sure')
-          ItemIndex = 0
           TabOrder = 3
           Width = 256.768066406250000000
         end
@@ -2847,7 +2845,6 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 5
-          Text = 'York, UK'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2861,7 +2858,6 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 7
-          Text = 'Gilly'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2878,7 +2874,6 @@ object frmProfile: TfrmProfile
           Items.Strings = (
             'metric'
             'imperial')
-          ItemIndex = 0
           TabOrder = 9
           Width = 256.768066406250000000
         end
@@ -2892,7 +2887,6 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 11
-          Text = '1.67'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2906,7 +2900,6 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 13
-          Text = '163.00'
           Width = 256.768066406250000000
           Height = 20.000000000000000000
         end
@@ -2937,7 +2930,7 @@ object frmProfile: TfrmProfile
         Align = Top
         Height = 25.000000000000000000
         IsExpanded = False
-        Position.Y = 235.000000000000000000
+        Position.Y = 210.000000000000000000
         ShowCheck = False
         Text = 'Options'
         Width = 368.000000000000000000
@@ -2983,26 +2976,15 @@ object frmProfile: TfrmProfile
           Width = 200.000000000000000000
         end
       end
-      object expSports: TExpander
+      object expImage: TExpander
         Align = Top
         Height = 25.000000000000000000
         IsExpanded = False
         Position.Y = 185.000000000000000000
         ShowCheck = False
-        Text = 'Your Sports'
-        Width = 368.000000000000000000
-        TabOrder = 2
-        ContentSize = '175'
-      end
-      object expImage: TExpander
-        Align = Top
-        Height = 25.000000000000000000
-        IsExpanded = False
-        Position.Y = 210.000000000000000000
-        ShowCheck = False
         Text = 'Profile Image'
         Width = 368.000000000000000000
-        TabOrder = 3
+        TabOrder = 2
         ContentSize = '175'
         object pnlImage: TGridPanelLayout
           Align = Client
