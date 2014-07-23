@@ -71,6 +71,7 @@ type
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
+    procedure setupCheckBoxes();
   public
     { Public declarations }
   end;
@@ -124,8 +125,18 @@ begin
     begin
         rdsaProfile.Response := respNotifications;
         fdmProfile.Open;
+        setupCheckBoxes();
     end;
   end;
+end;
+
+procedure TfrmProfile.setupCheckBoxes;
+begin
+    cbStatus.IsChecked    := dmdDataModule.fdmProfileshow_status.AsString = 'yes';
+    cbProgress.IsChecked  := dmdDataModule.fdmProfileshow_progress.AsString = 'yes';
+    cbleague.IsChecked    := dmdDataModule.fdmProfileshow_tables.AsString = 'yes';
+    cbSearch.IsChecked    := dmdDataModule.fdmProfilesearch.AsString = 'yes';
+    cbMessaging.IsChecked := dmdDataModule.fdmProfilemessage.AsString = 'yes';
 end;
 
 procedure TfrmProfile.TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
