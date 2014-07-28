@@ -100,6 +100,7 @@ begin
   try
     imgProfile.Bitmap.SaveToStream(mStream);
     multiStream.AddFormField('file', 'image/jpeg', '', mStream, dmdDataModule.memberId + '.jpg');
+    multiStream.AddFormField('id', dmdDataModule.memberId);
     multiStream.AddFormField('gender', cboGender.Selected.Text);
     if cboUnits.Selected.Text = 'Metric' then
     begin
