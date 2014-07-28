@@ -91,14 +91,52 @@ var
   mStream  : TMemoryStream;
   sStream  : TStringStream;
   multiStream: TIdMultiPartFormDataStream;
+  Height, weight : Double;
 begin
   multiStream := TIdMultiPartFormDataStream.Create;
   mStream := TMemoryStream.Create();
   try
     imgProfile.Bitmap.SaveToStream(mStream);
     multiStream.AddFormField('file', 'image/jpeg', '', mStream, 'image1.jpg');
-    multiStream.AddFormField('field2', 'value2');
-    idhttpimage.Post('http://beta.fitzos.com/athlete/saveProfileImage/9', multiStream);
+    multiStream.AddFormField('gender', cboGender.Selected.Text);
+    multiStream.AddFormField('nickname', edtNickname.text);
+    if cboUnits.Selected.Text = 'Metric' then
+    begin
+      multiStream.AddFormField('height', edtHeight.Text);
+      multiStream.AddFormField('weight', edtWeight.Text);
+    end
+    else
+    begin
+      weight := StrToInt(edtWeight.Text) * 0.453592;
+      height := StrToInt(edtHeight.Text) * 2.54;
+      multiStream.AddFormField('height', Format('%.2f',[height]));
+      multiStream.AddFormField('weight', Format('%.2f',[weight]));
+    end;
+    multiStream.AddFormField('body_fat_precentage', IntToStr(edtBodyFat.Value));
+    multiStream.AddFormField('units', cboUnits.Selected.Text);
+    multiStream.AddFormField('location', edtLocation.Text);
+    if cbStatus.IsChecked then
+      multiStream.AddFormField('show_status', 'Yes')
+    else
+      multiStream.AddFormField('show_status', 'No');
+    if cbProgress.IsChecked then
+      multiStream.AddFormField('show_progress', 'Yes')
+    else
+      multiStream.AddFormField('show_progress', 'No');
+    if cbLeague.IsChecked then
+      multiStream.AddFormField('show_tables', 'Yes')
+    else
+      multiStream.AddFormField('show_tables', 'No');
+    if cbSearch.IsChecked then
+      multiStream.AddFormField('search', 'Yes')
+    else
+      multiStream.AddFormField('search', 'No');
+    if cbMessaging.IsChecked then
+      multiStream.AddFormField('message', 'Yes')
+    else
+      multiStream.AddFormField('message', 'No');
+    multiStream.AddFormField('age', edtAge.Text);
+    idhttpimage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDatamodule.memberId, multiStream);
   finally
     multiStream.Free;
     mStream.Free;

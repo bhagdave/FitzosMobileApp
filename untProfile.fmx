@@ -2928,7 +2928,8 @@ object frmProfile: TfrmProfile
       end
       object expOptions: TExpander
         Align = Top
-        Height = 200.000000000000000000
+        Height = 25.000000000000000000
+        IsExpanded = False
         Position.Y = 210.000000000000000000
         ShowCheck = False
         Text = 'Options'
