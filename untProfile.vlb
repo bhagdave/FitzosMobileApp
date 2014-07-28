@@ -133,7 +133,7 @@ Visible=False
 Coordinates=680,260,70,58
 
 [edtNickname]
-Coordinates=760,280,89,58
+Coordinates=770,210,89,58
 
 [edtAge]
 Coordinates=200,440,55,58

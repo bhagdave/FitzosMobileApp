@@ -2872,8 +2872,8 @@ object frmProfile: TfrmProfile
           DisableFocusEffect = False
           Height = 20.000000000000000000
           Items.Strings = (
-            'metric'
-            'imperial')
+            'Metric'
+            'Imperial')
           TabOrder = 9
           Width = 256.768066406250000000
         end
@@ -3136,6 +3136,7 @@ object frmProfile: TfrmProfile
       DataSource = dmdDataModule.dsProfile
       FieldName = 'nickname'
       Control = edtNickname
+      Direction = linkDataToControl
       Track = False
     end
     object LinkControlToField5: TLinkControlToField

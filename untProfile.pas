@@ -92,14 +92,15 @@ var
   sStream  : TStringStream;
   multiStream: TIdMultiPartFormDataStream;
   Height, weight : Double;
+  sNickName : String;
 begin
+//  sNickname := edtNickname.Text;
   multiStream := TIdMultiPartFormDataStream.Create;
   mStream := TMemoryStream.Create();
   try
     imgProfile.Bitmap.SaveToStream(mStream);
     multiStream.AddFormField('file', 'image/jpeg', '', mStream, 'image1.jpg');
     multiStream.AddFormField('gender', cboGender.Selected.Text);
-    multiStream.AddFormField('nickname', edtNickname.text);
     if cboUnits.Selected.Text = 'Metric' then
     begin
       multiStream.AddFormField('height', edtHeight.Text);
@@ -107,12 +108,12 @@ begin
     end
     else
     begin
-      weight := StrToInt(edtWeight.Text) * 0.453592;
-      height := StrToInt(edtHeight.Text) * 2.54;
+      weight := StrToFloat(edtWeight.Text) * 0.453592;
+      height := StrToFloat(edtHeight.Text) * 2.54;
       multiStream.AddFormField('height', Format('%.2f',[height]));
       multiStream.AddFormField('weight', Format('%.2f',[weight]));
     end;
-    multiStream.AddFormField('body_fat_precentage', IntToStr(edtBodyFat.Value));
+    multiStream.AddFormField('body_fat_precentage', FloatToStr(edtBodyFat.Value));
     multiStream.AddFormField('units', cboUnits.Selected.Text);
     multiStream.AddFormField('location', edtLocation.Text);
     if cbStatus.IsChecked then
@@ -136,6 +137,7 @@ begin
     else
       multiStream.AddFormField('message', 'No');
     multiStream.AddFormField('age', edtAge.Text);
+//    multiStream.AddFormField('nickname', edtNickname.Text);
     idhttpimage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDatamodule.memberId, multiStream);
   finally
     multiStream.Free;
