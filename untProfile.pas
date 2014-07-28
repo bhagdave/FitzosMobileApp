@@ -99,7 +99,7 @@ begin
   mStream := TMemoryStream.Create();
   try
     imgProfile.Bitmap.SaveToStream(mStream);
-    multiStream.AddFormField('file', 'image/jpeg', '', mStream, 'image1.jpg');
+    multiStream.AddFormField('file', 'image/jpeg', '', mStream, dmdDataModule.memberId + '.jpg');
     multiStream.AddFormField('gender', cboGender.Selected.Text);
     if cboUnits.Selected.Text = 'Metric' then
     begin
