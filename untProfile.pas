@@ -98,8 +98,11 @@ begin
   multiStream := TIdMultiPartFormDataStream.Create;
   mStream := TMemoryStream.Create();
   try
-    imgProfile.Bitmap.SaveToStream(mStream);
-    multiStream.AddFormField('file', 'image/jpeg', '', mStream, dmdDataModule.memberId + '.jpg');
+    if not imgProfile.Bitmap.IsEmpty then
+    begin
+      imgProfile.Bitmap.SaveToStream(mStream);
+      multiStream.AddFormField('file', 'image/jpeg', '', mStream, dmdDataModule.memberId + '.jpg');
+    end;
     multiStream.AddFormField('id', dmdDataModule.memberId);
     multiStream.AddFormField('gender', cboGender.Selected.Text);
     if cboUnits.Selected.Text = 'Metric' then
