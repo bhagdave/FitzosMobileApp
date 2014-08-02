@@ -71,6 +71,7 @@ type
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure FormActivate(Sender: TObject);
     procedure btnSportsClick(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
     procedure setupCheckBoxes();
@@ -182,6 +183,14 @@ begin
         fdmProfile.Open;
         setupCheckBoxes();
     end;
+  end;
+end;
+
+procedure TfrmProfile.FormDeactivate(Sender: TObject);
+begin
+  with dmdDatamodule do
+  begin
+   rdsaProfile.Dataset := nil;
   end;
 end;
 
