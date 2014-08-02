@@ -117,7 +117,7 @@ begin
       multiStream.AddFormField('height', Format('%.2f',[height]));
       multiStream.AddFormField('weight', Format('%.2f',[weight]));
     end;
-    multiStream.AddFormField('body_fat_precentage', FloatToStr(edtBodyFat.Value));
+    multiStream.AddFormField('body_fat_percentage', FloatToStr(edtBodyFat.Value));
     multiStream.AddFormField('units', cboUnits.Selected.Text);
     multiStream.AddFormField('location', edtLocation.Text);
     if cbStatus.IsChecked then

@@ -22,7 +22,8 @@ uses
   untEventDataModule in 'untEventDataModule.pas' {dmdEvent: TDataModule},
   untSignUpForm in 'untSignUpForm.pas' {frmSignup},
   untTeamWall in 'untTeamWall.pas' {frmTeamWall},
-  untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule};
+  untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule},
+  untSportsForm in 'untSportsForm.pas' {frmSports};
 
 {$R *.res}
 
