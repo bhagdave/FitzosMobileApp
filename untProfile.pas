@@ -64,11 +64,13 @@ type
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
+    btnSports: TButton;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure FormActivate(Sender: TObject);
+    procedure btnSportsClick(Sender: TObject);
   private
     { Private declarations }
     procedure setupCheckBoxes();
@@ -83,6 +85,10 @@ uses
 {$R *.fmx}
 procedure TfrmProfile.btnBackClick(Sender: TObject);
 begin
+  with dmdDatamodule do
+  begin
+   rdsaProfile.Dataset := nil;
+  end;
   close;
 end;
 
@@ -149,6 +155,11 @@ begin
   end;
 end;
 
+procedure TfrmProfile.btnSportsClick(Sender: TObject);
+begin
+  showNewForm('TfrmSports');
+end;
+
 procedure TfrmProfile.FormActivate(Sender: TObject);
 var
   sResult : String;
@@ -156,8 +167,8 @@ begin
   with dmdDataModule do
   begin
     // Open up the data.
-    rdsaProfile.ClearDataSet;
-    fdmProfile.Close;
+    rdsaProfile.Active := false;
+    rdsaProfile.Dataset := fdmProfile;
     respProfile.Content.Empty;
     reqProfile.ClearBody;
     reqProfile.Params.ParameterByName('id').Value := memberId;
