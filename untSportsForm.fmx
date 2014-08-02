@@ -82,5 +82,8 @@ inherited frmSports: TfrmSports
           end>
       end
     end
+    inherited lblCaption: TLabel
+      Text = 'Sports and  Stats'
+    end
   end
 end
