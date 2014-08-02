@@ -29,6 +29,7 @@ type
     procedure btnFriendsClick(Sender: TObject);
     procedure btnProfileClick(Sender: TObject);
     procedure imgAvatarClick(Sender: TObject);
+    procedure edtSearchExit(Sender: TObject);
   private
     { Private declarations }
     fId : String;
@@ -69,6 +70,11 @@ end;
 procedure TfrmBase.btnTeamsClick(Sender: TObject);
 begin
     showNewForm('TfrmTeams');
+end;
+
+procedure TfrmBase.edtSearchExit(Sender: TObject);
+begin
+  showmessage('Searching for ' + edtSearch.Text);
 end;
 
 function TfrmBase.getSelectedValue(AObject: TObject): TValue;
