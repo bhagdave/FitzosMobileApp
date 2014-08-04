@@ -1919,6 +1919,8 @@ object dmdDataModule: TdmdDataModule
     FieldDefs = <>
     Response = respSearch
     RootElement = 'Result'
+    NestedElementsDepth = 1
+    NestedElements = True
     Left = 840
     Top = 200
   end
