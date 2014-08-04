@@ -1893,4 +1893,33 @@ object dmdDataModule: TdmdDataModule
     Left = 792
     Top = 472
   end
+  object reqSearch: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'criteria'
+        Value = 'name=dave'
+      end
+      item
+        name = 'id'
+        Value = '9'
+      end>
+    Resource = 'r/search/getSearchResults'
+    Response = respSearch
+    SynchronizedEvents = False
+    Left = 840
+    Top = 96
+  end
+  object respSearch: TRESTResponse
+    ContentType = 'text/html'
+    Left = 840
+    Top = 144
+  end
+  object rdsaMembers: TRESTResponseDataSetAdapter
+    FieldDefs = <>
+    Response = respSearch
+    RootElement = 'Result'
+    Left = 840
+    Top = 200
+  end
 end

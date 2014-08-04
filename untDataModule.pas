@@ -212,6 +212,9 @@ type
     dsProfile: TBindSourceDB;
     reqUpdateProfile: TRESTRequest;
     respUpdateProfile: TRESTResponse;
+    reqSearch: TRESTRequest;
+    respSearch: TRESTResponse;
+    rdsaMembers: TRESTResponseDataSetAdapter;
   private
     { Private declarations }
     sSessionKey : String;
