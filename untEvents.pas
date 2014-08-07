@@ -58,8 +58,11 @@ begin
     sResult := getResultString(respEvents.Content);
     if (sResult = 'OK') then
     begin
+      try
         rdsaEvents.Response := respEvents;
         fdmEvents.Open;
+      except on E: Exception do
+      end;
     end;
   end;
 end;

@@ -181,3 +181,9 @@ Visible=False
 [dmdDataModule.fdmEvents]
 Visible=False
 
+[dmdDataModule.fdmMemberSports]
+Visible=False
+
+[dmdDataModule.fdmProfile]
+Visible=False
+

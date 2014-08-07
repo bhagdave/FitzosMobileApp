@@ -187,3 +187,9 @@ Coordinates=250,50,143,393
 [BindingsList1]
 Coordinates=379,80,82,33
 
+[dmdDataModule.fdmMemberSports]
+Visible=False
+
+[dmdDataModule.fdmProfile]
+Visible=False
+

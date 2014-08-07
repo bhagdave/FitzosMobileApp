@@ -31,7 +31,6 @@ type
   procedure showNewFormWithId(ClassName, sId : String);
   function getResultString(Content : String):String;
   function getResultBoolean(Content, Value : String):Boolean;
-
 var
   frmMain: TfrmMain;
   FormRegistry : TStringList;

@@ -42,18 +42,21 @@ begin
   begin
     // Open up the data.
     rdsaNotifications.ClearDataSet;
+//    rdsaNotifications.Response := nil;
     fdmNotifications.Close;
+    fdmNotifications.Active := false;
     respNotifications.Content.Empty;
     reqNotifications.ClearBody;
     reqNotifications.Params.ParameterByName('id').Value := memberId;
     reqNotifications.Params.ParameterByName('signature').Value := signature('getMemberNotifications');
     reqNotifications.Params.ParameterByName('key').Value := getApiKey;
-    reqNotifications.Execute;
+    reqNotifications.Execute();
     sResult := getResultString(respNotifications.Content);
     if (sResult = 'OK') then
     begin
-        rdsaNotifications.Response := respNotifications;
-        fdmNotifications.Open;
+//      rdsaNotifications.Response := respNotifications;
+      rdsaNotifications.UpdateDataSet;
+      fdmNotifications.Open;
     end;
   end;
 end;

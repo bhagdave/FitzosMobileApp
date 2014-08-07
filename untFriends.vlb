@@ -173,3 +173,9 @@ Coordinates=334,80,82,33
 [dmdDataModule.fdmEvents]
 Visible=False
 
+[dmdDataModule.fdmMemberSports]
+Visible=False
+
+[dmdDataModule.fdmProfile]
+Visible=False
+

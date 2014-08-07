@@ -215,6 +215,7 @@ type
     reqSearch: TRESTRequest;
     respSearch: TRESTResponse;
     rdsaMembers: TRESTResponseDataSetAdapter;
+    procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }
     sSessionKey : String;
@@ -240,6 +241,8 @@ implementation
 {%CLASSGROUP 'FMX.Controls.TControl'}
 
 {$R *.dfm}
+uses
+  FMX.Dialogs;
 
 { TdmdDataModule }
 const
@@ -315,6 +318,12 @@ begin
     finally
       lJSONObject.Free;
     end;
+end;
+
+procedure TdmdDataModule.reqNotificationsHTTPProtocolError(
+  Sender: TCustomRESTRequest);
+begin
+  showmessage('Skskd');
 end;
 
 function TdmdDataModule.signature(method: String): String;

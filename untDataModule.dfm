@@ -75,6 +75,7 @@ object dmdDataModule: TdmdDataModule
     Resource = 'notifications/getMemberNotifications'
     Response = respNotifications
     SynchronizedEvents = False
+    OnHTTPProtocolError = reqNotificationsHTTPProtocolError
     Left = 200
     Top = 72
   end
@@ -85,6 +86,7 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaNotifications: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmNotifications
     FieldDefs = <>
     Response = respNotifications
