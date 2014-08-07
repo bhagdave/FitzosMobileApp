@@ -105,6 +105,8 @@ end;
 
 procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
+  // clear out image man
+  imgUser.Bitmap := nil;
   getMember();
   getMemberSports();
   getProfile();
