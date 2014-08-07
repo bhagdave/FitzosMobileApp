@@ -6290,9 +6290,7 @@ object frmMain: TfrmMain
     Align = Top
     Height = 56.000000000000000000
     Position.Y = 57.000000000000000000
-    Text = 
-      'Team and group focused workouts, events and competitions allowin' +
-      'g athletes to reach their next peak'
+    Text = 'Empowering athletes to reach their peak'
     TextSettings.FontColor = claAqua
     Width = 320.000000000000000000
   end
