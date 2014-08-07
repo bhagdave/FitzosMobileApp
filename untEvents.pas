@@ -59,7 +59,7 @@ begin
     if (sResult = 'OK') then
     begin
       try
-        rdsaEvents.Response := respEvents;
+        rdsaEvents.UpdateDataSet;
         fdmEvents.Open;
       except on E: Exception do
       end;

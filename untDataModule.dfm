@@ -1318,6 +1318,7 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaEvents: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmEvents
     FieldDefs = <>
     Response = respEvents
