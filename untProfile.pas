@@ -36,7 +36,6 @@ type
     edtWeight: TEdit;
     lblBodyFat: TLabel;
     edtBodyFat: TNumberBox;
-    lblOptions: TLabel;
     cbStatus: TCheckBox;
     cbProgress: TCheckBox;
     cbLeague: TCheckBox;

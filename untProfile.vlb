@@ -1,8 +1,4 @@
-﻿[lblOptions]
-Coordinates=517,422,72,58
-Visible=False
-
-[lblTitle]
+﻿[lblTitle]
 Coordinates=673,130,52,58
 Visible=False
 
@@ -371,6 +367,6 @@ Visible=False
 Coordinates=170,1,82,33
 
 []
-Coordinates=666,422,72,58
+Coordinates=517,422,72,58
 Visible=False
 

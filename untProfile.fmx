@@ -2668,7 +2668,7 @@ object frmProfile: TfrmProfile
       TabOrder = 0
       object grdLayout: TGridPanelLayout
         Align = Top
-        Height = 185.000000000000000000
+        Height = 209.000000000000000000
         Width = 368.000000000000000000
         TabOrder = 0
         ColumnCollection = <
@@ -2758,56 +2758,47 @@ object frmProfile: TfrmProfile
             Column = 1
             Control = edtBodyFat
             Row = 7
-          end
-          item
-            Column = 0
-            Control = lblOptions
-            Row = 8
           end>
         RowCollection = <
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end
           item
             SizeStyle = Absolute
-            Value = 20.000000000000000000
-          end
-          item
-            SizeStyle = Absolute
-            Value = 20.000000000000000000
+            Value = 25.000000000000000000
           end>
         object lblAge: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Age'
           Width = 111.231925964355500000
         end
@@ -2817,18 +2808,18 @@ object frmProfile: TfrmProfile
           TabOrder = 1
           KeyboardType = NumberPad
           Width = 256.768066406250000000
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
         end
         object lblGender: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Gender'
           Width = 111.231925964355500000
         end
         object cboGender: TComboBox
           Align = Client
           DisableFocusEffect = False
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Items.Strings = (
             'Male'
             'Female'
@@ -2838,7 +2829,7 @@ object frmProfile: TfrmProfile
         end
         object lblLocation: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Location'
           Width = 111.231925964355500000
         end
@@ -2847,11 +2838,11 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 5
           Width = 256.768066406250000000
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
         end
         object lblNickname: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Nickname'
           Width = 111.231925964355500000
         end
@@ -2860,18 +2851,18 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 7
           Width = 256.768066406250000000
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
         end
         object lblUnits: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Units'
           Width = 111.231925964355500000
         end
         object cboUnits: TComboBox
           Align = Client
           DisableFocusEffect = False
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Items.Strings = (
             'Metric'
             'Imperial')
@@ -2880,7 +2871,7 @@ object frmProfile: TfrmProfile
         end
         object lblHeight: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Height'
           Width = 111.231925964355500000
         end
@@ -2889,11 +2880,11 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 11
           Width = 256.768066406250000000
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
         end
         object lblWeight: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Weight'
           Width = 111.231925964355500000
         end
@@ -2902,11 +2893,11 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 13
           Width = 256.768066406250000000
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
         end
         object lblBodyFat: TLabel
           Align = Client
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           Text = 'Body Fat %'
           Width = 111.231925964355500000
         end
@@ -2916,22 +2907,15 @@ object frmProfile: TfrmProfile
           TabOrder = 15
           Cursor = crIBeam
           Width = 256.768066406250000000
-          Height = 20.000000000000000000
+          Height = 25.000000000000000000
           VertIncrement = 5.000000000000000000
-        end
-        object lblOptions: TLabel
-          Align = MostTop
-          Height = 23.000000000000000000
-          Position.Y = 160.000000000000000000
-          Text = 'Options'
-          Width = 111.231925964355500000
         end
       end
       object expOptions: TExpander
         Align = Top
         Height = 25.000000000000000000
         IsExpanded = False
-        Position.Y = 210.000000000000000000
+        Position.Y = 234.000000000000000000
         ShowCheck = False
         Text = 'Options'
         Width = 368.000000000000000000
@@ -2981,7 +2965,7 @@ object frmProfile: TfrmProfile
         Align = Top
         Height = 25.000000000000000000
         IsExpanded = False
-        Position.Y = 185.000000000000000000
+        Position.Y = 209.000000000000000000
         ShowCheck = False
         Text = 'Profile Image'
         Width = 368.000000000000000000
