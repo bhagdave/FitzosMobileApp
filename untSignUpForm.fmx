@@ -2,8 +2,8 @@ object frmSignup: TfrmSignup
   Left = 0
   Top = 0
   Caption = 'Signup'
-  ClientHeight = 567
-  ClientWidth = 360
+  ClientHeight = 460
+  ClientWidth = 320
   Fill.Color = claBlack
   Fill.Kind = Solid
   StyleBook = StyleBook1
@@ -13,11 +13,11 @@ object frmSignup: TfrmSignup
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   DesignerMobile = True
-  DesignerWidth = 360
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 5'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
+  DesignerOSVersion = '7'
   object imgLogo: TImageControl
     Align = Top
     Bitmap.PNG = {
@@ -351,7 +351,7 @@ object frmSignup: TfrmSignup
     Height = 57.000000000000000000
     HitTest = False
     TabOrder = 0
-    Width = 360.000000000000000000
+    Width = 320.000000000000000000
   end
   object txtWelcomeMessage: TText
     Align = Top
@@ -361,7 +361,7 @@ object frmSignup: TfrmSignup
       'Team and group focused workouts, events and competitions allowin' +
       'g athletes to reach their next peak'
     TextSettings.FontColor = claAqua
-    Width = 360.000000000000000000
+    Width = 320.000000000000000000
   end
   object cboType: TComboBox
     Align = Top
@@ -373,7 +373,7 @@ object frmSignup: TfrmSignup
     ItemIndex = 0
     Position.Y = 113.000000000000000000
     TabOrder = 2
-    Width = 360.000000000000000000
+    Width = 320.000000000000000000
   end
   object edtName: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -382,10 +382,9 @@ object frmSignup: TfrmSignup
     TabOrder = 3
     TextSettings.FontColor = claWhitesmoke
     Position.Y = 143.000000000000000000
-    Width = 360.000000000000000000
+    Width = 320.000000000000000000
     Height = 30.000000000000000000
     TextPrompt = 'Name'
-    StyledSettings = [Family, Size, Style]
   end
   object edtEmail: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -395,7 +394,7 @@ object frmSignup: TfrmSignup
     KeyboardType = EmailAddress
     TextSettings.FontColor = claWhitesmoke
     Position.Y = 173.000000000000000000
-    Width = 360.000000000000000000
+    Width = 320.000000000000000000
     Height = 30.000000000000000000
     TextPrompt = 'Email address'
   end
@@ -407,7 +406,7 @@ object frmSignup: TfrmSignup
     Password = True
     TextSettings.FontColor = claWhitesmoke
     Position.Y = 203.000000000000000000
-    Width = 360.000000000000000000
+    Width = 320.000000000000000000
     Height = 30.000000000000000000
     TextPrompt = 'Password'
   end
@@ -417,7 +416,7 @@ object frmSignup: TfrmSignup
     Position.Y = 233.000000000000000000
     TabOrder = 6
     Text = 'Sign up!'
-    Width = 360.000000000000000000
+    Width = 320.000000000000000000
     OnClick = btnSignupClick
   end
   object StyleBook1: TStyleBook
