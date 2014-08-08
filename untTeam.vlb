@@ -233,3 +233,9 @@ Coordinates=0,0,169,278
 [dmdDataModule.dsEvents]
 Coordinates=19,297,165,476
 
+[dmdDataModule.fdmMemberSports]
+Visible=False
+
+[dmdDataModule.fdmProfile]
+Visible=False
+

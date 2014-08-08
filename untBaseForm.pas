@@ -19,7 +19,6 @@ type
     btnTeams: TCornerButton;
     btnNotifications: TCornerButton;
     btnFriends: TCornerButton;
-    imgSearch: TImage;
     pnlCenter: TPanel;
     lblCaption: TLabel;
     StyleBook1: TStyleBook;
