@@ -74,6 +74,7 @@ type
   private
     { Private declarations }
     procedure setupCheckBoxes();
+    procedure loadPicture(sUrl : String);
   public
     { Public declarations }
   end;
@@ -181,6 +182,7 @@ begin
         rdsaProfile.Response := respNotifications;
         fdmProfile.Open;
         setupCheckBoxes();
+        loadPicture(fdmProfileimage.AsString);
     end;
   end;
 end;
@@ -190,6 +192,24 @@ begin
   with dmdDatamodule do
   begin
    rdsaProfile.Dataset := nil;
+  end;
+end;
+
+procedure TfrmProfile.loadPicture(sUrl : String);
+var
+  m : TMemoryStream;
+begin
+try
+    if sUrl <> '' then
+    begin
+      M := TMemoryStream.Create();
+     IdHTTPImage.Get(sURL,M);
+     M.Seek(0,0);
+     imgProfile.Bitmap.LoadFromStream(M);
+     imgProfile.Visible := true;
+     m.DisposeOf;
+    end;
+  except on E: Exception do
   end;
 end;
 
