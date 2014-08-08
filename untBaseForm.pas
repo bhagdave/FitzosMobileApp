@@ -73,7 +73,7 @@ end;
 
 procedure TfrmBase.edtSearchExit(Sender: TObject);
 begin
-  showmessage('Searching for ' + edtSearch.Text);
+  shownewFormwithId('TfrmSearch',edtSearch.Text);
 end;
 
 function TfrmBase.getSelectedValue(AObject: TObject): TValue;
