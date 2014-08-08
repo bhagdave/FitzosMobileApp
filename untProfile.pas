@@ -154,6 +154,7 @@ begin
     multiStream.Free;
     mStream.Free;
   end;
+  close;
 end;
 
 procedure TfrmProfile.btnSportsClick(Sender: TObject);
@@ -202,6 +203,7 @@ begin
 try
     if sUrl <> '' then
     begin
+    showmessage(sUrl);
       M := TMemoryStream.Create();
      IdHTTPImage.Get(sURL,M);
      M.Seek(0,0);

@@ -6,7 +6,7 @@
         <MainSource>FitzosApp.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">iOSSimulator</Platform>
         <TargetedPlatforms>89</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -685,6 +685,12 @@
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\dave\Documents\RAD Studio\12.0\PlatformSDKs\android-ndk-r8e\prebuilt\android-arm\gdbserver\gdbserver" Configuration="Debug" Class="AndroidGDBServer">
                     <Platform Name="Android">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="iOSSimulator\Debug\FitzosApp.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <RemoteName>FitzosApp.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
