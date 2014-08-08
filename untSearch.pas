@@ -9,6 +9,7 @@ uses
 
 type
   TfrmSearch = class(TfrmBase)
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -18,7 +19,17 @@ type
 
 implementation
 
+
+
 {$R *.fmx}
+procedure TfrmSearch.FormActivate(Sender: TObject);
+begin
+  inherited;
+  edtSearch.Text := id;
+  // do the search!!
+
+end;
+
 initialization
 RegisterFMXClasses([TfrmSearch]);
 

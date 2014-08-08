@@ -1,5 +1,6 @@
 inherited frmSearch: TfrmSearch
   Caption = 'Search Results'
+  OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 384
   DesignerHeight = 592
