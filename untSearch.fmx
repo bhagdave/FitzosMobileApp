@@ -1,18 +1,50 @@
 inherited frmSearch: TfrmSearch
   Caption = 'Search Results'
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 4'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
+  DesignerOSVersion = '7'
+  inherited barBottom: TToolBar
+    Position.Y = 412.000000000000000000
+  end
   inherited pnlTop: TPanel
-    inherited edtSearch: TEdit
-      Height = 32.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Search Results'
+    end
+  end
+  inherited pnlCenter: TPanel
+    Height = 307.000000000000000000
+    object lvResults: TListView
+      ItemAppearanceClassName = 'TListItemAppearance'
+      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      Align = Client
+      Height = 307.000000000000000000
+      TabOrder = 1
+      Width = 320.000000000000000000
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvResults
+      Track = True
+      FillDataSource = dmdDataModule.dsSearchNames
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'first_name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
     end
   end
 end

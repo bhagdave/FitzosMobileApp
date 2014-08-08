@@ -5,10 +5,15 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  untBaseForm, FMX.Objects, FMX.Edit;
+  untBaseForm, FMX.Objects, FMX.Edit, untDataModule, FMX.ListView.Types,
+  FMX.ListView, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
+  Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components;
 
 type
   TfrmSearch = class(TfrmBase)
+    lvResults: TListView;
+    BindingsList1: TBindingsList;
+    LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
@@ -27,7 +32,16 @@ begin
   inherited;
   edtSearch.Text := id;
   // do the search!!
-
+  with dmdDataModule do
+  begin
+    rdsaMembers.ClearDataSet;
+    respSearch.Content.Empty;
+//    reqSearch.Params.Clear;
+    reqSearch.ClearBody;
+    reqSearch.Params.ParameterByName('criteria').Value := 'name='+id + ',location=' +id + ',sport=' + id;
+    reqSearch.Params.ParameterByName('id').Value := memberId;
+    reqSearch.Execute;
+  end;
 end;
 
 initialization

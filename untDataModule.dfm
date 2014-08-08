@@ -1901,7 +1901,7 @@ object dmdDataModule: TdmdDataModule
     Params = <
       item
         name = 'criteria'
-        Value = 'name=dave'
+        Value = 'name=dave,location=Boston,sport=football'
       end
       item
         name = 'id'
@@ -1919,12 +1919,115 @@ object dmdDataModule: TdmdDataModule
     Top = 144
   end
   object rdsaMembers: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = fdmSearchNames
     FieldDefs = <>
     Response = respSearch
-    RootElement = 'Result'
+    RootElement = 'Result.names'
     NestedElementsDepth = 1
     NestedElements = True
     Left = 840
     Top = 200
+  end
+  object fdmSearchNames: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'language'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'salt'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'email'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'password'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 848
+    Top = 256
+    object fdmSearchNamesid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmSearchNamesactive: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object fdmSearchNamesfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 255
+    end
+    object fdmSearchNameslast_name: TWideStringField
+      FieldName = 'last_name'
+      Size = 255
+    end
+    object fdmSearchNameslanguage: TWideStringField
+      FieldName = 'language'
+      Size = 255
+    end
+    object fdmSearchNamessalt: TWideStringField
+      FieldName = 'salt'
+      Size = 255
+    end
+    object fdmSearchNamesemail: TWideStringField
+      FieldName = 'email'
+      Size = 255
+    end
+    object fdmSearchNamespassword: TWideStringField
+      FieldName = 'password'
+      Size = 255
+    end
+    object fdmSearchNamesimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+  end
+  object dsSearchNames: TBindSourceDB
+    DataSet = fdmSearchNames
+    ScopeMappings = <>
+    Left = 848
+    Top = 312
   end
 end

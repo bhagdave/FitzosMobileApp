@@ -215,6 +215,17 @@ type
     reqSearch: TRESTRequest;
     respSearch: TRESTResponse;
     rdsaMembers: TRESTResponseDataSetAdapter;
+    fdmSearchNames: TFDMemTable;
+    fdmSearchNamesid: TWideStringField;
+    fdmSearchNamesactive: TWideStringField;
+    fdmSearchNamesfirst_name: TWideStringField;
+    fdmSearchNameslast_name: TWideStringField;
+    fdmSearchNameslanguage: TWideStringField;
+    fdmSearchNamessalt: TWideStringField;
+    fdmSearchNamesemail: TWideStringField;
+    fdmSearchNamespassword: TWideStringField;
+    fdmSearchNamesimage: TWideStringField;
+    dsSearchNames: TBindSourceDB;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }
