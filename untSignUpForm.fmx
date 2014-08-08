@@ -384,7 +384,7 @@ object frmSignup: TfrmSignup
     Width = 384.000000000000000000
     Height = 30.000000000000000000
     TextPrompt = 'Name'
-    StyledSettings = [Family, Size, Style]
+    StyledSettings = [Family, Size, Style, FontColor, Other]
   end
   object edtEmail: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -396,6 +396,7 @@ object frmSignup: TfrmSignup
     Width = 384.000000000000000000
     Height = 30.000000000000000000
     TextPrompt = 'Email address'
+    StyledSettings = [Family, Size, Style, FontColor, Other]
   end
   object edtPassword: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
