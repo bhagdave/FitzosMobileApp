@@ -106,7 +106,7 @@ end;
 procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
   // clear out image man
-  imgUser.Bitmap := nil;
+  imgUser.Visible := false;
   getMember();
   getMemberSports();
   getProfile();
@@ -198,6 +198,7 @@ begin
     IdHTTPImage.Get(sURL,M);
     M.Seek(0,0);
     imgUser.Bitmap.LoadFromStream(M);
+    imgUser.Visible := true;
     m.DisposeOf;
   except on E: Exception do
   end;
