@@ -15,6 +15,7 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
+    procedure lvResultsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,6 +24,9 @@ type
 
 
 implementation
+
+uses
+  untMainForm;
 
 
 
@@ -38,10 +42,20 @@ begin
     respSearch.Content.Empty;
 //    reqSearch.Params.Clear;
     reqSearch.ClearBody;
-    reqSearch.Params.ParameterByName('criteria').Value := 'name='+id + ',location=' +id + ',sport=' + id;
+    reqSearch.Params.ParameterByName('criteria').Value := 'name='+id;
     reqSearch.Params.ParameterByName('id').Value := memberId;
     reqSearch.Execute;
   end;
+end;
+
+procedure TfrmSearch.lvResultsClick(Sender: TObject);
+var
+  LValue : TValue;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvResults);
+  showNewFormWithId('TfrmFriend',lValue.ToString);
+//  showNewForm('TfrmNotification');
 end;
 
 initialization

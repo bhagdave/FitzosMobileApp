@@ -277,3 +277,6 @@ Coordinates=500,60,169,141
 [dmdDataModule.fdmProfile]
 Visible=False
 
+[dmdDataModule.fdmSearchNames]
+Visible=False
+

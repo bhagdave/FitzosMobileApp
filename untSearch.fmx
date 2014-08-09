@@ -25,8 +25,9 @@ inherited frmSearch: TfrmSearch
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
       Height = 307.000000000000000000
-      TabOrder = 1
+      TabOrder = 0
       Width = 320.000000000000000000
+      OnClick = lvResultsClick
     end
   end
   object BindingsList1: TBindingsList
