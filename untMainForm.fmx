@@ -6248,7 +6248,7 @@ object frmMain: TfrmMain
     TabOrder = 1
     KeyboardType = EmailAddress
     Text = 'dave_gill@blueyonder.co.uk'
-    TextSettings.FontColor = claWhitesmoke
+    TextSettings.FontColor = claSlategray
     Position.Y = 113.000000000000000000
     Width = 320.000000000000000000
     Height = 30.000000000000000000
@@ -6261,7 +6261,7 @@ object frmMain: TfrmMain
     TabOrder = 2
     Password = True
     Text = 'h6redmine'
-    TextSettings.FontColor = claWhitesmoke
+    TextSettings.FontColor = claSlategray
     Position.Y = 143.000000000000000000
     Width = 320.000000000000000000
     Height = 30.000000000000000000

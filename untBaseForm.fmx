@@ -122,7 +122,7 @@ object frmBase: TfrmBase
       Align = Client
       StyleLookup = 'searchedit'
       TabOrder = 1
-      TextSettings.FontColor = claWhitesmoke
+      TextSettings.FontColor = claSlategray
       Width = 271.000000000000000000
       Height = 30.000000000000000000
       TextPrompt = 'Search'
