@@ -1534,6 +1534,7 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaMemberSports: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmMemberSports
     FieldDefs = <>
     Response = respMemberSports
@@ -1901,7 +1902,7 @@ object dmdDataModule: TdmdDataModule
     Params = <
       item
         name = 'criteria'
-        Value = 'name=dave,location=Boston,sport=football'
+        Value = 'name=dave'
       end
       item
         name = 'id'

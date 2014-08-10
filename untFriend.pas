@@ -158,6 +158,7 @@ begin
       if (sResult = 'OK') then
       begin
           rdsaMemberSports.Response := respMemberSports;
+          rdsaMemberSports.UpdateDataSet;
           fdmMemberSports.Open;
       end;
   end;
