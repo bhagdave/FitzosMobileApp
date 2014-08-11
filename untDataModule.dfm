@@ -1901,8 +1901,8 @@ object dmdDataModule: TdmdDataModule
     Client = restAPI
     Params = <
       item
-        name = 'criteria'
-        Value = 'name=dave'
+        name = 'criteria[name]'
+        Value = 'Ross'
       end
       item
         name = 'id'

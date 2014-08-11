@@ -560,3 +560,6 @@ Visible=True
 [fdmProfile]
 Visible=False
 
+[fdmSearchNames]
+Visible=False
+

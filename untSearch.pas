@@ -42,7 +42,7 @@ begin
     respSearch.Content.Empty;
 //    reqSearch.Params.Clear;
     reqSearch.ClearBody;
-    reqSearch.Params.ParameterByName('criteria').Value := 'name='+id;
+    reqSearch.Params.ParameterByName('criteria[name]').Value := id;
     reqSearch.Params.ParameterByName('id').Value := memberId;
     reqSearch.Execute;
   end;
