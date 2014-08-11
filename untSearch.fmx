@@ -27,7 +27,7 @@ inherited frmSearch: TfrmSearch
       Height = 307.000000000000000000
       TabOrder = 0
       Width = 320.000000000000000000
-      OnClick = lvResultsClick
+      OnItemClick = lvResultsItemClick
     end
   end
   object BindingsList1: TBindingsList

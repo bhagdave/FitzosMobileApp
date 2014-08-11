@@ -15,7 +15,8 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
-    procedure lvResultsClick(Sender: TObject);
+    procedure lvResultsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -32,6 +33,8 @@ uses
 
 {$R *.fmx}
 procedure TfrmSearch.FormActivate(Sender: TObject);
+var
+  sResult : String;
 begin
   inherited;
   edtSearch.Text := id;
@@ -45,19 +48,28 @@ begin
     reqSearch.Params.ParameterByName('criteria[name]').Value := id;
     reqSearch.Params.ParameterByName('id').Value := memberId;
     reqSearch.Execute;
+    sResult := getResultString(respSearch.Content);
+    if (sResult = 'OK') then
+    begin
+      try
+        rdsaMembers.UpdateDataSet;
+        fdmSearchNames.Open;
+      except on E: Exception do
+      end;
+    end;
   end;
 end;
 
-procedure TfrmSearch.lvResultsClick(Sender: TObject);
+procedure TfrmSearch.lvResultsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
 var
   LValue : TValue;
 begin
   inherited;
+
   LValue := GetSelectedValue(lvResults);
   showNewFormWithId('TfrmFriend',lValue.ToString);
-//  showNewForm('TfrmNotification');
 end;
-
 initialization
 RegisterFMXClasses([TfrmSearch]);
 

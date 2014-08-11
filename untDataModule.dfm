@@ -1920,6 +1920,8 @@ object dmdDataModule: TdmdDataModule
     Top = 144
   end
   object rdsaMembers: TRESTResponseDataSetAdapter
+    Active = True
+    AutoUpdate = False
     Dataset = fdmSearchNames
     FieldDefs = <>
     Response = respSearch
@@ -1930,7 +1932,38 @@ object dmdDataModule: TdmdDataModule
     Top = 200
   end
   object fdmSearchNames: TFDMemTable
-    FieldDefs = <>
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'email'
+        DataType = ftWideString
+        Size = 255
+      end>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
