@@ -181,6 +181,7 @@ begin
     if (sResult = 'OK') then
     begin
         rdsaProfile.Response := respNotifications;
+        rdsaProfile.UpdateDataSet;
         fdmProfile.Open;
         setupCheckBoxes();
         loadPicture(fdmProfileimage.AsString);

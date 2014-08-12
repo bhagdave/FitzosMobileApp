@@ -370,3 +370,6 @@ Coordinates=170,1,82,33
 Coordinates=517,422,72,58
 Visible=False
 
+[dmdDataModule.fdmSearchNames]
+Visible=False
+
