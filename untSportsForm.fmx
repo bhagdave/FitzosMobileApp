@@ -1,5 +1,6 @@
 inherited frmSports: TfrmSports
   Caption = 'Sports'
+  OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
   DesignerHeight = 568
@@ -7,8 +8,44 @@ inherited frmSports: TfrmSports
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited pnlTop: TPanel
+    inherited edtSearch: TEdit
+      Height = 30.000000000000000000
+    end
     inherited lblCaption: TLabel
       Text = 'Sports and  Stats'
+    end
+  end
+  inherited pnlCenter: TPanel
+    object lvExistingSports: TListView
+      ItemAppearanceClassName = 'TListItemAppearance'
+      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      Align = MostTop
+      Height = 257.000000000000000000
+      TabOrder = 1
+      Width = 320.000000000000000000
+      ItemAppearanceObjects.ItemEditObjects.Accessory.Visible = False
+      ItemAppearanceObjects.ItemEditObjects.GlyphButton.ButtonType = Add
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvExistingSports
+      Track = True
+      FillDataSource = dmdDataModule.dsMemberSports
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'sport'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'from_date'
+      FillBreakGroups = <>
     end
   end
 end
