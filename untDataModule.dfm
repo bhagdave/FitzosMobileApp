@@ -2018,24 +2018,55 @@ object dmdDataModule: TdmdDataModule
     Top = 408
   end
   object respSports: TRESTResponse
+    ContentType = 'text/html'
     Left = 880
     Top = 472
   end
   object rdsaSports: TRESTResponseDataSetAdapter
+    Active = True
     Dataset = fdmSports
     FieldDefs = <>
     Response = respSports
+    RootElement = 'Result'
     Left = 880
     Top = 520
   end
   object fdmSports: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     ResourceOptions.AssignedValues = [rvSilentMode]
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    StoreDefs = True
     Left = 880
+    Top = 568
+    object fdmSportsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmSportsname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+  end
+  object dsSports: TBindSourceDB
+    DataSet = fdmSports
+    ScopeMappings = <>
+    Left = 936
     Top = 568
   end
 end

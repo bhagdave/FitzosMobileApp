@@ -227,6 +227,9 @@ type
     respSports: TRESTResponse;
     rdsaSports: TRESTResponseDataSetAdapter;
     fdmSports: TFDMemTable;
+    fdmSportsid: TWideStringField;
+    fdmSportsname: TWideStringField;
+    dsSports: TBindSourceDB;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }

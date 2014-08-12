@@ -25,6 +25,7 @@ type
     lblDate: TLabel;
     edtDate: TDateEdit;
     btnAdd: TButton;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }

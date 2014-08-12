@@ -22,7 +22,7 @@ inherited frmSports: TfrmSports
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Top
-      Height = 225.000000000000000000
+      Height = 201.000000000000000000
       Position.Y = 40.000000000000000000
       TabOrder = 1
       Width = 320.000000000000000000
@@ -47,7 +47,7 @@ inherited frmSports: TfrmSports
     end
     object tbAddSport: TToolBar
       Height = 40.000000000000000000
-      Position.Y = 265.000000000000000000
+      Position.Y = 241.000000000000000000
       TabOrder = 3
       Width = 320.000000000000000000
       object lblAddSport: TLabel
@@ -63,7 +63,7 @@ inherited frmSports: TfrmSports
     end
     object pnlAdd: TGridPanelLayout
       Align = Client
-      Height = 90.000000000000000000
+      Height = 114.000000000000000000
       Width = 320.000000000000000000
       TabOrder = 4
       ColumnCollection = <
@@ -166,6 +166,18 @@ inherited frmSports: TfrmSports
       FillExpressions = <>
       FillHeaderExpressions = <>
       FillHeaderFieldName = 'from_date'
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = cboSport
+      Track = True
+      FillDataSource = dmdDataModule.dsSports
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
   end

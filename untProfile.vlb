@@ -373,3 +373,6 @@ Visible=False
 [dmdDataModule.fdmSearchNames]
 Visible=False
 
+[dmdDataModule.fdmSports]
+Visible=False
+

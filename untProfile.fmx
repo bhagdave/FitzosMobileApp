@@ -2915,7 +2915,7 @@ object frmProfile: TfrmProfile
         Align = Top
         Height = 30.000000000000000000
         IsExpanded = False
-        Position.Y = 283.000000000000000000
+        Position.Y = 274.000000000000000000
         ShowCheck = False
         Text = 'Options'
         Width = 368.000000000000000000
@@ -2965,7 +2965,7 @@ object frmProfile: TfrmProfile
         Align = Top
         Height = 30.000000000000000000
         IsExpanded = False
-        Position.Y = 253.000000000000000000
+        Position.Y = 244.000000000000000000
         ShowCheck = False
         Text = 'Profile Image'
         Width = 368.000000000000000000
@@ -3037,7 +3037,7 @@ object frmProfile: TfrmProfile
       end
       object btnSports: TButton
         Align = Top
-        Height = 44.000000000000000000
+        Height = 35.000000000000000000
         Position.Y = 209.000000000000000000
         TabOrder = 3
         Text = 'Manage Sports'
