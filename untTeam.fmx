@@ -26,7 +26,6 @@ inherited frmTeam: TfrmTeam
     Width = 384.000000000000000000
     inherited edtSearch: TEdit
       Width = 335.000000000000000000
-      Height = 32.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 335.000000000000000000

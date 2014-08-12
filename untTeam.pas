@@ -80,6 +80,7 @@ begin
       if (sResult = 'OK') then
       begin
           rdsaTeam.Response := respTeam;
+          rdsaTeam.UpdateDataSet;
           fdmTeam.Open;
       end;
   end;
@@ -101,15 +102,12 @@ begin
       reqTeamEvents.Params.ParameterByName('id').Value := sTeam;
       reqTeamEvents.Params.ParameterByName('signature').Value := signature('getTeamEvents');
       reqTeamEvents.Params.ParameterByName('key').Value := getApiKey;
-      try
-        reqTeamEvents.Execute;
-      except on E: Exception do
-        // we are empty.. ignore - Very Naughty I know.
-      end;
+      reqTeamEvents.Execute;
       sResult := getResultString(respTeamEvents.Content);
       if (sResult = 'OK') then
       begin
           rdsaTeamEvents.Response := respTeamEvents;
+          rdsaTeamEvents.UpdateDataSet;
           fdmTeamEvents.Open;
       end;
   end;
@@ -130,14 +128,12 @@ begin
       reqTeamMembers.Params.ParameterByName('id').Value := sTeam;
       reqTeamMembers.Params.ParameterByName('signature').Value := signature('getTeamMembers');
       reqTeamMembers.Params.ParameterByName('key').Value := getApiKey;
-      try
-        reqTeamMembers.Execute;
-      except on E: Exception do
-      end;
+      reqTeamMembers.Execute;
       sResult := getResultString(respTeamMembers.Content);
       if (sResult = 'OK') then
       begin
           rdsaTeamMembers.Response := respTeamMembers;
+          rdsaTeamMembers.UpdateDataSet;
           fdmTeamMembers.Open;
       end;
   end;
@@ -157,14 +153,12 @@ begin
       reqTeamWall.Params.ParameterByName('id').Value := sTeam;
       reqTeamWall.Params.ParameterByName('signature').Value := signature('getTeamWall');
       reqTeamWall.Params.ParameterByName('key').Value := getApiKey;
-      try
-        reqTeamWall.Execute;
-      except on E: Exception do
-      end;
+      reqTeamWall.Execute;
       sResult := getResultString(respTeamWall.Content);
       if (sResult = 'OK') then
       begin
           rdsaTeamWall.Response := respTeamWall;
+          rdsaTeamWall.UpdateDataSet;
           fdmTeamWall.Open;
       end;
   end;
