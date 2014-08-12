@@ -44,6 +44,8 @@ var
 begin
   with dmdDataModule do
   begin
+    // get all sports
+    reqSports.Execute;
     // Open up the data.
     rdsaMemberSports.Active := false;
     respMemberSports.Content.Empty;

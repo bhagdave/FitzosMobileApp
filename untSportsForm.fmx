@@ -71,7 +71,7 @@ inherited frmSports: TfrmSports
           Value = 33.333333333333340000
         end
         item
-          Value = 66.666666666666670000
+          Value = 66.666666666666660000
         end>
       ControlCollection = <
         item

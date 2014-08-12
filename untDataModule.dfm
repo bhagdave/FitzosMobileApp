@@ -2008,4 +2008,34 @@ object dmdDataModule: TdmdDataModule
     Left = 848
     Top = 312
   end
+  object reqSports: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Resource = 'rest/sports'
+    Response = respSports
+    SynchronizedEvents = False
+    Left = 872
+    Top = 408
+  end
+  object respSports: TRESTResponse
+    Left = 880
+    Top = 472
+  end
+  object rdsaSports: TRESTResponseDataSetAdapter
+    Dataset = fdmSports
+    FieldDefs = <>
+    Response = respSports
+    Left = 880
+    Top = 520
+  end
+  object fdmSports: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 880
+    Top = 568
+  end
 end

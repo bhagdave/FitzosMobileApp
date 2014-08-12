@@ -223,6 +223,10 @@ type
     fdmSearchNamesemail: TWideStringField;
     fdmSearchNamesimage: TWideStringField;
     dsSearchNames: TBindSourceDB;
+    reqSports: TRESTRequest;
+    respSports: TRESTResponse;
+    rdsaSports: TRESTResponseDataSetAdapter;
+    fdmSports: TFDMemTable;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }
