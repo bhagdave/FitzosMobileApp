@@ -27,6 +27,7 @@ type
     btnAdd: TButton;
     LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,6 +39,35 @@ implementation
 {$R *.fmx}
 uses
   untMainForm;
+
+procedure TfrmSports.btnAddClick(Sender: TObject);
+var
+  sResult : String;
+  lValue : TValue;
+begin
+  inherited;
+  lValue := getSelectedValue(cboSport);
+  with dmdDataModule do
+  begin
+      rdsaGeneric.ClearDataSet;
+      respGeneric.Content.Empty;
+      reqGeneric.Params.Clear;
+      reqGeneric.ClearBody;
+      reqGeneric.Resource := 'r/members/addSport';
+      reqGeneric.Params.addItem('member_id',memberId);
+      reqGeneric.Params.addItem('sport_id',lValue.ToString);
+      reqGeneric.Params.addItem('signature',signature('addSport'));
+      reqGeneric.Params.addItem('key',getApiKey);
+      reqGeneric.Execute;
+      sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+          reqMemberSports.Execute;
+          rdsaMemberSports.UpdateDataSet;
+          fdmMemberSports.Open;
+      end;
+  end;
+end;
 
 procedure TfrmSports.FormActivate(Sender: TObject);
 var
