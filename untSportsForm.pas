@@ -7,13 +7,24 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Layouts, FMX.ListBox,
+  FMX.DateTimeCtrls;
 
 type
   TfrmSports = class(TfrmBase)
     lvExistingSports: TListView;
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
+    tbHeading: TToolBar;
+    lblSports: TLabel;
+    tbAddSport: TToolBar;
+    lblAddSport: TLabel;
+    pnlAdd: TGridPanelLayout;
+    lblSport: TLabel;
+    cboSport: TComboBox;
+    lblDate: TLabel;
+    edtDate: TDateEdit;
+    btnAdd: TButton;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }

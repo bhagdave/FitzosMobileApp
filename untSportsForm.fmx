@@ -21,12 +21,133 @@ inherited frmSports: TfrmSports
       ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
-      Align = MostTop
-      Height = 257.000000000000000000
+      Align = Top
+      Height = 225.000000000000000000
+      Position.Y = 40.000000000000000000
       TabOrder = 1
       Width = 320.000000000000000000
       ItemAppearanceObjects.ItemEditObjects.Accessory.Visible = False
       ItemAppearanceObjects.ItemEditObjects.GlyphButton.ButtonType = Add
+    end
+    object tbHeading: TToolBar
+      Align = MostTop
+      Height = 40.000000000000000000
+      TabOrder = 2
+      Width = 320.000000000000000000
+      object lblSports: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Height = 40.000000000000000000
+        StyleLookup = 'listboxheaderlabel'
+        TextSettings.FontColor = claWhitesmoke
+        TextSettings.HorzAlign = Center
+        Text = 'Existing Sports'
+        Width = 320.000000000000000000
+      end
+    end
+    object tbAddSport: TToolBar
+      Height = 40.000000000000000000
+      Position.Y = 265.000000000000000000
+      TabOrder = 3
+      Width = 320.000000000000000000
+      object lblAddSport: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Height = 40.000000000000000000
+        StyleLookup = 'listboxheaderlabel'
+        TextSettings.FontColor = claWhitesmoke
+        TextSettings.HorzAlign = Center
+        Text = 'Add Sport'
+        Width = 320.000000000000000000
+      end
+    end
+    object pnlAdd: TGridPanelLayout
+      Align = Client
+      Height = 90.000000000000000000
+      Width = 320.000000000000000000
+      TabOrder = 4
+      ColumnCollection = <
+        item
+          Value = 33.333333333333340000
+        end
+        item
+          Value = 66.666666666666670000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = lblSport
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = cboSport
+          Row = 0
+        end
+        item
+          Column = 0
+          Control = lblDate
+          Row = 1
+        end
+        item
+          Column = 1
+          Control = edtDate
+          Row = 1
+        end
+        item
+          Column = 0
+          ColumnSpan = 2
+          Control = btnAdd
+          Row = 2
+        end>
+      RowCollection = <
+        item
+          SizeStyle = Absolute
+          Value = 30.000000000000000000
+        end
+        item
+          SizeStyle = Absolute
+          Value = 30.000000000000000000
+        end
+        item
+          SizeStyle = Absolute
+          Value = 30.000000000000000000
+        end>
+      object lblSport: TLabel
+        Align = Client
+        Height = 30.000000000000000000
+        Text = 'Sport'
+        Width = 106.666664123535200000
+      end
+      object cboSport: TComboBox
+        Align = Client
+        DisableFocusEffect = False
+        Height = 30.000000000000000000
+        TabOrder = 1
+        Width = 213.333343505859400000
+      end
+      object lblDate: TLabel
+        Align = Client
+        Height = 30.000000000000000000
+        Text = 'Date From'
+        Width = 106.666664123535200000
+      end
+      object edtDate: TDateEdit
+        Date = 41863.000000000000000000
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Height = 30.000000000000000000
+        Position.X = 110.833343505859400000
+        Position.Y = 30.000000000000000000
+        TabOrder = 3
+        Width = 204.999969482421900000
+      end
+      object btnAdd: TButton
+        Align = Client
+        Height = 30.000000000000000000
+        TabOrder = 4
+        Text = 'Add'
+        Width = 320.000000000000000000
+      end
     end
   end
   object BindingsList1: TBindingsList
