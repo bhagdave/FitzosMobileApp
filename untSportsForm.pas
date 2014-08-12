@@ -56,16 +56,11 @@ begin
       reqGeneric.Resource := 'r/members/addSport';
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Params.addItem('sport_id',lValue.ToString);
+      reqGeneric.Params.AddItem('from_date',DateToStr(edtDate.Date));
       reqGeneric.Params.addItem('signature',signature('addSport'));
       reqGeneric.Params.addItem('key',getApiKey);
       reqGeneric.Execute;
-      sResult := getResultString(respGeneric.Content);
-      if (sResult = 'OK') then
-      begin
-          reqMemberSports.Execute;
-          rdsaMemberSports.UpdateDataSet;
-          fdmMemberSports.Open;
-      end;
+      self.FormActivate(nil);
   end;
 end;
 
