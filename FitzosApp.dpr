@@ -31,7 +31,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmdDataModule, dmdDataModule);
-  Application.CreateForm(TfrmNotifications, frmNotifications);
   Application.CreateForm(TdmdEvent, dmdEvent);
   Application.Run;
 end.

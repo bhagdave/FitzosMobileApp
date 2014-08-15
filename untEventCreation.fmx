@@ -34,7 +34,6 @@ inherited frmEventCreation: TfrmEventCreation
     Width = 513.000000000000000000
     inherited edtSearch: TEdit
       Width = 464.000000000000000000
-      Height = 32.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 464.000000000000000000
@@ -68,7 +67,6 @@ inherited frmEventCreation: TfrmEventCreation
           object edtName: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
-            StyleLookup = 'roundededit'
             TabOrder = 0
             TextSettings.FontColor = claWhitesmoke
             Width = 513.000000000000000000
@@ -95,7 +93,6 @@ inherited frmEventCreation: TfrmEventCreation
           object edtLocation: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
-            StyleLookup = 'roundededit'
             TabOrder = 3
             TextSettings.FontColor = claWhitesmoke
             Position.Y = 30.000000000000000000
@@ -219,7 +216,8 @@ inherited frmEventCreation: TfrmEventCreation
         end
         object expOptions: TExpander
           Align = Top
-          Height = 239.000000000000000000
+          Height = 25.000000000000000000
+          IsExpanded = False
           Position.Y = 194.000000000000000000
           ShowCheck = False
           Text = 'Options'
