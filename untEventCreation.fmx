@@ -1,67 +1,58 @@
 inherited frmEventCreation: TfrmEventCreation
   Caption = 'Event Creation'
-  ClientHeight = 623
-  ClientWidth = 513
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 513
-  DesignerHeight = 623
-  DesignerDeviceName = ''
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 513.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 421.000000000000000000
-    end
-  end
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 575.000000000000000000
-    Width = 513.000000000000000000
-    inherited btnFriends: TCornerButton
-      Position.X = 421.000000000000000000
-    end
+    Position.Y = 412.000000000000000000
     object btnSubmit: TButton
-      Align = Center
+      Align = Client
       Height = 44.000000000000000000
+      Padding.Left = 1.000000000000000000
+      Padding.Top = 1.000000000000000000
+      Padding.Right = 1.000000000000000000
+      Padding.Bottom = 1.000000000000000000
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
       TabOrder = 4
       Text = 'Submit'
-      Width = 265.000000000000000000
+      Width = 128.000000000000000000
       OnClick = btnSubmitClick
     end
   end
   inherited pnlTop: TPanel
-    Width = 513.000000000000000000
     inherited edtSearch: TEdit
-      Width = 464.000000000000000000
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 464.000000000000000000
+      Height = 30.000000000000000000
     end
     inherited lblCaption: TLabel
       Text = 'Event Creation'
-      Width = 513.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 470.000000000000000000
-    Width = 513.000000000000000000
+    Height = 307.000000000000000000
     object vsbDetails: TVertScrollBox
       Align = Client
-      Height = 470.000000000000000000
+      Height = 307.000000000000000000
       TabOrder = 0
-      Width = 513.000000000000000000
+      Width = 320.000000000000000000
       object lyoEvent: TLayout
         Align = Top
         Height = 433.000000000000000000
-        Width = 513.000000000000000000
+        Width = 304.000000000000000000
         TabOrder = 0
         object expDetails: TExpander
           Align = Top
           Height = 169.000000000000000000
           ShowCheck = False
           Text = 'Details'
-          Width = 513.000000000000000000
+          Width = 304.000000000000000000
           TabOrder = 1
           ContentSize = '144'
           object edtName: TEdit
@@ -69,7 +60,7 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             TabOrder = 0
             TextSettings.FontColor = claWhitesmoke
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
             Height = 30.000000000000000000
             TextPrompt = 'Name'
             StyledSettings = [Family, Size, Style]
@@ -80,7 +71,7 @@ inherited frmEventCreation: TfrmEventCreation
             Height = 50.000000000000000000
             Position.Y = 73.000000000000000000
             TabOrder = 1
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object lblDescription: TLabel
             Align = Top
@@ -88,7 +79,7 @@ inherited frmEventCreation: TfrmEventCreation
             Position.Y = 52.000000000000000000
             TextSettings.HorzAlign = Center
             Text = 'Description'
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object edtLocation: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -96,7 +87,7 @@ inherited frmEventCreation: TfrmEventCreation
             TabOrder = 3
             TextSettings.FontColor = claWhitesmoke
             Position.Y = 30.000000000000000000
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
             Height = 22.000000000000000000
             TextPrompt = 'Location'
             StyledSettings = [Family, Size, Style]
@@ -107,7 +98,7 @@ inherited frmEventCreation: TfrmEventCreation
             Position.Y = 122.000000000000000000
             TabOrder = 4
             Text = 'Next'
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
             OnClick = btnNextClick
           end
         end
@@ -118,7 +109,7 @@ inherited frmEventCreation: TfrmEventCreation
           Position.Y = 169.000000000000000000
           ShowCheck = False
           Text = 'Times'
-          Width = 513.000000000000000000
+          Width = 304.000000000000000000
           TabOrder = 2
           ContentSize = '199'
           object lyoStartDate: TLayout
@@ -221,7 +212,7 @@ inherited frmEventCreation: TfrmEventCreation
           Position.Y = 194.000000000000000000
           ShowCheck = False
           Text = 'Options'
-          Width = 513.000000000000000000
+          Width = 304.000000000000000000
           TabOrder = 3
           ContentSize = '214'
           object cbPublished: TCheckBox
