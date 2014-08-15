@@ -55,51 +55,103 @@ inherited frmEventCreation: TfrmEventCreation
           Width = 304.000000000000000000
           TabOrder = 1
           ContentSize = '144'
-          object edtName: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 0
-            TextSettings.FontColor = claWhitesmoke
-            Width = 304.000000000000000000
-            Height = 30.000000000000000000
-            TextPrompt = 'Name'
-            StyledSettings = [Family, Size, Style]
-          end
           object memContent: TMemo
             Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
             Align = Top
             Height = 50.000000000000000000
-            Position.Y = 73.000000000000000000
-            TabOrder = 1
+            Position.Y = 71.000000000000000000
+            TabOrder = 0
             Width = 304.000000000000000000
           end
           object lblDescription: TLabel
             Align = Top
             Height = 21.000000000000000000
-            Position.Y = 52.000000000000000000
+            Position.Y = 50.000000000000000000
             TextSettings.HorzAlign = Center
             Text = 'Description'
             Width = 304.000000000000000000
-          end
-          object edtLocation: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 3
-            TextSettings.FontColor = claWhitesmoke
-            Position.Y = 30.000000000000000000
-            Width = 304.000000000000000000
-            Height = 22.000000000000000000
-            TextPrompt = 'Location'
-            StyledSettings = [Family, Size, Style]
           end
           object btnNext: TButton
             Align = MostBottom
             Height = 22.000000000000000000
             Position.Y = 122.000000000000000000
-            TabOrder = 4
+            TabOrder = 2
             Text = 'Next'
             Width = 304.000000000000000000
             OnClick = btnNextClick
+          end
+          object grdPanelEdits: TGridPanelLayout
+            Align = MostTop
+            Height = 50.000000000000000000
+            Width = 304.000000000000000000
+            TabOrder = 3
+            ColumnCollection = <
+              item
+                Value = 31.731294374658660000
+              end
+              item
+                Value = 68.268705625341350000
+              end>
+            ControlCollection = <
+              item
+                Column = 0
+                Control = lblName
+                Row = 0
+              end
+              item
+                Column = 1
+                Control = edtName
+                Row = 0
+              end
+              item
+                Column = 0
+                Control = lblLocation
+                Row = 1
+              end
+              item
+                Column = 1
+                Control = edtLocation
+                Row = 1
+              end>
+            RowCollection = <
+              item
+                Value = 50.000000000000000000
+              end
+              item
+                Value = 50.000000000000000000
+              end>
+            object lblName: TLabel
+              Align = Client
+              Height = 25.000000000000000000
+              Text = 'Name'
+              Width = 96.463134765625000000
+            end
+            object edtName: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 1
+              TextSettings.FontColor = claWhitesmoke
+              Width = 207.536865234375000000
+              Height = 25.000000000000000000
+              TextPrompt = 'Name'
+              StyledSettings = [Family, Size, Style]
+            end
+            object lblLocation: TLabel
+              Align = Client
+              Height = 25.000000000000000000
+              Text = 'Location'
+              Width = 96.463134765625000000
+            end
+            object edtLocation: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 3
+              TextSettings.FontColor = claWhitesmoke
+              Width = 207.536865234375000000
+              Height = 25.000000000000000000
+              TextPrompt = 'Location'
+              StyledSettings = [Family, Size, Style]
+            end
           end
         end
         object expTimes: TExpander

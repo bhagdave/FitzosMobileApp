@@ -55,6 +55,9 @@ type
     LinkControlToField8: TLinkControlToField;
     lblTeam: TLabel;
     lblSport: TLabel;
+    grdPanelEdits: TGridPanelLayout;
+    lblName: TLabel;
+    lblLocation: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
