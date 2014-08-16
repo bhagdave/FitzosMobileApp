@@ -43,10 +43,9 @@ inherited frmEvents: TfrmEvents
     end
   end
   object pnlWait: TPanel
-    Align = Client
+    Align = Fit
     DesignVisible = False
     Height = 409.000000000000000000
-    StyleLookup = 'calloutpanelstyle'
     Visible = False
     Width = 305.000000000000000000
     TabOrder = 10
