@@ -15,6 +15,8 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     btnCreateEvent: TButton;
+    pnlWait: TPanel;
+    lblMessage: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -36,6 +38,7 @@ uses
 procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
 begin
   inherited;
+  pnlWait.Visible := true;
   showNewForm('TfrmEventCreation');
 end;
 
@@ -44,6 +47,7 @@ var
   sResult : String;
 begin
   inherited;
+  pnlWait.Visible := false;
   with dmdDataModule do
   begin
     // Open up the data.
