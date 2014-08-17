@@ -23,7 +23,8 @@ uses
   untSignUpForm in 'untSignUpForm.pas' {frmSignup},
   untTeamWall in 'untTeamWall.pas' {frmTeamWall},
   untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule},
-  untSportsForm in 'untSportsForm.pas' {frmSports};
+  untSportsForm in 'untSportsForm.pas' {frmSports},
+  untStatsForm in 'untStatsForm.pas' {frmStats};
 
 {$R *.res}
 

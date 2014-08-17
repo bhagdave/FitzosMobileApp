@@ -33,6 +33,7 @@ inherited frmSports: TfrmSports
       Width = 320.000000000000000000
       ItemAppearanceObjects.ItemEditObjects.Accessory.Visible = False
       ItemAppearanceObjects.ItemEditObjects.GlyphButton.ButtonType = Add
+      OnItemClick = lvExistingSportsItemClick
     end
     object tbHeading: TToolBar
       Align = MostTop

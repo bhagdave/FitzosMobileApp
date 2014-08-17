@@ -1,0 +1,17 @@
+inherited frmStats: TfrmStats
+  Caption = 'Stats'
+  DesignerMobile = True
+  DesignerWidth = 320
+  DesignerHeight = 568
+  DesignerDeviceName = 'iPhone5'
+  DesignerOrientation = 0
+  DesignerOSVersion = '7'
+  inherited pnlTop: TPanel
+    inherited edtSearch: TEdit
+      Height = 30.000000000000000000
+    end
+    inherited lblCaption: TLabel
+      Text = 'Statistics'
+    end
+  end
+end
