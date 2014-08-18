@@ -1,141 +1,189 @@
 inherited frmEventCreation: TfrmEventCreation
   Caption = 'Event Creation'
-  ClientHeight = 623
-  ClientWidth = 513
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 513
-  DesignerHeight = 623
-  DesignerDeviceName = ''
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 513.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 421.000000000000000000
-    end
-  end
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 575.000000000000000000
-    Width = 513.000000000000000000
-    inherited btnFriends: TCornerButton
-      Position.X = 421.000000000000000000
-    end
+    Position.Y = 412.000000000000000000
     object btnSubmit: TButton
-      Align = Center
+      Align = Client
       Height = 44.000000000000000000
+      Padding.Left = 1.000000000000000000
+      Padding.Top = 1.000000000000000000
+      Padding.Right = 1.000000000000000000
+      Padding.Bottom = 1.000000000000000000
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
       TabOrder = 4
       Text = 'Submit'
-      Width = 265.000000000000000000
+      Width = 128.000000000000000000
       OnClick = btnSubmitClick
     end
   end
   inherited pnlTop: TPanel
-    Width = 513.000000000000000000
     inherited edtSearch: TEdit
+<<<<<<< HEAD
       Width = 464.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 464.000000000000000000
+=======
+      Height = 30.000000000000000000
+>>>>>>> origin/master
     end
     inherited lblCaption: TLabel
       Text = 'Event Creation'
-      Width = 513.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 470.000000000000000000
-    Width = 513.000000000000000000
+    Height = 307.000000000000000000
     object vsbDetails: TVertScrollBox
       Align = Client
-      Height = 470.000000000000000000
+      Height = 307.000000000000000000
       TabOrder = 0
-      Width = 513.000000000000000000
+      Width = 320.000000000000000000
       object lyoEvent: TLayout
         Align = Top
         Height = 433.000000000000000000
-        Width = 513.000000000000000000
+        Width = 304.000000000000000000
         TabOrder = 0
         object expDetails: TExpander
           Align = Top
           Height = 169.000000000000000000
           ShowCheck = False
           Text = 'Details'
-          Width = 513.000000000000000000
+          Width = 304.000000000000000000
           TabOrder = 1
           ContentSize = '144'
-          object edtName: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            StyleLookup = 'roundededit'
-            TabOrder = 0
-            TextSettings.FontColor = claWhitesmoke
-            Width = 513.000000000000000000
-            Height = 30.000000000000000000
-            TextPrompt = 'Name'
-            StyledSettings = [Family, Size, Style]
-          end
           object memContent: TMemo
             Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
             Align = Top
             Height = 50.000000000000000000
-            Position.Y = 73.000000000000000000
-            TabOrder = 1
-            Width = 513.000000000000000000
+            Position.Y = 71.000000000000000000
+            TabOrder = 0
+            Width = 304.000000000000000000
           end
           object lblDescription: TLabel
             Align = Top
             Height = 21.000000000000000000
-            Position.Y = 52.000000000000000000
+            Position.Y = 50.000000000000000000
             TextSettings.HorzAlign = Center
             Text = 'Description'
-            Width = 513.000000000000000000
-          end
-          object edtLocation: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            StyleLookup = 'roundededit'
-            TabOrder = 3
-            TextSettings.FontColor = claWhitesmoke
-            Position.Y = 30.000000000000000000
-            Width = 513.000000000000000000
-            Height = 22.000000000000000000
-            TextPrompt = 'Location'
-            StyledSettings = [Family, Size, Style]
+            Width = 304.000000000000000000
           end
           object btnNext: TButton
             Align = MostBottom
             Height = 22.000000000000000000
             Position.Y = 122.000000000000000000
-            TabOrder = 4
+            TabOrder = 2
             Text = 'Next'
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
             OnClick = btnNextClick
+          end
+          object grdPanelEdits: TGridPanelLayout
+            Align = MostTop
+            Height = 50.000000000000000000
+            Width = 304.000000000000000000
+            TabOrder = 3
+            ColumnCollection = <
+              item
+                Value = 31.731294374658660000
+              end
+              item
+                Value = 68.268705625341350000
+              end>
+            ControlCollection = <
+              item
+                Column = 0
+                Control = lblName
+                Row = 0
+              end
+              item
+                Column = 1
+                Control = edtName
+                Row = 0
+              end
+              item
+                Column = 0
+                Control = lblLocation
+                Row = 1
+              end
+              item
+                Column = 1
+                Control = edtLocation
+                Row = 1
+              end>
+            RowCollection = <
+              item
+                Value = 50.000000000000000000
+              end
+              item
+                Value = 50.000000000000000000
+              end>
+            object lblName: TLabel
+              Align = Client
+              Height = 25.000000000000000000
+              Text = 'Name'
+              Width = 96.463134765625000000
+            end
+            object edtName: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 1
+              TextSettings.FontColor = claWhitesmoke
+              Width = 207.536865234375000000
+              Height = 25.000000000000000000
+              TextPrompt = 'Name'
+              StyledSettings = [Family, Size, Style]
+            end
+            object lblLocation: TLabel
+              Align = Client
+              Height = 25.000000000000000000
+              Text = 'Location'
+              Width = 96.463134765625000000
+            end
+            object edtLocation: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 3
+              TextSettings.FontColor = claWhitesmoke
+              Width = 207.536865234375000000
+              Height = 25.000000000000000000
+              TextPrompt = 'Location'
+              StyledSettings = [Family, Size, Style]
+            end
           end
         end
         object expTimes: TExpander
           Align = Top
           Height = 25.000000000000000000
+          HitTest = False
           IsExpanded = False
           Position.Y = 169.000000000000000000
           ShowCheck = False
           Text = 'Times'
-          Width = 513.000000000000000000
+          Width = 304.000000000000000000
           TabOrder = 2
           ContentSize = '199'
           object lyoStartDate: TLayout
             Align = Top
             Height = 44.000000000000000000
-            Width = 200.000000000000000000
+            Width = 304.000000000000000000
             TabOrder = 0
             object edtDate: TDateEdit
-              Date = 41837.000000000000000000
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
               Position.Y = 8.000000000000000000
               TabOrder = 0
-              Width = 49.000000000000000000
+              Width = 153.000000000000000000
             end
             object lblStartDate: TLabel
               Align = FitLeft
@@ -148,14 +196,13 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             Height = 44.000000000000000000
             Position.Y = 44.000000000000000000
-            Width = 200.000000000000000000
+            Width = 304.000000000000000000
             TabOrder = 1
             object edtStartTime: TTimeEdit
-              Time = 0.893750000000000000
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
-              Width = 107.000030517578100000
+              Width = 211.000030517578100000
             end
             object lblStartTime: TLabel
               Align = FitLeft
@@ -168,16 +215,15 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             Height = 44.000000000000000000
             Position.Y = 88.000000000000000000
-            Width = 200.000000000000000000
+            Width = 304.000000000000000000
             TabOrder = 2
             object edtEndDate: TDateEdit
-              Date = 41837.000000000000000000
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
               Position.Y = 8.000000000000000000
               TabOrder = 0
-              Width = 49.000000000000000000
+              Width = 153.000000000000000000
             end
             object lblEndDate: TLabel
               Align = FitLeft
@@ -190,14 +236,13 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             Height = 44.000000000000000000
             Position.Y = 132.000000000000000000
-            Width = 200.000000000000000000
+            Width = 304.000000000000000000
             TabOrder = 3
             object edtEndTime: TTimeEdit
-              Time = 0.893750000000000000
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
-              Width = 107.000030517578100000
+              Width = 211.000030517578100000
             end
             object lblEndTime: TLabel
               Align = FitLeft
@@ -212,18 +257,22 @@ inherited frmEventCreation: TfrmEventCreation
             Position.Y = 177.000000000000000000
             TabOrder = 4
             Text = 'Next'
-            Width = 200.000000000000000000
+            Width = 304.000000000000000000
             OnClick = btnTimesNextClick
           end
         end
         object expOptions: TExpander
           Align = Top
           Height = 25.000000000000000000
+<<<<<<< HEAD
+=======
+          HitTest = False
+>>>>>>> origin/master
           IsExpanded = False
           Position.Y = 194.000000000000000000
           ShowCheck = False
           Text = 'Options'
-          Width = 513.000000000000000000
+          Width = 304.000000000000000000
           TabOrder = 3
           ContentSize = '214'
           object cbPublished: TCheckBox
