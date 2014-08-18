@@ -28,6 +28,8 @@ type
     LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
+    procedure lvExistingSportsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -88,6 +90,16 @@ begin
         fdmMemberSports.Open;
     end;
   end;
+end;
+
+procedure TfrmSports.lvExistingSportsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  lValue : TValue;
+begin
+  inherited;
+  lValue := getSelectedValue(lvExistingSports);
+  showNewFormWithId('TfrmStats',LValue.ToString);
 end;
 
 initialization

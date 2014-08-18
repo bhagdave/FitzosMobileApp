@@ -55,6 +55,9 @@ type
     LinkControlToField8: TLinkControlToField;
     lblTeam: TLabel;
     lblSport: TLabel;
+    grdPanelEdits: TGridPanelLayout;
+    lblName: TLabel;
+    lblLocation: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
@@ -65,6 +68,7 @@ type
     procedure getWall;
     procedure getSportsAndTeams;
     procedure addParams(request : TRestRequest);
+    function validate : boolean;
   public
     { Public declarations }
   end;
@@ -121,23 +125,32 @@ end;
 procedure TfrmEventCreation.btnSubmitClick(Sender: TObject);
 begin
   inherited;
-// if we have an id then updatre otherwise insert
-  if id <> '' then
+  // Validate..
+  if validate then // true = invalid
   begin
-    // update
-    addParams(dmdEvent.reqUpdateEvent);
-    dmdEvent.reqUpdateEvent.Execute;
-    showmessage('Event updated!');
-    formActivate(sender);
+
   end
   else
   begin
-    // insert
-    addParams(dmdEvent.reqCreateEvent);
-    dmdEvent.reqCreateEvent.Execute;
-    showmessage('Event created');
-    close;
+    // if we have an id then updatre otherwise insert
+    if id <> '' then
+    begin
+      // update
+      addParams(dmdEvent.reqUpdateEvent);
+      dmdEvent.reqUpdateEvent.Execute;
+      showmessage('Event updated!');
+      formActivate(sender);
+    end
+    else
+    begin
+      // insert
+      addParams(dmdEvent.reqCreateEvent);
+      dmdEvent.reqCreateEvent.Execute;
+      showmessage('Event created');
+      close;
+    end;
   end;
+
 end;
 
 procedure TfrmEventCreation.btnTimesNextClick(Sender: TObject);
@@ -268,6 +281,41 @@ begin
           fdmWall.Open;
       end;
   end;
+end;
+
+function TfrmEventCreation.validate: boolean;
+var
+  invalid : boolean;
+  errors  : String;
+begin
+  invalid := false;
+  if not(edtName.Text <> '') then
+  begin
+    invalid := true;
+    edtName.SetFocus;
+    errors := 'Event Name ';
+  end;
+  if edtDate.date = 0 then
+  begin
+    invalid := true;
+    edtDate.SetFocus;
+    errors := errors + 'Event Date ';
+  end;
+  if not(Assigned(cboSport.Selected)) then
+  begin
+    invalid := true;
+    cboSport.SetFocus;
+    errors := errors + 'Sport ';
+  end;
+  if not(Assigned(cboTeam.Selected)) then
+  begin
+    invalid := true;
+    cboTeam.SetFocus;
+    errors := errors + 'Team';
+  end;
+  if invalid then
+    showmessage('Please complete the following fields ' + errors);
+  result := invalid;
 end;
 
 initialization

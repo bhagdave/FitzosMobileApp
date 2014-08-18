@@ -23,7 +23,8 @@ uses
   untSignUpForm in 'untSignUpForm.pas' {frmSignup},
   untTeamWall in 'untTeamWall.pas' {frmTeamWall},
   untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule},
-  untSportsForm in 'untSportsForm.pas' {frmSports};
+  untSportsForm in 'untSportsForm.pas' {frmSports},
+  untStatsForm in 'untStatsForm.pas' {frmStats};
 
 {$R *.res}
 
@@ -31,7 +32,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmdDataModule, dmdDataModule);
-  Application.CreateForm(TfrmNotifications, frmNotifications);
   Application.CreateForm(TdmdEvent, dmdEvent);
   Application.Run;
 end.

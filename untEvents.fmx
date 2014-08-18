@@ -1,63 +1,63 @@
 inherited frmEvents: TfrmEvents
   Caption = 'Events'
-  ClientHeight = 567
-  ClientWidth = 384
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 4'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 384.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 292.000000000000000000
-    end
-  end
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 519.000000000000000000
-    Width = 384.000000000000000000
-    inherited btnFriends: TCornerButton
-      Position.X = 292.000000000000000000
-    end
+    Position.Y = 412.000000000000000000
   end
   inherited pnlTop: TPanel
-    Width = 384.000000000000000000
     inherited edtSearch: TEdit
-      Width = 335.000000000000000000
-      Height = 32.000000000000000000
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 335.000000000000000000
+      Height = 30.000000000000000000
     end
     inherited lblCaption: TLabel
       Text = 'Events'
-      Width = 384.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 414.000000000000000000
-    Width = 384.000000000000000000
+    Height = 307.000000000000000000
     object lvEvents: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
       ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 370.000000000000000000
+      Height = 263.000000000000000000
       TabOrder = 1
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       OnItemClick = lvEventsItemClick
     end
     object btnCreateEvent: TButton
       Align = MostBottom
       Height = 44.000000000000000000
-      Position.Y = 370.000000000000000000
+      Position.Y = 263.000000000000000000
       TabOrder = 3
       Text = 'Create Event'
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       OnClick = btnCreateEventClick
+    end
+  end
+  object pnlWait: TPanel
+    Align = Fit
+    DesignVisible = False
+    Height = 409.000000000000000000
+    Visible = False
+    Width = 305.000000000000000000
+    TabOrder = 10
+    object lblMessage: TLabel
+      Align = Client
+      StyledSettings = [Family, Style, FontColor]
+      Height = 409.000000000000000000
+      StyleLookup = 'calendarlabelstyle'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = 'Please Wait... Loading...'
+      Width = 305.000000000000000000
     end
   end
   object BindingsList1: TBindingsList
