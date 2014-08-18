@@ -29,14 +29,10 @@ inherited frmEventCreation: TfrmEventCreation
   end
   inherited pnlTop: TPanel
     inherited edtSearch: TEdit
-<<<<<<< HEAD
       Width = 464.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 464.000000000000000000
-=======
-      Height = 30.000000000000000000
->>>>>>> origin/master
     end
     inherited lblCaption: TLabel
       Text = 'Event Creation'
@@ -264,10 +260,7 @@ inherited frmEventCreation: TfrmEventCreation
         object expOptions: TExpander
           Align = Top
           Height = 25.000000000000000000
-<<<<<<< HEAD
-=======
           HitTest = False
->>>>>>> origin/master
           IsExpanded = False
           Position.Y = 194.000000000000000000
           ShowCheck = False
