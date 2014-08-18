@@ -69,6 +69,7 @@ type
     procedure getSportsAndTeams;
     procedure addParams(request : TRestRequest);
     function validate : boolean;
+    procedure clearOutFields();
   public
     { Public declarations }
   end;
@@ -139,6 +140,7 @@ begin
       addParams(dmdEvent.reqUpdateEvent);
       dmdEvent.reqUpdateEvent.Execute;
       showmessage('Event updated!');
+      clearOutFields();
       formActivate(sender);
     end
     else
@@ -158,6 +160,13 @@ begin
   inherited;
   expTimes.IsExpanded := false;
   expOptions.IsExpanded := true;
+end;
+
+procedure TfrmEventCreation.clearOutFields;
+begin
+  edtName.Text := '';
+  edtLocation.Text := '';
+  memContent.Lines.Clear;
 end;
 
 procedure TfrmEventCreation.FormActivate(Sender: TObject);

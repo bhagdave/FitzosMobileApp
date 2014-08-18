@@ -29,10 +29,7 @@ inherited frmEventCreation: TfrmEventCreation
   end
   inherited pnlTop: TPanel
     inherited edtSearch: TEdit
-      Width = 464.000000000000000000
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 464.000000000000000000
+      Height = 30.000000000000000000
     end
     inherited lblCaption: TLabel
       Text = 'Event Creation'
@@ -63,7 +60,7 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             Height = 50.000000000000000000
             Position.Y = 71.000000000000000000
-            TabOrder = 0
+            TabOrder = 3
             Width = 304.000000000000000000
           end
           object lblDescription: TLabel
@@ -78,7 +75,7 @@ inherited frmEventCreation: TfrmEventCreation
             Align = MostBottom
             Height = 22.000000000000000000
             Position.Y = 122.000000000000000000
-            TabOrder = 2
+            TabOrder = 1
             Text = 'Next'
             Width = 304.000000000000000000
             OnClick = btnNextClick
@@ -87,13 +84,13 @@ inherited frmEventCreation: TfrmEventCreation
             Align = MostTop
             Height = 50.000000000000000000
             Width = 304.000000000000000000
-            TabOrder = 3
+            TabOrder = 2
             ColumnCollection = <
               item
                 Value = 31.731294374658660000
               end
               item
-                Value = 68.268705625341350000
+                Value = 68.268705625341340000
               end>
             ControlCollection = <
               item
@@ -148,7 +145,7 @@ inherited frmEventCreation: TfrmEventCreation
             object edtLocation: TEdit
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
-              TabOrder = 3
+              TabOrder = 2
               TextSettings.FontColor = claWhitesmoke
               Width = 207.536865234375000000
               Height = 25.000000000000000000
@@ -174,6 +171,7 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 0
             object edtDate: TDateEdit
+              Date = 41869.000000000000000000
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
@@ -195,6 +193,7 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 1
             object edtStartTime: TTimeEdit
+              Time = 0.622222222222222200
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
@@ -214,6 +213,7 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 2
             object edtEndDate: TDateEdit
+              Date = 41869.000000000000000000
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
@@ -235,6 +235,7 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 3
             object edtEndTime: TTimeEdit
+              Time = 0.622222222222222200
               Align = Client
               Height = 44.000000000000000000
               TabOrder = 0
