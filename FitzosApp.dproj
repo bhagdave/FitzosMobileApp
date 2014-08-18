@@ -6,7 +6,7 @@
         <MainSource>FitzosApp.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">iOSSimulator</Platform>
+        <Platform Condition="'$(Platform)'==''">Android</Platform>
         <TargetedPlatforms>89</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -1110,7 +1110,7 @@
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Android">True</Platform>
+                <Platform value="Android" ActiveMobileDevice="015d21d5491bee0a">True</Platform>
                 <Platform value="iOSDevice">True</Platform>
                 <Platform value="iOSSimulator" ActiveMobileDevice="iPhone">True</Platform>
                 <Platform value="Win32">True</Platform>
