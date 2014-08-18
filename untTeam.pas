@@ -25,6 +25,8 @@ type
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
+    btnNewEvent: TButton;
+    btnInvite: TButton;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);

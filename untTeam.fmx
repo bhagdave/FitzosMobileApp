@@ -1,60 +1,85 @@
 inherited frmTeam: TfrmTeam
   Caption = 'Team'
-  ClientHeight = 567
-  ClientWidth = 384
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 4'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 384.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 292.000000000000000000
-    end
-  end
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 519.000000000000000000
-    Width = 384.000000000000000000
+    Position.Y = 412.000000000000000000
+    inherited btnNotifications: TCornerButton
+      Align = MostLeft
+    end
     inherited btnFriends: TCornerButton
-      Position.X = 292.000000000000000000
+      Align = MostRight
+    end
+    object btnNewEvent: TButton
+      Align = Left
+      Height = 44.000000000000000000
+      Padding.Left = 1.000000000000000000
+      Padding.Top = 1.000000000000000000
+      Padding.Right = 1.000000000000000000
+      Padding.Bottom = 1.000000000000000000
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 96.000000000000000000
+      Position.Y = 2.000000000000000000
+      TabOrder = 3
+      Text = 'New Event'
+      TextSettings.WordWrap = True
+      Width = 60.000000000000000000
+    end
+    object btnInvite: TButton
+      Align = Right
+      Height = 44.000000000000000000
+      Padding.Left = 1.000000000000000000
+      Padding.Top = 1.000000000000000000
+      Padding.Right = 1.000000000000000000
+      Padding.Bottom = 1.000000000000000000
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 159.000000000000000000
+      Position.Y = 2.000000000000000000
+      TabOrder = 4
+      Text = 'Invite'
+      Width = 65.000000000000000000
     end
   end
   inherited pnlTop: TPanel
-    Width = 384.000000000000000000
     inherited edtSearch: TEdit
-      Width = 335.000000000000000000
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 335.000000000000000000
+      Height = 30.000000000000000000
     end
     inherited lblCaption: TLabel
       Text = ''
-      Width = 384.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 414.000000000000000000
-    Width = 384.000000000000000000
+    Height = 307.000000000000000000
     object vsbScroller: TVertScrollBox
       Align = Client
       AutoHide = False
-      Height = 414.000000000000000000
+      Height = 307.000000000000000000
+      ShowScrollBars = False
       TabOrder = 1
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       object layTeam: TLayout
         Align = Top
         Height = 800.000000000000000000
-        Width = 368.000000000000000000
+        Width = 320.000000000000000000
         TabOrder = 0
         object lblEvents: TLabel
           Align = MostTop
           Height = 23.000000000000000000
           TextSettings.HorzAlign = Center
           Text = 'Events'
-          Width = 368.000000000000000000
+          Width = 320.000000000000000000
         end
         object lvEvents: TListView
           ItemAppearanceClassName = 'TListItemAppearance'
@@ -65,7 +90,7 @@ inherited frmTeam: TfrmTeam
           Height = 136.000000000000000000
           Position.Y = 23.000000000000000000
           TabOrder = 1
-          Width = 368.000000000000000000
+          Width = 320.000000000000000000
           OnItemClick = lvEventsItemClick
         end
         object expMembers: TExpander
@@ -75,7 +100,7 @@ inherited frmTeam: TfrmTeam
           Position.Y = 159.000000000000000000
           ShowCheck = False
           Text = 'Members'
-          Width = 368.000000000000000000
+          Width = 320.000000000000000000
           TabOrder = 2
           ContentSize = '175'
           object lvMembers: TListView
@@ -97,7 +122,7 @@ inherited frmTeam: TfrmTeam
           Position.Y = 184.000000000000000000
           ShowCheck = False
           Text = 'Team Wall'
-          Width = 368.000000000000000000
+          Width = 320.000000000000000000
           TabOrder = 3
           ContentSize = '118'
           object lvWwall: TListView
