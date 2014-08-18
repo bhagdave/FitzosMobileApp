@@ -168,16 +168,8 @@ begin
       if (sResult = 'OK') then
       begin
         isOwner := getResultBoolean(respGeneric.Content,'Result');
-        if isOwner then
-        begin
-          btnNewEvent.Enabled := true;
-          btnInvite.Enabled := true;
-        end
-        else
-        begin
-          btnNewEvent.Enabled := false;
-          btnInvite.Enabled := false;
-        end;
+        btnNewEvent.Visible := isOwner;
+        btnInvite.Visible := isOwner;
       end;
   end;
 end;
