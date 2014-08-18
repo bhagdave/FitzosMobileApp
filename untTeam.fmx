@@ -33,6 +33,7 @@ inherited frmTeam: TfrmTeam
       Text = 'New Event'
       TextSettings.WordWrap = True
       Width = 60.000000000000000000
+      OnClick = btnNewEventClick
     end
     object btnInvite: TButton
       Align = Right

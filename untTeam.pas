@@ -33,6 +33,7 @@ type
     procedure lvMembersItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure lvWwallClick(Sender: TObject);
+    procedure btnNewEventClick(Sender: TObject);
   private
     { Private declarations }
     procedure getTeamWall(sTeam : String);
@@ -50,6 +51,12 @@ uses
   untMainForm;
 
 {$R *.fmx}
+procedure TfrmTeam.btnNewEventClick(Sender: TObject);
+begin
+  inherited;
+  showNewForm('TfrmEventCreation');
+end;
+
 procedure TfrmTeam.FormActivate(Sender: TObject);
 var
   sTeam : String;
