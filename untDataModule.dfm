@@ -839,6 +839,7 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaTeamWall: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmTeamWall
     FieldDefs = <>
     Response = respTeamWall
