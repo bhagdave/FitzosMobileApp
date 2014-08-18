@@ -35,11 +35,13 @@ type
     procedure lvWwallClick(Sender: TObject);
     procedure btnNewEventClick(Sender: TObject);
   private
+    isOwner : Boolean;
     { Private declarations }
     procedure getTeamWall(sTeam : String);
     procedure getTeamMembers(sTeam : String);
     procedure getTeamEvents(sTeam : String);
     procedure getTeam(sTeam: String);
+    procedure getTeamOwnership(sTeam : String);
   public
     { Public declarations }
   end;
@@ -68,6 +70,7 @@ begin
   getTeamWall(sTeam);
   getTeamMembers(sTeam);
   getTeamEvents(sTeam);
+  getTeamOwnership(sTeam);
 end;
 
 procedure TfrmTeam.getTeam(sTeam: String);
@@ -144,6 +147,37 @@ begin
           rdsaTeamMembers.Response := respTeamMembers;
           rdsaTeamMembers.UpdateDataSet;
           fdmTeamMembers.Open;
+      end;
+  end;
+end;
+
+procedure TfrmTeam.getTeamOwnership(sTeam : String);
+var
+  sResult : String;
+begin
+  with dmdDataModule do
+  begin
+      reqGeneric.Params.Clear;
+      reqGeneric.Resource := 'r/teams/isOwner';
+      reqGeneric.Params.addItem('user',memberId);
+      reqGeneric.Params.addItem('team',id);
+      reqGeneric.Params.AddItem('signature',signature('isOwner'));
+      reqGeneric.Params.AddItem('key',getAPIKey());
+      reqGeneric.Execute;
+      sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+        isOwner := getResultBoolean(respGeneric.Content,'Result');
+        if isOwner then
+        begin
+          btnNewEvent.Enabled := true;
+          btnInvite.Enabled := true;
+        end
+        else
+        begin
+          btnNewEvent.Enabled := false;
+          btnInvite.Enabled := false;
+        end;
       end;
   end;
 end;
