@@ -17,6 +17,7 @@ type
     btnLogin: TButton;
     btnSignup: TButton;
     txtWelcomeMessage: TText;
+    StyleBook1: TStyleBook;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
   private
@@ -153,7 +154,9 @@ begin
     showNewForm('TfrmNotifications');
   end
   else
-    showmessage(dmdDataModule.respLogin.Content);
+  begin
+      showmessage('Error in login!');
+  end;
 end;
 
 initialization
@@ -161,5 +164,5 @@ initialization
   FormRegistry.Duplicates := dupIgnore;
   FormRegistry.Sorted := True;
 finalization
-  FreeAndNil(FormRegistry);
+  FormRegistry.free;
 end.
