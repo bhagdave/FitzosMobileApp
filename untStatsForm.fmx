@@ -1,5 +1,6 @@
 inherited frmStats: TfrmStats
   Caption = 'Stats'
+  OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
   DesignerHeight = 568
@@ -34,7 +35,7 @@ inherited frmStats: TfrmStats
           Align = Top
           DisableFocusEffect = False
           Height = 30.000000000000000000
-          TabOrder = 1
+          TabOrder = 0
           Width = 320.000000000000000000
         end
         object pnlName: TGridPanelLayout
@@ -42,7 +43,7 @@ inherited frmStats: TfrmStats
           Height = 40.000000000000000000
           Position.Y = 30.000000000000000000
           Width = 320.000000000000000000
-          TabOrder = 2
+          TabOrder = 1
           ColumnCollection = <
             item
               SizeStyle = Absolute
@@ -85,7 +86,7 @@ inherited frmStats: TfrmStats
           Height = 120.000000000000000000
           Position.Y = 70.000000000000000000
           Width = 320.000000000000000000
-          TabOrder = 3
+          TabOrder = 2
           ColumnCollection = <
             item
               SizeStyle = Absolute
@@ -183,7 +184,7 @@ inherited frmStats: TfrmStats
           Align = Top
           Height = 44.000000000000000000
           Position.Y = 190.000000000000000000
-          TabOrder = 4
+          TabOrder = 3
           Text = 'Add'
           Width = 320.000000000000000000
           OnClick = btnAddStatClick

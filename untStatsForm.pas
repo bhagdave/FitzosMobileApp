@@ -33,6 +33,7 @@ type
     btnAddStat: TButton;
     procedure btnAddClick(Sender: TObject);
     procedure btnAddStatClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,6 +56,12 @@ procedure TfrmStats.btnAddStatClick(Sender: TObject);
 begin
   inherited;
   pnlAddStat.Visible := false;
+end;
+
+procedure TfrmStats.FormActivate(Sender: TObject);
+begin
+  inherited;
+  edtDate.Align := TAlignLayout.client;
 end;
 
 initialization
