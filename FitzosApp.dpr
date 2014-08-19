@@ -27,7 +27,8 @@ uses
   untStatsForm in 'untStatsForm.pas' {frmStats},
   untDmdSports in 'untDmdSports.pas' {dmdSports: TDataModule},
   untFormRegistry in 'untFormRegistry.pas',
-  untJSONFunctions in 'untJSONFunctions.pas';
+  untJSONFunctions in 'untJSONFunctions.pas',
+  untMenuForm in 'untMenuForm.pas' {frmMenu};
 
 {$R *.res}
 

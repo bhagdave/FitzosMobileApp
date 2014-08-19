@@ -1,0 +1,65 @@
+object frmMenu: TfrmMenu
+  Left = 0
+  Top = 0
+  Caption = 'Menu'
+  ClientHeight = 460
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMobile = True
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
+  DesignerOrientation = 0
+  DesignerOSVersion = '7'
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Client
+    Height = 460.000000000000000000
+    Width = 320.000000000000000000
+    TabOrder = 0
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = btnEvents
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    object btnEvents: TRectangle
+      Align = Client
+      Fill.Color = claCoral
+      Height = 226.000000000000000000
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Width = 156.000000000000000000
+      object lblEvents: TLabel
+        Align = Client
+        Height = 222.000000000000000000
+        HitTest = True
+        TextSettings.HorzAlign = Center
+        Text = 'Events'
+        Width = 152.000000000000000000
+        OnClick = lblEventsClick
+      end
+    end
+  end
+end
