@@ -185,7 +185,6 @@ object dmdSports: TdmdSports
     Top = 128
   end
   object rdsaSportsStats: TRESTResponseDataSetAdapter
-    Active = True
     AutoUpdate = False
     Dataset = fdmSportsStats
     FieldDefs = <>
@@ -195,34 +194,8 @@ object dmdSports: TdmdSports
     Top = 192
   end
   object fdmSportsStats: TFDMemTable
-    Active = True
     OnCalcFields = fdmSportsStatsCalcFields
-    FieldDefs = <
-      item
-        Name = 'statistic_name'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'statistic_value'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'date'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'formula'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'comment'
-        DataType = ftWideString
-        Size = 255
-      end>
+    FieldDefs = <>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
@@ -284,7 +257,6 @@ object dmdSports: TdmdSports
     Top = 128
   end
   object rdsaStatsForSports: TRESTResponseDataSetAdapter
-    Active = True
     AutoUpdate = False
     Dataset = fdmStatsForSport
     FieldDefs = <>
@@ -294,48 +266,7 @@ object dmdSports: TdmdSports
     Top = 192
   end
   object fdmStatsForSport: TFDMemTable
-    Active = True
-    FieldDefs = <
-      item
-        Name = 'id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'sport_id'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'statistic_name'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'max_value'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'min_value'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'description'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'formula'
-        DataType = ftWideString
-        Size = 255
-      end
-      item
-        Name = 'position_id'
-        DataType = ftWideString
-        Size = 255
-      end>
+    FieldDefs = <>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
@@ -378,5 +309,11 @@ object dmdSports: TdmdSports
       FieldName = 'position_id'
       Size = 255
     end
+  end
+  object dsStatsForSport: TBindSourceDB
+    DataSet = fdmStatsForSport
+    ScopeMappings = <>
+    Left = 360
+    Top = 320
   end
 end

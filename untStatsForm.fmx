@@ -233,5 +233,17 @@ inherited frmStats: TfrmStats
       FillHeaderFieldName = 'date'
       FillBreakGroups = <>
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = cboStats
+      Track = True
+      FillDataSource = dmdSports.dsStatsForSport
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'statistic_name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
 end

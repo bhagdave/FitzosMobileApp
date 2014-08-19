@@ -31,6 +31,7 @@ type
     lblDate: TLabel;
     edtDate: TDateEdit;
     btnAddStat: TButton;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure btnAddClick(Sender: TObject);
     procedure btnAddStatClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);

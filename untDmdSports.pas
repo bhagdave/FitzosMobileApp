@@ -51,6 +51,7 @@ type
     fdmStatsForSportdescription: TWideStringField;
     fdmStatsForSportformula: TWideStringField;
     fdmStatsForSportposition_id: TWideStringField;
+    dsStatsForSport: TBindSourceDB;
     procedure fdmSportsStatsCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
@@ -69,7 +70,7 @@ implementation
 
 procedure TdmdSports.fdmSportsStatsCalcFields(DataSet: TDataSet);
 begin
-  DataSet.FieldByName('statistic_text').AsString := DataSet.FieldByName('statistic_name').AsString + ' ' + DataSet.FieldByName('statistic_value').AsString;
+  DataSet.FieldByName('statistic_text').AsString := DataSet.FieldByName('statistic_name').AsString + ' ' + dataset.FieldByName('statistic_value').AsString;
 end;
 
 end.
