@@ -115,10 +115,12 @@ begin
     respSportsStats.Content.Empty;
     reqSportsStats.ClearBody;
     reqSportsStats.Params.ParameterByName('id').Value := dmdDataModule.memberId;
+    reqSportsStats.Params.ParameterByName('sport').Value := Id;
 //    reqSportsStats.Params.ParameterByName('signature').Value := dmdDatamodule.signature('getSports');
 //    reqSportsStats.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
     reqSportsStats.Execute;
     sResult := getResultString(respSportsStats.Content);
+    showmessage(respSportsStats.Content);
     if (sResult = 'OK') then
     begin
         rdsaSportsStats.Response := respSportsStats;
