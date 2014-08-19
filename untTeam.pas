@@ -50,7 +50,7 @@ type
 implementation
 
 uses
-  untMainForm, untJsonFunctions,untFormRegistry;
+  untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmTeam.btnNewEventClick(Sender: TObject);

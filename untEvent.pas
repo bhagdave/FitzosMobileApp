@@ -53,7 +53,7 @@ var
 implementation
 
 uses
-  untMainForm, untDataModule, untJsonFunctions,untFormRegistry;
+  untDataModule, untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmEvent.btnEditClick(Sender: TObject);
@@ -77,7 +77,6 @@ end;
 procedure TfrmEvent.FormActivate(Sender: TObject);
 var
   sResult : String;
-  sURL    : String;
 begin
   with dmdEvent do
   begin
