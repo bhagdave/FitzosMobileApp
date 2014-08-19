@@ -72,7 +72,7 @@ begin
   end
   else
   begin
-    showmessage(dmdSports.respAddStat.Content):
+    showmessage(dmdSports.respAddStat.Content);
   end;
 end;
 
