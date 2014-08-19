@@ -28,6 +28,18 @@ type
     rdsaSports: TRESTResponseDataSetAdapter;
     respSports: TRESTResponse;
     reqSports: TRESTRequest;
+    reqSportsStats: TRESTRequest;
+    respSportsStats: TRESTResponse;
+    rdsaSportsStats: TRESTResponseDataSetAdapter;
+    fdmSportsStats: TFDMemTable;
+    fdmSportsStatsstatistic_name: TWideStringField;
+    fdmSportsStatsstatistic_value: TWideStringField;
+    fdmSportsStatsdate: TWideStringField;
+    fdmSportsStatsformula: TWideStringField;
+    fdmSportsStatscomment: TWideStringField;
+    fdmSportsStatsstatistic_text: TStringField;
+    dsSportsStats: TBindSourceDB;
+    procedure fdmSportsStatsCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -42,5 +54,10 @@ implementation
 {%CLASSGROUP 'FMX.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TdmdSports.fdmSportsStatsCalcFields(DataSet: TDataSet);
+begin
+  DataSet.FieldByName('statistic_text').AsString := DataSet.FieldByName('statistic_name').AsString + ' ' + DataSet.FieldByName('statistic_value').AsString;
+end;
 
 end.

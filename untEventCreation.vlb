@@ -421,3 +421,15 @@ Visible=False
 [dmdDataModule.dsTeamEvents]
 Coordinates=1052,246,170,393
 
+[dmdDataModule.fdmMemberSports]
+Visible=False
+
+[dmdDataModule.fdmProfile]
+Visible=False
+
+[dmdDataModule.fdmSearchNames]
+Visible=False
+
+[dmdDataModule.fdmSports]
+Visible=False
+

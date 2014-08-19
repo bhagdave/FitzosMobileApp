@@ -162,4 +162,107 @@ object dmdSports: TdmdSports
     Left = 125
     Top = 68
   end
+  object reqSportsStats: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '11'
+      end
+      item
+        name = 'sport'
+        Value = '26'
+      end>
+    Resource = 'r/athletes/getStatsForAthleteSport'
+    Response = respSportsStats
+    SynchronizedEvents = False
+    Left = 232
+    Top = 56
+  end
+  object respSportsStats: TRESTResponse
+    ContentType = 'text/html'
+    Left = 240
+    Top = 128
+  end
+  object rdsaSportsStats: TRESTResponseDataSetAdapter
+    Active = True
+    AutoUpdate = False
+    Dataset = fdmSportsStats
+    FieldDefs = <>
+    Response = respSportsStats
+    RootElement = 'Result'
+    Left = 248
+    Top = 192
+  end
+  object fdmSportsStats: TFDMemTable
+    Active = True
+    OnCalcFields = fdmSportsStatsCalcFields
+    FieldDefs = <
+      item
+        Name = 'statistic_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'statistic_value'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'formula'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'comment'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 256
+    Top = 256
+    object fdmSportsStatsstatistic_name: TWideStringField
+      FieldName = 'statistic_name'
+      Size = 255
+    end
+    object fdmSportsStatsstatistic_value: TWideStringField
+      FieldName = 'statistic_value'
+      Size = 255
+    end
+    object fdmSportsStatsdate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmSportsStatsformula: TWideStringField
+      FieldName = 'formula'
+      Size = 255
+    end
+    object fdmSportsStatscomment: TWideStringField
+      FieldName = 'comment'
+      Size = 255
+    end
+    object fdmSportsStatsstatistic_text: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'statistic_text'
+      Calculated = True
+    end
+  end
+  object dsSportsStats: TBindSourceDB
+    DataSet = fdmSportsStats
+    ScopeMappings = <>
+    Left = 256
+    Top = 320
+  end
 end

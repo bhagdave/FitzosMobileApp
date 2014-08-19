@@ -14,4 +14,56 @@ inherited frmStats: TfrmStats
       Text = 'Statistics'
     end
   end
+  inherited pnlCenter: TPanel
+    object lvStats: TListView
+      ItemAppearanceClassName = 'TListItemAppearance'
+      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      Align = Client
+      Height = 355.000000000000000000
+      TabOrder = 1
+      Width = 320.000000000000000000
+    end
+    object tbExisting: TToolBar
+      Height = 40.000000000000000000
+      TabOrder = 2
+      Width = 320.000000000000000000
+      object lblExisting: TLabel
+        Align = Client
+        Height = 40.000000000000000000
+        StyleLookup = 'listboxheaderlabel'
+        TextSettings.HorzAlign = Center
+        Text = 'Your Stats'
+        Width = 276.000000000000000000
+      end
+      object btnAdd: TButton
+        Align = Right
+        Height = 44.000000000000000000
+        Position.X = 276.000000000000000000
+        StyleLookup = 'addtoolbutton'
+        TabOrder = 2
+        Text = 'btnAdd'
+        Width = 44.000000000000000000
+      end
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvStats
+      Track = True
+      FillDataSource = dmdSports.dsSportsStats
+      FillDisplayFieldName = 'statistic_text'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'date'
+      FillBreakGroups = <>
+    end
+  end
 end
