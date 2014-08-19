@@ -265,4 +265,118 @@ object dmdSports: TdmdSports
     Left = 256
     Top = 320
   end
+  object reqStatsForSport: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '26'
+      end>
+    Resource = 'sports/getStatsForSport'
+    Response = respStatsForSport
+    SynchronizedEvents = False
+    Left = 352
+    Top = 72
+  end
+  object respStatsForSport: TRESTResponse
+    ContentType = 'text/html'
+    Left = 352
+    Top = 128
+  end
+  object rdsaStatsForSports: TRESTResponseDataSetAdapter
+    Active = True
+    AutoUpdate = False
+    Dataset = fdmStatsForSport
+    FieldDefs = <>
+    Response = respStatsForSport
+    RootElement = 'Result'
+    Left = 360
+    Top = 192
+  end
+  object fdmStatsForSport: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'statistic_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'max_value'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'min_value'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'description'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'formula'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'position_id'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 360
+    Top = 264
+    object fdmStatsForSportid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmStatsForSportsport_id: TWideStringField
+      FieldName = 'sport_id'
+      Size = 255
+    end
+    object fdmStatsForSportstatistic_name: TWideStringField
+      FieldName = 'statistic_name'
+      Size = 255
+    end
+    object fdmStatsForSportmax_value: TWideStringField
+      FieldName = 'max_value'
+      Size = 255
+    end
+    object fdmStatsForSportmin_value: TWideStringField
+      FieldName = 'min_value'
+      Size = 255
+    end
+    object fdmStatsForSportdescription: TWideStringField
+      FieldName = 'description'
+      Size = 255
+    end
+    object fdmStatsForSportformula: TWideStringField
+      FieldName = 'formula'
+      Size = 255
+    end
+    object fdmStatsForSportposition_id: TWideStringField
+      FieldName = 'position_id'
+      Size = 255
+    end
+  end
 end

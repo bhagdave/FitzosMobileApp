@@ -22,12 +22,177 @@ inherited frmStats: TfrmStats
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
       Height = 355.000000000000000000
-      TabOrder = 1
+      TabOrder = 0
       Width = 320.000000000000000000
+      object pnlAddStat: TPanel
+        Align = Client
+        Height = 355.000000000000000000
+        Visible = False
+        Width = 320.000000000000000000
+        TabOrder = 0
+        object cboStats: TComboBox
+          Align = Top
+          DisableFocusEffect = False
+          Height = 30.000000000000000000
+          TabOrder = 1
+          Width = 320.000000000000000000
+        end
+        object pnlName: TGridPanelLayout
+          Align = Top
+          Height = 40.000000000000000000
+          Position.Y = 30.000000000000000000
+          Width = 320.000000000000000000
+          TabOrder = 2
+          ColumnCollection = <
+            item
+              SizeStyle = Absolute
+              Value = 95.000000000000000000
+            end
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = lblName
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = edtName
+              Row = 0
+            end>
+          RowCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          object lblName: TLabel
+            Align = Client
+            Height = 40.000000000000000000
+            Text = 'Statistic'
+            Width = 95.000000000000000000
+          end
+          object edtName: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Width = 225.000000000000000000
+            Height = 40.000000000000000000
+          end
+        end
+        object pnlDetails: TGridPanelLayout
+          Align = Top
+          Height = 120.000000000000000000
+          Position.Y = 70.000000000000000000
+          Width = 320.000000000000000000
+          TabOrder = 3
+          ColumnCollection = <
+            item
+              SizeStyle = Absolute
+              Value = 95.000000000000000000
+            end
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = lblValue
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = edtValue
+              Row = 0
+            end
+            item
+              Column = 0
+              Control = lblComment
+              Row = 1
+            end
+            item
+              Column = 1
+              Control = memContent
+              Row = 1
+            end
+            item
+              Column = 0
+              Control = lblDate
+              Row = 2
+            end
+            item
+              Column = 1
+              Control = edtDate
+              Row = 2
+            end>
+          RowCollection = <
+            item
+              SizeStyle = Absolute
+              Value = 40.000000000000000000
+            end
+            item
+              SizeStyle = Absolute
+              Value = 40.000000000000000000
+            end
+            item
+              SizeStyle = Absolute
+              Value = 40.000000000000000000
+            end>
+          object lblValue: TLabel
+            Align = Client
+            Height = 40.000000000000000000
+            Text = 'Value'
+            Width = 95.000000000000000000
+          end
+          object edtValue: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Width = 225.000000000000000000
+            Height = 40.000000000000000000
+          end
+          object lblComment: TLabel
+            Align = Client
+            Height = 40.000000000000000000
+            Text = 'Comment'
+            Width = 95.000000000000000000
+          end
+          object memContent: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 40.000000000000000000
+            TabOrder = 3
+            Width = 225.000000000000000000
+          end
+          object lblDate: TLabel
+            Align = Client
+            Height = 40.000000000000000000
+            Text = 'Date'
+            Width = 95.000000000000000000
+          end
+          object edtDate: TDateEdit
+            Anchors = []
+            Height = 30.000000000000000000
+            Position.X = 108.500000000000000000
+            Position.Y = 85.000000000000000000
+            TabOrder = 5
+            Width = 198.000000000000000000
+          end
+        end
+        object btnAddStat: TButton
+          Align = Top
+          Height = 44.000000000000000000
+          Position.Y = 190.000000000000000000
+          TabOrder = 4
+          Text = 'Add'
+          Width = 320.000000000000000000
+          OnClick = btnAddStatClick
+        end
+      end
     end
     object tbExisting: TToolBar
       Height = 40.000000000000000000
-      TabOrder = 2
+      TabOrder = 1
       Width = 320.000000000000000000
       object lblExisting: TLabel
         Align = Client
@@ -35,16 +200,18 @@ inherited frmStats: TfrmStats
         StyleLookup = 'listboxheaderlabel'
         TextSettings.HorzAlign = Center
         Text = 'Your Stats'
-        Width = 276.000000000000000000
+        Width = 294.000000000000000000
       end
       object btnAdd: TButton
         Align = Right
-        Height = 44.000000000000000000
-        Position.X = 276.000000000000000000
-        StyleLookup = 'addtoolbutton'
-        TabOrder = 2
+        Height = 26.000000000000000000
+        Position.X = 294.000000000000000000
+        Position.Y = 7.000000000000000000
+        StyleLookup = 'additembutton'
+        TabOrder = 1
         Text = 'btnAdd'
-        Width = 44.000000000000000000
+        Width = 26.000000000000000000
+        OnClick = btnAddClick
       end
     end
   end

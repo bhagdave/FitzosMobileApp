@@ -44,7 +44,6 @@ uses
 
 procedure TfrmSports.btnAddClick(Sender: TObject);
 var
-  sResult : String;
   lValue : TValue;
 begin
   inherited;

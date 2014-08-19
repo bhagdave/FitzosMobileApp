@@ -96,10 +96,8 @@ end;
 procedure TfrmProfile.btnSaveClick(Sender: TObject);
 var
   mStream  : TMemoryStream;
-  sStream  : TStringStream;
   multiStream: TIdMultiPartFormDataStream;
   Height, weight : Double;
-  sNickName : String;
 begin
 //  sNickname := edtNickname.Text;
   multiStream := TIdMultiPartFormDataStream.Create;

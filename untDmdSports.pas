@@ -39,6 +39,18 @@ type
     fdmSportsStatscomment: TWideStringField;
     fdmSportsStatsstatistic_text: TStringField;
     dsSportsStats: TBindSourceDB;
+    reqStatsForSport: TRESTRequest;
+    respStatsForSport: TRESTResponse;
+    rdsaStatsForSports: TRESTResponseDataSetAdapter;
+    fdmStatsForSport: TFDMemTable;
+    fdmStatsForSportid: TWideStringField;
+    fdmStatsForSportsport_id: TWideStringField;
+    fdmStatsForSportstatistic_name: TWideStringField;
+    fdmStatsForSportmax_value: TWideStringField;
+    fdmStatsForSportmin_value: TWideStringField;
+    fdmStatsForSportdescription: TWideStringField;
+    fdmStatsForSportformula: TWideStringField;
+    fdmStatsForSportposition_id: TWideStringField;
     procedure fdmSportsStatsCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
