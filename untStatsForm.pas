@@ -92,7 +92,7 @@ begin
     rdsaStatsForSports.Active := false;
     respStatsForSport.Content.Empty;
     reqStatsForSport.ClearBody;
-    reqStatsForSport.Params.ParameterByName('id').Value := dmdDataModule.memberId;
+    reqStatsForSport.Params.ParameterByName('id').Value := Id;
 //    reqStatsForSport.Params.ParameterByName('signature').Value := dmdDatamodule.signature('getSports');
 //    reqStatsForSport.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
     reqStatsForSport.Execute;
