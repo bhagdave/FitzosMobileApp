@@ -52,6 +52,8 @@ type
     fdmStatsForSportformula: TWideStringField;
     fdmStatsForSportposition_id: TWideStringField;
     dsStatsForSport: TBindSourceDB;
+    reqAddStat: TRESTRequest;
+    respAddStat: TRESTResponse;
     procedure fdmSportsStatsCalcFields(DataSet: TDataSet);
   private
     { Private declarations }

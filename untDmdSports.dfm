@@ -316,4 +316,39 @@ object dmdSports: TdmdSports
     Left = 360
     Top = 320
   end
+  object reqAddStat: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'source_table'
+        Value = 'member'
+      end
+      item
+        name = 'source_id'
+      end
+      item
+        name = 'sport_id'
+      end
+      item
+        name = 'statistic_name'
+      end
+      item
+        name = 'statistic_value'
+      end
+      item
+        name = 'date'
+      end
+      item
+        name = 'comment'
+      end>
+    Resource = 'r/athletes/saveStats'
+    Response = respAddStat
+    SynchronizedEvents = False
+    Left = 464
+    Top = 80
+  end
+  object respAddStat: TRESTResponse
+    Left = 456
+    Top = 136
+  end
 end
