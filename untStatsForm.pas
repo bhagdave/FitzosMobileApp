@@ -32,6 +32,9 @@ type
     edtDate: TDateEdit;
     btnAddStat: TButton;
     LinkFillControlToField2: TLinkFillControlToField;
+    LinkControlToField1: TLinkControlToField;
+    LinkControlToField2: TLinkControlToField;
+    LinkControlToField3: TLinkControlToField;
     procedure btnAddClick(Sender: TObject);
     procedure btnAddStatClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -54,9 +57,23 @@ begin
 end;
 
 procedure TfrmStats.btnAddStatClick(Sender: TObject);
+var
+  sResult : String;
 begin
   inherited;
   pnlAddStat.Visible := false;
+  dmdSports.reqAddStat.Params.ParameterByName('source_id').Value := dmdDataModule.memberId;
+  dmdSports.reqAddStat.Params.ParameterByName('sport_id').Value := id;
+  dmdSports.reqAddStat.Execute;
+  sResult := getResultString(dmdSports.respAddStat.Content);
+  if sResult.Trim = 'OK' then
+  begin
+    self.FormActivate(nil);
+  end
+  else
+  begin
+    showmessage(dmdSports.respAddStat.Content):
+  end;
 end;
 
 procedure TfrmStats.FormActivate(Sender: TObject);

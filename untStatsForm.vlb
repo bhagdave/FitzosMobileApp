@@ -1,51 +1,51 @@
 ﻿[pnlCenter]
-Coordinates=542,552,62,33
+Coordinates=824,434,62,33
 
 [btnFriends]
-Coordinates=501,475,67,33
+Coordinates=569,511,67,33
 
 [imgAvatar]
-Coordinates=320,380,64,51
+Coordinates=593,434,64,51
 
 [lblCaption]
-Coordinates=410,380,64,51
+Coordinates=644,303,64,51
 
 [btnProfile]
-Coordinates=84,475,62,51
+Coordinates=185,434,62,51
 
 [btnTeams]
-Coordinates=684,475,62,33
+Coordinates=662,511,62,33
 
 [btnNotifications]
-Coordinates=102,552,92,33
+Coordinates=451,511,92,33
 
 [edtSearch]
-Coordinates=255,475,64,51
+Coordinates=273,434,64,51
 
 [pnlTop]
-Coordinates=310,552,48,33
+Coordinates=10,511,48,33
 
 [barTop]
-Coordinates=384,552,49,33
+Coordinates=10,570,49,33
 
 [StyleBook1]
 Coordinates=311,56,79,36
 
 [barBottom]
-Coordinates=10,552,66,33
+Coordinates=269,511,66,33
 
 [btnEvents]
-Coordinates=220,552,64,33
+Coordinates=361,511,64,33
 
 [lvStats]
-Coordinates=188,28,89,141
+Coordinates=663,28,89,141
 Visible=True
 
 [lblExisting]
-Coordinates=500,380,66,51
+Coordinates=93,434,66,51
 
 [tbExisting]
-Coordinates=594,475,64,33
+Coordinates=84,511,64,33
 
 [dmdSports.fdmMemberSports]
 Visible=False
@@ -53,10 +53,10 @@ Coordinates=357,591,155,141
 
 [dmdSports.fdmSports]
 Visible=False
-Coordinates=120,249,116,105
+Coordinates=10,303,116,105
 
 [dmdSports.fdmSportsStats]
-Coordinates=357,10,141,177
+Coordinates=832,10,141,177
 Visible=False
 
 [dmdSports.reqSports]
@@ -68,10 +68,11 @@ Coordinates=79,591,145,105
 Visible=False
 
 [dmdSports.dsSports]
-Coordinates=120,249,116,105
+Coordinates=10,303,116,105
 
 [dmdSports.restAPI]
-Coordinates=187,380,107,69
+Coordinates=511,303,107,69
+Visible=False
 
 [dmdSports.respSports]
 Coordinates=120,286,125,267
@@ -100,7 +101,7 @@ Coordinates=456,80,82,33
 Coordinates=516,80,141,159
 
 [dmdSports.dsSportsStats]
-Coordinates=357,10,141,177
+Coordinates=832,10,141,177
 
 [BindingsList1]
 Coordinates=456,80,82,33
@@ -155,7 +156,7 @@ Coordinates=1313,1369,141,105
 
 [dmdSports.fdmStatsForSport]
 Visible=False
-Coordinates=10,10,152,213
+Coordinates=332,10,152,213
 
 [dmdDataModule.respLogin]
 Coordinates=1082,143,147,267
@@ -218,13 +219,15 @@ Coordinates=1536,231,154,51
 Visible=False
 
 [dmdDataModule.reqGeneric]
-Coordinates=10,380,151,69
+Coordinates=334,303,151,69
+Visible=False
 
 [dmdDataModule.reqSports]
 Coordinates=444,249,145,69
+Visible=False
 
 [lblName]
-Coordinates=345,475,54,51
+Coordinates=513,434,54,51
 
 [dmdDataModule.dsMemberSports]
 Coordinates=664,770,181,141
@@ -255,7 +258,7 @@ Coordinates=1313,799,141,141
 Visible=False
 
 [dmdSports.reqStatsForSport]
-Coordinates=262,249,156,87
+Coordinates=152,303,156,87
 
 [dmdDataModule.respMemberSports]
 Coordinates=853,947,191,267
@@ -290,7 +293,7 @@ Coordinates=1313,959,181,267
 Visible=False
 
 [edtName]
-Coordinates=172,475,57,51
+Coordinates=10,434,57,51
 
 [lblComment]
 Coordinates=0,540,73,51
@@ -298,13 +301,14 @@ Visible=False
 
 [dmdDataModule.reqTeamEvents]
 Coordinates=524,10,174,123
+Visible=False
 
 [dmdDataModule.respUpdateProfile]
 Coordinates=853,1,186,267
 Visible=False
 
 [lblDate]
-Coordinates=10,475,48,51
+Coordinates=363,434,48,51
 
 [dmdDataModule.respFriends]
 Coordinates=336,1309,156,267
@@ -320,10 +324,10 @@ Visible=False
 
 [dmdDataModule.restAPI]
 Coordinates=615,249,133,69
+Visible=False
 
 [edtValue]
-Coordinates=456,520,57,51
-Visible=False
+Coordinates=420,290,57,51
 
 [dmdDataModule.reqTeam]
 Coordinates=1313,177,140,123
@@ -342,21 +346,21 @@ Coordinates=713,661,69,51
 Visible=False
 
 [btnAdd]
-Coordinates=425,475,50,51
+Coordinates=437,434,50,51
 
 [cboStats]
-Coordinates=10,249,84,105
+Coordinates=168,64,84,105
 Visible=True
 
 [pnlAddStat]
-Coordinates=630,552,69,33
+Coordinates=174,511,69,33
 
 [dmdDataModule.reqMemberTeams]
 Coordinates=1077,643,185,123
 Visible=False
 
 [dmdSports.dsStatsForSport]
-Coordinates=10,10,152,213
+Coordinates=332,10,152,213
 Visible=True
 
 [dmdDataModule.dsSports]
@@ -384,14 +388,14 @@ Coordinates=328,770,141,501
 Visible=False
 
 [edtDate]
-Coordinates=592,380,115,51
+Coordinates=683,434,115,51
 
 [dmdDataModule.reqEvents]
 Coordinates=108,1614,147,123
 Visible=False
 
 [pnlName]
-Coordinates=459,552,57,33
+Coordinates=750,511,57,33
 
 [dmdDataModule.dsNotifications]
 Coordinates=1104,1213,171,285
@@ -416,4 +420,10 @@ Visible=False
 [dmdDataModule.respTeamMembers]
 Coordinates=853,1233,191,267
 Visible=False
+
+[dmdSports.reqAddStat]
+Coordinates=510,10,127,195
+
+[dmdSports.respAddStat]
+Coordinates=20,10,132,267
 

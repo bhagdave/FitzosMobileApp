@@ -172,6 +172,7 @@ inherited frmStats: TfrmStats
             Width = 95.000000000000000000
           end
           object edtDate: TDateEdit
+            IsEmpty = True
             Anchors = []
             Height = 30.000000000000000000
             Position.X = 108.500000000000000000
@@ -244,6 +245,27 @@ inherited frmStats: TfrmStats
       FillExpressions = <>
       FillHeaderExpressions = <>
       FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = dmdSports.reqAddStat
+      FieldName = 'Params.statistic_name'
+      Control = edtName
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = dmdSports.reqAddStat
+      FieldName = 'Params.date'
+      Control = edtDate
+      Track = True
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = dmdSports.reqAddStat
+      FieldName = 'Params.statistic_value'
+      Control = edtValue
+      Track = False
     end
   end
 end
