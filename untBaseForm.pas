@@ -44,7 +44,7 @@ implementation
 
 {$R *.fmx}
 uses
-  untMainForm;
+  untFormRegistry;
 
 procedure TfrmBase.btnEventsClick(Sender: TObject);
 begin

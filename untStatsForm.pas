@@ -48,7 +48,7 @@ type
 implementation
 
 uses
-  untMainForm, untDataModule, untJsonFunctions;
+  untDataModule, untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmStats.btnAddClick(Sender: TObject);

@@ -31,7 +31,7 @@ type
 implementation
 
 uses
-  untMainForm , untJsonFunctions;
+  untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmNotification.btnReadClick(Sender: TObject);

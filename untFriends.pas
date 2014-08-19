@@ -26,7 +26,7 @@ type
 
 implementation
 uses
-  untMainForm, untJsonFunctions;
+  untMainForm, untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmFriends.FormActivate(Sender: TObject);

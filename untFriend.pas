@@ -45,7 +45,7 @@ type
 implementation
 
 uses
-  untMainForm, untJsonFunctions;
+  untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 
@@ -167,8 +167,6 @@ end;
 procedure TfrmFriend.getProfile;
 var
   sResult : String;
-  iDX     : Integer;
-  sTemp   : String;
 begin
   // ok lets try and get some data
   with dmdDataModule do

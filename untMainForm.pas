@@ -28,68 +28,15 @@ type
     { Public declarations }
   end;
 
-  procedure showNewForm(ClassName : String);
-  procedure showNewFormWithId(ClassName, sId : String);
 var
   frmMain: TfrmMain;
-  FormRegistry : TStringList;
 
 implementation
 
 {$R *.fmx}
 uses
-  untBaseForm,System.JSON;
+  untBaseForm,System.JSON,untFormRegistry;
 
-procedure showNewForm(ClassName : String);
-var ObjClass: TFmxObjectClass;
-    NewForm: TCustomForm;
-    idx : Integer;
-begin
-  ObjClass := TFmxObjectClass(GetClass(ClassName));
-  if ObjClass <> nil then
-  begin
-    // is it in the list???
-    idx := FormRegistry.IndexOf(ClassName);
-    if idx > -1 then
-    begin
-      NewForm := FormRegistry.Objects[idx] as TCustomForm;
-    end
-    else
-    begin
-      NewForm := ObjClass.Create(Application) as TCustomForm;
-      FormRegistry.AddObject(ClassName,NewForm);
-    end;
-    if Assigned(NewForm) then
-      NewForm.Show;
-  end
-end;
-
-procedure showNewFormWithId(ClassName,sId : String);
-var ObjClass: TFmxObjectClass;
-    NewForm: TCustomForm;
-    idx : Integer;
-begin
-  ObjClass := TFmxObjectClass(GetClass(ClassName));
-  if ObjClass <> nil then
-  begin
-    // is it in the list???
-    idx := FormRegistry.IndexOf(ClassName);
-    if idx > -1 then
-    begin
-      NewForm := FormRegistry.Objects[idx] as TCustomForm;
-    end
-    else
-    begin
-      NewForm := ObjClass.Create(Application) as TCustomForm;
-      FormRegistry.AddObject(ClassName,NewForm);
-    end;
-    if Assigned(NewForm) then
-    begin
-      TfrmBase(NewForm).id := sId;
-      NewForm.Show;
-    end;
-  end
-end;
 
 procedure TfrmMain.btnLoginClick(Sender: TObject);
 var
@@ -126,10 +73,4 @@ begin
   end;
 end;
 
-initialization
-  FormRegistry := TStringList.Create;
-  FormRegistry.Duplicates := dupIgnore;
-  FormRegistry.Sorted := True;
-finalization
-  FormRegistry.free;
 end.

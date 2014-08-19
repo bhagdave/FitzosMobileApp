@@ -31,7 +31,7 @@ implementation
 
 {$R *.fmx}
 uses
-  untMainForm, untJsonFunctions;
+  untMainForm, untJsonFunctions,untFormRegistry;
 
 procedure TfrmNotifications.FormActivate(Sender: TObject);
 var

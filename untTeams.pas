@@ -30,7 +30,7 @@ type
 implementation
 
 uses
-  untMainForm, untJsonFunctions;
+  untMainForm, untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmTeams.btnCreateClick(Sender: TObject);

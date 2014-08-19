@@ -78,7 +78,7 @@ type
 implementation
 
 uses
-  untMainForm, untDataModule, untJsonFunctions;
+  untDataModule, untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmEventCreation.addParams(request: TRestRequest);
@@ -170,13 +170,8 @@ begin
 end;
 
 procedure TfrmEventCreation.FormActivate(Sender: TObject);
-var
-  sResult,sSport : String;
-  iSport, iTeam, iDX : Integer;
 begin
   inherited;
-  iSport := -1;
-  iTeam  := -1;
   edtDate.Align := TAlignLayout.client;
   edtEndDate.Align := TAlignLayout.Client;
   getSportsAndTeams();

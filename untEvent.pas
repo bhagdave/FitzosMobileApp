@@ -53,7 +53,7 @@ var
 implementation
 
 uses
-  untMainForm, untDataModule, untJsonFunctions;
+  untMainForm, untDataModule, untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmEvent.btnEditClick(Sender: TObject);

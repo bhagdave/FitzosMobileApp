@@ -27,7 +27,7 @@ type
 implementation
 
 uses
-  untMainForm, untJsonFunctions;
+  untMainForm, untJsonFunctions,untFormRegistry;
 
 
 

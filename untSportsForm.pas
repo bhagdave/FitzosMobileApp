@@ -40,7 +40,7 @@ implementation
 
 {$R *.fmx}
 uses
-  untMainForm, untJsonFunctions;
+  untJsonFunctions,untFormRegistry;
 
 procedure TfrmSports.btnAddClick(Sender: TObject);
 var

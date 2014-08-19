@@ -5902,7 +5902,7 @@ object frmBase: TfrmBase
   FormFactor.Devices = [Desktop, iPhone, iPad]
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 568
+  DesignerHeight = 548
   DesignerDeviceName = 'iPhone5'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -6016,7 +6016,7 @@ object frmBase: TfrmBase
       TabOrder = 1
       TextSettings.FontColor = claSlategray
       Width = 271.000000000000000000
-      Height = 30.000000000000000000
+      Height = 32.000000000000000000
       TextPrompt = 'Search'
       StyledSettings = [Family, Size, Style]
       OnExit = edtSearchExit

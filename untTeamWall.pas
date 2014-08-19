@@ -27,7 +27,7 @@ type
 implementation
 
 uses
-  untMainForm, untJsonFunctions;
+  untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
 procedure TfrmTeamWall.btnPostClick(Sender: TObject);

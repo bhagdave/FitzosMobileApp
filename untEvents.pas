@@ -31,7 +31,7 @@ type
 implementation
 
 uses
-  untMainForm, untJsonFunctions;
+  untMainForm, untJsonFunctions,untFormRegistry;
 {$R *.fmx}
 { TfrmEvents }
 
