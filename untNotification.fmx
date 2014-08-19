@@ -5,7 +5,7 @@ inherited frmNotification: TfrmNotification
   OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 360
-  DesignerHeight = 592
+  DesignerHeight = 567
   DesignerDeviceName = 'Google Nexus 5'
   DesignerOrientation = 0
   DesignerOSVersion = ''
@@ -26,7 +26,6 @@ inherited frmNotification: TfrmNotification
     Width = 360.000000000000000000
     inherited edtSearch: TEdit
       Width = 311.000000000000000000
-      Height = 32.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 311.000000000000000000

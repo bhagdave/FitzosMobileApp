@@ -262,3 +262,6 @@ Coordinates=0,0,151,267
 [dmdDataModule.dsSearchNames]
 Coordinates=494,249,177,231
 
+[dmdDataModule.fdmSports]
+Visible=False
+

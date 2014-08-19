@@ -30,8 +30,6 @@ type
 
   procedure showNewForm(ClassName : String);
   procedure showNewFormWithId(ClassName, sId : String);
-  function getResultString(Content : String):String;
-  function getResultBoolean(Content, Value : String):Boolean;
 var
   frmMain: TfrmMain;
   FormRegistry : TStringList;
@@ -41,37 +39,6 @@ implementation
 {$R *.fmx}
 uses
   untBaseForm,System.JSON;
-
-function getResultString(Content : String):String;
-var
-  lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
-  lStatus     : TJsonValue;
-begin
-    try
-      lJSONObject := TJSONObject.Create();
-      lJSONObject.Parse(TEncoding.ASCII.GetBytes(Content),0);
-      lStatus := lJSONObject.Get('Status').JsonValue;
-      result  := lStatus.Value;
-    finally
-      lJSONObject.Free;
-    end;
-end;
-function getResultBoolean(Content, Value : String):Boolean;
-var
-  lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
-  lStatus     : TJsonValue;
-begin
-    try
-      lJSONObject := TJSONObject.Create();
-      lJSONObject.Parse(TEncoding.ASCII.GetBytes(Content),0);
-      lStatus := lJSONObject.Get(Value).JsonValue;
-      lStatus.TryGetValue<Boolean>(result);
-    finally
-      lJSONObject.Free;
-    end;
-end;
 
 procedure showNewForm(ClassName : String);
 var ObjClass: TFmxObjectClass;

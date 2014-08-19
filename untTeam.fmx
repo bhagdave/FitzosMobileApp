@@ -4,7 +4,7 @@ inherited frmTeam: TfrmTeam
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 480
+  DesignerHeight = 460
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -56,9 +56,6 @@ inherited frmTeam: TfrmTeam
     end
   end
   inherited pnlTop: TPanel
-    inherited edtSearch: TEdit
-      Height = 30.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = ''
     end
@@ -75,14 +72,14 @@ inherited frmTeam: TfrmTeam
       object layTeam: TLayout
         Align = Top
         Height = 800.000000000000000000
-        Width = 320.000000000000000000
+        Width = 50.000000000000000000
         TabOrder = 0
         object lblEvents: TLabel
           Align = MostTop
           Height = 23.000000000000000000
           TextSettings.HorzAlign = Center
           Text = 'Events'
-          Width = 320.000000000000000000
+          Width = 50.000000000000000000
         end
         object lvEvents: TListView
           ItemAppearanceClassName = 'TListItemAppearance'
@@ -93,7 +90,7 @@ inherited frmTeam: TfrmTeam
           Height = 136.000000000000000000
           Position.Y = 23.000000000000000000
           TabOrder = 1
-          Width = 320.000000000000000000
+          Width = 50.000000000000000000
           OnItemClick = lvEventsItemClick
         end
         object expMembers: TExpander
@@ -103,7 +100,7 @@ inherited frmTeam: TfrmTeam
           Position.Y = 159.000000000000000000
           ShowCheck = False
           Text = 'Members'
-          Width = 320.000000000000000000
+          Width = 50.000000000000000000
           TabOrder = 2
           ContentSize = '175'
           object lvMembers: TListView
@@ -125,7 +122,7 @@ inherited frmTeam: TfrmTeam
           Position.Y = 184.000000000000000000
           ShowCheck = False
           Text = 'Team Wall'
-          Width = 320.000000000000000000
+          Width = 50.000000000000000000
           TabOrder = 3
           ContentSize = '118'
           object lvWwall: TListView

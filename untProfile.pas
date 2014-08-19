@@ -81,7 +81,7 @@ type
 
 implementation
 uses
-  IdMultipartFormData, untMainForm;
+  IdMultipartFormData, untMainForm, untJsonFunctions;
 
 {$R *.fmx}
 procedure TfrmProfile.btnBackClick(Sender: TObject);

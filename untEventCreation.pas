@@ -78,7 +78,7 @@ type
 implementation
 
 uses
-  untMainForm, untDataModule;
+  untMainForm, untDataModule, untJsonFunctions;
 
 {$R *.fmx}
 procedure TfrmEventCreation.addParams(request: TRestRequest);

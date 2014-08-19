@@ -14,7 +14,7 @@ object frmSignup: TfrmSignup
   OnDestroy = FormDestroy
   DesignerMobile = True
   DesignerWidth = 384
-  DesignerHeight = 592
+  DesignerHeight = 567
   DesignerDeviceName = 'Google Nexus 4'
   DesignerOrientation = 0
   DesignerOSVersion = ''

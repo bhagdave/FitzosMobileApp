@@ -3,14 +3,11 @@ inherited frmStats: TfrmStats
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 568
+  DesignerHeight = 548
   DesignerDeviceName = 'iPhone5'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited pnlTop: TPanel
-    inherited edtSearch: TEdit
-      Height = 30.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Statistics'
     end
@@ -173,6 +170,7 @@ inherited frmStats: TfrmStats
           end
           object edtDate: TDateEdit
             IsEmpty = True
+            Date = 41870.000000000000000000
             Anchors = []
             Height = 30.000000000000000000
             Position.X = 108.500000000000000000
@@ -206,9 +204,8 @@ inherited frmStats: TfrmStats
       end
       object btnAdd: TButton
         Align = Right
-        Height = 26.000000000000000000
+        Height = 40.000000000000000000
         Position.X = 294.000000000000000000
-        Position.Y = 7.000000000000000000
         StyleLookup = 'additembutton'
         TabOrder = 1
         Text = 'btnAdd'

@@ -4,7 +4,7 @@ inherited frmEvents: TfrmEvents
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 480
+  DesignerHeight = 460
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -12,9 +12,6 @@ inherited frmEvents: TfrmEvents
     Position.Y = 412.000000000000000000
   end
   inherited pnlTop: TPanel
-    inherited edtSearch: TEdit
-      Height = 30.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Events'
     end

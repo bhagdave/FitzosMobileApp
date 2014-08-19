@@ -201,3 +201,9 @@ Visible=False
 [dmdDataModule.fdmProfile]
 Visible=False
 
+[dmdDataModule.fdmSearchNames]
+Visible=False
+
+[dmdDataModule.fdmSports]
+Visible=False
+

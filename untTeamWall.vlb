@@ -261,3 +261,9 @@ Coordinates=186,170,82,33
 [dmdDataModule.fdmProfile]
 Visible=False
 
+[dmdDataModule.fdmSearchNames]
+Visible=False
+
+[dmdDataModule.fdmSports]
+Visible=False
+

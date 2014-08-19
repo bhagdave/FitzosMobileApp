@@ -5,7 +5,7 @@ inherited frmNotifications: TfrmNotifications
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 384
-  DesignerHeight = 592
+  DesignerHeight = 567
   DesignerDeviceName = 'Google Nexus 4'
   DesignerOrientation = 0
   DesignerOSVersion = ''
@@ -26,7 +26,6 @@ inherited frmNotifications: TfrmNotifications
     Width = 384.000000000000000000
     inherited edtSearch: TEdit
       Width = 335.000000000000000000
-      Height = 32.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 335.000000000000000000

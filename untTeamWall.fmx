@@ -3,7 +3,7 @@ inherited frmTeamWall: TfrmTeamWall
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 568
+  DesignerHeight = 548
   DesignerDeviceName = 'iPhone5'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
