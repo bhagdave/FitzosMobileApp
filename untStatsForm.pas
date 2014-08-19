@@ -80,6 +80,13 @@ begin
         rdsaStatsForSports.Response := respStatsForSport;
         rdsaStatsForSports.UpdateDataSet;
         fdmStatsForSport.Open;
+        pnlName.Visible := false;
+        cboStats.Visible := true;
+    end
+    else
+    begin
+        pnlName.Visible := true;
+        cboStats.Visible := false;
     end;
 
     rdsaSportsStats.Active := false;
