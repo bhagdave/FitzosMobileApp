@@ -338,8 +338,8 @@ Coordinates=1313,1779,158,267
 Visible=False
 
 [memContent]
-Coordinates=60,770,77,51
-Visible=False
+Coordinates=530,260,77,51
+Visible=True
 
 [btnAddStat]
 Coordinates=713,661,69,51

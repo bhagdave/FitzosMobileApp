@@ -267,5 +267,12 @@ inherited frmStats: TfrmStats
       Control = edtValue
       Track = False
     end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = dmdSports.reqAddStat
+      FieldName = 'Params.comment'
+      Control = memContent
+      Track = False
+    end
   end
 end

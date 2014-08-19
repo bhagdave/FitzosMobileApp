@@ -35,6 +35,7 @@ type
     LinkControlToField1: TLinkControlToField;
     LinkControlToField2: TLinkControlToField;
     LinkControlToField3: TLinkControlToField;
+    LinkControlToField4: TLinkControlToField;
     procedure btnAddClick(Sender: TObject);
     procedure btnAddStatClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -64,6 +65,10 @@ begin
   pnlAddStat.Visible := false;
   dmdSports.reqAddStat.Params.ParameterByName('source_id').Value := dmdDataModule.memberId;
   dmdSports.reqAddStat.Params.ParameterByName('sport_id').Value := id;
+  if cboStats.Visible then
+  begin
+    dmdSports.reqAddStat.Params.ParameterByName('statistic_name').Value := cboStats.Selected.Text;
+  end;
   dmdSports.reqAddStat.Execute;
   sResult := getResultString(dmdSports.respAddStat.Content);
   if sResult.Trim = 'OK' then
