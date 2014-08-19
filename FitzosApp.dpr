@@ -24,7 +24,8 @@ uses
   untTeamWall in 'untTeamWall.pas' {frmTeamWall},
   untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule},
   untSportsForm in 'untSportsForm.pas' {frmSports},
-  untStatsForm in 'untStatsForm.pas' {frmStats};
+  untStatsForm in 'untStatsForm.pas' {frmStats},
+  untDmdSports in 'untDmdSports.pas' {dmdSports: TDataModule};
 
 {$R *.res}
 
@@ -33,5 +34,6 @@ begin
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmdDataModule, dmdDataModule);
   Application.CreateForm(TdmdEvent, dmdEvent);
+  Application.CreateForm(TdmdSports, dmdSports);
   Application.Run;
 end.

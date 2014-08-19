@@ -1,6 +1,6 @@
 object dmdDataModule: TdmdDataModule
   OldCreateOrder = False
-  Height = 635
+  Height = 807
   Width = 1021
   object restAPI: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
