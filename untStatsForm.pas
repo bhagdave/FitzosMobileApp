@@ -120,7 +120,6 @@ begin
 //    reqSportsStats.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
     reqSportsStats.Execute;
     sResult := getResultString(respSportsStats.Content);
-    showmessage(respSportsStats.Content);
     if (sResult = 'OK') then
     begin
         rdsaSportsStats.Response := respSportsStats;
