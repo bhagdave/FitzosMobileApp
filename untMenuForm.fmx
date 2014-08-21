@@ -35,18 +35,41 @@ object frmMenu: TfrmMenu
         Column = 1
         Control = btnTeams
         Row = 0
+      end
+      item
+        Column = 0
+        Control = btnNotifications
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = btnFriends
+        Row = 1
+      end
+      item
+        Column = 0
+        Control = btnSports
+        Row = 2
+      end
+      item
+        Column = 1
+        Control = btnProfile
+        Row = 2
       end>
     RowCollection = <
       item
-        Value = 50.000000000000000000
+        Value = 33.468130865490690000
       end
       item
-        Value = 50.000000000000000000
+        Value = 33.642187668975430000
+      end
+      item
+        Value = 32.889681465533880000
       end>
     object btnEvents: TRectangle
       Align = Client
       Fill.Color = claCoral
-      Height = 226.000000000000000000
+      Height = 149.953399658203100000
       Padding.Left = 2.000000000000000000
       Padding.Top = 2.000000000000000000
       Padding.Right = 2.000000000000000000
@@ -58,7 +81,7 @@ object frmMenu: TfrmMenu
       Width = 156.000000000000000000
       object lblEvents: TLabel
         Align = Client
-        Height = 222.000000000000000000
+        Height = 145.953399658203100000
         HitTest = True
         TextSettings.HorzAlign = Center
         Text = 'Events'
@@ -69,15 +92,76 @@ object frmMenu: TfrmMenu
     object btnTeams: TRectangle
       Align = Client
       Fill.Color = claRed
-      Height = 230.000000000000000000
+      Height = 153.953399658203100000
       Width = 160.000000000000000000
       object lblTeams: TLabel
         Align = Client
-        Height = 230.000000000000000000
+        Height = 153.953399658203100000
         HitTest = True
         TextSettings.HorzAlign = Center
         Text = 'Teams'
         Width = 160.000000000000000000
+        OnClick = lblTeamsClick
+      end
+    end
+    object btnNotifications: TRectangle
+      Align = Client
+      Fill.Color = claRoyalblue
+      Height = 154.754058837890600000
+      Width = 160.000000000000000000
+      object lblNotifications: TLabel
+        Align = Client
+        Height = 154.754058837890600000
+        HitTest = True
+        TextSettings.HorzAlign = Center
+        Text = 'Notifications'
+        Width = 160.000000000000000000
+        OnClick = lblNotificationsClick
+      end
+    end
+    object btnFriends: TRectangle
+      Align = Client
+      Fill.Color = claYellowgreen
+      Height = 154.754058837890600000
+      Width = 160.000000000000000000
+      object lblFriends: TLabel
+        Align = Client
+        Height = 154.754058837890600000
+        HitTest = True
+        TextSettings.HorzAlign = Center
+        Text = 'Friends'
+        Width = 160.000000000000000000
+        OnClick = lblFriendsClick
+      end
+    end
+    object btnSports: TRectangle
+      Align = Client
+      Fill.Color = claPlum
+      Height = 151.292541503906300000
+      Width = 160.000000000000000000
+      object lblSports: TLabel
+        Align = Client
+        Height = 151.292541503906300000
+        HitTest = True
+        TextSettings.HorzAlign = Center
+        Text = 'Sports'
+        Width = 160.000000000000000000
+        OnClick = lblSportsClick
+      end
+    end
+    object btnProfile: TRectangle
+      Align = Client
+      Fill.Color = claGold
+      Height = 151.292541503906300000
+      Width = 160.000000000000000000
+      object lblProfile: TLabel
+        Align = Client
+        Height = 151.292541503906300000
+        HitTest = True
+        TextSettings.HorzAlign = Center
+        Text = 'Profile'
+        Width = 160.000000000000000000
+        OnClick = lblProfileClick
       end
     end
   end

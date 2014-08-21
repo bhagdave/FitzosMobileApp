@@ -65,7 +65,7 @@ begin
   bLoggedIn := dmdDataModule.checkLogin;
   if bLoggedIn then
   begin
-    showNewForm('TfrmNotifications');
+    showNewForm('TfrmMenu');
   end
   else
   begin
