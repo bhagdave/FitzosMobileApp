@@ -10,8 +10,6 @@ uses
 type
   TfrmBase = class(TForm)
     edtSearch: TEdit;
-    btnProfile: TSpeedButton;
-    imgAvatar: TImage;
     barBottom: TToolBar;
     pnlTop: TPanel;
     pnlCenter: TPanel;

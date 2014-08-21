@@ -1,10 +1,6 @@
 ﻿[barBottom]
 Coordinates=10,204,66,33
 
-[btnProfile]
-Coordinates=408,10,62,51
-Visible=False
-
 [edtSearch]
 Coordinates=334,10,64,51
 
@@ -15,9 +11,6 @@ Visible=False
 [btnTeams]
 Coordinates=316,161,62,33
 Visible=False
-
-[imgAvatar]
-Coordinates=260,10,64,51
 
 [imgSearch]
 Coordinates=109,10,67,51
@@ -262,6 +255,6 @@ Coordinates=494,249,177,231
 Visible=False
 
 []
-Coordinates=388,161,49,33
+Coordinates=408,10,62,51
 Visible=False
 

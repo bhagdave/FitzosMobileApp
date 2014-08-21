@@ -113,10 +113,6 @@ Visible=False
 Coordinates=1020,110,67,33
 Visible=False
 
-[imgAvatar]
-Coordinates=0,420,64,51
-Visible=False
-
 [StyleBook1]
 Coordinates=679,408,79,36
 
@@ -162,10 +158,6 @@ Coordinates=790,240,84,105
 Coordinates=414,478,69,51
 Visible=False
 
-[barTop]
-Coordinates=620,574,49,33
-Visible=False
-
 [btnTeams]
 Coordinates=541,574,62,33
 Visible=False
@@ -176,10 +168,6 @@ Visible=False
 
 [btnEvents]
 Coordinates=462,574,64,33
-Visible=False
-
-[btnProfile]
-Coordinates=0,0,62,51
 Visible=False
 
 [cboTeam]
@@ -431,5 +419,9 @@ Visible=False
 Visible=False
 
 [dmdDataModule.fdmSports]
+Visible=False
+
+[]
+Coordinates=0,0,62,51
 Visible=False
 

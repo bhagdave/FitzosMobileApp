@@ -1,12 +1,6 @@
 ﻿[btnNotifications]
 Coordinates=10,204,92,33
 
-[imgAvatar]
-Coordinates=406,10,64,51
-
-[barTop]
-Coordinates=439,161,49,33
-
 [barBottom]
 Coordinates=363,161,66,33
 
@@ -21,9 +15,6 @@ Coordinates=289,161,64,33
 
 [pnlTop]
 Coordinates=231,161,48,33
-
-[btnProfile]
-Coordinates=109,10,62,51
 
 [btnFriends]
 Coordinates=154,161,67,33
@@ -45,7 +36,7 @@ Visible=True
 Coordinates=112,204,70,33
 
 []
-Coordinates=379,80,82,33
+Coordinates=109,10,62,51
 
 [dmdDataModule.fdmMemberTeams]
 Visible=False

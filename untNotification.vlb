@@ -10,35 +10,14 @@ Coordinates=186,141,70,33
 [pnlCenter]
 Coordinates=368,517,62,33
 
-[btnFriends]
-Coordinates=143,517,67,33
-
-[btnEvents]
-Coordinates=69,517,64,33
-
-[barTop]
-Coordinates=10,517,49,33
-
 [barBottom]
 Coordinates=292,517,66,33
 
 [edtSearch]
 Coordinates=328,438,64,51
 
-[btnTeams]
-Coordinates=220,517,62,33
-
-[btnNotifications]
-Coordinates=833,438,92,33
-
-[imgAvatar]
-Coordinates=476,438,64,51
-
 [pnlTop]
 Coordinates=775,438,48,33
-
-[btnProfile]
-Coordinates=627,438,62,51
 
 [dmdDataModule.respOpenSession]
 Coordinates=10,10,184,267
@@ -80,7 +59,7 @@ Coordinates=697,287,133,69
 Coordinates=535,287,152,123
 
 []
-Coordinates=699,438,66,33
+Coordinates=627,438,62,51
 
 [BindSourceDB1]
 Coordinates=720,10,92,51

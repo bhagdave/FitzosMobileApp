@@ -1,7 +1,4 @@
-﻿[imgAvatar]
-Coordinates=282,830,64,51
-
-[edtSearch]
+﻿[edtSearch]
 Coordinates=199,830,64,51
 
 [pnlCenter]
@@ -27,9 +24,6 @@ Coordinates=959,830,62,33
 
 [lblCaption]
 Coordinates=716,830,64,51
-
-[btnProfile]
-Coordinates=364,830,62,51
 
 [btnNotifications]
 Coordinates=1124,830,92,33
@@ -97,7 +91,7 @@ Coordinates=798,830,62,51
 Coordinates=234,10,158,267
 
 []
-Coordinates=10,920,49,33
+Coordinates=364,830,62,51
 
 [BindSourceDB1]
 Coordinates=441,342,127,267

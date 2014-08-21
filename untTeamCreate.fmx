@@ -1,20 +1,15 @@
 inherited frmTeamCreate: TfrmTeamCreate
   Caption = 'Team Create'
-  ClientHeight = 567
-  ClientWidth = 384
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 4'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 519.000000000000000000
-    Width = 384.000000000000000000
-    inherited btnBack: TButton
-      Height = 48.000000000000000000
-    end
+    Position.Y = 412.000000000000000000
     object btnSave: TButton
       Align = Center
       Height = 44.000000000000000000
@@ -25,26 +20,16 @@ inherited frmTeamCreate: TfrmTeamCreate
     end
   end
   inherited pnlTop: TPanel
-    Width = 384.000000000000000000
-    inherited edtSearch: TEdit
-      Width = 335.000000000000000000
-      Height = 32.000000000000000000
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 335.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Team Creation'
-      Width = 384.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 462.000000000000000000
-    Width = 384.000000000000000000
+    Height = 355.000000000000000000
     object pnlLayout: TGridPanelLayout
       Align = Top
       Height = 105.000000000000000000
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       TabOrder = 1
       ColumnCollection = <
         item
@@ -88,34 +73,34 @@ inherited frmTeamCreate: TfrmTeamCreate
         Align = Client
         Height = 37.068321228027340000
         Text = 'Name'
-        Width = 137.054656982421900000
+        Width = 114.212219238281300000
       end
       object edtName: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
-        Width = 246.945343017578100000
+        Width = 205.787780761718800000
         Height = 37.068321228027340000
       end
       object lblSport: TLabel
         Align = Client
         Height = 38.776451110839840000
         Text = 'Sport'
-        Width = 137.054656982421900000
+        Width = 114.212219238281300000
       end
       object cboSport: TComboBox
         Align = Client
         DisableFocusEffect = False
         Height = 38.776451110839840000
         TabOrder = 3
-        Width = 246.945343017578100000
+        Width = 205.787780761718800000
       end
     end
     object pnlCheckBoxes: TGridPanelLayout
       Align = Top
       Height = 35.000000000000000000
       Position.Y = 105.000000000000000000
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       TabOrder = 2
       ColumnCollection = <
         item
@@ -145,7 +130,7 @@ inherited frmTeamCreate: TfrmTeamCreate
         Height = 35.000000000000000000
         TabOrder = 0
         Text = 'Active?'
-        Width = 192.000000000000000000
+        Width = 160.000000000000000000
       end
       object cbPublic: TCheckBox
         Align = Client
@@ -153,20 +138,20 @@ inherited frmTeamCreate: TfrmTeamCreate
         Height = 35.000000000000000000
         TabOrder = 1
         Text = 'Public?'
-        Width = 192.000000000000000000
+        Width = 160.000000000000000000
       end
     end
     object ToolBar1: TToolBar
       Height = 40.000000000000000000
       Position.Y = 140.000000000000000000
       TabOrder = 4
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       object lblDescription: TLabel
         Align = Client
         Height = 40.000000000000000000
         TextSettings.HorzAlign = Center
         Text = 'Description'
-        Width = 384.000000000000000000
+        Width = 320.000000000000000000
       end
     end
     object memContents: TMemo
@@ -175,7 +160,7 @@ inherited frmTeamCreate: TfrmTeamCreate
       Height = 133.000000000000000000
       Position.Y = 180.000000000000000000
       TabOrder = 5
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
     end
   end
   object BindingsList1: TBindingsList

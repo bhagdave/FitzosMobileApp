@@ -4,17 +4,11 @@ Coordinates=631,697,64,51
 [btnEvents]
 Coordinates=705,697,64,33
 
-[btnProfile]
-Coordinates=171,697,62,51
-
 [btnFriends]
 Coordinates=914,697,67,33
 
 [imgSearch]
 Coordinates=406,697,67,51
-
-[imgAvatar]
-Coordinates=483,697,64,51
 
 [barBottom]
 Coordinates=779,697,66,33
@@ -63,7 +57,7 @@ Coordinates=730,10,181,267
 Coordinates=386,564,179,105
 
 []
-Coordinates=855,697,49,33
+Coordinates=171,697,62,51
 Visible=True
 LayerNames=dmdDataModule.cdsNotifications
 

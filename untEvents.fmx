@@ -4,7 +4,7 @@ inherited frmEvents: TfrmEvents
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 460
+  DesignerHeight = 480
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -17,14 +17,14 @@ inherited frmEvents: TfrmEvents
     end
   end
   inherited pnlCenter: TPanel
-    Height = 307.000000000000000000
+    Height = 355.000000000000000000
     object lvEvents: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
       ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 263.000000000000000000
+      Height = 311.000000000000000000
       TabOrder = 1
       Width = 320.000000000000000000
       OnItemClick = lvEventsItemClick
@@ -32,7 +32,7 @@ inherited frmEvents: TfrmEvents
     object btnCreateEvent: TButton
       Align = MostBottom
       Height = 44.000000000000000000
-      Position.Y = 263.000000000000000000
+      Position.Y = 311.000000000000000000
       TabOrder = 3
       Text = 'Create Event'
       Width = 320.000000000000000000
@@ -45,7 +45,7 @@ inherited frmEvents: TfrmEvents
     Height = 409.000000000000000000
     Visible = False
     Width = 305.000000000000000000
-    TabOrder = 10
+    TabOrder = 9
     object lblMessage: TLabel
       Align = Client
       StyledSettings = [Family, Style, FontColor]

@@ -1,57 +1,37 @@
 inherited frmNotification: TfrmNotification
   Caption = 'Notification'
-  ClientHeight = 567
-  ClientWidth = 360
+  ClientHeight = 460
   OnShow = FormShow
   DesignerMobile = True
-  DesignerWidth = 360
-  DesignerHeight = 567
-  DesignerDeviceName = 'Google Nexus 5'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 360.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 268.000000000000000000
-    end
-  end
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 519.000000000000000000
-    Width = 360.000000000000000000
-    inherited btnFriends: TCornerButton
-      Position.X = 268.000000000000000000
-    end
+    Position.Y = 412.000000000000000000
   end
   inherited pnlTop: TPanel
-    Width = 360.000000000000000000
-    inherited edtSearch: TEdit
-      Width = 311.000000000000000000
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 311.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Notification'
-      Width = 360.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 414.000000000000000000
-    Width = 360.000000000000000000
+    Height = 355.000000000000000000
     object lblNotification: TLabel
       Align = MostTop
       StyledSettings = [Family, Size, FontColor]
       Height = 49.000000000000000000
       TextSettings.Font.Style = [fsBold]
-      Width = 360.000000000000000000
+      Width = 320.000000000000000000
     end
     object btnRead: TButton
       Align = MostBottom
       Height = 44.000000000000000000
-      Position.Y = 370.000000000000000000
+      Position.Y = 311.000000000000000000
       TabOrder = 2
       Text = 'Mark Read'
-      Width = 360.000000000000000000
+      Width = 320.000000000000000000
       OnClick = btnReadClick
     end
     object lblFrom: TLabel
@@ -59,13 +39,13 @@ inherited frmNotification: TfrmNotification
       Height = 23.000000000000000000
       Position.Y = 49.000000000000000000
       Text = 'From'
-      Width = 360.000000000000000000
+      Width = 320.000000000000000000
     end
     object lblDate: TLabel
       Align = Top
       Height = 23.000000000000000000
       Position.Y = 72.000000000000000000
-      Width = 360.000000000000000000
+      Width = 320.000000000000000000
     end
   end
   object BindSourceDB1: TBindSourceDB

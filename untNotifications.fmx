@@ -1,38 +1,23 @@
 inherited frmNotifications: TfrmNotifications
   Caption = 'Notifications'
-  ClientHeight = 567
-  ClientWidth = 384
+  ClientHeight = 460
   OnActivate = FormActivate
   DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 4'
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
-  DesignerOSVersion = ''
+  DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 519.000000000000000000
-    Width = 384.000000000000000000
-    inherited btnBack: TButton
-      Height = 48.000000000000000000
-    end
+    Position.Y = 412.000000000000000000
   end
   inherited pnlTop: TPanel
-    Width = 384.000000000000000000
-    inherited edtSearch: TEdit
-      Width = 335.000000000000000000
-      Height = 32.000000000000000000
-    end
-    inherited btnProfile: TSpeedButton
-      Position.X = 335.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Notifications'
-      Width = 384.000000000000000000
     end
   end
   inherited pnlCenter: TPanel
-    Height = 462.000000000000000000
-    Width = 384.000000000000000000
+    Height = 355.000000000000000000
     TabOrder = 4
     object lvNotifications: TListView
       ItemAppearanceClassName = 'TCustomizeItemObjects'
@@ -40,9 +25,9 @@ inherited frmNotifications: TfrmNotifications
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 462.000000000000000000
+      Height = 355.000000000000000000
       TabOrder = 2
-      Width = 384.000000000000000000
+      Width = 320.000000000000000000
       ItemAppearanceObjects.ItemObjects.TextButton.ButtonType = Delete
       ItemAppearanceObjects.ItemObjects.TextButton.Text = 'READ'
       ItemAppearanceObjects.HeaderObjects.Text.TextAlign = Center

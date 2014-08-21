@@ -9,10 +9,6 @@ Visible=False
 Coordinates=301,1450,103,36
 Visible=False
 
-[btnProfile]
-Coordinates=1142,1316,69,58
-Visible=False
-
 [imgSearch]
 Coordinates=1221,1316,67,51
 Visible=False
@@ -51,10 +47,6 @@ Visible=False
 
 [btnFriends]
 Coordinates=579,1450,75,36
-Visible=False
-
-[imgAvatar]
-Coordinates=683,1316,64,51
 Visible=False
 
 [btnEvents]
@@ -289,6 +281,6 @@ Visible=False
 Visible=False
 
 []
-Coordinates=10,1450,55,36
+Coordinates=1142,1316,69,58
 Visible=False
 
