@@ -12,6 +12,8 @@ type
     GridPanelLayout1: TGridPanelLayout;
     btnEvents: TRectangle;
     lblEvents: TLabel;
+    btnTeams: TRectangle;
+    lblTeams: TLabel;
     procedure lblEventsClick(Sender: TObject);
   private
     { Private declarations }

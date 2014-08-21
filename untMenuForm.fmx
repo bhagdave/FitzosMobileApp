@@ -30,6 +30,11 @@ object frmMenu: TfrmMenu
         Column = 0
         Control = btnEvents
         Row = 0
+      end
+      item
+        Column = 1
+        Control = btnTeams
+        Row = 0
       end>
     RowCollection = <
       item
@@ -59,6 +64,20 @@ object frmMenu: TfrmMenu
         Text = 'Events'
         Width = 152.000000000000000000
         OnClick = lblEventsClick
+      end
+    end
+    object btnTeams: TRectangle
+      Align = Client
+      Fill.Color = claRed
+      Height = 230.000000000000000000
+      Width = 160.000000000000000000
+      object lblTeams: TLabel
+        Align = Client
+        Height = 230.000000000000000000
+        HitTest = True
+        TextSettings.HorzAlign = Center
+        Text = 'Teams'
+        Width = 160.000000000000000000
       end
     end
   end
