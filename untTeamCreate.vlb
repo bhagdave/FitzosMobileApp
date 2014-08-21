@@ -69,10 +69,6 @@ Visible=False
 Coordinates=75,1450,48,33
 Visible=False
 
-[barTop]
-Coordinates=10,1450,55,36
-Visible=False
-
 [lblName]
 Coordinates=998,1316,54,51
 Visible=False
@@ -290,5 +286,9 @@ Visible=False
 Visible=False
 
 [dmdDataModule.fdmSports]
+Visible=False
+
+[]
+Coordinates=10,1450,55,36
 Visible=False
 

@@ -22,6 +22,7 @@ type
     btnProfile: TRectangle;
     lblSports: TLabel;
     lblProfile: TLabel;
+    imgLogo: TImageControl;
     procedure lblEventsClick(Sender: TObject);
     procedure lblTeamsClick(Sender: TObject);
     procedure lblNotificationsClick(Sender: TObject);

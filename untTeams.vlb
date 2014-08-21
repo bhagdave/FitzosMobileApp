@@ -22,9 +22,6 @@ Coordinates=37,173,79,36
 [btnEvents]
 Coordinates=75,920,64,33
 
-[barTop]
-Coordinates=10,920,49,33
-
 [btnTeams]
 Coordinates=959,830,62,33
 
@@ -100,7 +97,7 @@ Coordinates=798,830,62,51
 Coordinates=234,10,158,267
 
 []
-Coordinates=0,211,91,36
+Coordinates=10,920,49,33
 
 [BindSourceDB1]
 Coordinates=441,342,127,267

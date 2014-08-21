@@ -12,10 +12,6 @@ Coordinates=334,10,64,51
 Coordinates=447,161,67,33
 Visible=False
 
-[barTop]
-Coordinates=388,161,49,33
-Visible=False
-
 [btnTeams]
 Coordinates=316,161,62,33
 Visible=False
@@ -263,5 +259,9 @@ Coordinates=0,0,151,267
 Coordinates=494,249,177,231
 
 [dmdDataModule.fdmSports]
+Visible=False
+
+[]
+Coordinates=388,161,49,33
 Visible=False
 

@@ -22,9 +22,6 @@ Coordinates=779,697,66,33
 [btnNotifications]
 Coordinates=991,697,92,33
 
-[barTop]
-Coordinates=855,697,49,33
-
 [StyleBook1]
 Coordinates=441,56,79,36
 
@@ -66,7 +63,7 @@ Coordinates=730,10,181,267
 Coordinates=386,564,179,105
 
 []
-Coordinates=850,40,92,51
+Coordinates=855,697,49,33
 Visible=True
 LayerNames=dmdDataModule.cdsNotifications
 

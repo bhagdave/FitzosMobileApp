@@ -5,26 +5,20 @@ inherited frmTeamCreate: TfrmTeamCreate
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 384
-  DesignerHeight = 567
+  DesignerHeight = 592
   DesignerDeviceName = 'Google Nexus 4'
   DesignerOrientation = 0
   DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 384.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 292.000000000000000000
-    end
-  end
   inherited barBottom: TToolBar
     Position.Y = 519.000000000000000000
     Width = 384.000000000000000000
-    inherited btnFriends: TCornerButton
-      Position.X = 292.000000000000000000
+    inherited btnBack: TButton
+      Height = 48.000000000000000000
     end
     object btnSave: TButton
       Align = Center
       Height = 44.000000000000000000
-      TabOrder = 4
+      TabOrder = 3
       Text = 'Save'
       Width = 148.000000000000000000
       OnClick = btnSaveClick
@@ -34,6 +28,7 @@ inherited frmTeamCreate: TfrmTeamCreate
     Width = 384.000000000000000000
     inherited edtSearch: TEdit
       Width = 335.000000000000000000
+      Height = 32.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 335.000000000000000000
@@ -44,7 +39,7 @@ inherited frmTeamCreate: TfrmTeamCreate
     end
   end
   inherited pnlCenter: TPanel
-    Height = 414.000000000000000000
+    Height = 462.000000000000000000
     Width = 384.000000000000000000
     object pnlLayout: TGridPanelLayout
       Align = Top

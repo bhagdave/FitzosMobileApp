@@ -22,9 +22,6 @@ Coordinates=215,132,70,36
 Coordinates=223,10,69,58
 Visible=False
 
-[barTop]
-Coordinates=156,132,55,36
-
 [btnEvents]
 Coordinates=82,132,72,36
 
@@ -44,7 +41,7 @@ Coordinates=87,71,73,58
 Coordinates=227,71,75,36
 
 []
-Coordinates=161,71,64,36
+Coordinates=156,132,55,36
 LayerNames=team
 Visible=True
 

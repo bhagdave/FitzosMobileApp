@@ -4,18 +4,12 @@ inherited frmTeam: TfrmTeam
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 460
+  DesignerHeight = 480
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
     Position.Y = 412.000000000000000000
-    inherited btnNotifications: TCornerButton
-      Align = MostLeft
-    end
-    inherited btnFriends: TCornerButton
-      Align = MostRight
-    end
     object btnNewEvent: TButton
       Align = Left
       Height = 44.000000000000000000
@@ -29,7 +23,7 @@ inherited frmTeam: TfrmTeam
       Margins.Bottom = 2.000000000000000000
       Position.X = 96.000000000000000000
       Position.Y = 2.000000000000000000
-      TabOrder = 3
+      TabOrder = 2
       Text = 'New Event'
       TextSettings.WordWrap = True
       Visible = False
@@ -49,7 +43,7 @@ inherited frmTeam: TfrmTeam
       Margins.Bottom = 2.000000000000000000
       Position.X = 159.000000000000000000
       Position.Y = 2.000000000000000000
-      TabOrder = 4
+      TabOrder = 3
       Text = 'Invite'
       Visible = False
       Width = 65.000000000000000000
@@ -61,25 +55,25 @@ inherited frmTeam: TfrmTeam
     end
   end
   inherited pnlCenter: TPanel
-    Height = 307.000000000000000000
+    Height = 355.000000000000000000
     object vsbScroller: TVertScrollBox
       Align = Client
       AutoHide = False
-      Height = 307.000000000000000000
+      Height = 355.000000000000000000
       ShowScrollBars = False
       TabOrder = 1
       Width = 320.000000000000000000
       object layTeam: TLayout
         Align = Top
         Height = 800.000000000000000000
-        Width = 50.000000000000000000
+        Width = 320.000000000000000000
         TabOrder = 0
         object lblEvents: TLabel
           Align = MostTop
           Height = 23.000000000000000000
           TextSettings.HorzAlign = Center
           Text = 'Events'
-          Width = 50.000000000000000000
+          Width = 320.000000000000000000
         end
         object lvEvents: TListView
           ItemAppearanceClassName = 'TListItemAppearance'
@@ -90,7 +84,7 @@ inherited frmTeam: TfrmTeam
           Height = 136.000000000000000000
           Position.Y = 23.000000000000000000
           TabOrder = 1
-          Width = 50.000000000000000000
+          Width = 320.000000000000000000
           OnItemClick = lvEventsItemClick
         end
         object expMembers: TExpander
@@ -100,7 +94,7 @@ inherited frmTeam: TfrmTeam
           Position.Y = 159.000000000000000000
           ShowCheck = False
           Text = 'Members'
-          Width = 50.000000000000000000
+          Width = 320.000000000000000000
           TabOrder = 2
           ContentSize = '175'
           object lvMembers: TListView
@@ -122,7 +116,7 @@ inherited frmTeam: TfrmTeam
           Position.Y = 184.000000000000000000
           ShowCheck = False
           Text = 'Team Wall'
-          Width = 50.000000000000000000
+          Width = 320.000000000000000000
           TabOrder = 3
           ContentSize = '118'
           object lvWwall: TListView

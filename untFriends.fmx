@@ -5,27 +5,22 @@ inherited frmFriends: TfrmFriends
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 384
-  DesignerHeight = 567
+  DesignerHeight = 592
   DesignerDeviceName = 'Google Nexus 4'
   DesignerOrientation = 0
   DesignerOSVersion = ''
-  inherited barTop: TToolBar
-    Width = 384.000000000000000000
-    inherited btnTeams: TCornerButton
-      Position.X = 292.000000000000000000
-    end
-  end
   inherited barBottom: TToolBar
     Position.Y = 519.000000000000000000
     Width = 384.000000000000000000
-    inherited btnFriends: TCornerButton
-      Position.X = 292.000000000000000000
+    inherited btnBack: TButton
+      Height = 48.000000000000000000
     end
   end
   inherited pnlTop: TPanel
     Width = 384.000000000000000000
     inherited edtSearch: TEdit
       Width = 335.000000000000000000
+      Height = 32.000000000000000000
     end
     inherited btnProfile: TSpeedButton
       Position.X = 335.000000000000000000
@@ -36,7 +31,7 @@ inherited frmFriends: TfrmFriends
     end
   end
   inherited pnlCenter: TPanel
-    Height = 414.000000000000000000
+    Height = 462.000000000000000000
     Width = 384.000000000000000000
     object lvFriends: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
@@ -44,7 +39,7 @@ inherited frmFriends: TfrmFriends
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 414.000000000000000000
+      Height = 462.000000000000000000
       TabOrder = 0
       Width = 384.000000000000000000
       OnItemClick = lvFriendsItemClick
