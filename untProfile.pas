@@ -63,13 +63,11 @@ type
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
-    btnSports: TButton;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure FormActivate(Sender: TObject);
-    procedure btnSportsClick(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
@@ -153,11 +151,6 @@ begin
     mStream.Free;
   end;
   close;
-end;
-
-procedure TfrmProfile.btnSportsClick(Sender: TObject);
-begin
-  showNewForm('TfrmSports');
 end;
 
 procedure TfrmProfile.FormActivate(Sender: TObject);
