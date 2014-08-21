@@ -12,23 +12,14 @@ type
     edtSearch: TEdit;
     btnProfile: TSpeedButton;
     imgAvatar: TImage;
-    barTop: TToolBar;
     barBottom: TToolBar;
     pnlTop: TPanel;
-    btnEvents: TCornerButton;
-    btnTeams: TCornerButton;
-    btnNotifications: TCornerButton;
-    btnFriends: TCornerButton;
     pnlCenter: TPanel;
     lblCaption: TLabel;
     StyleBook1: TStyleBook;
-    procedure btnEventsClick(Sender: TObject);
-    procedure btnTeamsClick(Sender: TObject);
-    procedure btnNotificationsClick(Sender: TObject);
-    procedure btnFriendsClick(Sender: TObject);
-    procedure btnProfileClick(Sender: TObject);
-    procedure imgAvatarClick(Sender: TObject);
+    btnBack: TButton;
     procedure edtSearchExit(Sender: TObject);
+    procedure btnBackClick(Sender: TObject);
   private
     { Private declarations }
     fId : String;
@@ -46,29 +37,9 @@ implementation
 uses
   untFormRegistry;
 
-procedure TfrmBase.btnEventsClick(Sender: TObject);
+procedure TfrmBase.btnBackClick(Sender: TObject);
 begin
-    showNewForm('TfrmEvents');
-end;
-
-procedure TfrmBase.btnFriendsClick(Sender: TObject);
-begin
-    showNewForm('TfrmFriends');
-end;
-
-procedure TfrmBase.btnNotificationsClick(Sender: TObject);
-begin
-    showNewForm('TfrmNotifications');
-end;
-
-procedure TfrmBase.btnProfileClick(Sender: TObject);
-begin
-  showNewFormWithId('TfrmProfile',dmdDataModule.memberId);
-end;
-
-procedure TfrmBase.btnTeamsClick(Sender: TObject);
-begin
-    showNewForm('TfrmTeams');
+  close;
 end;
 
 procedure TfrmBase.edtSearchExit(Sender: TObject);
@@ -82,11 +53,6 @@ var
 begin
   LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
   Result := Leditor.SelectedValue;
-end;
-
-procedure TfrmBase.imgAvatarClick(Sender: TObject);
-begin
-//
 end;
 
 procedure TfrmBase.setId(sId: String);

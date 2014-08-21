@@ -5902,113 +5902,32 @@ object frmBase: TfrmBase
   FormFactor.Devices = [Desktop, iPhone, iPad]
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 548
+  DesignerHeight = 568
   DesignerDeviceName = 'iPhone5'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
-  object barTop: TToolBar
-    Height = 48.000000000000000000
-    Position.Y = 57.000000000000000000
-    TabOrder = 1
-    Width = 320.000000000000000000
-    object btnEvents: TCornerButton
-      StaysPressed = True
-      Align = FitLeft
-      Height = 44.000000000000000000
-      Padding.Left = 1.000000000000000000
-      Padding.Top = 1.000000000000000000
-      Padding.Right = 1.000000000000000000
-      Padding.Bottom = 1.000000000000000000
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 2.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Position.X = 2.000000000000000000
-      Position.Y = 2.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      TabOrder = 1
-      Text = 'Events'
-      Width = 90.000000000000000000
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-      OnClick = btnEventsClick
-    end
-    object btnTeams: TCornerButton
-      Align = FitRight
-      Height = 44.000000000000000000
-      Padding.Left = 1.000000000000000000
-      Padding.Top = 1.000000000000000000
-      Padding.Right = 1.000000000000000000
-      Padding.Bottom = 1.000000000000000000
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 2.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Position.X = 228.000000000000000000
-      Position.Y = 2.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      TabOrder = 2
-      Text = 'Teams'
-      Width = 90.000000000000000000
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-      OnClick = btnTeamsClick
-    end
-  end
   object barBottom: TToolBar
     Align = Bottom
     Height = 48.000000000000000000
     Position.Y = 500.000000000000000000
-    TabOrder = 2
+    TabOrder = 1
     Width = 320.000000000000000000
-    object btnNotifications: TCornerButton
-      Align = FitLeft
-      Height = 43.999996185302730000
-      Padding.Left = 1.000000000000000000
-      Padding.Top = 1.000000000000000000
-      Padding.Right = 1.000000000000000000
-      Padding.Bottom = 1.000000000000000000
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 2.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Position.X = 2.000000000000000000
-      Position.Y = 2.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      TabOrder = 1
-      Text = 'Notifications'
-      Width = 90.000000000000000000
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-      OnClick = btnNotificationsClick
-    end
-    object btnFriends: TCornerButton
-      Align = FitRight
+    object btnBack: TButton
+      Align = Left
       Height = 44.000000000000000000
-      Padding.Left = 1.000000000000000000
-      Padding.Top = 1.000000000000000000
-      Padding.Right = 1.000000000000000000
-      Padding.Bottom = 1.000000000000000000
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 2.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Position.X = 228.000000000000000000
       Position.Y = 2.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      TabOrder = 2
-      Text = 'Friends'
-      Width = 90.000000000000000000
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-      OnClick = btnFriendsClick
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 1
+      Text = 'Back'
+      Width = 73.000000000000000000
+      OnClick = btnBackClick
     end
   end
   object pnlTop: TPanel
     Align = MostTop
     Height = 57.000000000000000000
     Width = 320.000000000000000000
-    TabOrder = 3
+    TabOrder = 2
     object edtSearch: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Client
@@ -6016,7 +5935,7 @@ object frmBase: TfrmBase
       TabOrder = 1
       TextSettings.FontColor = claSlategray
       Width = 271.000000000000000000
-      Height = 32.000000000000000000
+      Height = 30.000000000000000000
       TextPrompt = 'Search'
       StyledSettings = [Family, Size, Style]
       OnExit = edtSearchExit
@@ -6027,7 +5946,6 @@ object frmBase: TfrmBase
       Position.X = 271.000000000000000000
       Position.Y = 25.000000000000000000
       Width = 49.000000000000000000
-      OnClick = btnProfileClick
       object imgAvatar: TImage
         MultiResBitmap = <
           item
@@ -6140,7 +6058,6 @@ object frmBase: TfrmBase
         Height = 32.000000000000000000
         HitTest = False
         Width = 49.000000000000000000
-        OnClick = imgAvatarClick
       end
     end
     object lblCaption: TLabel
@@ -6153,9 +6070,9 @@ object frmBase: TfrmBase
   end
   object pnlCenter: TPanel
     Align = Client
-    Height = 395.000000000000000000
+    Height = 443.000000000000000000
     Width = 320.000000000000000000
-    TabOrder = 4
+    TabOrder = 3
   end
   object StyleBook1: TStyleBook
     Left = 160
