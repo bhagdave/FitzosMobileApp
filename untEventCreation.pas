@@ -141,7 +141,7 @@ begin
       // update
       addParams(dmdEvent.reqUpdateEvent);
       dmdEvent.reqUpdateEvent.Execute;
-      showmessage(dmdEvent.respUpdateEvent.Content);
+      showmessage('Event updated!');
 //      clearOutFields();
       formActivate(sender);
     end
@@ -150,7 +150,7 @@ begin
       // insert
       addParams(dmdEvent.reqCreateEvent);
       dmdEvent.reqCreateEvent.Execute;
-      showmessage(dmdEvent.respCreateEvent.Content);
+      showmessage('Event created!');
       close;
     end;
   end;

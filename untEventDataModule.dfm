@@ -749,9 +749,8 @@ object dmdEvent: TdmdEvent
   end
   object reqUpdateEvent: TRESTRequest
     Client = restAPI
-    Method = rmPUT
     Params = <>
-    Resource = 'rest/events'
+    Resource = 'r/events/updateEvent'
     Response = respUpdateEvent
     SynchronizedEvents = False
     Left = 616
