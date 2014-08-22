@@ -42,6 +42,7 @@ type
     procedure eventLoaded;
     procedure eventThreadTerminated(Sender : TObject);
     procedure postWallCompleted;
+    procedure getData;
   public
     { Public declarations }
   end;
@@ -93,7 +94,6 @@ begin
           bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
           btnEdit.Visible := bOwner;
           btnPost.Visible := bOwner or bAttending;
-
       end;
   end;
 end;
@@ -104,6 +104,13 @@ begin
 end;
 
 procedure TfrmEvent.FormActivate(Sender: TObject);
+begin
+  getData();
+end;
+
+
+
+procedure TfrmEvent.getData;
 begin
   with dmdEvent do
   begin
@@ -119,9 +126,8 @@ begin
       eventThread := reqAllEventData.ExecuteAsync(eventLoaded);
       eventThread.OnTerminate := eventThreadTerminated;
   end;
+
 end;
-
-
 
 procedure TfrmEvent.lvAttendingItemClick(const Sender: TObject;
   const AItem: TListViewItem);
@@ -141,7 +147,7 @@ begin
     sResult := getResultString(dmdDatamodule.respGeneric.Content);
     if (sResult = 'OK') then
     begin
-//      getWall();
+      getData();
     end;
 end;
 
