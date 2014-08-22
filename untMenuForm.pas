@@ -23,12 +23,18 @@ type
     lblSports: TLabel;
     lblProfile: TLabel;
     imgLogo: TImageControl;
-    procedure lblEventsClick(Sender: TObject);
-    procedure lblTeamsClick(Sender: TObject);
-    procedure lblNotificationsClick(Sender: TObject);
-    procedure lblFriendsClick(Sender: TObject);
-    procedure lblSportsClick(Sender: TObject);
-    procedure lblProfileClick(Sender: TObject);
+    imgEvents: TImage;
+    imgTeams: TImage;
+    imgNotifications: TImage;
+    imgFriends: TImage;
+    imgSports: TImage;
+    imgProfile: TImage;
+    procedure btnEventsClick(Sender: TObject);
+    procedure btnFriendsClick(Sender: TObject);
+    procedure btnNotificationsClick(Sender: TObject);
+    procedure btnProfileClick(Sender: TObject);
+    procedure btnSportsClick(Sender: TObject);
+    procedure btnTeamsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,34 +49,34 @@ uses
 
 {$R *.fmx}
 
-procedure TfrmMenu.lblEventsClick(Sender: TObject);
+procedure TfrmMenu.btnEventsClick(Sender: TObject);
 begin
   shownewForm('TFrmEvents');
 end;
 
-procedure TfrmMenu.lblFriendsClick(Sender: TObject);
+procedure TfrmMenu.btnFriendsClick(Sender: TObject);
 begin
-    showNewForm('TfrmFriends');
+  showNewForm('TfrmFriends');
 end;
 
-procedure TfrmMenu.lblNotificationsClick(Sender: TObject);
+procedure TfrmMenu.btnNotificationsClick(Sender: TObject);
 begin
-    showNewForm('TfrmNotifications');
+  showNewForm('TfrmNotifications');
 end;
 
-procedure TfrmMenu.lblProfileClick(Sender: TObject);
+procedure TfrmMenu.btnProfileClick(Sender: TObject);
 begin
   showNewFormWithId('TfrmProfile',dmdDataModule.memberId);
 end;
 
-procedure TfrmMenu.lblSportsClick(Sender: TObject);
+procedure TfrmMenu.btnSportsClick(Sender: TObject);
 begin
   showNewForm('TfrmSports');
 end;
 
-procedure TfrmMenu.lblTeamsClick(Sender: TObject);
+procedure TfrmMenu.btnTeamsClick(Sender: TObject);
 begin
-    showNewForm('TfrmTeams');
+  showNewForm('TfrmTeams');
 end;
 
 initialization
