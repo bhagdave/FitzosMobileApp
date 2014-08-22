@@ -46,8 +46,6 @@ procedure TfrmMain.btnLoginClick(Sender: TObject);
 var
   signature : string;
 begin
-//  mythread := TRESTExecutionThread.CreateAnonymousThread(mythread);
-//  mythread.OnTerminate := ThreadTerminated;
   //  open a session first.....
   dmdDataModule.openSession;
   dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');

@@ -45385,6 +45385,7 @@ object frmMain: TfrmMain
       615265640C50726573736564436F6C6F720706636C61526564000000}
   end
   object AniIndicator1: TAniIndicator
+    DesignVisible = False
     Height = 396.000000000000000000
     StyleLookup = 'iOS 7aniindicator.png'
     Position.Y = 64.000000000000000000
