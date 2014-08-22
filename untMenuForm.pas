@@ -35,6 +35,7 @@ type
     procedure btnProfileClick(Sender: TObject);
     procedure btnSportsClick(Sender: TObject);
     procedure btnTeamsClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +57,7 @@ end;
 
 procedure TfrmMenu.btnFriendsClick(Sender: TObject);
 begin
+  lblFriends.Text := 'Loading...';
   showNewForm('TfrmFriends');
 end;
 
@@ -77,6 +79,11 @@ end;
 procedure TfrmMenu.btnTeamsClick(Sender: TObject);
 begin
   showNewForm('TfrmTeams');
+end;
+
+procedure TfrmMenu.FormActivate(Sender: TObject);
+begin
+  lblFriends.Text := 'Friends';
 end;
 
 initialization

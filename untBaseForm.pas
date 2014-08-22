@@ -9,7 +9,6 @@ uses
 
 type
   TfrmBase = class(TForm)
-    edtSearch: TEdit;
     barBottom: TToolBar;
     pnlTop: TPanel;
     pnlCenter: TPanel;
@@ -42,7 +41,7 @@ end;
 
 procedure TfrmBase.edtSearchExit(Sender: TObject);
 begin
-  shownewFormwithId('TfrmSearch',edtSearch.Text);
+//  shownewFormwithId('TfrmSearch',edtSearch.Text);
 end;
 
 function TfrmBase.getSelectedValue(AObject: TObject): TValue;

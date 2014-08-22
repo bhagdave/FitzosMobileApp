@@ -10,6 +10,9 @@ inherited frmSearch: TfrmSearch
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
     Position.Y = 412.000000000000000000
+    inherited btnBack: TButton
+      Height = 48.000000000000000000
+    end
   end
   inherited pnlTop: TPanel
     inherited lblCaption: TLabel
@@ -17,14 +20,14 @@ inherited frmSearch: TfrmSearch
     end
   end
   inherited pnlCenter: TPanel
-    Height = 307.000000000000000000
+    Height = 355.000000000000000000
     object lvResults: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
       ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 307.000000000000000000
+      Height = 355.000000000000000000
       TabOrder = 0
       Width = 320.000000000000000000
       OnItemClick = lvResultsItemClick

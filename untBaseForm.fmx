@@ -5928,18 +5928,6 @@ object frmBase: TfrmBase
     Height = 57.000000000000000000
     Width = 320.000000000000000000
     TabOrder = 2
-    object edtSearch: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      Align = Client
-      StyleLookup = 'searchedit'
-      TabOrder = 1
-      TextSettings.FontColor = claSlategray
-      Width = 320.000000000000000000
-      Height = 30.000000000000000000
-      TextPrompt = 'Search'
-      StyledSettings = [Family, Size, Style]
-      OnExit = edtSearchExit
-    end
     object lblCaption: TLabel
       Align = MostTop
       Height = 25.000000000000000000

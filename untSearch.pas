@@ -37,7 +37,7 @@ var
   sResult : String;
 begin
   inherited;
-  edtSearch.Text := id;
+//  edtSearch.Text := id;
   // do the search!!
   with dmdDataModule do
   begin
