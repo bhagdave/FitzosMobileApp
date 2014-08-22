@@ -43,19 +43,50 @@ type
     procedure getOwner;
     procedure isAttending;
     procedure postWallMessage(sMessage:String);
+    procedure eventLoaded;
+    procedure attendingLoaded;
+    procedure wallLoaded;
+    procedure ownerLoaded;
+    procedure isAttendingLoaded;
+    procedure eventThreadTerminated(Sender : TObject);
+    procedure attendingThreadTerminated(Sender : TObject);
+    procedure ownerThreadTerminated(Sender : TObject);
+    procedure wallThreadTerminated(Sender : TObject);
+    procedure postWallCompleted;
   public
     { Public declarations }
   end;
 
-var
-  frmEvent: TfrmEvent;
-
 implementation
 
 uses
-  untDataModule, untJsonFunctions,untFormRegistry;
-
+  untDataModule, untJsonFunctions,untFormRegistry, Rest.client;
+var
+  eventThread : TRESTExecutionThread;
+  attendingThread : TRESTExecutionThread;
+  wallThread : TRESTExecutionThread;
+  ownerThread : TRESTExecutionThread;
 {$R *.fmx}
+procedure TfrmEvent.attendingLoaded;
+var
+  sResult : String;
+begin
+  with dmdEvent do begin
+      sResult := getResultString(respAttending.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaAttending.Response := respAttending;
+          rdsaAttending.UpdateDataSet;
+          fdmAttending.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEvent.attendingThreadTerminated(Sender: TObject);
+begin
+  attendingThread := nil;
+end;
+
 procedure TfrmEvent.btnEditClick(Sender: TObject);
 begin
   inherited;
@@ -74,9 +105,28 @@ begin
   end;
 end;
 
-procedure TfrmEvent.FormActivate(Sender: TObject);
+procedure TfrmEvent.eventLoaded;
 var
   sResult : String;
+begin
+  with dmdEvent do
+  begin
+      sResult := getResultString(respEvent.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaEvent.Response := respEvent;
+          rdsaEvent.UpdateDataSet;
+          fdmEvent.Open;
+      end;
+  end;
+end;
+
+procedure TfrmEvent.eventThreadTerminated(Sender: TObject);
+begin
+  eventThread := nil;
+end;
+
+procedure TfrmEvent.FormActivate(Sender: TObject);
 begin
   with dmdEvent do
   begin
@@ -88,15 +138,8 @@ begin
       reqEvent.Params.ParameterByName('id').Value := id;
       reqEvent.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
       reqEvent.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      reqEvent.Execute;
-      sResult := getResultString(respEvent.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaEvent.Response := respEvent;
-          fdmEvent.Open;
-//          sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
-//          loadPicture(sURL);
-      end;
+      eventThread := reqEvent.ExecuteAsync(eventLoaded);
+      eventThread.OnTerminate := eventThreadTerminated;
   end;
   getAttending();
   getWall();
@@ -106,15 +149,9 @@ begin
   else
     btnEdit.Visible := false;
   isAttending();
-  if bAttending then
-    btnPost.Visible := true
-  else
-    btnPost.Visible := false;
 end;
 
 procedure TfrmEvent.getAttending;
-var
-  sResult : String;
 begin
   with dmdEvent do
   begin
@@ -126,22 +163,12 @@ begin
       reqAttending.Params.ParameterByName('id').Value := id;
       reqAttending.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
       reqAttending.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      try
-        reqAttending.Execute;
-      except on E: Exception do
-      end;
-      sResult := getResultString(respAttending.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaAttending.Response := respAttending;
-          fdmAttending.Open;
-      end;
+      attendingThread := reqAttending.ExecuteAsync(attendingLoaded);
+      attendingThread.OnTerminate := attendingThreadTerminated;
   end;
 end;
 
 procedure TfrmEvent.getOwner;
-var
-  sResult : String;
 begin
   // ok lets try and get some data
   with dmdDataModule do
@@ -151,18 +178,12 @@ begin
     reqGeneric.Params.addItem('event',id);
     reqGeneric.Params.AddItem('signature',signature('isOwner'));
     reqGeneric.Params.AddItem('key',getAPIKey());
-    reqGeneric.Execute;
-    sResult := getResultString(respGeneric.Content);
-      if (sResult = 'OK') then
-      begin
-        bOwner := getResultBoolean(respGeneric.Content,'Result');
-      end;
+    ownerThread = reqGeneric.ExecuteAsync(ownerLoaded);
+    ownerThread.OnTerminate := ownerThreadTerminated;
   end;
 end;
 
 procedure TfrmEvent.getWall;
-var
-  sResult : String;
 begin
   with dmdEvent do
   begin
@@ -174,22 +195,12 @@ begin
       reqWall.Params.ParameterByName('id').Value := id;
       reqWall.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
       reqWall.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      try
-        reqWall.Execute;
-      except on E: Exception do
-      end;
-      sResult := getResultString(respWall.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaWall.Response := respWall;
-          fdmWall.Open;
-      end;
+      wallThread := reqWall.ExecuteAsync(wallLoaded);
+      wallThread.OnTerminate := wallThreadTerminated;
   end;
 end;
 
 procedure TfrmEvent.isAttending;
-var
-  sResult : String;
 begin
   // ok lets try and get some data
   with dmdDataModule do
@@ -199,13 +210,25 @@ begin
     reqGeneric.Params.addItem('event',id);
     reqGeneric.Params.AddItem('signature',signature('isOwner'));
     reqGeneric.Params.AddItem('key',getAPIKey());
-    reqGeneric.Execute;
-    sResult := getResultString(respGeneric.Content);
-      if (sResult = 'OK') then
-      begin
-        bAttending := getResultBoolean(respGeneric.Content,'Result');
-      end;
+    reqGeneric.ExecuteAsync(isAttendingLoaded);
   end;
+end;
+
+procedure TfrmEvent.isAttendingLoaded;
+var
+  sResult : String;
+begin
+  with dmdEvent do begin
+    sResult := getResultString(respGeneric.Content);
+    if (sResult = 'OK') then
+    begin
+       bAttending := getResultBoolean(respGeneric.Content,'Result');
+    end;
+  end;
+  if bAttending then
+    btnPost.Visible := true
+  else
+    btnPost.Visible := false;
 end;
 
 procedure TfrmEvent.lvAttendingItemClick(const Sender: TObject;
@@ -218,9 +241,36 @@ begin
   showNewFormWithId('TfrmFriend',lValue.ToString);
 end;
 
-procedure TfrmEvent.postWallMessage(sMessage: String);
+procedure TfrmEvent.ownerLoaded;
 var
   sResult : String;
+begin
+  with dmdEvent do begin
+    sResult := getResultString(respGeneric.Content);
+      if (sResult = 'OK') then
+      begin
+        bOwner := getResultBoolean(respGeneric.Content,'Result');
+      end;
+  end;
+end;
+
+procedure TfrmEvent.ownerThreadTerminated(Sender: TObject);
+begin
+  ownerThread := nil;
+end;
+
+procedure TfrmEvent.postWallCompleted;
+var
+  sResult : String;
+begin
+    sResult := getResultString(dmdDatamodule.respGeneric.Content);
+    if (sResult = 'OK') then
+    begin
+      getWall();
+    end;
+end;
+
+procedure TfrmEvent.postWallMessage(sMessage: String);
 begin
   with dmdDataModule do
   begin
@@ -230,13 +280,28 @@ begin
     reqGeneric.Params.AddItem('message',sMessage);
     reqGeneric.Params.AddItem('signature',signature('isOwner'));
     reqGeneric.Params.AddItem('key',getAPIKey());
-    reqGeneric.Execute;
-    sResult := getResultString(respGeneric.Content);
+    reqGeneric.ExecuteAsync(postWallCompleted);
+  end;
+end;
+
+procedure TfrmEvent.wallLoaded;
+var
+  sResult : String;
+begin
+  with dmdEvent do begin
+      sResult := getResultString(respWall.Content);
       if (sResult = 'OK') then
       begin
-        getWall();
+          rdsaWall.Response := respWall;
+          rdsaWall.UpdateDataSet;
+          fdmWall.Open;
       end;
   end;
+end;
+
+procedure TfrmEvent.wallThreadTerminated(Sender: TObject);
+begin
+  wallThread := nil;
 end;
 
 initialization

@@ -36,6 +36,7 @@ object dmdEvent: TdmdEvent
     Top = 64
   end
   object rdsaEvent: TRESTResponseDataSetAdapter
+    AutoUpdate = False
     Dataset = fdmEvent
     FieldDefs = <>
     Response = respEvent
@@ -162,6 +163,7 @@ object dmdEvent: TdmdEvent
   end
   object rdsaAttending: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmAttending
     FieldDefs = <>
     Response = respAttending
@@ -452,6 +454,7 @@ object dmdEvent: TdmdEvent
   end
   object rdsaWall: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmWall
     FieldDefs = <>
     Response = respWall
