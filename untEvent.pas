@@ -40,7 +40,7 @@ type
     bAttending : Boolean;
     procedure getAttending;
     procedure getWall;
-    procedure getOwner;
+    procedure getEventOwner;
     procedure isAttending;
     procedure postWallMessage(sMessage:String);
     procedure eventLoaded;
@@ -143,11 +143,7 @@ begin
   end;
   getAttending();
   getWall();
-  getOwner();
-  if bOwner then
-    btnEdit.Visible := true
-  else
-    btnEdit.Visible := false;
+  getEventOwner();
   isAttending();
 end;
 
@@ -168,7 +164,7 @@ begin
   end;
 end;
 
-procedure TfrmEvent.getOwner;
+procedure TfrmEvent.getEventOwner;
 begin
   // ok lets try and get some data
   with dmdDataModule do
@@ -178,7 +174,7 @@ begin
     reqGeneric.Params.addItem('event',id);
     reqGeneric.Params.AddItem('signature',signature('isOwner'));
     reqGeneric.Params.AddItem('key',getAPIKey());
-    ownerThread = reqGeneric.ExecuteAsync(ownerLoaded);
+    ownerThread := reqGeneric.ExecuteAsync(ownerLoaded);
     ownerThread.OnTerminate := ownerThreadTerminated;
   end;
 end;
@@ -250,6 +246,10 @@ begin
       if (sResult = 'OK') then
       begin
         bOwner := getResultBoolean(respGeneric.Content,'Result');
+        if bOwner then
+          btnEdit.Visible := true
+        else
+          btnEdit.Visible := false;
       end;
   end;
 end;
