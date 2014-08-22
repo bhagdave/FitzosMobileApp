@@ -95,6 +95,8 @@ begin
   lValue := GetSelectedValue(cboSport);
   sSport := lValue.ToString;
   request.Params.Clear;
+  if id <> '' then
+    request.Params.AddItem('id',id);
   request.Params.AddItem('name',edtName.Text);
   request.Params.AddItem('content',memContent.Lines.GetText);
   request.Params.AddItem('date',DateToStr(edtDate.Date));
@@ -139,8 +141,8 @@ begin
       // update
       addParams(dmdEvent.reqUpdateEvent);
       dmdEvent.reqUpdateEvent.Execute;
-      showmessage('Event updated!');
-      clearOutFields();
+      showmessage(dmdEvent.respUpdateEvent.Content);
+//      clearOutFields();
       formActivate(sender);
     end
     else
@@ -148,7 +150,7 @@ begin
       // insert
       addParams(dmdEvent.reqCreateEvent);
       dmdEvent.reqCreateEvent.Execute;
-      showmessage('Event created');
+      showmessage(dmdEvent.respCreateEvent.Content);
       close;
     end;
   end;

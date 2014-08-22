@@ -15,7 +15,7 @@ inherited frmEventCreation: TfrmEventCreation
       Position.Y = 2.000000000000000000
     end
     object btnSubmit: TButton
-      Align = Client
+      Align = Center
       Height = 44.000000000000000000
       Padding.Left = 1.000000000000000000
       Padding.Top = 1.000000000000000000
@@ -27,7 +27,7 @@ inherited frmEventCreation: TfrmEventCreation
       Margins.Bottom = 2.000000000000000000
       TabOrder = 3
       Text = 'Submit'
-      Width = 243.000000000000000000
+      Width = 150.000000000000000000
       OnClick = btnSubmitClick
     end
   end
