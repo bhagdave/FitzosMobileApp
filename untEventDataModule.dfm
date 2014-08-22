@@ -36,6 +36,7 @@ object dmdEvent: TdmdEvent
     Top = 64
   end
   object rdsaEvent: TRESTResponseDataSetAdapter
+    Active = True
     AutoUpdate = False
     Dataset = fdmEvent
     FieldDefs = <>
@@ -45,7 +46,118 @@ object dmdEvent: TdmdEvent
     Top = 112
   end
   object fdmEvent: TFDMemTable
-    FieldDefs = <>
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'published'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'type'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sub_type'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'team_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'time'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'end_time'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'end_date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'isOwner'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'isAttendee'
+        DataType = ftWideString
+        Size = 255
+      end>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
@@ -134,6 +246,14 @@ object dmdEvent: TdmdEvent
     end
     object fdmEventlast_name: TWideStringField
       FieldName = 'last_name'
+      Size = 255
+    end
+    object fdmEventisOwner: TWideStringField
+      FieldName = 'isOwner'
+      Size = 255
+    end
+    object fdmEventisAttendee: TWideStringField
+      FieldName = 'isAttendee'
       Size = 255
     end
   end

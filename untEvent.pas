@@ -75,12 +75,13 @@ end;
 
 procedure TfrmEvent.eventLoaded;
 var
-  sResult : String;
+  sStatus,sResult : String;
+
 begin
   with dmdEvent do
   begin
-      sResult := getResultString(respAllEventData.Content);
-      if (sResult = 'OK') then
+      sStatus := getResultString(respAllEventData.Content);
+      if (sStatus = 'OK') then
       begin
           rdsaEvent.UpdateDataSet;
           fdmEvent.Open;
@@ -88,6 +89,11 @@ begin
           fdmAttending.Open;
           rdsaWall.UpdateDataSet;
           fdmWall.Open;
+          bOwner := fdmEvent.FieldByName('isOwner').AsString = 'Yes';
+          bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
+          btnEdit.Visible := bOwner;
+          btnPost.Visible := bOwner or bAttending;
+
       end;
   end;
 end;
