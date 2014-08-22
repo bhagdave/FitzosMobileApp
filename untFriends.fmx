@@ -10,8 +10,15 @@ inherited frmFriends: TfrmFriends
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
     Position.Y = 412.000000000000000000
+    inherited btnBack: TButton
+      Height = 44.000000000000000000
+      Position.Y = 2.000000000000000000
+    end
   end
   inherited pnlTop: TPanel
+    inherited edtSearch: TEdit
+      Height = 30.000000000000000000
+    end
     inherited lblCaption: TLabel
       Text = 'Friends'
     end

@@ -19,6 +19,8 @@ type
       const AItem: TListViewItem);
   private
     { Private declarations }
+    procedure friendsLoaded;
+    procedure threadTerminated(Sender : TObject);
   public
     { Public declarations }
   end;
@@ -26,12 +28,14 @@ type
 
 implementation
 uses
-  untJsonFunctions,untFormRegistry;
+  untJsonFunctions,untFormRegistry,Rest.Client;
+
+var
+  myThread : TRESTExecutionThread;
+
 
 {$R *.fmx}
 procedure TfrmFriends.FormActivate(Sender: TObject);
-var
-  sResult : String;
 begin
   inherited;
   with dmdDataModule do
@@ -44,14 +48,21 @@ begin
     reqFriends.Params.ParameterByName('id').Value := memberId;
     reqFriends.Params.ParameterByName('signature').Value := signature('getFriends');
     reqFriends.Params.ParameterByName('key').Value := getApiKey;
-    reqFriends.Execute;
-    sResult := getResultString(respFriends.Content);
+    myThread := reqFriends.ExecuteAsync(friendsLoaded);
+    myThread.OnTerminate := threadTerminated;
+  end;
+end;
+
+procedure TfrmFriends.friendsLoaded;
+var
+  sResult : String;
+begin
+    sResult := getResultString(dmdDataModule.respFriends.Content);
     if (sResult = 'OK') then
     begin
-        rdsaFriends.Response := respFriends;
-        fdmFriends.Open;
+        dmdDataModule.rdsaFriends.Response := dmdDataModule.respFriends;
+        dmdDataModule.fdmFriends.Open;
     end;
-  end;
 end;
 
 procedure TfrmFriends.lvFriendsItemClick(const Sender: TObject;
@@ -63,6 +74,11 @@ begin
   LValue := GetSelectedValue(lvFriends);
   showNewFormWithId('TfrmFriend',lValue.ToString);
 //  showNewForm('TfrmNotification');
+end;
+
+procedure TfrmFriends.threadTerminated(Sender: TObject);
+begin
+  myThread := nil;
 end;
 
 initialization
