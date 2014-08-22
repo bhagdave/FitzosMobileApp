@@ -210,3 +210,4 @@ initialization
 RegisterFMXClasses([TfrmFriend]);
 
 end.
+

@@ -241,6 +241,14 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_768x1024.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>Default-Portrait~ipad.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="iOSDevice\Release\ResourceRules.plist" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>ResourceRules.plist</RemoteName>
@@ -620,14 +628,6 @@
         <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>libcgunwind.1.0.dylib</RemoteName>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="iOSSimulator\Debug\FitzosApp.rsm" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp.app\</RemoteDir>
-            <RemoteName>FitzosApp.rsm</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>

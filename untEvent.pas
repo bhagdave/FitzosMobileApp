@@ -79,7 +79,7 @@ var
 begin
   with dmdEvent do
   begin
-      sResult := getResultString(respEvent.Content);
+      sResult := getResultString(respAllEventData.Content);
       if (sResult = 'OK') then
       begin
           rdsaEvent.UpdateDataSet;
