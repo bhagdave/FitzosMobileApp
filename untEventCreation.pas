@@ -177,8 +177,11 @@ begin
   getSportsAndTeams();
   if id <> '' then
   begin
-    // Get data!
+    // change UI
     lblCaption.Text := 'Update Event';
+    btnNext.Visible := false;
+    btnTimesNext.Visible := false;
+    // Get data!
     with dmdEvent do
     begin
       rdsaEvent.ClearDataSet;
@@ -195,6 +198,8 @@ begin
   begin
     // just when inserting...
     lblCaption.Text := 'Create Event';
+    btnNext.Visible := true;
+    btnTimesNext.Visible := true;
     edtDate.Data := '';
     edtEndDate.Data := '';
   end;
