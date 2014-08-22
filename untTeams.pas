@@ -23,6 +23,8 @@ type
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
+    procedure teamsLoaded;
+    procedure threadTerminated(Sender : TObject);
   public
     { Public declarations }
   end;
@@ -30,7 +32,11 @@ type
 implementation
 
 uses
-  untJsonFunctions,untFormRegistry;
+  untJsonFunctions,untFormRegistry, Rest.Client;
+
+var
+  myThread : TRESTExecutionThread;
+
 
 {$R *.fmx}
 procedure TfrmTeams.btnCreateClick(Sender: TObject);
@@ -40,11 +46,8 @@ begin
 end;
 
 procedure TfrmTeams.FormActivate(Sender: TObject);
-var
-  sResult : String;
 begin
   inherited;
-  lvTeams.items.BeginUpdate;
   with dmdDataModule do
   begin
     // Open up the data.
@@ -55,19 +58,9 @@ begin
     reqMemberTeams.Params.ParameterByName('id').Value := memberId;
     reqMemberTeams.Params.ParameterByName('signature').Value := signature('getMembersTeams');
     reqMemberTeams.Params.ParameterByName('key').Value := getApiKey;
-    reqMemberTeams.Execute;
-    sResult := getResultString(respMemberTeams.Content);
-    if (sResult = 'OK') then
-    begin
-        rdsaMemberTeams.Response := respMemberTeams;
-        fdmMemberTeams.Open;
-    end
-    else
-    begin
-        showmessage(respMemberTeams.Content);
-    end;
+    myThread := reqMemberTeams.ExecuteAsync(teamsLoaded);
+    myThread.OnTerminate := threadTerminated;
   end;
-    lvTeams.items.EndUpdate;
 end;
 
 procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;
@@ -78,6 +71,23 @@ begin
   inherited;
   LValue := GetSelectedValue(lvTeams);
   showNewFormWithId('TfrmTeam',lValue.ToString);
+end;
+
+procedure TfrmTeams.teamsLoaded;
+var
+  sResult : String;
+begin
+    sResult := getResultString(dmdDataModule.respMemberTeams.Content);
+    if (sResult = 'OK') then
+    begin
+        dmdDataModule.rdsaMemberTeams.Response := dmdDataModule.respMemberTeams;
+        dmdDataModule.fdmMemberTeams.Open;
+    end;
+end;
+
+procedure TfrmTeams.threadTerminated(Sender: TObject);
+begin
+  myThread := nil;
 end;
 
 initialization
