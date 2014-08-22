@@ -39,8 +39,8 @@ object dmdEvent: TdmdEvent
     AutoUpdate = False
     Dataset = fdmEvent
     FieldDefs = <>
-    Response = respEvent
-    RootElement = 'Result'
+    Response = respAllEventData
+    RootElement = 'Result.event'
     Left = 96
     Top = 112
   end
@@ -166,8 +166,8 @@ object dmdEvent: TdmdEvent
     AutoUpdate = False
     Dataset = fdmAttending
     FieldDefs = <>
-    Response = respAttending
-    RootElement = 'Result'
+    Response = respAllEventData
+    RootElement = 'Result.attending'
     Left = 160
     Top = 128
   end
@@ -457,8 +457,8 @@ object dmdEvent: TdmdEvent
     AutoUpdate = False
     Dataset = fdmWall
     FieldDefs = <>
-    Response = respWall
-    RootElement = 'Result'
+    Response = respAllEventData
+    RootElement = 'Result.wall'
     Left = 240
     Top = 136
   end
@@ -763,6 +763,28 @@ object dmdEvent: TdmdEvent
   end
   object respUpdateEvent: TRESTResponse
     Left = 608
+    Top = 112
+  end
+  object reqAllEventData: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '21'
+      end
+      item
+        name = 'member_id'
+        Value = '9'
+      end>
+    Resource = 'r/events/getAllEventData'
+    Response = respAllEventData
+    SynchronizedEvents = False
+    Left = 704
+    Top = 56
+  end
+  object respAllEventData: TRESTResponse
+    ContentType = 'text/html'
+    Left = 704
     Top = 112
   end
 end

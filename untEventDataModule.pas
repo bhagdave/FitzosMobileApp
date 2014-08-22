@@ -103,6 +103,8 @@ type
     dsSports: TBindSourceDB;
     reqUpdateEvent: TRESTRequest;
     respUpdateEvent: TRESTResponse;
+    reqAllEventData: TRESTRequest;
+    respAllEventData: TRESTResponse;
   private
     { Private declarations }
   public
