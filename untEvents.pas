@@ -23,6 +23,8 @@ type
     procedure btnCreateEventClick(Sender: TObject);
   private
     { Private declarations }
+   procedure threadTerminated(Sender : TObject);
+   procedure eventsLoaded;
   public
     { Public declarations }
   end;
@@ -31,8 +33,13 @@ type
 implementation
 
 uses
-  untJsonFunctions,untFormRegistry;
+  untJsonFunctions,untFormRegistry,Rest.Client;
 {$R *.fmx}
+
+var
+   myThread : TRESTExecutionThread;
+
+
 { TfrmEvents }
 
 procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
@@ -42,9 +49,22 @@ begin
   showNewForm('TfrmEventCreation');
 end;
 
-procedure TfrmEvents.FormActivate(Sender: TObject);
+procedure TfrmEvents.eventsLoaded;
 var
   sResult : String;
+begin
+    sResult := getResultString(dmdDatamodule.respEvents.Content);
+    if (sResult = 'OK') then
+    begin
+      try
+        dmdDatamodule.rdsaEvents.UpdateDataSet;
+        dmdDatamodule.fdmEvents.Open;
+      except on E: Exception do
+      end;
+    end;
+end;
+
+procedure TfrmEvents.FormActivate(Sender: TObject);
 begin
   inherited;
   pnlWait.Visible := false;
@@ -58,16 +78,8 @@ begin
     reqEvents.Params.ParameterByName('id').Value := memberId;
     reqEvents.Params.ParameterByName('signature').Value := signature('getEventsForMember');
     reqEvents.Params.ParameterByName('key').Value := getApiKey;
-    reqEvents.Execute;
-    sResult := getResultString(respEvents.Content);
-    if (sResult = 'OK') then
-    begin
-      try
-        rdsaEvents.UpdateDataSet;
-        fdmEvents.Open;
-      except on E: Exception do
-      end;
-    end;
+    myThread := reqEvents.ExecuteAsync(eventsLoaded);
+    mythread.OnTerminate := threadTerminated;
   end;
 end;
 
@@ -79,6 +91,11 @@ begin
   inherited;
   LValue := GetSelectedValue(lvEvents);
   showNewFormWithId('TfrmEvent',LValue.ToString);
+end;
+
+procedure TfrmEvents.threadTerminated(Sender: TObject);
+begin
+  myThread := nil;
 end;
 
 initialization
