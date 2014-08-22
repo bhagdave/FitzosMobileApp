@@ -126,7 +126,7 @@ Coordinates=549,1426,94,58
 Visible=False
 
 [edtHeight]
-Coordinates=680,260,70,58
+Coordinates=780,280,70,58
 
 [edtNickname]
 Coordinates=770,210,89,58
@@ -372,7 +372,27 @@ Visible=False
 
 [dmdDataModule.fdmSearchNames]
 Visible=False
+Coordinates=198,351,207,212
 
 [dmdDataModule.fdmSports]
 Visible=False
+Coordinates=838,373,163,124
+
+[dmdDataModule.respSports]
+Coordinates=228,601,174,322
+
+[dmdDataModule.respSearch]
+Coordinates=0,0,178,322
+
+[dmdDataModule.dsSports]
+Coordinates=838,373,163,124
+
+[dmdDataModule.reqSearch]
+Coordinates=49,601,171,124
+
+[dmdDataModule.reqSports]
+Coordinates=13,341,168,80
+
+[dmdDataModule.dsSearchNames]
+Coordinates=198,351,207,212
 

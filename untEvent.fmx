@@ -4,30 +4,36 @@ inherited frmEvent: TfrmEvent
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 460
+  DesignerHeight = 480
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
     Position.Y = 412.000000000000000000
+    inherited btnBack: TButton
+      Height = 44.000000000000000000
+      Position.Y = 2.000000000000000000
+    end
     object btnEdit: TButton
-      Align = HorzCenter
+      Align = Client
       Height = 54.000000000000000000
-      Position.X = 144.000000000000000000
       TabOrder = 3
       Text = 'Edit '
       Visible = False
-      Width = 57.000000000000000000
+      Width = 105.000000000000000000
       OnClick = btnEditClick
     end
   end
   inherited pnlTop: TPanel
+    inherited edtSearch: TEdit
+      Height = 30.000000000000000000
+    end
     inherited lblCaption: TLabel
       Text = ''
     end
   end
   inherited pnlCenter: TPanel
-    Height = 307.000000000000000000
+    Height = 355.000000000000000000
     object lblContent: TLabel
       Align = Top
       StyledSettings = [Family, Size, Style]

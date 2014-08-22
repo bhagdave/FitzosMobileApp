@@ -15,7 +15,7 @@ inherited frmEventCreation: TfrmEventCreation
       Position.Y = 2.000000000000000000
     end
     object btnSubmit: TButton
-      Align = Center
+      Align = Client
       Height = 44.000000000000000000
       Padding.Left = 1.000000000000000000
       Padding.Top = 1.000000000000000000
@@ -27,7 +27,7 @@ inherited frmEventCreation: TfrmEventCreation
       Margins.Bottom = 2.000000000000000000
       TabOrder = 3
       Text = 'Submit'
-      Width = 150.000000000000000000
+      Width = 243.000000000000000000
       OnClick = btnSubmitClick
     end
   end
@@ -279,7 +279,7 @@ inherited frmEventCreation: TfrmEventCreation
             IsChecked = True
             TabOrder = 0
             Text = 'Published'
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object cboType: TComboBox
             Align = Top
@@ -292,7 +292,7 @@ inherited frmEventCreation: TfrmEventCreation
             ItemIndex = 0
             Position.Y = 113.000000000000000000
             TabOrder = 1
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object cboPrivacy: TComboBox
             Align = Top
@@ -305,7 +305,7 @@ inherited frmEventCreation: TfrmEventCreation
             ItemIndex = 0
             Position.Y = 143.000000000000000000
             TabOrder = 2
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object cboSport: TComboBox
             Align = Top
@@ -313,7 +313,7 @@ inherited frmEventCreation: TfrmEventCreation
             Height = 30.000000000000000000
             Position.Y = 83.000000000000000000
             TabOrder = 3
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object cboTeam: TComboBox
             Align = Top
@@ -321,7 +321,7 @@ inherited frmEventCreation: TfrmEventCreation
             Height = 30.000000000000000000
             Position.Y = 36.000000000000000000
             TabOrder = 4
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object lblTeam: TLabel
             Align = Top
@@ -329,7 +329,7 @@ inherited frmEventCreation: TfrmEventCreation
             Position.Y = 19.000000000000000000
             TextSettings.HorzAlign = Center
             Text = 'Team'
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
           object lblSport: TLabel
             Align = Top
@@ -337,7 +337,7 @@ inherited frmEventCreation: TfrmEventCreation
             Position.Y = 66.000000000000000000
             TextSettings.HorzAlign = Center
             Text = 'Sport'
-            Width = 513.000000000000000000
+            Width = 304.000000000000000000
           end
         end
       end

@@ -3115,14 +3115,6 @@ object frmProfile: TfrmProfile
       Control = edtHeight
       Track = False
     end
-    object LinkControlToField4: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'nickname'
-      Control = edtNickname
-      Direction = linkDataToControl
-      Track = False
-    end
     object LinkControlToField5: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = dmdDataModule.dsProfile
@@ -3136,6 +3128,13 @@ object frmProfile: TfrmProfile
       FieldName = 'body_fat_percentage'
       Component = edtBodyFat
       ComponentProperty = 'Text'
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = dmdDataModule.dsProfile
+      FieldName = 'nickname'
+      Control = edtNickname
+      Track = False
     end
   end
 end
