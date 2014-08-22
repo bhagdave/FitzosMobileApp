@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Layouts,
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
   IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications,
-  IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON, FMX.Objects;
+  IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON,
+  FMX.Objects, Rest.Client;
 
 type
   TfrmMain = class(TForm)
@@ -18,18 +19,21 @@ type
     btnSignup: TButton;
     txtWelcomeMessage: TText;
     StyleBook1: TStyleBook;
+    AniIndicator1: TAniIndicator;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
   private
     { Private declarations }
     sUserSalt   : String;
     procedure loginComplete;
+    procedure threadTerminated(Sender : TObject);
   public
     { Public declarations }
   end;
 
 var
   frmMain: TfrmMain;
+  myThread : TRESTExecutionThread;
 
 implementation
 
@@ -42,13 +46,18 @@ procedure TfrmMain.btnLoginClick(Sender: TObject);
 var
   signature : string;
 begin
+//  mythread := TRESTExecutionThread.CreateAnonymousThread(mythread);
+//  mythread.OnTerminate := ThreadTerminated;
   //  open a session first.....
   dmdDataModule.openSession;
   dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
   dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
   dmdDataModule.reqLogin.Params.ParameterByName('key').Value  := dmdDataModule.sessionKey;
-  dmdDataModule.reqLogin.ExecuteAsync(self.loginComplete);
+  AniIndicator1.Visible := true;
+  AniIndicator1.enabled := true;
+  mythread := dmdDataModule.reqLogin.ExecuteAsync(loginComplete, true, true);
+  mythread.OnTerminate := threadTerminated;
 end;
 
 
@@ -71,6 +80,13 @@ begin
   begin
       showmessage('Error in login!');
   end;
+end;
+
+procedure TfrmMain.threadTerminated(Sender : TObject);
+begin
+    mythread := nil;
+    AniIndicator1.Visible := false;
+    AniIndicator1.enabled := false;
 end;
 
 end.

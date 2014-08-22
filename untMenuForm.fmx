@@ -61,15 +61,16 @@ object frmMenu: TfrmMenu
         Value = 33.468130865490690000
       end
       item
-        Value = 33.642187668975430000
+        Value = 33.642187668975420000
       end
       item
         Value = 32.889681465533880000
       end>
     object btnEvents: TRectangle
       Align = Client
-      Fill.Color = claCoral
+      Fill.Color = xFFFFCC22
       Height = 134.876571655273400000
+      Sides = []
       Width = 160.000000000000000000
       object lblEvents: TLabel
         Align = Client
@@ -85,6 +86,7 @@ object frmMenu: TfrmMenu
       Align = Client
       Fill.Color = claRed
       Height = 134.876571655273400000
+      Sides = []
       Width = 160.000000000000000000
       object lblTeams: TLabel
         Align = Client
@@ -100,6 +102,7 @@ object frmMenu: TfrmMenu
       Align = Client
       Fill.Color = claRoyalblue
       Height = 135.578018188476600000
+      Sides = []
       Width = 160.000000000000000000
       object lblNotifications: TLabel
         Align = Client
@@ -115,6 +118,7 @@ object frmMenu: TfrmMenu
       Align = Client
       Fill.Color = claYellowgreen
       Height = 135.578018188476600000
+      Sides = []
       Width = 160.000000000000000000
       object lblFriends: TLabel
         Align = Client
@@ -130,6 +134,7 @@ object frmMenu: TfrmMenu
       Align = Client
       Fill.Color = claPlum
       Height = 132.545410156250000000
+      Sides = []
       Width = 160.000000000000000000
       object lblSports: TLabel
         Align = Client
@@ -145,6 +150,7 @@ object frmMenu: TfrmMenu
       Align = Client
       Fill.Color = claGold
       Height = 132.545410156250000000
+      Sides = []
       Width = 160.000000000000000000
       object lblProfile: TLabel
         Align = Client
