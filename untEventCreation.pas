@@ -178,6 +178,7 @@ begin
   if id <> '' then
   begin
     // Get data!
+    lblCaption.Text := 'Update Event';
     with dmdEvent do
     begin
       rdsaEvent.ClearDataSet;
@@ -193,6 +194,7 @@ begin
   else
   begin
     // just when inserting...
+    lblCaption.Text := 'Create Event';
     edtDate.Data := '';
     edtEndDate.Data := '';
   end;
