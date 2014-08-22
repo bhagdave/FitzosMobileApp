@@ -4,16 +4,19 @@ inherited frmFriend: TfrmFriend
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 460
+  DesignerHeight = 480
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
     Position.Y = 412.000000000000000000
+    inherited btnBack: TButton
+      Height = 44.000000000000000000
+      Position.Y = 2.000000000000000000
+    end
     object BeFriend: TButton
-      Align = HorzCenter
+      Align = Client
       Height = 48.000000000000000000
-      Position.X = 123.000000000000000000
       TabOrder = 3
       Text = 'BeFriend'
       Visible = False
@@ -22,15 +25,18 @@ inherited frmFriend: TfrmFriend
     end
   end
   inherited pnlTop: TPanel
+    inherited edtSearch: TEdit
+      Height = 30.000000000000000000
+    end
     inherited lblCaption: TLabel
       Text = 'Friend'
     end
   end
   inherited pnlCenter: TPanel
-    Height = 307.000000000000000000
+    Height = 355.000000000000000000
     object grdLayout: TGridPanelLayout
       Align = Client
-      Height = 307.000000000000000000
+      Height = 355.000000000000000000
       Width = 320.000000000000000000
       TabOrder = 2
       ColumnCollection = <
@@ -72,12 +78,12 @@ inherited frmFriend: TfrmFriend
           item
           end>
         Align = Client
-        Height = 153.500000000000000000
+        Height = 177.500000000000000000
         Width = 160.000000000000000000
       end
       object pnlMemberDetails: TPanel
         Align = Client
-        Height = 153.500000000000000000
+        Height = 177.500000000000000000
         Width = 160.000000000000000000
         TabOrder = 1
         object lblAge: TLabel
@@ -116,7 +122,7 @@ inherited frmFriend: TfrmFriend
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
-        Height = 153.500000000000000000
+        Height = 177.500000000000000000
         TabOrder = 2
         Width = 320.000000000000000000
         ItemAppearanceObjects.ItemObjects.Accessory.Visible = False

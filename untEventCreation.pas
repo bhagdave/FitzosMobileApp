@@ -70,6 +70,10 @@ type
     procedure addParams(request : TRestRequest);
     function validate : boolean;
     procedure clearOutFields();
+    procedure sportsLoaded;
+    procedure teamsLoaded;
+    procedure eventLoaded;
+    procedure saveCompleted;
   public
     { Public declarations }
   end;
@@ -140,18 +144,14 @@ begin
     begin
       // update
       addParams(dmdEvent.reqUpdateEvent);
-      dmdEvent.reqUpdateEvent.Execute;
-      showmessage('Event updated!');
+      dmdEvent.reqUpdateEvent.ExecuteAsync(saveCompleted);
 //      clearOutFields();
-      formActivate(sender);
     end
     else
     begin
       // insert
       addParams(dmdEvent.reqCreateEvent);
-      dmdEvent.reqCreateEvent.Execute;
-      showmessage('Event created!');
-      close;
+      dmdEvent.reqCreateEvent.ExecuteAsync(saveCompleted);
     end;
   end;
 
@@ -169,6 +169,14 @@ begin
   edtName.Text := '';
   edtLocation.Text := '';
   memContent.Lines.Clear;
+end;
+
+procedure TfrmEventCreation.eventLoaded;
+begin
+  with dmdEvent do begin
+      edtDate.text := fdmEvent.FieldByName('date').AsString;
+      edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
+  end;
 end;
 
 procedure TfrmEventCreation.FormActivate(Sender: TObject);
@@ -191,9 +199,7 @@ begin
       respEvent.Content.Empty;
       reqEvent.ClearBody;
       reqEvent.Params.ParameterByName('id').Value := Id;
-      reqEvent.Execute;
-      edtDate.text := fdmEvent.FieldByName('date').AsString;
-      edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
+      reqEvent.ExecuteAsync(eventLoaded);
     end;
   end
   else
@@ -235,8 +241,6 @@ begin
 end;
 
 procedure TfrmEventCreation.getSportsAndTeams;
-var
-  sResult : String;
 begin
   with dmdEvent do
   begin
@@ -246,26 +250,14 @@ begin
     respSports.Content.Empty;
     reqSports.ClearBody;
     reqSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-    reqSports.Execute;
-    sResult := getResultString(respSports.Content);
-    if (sResult = 'OK') then
-    begin
-        rdsaSports.Response := respSports;
-        fdmSports.Open;
-    end;
+    reqSports.ExecuteAsync(sportsLoaded);
     // Open up the data.
     rdsaTeams.ClearDataSet;
     fdmTeams.Close;
     respTeams.Content.Empty;
     reqTeams.ClearBody;
     reqTeams.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-    reqTeams.Execute;
-    sResult := getResultString(respTeams.Content);
-    if (sResult = 'OK') then
-    begin
-        rdsaTeams.Response := respTeams;
-        fdmTeams.Open;
-    end;
+    reqTeams.ExecuteAsync(teamsLoaded);
   end;
 end;
 
@@ -294,6 +286,43 @@ begin
           fdmWall.Open;
       end;
   end;
+end;
+
+procedure TfrmEventCreation.saveCompleted;
+begin
+  showmessage('Event saved!');
+  close;
+end;
+
+procedure TfrmEventCreation.sportsLoaded;
+var
+  sResult : String;
+begin
+  with dmdDatamodule do begin
+    sResult := getResultString(respSports.Content);
+    if (sResult = 'OK') then
+    begin
+        rdsaSports.Response := respSports;
+        rdsaSports.UpdateDataSet;
+        fdmSports.Open;
+    end;
+  end;
+end;
+
+procedure TfrmEventCreation.teamsLoaded;
+var
+  sResult : String;
+begin
+  with dmdEvent do begin
+    sResult := getResultString(respTeams.Content);
+    if (sResult = 'OK') then
+    begin
+        rdsaTeams.Response := respTeams;
+        rdsaTeams.UpdateDataSet;
+        fdmTeams.Open;
+    end;
+  end;
+
 end;
 
 function TfrmEventCreation.validate: boolean;

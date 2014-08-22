@@ -630,6 +630,7 @@ object dmdEvent: TdmdEvent
   end
   object rdsaTeams: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmTeams
     FieldDefs = <>
     Response = respTeams
@@ -689,6 +690,7 @@ object dmdEvent: TdmdEvent
   end
   object rdsaSports: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmSports
     FieldDefs = <>
     Response = respSports
