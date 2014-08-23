@@ -35,6 +35,7 @@ var
 
 
 {$R *.fmx}
+
 procedure TfrmFriends.FormActivate(Sender: TObject);
 begin
   inherited;
@@ -73,7 +74,6 @@ begin
   inherited;
   LValue := GetSelectedValue(lvFriends);
   showNewFormWithId('TfrmFriend',lValue.ToString);
-//  showNewForm('TfrmNotification');
 end;
 
 procedure TfrmFriends.threadTerminated(Sender: TObject);
