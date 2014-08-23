@@ -32,9 +32,6 @@ inherited frmEventCreation: TfrmEventCreation
     end
   end
   inherited pnlTop: TPanel
-    inherited edtSearch: TEdit
-      Height = 30.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Event Creation'
     end
@@ -197,6 +194,7 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 1
             object edtStartTime: TTimeEdit
+              IsEmpty = True
               Time = 0.622222222222222200
               Align = Client
               Height = 44.000000000000000000
@@ -239,6 +237,7 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 3
             object edtEndTime: TTimeEdit
+              IsEmpty = True
               Time = 0.622222222222222200
               Align = Client
               Height = 44.000000000000000000
