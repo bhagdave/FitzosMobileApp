@@ -4,16 +4,20 @@ inherited frmFriend: TfrmFriend
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 460
+  DesignerHeight = 480
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
     Position.Y = 412.000000000000000000
+    inherited btnBack: TButton
+      Height = 44.000000000000000000
+      Position.Y = 2.000000000000000000
+    end
     object BeFriend: TButton
-      Align = Client
+      Align = Center
       Height = 48.000000000000000000
-      TabOrder = 3
+      TabOrder = 4
       Text = 'BeFriend'
       Visible = False
       Width = 73.000000000000000000
@@ -157,5 +161,22 @@ inherited frmFriend: TfrmFriend
     ScopeMappings = <>
     Left = 152
     Top = 224
+  end
+  object IdHTTPIMage: TIdHTTP
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 72
+    Top = 275
   end
 end
