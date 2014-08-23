@@ -12,9 +12,6 @@ Coordinates=411,342,123,652
 [rdsaGeneric]
 Coordinates=572,661,85,36
 
-[reqEvent]
-Coordinates=150,999,103,146
-
 [fdmAttendingcountry]
 Coordinates=0,666,132,36
 
@@ -51,9 +48,6 @@ Coordinates=572,1156,113,36
 [fdmAttendingcancelled]
 Coordinates=262,1043,145,36
 
-[reqAttending]
-Coordinates=41,999,103,146
-
 [fdmAttendingshow_progress]
 Coordinates=688,166,177,36
 
@@ -68,9 +62,6 @@ Coordinates=572,1266,107,36
 
 [dsSports]
 Coordinates=223,1183,65,124
-
-[respWall]
-Coordinates=0,0,101,322
 
 [fdmWallevent_id]
 Coordinates=173,1329,110,36
@@ -126,9 +117,6 @@ Coordinates=745,111,103,36
 [fdmAttendinglanguage]
 Coordinates=903,771,143,36
 
-[respAttending]
-Coordinates=332,1543,101,322
-
 [rdsaAttending]
 Coordinates=745,221,94,36
 
@@ -161,9 +149,6 @@ Coordinates=120,122,101,322
 
 [fdmWalldate]
 Coordinates=745,716,86,36
-
-[respEvent]
-Coordinates=259,1,101,322
 
 [fdmAttendingbmi]
 Coordinates=745,771,111,36
@@ -216,12 +201,9 @@ Coordinates=292,1183,111,322
 [fdmAttendingdob]
 Coordinates=745,1211,112,36
 
-[reqWall]
-Coordinates=593,1,103,146
-
 [fdmWalllast_name]
 Coordinates=1152,1,120,36
 
 []
-Coordinates=572,1101,79,36
+Coordinates=150,999,103,146
 

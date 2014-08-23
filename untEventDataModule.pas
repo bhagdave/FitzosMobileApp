@@ -12,12 +12,8 @@ uses
 type
   TdmdEvent = class(TDataModule)
     restAPI: TRESTClient;
-    reqEvent: TRESTRequest;
-    respEvent: TRESTResponse;
     rdsaEvent: TRESTResponseDataSetAdapter;
     fdmEvent: TFDMemTable;
-    reqAttending: TRESTRequest;
-    respAttending: TRESTResponse;
     rdsaAttending: TRESTResponseDataSetAdapter;
     fdmAttending: TFDMemTable;
     fdmAttendingid: TWideStringField;
@@ -47,8 +43,6 @@ type
     fdmAttendingsearch: TWideStringField;
     fdmAttendingmessage: TWideStringField;
     fdmAttendingage: TWideStringField;
-    reqWall: TRESTRequest;
-    respWall: TRESTResponse;
     rdsaWall: TRESTResponseDataSetAdapter;
     fdmWall: TFDMemTable;
     fdmWallid: TWideStringField;

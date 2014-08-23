@@ -12,29 +12,6 @@ object dmdEvent: TdmdEvent
     Left = 32
     Top = 16
   end
-  object reqEvent: TRESTRequest
-    Client = restAPI
-    Params = <
-      item
-        name = 'id'
-        Value = '17'
-      end
-      item
-        name = 'signature'
-      end
-      item
-        name = 'key'
-      end>
-    Resource = 'events/getEvent'
-    Response = respEvent
-    SynchronizedEvents = False
-    Left = 96
-    Top = 16
-  end
-  object respEvent: TRESTResponse
-    Left = 96
-    Top = 64
-  end
   object rdsaEvent: TRESTResponseDataSetAdapter
     Active = True
     AutoUpdate = False
@@ -256,30 +233,6 @@ object dmdEvent: TdmdEvent
       FieldName = 'isAttendee'
       Size = 255
     end
-  end
-  object reqAttending: TRESTRequest
-    Client = restAPI
-    Params = <
-      item
-        name = 'key'
-      end
-      item
-        name = 'signature'
-      end
-      item
-        name = 'id'
-        Value = '17'
-      end>
-    Resource = 'events/getMembersAttending'
-    Response = respAttending
-    SynchronizedEvents = False
-    Left = 160
-    Top = 24
-  end
-  object respAttending: TRESTResponse
-    ContentType = 'text/html'
-    Left = 160
-    Top = 72
   end
   object rdsaAttending: TRESTResponseDataSetAdapter
     Active = True
@@ -547,30 +500,6 @@ object dmdEvent: TdmdEvent
       FieldName = 'age'
       Size = 255
     end
-  end
-  object reqWall: TRESTRequest
-    Client = restAPI
-    Params = <
-      item
-        name = 'id'
-        Value = '17'
-      end
-      item
-        name = 'signature'
-      end
-      item
-        name = 'key'
-      end>
-    Resource = 'events/getWall'
-    Response = respWall
-    SynchronizedEvents = False
-    Left = 232
-    Top = 24
-  end
-  object respWall: TRESTResponse
-    ContentType = 'text/html'
-    Left = 240
-    Top = 80
   end
   object rdsaWall: TRESTResponseDataSetAdapter
     Active = True
@@ -899,12 +828,12 @@ object dmdEvent: TdmdEvent
     Resource = 'r/events/getAllEventData'
     Response = respAllEventData
     SynchronizedEvents = False
-    Left = 704
-    Top = 56
+    Left = 104
+    Top = 8
   end
   object respAllEventData: TRESTResponse
     ContentType = 'text/html'
-    Left = 704
-    Top = 112
+    Left = 104
+    Top = 64
   end
 end
