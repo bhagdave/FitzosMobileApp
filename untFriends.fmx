@@ -16,9 +16,6 @@ inherited frmFriends: TfrmFriends
     end
   end
   inherited pnlTop: TPanel
-    inherited edtSearch: TEdit
-      Height = 30.000000000000000000
-    end
     inherited lblCaption: TLabel
       Text = 'Friends'
     end
