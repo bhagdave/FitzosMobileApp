@@ -9,10 +9,13 @@ inherited frmEvents: TfrmEvents
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 412.000000000000000000
+    Height = 44.000000000000000000
+    Position.Y = 416.000000000000000000
     inherited btnBack: TButton
+      StyledSettings = [Family, Size, Style]
       Height = 44.000000000000000000
-      Position.Y = 2.000000000000000000
+      IconTintColor = claWhite
+      TextSettings.FontColor = claWhite
     end
   end
   inherited pnlTop: TPanel
@@ -21,14 +24,14 @@ inherited frmEvents: TfrmEvents
     end
   end
   inherited pnlCenter: TPanel
-    Height = 355.000000000000000000
+    Height = 359.000000000000000000
     object lvEvents: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
       ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 311.000000000000000000
+      Height = 315.000000000000000000
       TabOrder = 1
       Width = 320.000000000000000000
       OnItemClick = lvEventsItemClick
@@ -36,7 +39,7 @@ inherited frmEvents: TfrmEvents
     object btnCreateEvent: TButton
       Align = MostBottom
       Height = 44.000000000000000000
-      Position.Y = 311.000000000000000000
+      Position.Y = 315.000000000000000000
       TabOrder = 3
       Text = 'Create Event'
       Width = 320.000000000000000000
