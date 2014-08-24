@@ -10,6 +10,10 @@ inherited frmEvent: TfrmEvent
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
     Position.Y = 412.000000000000000000
+    inherited btnBack: TButton
+      Height = 44.000000000000000000
+      Position.Y = 2.000000000000000000
+    end
     object btnEdit: TButton
       Align = Client
       Height = 54.000000000000000000
@@ -31,6 +35,7 @@ inherited frmEvent: TfrmEvent
       Align = Top
       StyledSettings = [Family, Size, Style]
       Height = 50.000000000000000000
+      StyleLookup = 'embossedlabel'
       TextSettings.FontColor = claWhitesmoke
       Width = 320.000000000000000000
     end
