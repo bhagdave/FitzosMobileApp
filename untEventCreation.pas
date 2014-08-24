@@ -64,8 +64,6 @@ type
     procedure btnSubmitClick(Sender: TObject);
   private
     { Private declarations }
-    procedure getAttending;
-    procedure getWall;
     procedure getSportsAndTeams;
     procedure addParams(request : TRestRequest);
     function validate : boolean;
@@ -74,6 +72,7 @@ type
     procedure teamsLoaded;
     procedure eventLoaded;
     procedure saveCompleted;
+    procedure eventThreadTerminated(Sender : TObject);
   public
     { Public declarations }
   end;
@@ -84,6 +83,8 @@ implementation
 uses
   untDataModule, untJsonFunctions,untFormRegistry;
 
+var
+  myThread : TRESTExecutionThread;
 {$R *.fmx}
 procedure TfrmEventCreation.addParams(request: TRestRequest);
 var
@@ -179,6 +180,11 @@ begin
   end;
 end;
 
+procedure TfrmEventCreation.eventThreadTerminated(Sender: TObject);
+begin
+  myThread := nil;
+end;
+
 procedure TfrmEventCreation.FormActivate(Sender: TObject);
 begin
   inherited;
@@ -196,10 +202,10 @@ begin
     begin
       rdsaEvent.ClearDataSet;
       fdmEvent.Close;
-      respEvent.Content.Empty;
-      reqEvent.ClearBody;
-      reqEvent.Params.ParameterByName('id').Value := Id;
-      reqEvent.ExecuteAsync(eventLoaded);
+      respAllEventData.Content.Empty;
+      reqAllEventData.ClearBody;
+      reqAllEventData.Params.ParameterByName('id').Value := Id;
+      reqAllEventData.ExecuteAsync(eventLoaded);
     end;
   end
   else
@@ -210,33 +216,6 @@ begin
     btnTimesNext.Visible := true;
     edtDate.Data := '';
     edtEndDate.Data := '';
-  end;
-end;
-
-procedure TfrmEventCreation.getAttending;
-var
-  sResult : String;
-begin
-  with dmdEvent do
-  begin
-      // Open up the data.
-      rdsaAttending.ClearDataSet;
-      fdmAttending.Close;
-      respAttending.Content.Empty;
-      reqAttending.ClearBody;
-      reqAttending.Params.ParameterByName('id').Value := id;
-      reqAttending.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
-      reqAttending.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      try
-        reqAttending.Execute;
-      except on E: Exception do
-      end;
-      sResult := getResultString(respAttending.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaAttending.Response := respAttending;
-          fdmAttending.Open;
-      end;
   end;
 end;
 
@@ -258,33 +237,6 @@ begin
     reqTeams.ClearBody;
     reqTeams.Params.ParameterByName('id').Value := dmdDataModule.memberId;
     reqTeams.ExecuteAsync(teamsLoaded);
-  end;
-end;
-
-procedure TfrmEventCreation.getWall;
-var
-  sResult : String;
-begin
-  with dmdEvent do
-  begin
-      // Open up the data.
-      rdsaWall.ClearDataSet;
-      fdmWall.Close;
-      respWall.Content.Empty;
-      reqWall.ClearBody;
-      reqWall.Params.ParameterByName('id').Value := id;
-      reqWall.Params.ParameterByName('signature').Value := dmdDataModule.signature('getMember');
-      reqWall.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
-      try
-        reqWall.Execute;
-      except on E: Exception do
-      end;
-      sResult := getResultString(respWall.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaWall.Response := respWall;
-          fdmWall.Open;
-      end;
   end;
 end;
 
