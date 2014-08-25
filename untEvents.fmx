@@ -1,6 +1,7 @@
 inherited frmEvents: TfrmEvents
   Caption = 'Events'
   ClientHeight = 460
+  StyleLookup = 'panelstyle'
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320

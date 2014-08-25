@@ -77,6 +77,7 @@ inherited frmEvent: TfrmEvent
       IsExpanded = False
       Position.Y = 98.000000000000000000
       ShowCheck = False
+      StyleLookup = 'expenderstyle'
       Text = 'Event Wall'
       Width = 320.000000000000000000
       TabOrder = 1
