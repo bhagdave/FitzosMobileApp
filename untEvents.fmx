@@ -13,7 +13,6 @@ inherited frmEvents: TfrmEvents
     Position.Y = 416.000000000000000000
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
-      Height = 44.000000000000000000
       IconTintColor = claWhite
       TextSettings.FontColor = claWhite
     end
@@ -48,7 +47,6 @@ inherited frmEvents: TfrmEvents
   end
   inherited StyleBook1: TStyleBook
     StyleName = 'Orange'
-    FileName = 'OrangeStyle.style'
     UseStyleManager = True
   end
   object pnlWait: TPanel

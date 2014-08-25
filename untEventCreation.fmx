@@ -12,9 +12,7 @@ inherited frmEventCreation: TfrmEventCreation
     Position.Y = 412.000000000000000000
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
-      Height = 44.000000000000000000
       IconTintColor = claWhite
-      Position.Y = 2.000000000000000000
       TextSettings.FontColor = claWhite
     end
     object btnSubmit: TButton
@@ -344,9 +342,6 @@ inherited frmEventCreation: TfrmEventCreation
         end
       end
     end
-  end
-  inherited StyleBook1: TStyleBook
-    FileName = 'OrangeStyle.style'
   end
   object BindingsList1: TBindingsList
     Methods = <>

@@ -104,9 +104,6 @@ inherited frmEvent: TfrmEvent
       end
     end
   end
-  inherited StyleBook1: TStyleBook
-    FileName = 'OrangeStyle.style'
-  end
   object BindSourceDB1: TBindSourceDB
     DataSet = dmdEvent.fdmEvent
     ScopeMappings = <>
