@@ -345,6 +345,9 @@ inherited frmEventCreation: TfrmEventCreation
       end
     end
   end
+  inherited StyleBook1: TStyleBook
+    FileName = 'OrangeStyle.style'
+  end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>

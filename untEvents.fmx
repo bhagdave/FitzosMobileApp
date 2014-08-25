@@ -46,6 +46,11 @@ inherited frmEvents: TfrmEvents
       OnClick = btnCreateEventClick
     end
   end
+  inherited StyleBook1: TStyleBook
+    StyleName = 'Orange'
+    FileName = 'OrangeStyle.style'
+    UseStyleManager = True
+  end
   object pnlWait: TPanel
     Align = Fit
     DesignVisible = False

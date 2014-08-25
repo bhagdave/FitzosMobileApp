@@ -15,7 +15,7 @@ inherited frmEvent: TfrmEvent
       Position.Y = 2.000000000000000000
     end
     object btnEdit: TButton
-      Align = Client
+      Align = Right
       Height = 54.000000000000000000
       TabOrder = 3
       Text = 'Edit '
@@ -103,6 +103,9 @@ inherited frmEvent: TfrmEvent
         OnClick = btnPostClick
       end
     end
+  end
+  inherited StyleBook1: TStyleBook
+    FileName = 'OrangeStyle.style'
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dmdEvent.fdmEvent
