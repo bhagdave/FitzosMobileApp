@@ -86,8 +86,14 @@ begin
     sResult := getResultString(dmdDataModule.respMemberTeams.Content);
     if (sResult = 'OK') then
     begin
+        lvTeams.Visible := false;
+        lvTeams.BeginUpdate;
         dmdDataModule.rdsaMemberTeams.Response := dmdDataModule.respMemberTeams;
-        dmdDataModule.fdmMemberTeams.Open;
+        dmdDataModule.rdsaMemberTeams.UpdateDataSet;
+        if dmdDataModule.fdmMemberTeams.RecordCount > 0 then
+          dmdDataModule.fdmMemberTeams.Open;
+        lvTeams.EndUpdate;
+        lvTeams.Visible := true;
     end;
 end;
 

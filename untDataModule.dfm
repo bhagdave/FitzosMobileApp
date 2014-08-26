@@ -207,6 +207,7 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaMemberTeams: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmMemberTeams
     FieldDefs = <>
     Response = respMemberTeams
