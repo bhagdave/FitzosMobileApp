@@ -1363,8 +1363,8 @@ object TStyleContainer
     StyleName = 'comboeditstyle'
     DesignVisible = False
     Height = 22.000000000000000000
-    Position.X = 370.000000000000000000
-    Position.Y = 490.000000000000000000
+    Position.X = 457.000000000000000000
+    Position.Y = 334.000000000000000000
     Width = 100.999992370605500000
     TabOrder = 23
     object TBrushObject
@@ -1441,23 +1441,14 @@ object TStyleContainer
     StyleName = 'comboboxstyle'
     DesignVisible = False
     Height = 22.000000000000000000
-    Position.X = 370.000000000000000000
-    Position.Y = 490.000000000000000000
+    Position.X = 457.000000000000000000
+    Position.Y = 334.000000000000000000
     Width = 100.999992370605500000
     TabOrder = 24
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Kind = Gradient
-      Fill.Gradient.Points = <
-        item
-          Color = xFF505050
-          Offset = 0.000000000000000000
-        end
-        item
-          Color = xFF303030
-          Offset = 1.000000000000000000
-        end>
+      Fill.Color = xFFED7307
       Locked = True
       Height = 22.000000000000000000
       HitTest = False
@@ -2027,6 +2018,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxitemstyle'
+    DesignVisible = False
     Height = 24.000000000000000000
     Position.X = 454.000000000000000000
     Position.Y = 332.000000000000000000
@@ -2333,7 +2325,7 @@ object TStyleContainer
     DesignVisible = False
     Height = 20.000000000000000000
     Position.X = 482.000000000000000000
-    Position.Y = 417.000000000000000000
+    Position.Y = 334.000000000000000000
     Width = 49.000000000000000000
     TabOrder = 35
     object TText
@@ -2349,25 +2341,15 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'numberboxstyle'
-    DesignVisible = False
     Height = 26.000000000000000000
-    Position.X = 384.000000000000000000
-    Position.Y = 488.000000000000000000
+    Position.X = 470.000000000000000000
+    Position.Y = 332.000000000000000000
     Width = 73.000000000000000000
     TabOrder = 36
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Kind = Gradient
-      Fill.Gradient.Points = <
-        item
-          Color = xFF505050
-          Offset = 0.000000000000000000
-        end
-        item
-          Color = xFF303030
-          Offset = 1.000000000000000000
-        end>
+      Fill.Color = xFFED7307
       Locked = True
       Height = 26.000000000000000000
       HitTest = False
@@ -2889,14 +2871,14 @@ object TStyleContainer
     StyleName = 'editstyle'
     DesignVisible = False
     Height = 22.000000000000000000
-    Position.X = 367.000000000000000000
-    Position.Y = 490.000000000000000000
+    Position.X = 454.000000000000000000
+    Position.Y = 334.000000000000000000
     Width = 107.000000000000000000
     TabOrder = 43
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Color = xFF333333
+      Fill.Color = xFFED7307
       Locked = True
       Height = 22.000000000000000000
       HitTest = False
@@ -3877,7 +3859,7 @@ object TStyleContainer
     Height = 50.000000000000000000
     HitTest = False
     Position.X = 482.000000000000000000
-    Position.Y = 402.000000000000000000
+    Position.Y = 320.000000000000000000
     Stroke.Color = xFF303030
     XRadius = 2.000000000000000000
     YRadius = 2.000000000000000000
