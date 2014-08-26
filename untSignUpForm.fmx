@@ -4,9 +4,8 @@ object frmSignup: TfrmSignup
   Caption = 'Signup'
   ClientHeight = 460
   ClientWidth = 320
-  Fill.Color = claBlack
-  Fill.Kind = Solid
   StyleBook = StyleBook1
+  StyleLookup = 'panelstyle'
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
