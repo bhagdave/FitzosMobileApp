@@ -10,7 +10,6 @@ object frmMain: TfrmMain
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop, iPhone, iPad]
-  FullScreen = True
   OnCreate = FormCreate
   DesignerMobile = True
   DesignerWidth = 320
