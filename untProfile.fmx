@@ -9,6 +9,7 @@ object frmProfile: TfrmProfile
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnActivate = FormActivate
+  OnCreate = FormCreate
   OnDeactivate = FormDeactivate
   DesignerMobile = True
   DesignerWidth = 320

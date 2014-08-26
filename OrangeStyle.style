@@ -2027,10 +2027,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxitemstyle'
-    DesignVisible = False
     Height = 24.000000000000000000
-    Position.X = 367.000000000000000000
-    Position.Y = 489.000000000000000000
+    Position.X = 454.000000000000000000
+    Position.Y = 332.000000000000000000
     Width = 107.000000000000000000
     TabOrder = 30
     object TText
@@ -2043,7 +2042,7 @@ object TStyleContainer
       Margins.Right = 3.000000000000000000
       Margins.Bottom = 1.000000000000000000
       Text = 'Text'
-      TextSettings.FontColor = xFFEEEEEE
+      TextSettings.FontColor = claWhite
       TextSettings.WordWrap = False
       TextSettings.HorzAlign = Leading
       Width = 101.000000000000000000
@@ -2194,6 +2193,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxstyle'
+    DesignVisible = False
     Height = 131.000000000000000000
     Position.X = 449.000000000000000000
     Position.Y = 279.000000000000000000
@@ -4888,5 +4888,490 @@ object TStyleContainer
       end>
     ThumbStroke.Color = xFF222222
     Shape = Oval
+  end
+  object TFmxObject
+    StyleName = 'listviewstyle'
+    object TColorObject
+      StyleName = 'background'
+      Color = claWhite
+    end
+    object TColorObject
+      StyleName = 'itembackground'
+      Color = claWhite
+    end
+    object TColorObject
+      StyleName = 'alternatingitembackground'
+      Color = xFFF2F2F2
+    end
+    object TColorObject
+      StyleName = 'frame'
+      Color = xFFE0E0E0
+    end
+    object TColorObject
+      StyleName = 'foreground'
+      Color = xFF454F58
+    end
+    object TColorObject
+      StyleName = 'selectiontext'
+      Color = xFF527593
+    end
+    object TFontObject
+      StyleName = 'font'
+      Font.Size = 17.000000000000000000
+    end
+    object TFontObject
+      StyleName = 'detailfont'
+      Font.Size = 17.000000000000000000
+    end
+    object TColorObject
+      StyleName = 'detailtext'
+      Color = xFF70828F
+    end
+    object TStyleObject
+      StyleName = 'selection'
+      Height = 50.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      Width = 50.000000000000000000
+      SourceLink = <
+        item
+          CapInsets.Left = 2.000000000000000000
+          CapInsets.Top = 2.000000000000000000
+          CapInsets.Right = 2.000000000000000000
+          CapInsets.Bottom = 2.000000000000000000
+          SourceRect.Left = 52.000000000000000000
+          SourceRect.Top = 146.000000000000000000
+          SourceRect.Right = 78.000000000000000000
+          SourceRect.Bottom = 190.000000000000000000
+        end
+        item
+          CapInsets.Left = 4.000000000000000000
+          CapInsets.Top = 4.000000000000000000
+          CapInsets.Right = 4.000000000000000000
+          CapInsets.Bottom = 4.000000000000000000
+          Scale = 2.000000000000000000
+          SourceRect.Left = 104.000000000000000000
+          SourceRect.Top = 292.000000000000000000
+          SourceRect.Right = 156.000000000000000000
+          SourceRect.Bottom = 380.000000000000000000
+        end>
+      Opaque = True
+    end
+    object TStyleObject
+      StyleName = 'header'
+      Height = 50.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      Width = 50.000000000000000000
+      SourceLink = <
+        item
+          CapInsets.Left = 5.000000000000000000
+          CapInsets.Right = 5.000000000000000000
+          SourceRect.Left = 81.000000000000000000
+          SourceRect.Top = 144.000000000000000000
+          SourceRect.Right = 113.000000000000000000
+          SourceRect.Bottom = 167.000000000000000000
+        end
+        item
+          CapInsets.Left = 10.000000000000000000
+          CapInsets.Right = 10.000000000000000000
+          Scale = 2.000000000000000000
+          SourceRect.Left = 162.000000000000000000
+          SourceRect.Top = 288.000000000000000000
+          SourceRect.Right = 228.000000000000000000
+          SourceRect.Bottom = 334.000000000000000000
+        end>
+      Opaque = True
+    end
+    object TFontObject
+      StyleName = 'headerfont'
+      Font.Size = 17.000000000000000000
+    end
+    object TColorObject
+      StyleName = 'headertext'
+      Color = xFF70808D
+    end
+    object TStyleObject
+      StyleName = 'checkboxunchecked'
+      Height = 28.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 29.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 245.000000000000000000
+          SourceRect.Top = 314.000000000000000000
+          SourceRect.Right = 274.000000000000000000
+          SourceRect.Bottom = 342.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 492.000000000000000000
+          SourceRect.Top = 629.000000000000000000
+          SourceRect.Right = 546.000000000000000000
+          SourceRect.Bottom = 683.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'checkboxchecked'
+      Height = 28.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 29.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 245.000000000000000000
+          SourceRect.Top = 348.000000000000000000
+          SourceRect.Right = 274.000000000000000000
+          SourceRect.Bottom = 376.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 492.000000000000000000
+          SourceRect.Top = 697.000000000000000000
+          SourceRect.Right = 546.000000000000000000
+          SourceRect.Bottom = 751.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'accessorymore'
+      Align = MostRight
+      Height = 17.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 12.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 339.000000000000000000
+          SourceRect.Top = 39.000000000000000000
+          SourceRect.Right = 351.000000000000000000
+          SourceRect.Bottom = 56.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 686.000000000000000000
+          SourceRect.Top = 16.000000000000000000
+          SourceRect.Right = 710.000000000000000000
+          SourceRect.Bottom = 50.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'accessorymoreselected'
+      Align = MostRight
+      Height = 17.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 12.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 339.000000000000000000
+          SourceRect.Top = 39.000000000000000000
+          SourceRect.Right = 351.000000000000000000
+          SourceRect.Bottom = 56.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 686.000000000000000000
+          SourceRect.Top = 16.000000000000000000
+          SourceRect.Right = 710.000000000000000000
+          SourceRect.Bottom = 50.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'accessorycheckmark'
+      Height = 17.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 17.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 252.000000000000000000
+          SourceRect.Top = 198.000000000000000000
+          SourceRect.Right = 269.000000000000000000
+          SourceRect.Bottom = 215.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 504.000000000000000000
+          SourceRect.Top = 396.000000000000000000
+          SourceRect.Right = 538.000000000000000000
+          SourceRect.Bottom = 430.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'accessorycheckmarkselected'
+      Height = 17.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 17.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 252.000000000000000000
+          SourceRect.Top = 198.000000000000000000
+          SourceRect.Right = 269.000000000000000000
+          SourceRect.Bottom = 215.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 504.000000000000000000
+          SourceRect.Top = 395.000000000000000000
+          SourceRect.Right = 538.000000000000000000
+          SourceRect.Bottom = 429.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'accessorydetail'
+      Height = 28.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 28.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 309.000000000000000000
+          SourceRect.Top = 190.000000000000000000
+          SourceRect.Right = 337.000000000000000000
+          SourceRect.Bottom = 218.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 612.000000000000000000
+          SourceRect.Top = 385.000000000000000000
+          SourceRect.Right = 668.000000000000000000
+          SourceRect.Bottom = 441.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'accessorydetailselected'
+      Height = 28.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 28.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 309.000000000000000000
+          SourceRect.Top = 190.000000000000000000
+          SourceRect.Right = 337.000000000000000000
+          SourceRect.Bottom = 218.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 612.000000000000000000
+          SourceRect.Top = 385.000000000000000000
+          SourceRect.Right = 668.000000000000000000
+          SourceRect.Bottom = 441.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'deleteitembutton'
+      Height = 29.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 29.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 275.000000000000000000
+          SourceRect.Top = 191.000000000000000000
+          SourceRect.Right = 304.000000000000000000
+          SourceRect.Bottom = 220.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 550.000000000000000000
+          SourceRect.Top = 381.000000000000000000
+          SourceRect.Right = 608.000000000000000000
+          SourceRect.Bottom = 439.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'additembutton'
+      Height = 28.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 28.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 340.000000000000000000
+          SourceRect.Top = 190.000000000000000000
+          SourceRect.Right = 368.000000000000000000
+          SourceRect.Bottom = 218.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 668.000000000000000000
+          SourceRect.Top = 385.000000000000000000
+          SourceRect.Right = 724.000000000000000000
+          SourceRect.Bottom = 441.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'additembuttonpressed'
+      Height = 28.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      WrapMode = Center
+      Visible = False
+      Width = 28.000000000000000000
+      SourceLink = <
+        item
+          SourceRect.Left = 340.000000000000000000
+          SourceRect.Top = 190.000000000000000000
+          SourceRect.Right = 368.000000000000000000
+          SourceRect.Bottom = 218.000000000000000000
+        end
+        item
+          Scale = 2.000000000000000000
+          SourceRect.Left = 668.000000000000000000
+          SourceRect.Top = 385.000000000000000000
+          SourceRect.Right = 724.000000000000000000
+          SourceRect.Bottom = 441.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'button'
+      Height = 50.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      Visible = False
+      Width = 50.000000000000000000
+      SourceLink = <
+        item
+          CapInsets.Left = 7.000000000000000000
+          CapInsets.Right = 7.000000000000000000
+          SourceRect.Left = 64.000000000000000000
+          SourceRect.Top = 313.000000000000000000
+          SourceRect.Right = 80.000000000000000000
+          SourceRect.Bottom = 343.000000000000000000
+        end
+        item
+          CapInsets.Left = 14.000000000000000000
+          CapInsets.Right = 14.000000000000000000
+          Scale = 2.000000000000000000
+          SourceRect.Left = 128.000000000000000000
+          SourceRect.Top = 626.000000000000000000
+          SourceRect.Right = 160.000000000000000000
+          SourceRect.Bottom = 686.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'buttonpressed'
+      Height = 50.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      Visible = False
+      Width = 50.000000000000000000
+      SourceLink = <
+        item
+          CapInsets.Left = 7.000000000000000000
+          CapInsets.Right = 7.000000000000000000
+          SourceRect.Left = 81.000000000000000000
+          SourceRect.Top = 313.000000000000000000
+          SourceRect.Right = 97.000000000000000000
+          SourceRect.Bottom = 343.000000000000000000
+        end
+        item
+          CapInsets.Left = 14.000000000000000000
+          CapInsets.Right = 14.000000000000000000
+          Scale = 2.000000000000000000
+          SourceRect.Left = 162.000000000000000000
+          SourceRect.Top = 626.000000000000000000
+          SourceRect.Right = 194.000000000000000000
+          SourceRect.Bottom = 686.000000000000000000
+        end>
+    end
+    object TFontObject
+      StyleName = 'buttonfont'
+      Font.Size = 14.000000000000000000
+    end
+    object TColorObject
+      StyleName = 'buttontext'
+      Color = claBlack
+    end
+    object TColorObject
+      StyleName = 'buttontextpressed'
+      Color = claBlack
+    end
+    object TColorObject
+      StyleName = 'buttontextshadow'
+      Color = claWhite
+    end
+    object TColorObject
+      StyleName = 'buttontextshadowpressed'
+      Color = claWhite
+    end
+    object TStyleObject
+      StyleName = 'deletebutton'
+      Height = 50.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      Visible = False
+      Width = 50.000000000000000000
+      SourceLink = <
+        item
+          CapInsets.Left = 7.000000000000000000
+          CapInsets.Right = 7.000000000000000000
+          SourceRect.Left = 64.000000000000000000
+          SourceRect.Top = 313.000000000000000000
+          SourceRect.Right = 80.000000000000000000
+          SourceRect.Bottom = 343.000000000000000000
+        end
+        item
+          CapInsets.Left = 14.000000000000000000
+          CapInsets.Right = 14.000000000000000000
+          Scale = 2.000000000000000000
+          SourceRect.Left = 128.000000000000000000
+          SourceRect.Top = 626.000000000000000000
+          SourceRect.Right = 160.000000000000000000
+          SourceRect.Bottom = 686.000000000000000000
+        end>
+    end
+    object TStyleObject
+      StyleName = 'deletebuttonpressed'
+      Height = 50.000000000000000000
+      SourceLookup = 'iOS Sterlingstyle.png'
+      Visible = False
+      Width = 50.000000000000000000
+      SourceLink = <
+        item
+          CapInsets.Left = 7.000000000000000000
+          CapInsets.Right = 7.000000000000000000
+          SourceRect.Left = 81.000000000000000000
+          SourceRect.Top = 313.000000000000000000
+          SourceRect.Right = 97.000000000000000000
+          SourceRect.Bottom = 343.000000000000000000
+        end
+        item
+          CapInsets.Left = 14.000000000000000000
+          CapInsets.Right = 14.000000000000000000
+          Scale = 2.000000000000000000
+          SourceRect.Left = 162.000000000000000000
+          SourceRect.Top = 626.000000000000000000
+          SourceRect.Right = 194.000000000000000000
+          SourceRect.Bottom = 686.000000000000000000
+        end>
+    end
+    object TFontObject
+      StyleName = 'deletebuttonfont'
+      Font.Size = 14.000000000000000000
+    end
+    object TColorObject
+      StyleName = 'deletebuttontext'
+      Color = claRed
+    end
+    object TColorObject
+      StyleName = 'deletebuttontextpressed'
+      Color = claRed
+    end
+    object TColorObject
+      StyleName = 'deletebuttontextshadow'
+      Color = claWhite
+    end
+    object TColorObject
+      StyleName = 'deletebuttontextshadowpressed'
+      Color = claWhite
+    end
   end
 end

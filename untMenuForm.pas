@@ -37,6 +37,7 @@ type
     procedure btnTeamsClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,7 +48,7 @@ type
 implementation
 
 uses
-  untFormRegistry;
+  untFormRegistry,FMX.Styles;
 
 {$R *.fmx}
 
@@ -87,9 +88,23 @@ begin
   lblFriends.Text := 'Friends';
 end;
 
+procedure TfrmMenu.FormCreate(Sender: TObject);
+var
+    Style: TFMXObject;
+begin
+    {$IFDEF Android}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    {$IFDEF iOS}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    if Style<> nil then
+        TStyleManager.SetStyle(Style);
+end;
+
 procedure TfrmMenu.FormResize(Sender: TObject);
 begin
-  if (self.Height < 479) then
+  if (self.Height < 460) then
   begin
     imgEvents.Margins.Top := 0;
     imgFriends.Margins.Top := 0;

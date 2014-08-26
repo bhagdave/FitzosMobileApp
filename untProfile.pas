@@ -69,6 +69,7 @@ type
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure FormActivate(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     procedure setupCheckBoxes();
@@ -79,7 +80,7 @@ type
 
 implementation
 uses
-  IdMultipartFormData, untJsonFunctions,untFormRegistry;
+  IdMultipartFormData, untJsonFunctions,untFormRegistry, FMX.Styles;
 
 {$R *.fmx}
 procedure TfrmProfile.btnBackClick(Sender: TObject);
@@ -178,6 +179,20 @@ begin
         loadPicture(fdmProfileimage.AsString);
     end;
   end;
+end;
+
+procedure TfrmProfile.FormCreate(Sender: TObject);
+var
+    Style: TFMXObject;
+begin
+    {$IFDEF Android}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    {$IFDEF iOS}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    if Style<> nil then
+        TStyleManager.SetStyle(Style);
 end;
 
 procedure TfrmProfile.FormDeactivate(Sender: TObject);

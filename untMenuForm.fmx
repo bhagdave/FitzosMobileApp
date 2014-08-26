@@ -9,6 +9,7 @@ object frmMenu: TfrmMenu
   FormFactor.Orientations = [Portrait, Landscape, InvertedPortrait, InvertedLandscape]
   FormFactor.Devices = [Desktop]
   OnActivate = FormActivate
+  OnCreate = FormCreate
   OnResize = FormResize
   DesignerMobile = True
   DesignerWidth = 320
