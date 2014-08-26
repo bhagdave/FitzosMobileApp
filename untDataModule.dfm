@@ -1188,6 +1188,7 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaFriends: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmFriends
     FieldDefs = <>
     Response = respFriends

@@ -56,11 +56,8 @@ begin
     sResult := getResultString(dmdDatamodule.respEvents.Content);
     if (sResult = 'OK') then
     begin
-      try
         dmdDatamodule.rdsaEvents.UpdateDataSet;
         dmdDatamodule.fdmEvents.Open;
-      except on E: Exception do
-      end;
     end;
 end;
 

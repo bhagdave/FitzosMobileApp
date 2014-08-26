@@ -61,8 +61,14 @@ begin
     sResult := getResultString(dmdDataModule.respFriends.Content);
     if (sResult = 'OK') then
     begin
+        lvFriends.Visible := false;
+        lvFriends.BeginUpdate;
         dmdDataModule.rdsaFriends.Response := dmdDataModule.respFriends;
-        dmdDataModule.fdmFriends.Open;
+        dmdDataModule.rdsaFriends.UpdateDataSet;
+        if dmdDataModule.fdmFriends.RecordCount > 0 then
+          dmdDataModule.fdmFriends.Open;
+        lvFriends.EndUpdate;
+        lvFriends.Visible := true;
     end;
 end;
 
