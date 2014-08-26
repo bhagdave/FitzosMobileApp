@@ -89,9 +89,8 @@ end;
 
 procedure TfrmMenu.FormResize(Sender: TObject);
 begin
-  if (self.Height < 480) then
+  if (self.Height < 479) then
   begin
-    imgLogo.Height := 57;
     imgEvents.Margins.Top := 0;
     imgFriends.Margins.Top := 0;
     imgTeams.Margins.Top := 0;
@@ -107,7 +106,6 @@ begin
   end
   else
   begin
-    imgLogo.Height := 57;
     imgEvents.Margins.Top := 15;
     imgFriends.Margins.Top := 15;
     imgTeams.Margins.Top := 15;
