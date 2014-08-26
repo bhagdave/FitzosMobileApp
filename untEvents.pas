@@ -67,7 +67,6 @@ end;
 procedure TfrmEvents.FormActivate(Sender: TObject);
 begin
   inherited;
-  pnlWait.Visible := false;
   with dmdDataModule do
   begin
     // Open up the data.
@@ -81,6 +80,7 @@ begin
     myThread := reqEvents.ExecuteAsync(eventsLoaded);
     mythread.OnTerminate := threadTerminated;
   end;
+  pnlWait.Visible := false;
 end;
 
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;

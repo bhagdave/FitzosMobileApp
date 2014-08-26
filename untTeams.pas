@@ -21,6 +21,7 @@ type
     procedure lvTeamsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure FormActivate(Sender: TObject);
+    procedure btnBackClick(Sender: TObject);
   private
     { Private declarations }
     procedure teamsLoaded;
@@ -39,6 +40,11 @@ var
 
 
 {$R *.fmx}
+procedure TfrmTeams.btnBackClick(Sender: TObject);
+begin
+  close;
+end;
+
 procedure TfrmTeams.btnCreateClick(Sender: TObject);
 begin
   inherited;
@@ -87,7 +93,8 @@ end;
 
 procedure TfrmTeams.threadTerminated(Sender: TObject);
 begin
-  myThread := nil;
+  if myThread <> nil then
+     myThread := nil;
 end;
 
 initialization
