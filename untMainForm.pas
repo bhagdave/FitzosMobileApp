@@ -22,6 +22,7 @@ type
     AniIndicator1: TAniIndicator;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     sUserSalt   : String;
@@ -39,7 +40,7 @@ implementation
 
 {$R *.fmx}
 uses
-  untBaseForm,System.JSON,untFormRegistry;
+  untBaseForm,System.JSON,untFormRegistry, FMX.Styles;
 
 
 procedure TfrmMain.btnLoginClick(Sender: TObject);
@@ -62,6 +63,20 @@ end;
 procedure TfrmMain.btnSignupClick(Sender: TObject);
 begin
   showNewForm('TfrmSignup');
+end;
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+var
+    Style: TFMXObject;
+begin
+    {$IFDEF Android}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    {$IFDEF iOS}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    if Style<> nil then
+        TStyleManager.SetStyle(Style);
 end;
 
 procedure TfrmMain.loginComplete;

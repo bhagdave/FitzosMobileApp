@@ -709,8 +709,8 @@ object TStyleContainer
     StyleName = 'imagecellstyle'
     DesignVisible = False
     Height = 26.000000000000000000
-    Position.X = 384.000000000000000000
-    Position.Y = 488.000000000000000000
+    Position.X = 470.000000000000000000
+    Position.Y = 332.000000000000000000
     Width = 73.000000000000000000
     TabOrder = 10
     object TImage
@@ -2341,6 +2341,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'numberboxstyle'
+    DesignVisible = False
     Height = 26.000000000000000000
     Position.X = 470.000000000000000000
     Position.Y = 332.000000000000000000
@@ -2925,6 +2926,11 @@ object TStyleContainer
       Trigger = 'IsFocused=true'
       Enabled = False
     end
+    object TLabel
+      StyleName = 'promptstyle'
+      Height = 17.000000000000000000
+      Width = 120.000000000000000000
+    end
   end
   object TLayout
     StyleName = 'splitterstyle'
@@ -3393,32 +3399,19 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'imagecontrolstyle'
-    DesignVisible = False
     Height = 26.000000000000000000
-    Position.X = 384.000000000000000000
-    Position.Y = 488.000000000000000000
+    Position.X = 470.000000000000000000
+    Position.Y = 332.000000000000000000
     Width = 73.000000000000000000
     TabOrder = 51
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Kind = Gradient
-      Fill.Gradient.Points = <
-        item
-          Color = xFF303030
-          Offset = 0.000000000000000000
-        end
-        item
-          Color = xFF404040
-          Offset = 0.698181807994842500
-        end
-        item
-          Color = xFF404040
-          Offset = 1.000000000000000000
-        end>
+      Fill.Kind = None
       Locked = True
       Height = 26.000000000000000000
       HitTest = False
+      Sides = []
       Stroke.Color = xFF303030
       XRadius = 3.000000000000000000
       YRadius = 3.000000000000000000
@@ -5355,5 +5348,15 @@ object TStyleContainer
       StyleName = 'deletebuttontextshadowpressed'
       Color = claWhite
     end
+  end
+  object TLabel
+    StyleName = 'prompt'
+    DesignVisible = False
+    StyledSettings = [Family, Size, Style]
+    Height = 17.000000000000000000
+    Position.X = 447.000000000000000000
+    Position.Y = 336.000000000000000000
+    TextSettings.FontColor = claSlategray
+    Width = 120.000000000000000000
   end
 end
