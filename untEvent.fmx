@@ -9,11 +9,8 @@ inherited frmEvent: TfrmEvent
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 412.000000000000000000
-    inherited btnBack: TButton
-      Height = 44.000000000000000000
-      Position.Y = 2.000000000000000000
-    end
+    Height = 44.000000000000000000
+    Position.Y = 416.000000000000000000
     object btnEdit: TButton
       Align = Right
       Height = 54.000000000000000000
@@ -30,7 +27,7 @@ inherited frmEvent: TfrmEvent
     end
   end
   inherited pnlCenter: TPanel
-    Height = 355.000000000000000000
+    Height = 359.000000000000000000
     object lblContent: TLabel
       Align = Top
       StyledSettings = [Family, Size, Style]
@@ -104,6 +101,9 @@ inherited frmEvent: TfrmEvent
         OnClick = btnPostClick
       end
     end
+  end
+  inherited StyleBook1: TStyleBook
+    ResourcesBin = {464D585F5354594C4520322E350100}
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dmdEvent.fdmEvent

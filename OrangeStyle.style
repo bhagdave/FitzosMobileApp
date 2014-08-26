@@ -3407,7 +3407,7 @@ object TStyleContainer
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Kind = None
+      Fill.Color = claWhite
       Locked = True
       Height = 26.000000000000000000
       HitTest = False
