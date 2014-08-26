@@ -36,6 +36,7 @@ type
     procedure btnSportsClick(Sender: TObject);
     procedure btnTeamsClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,6 +85,42 @@ end;
 procedure TfrmMenu.FormActivate(Sender: TObject);
 begin
   lblFriends.Text := 'Friends';
+end;
+
+procedure TfrmMenu.FormResize(Sender: TObject);
+begin
+  if (self.Height < 480) then
+  begin
+    imgLogo.Height := 57;
+    imgEvents.Margins.Top := 0;
+    imgFriends.Margins.Top := 0;
+    imgTeams.Margins.Top := 0;
+    imgNotifications.Margins.Top := 0;
+    imgSports.Margins.Top := 0;
+    imgProfile.Margins.Top := 0;
+    lblEvents.Visible := false;
+    lblTeams.Visible := false;
+    lblNotifications.Visible := false;
+    lblFriends.Visible := false;
+    lblSports.Visible := false;
+    lblProfile.Visible := false;
+  end
+  else
+  begin
+    imgLogo.Height := 57;
+    imgEvents.Margins.Top := 15;
+    imgFriends.Margins.Top := 15;
+    imgTeams.Margins.Top := 15;
+    imgNotifications.Margins.Top := 15;
+    imgSports.Margins.Top := 15;
+    imgProfile.Margins.Top := 15;
+    lblEvents.Visible := true;
+    lblTeams.Visible := true;
+    lblNotifications.Visible := true;
+    lblFriends.Visible := true;
+    lblSports.Visible := true;
+    lblProfile.Visible := true;
+  end;
 end;
 
 initialization
