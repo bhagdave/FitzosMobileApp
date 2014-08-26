@@ -5927,7 +5927,7 @@ object frmBase: TfrmBase
   end
   object pnlTop: TPanel
     Align = MostTop
-    Height = 57.000000000000000000
+    Height = 33.000000000000000000
     Width = 320.000000000000000000
     TabOrder = 2
     object lblCaption: TLabel
@@ -5940,7 +5940,7 @@ object frmBase: TfrmBase
   end
   object pnlCenter: TPanel
     Align = Client
-    Height = 443.000000000000000000
+    Height = 467.000000000000000000
     Width = 320.000000000000000000
     TabOrder = 3
   end

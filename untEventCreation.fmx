@@ -132,11 +132,10 @@ inherited frmEventCreation: TfrmEventCreation
             object edtName: TEdit
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
-              StyleLookup = 'transparentedit'
               TabOrder = 1
               TextSettings.FontColor = claWhitesmoke
               Width = 218.459869384765600000
-              Height = 29.000000000000000000
+              Height = 25.000000000000000000
               TextPrompt = 'Name'
               StyledSettings = [Family, Size, Style]
             end
@@ -149,11 +148,10 @@ inherited frmEventCreation: TfrmEventCreation
             object edtLocation: TEdit
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
-              StyleLookup = 'transparentedit'
               TabOrder = 2
               TextSettings.FontColor = claWhitesmoke
               Width = 218.459869384765600000
-              Height = 29.000000000000000000
+              Height = 25.000000000000000000
               TextPrompt = 'Location'
               StyledSettings = [Family, Size, Style]
             end
