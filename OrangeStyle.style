@@ -2879,7 +2879,7 @@ object TStyleContainer
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Color = xFFED7307
+      Fill.Color = xFFEAC9AB
       Locked = True
       Height = 22.000000000000000000
       HitTest = False
@@ -3349,7 +3349,7 @@ object TStyleContainer
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Color = xFFED7307
+      Fill.Color = xFFF18526
       Locked = True
       Height = 26.000000000000000000
       HitTest = False
@@ -3605,7 +3605,7 @@ object TStyleContainer
   object TRectangle
     StyleName = 'toolbarstyle'
     DesignVisible = False
-    Fill.Color = xFFED7307
+    Fill.Color = xFFEB9448
     Height = 50.000000000000000000
     HitTest = False
     Position.X = 482.000000000000000000
@@ -3848,7 +3848,7 @@ object TStyleContainer
   object TRectangle
     StyleName = 'panelstyle'
     DesignVisible = False
-    Fill.Color = xFFED7307
+    Fill.Color = xFFEAA56A
     Height = 50.000000000000000000
     HitTest = False
     Position.X = 482.000000000000000000
