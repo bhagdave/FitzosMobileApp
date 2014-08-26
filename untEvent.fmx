@@ -11,6 +11,9 @@ inherited frmEvent: TfrmEvent
   inherited barBottom: TToolBar
     Height = 44.000000000000000000
     Position.Y = 416.000000000000000000
+    inherited btnBack: TButton
+      Height = 44.000000000000000000
+    end
     object btnEdit: TButton
       Align = Right
       Height = 54.000000000000000000
@@ -27,7 +30,7 @@ inherited frmEvent: TfrmEvent
     end
   end
   inherited pnlCenter: TPanel
-    Height = 359.000000000000000000
+    Height = 383.000000000000000000
     object lblContent: TLabel
       Align = Top
       StyledSettings = [Family, Size, Style]
@@ -63,7 +66,7 @@ inherited frmEvent: TfrmEvent
         Align = Client
         Height = 152.000000000000000000
         TabOrder = 0
-        Width = 384.000000000000000000
+        Width = 320.000000000000000000
         ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Detail
         OnItemClick = lvAttendingItemClick
       end
