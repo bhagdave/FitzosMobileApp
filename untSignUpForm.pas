@@ -32,7 +32,7 @@ type
 implementation
 
 uses
-  untJsonFunctions,untFormRegistry;
+  untJsonFunctions,untFormRegistry, FMX.Styles;
 
 {$R *.fmx}
 procedure TfrmSignup.btnSignupClick(Sender: TObject);
@@ -89,8 +89,18 @@ begin
 end;
 
 procedure TfrmSignup.FormCreate(Sender: TObject);
+var
+    Style: TFMXObject;
 begin
   dmdSignup := TdmdSignup.Create(self);
+    {$IFDEF Android}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    {$IFDEF iOS}
+        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
+    if Style<> nil then
+        TStyleManager.SetStyle(Style);
 end;
 
 procedure TfrmSignup.FormDestroy(Sender: TObject);
