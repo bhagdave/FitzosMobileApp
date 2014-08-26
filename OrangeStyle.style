@@ -2194,10 +2194,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxstyle'
-    DesignVisible = False
     Height = 131.000000000000000000
-    Position.X = 362.000000000000000000
-    Position.Y = 435.000000000000000000
+    Position.X = 449.000000000000000000
+    Position.Y = 279.000000000000000000
     Width = 116.999992370605500000
     TabOrder = 33
     object TBrushObject
@@ -2207,7 +2206,7 @@ object TStyleContainer
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Color = xFF404040
+      Fill.Color = claWhite
       Locked = True
       Height = 131.000000000000000000
       HitTest = False
@@ -2416,6 +2415,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'memostyle'
+    DesignVisible = False
     Height = 131.000000000000000000
     Position.X = 340.000000000000000000
     Position.Y = 362.000000000000000000
