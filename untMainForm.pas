@@ -69,6 +69,9 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 var
     Style: TFMXObject;
 begin
+    {$IFDEF MSWINDOWS}
+        Style := TStyleStreaming.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
     {$IFDEF Android}
         Style := TStyleStreaming.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
     {$ENDIF}
