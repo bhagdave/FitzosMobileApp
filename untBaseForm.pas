@@ -17,6 +17,7 @@ type
     btnBack: TButton;
     procedure edtSearchExit(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     fId : String;
@@ -32,7 +33,7 @@ implementation
 
 {$R *.fmx}
 uses
-  untFormRegistry;
+  untFormRegistry,FMX.Styles;
 
 procedure TfrmBase.btnBackClick(Sender: TObject);
 begin
@@ -42,6 +43,20 @@ end;
 procedure TfrmBase.edtSearchExit(Sender: TObject);
 begin
 //  shownewFormwithId('TfrmSearch',edtSearch.Text);
+end;
+
+procedure TfrmBase.FormCreate(Sender: TObject);
+var
+    Style: TFMXObject;
+begin
+    {$IFDEF Android}
+        Style := TStyleManager.LoadFromResource(HInstance, 'AndroidJet', RT_RCDATA);
+    {$ENDIF}
+    {$IFDEF iOS}
+        Style := TStyleManager.LoadFromResource(HInstance, 'iOSJet', RT_RCDATA);
+    {$ENDIF}
+    if Style<> nil then
+        TStyleManager.SetStyle(Style);
 end;
 
 function TfrmBase.getSelectedValue(AObject: TObject): TValue;

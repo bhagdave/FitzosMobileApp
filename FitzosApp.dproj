@@ -198,7 +198,6 @@
         </DelphiCompile>
         <DCCReference Include="untMainForm.pas">
             <Form>frmMain</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untDataModule.pas">
             <Form>dmdDataModule</Form>
@@ -209,93 +208,77 @@
         </DCCReference>
         <DCCReference Include="untNotifications.pas">
             <Form>frmNotifications</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untFriends.pas">
             <Form>frmFriends</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untEvents.pas">
             <Form>frmEvents</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untTeams.pas">
             <Form>frmTeams</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untNotification.pas">
             <Form>frmNotification</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untSearch.pas">
             <Form>frmSearch</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untFriend.pas">
             <Form>frmFriend</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untEvent.pas">
             <Form>frmEvent</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untTeam.pas">
             <Form>frmTeam</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untTeamCreate.pas">
             <Form>frmTeamCreate</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untEventCreation.pas">
             <Form>frmEventCreation</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untSettings.pas">
             <Form>frmSettings</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untProfile.pas">
             <Form>frmProfile</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untEventDataModule.pas">
             <Form>dmdEvent</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="untSignUpForm.pas">
             <Form>frmSignup</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untTeamWall.pas">
             <Form>frmTeamWall</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untDmdSignup.pas">
             <Form>dmdSignup</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="untSportsForm.pas">
             <Form>frmSports</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untStatsForm.pas">
             <Form>frmStats</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="untDmdSports.pas">
             <Form>dmdSports</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="untFormRegistry.pas"/>
         <DCCReference Include="untJSONFunctions.pas"/>
         <DCCReference Include="untMenuForm.pas">
             <Form>frmMenu</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
+        <RcItem Include="OrangeStyle.style">
+            <ContainerId>ResourceItem</ContainerId>
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>OrangeStyle</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

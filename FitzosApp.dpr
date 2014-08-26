@@ -1,5 +1,7 @@
 program FitzosApp;
 
+{$R *.dres}
+
 uses
   System.StartUpCopy,
   FMX.Forms,

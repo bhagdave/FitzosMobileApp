@@ -5899,7 +5899,9 @@ object frmBase: TfrmBase
   StyleBook = StyleBook1
   FormFactor.Width = 320
   FormFactor.Height = 480
+  FormFactor.Orientations = [Portrait, Landscape, InvertedPortrait, InvertedLandscape]
   FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
   DesignerMobile = True
   DesignerWidth = 320
   DesignerHeight = 568
