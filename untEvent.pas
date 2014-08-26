@@ -87,9 +87,11 @@ begin
           rdsaEvent.UpdateDataSet;
           fdmEvent.Open;
           rdsaAttending.UpdateDataSet;
-          fdmAttending.Open;
+          if fdmAttending.RecordCount > 0 then
+            fdmAttending.Open;
           rdsaWall.UpdateDataSet;
-          fdmWall.Open;
+          if fdmWall.RecordCount > 0 then
+            fdmWall.Open;
           bOwner := fdmEvent.FieldByName('isOwner').AsString = 'Yes';
           bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
           btnEdit.Visible := bOwner;
