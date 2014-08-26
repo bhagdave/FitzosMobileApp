@@ -93,10 +93,10 @@ var
     Style: TFMXObject;
 begin
     {$IFDEF Android}
-        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+        Style := TStyleStreaming.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
     {$ENDIF}
     {$IFDEF iOS}
-        Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+        Style := TStyleStreaming.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
     {$ENDIF}
     if Style<> nil then
         TStyleManager.SetStyle(Style);

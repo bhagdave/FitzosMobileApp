@@ -5904,7 +5904,7 @@ object frmBase: TfrmBase
   OnCreate = FormCreate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 568
+  DesignerHeight = 548
   DesignerDeviceName = 'iPhone5'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -5916,8 +5916,7 @@ object frmBase: TfrmBase
     Width = 320.000000000000000000
     object btnBack: TButton
       Align = Left
-      Height = 44.000000000000000000
-      Position.Y = 2.000000000000000000
+      Height = 48.000000000000000000
       StyleLookup = 'backtoolbutton'
       TabOrder = 1
       Text = 'Back'
