@@ -68,7 +68,6 @@ type
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure FormActivate(Sender: TObject);
-    procedure FormDeactivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -196,14 +195,6 @@ begin
     {$ENDIF}
     if Style<> nil then
         TStyleManager.SetStyle(Style);
-end;
-
-procedure TfrmProfile.FormDeactivate(Sender: TObject);
-begin
-  with dmdDatamodule do
-  begin
-   rdsaProfile.Dataset := nil;
-  end;
 end;
 
 procedure TfrmProfile.loadPicture(sUrl : String);
