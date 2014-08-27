@@ -175,6 +175,8 @@ end;
 procedure TfrmEventCreation.eventLoaded;
 begin
   with dmdEvent do begin
+      rdsaEvent.UpdateDataSet;
+      fdmEvent.Open;
       edtDate.text := fdmEvent.FieldByName('date').AsString;
       edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
   end;
