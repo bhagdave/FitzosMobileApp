@@ -253,7 +253,6 @@ begin
         rdsaSports.Response := respSports;
         rdsaSports.UpdateDataSet;
         fdmSports.Open;
-        cboSport.ItemIndex := 0;
     end;
   end;
 end;

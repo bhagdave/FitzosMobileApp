@@ -1378,16 +1378,7 @@ object TStyleContainer
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Kind = Gradient
-      Fill.Gradient.Points = <
-        item
-          Color = xFF505050
-          Offset = 0.000000000000000000
-        end
-        item
-          Color = xFF303030
-          Offset = 1.000000000000000000
-        end>
+      Fill.Color = claWhite
       Locked = True
       Height = 22.000000000000000000
       HitTest = False
@@ -2185,7 +2176,6 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxstyle'
-    DesignVisible = False
     Height = 131.000000000000000000
     Position.X = 449.000000000000000000
     Position.Y = 279.000000000000000000
@@ -2198,7 +2188,7 @@ object TStyleContainer
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Color = claWhite
+      Fill.Color = xFFEAA56A
       Locked = True
       Height = 131.000000000000000000
       HitTest = False
@@ -2218,7 +2208,7 @@ object TStyleContainer
         Width = 96.999992370605470000
         object TRectangle
           StyleName = 'selection'
-          Fill.Color = xFF936639
+          Fill.Color = xCA936639
           Height = 50.000000000000000000
           HitTest = False
           Stroke.Kind = None
@@ -3399,6 +3389,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'imagecontrolstyle'
+    DesignVisible = False
     Height = 26.000000000000000000
     Position.X = 470.000000000000000000
     Position.Y = 332.000000000000000000
