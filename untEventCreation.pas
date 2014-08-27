@@ -42,7 +42,6 @@ type
     btnTimesNext: TButton;
     btnSubmit: TButton;
     BindingsList1: TBindingsList;
-    LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
     BindSourceDB1: TBindSourceDB;
     LinkControlToField1: TLinkControlToField;
@@ -58,6 +57,7 @@ type
     grdPanelEdits: TGridPanelLayout;
     lblName: TLabel;
     lblLocation: TLabel;
+    LinkFillControlToField1: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);

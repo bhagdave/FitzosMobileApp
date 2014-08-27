@@ -43,24 +43,24 @@ Coordinates=327,78,72,51
 Visible=False
 
 [memContent]
-Coordinates=460,140,88,58
+Coordinates=460,140,77,51
 
 [lyoEndTime]
 Coordinates=1030,110,72,33
 Visible=False
 
 [edtStartTime]
-Coordinates=260,80,138,58
+Coordinates=260,80,115,51
 
 [edtName]
-Coordinates=550,100,66,58
+Coordinates=550,100,57,51
 
 [lblCaption]
 Coordinates=88,478,64,51
 Visible=False
 
 [edtEndTime]
-Coordinates=503,1,138,58
+Coordinates=503,1,115,51
 
 [btnSubmit]
 Coordinates=503,386,65,51
@@ -91,7 +91,7 @@ Coordinates=327,155,83,51
 Visible=False
 
 [cbPublished]
-Coordinates=810,180,85,58
+Coordinates=810,180,75,51
 
 [lblStartTime]
 Coordinates=246,478,73,51
@@ -133,7 +133,7 @@ Coordinates=167,478,65,51
 Visible=False
 
 [edtLocation]
-Coordinates=88,1,81,58
+Coordinates=88,1,72,51
 
 [lyoEvent]
 Coordinates=679,518,57,33
@@ -152,7 +152,7 @@ Coordinates=679,573,62,33
 Visible=False
 
 [cboSport]
-Coordinates=800,20,101,124
+Coordinates=800,20,84,105
 
 [lblEndTime]
 Coordinates=414,478,69,51
@@ -171,18 +171,18 @@ Coordinates=462,574,64,33
 Visible=False
 
 [cboTeam]
-Coordinates=500,230,101,124
+Coordinates=500,230,84,105
 
 [cboType]
-Coordinates=700,510,101,124
+Coordinates=700,510,84,105
 
 [dmdEvent.fdmTeams]
 Visible=False
-Coordinates=460,400,128,124
+Coordinates=460,400,111,105
 
 [dmdEvent.fdmSports]
 Visible=False
-Coordinates=950,220,126,124
+Coordinates=950,40,111,105
 
 [dmdEvent.respAttending]
 Coordinates=200,430,136,267
@@ -193,14 +193,14 @@ Coordinates=946,144,104,123
 Visible=False
 
 [dmdEvent.fdmAttending]
-Coordinates=40,280,152,652
+Coordinates=40,280,133,537
 
 [dmdEvent.restAPI]
 Coordinates=977,771,103,69
 Visible=False
 
 [dmdEvent.dsSports]
-Coordinates=950,40,126,124
+Coordinates=950,40,111,105
 
 [dmdEvent.fdmGeneric]
 Coordinates=797,478,124,51
@@ -211,7 +211,7 @@ Coordinates=946,408,115,87
 Visible=False
 
 [dmdEvent.dsTeams]
-Coordinates=460,400,128,124
+Coordinates=460,400,111,105
 
 [dmdEvent.respGeneric]
 Coordinates=503,629,127,267
@@ -242,7 +242,7 @@ Coordinates=174,934,121,267
 Visible=False
 
 [dmdEvent.fdmEvent]
-Coordinates=670,70,118,564
+Coordinates=670,70,99,465
 Visible=False
 
 [dmdEvent.reqAttending]
@@ -258,7 +258,7 @@ Coordinates=323,934,148,267
 Visible=False
 
 [dmdEvent.fdmWall]
-Coordinates=190,530,122,278
+Coordinates=190,530,107,231
 
 [dmdEvent.reqGeneric]
 Coordinates=946,507,121,69
@@ -268,17 +268,17 @@ Visible=False
 Coordinates=805,56,91,36
 
 [cboPrivacy]
-Coordinates=850,360,101,124
+Coordinates=850,360,84,105
 
 [dmdEvent.respUpdateEvent]
 Coordinates=810,170,151,267
 Visible=False
 
 [dmdEvent.reqUpdateEvent]
-Coordinates=179,1,168,80
+Coordinates=179,1,145,69
 
 [BindSourceDB1]
-Coordinates=670,70,118,564
+Coordinates=670,70,99,465
 
 [dmdDataModule.respMemberTeams]
 Coordinates=1338,1,191,267
@@ -426,26 +426,26 @@ Coordinates=0,0,62,51
 Visible=False
 
 [dmdEvent.reqAllEventData]
-Coordinates=324,251,169,124
+Coordinates=324,251,146,105
 
 [lblName]
-Coordinates=0,0,62,58
+Coordinates=0,0,54,51
 
 [grdPanelEdits]
-Coordinates=49,176,95,36
+Coordinates=49,176,83,33
 
 [lblLocation]
-Coordinates=207,157,76,58
+Coordinates=207,157,69,51
 
 [lblSport]
-Coordinates=148,173,58,58
+Coordinates=148,173,53,51
 
 [btnBack]
-Coordinates=62,77,61,58
+Coordinates=62,77,54,51
 
 [lblTeam]
-Coordinates=81,1,60,58
+Coordinates=81,1,53,51
 
 [dmdEvent.respAllEventData]
-Coordinates=528,1294,175,322
+Coordinates=528,1294,152,267
 

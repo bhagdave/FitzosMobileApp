@@ -3200,21 +3200,6 @@ inherited frmEventCreation: TfrmEventCreation
     OutputConverters = <>
     Left = 20
     Top = 5
-    object LinkFillControlToField1: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'team_id'
-      Control = cboTeam
-      Direction = linkDataToControl
-      Track = True
-      FillDataSource = dmdEvent.dsTeams
-      FillValueFieldName = 'id'
-      FillDisplayFieldName = 'name'
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
@@ -3292,6 +3277,20 @@ inherited frmEventCreation: TfrmEventCreation
       FieldName = 'time'
       Control = edtStartTime
       Track = True
+    end
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'team_id'
+      Control = cboTeam
+      Track = True
+      FillDataSource = dmdEvent.dsTeams
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
     end
   end
   object BindSourceDB1: TBindSourceDB
