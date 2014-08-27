@@ -50,7 +50,7 @@ type
 implementation
 
 uses
-  untDataModule, untJsonFunctions,untFormRegistry, Rest.client;
+  untDataModule, untJsonFunctions,untFormRegistry, Rest.client, System.JSON;
 var
   eventThread : TRESTExecutionThread;
 {$R *.fmx}
@@ -77,7 +77,10 @@ end;
 procedure TfrmEvent.eventLoaded;
 var
   sStatus,sResult : String;
-
+  lJsonResponse : TJsonValue;
+  lJsonObject,lResult,LLine:TJsonObject;
+  lJsonArray,lArray : TJsonArray;
+  lData : TJsonPair;
 begin
   with dmdEvent do
   begin
@@ -86,12 +89,18 @@ begin
       begin
           rdsaEvent.UpdateDataSet;
           fdmEvent.Open;
-          rdsaAttending.UpdateDataSet;
-          if fdmAttending.RecordCount > 0 then
+          sResult := getResultElementAsString(respAllEventData.Content,'attending');
+          if (sResult <> '[]') then
+          begin
+            rdsaAttending.UpdateDataSet;
             fdmAttending.Open;
-          rdsaWall.UpdateDataSet;
-          if fdmWall.RecordCount > 0 then
+          end;
+          sResult := getResultElementAsString(respAllEventData.Content,'wall');
+          if (sResult <> '[]') then
+          begin
+            rdsaWall.UpdateDataSet;
             fdmWall.Open;
+          end;
           bOwner := fdmEvent.FieldByName('isOwner').AsString = 'Yes';
           bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
           btnEdit.Visible := bOwner;

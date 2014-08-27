@@ -4,6 +4,7 @@ interface
   function getResultString(Content : String):String;
   function getResultBoolean(Content, Value : String):Boolean;
   function getStringFromResult(Content:String):String;
+  function getResultElementAsString(content,element : String):String;
 
 implementation
 
@@ -55,5 +56,21 @@ begin
       lJSONObject.Free;
     end;
 end;
+function getResultElementAsString(content,element : String):String;
+var
+  lJSONObject,LResult : TJSONObject;
+  lData : TJsonPair;
+begin
+  try
+    lJSONObject := TJSONObject.Create();
+    lJSONObject.Parse(TEncoding.ASCII.GetBytes(Content),0);
+    lResult := TJsonObject(lJsonObject.Values['Result']);
+    lData := lResult.Get(element);
+    Result := lData.JsonValue.ToString;
+  finally
+    lJSONObject.Free;
+  end;
+end;
+
 
 end.
