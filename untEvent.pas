@@ -94,12 +94,18 @@ begin
           begin
             rdsaAttending.UpdateDataSet;
             fdmAttending.Open;
+          end else
+          begin
+            fdmAttending.close;
           end;
           sResult := getResultElementAsString(respAllEventData.Content,'wall');
           if (sResult <> '[]') then
           begin
             rdsaWall.UpdateDataSet;
             fdmWall.Open;
+          end else
+          begin
+              fdmWall.close;
           end;
           bOwner := fdmEvent.FieldByName('isOwner').AsString = 'Yes';
           bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
