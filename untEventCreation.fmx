@@ -9,15 +9,17 @@ inherited frmEventCreation: TfrmEventCreation
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 412.000000000000000000
+    Height = 44.000000000000000000
+    Position.Y = 416.000000000000000000
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
+      Height = 44.000000000000000000
       IconTintColor = claWhite
       TextSettings.FontColor = claWhite
     end
     object btnSubmit: TButton
       Align = Client
-      Height = 44.000000000000000000
+      Height = 40.000000000000000000
       Padding.Left = 1.000000000000000000
       Padding.Top = 1.000000000000000000
       Padding.Right = 1.000000000000000000
@@ -38,10 +40,10 @@ inherited frmEventCreation: TfrmEventCreation
     end
   end
   inherited pnlCenter: TPanel
-    Height = 355.000000000000000000
+    Height = 383.000000000000000000
     object vsbDetails: TVertScrollBox
       Align = Client
-      Height = 355.000000000000000000
+      Height = 383.000000000000000000
       ShowScrollBars = False
       TabOrder = 0
       Width = 320.000000000000000000
@@ -135,7 +137,7 @@ inherited frmEventCreation: TfrmEventCreation
               TabOrder = 1
               TextSettings.FontColor = claWhitesmoke
               Width = 218.459869384765600000
-              Height = 25.000000000000000000
+              Height = 30.000000000000000000
               TextPrompt = 'Name'
               StyledSettings = [Family, Size, Style]
             end
@@ -151,7 +153,7 @@ inherited frmEventCreation: TfrmEventCreation
               TabOrder = 2
               TextSettings.FontColor = claWhitesmoke
               Width = 218.459869384765600000
-              Height = 25.000000000000000000
+              Height = 30.000000000000000000
               TextPrompt = 'Location'
               StyledSettings = [Family, Size, Style]
             end

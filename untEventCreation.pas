@@ -224,19 +224,15 @@ begin
   with dmdEvent do
   begin
     // Open up the data.
-    rdsaSports.ClearDataSet;
     fdmSports.Close;
-    respSports.Content.Empty;
-    reqSports.ClearBody;
     reqSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-    reqSports.ExecuteAsync(sportsLoaded);
+    reqSports.Execute();
+    sportsLoaded;
     // Open up the data.
-    rdsaTeams.ClearDataSet;
     fdmTeams.Close;
-    respTeams.Content.Empty;
-    reqTeams.ClearBody;
     reqTeams.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-    reqTeams.ExecuteAsync(teamsLoaded);
+    reqTeams.Execute();
+    teamsLoaded();
   end;
 end;
 
@@ -250,13 +246,14 @@ procedure TfrmEventCreation.sportsLoaded;
 var
   sResult : String;
 begin
-  with dmdDatamodule do begin
+  with dmdEvent do begin
     sResult := getResultString(respSports.Content);
     if (sResult = 'OK') then
     begin
         rdsaSports.Response := respSports;
         rdsaSports.UpdateDataSet;
         fdmSports.Open;
+        cboSport.ItemIndex := 0;
     end;
   end;
 end;
@@ -272,6 +269,7 @@ begin
         rdsaTeams.Response := respTeams;
         rdsaTeams.UpdateDataSet;
         fdmTeams.Open;
+        cboTeam.ItemIndex := 0;
     end;
   end;
 
