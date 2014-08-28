@@ -4,7 +4,7 @@ inherited frmNotification: TfrmNotification
   OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 480
+  DesignerHeight = 460
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -17,7 +17,7 @@ inherited frmNotification: TfrmNotification
     end
   end
   inherited pnlCenter: TPanel
-    Height = 355.000000000000000000
+    Height = 379.000000000000000000
     object lblNotification: TLabel
       Align = MostTop
       StyledSettings = [Family, Size, FontColor]
@@ -28,7 +28,7 @@ inherited frmNotification: TfrmNotification
     object btnRead: TButton
       Align = MostBottom
       Height = 44.000000000000000000
-      Position.Y = 311.000000000000000000
+      Position.Y = 335.000000000000000000
       TabOrder = 2
       Text = 'Mark Read'
       Width = 320.000000000000000000

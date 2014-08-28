@@ -61,65 +61,8 @@ var
 begin
   inherited;
   sFrom := 'From Administrator';
-  // where did the message come from....
-  // can we get to the correct record.
   dmdDataModule.fdmNotifications.Locate('id',ID,[]);
-  if dmdDataModule.fdmNotifications.FieldByName('from_table').AsString = 'member' then
-  begin
-    // get the member
-    // Open up the data.
-    with dmdDataModule do
-    begin
-      // Open up the data.
-      rdsaMember.ClearDataSet;
-      fdmMember.Close;
-      respMember.Content.Empty;
-      reqMember.ClearBody;
-      reqMember.Params.ParameterByName('id').Value := fdmNotifications.FieldByName('from_key').AsString;
-      reqMember.Params.ParameterByName('signature').Value := signature('getMember');
-      reqMember.Params.ParameterByName('key').Value := getApiKey;
-      reqMember.Execute;
-      sResult := getResultString(respMember.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaMember.Response := respMember;
-          fdmMember.Open;
-          sFrom := 'The notification came from ' + fdmMember.FieldByName('first_name').AsString;
-      end
-      else
-      begin
-          showmessage(respMember.Content);
-      end;
-    end;
-  end
-  else if dmdDataModule.fdmNotifications.FieldByName('from_table').AsString = 'member' then
-  begin
-    // get the member
-    // Open up the data.
-    with dmdDataModule do
-    begin
-      // Open up the data.
-      rdsaTeam.ClearDataSet;
-      fdmTeam.Close;
-      respTeam.Content.Empty;
-      reqTeam.ClearBody;
-      reqTeam.Params.ParameterByName('id').Value := fdmNotifications.FieldByName('from_key').AsString;
-      reqTeam.Params.ParameterByName('signature').Value := signature('getTeam');
-      reqTeam.Params.ParameterByName('key').Value := getApiKey;
-      reqTeam.Execute;
-      sResult := getResultString(respTeam.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaTeam.Response := respTeam;
-          fdmTeam.Open;
-          sFrom := 'The notification came from the team ' + fdmTeam.FieldByName('name').AsString;
-      end
-      else
-      begin
-          showmessage(respMember.Content);
-      end;
-    end;
-  end;
+  sFrom := 'The notification came from ' + dmdDataModule.fdmNotifications.FieldByName('from').AsString;
   lblFrom.text := sFrom;
 end;
 
