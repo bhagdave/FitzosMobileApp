@@ -152,7 +152,8 @@ object dmdDataModule: TdmdDataModule
     AutoUpdate = False
     Dataset = fdmTeam
     FieldDefs = <>
-    RootElement = 'Result'
+    Response = respAllTeamData
+    RootElement = 'Result.team'
     Left = 56
     Top = 488
   end
@@ -371,7 +372,8 @@ object dmdDataModule: TdmdDataModule
     AutoUpdate = False
     Dataset = fdmTeamMembers
     FieldDefs = <>
-    RootElement = 'Result'
+    Response = respAllTeamData
+    RootElement = 'Result.members'
     Left = 136
     Top = 480
   end
@@ -553,8 +555,9 @@ object dmdDataModule: TdmdDataModule
     AutoUpdate = False
     Dataset = fdmTeamEvents
     FieldDefs = <>
-    RootElement = 'Result'
-    Left = 216
+    Response = respAllTeamData
+    RootElement = 'Result.events'
+    Left = 224
     Top = 480
   end
   object fdmTeamEvents: TFDMemTable
@@ -744,7 +747,8 @@ object dmdDataModule: TdmdDataModule
     AutoUpdate = False
     Dataset = fdmTeamWall
     FieldDefs = <>
-    RootElement = 'Result'
+    Response = respAllTeamData
+    RootElement = 'Result.wall'
     Left = 312
     Top = 480
   end
