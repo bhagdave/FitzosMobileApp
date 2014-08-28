@@ -30,14 +30,11 @@ Coordinates=220,287,50,69
 Visible=False
 
 []
-Coordinates=0,0,67,249
+Coordinates=86,1,85,267
+Visible=False
 
 [respMemberTeams]
 Coordinates=190,287,108,267
-Visible=False
-
-[reqTeam]
-Coordinates=352,429,87,123
 Visible=False
 
 [rdsaMemberTeams]
@@ -45,10 +42,6 @@ Coordinates=554,1,108,33
 
 [rdsaGeneric]
 Coordinates=477,292,74,33
-
-[respTeam]
-Coordinates=86,1,85,267
-Visible=False
 
 [respGeneric]
 Coordinates=209,1,85,267
@@ -154,10 +147,6 @@ Coordinates=700,526,100,33
 [fdmTeamEventsdate_added]
 Coordinates=700,578,151,33
 
-[reqTeamEvents]
-Coordinates=204,287,91,123
-Visible=False
-
 [fdmTeamactive]
 Coordinates=700,175,89,33
 
@@ -213,10 +202,6 @@ Coordinates=700,1202,117,33
 
 [fdmEventsdate_added]
 Coordinates=936,152,124,33
-
-[reqTeamWall]
-Coordinates=10,287,87,123
-Visible=False
 
 [fdmTeamWallmemberId]
 Coordinates=936,204,130,33
@@ -293,10 +278,6 @@ Coordinates=898,984,73,33
 Coordinates=498,143,74,249
 Visible=False
 
-[respTeamMembers]
-Coordinates=352,170,108,267
-Visible=False
-
 [rdsaTeamWall]
 Coordinates=898,1036,84,33
 
@@ -305,10 +286,6 @@ Coordinates=936,1088,139,33
 
 [fdmTeamEventsname]
 Coordinates=936,1140,120,33
-
-[reqTeamMembers]
-Coordinates=318,10,102,123
-Visible=False
 
 [fdmTeamowner]
 Coordinates=898,1192,90,33
@@ -374,10 +351,6 @@ Coordinates=799,1398,90,33
 
 [fdmNotificationsfrom_table]
 Coordinates=1149,469,148,33
-
-[respTeamWall]
-Coordinates=245,724,85,267
-Visible=False
 
 [fdmFriendsid]
 Coordinates=710,1398,79,33
@@ -449,10 +422,6 @@ Coordinates=1149,1249,132,33
 
 [fdmTeamEventslast_modified]
 Coordinates=1149,1301,160,33
-
-[respTeamEvents]
-Coordinates=352,456,96,267
-Visible=False
 
 [fdmEventsteam_id]
 Coordinates=1149,1353,105,33

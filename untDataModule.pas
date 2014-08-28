@@ -26,8 +26,6 @@ type
     reqGeneric: TRESTRequest;
     respGeneric: TRESTResponse;
     rdsaGeneric: TRESTResponseDataSetAdapter;
-    reqTeam: TRESTRequest;
-    respTeam: TRESTResponse;
     rdsaTeam: TRESTResponseDataSetAdapter;
     reqMemberTeams: TRESTRequest;
     respMemberTeams: TRESTResponse;
@@ -51,8 +49,6 @@ type
     fdmNotificationstype: TWideStringField;
     dsNotifications: TBindSourceDB;
     fdmGeneric: TFDMemTable;
-    reqTeamMembers: TRESTRequest;
-    respTeamMembers: TRESTResponse;
     rdsaTeamMembers: TRESTResponseDataSetAdapter;
     fdmTeamMembers: TFDMemTable;
     fdmTeamMembersid: TWideStringField;
@@ -73,8 +69,6 @@ type
     fdmTeamMemberspassword: TWideStringField;
     fdmTeamMembersimage: TWideStringField;
     dsTeamMembers: TBindSourceDB;
-    reqTeamEvents: TRESTRequest;
-    respTeamEvents: TRESTResponse;
     rdsaTeamEvents: TRESTResponseDataSetAdapter;
     fdmTeamEvents: TFDMemTable;
     fdmTeamEventsid: TWideStringField;
@@ -96,8 +90,6 @@ type
     fdmTeamEventssport_id: TWideStringField;
     fdmTeamEventsend_date: TWideStringField;
     dsTeamEvents: TBindSourceDB;
-    reqTeamWall: TRESTRequest;
-    respTeamWall: TRESTResponse;
     rdsaTeamWall: TRESTResponseDataSetAdapter;
     fdmTeamWall: TFDMemTable;
     fdmTeamWallid: TWideStringField;

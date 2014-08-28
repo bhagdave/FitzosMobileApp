@@ -147,39 +147,14 @@ object dmdDataModule: TdmdDataModule
     Left = 416
     Top = 192
   end
-  object reqTeam: TRESTRequest
-    Client = restAPI
-    Params = <
-      item
-        name = 'id'
-        Value = '7'
-      end
-      item
-        name = 'signature'
-      end
-      item
-        name = 'key'
-      end>
-    Resource = 'teams/getTeam'
-    Response = respTeam
-    SynchronizedEvents = False
-    Left = 544
-    Top = 81
-  end
-  object respTeam: TRESTResponse
-    ContentType = 'text/html'
-    Left = 544
-    Top = 136
-  end
   object rdsaTeam: TRESTResponseDataSetAdapter
     Active = True
     AutoUpdate = False
     Dataset = fdmTeam
     FieldDefs = <>
-    Response = respTeam
     RootElement = 'Result'
-    Left = 544
-    Top = 192
+    Left = 56
+    Top = 488
   end
   object reqMemberTeams: TRESTRequest
     Client = restAPI
@@ -391,39 +366,14 @@ object dmdDataModule: TdmdDataModule
     Left = 416
     Top = 248
   end
-  object reqTeamMembers: TRESTRequest
-    Client = restAPI
-    Params = <
-      item
-        name = 'id'
-        Value = '7'
-      end
-      item
-        name = 'signature'
-      end
-      item
-        name = 'key'
-      end>
-    Resource = 'teams/getTeamMembers'
-    Response = respTeamMembers
-    SynchronizedEvents = False
-    Left = 48
-    Top = 361
-  end
-  object respTeamMembers: TRESTResponse
-    ContentType = 'text/html'
-    Left = 48
-    Top = 416
-  end
   object rdsaTeamMembers: TRESTResponseDataSetAdapter
     Active = True
     AutoUpdate = False
     Dataset = fdmTeamMembers
     FieldDefs = <>
-    Response = respTeamMembers
     RootElement = 'Result'
-    Left = 48
-    Top = 472
+    Left = 136
+    Top = 480
   end
   object fdmTeamMembers: TFDMemTable
     Active = True
@@ -521,8 +471,8 @@ object dmdDataModule: TdmdDataModule
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
     StoreDefs = True
-    Left = 48
-    Top = 536
+    Left = 136
+    Top = 544
     object fdmTeamMembersid: TWideStringField
       FieldName = 'id'
       Size = 255
@@ -595,42 +545,17 @@ object dmdDataModule: TdmdDataModule
   object dsTeamMembers: TBindSourceDB
     DataSet = fdmTeamMembers
     ScopeMappings = <>
-    Left = 56
-    Top = 584
-  end
-  object reqTeamEvents: TRESTRequest
-    Client = restAPI
-    Params = <
-      item
-        name = 'id'
-        Value = '21'
-      end
-      item
-        name = 'signature'
-      end
-      item
-        name = 'key'
-      end>
-    Resource = 'teams/getTeamEvents'
-    Response = respTeamEvents
-    SynchronizedEvents = False
-    Left = 168
-    Top = 361
-  end
-  object respTeamEvents: TRESTResponse
-    ContentType = 'text/html'
-    Left = 168
-    Top = 416
+    Left = 144
+    Top = 592
   end
   object rdsaTeamEvents: TRESTResponseDataSetAdapter
     Active = True
     AutoUpdate = False
     Dataset = fdmTeamEvents
     FieldDefs = <>
-    Response = respTeamEvents
     RootElement = 'Result'
-    Left = 168
-    Top = 472
+    Left = 216
+    Top = 480
   end
   object fdmTeamEvents: TFDMemTable
     Active = True
@@ -733,8 +658,8 @@ object dmdDataModule: TdmdDataModule
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
     StoreDefs = True
-    Left = 168
-    Top = 536
+    Left = 216
+    Top = 544
     object fdmTeamEventsid: TWideStringField
       FieldName = 'id'
       Size = 255
@@ -811,41 +736,16 @@ object dmdDataModule: TdmdDataModule
   object dsTeamEvents: TBindSourceDB
     DataSet = fdmTeamEvents
     ScopeMappings = <>
-    Left = 168
-    Top = 584
-  end
-  object reqTeamWall: TRESTRequest
-    Client = restAPI
-    Params = <
-      item
-        name = 'id'
-        Value = '28'
-      end
-      item
-        name = 'signature'
-      end
-      item
-        name = 'key'
-      end>
-    Resource = 'teams/getTeamWall'
-    Response = respTeamWall
-    SynchronizedEvents = False
-    Left = 264
-    Top = 369
-  end
-  object respTeamWall: TRESTResponse
-    ContentType = 'text/html'
-    Left = 264
-    Top = 424
+    Left = 216
+    Top = 592
   end
   object rdsaTeamWall: TRESTResponseDataSetAdapter
     Active = True
     AutoUpdate = False
     Dataset = fdmTeamWall
     FieldDefs = <>
-    Response = respTeamWall
     RootElement = 'Result'
-    Left = 264
+    Left = 312
     Top = 480
   end
   object fdmTeamWall: TFDMemTable
@@ -909,7 +809,7 @@ object dmdDataModule: TdmdDataModule
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
     StoreDefs = True
-    Left = 264
+    Left = 312
     Top = 528
     object fdmTeamWallid: TWideStringField
       FieldName = 'id'
@@ -955,7 +855,7 @@ object dmdDataModule: TdmdDataModule
   object dsTeamWall: TBindSourceDB
     DataSet = fdmTeamWall
     ScopeMappings = <>
-    Left = 264
+    Left = 312
     Top = 584
   end
   object fdmMember: TFDMemTable
@@ -1110,8 +1010,8 @@ object dmdDataModule: TdmdDataModule
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
     StoreDefs = True
-    Left = 536
-    Top = 240
+    Left = 48
+    Top = 536
     object fdmTeamid: TWideStringField
       FieldName = 'id'
       Size = 255
@@ -2086,12 +1986,12 @@ object dmdDataModule: TdmdDataModule
     Resource = 'r/teams/getAllTeamData'
     Response = respAllTeamData
     SynchronizedEvents = False
-    Left = 48
-    Top = 240
+    Left = 160
+    Top = 376
   end
   object respAllTeamData: TRESTResponse
     ContentType = 'text/html'
-    Left = 48
-    Top = 288
+    Left = 160
+    Top = 424
   end
 end
