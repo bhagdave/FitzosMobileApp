@@ -20,12 +20,10 @@ type
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
+    procedure notificationsLoaded;
   public
     { Public declarations }
   end;
-
-var
-  frmNotifications:TfrmNotifications;
 
 implementation
 
@@ -50,14 +48,7 @@ begin
     reqNotifications.Params.ParameterByName('id').Value := memberId;
     reqNotifications.Params.ParameterByName('signature').Value := signature('getMemberNotifications');
     reqNotifications.Params.ParameterByName('key').Value := getApiKey;
-    reqNotifications.Execute();
-    sResult := getResultString(respNotifications.Content);
-    if (sResult = 'OK') then
-    begin
-//      rdsaNotifications.Response := respNotifications;
-      rdsaNotifications.UpdateDataSet;
-      fdmNotifications.Open;
-    end;
+    reqNotifications.ExecuteAsync(notificationsLoaded);
   end;
 end;
 
@@ -70,6 +61,19 @@ begin
   LValue := GetSelectedValue(lvNotifications);
   showNewFormWithId('TfrmNotification',lValue.ToString);
 //  showNewForm('TfrmNotification');
+end;
+
+procedure TfrmNotifications.notificationsLoaded;
+var
+  sResult : String;
+begin
+    sResult := getResultString(dmdDataModule.respNotifications.Content);
+    if (sResult = 'OK') then
+    begin
+//      rdsaNotifications.Response := respNotifications;
+      dmdDataModule.rdsaNotifications.UpdateDataSet;
+      dmdDataModule.fdmNotifications.Open;
+    end;
 end;
 
 initialization
