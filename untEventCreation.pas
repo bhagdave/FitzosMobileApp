@@ -240,8 +240,15 @@ end;
 
 procedure TfrmEventCreation.saveCompleted;
 begin
-  showmessage('Event saved!');
-  close;
+  if id <> '' then
+  begin
+    showmessage('Event saved!');
+  end
+  else
+  begin
+    showmessage('Event created');
+    close;
+  end;
 end;
 
 procedure TfrmEventCreation.sportsLoaded;
