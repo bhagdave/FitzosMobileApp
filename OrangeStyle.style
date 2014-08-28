@@ -3358,8 +3358,8 @@ object TStyleContainer
       object TColorAnimation
         Duration = 0.200000002980232200
         PropertyName = 'Fill.Color'
-        StartValue = xFF707070
-        StopValue = xFF404040
+        StartValue = xFFED7307
+        StopValue = xFFEAC9AB
         Trigger = 'IsPressed=true'
         TriggerInverse = 'IsPressed=false'
       end
