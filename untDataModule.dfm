@@ -291,6 +291,11 @@ object dmdDataModule: TdmdDataModule
         Name = 'type'
         DataType = ftWideString
         Size = 255
+      end
+      item
+        Name = 'From'
+        DataType = ftWideString
+        Size = 255
       end>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
@@ -348,6 +353,10 @@ object dmdDataModule: TdmdDataModule
     end
     object fdmNotificationstype: TWideStringField
       FieldName = 'type'
+      Size = 255
+    end
+    object fdmNotificationsFrom: TWideStringField
+      FieldName = 'From'
       Size = 255
     end
   end

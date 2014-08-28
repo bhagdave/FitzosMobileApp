@@ -35,18 +35,6 @@ type
     fdmMemberTeamsname: TWideStringField;
     dsMemberTeams: TBindSourceDB;
     fdmNotifications: TFDMemTable;
-    fdmNotificationsid: TWideStringField;
-    fdmNotificationsfrom_table: TWideStringField;
-    fdmNotificationsfrom_key: TWideStringField;
-    fdmNotificationsto_table: TWideStringField;
-    fdmNotificationsto_key: TWideStringField;
-    fdmNotificationsnotification: TWideStringField;
-    fdmNotificationsparent_id: TWideStringField;
-    fdmNotificationspublished: TWideStringField;
-    fdmNotificationsdate_added: TWideStringField;
-    fdmNotificationsimage: TWideStringField;
-    fdmNotificationsread: TWideStringField;
-    fdmNotificationstype: TWideStringField;
     dsNotifications: TBindSourceDB;
     fdmGeneric: TFDMemTable;
     rdsaTeamMembers: TRESTResponseDataSetAdapter;
@@ -224,6 +212,19 @@ type
     dsSports: TBindSourceDB;
     reqAllTeamData: TRESTRequest;
     respAllTeamData: TRESTResponse;
+    fdmNotificationsid: TWideStringField;
+    fdmNotificationsfrom_table: TWideStringField;
+    fdmNotificationsfrom_key: TWideStringField;
+    fdmNotificationsto_table: TWideStringField;
+    fdmNotificationsto_key: TWideStringField;
+    fdmNotificationsnotification: TWideStringField;
+    fdmNotificationsparent_id: TWideStringField;
+    fdmNotificationspublished: TWideStringField;
+    fdmNotificationsdate_added: TWideStringField;
+    fdmNotificationsimage: TWideStringField;
+    fdmNotificationsread: TWideStringField;
+    fdmNotificationstype: TWideStringField;
+    fdmNotificationsFrom: TWideStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }
