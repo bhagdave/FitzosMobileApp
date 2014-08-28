@@ -230,6 +230,8 @@ type
     fdmSportsid: TWideStringField;
     fdmSportsname: TWideStringField;
     dsSports: TBindSourceDB;
+    reqAllTeamData: TRESTRequest;
+    respAllTeamData: TRESTResponse;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }

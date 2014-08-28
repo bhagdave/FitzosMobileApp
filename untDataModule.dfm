@@ -2072,4 +2072,26 @@ object dmdDataModule: TdmdDataModule
     Left = 936
     Top = 568
   end
+  object reqAllTeamData: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'team'
+        Value = '20'
+      end
+      item
+        name = 'member_id'
+        Value = '9'
+      end>
+    Resource = 'r/teams/getAllTeamData'
+    Response = respAllTeamData
+    SynchronizedEvents = False
+    Left = 48
+    Top = 240
+  end
+  object respAllTeamData: TRESTResponse
+    ContentType = 'text/html'
+    Left = 48
+    Top = 288
+  end
 end
