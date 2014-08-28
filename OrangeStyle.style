@@ -2176,6 +2176,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxstyle'
+    DesignVisible = False
     Height = 131.000000000000000000
     Position.X = 449.000000000000000000
     Position.Y = 279.000000000000000000
@@ -3330,10 +3331,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'buttonstyle'
-    DesignVisible = False
     Height = 26.000000000000000000
     Position.X = 470.000000000000000000
-    Position.Y = 414.000000000000000000
+    Position.Y = 332.000000000000000000
     Width = 73.000000000000000000
     TabOrder = 50
     object TRectangle
@@ -3350,8 +3350,8 @@ object TStyleContainer
       object TColorAnimation
         Duration = 0.200000002980232200
         PropertyName = 'Fill.Color'
-        StartValue = xFF505050
-        StopValue = xFF707070
+        StartValue = xFFED7307
+        StopValue = xFFED730E
         Trigger = 'IsMouseOver=true;IsPressed=false'
         TriggerInverse = 'IsMouseOver=false;IsPressed=false'
       end
