@@ -1,11 +1,14 @@
 ﻿[barBottom]
-Coordinates=345,132,74,36
+Coordinates=345,132,66,33
+Visible=False
 
 [pnlTop]
-Coordinates=287,132,54,36
+Coordinates=287,132,48,33
+Visible=False
 
 [lblCaption]
-Coordinates=295,10,72,58
+Coordinates=40,0,64,51
+Visible=False
 
 [imgAvatar]
 Coordinates=85,10,72,58
@@ -16,7 +19,8 @@ Visible=False
 Coordinates=10,71,76,58
 
 [pnlCenter]
-Coordinates=215,132,70,36
+Coordinates=215,132,62,33
+Visible=False
 
 [btnProfile]
 Coordinates=223,10,69,58
@@ -46,7 +50,7 @@ LayerNames=team
 Visible=True
 
 [lvEvents]
-Coordinates=390,410,107,168
+Coordinates=10,136,89,141
 LayerNames=team
 
 [Module Settings]
@@ -56,23 +60,23 @@ EditingLayerName=
 
 [dmdDataModule.fdmMemberTeams]
 Visible=False
-Coordinates=920,780,211,124
+Coordinates=920,780,181,105
 
 [dmdDataModule.fdmNotifications]
 Visible=False
-Coordinates=710,1269,196,344
+Coordinates=710,1269,171,303
 
 [dmdDataModule.fdmTeamMembers]
 Visible=False
-Coordinates=890,60,211,454
+Coordinates=544,10,181,375
 
 [dmdDataModule.fdmTeamEvents]
 Visible=False
-Coordinates=660,370,197,476
+Coordinates=179,10,170,393
 
 [dmdDataModule.fdmTeamWall]
 Visible=False
-Coordinates=180,190,183,300
+Coordinates=548,429,157,249
 
 [dmdDataModule.reqTeamEvents]
 Coordinates=932,905,202,146
@@ -81,10 +85,12 @@ Coordinates=932,905,202,146
 Coordinates=18,514,163,146
 
 [dmdDataModule.respMember]
-Coordinates=306,836,184,322
+Coordinates=306,836,158,267
+Visible=False
 
 [dmdDataModule.dsMemberTeams]
-Coordinates=920,780,211,124
+Coordinates=920,780,181,105
+Visible=False
 
 [dmdDataModule.reqTeamWall]
 Coordinates=684,841,188,146
@@ -93,70 +99,84 @@ Coordinates=684,841,188,146
 Coordinates=465,287,195,322
 
 [dmdDataModule.reqLogin]
-Coordinates=316,549,162,168
+Coordinates=400,290,141,141
+Visible=False
 
 [dmdDataModule.reqNotifications]
-Coordinates=932,373,201,146
+Coordinates=932,373,175,123
+Visible=False
 
 [dmdDataModule.dsTeamWall]
-Coordinates=180,190,183,300
+Coordinates=548,429,157,249
 LayerNames=team
 
 [dmdDataModule.reqOpenSession]
-Coordinates=932,515,208,124
+Coordinates=932,515,179,105
+Visible=False
 
 [dmdDataModule.respGeneric]
-Coordinates=710,555,182,322
+Coordinates=710,555,157,267
+Visible=False
 
 [dmdDataModule.respTeamEvents]
 Coordinates=521,1290,209,322
 
 [dmdDataModule.dsTeamEvents]
-Coordinates=660,370,197,476
+Coordinates=179,10,170,393
 LayerNames=team
 
 [dmdDataModule.reqMember]
-Coordinates=932,639,177,146
+Coordinates=932,639,152,123
+Visible=False
 
 [dmdDataModule.respTeamMembers]
 Coordinates=107,836,223,322
 
 [dmdDataModule.respOpenSession]
-Coordinates=710,269,214,322
+Coordinates=710,269,184,267
+Visible=False
 
 [dmdDataModule.dsTeamMembers]
-Coordinates=890,60,211,454
+Coordinates=544,10,181,375
 LayerNames=team
 
 [dmdDataModule.dsNotifications]
-Coordinates=710,1269,196,344
+Coordinates=710,1269,171,303
+Visible=False
 
 [dmdDataModule.reqTeamMembers]
 Coordinates=932,231,216,146
 
 [dmdDataModule.respMemberTeams]
-Coordinates=236,209,223,322
+Coordinates=236,209,191,267
+Visible=False
 
 [dmdDataModule.fdmGeneric]
-Coordinates=1155,89,178,58
+Coordinates=1155,89,154,51
+Visible=False
 
 [dmdDataModule.reqGeneric]
-Coordinates=1155,1,176,80
+Coordinates=1155,1,151,69
+Visible=False
 
 [dmdDataModule.respLogin]
-Coordinates=710,983,169,322
+Coordinates=710,983,147,267
+Visible=False
 
 [dmdDataModule.reqMemberTeams]
-Coordinates=932,89,216,146
+Coordinates=932,89,185,123
+Visible=False
 
 [dmdDataModule.respTeam]
 Coordinates=465,573,170,322
 
 [dmdDataModule.restAPI]
-Coordinates=1155,159,154,80
+Coordinates=1155,159,133,69
+Visible=False
 
 [dmdDataModule.respNotifications]
-Coordinates=465,1,208,322
+Coordinates=465,1,181,267
+Visible=False
 
 [BindSourceDB1]
 Coordinates=440,60,106,58
@@ -172,73 +192,207 @@ Visible=False
 
 [dmdDataModule.fdmTeam]
 Visible=False
-Coordinates=510,10,158,322
+Coordinates=10,429,136,285
 
 [dmdDataModule.dsTeam]
-Coordinates=510,10,158,322
+Coordinates=10,429,136,285
 LayerNames=team
 
 [dmdDataModule.fdmMember]
-Coordinates=525,878,180,234
+Coordinates=525,878,155,195
+Visible=False
 
 [lblEvents]
-Coordinates=247,514,67,58
+Coordinates=247,514,60,51
+Visible=False
 
 [vsbScroller]
-Coordinates=311,514,78,36
+Coordinates=311,514,70,33
+Visible=False
 
 [layTeam]
-Coordinates=711,1,64,36
+Coordinates=711,1,55,33
+Visible=False
 
 [expMembers]
-Coordinates=168,514,88,58
+Coordinates=168,514,77,51
+Visible=False
 
 [lvMembers]
-Coordinates=691,53,107,168
+Coordinates=375,127,89,141
 LayerNames=team
 
 [lvWwall]
-Coordinates=48,184,107,168
+Coordinates=379,483,89,141
 LayerNames=team
 
 [expWall]
-Coordinates=257,675,60,58
+Coordinates=257,675,53,51
+Visible=False
 
 [dmdDataModule.fdmFriends]
 Visible=False
-Coordinates=0,0,169,278
+Coordinates=0,0,146,231
 
 [dmdDataModule.fdmEvents]
 Visible=False
-Coordinates=19,297,165,476
+Coordinates=19,297,143,393
 
 [dmdDataModule.reqEvents]
-Coordinates=895,658,170,146
+Coordinates=895,658,147,123
+Visible=False
 
 [dmdDataModule.respFriends]
-Coordinates=188,1,180,322
+Coordinates=188,1,156,267
+Visible=False
 
 [dmdDataModule.reqFriends]
-Coordinates=903,1070,174,146
+Coordinates=903,1070,150,123
+Visible=False
 
 [dmdDataModule.respEvents]
-Coordinates=342,1196,176,322
+Coordinates=342,1196,152,267
+Visible=False
 
 [dmdDataModule.dsFriends]
-Coordinates=0,0,169,278
+Coordinates=0,0,146,231
+Visible=False
 
 [dmdDataModule.dsEvents]
-Coordinates=19,297,165,476
+Coordinates=19,297,143,393
+Visible=False
 
 [dmdDataModule.fdmMemberSports]
 Visible=False
+Coordinates=932,517,181,141
 
 [dmdDataModule.fdmProfile]
 Visible=False
+Coordinates=31,286,141,501
 
 [dmdDataModule.fdmSearchNames]
 Visible=False
+Coordinates=163,1141,177,177
 
 [dmdDataModule.fdmSports]
 Visible=False
+Coordinates=380,320,141,105
+
+[dmdDataModule.dsProfile]
+Coordinates=31,286,141,501
+Visible=False
+
+[dmdDataModule.dsMemberSports]
+Coordinates=932,517,181,141
+Visible=False
+
+[dmdDataModule.dsSearchNames]
+Coordinates=163,1141,177,177
+Visible=False
+
+[dmdDataModule.respCreateTeam]
+Coordinates=932,1105,178,267
+Visible=False
+
+[dmdDataModule.reqSearch]
+Coordinates=382,1,147,105
+Visible=False
+
+[dmdDataModule.reqCreateTeam]
+Coordinates=1155,247,172,69
+Visible=False
+
+[dmdDataModule.respUpdateProfile]
+Coordinates=356,125,186,267
+Visible=False
+
+[dmdDataModule.respAllTeamData]
+Coordinates=172,429,181,267
+
+[btnBack]
+Coordinates=382,779,54,51
+Visible=False
+
+[dmdDataModule.reqAllTeamData]
+Coordinates=830,0,175,105
+Visible=False
+
+[dmdDataModule.respMemberSports]
+Coordinates=0,0,191,267
+Visible=False
+
+[dmdDataModule.respSearch]
+Coordinates=932,231,153,267
+Visible=False
+
+[dmdDataModule.dsSports]
+Coordinates=380,320,141,105
+Visible=False
+
+[btnNewEvent]
+Coordinates=465,782,79,51
+Visible=False
+
+[btnInvite]
+Coordinates=382,709,57,51
+Visible=False
+
+[dmdDataModule.respSports]
+Coordinates=551,1288,151,267
+Visible=False
+
+[dmdDataModule.reqProfile]
+Coordinates=561,1141,145,123
+Visible=False
+
+[dmdDataModule.reqUpdateProfile]
+Coordinates=567,1,180,87
+Visible=False
+
+[dmdDataModule.reqSports]
+Coordinates=465,694,145,69
+Visible=False
+
+[dmdDataModule.reqMemberSports]
+Coordinates=932,677,185,123
+Visible=False
+
+[dmdDataModule.respProfile]
+Coordinates=932,819,151,267
+Visible=False
+
+[btnSend]
+Coordinates=580,384,55,51
+Visible=False
+
+[lbFriends]
+Coordinates=10,740,89,195
+Visible=True
+
+[dmdDataModule.fdmFriendsToInvite]
+Coordinates=260,730,172,105
+Visible=False
+
+[layInvites]
+Coordinates=580,454,61,33
+Visible=False
+
+[lblFriends]
+Coordinates=228,740,63,51
+Visible=False
+
+[btnCancel]
+Coordinates=580,314,64,51
+Visible=False
+
+[pnlInvites]
+Coordinates=580,506,62,33
+Visible=False
+
+[grdInvites]
+Coordinates=317,740,63,33
+Visible=False
+
+[BindSourceDB2]
+Coordinates=260,730,172,105
 

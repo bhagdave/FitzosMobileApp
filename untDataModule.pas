@@ -226,8 +226,10 @@ type
     fdmTeampublic: TWideStringField;
     fdmTeamsport_id: TWideStringField;
     fdmTeamisOwner: TWideStringField;
-    rdsaFriendToInvite: TRESTResponseDataSetAdapter;
+    rdsaFriendsToInvite: TRESTResponseDataSetAdapter;
     fdmFriendsToInvite: TFDMemTable;
+    fdmFriendsToInviteid: TWideStringField;
+    fdmFriendsToInvitefirst_name: TWideStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }

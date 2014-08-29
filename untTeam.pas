@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
-  Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts;
+  Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts,
+  FMX.ListBox;
 
 type
   TfrmTeam = class(TfrmBase)
@@ -27,6 +28,15 @@ type
     LinkPropertyToFieldText: TLinkPropertyToField;
     btnNewEvent: TButton;
     btnInvite: TButton;
+    layInvites: TLayout;
+    pnlInvites: TPanel;
+    grdInvites: TGridPanelLayout;
+    lblFriends: TLabel;
+    lbFriends: TListBox;
+    btnSend: TButton;
+    btnCancel: TButton;
+    BindSourceDB2: TBindSourceDB;
+    LinkFillControlToField3: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -35,6 +45,7 @@ type
     procedure lvWwallClick(Sender: TObject);
     procedure btnNewEventClick(Sender: TObject);
     procedure btnInviteClick(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
   private
     isOwner : Boolean;
     { Private declarations }
@@ -51,10 +62,18 @@ uses
   untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
+procedure TfrmTeam.btnCancelClick(Sender: TObject);
+begin
+  inherited;
+  layInvites.Visible := false;
+  barBottom.Visible := true;
+end;
+
 procedure TfrmTeam.btnInviteClick(Sender: TObject);
 begin
   inherited;
-//
+  layInvites.Visible := true;
+  barBottom.Visible := false;
 end;
 
 procedure TfrmTeam.btnNewEventClick(Sender: TObject);
@@ -157,8 +176,16 @@ begin
           begin
               fdmTeamEvents.close;
           end;
-          bOwner := fdmTeam.FieldByName('isOwner').AsString = 'Yes';
-          btnInvite.Visible := bOwner;
+          sResult := getResultElementAsString(respAllTeamData.Content,'invites');
+          if (sResult <> '[]') then
+          begin
+            rdsaFriendsToInvite.UpdateDataSet;
+            fdmFriendsToInvite.Open;
+          end else
+          begin
+              fdmFriendsToInvite.close;
+          end;
+          btnInvite.Visible := fdmTeam.FieldByName('isOwner').AsBoolean;
 //          btnNewEvent.Visible := bOwner;
       end;
   end;

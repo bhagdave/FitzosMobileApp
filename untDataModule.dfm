@@ -2016,7 +2016,8 @@ object dmdDataModule: TdmdDataModule
     Left = 160
     Top = 424
   end
-  object rdsaFriendToInvite: TRESTResponseDataSetAdapter
+  object rdsaFriendsToInvite: TRESTResponseDataSetAdapter
+    Active = True
     AutoUpdate = False
     Dataset = fdmFriendsToInvite
     FieldDefs = <>
@@ -2026,13 +2027,35 @@ object dmdDataModule: TdmdDataModule
     Top = 400
   end
   object fdmFriendsToInvite: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     ResourceOptions.AssignedValues = [rvSilentMode]
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    StoreDefs = True
     Left = 40
     Top = 448
+    object fdmFriendsToInviteid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmFriendsToInvitefirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 255
+    end
   end
 end

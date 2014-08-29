@@ -2991,6 +2991,93 @@ inherited frmTeam: TfrmTeam
       7474696E67732E466F6E74436F6C6F72070C636C61536C617465677261790557
       696474680500000000000000F005400000}
   end
+  object layInvites: TLayout
+    Align = Client
+    Height = 383.000000000000000000
+    Visible = False
+    Width = 320.000000000000000000
+    TabOrder = 11
+    object pnlInvites: TPanel
+      Align = Client
+      Height = 383.000000000000000000
+      Width = 320.000000000000000000
+      TabOrder = 0
+      object grdInvites: TGridPanelLayout
+        Align = Client
+        Height = 383.000000000000000000
+        Width = 320.000000000000000000
+        TabOrder = 1
+        ColumnCollection = <
+          item
+            Value = 50.000000000000000000
+          end
+          item
+            Value = 50.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = lblFriends
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = lbFriends
+            Row = 0
+          end
+          item
+            Column = 0
+            Control = btnSend
+            Row = 1
+          end
+          item
+            Column = 1
+            Control = btnCancel
+            Row = 1
+          end>
+        RowCollection = <
+          item
+            Value = 72.289156626506030000
+          end
+          item
+            Value = 27.710843373493980000
+          end>
+        object lblFriends: TLabel
+          Align = Client
+          Height = 276.867462158203100000
+          Text = 'Friends to invite'
+          Width = 160.000000000000000000
+        end
+        object lbFriends: TListBox
+          Align = Client
+          Height = 276.867462158203100000
+          TabOrder = 1
+          Width = 160.000000000000000000
+          DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          MultiSelectStyle = Default
+          ShowCheckboxes = True
+        end
+        object btnSend: TButton
+          Align = Client
+          Height = 106.132537841796900000
+          TabOrder = 2
+          Text = 'Send invites'
+          Width = 160.000000000000000000
+        end
+        object btnCancel: TButton
+          Align = Client
+          Anchors = []
+          Height = 106.132537841796900000
+          TabOrder = 3
+          Text = 'Cancel'
+          Width = 160.000000000000000000
+          OnClick = btnCancelClick
+        end
+      end
+    end
+  end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>
     Left = 176
@@ -3045,5 +3132,23 @@ inherited frmTeam: TfrmTeam
       Component = lblCaption
       ComponentProperty = 'Text'
     end
+    object LinkFillControlToField3: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lbFriends
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'first_name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dmdDataModule.fdmFriendsToInvite
+    ScopeMappings = <>
+    Left = 144
+    Top = 216
   end
 end
