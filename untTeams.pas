@@ -73,10 +73,12 @@ procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 var
   LValue : TValue;
+  sTeam : String;
 begin
   inherited;
   LValue := GetSelectedValue(lvTeams);
-  showNewFormWithId('TfrmTeam',lValue.ToString);
+  sTeam := lValue.ToString;
+  showNewFormWithId('TfrmTeam',sTeam);
 end;
 
 procedure TfrmTeams.teamsLoaded;

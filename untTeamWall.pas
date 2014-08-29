@@ -72,7 +72,7 @@ begin
       fdmTeam.Close;
       respAllTeamData.Content.Empty;
       reqAllTeamData.ClearBody;
-      reqAllTeamData.Params.ParameterByName('id').Value := ID;
+      reqAllTeamData.Params.ParameterByName('team').Value := ID;
       reqAllTeamData.Params.ParameterByName('member_id').Value := memberId;
 //      reqAllTeamData.Params.ParameterByName('signature').Value := signature('getTeamWall');
 //      reqAllTeamData.Params.ParameterByName('key').Value := getApiKey;
