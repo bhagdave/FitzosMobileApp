@@ -46,6 +46,7 @@ type
     procedure btnNewEventClick(Sender: TObject);
     procedure btnInviteClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
+    procedure btnSendClick(Sender: TObject);
   private
     isOwner : Boolean;
     { Private declarations }
@@ -59,7 +60,7 @@ type
 implementation
 
 uses
-  untJsonFunctions,untFormRegistry;
+  untJsonFunctions,untFormRegistry,System.json;
 
 {$R *.fmx}
 procedure TfrmTeam.btnCancelClick(Sender: TObject);
@@ -80,6 +81,21 @@ procedure TfrmTeam.btnNewEventClick(Sender: TObject);
 begin
   inherited;
   showNewForm('TfrmEventCreation');
+end;
+
+procedure TfrmTeam.btnSendClick(Sender: TObject);
+var
+  i : Integer;
+begin
+  for i := 0 to lbFriends.Items.Count - 1 do
+  begin
+    if lbFriends.Listitems[i].IsChecked then
+    begin
+       //AddPair('member',dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsInteger);
+    end;
+    dmdDataModule.fdmFriendsToInvite.next;
+  end;
+
 end;
 
 procedure TfrmTeam.FormActivate(Sender: TObject);

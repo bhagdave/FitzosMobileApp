@@ -3065,6 +3065,7 @@ inherited frmTeam: TfrmTeam
           TabOrder = 2
           Text = 'Send invites'
           Width = 160.000000000000000000
+          OnClick = btnSendClick
         end
         object btnCancel: TButton
           Align = Client

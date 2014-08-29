@@ -26,7 +26,6 @@ type
     { Public declarations }
     function getSelectedValue(AObject : TObject): TValue;
     property Id : String read fId write setId;
-
   end;
 
 implementation
@@ -62,6 +61,7 @@ begin
         TStyleManager.SetStyle(Style);
 end;
 
+
 function TfrmBase.getSelectedValue(AObject: TObject): TValue;
 var
   LEditor : IBindListEditorCommon;
@@ -69,6 +69,8 @@ begin
   LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
   Result := Leditor.SelectedValue;
 end;
+
+//
 
 procedure TfrmBase.setId(sId: String);
 begin
