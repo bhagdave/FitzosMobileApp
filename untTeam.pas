@@ -34,6 +34,7 @@ type
       const AItem: TListViewItem);
     procedure lvWwallClick(Sender: TObject);
     procedure btnNewEventClick(Sender: TObject);
+    procedure btnInviteClick(Sender: TObject);
   private
     isOwner : Boolean;
     { Private declarations }
@@ -50,6 +51,12 @@ uses
   untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
+procedure TfrmTeam.btnInviteClick(Sender: TObject);
+begin
+  inherited;
+//
+end;
+
 procedure TfrmTeam.btnNewEventClick(Sender: TObject);
 begin
   inherited;

@@ -51,6 +51,7 @@ inherited frmTeam: TfrmTeam
       Text = 'Invite'
       Visible = False
       Width = 65.000000000000000000
+      OnClick = btnInviteClick
     end
   end
   inherited pnlTop: TPanel

@@ -1999,7 +1999,7 @@ object dmdDataModule: TdmdDataModule
     Params = <
       item
         name = 'team'
-        Value = '20'
+        Value = '7'
       end
       item
         name = 'member_id'
@@ -2015,5 +2015,24 @@ object dmdDataModule: TdmdDataModule
     ContentType = 'text/html'
     Left = 160
     Top = 424
+  end
+  object rdsaFriendToInvite: TRESTResponseDataSetAdapter
+    AutoUpdate = False
+    Dataset = fdmFriendsToInvite
+    FieldDefs = <>
+    Response = respAllTeamData
+    RootElement = 'Result.invites'
+    Left = 48
+    Top = 400
+  end
+  object fdmFriendsToInvite: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 40
+    Top = 448
   end
 end
