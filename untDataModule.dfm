@@ -1014,6 +1014,11 @@ object dmdDataModule: TdmdDataModule
         Name = 'sport_id'
         DataType = ftWideString
         Size = 255
+      end
+      item
+        Name = 'isOwner'
+        DataType = ftWideString
+        Size = 255
       end>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
@@ -1067,6 +1072,10 @@ object dmdDataModule: TdmdDataModule
     end
     object fdmTeamsport_id: TWideStringField
       FieldName = 'sport_id'
+      Size = 255
+    end
+    object fdmTeamisOwner: TWideStringField
+      FieldName = 'isOwner'
       Size = 255
     end
   end

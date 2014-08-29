@@ -37,11 +37,8 @@ type
   private
     isOwner : Boolean;
     { Private declarations }
-    procedure getTeamWall(sTeam : String);
-    procedure getTeamMembers(sTeam : String);
-    procedure getTeamEvents(sTeam : String);
+    procedure teamLoaded();
     procedure getTeam(sTeam: String);
-    procedure getTeamOwnership(sTeam : String);
   public
     { Public declarations }
   end;
@@ -67,10 +64,6 @@ begin
 //  sTeam := dmdDataModule.fdmMemberTeamsid.AsString;
   sTeam := Id;
   getTeam(sTeam);
-  getTeamWall(sTeam);
-  getTeamMembers(sTeam);
-  getTeamEvents(sTeam);
-  getTeamOwnership(sTeam);
 end;
 
 procedure TfrmTeam.getTeam(sTeam: String);
@@ -82,120 +75,13 @@ begin
       // Open up the data.
       rdsaTeam.ClearDataSet;
       fdmTeam.Close;
-      respTeam.Content.Empty;
-      reqTeam.ClearBody;
-      reqTeam.Params.ParameterByName('id').Value := sTeam;
-      reqTeam.Params.ParameterByName('signature').Value := signature('getTeamEvents');
-      reqTeam.Params.ParameterByName('key').Value := getApiKey;
-      reqTeam.Execute;
-      sResult := getResultString(respTeam.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaTeam.Response := respTeam;
-          rdsaTeam.UpdateDataSet;
-          fdmTeam.Open;
-      end;
-  end;
-end;
-
-procedure TfrmTeam.getTeamEvents(sTeam: String);
-var
-  sResult : String;
-begin
-  with dmdDataModule do
-  begin
-      // Open up the data.
-      rdsaTeamEvents.ClearDataSet;
-      fdmTeamEvents.Close;
-      fdmTeamEvents.Active := false;
-      fdmTeamEvents.FetchOnDemand := false;
-      respTeamEvents.Content.Empty;
-      reqTeamEvents.ClearBody;
-      reqTeamEvents.Params.ParameterByName('id').Value := sTeam;
-      reqTeamEvents.Params.ParameterByName('signature').Value := signature('getTeamEvents');
-      reqTeamEvents.Params.ParameterByName('key').Value := getApiKey;
-      reqTeamEvents.Execute;
-      sResult := getResultString(respTeamEvents.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaTeamEvents.Response := respTeamEvents;
-          rdsaTeamEvents.UpdateDataSet;
-          fdmTeamEvents.Open;
-      end;
-  end;
-end;
-
-procedure TfrmTeam.getTeamMembers(sTeam: String);
-var
-  sResult : String;
-begin
-  with dmdDataModule do
-  begin
-      // Open up the data.
-      rdsaTeamMembers.ClearDataSet;
-      fdmTeamMembers.Close;
-      respTeamMembers.Content.Empty;
-      reqTeamMembers.ClearBody;
-      rdsaTeamMembers.Active := false;
-      reqTeamMembers.Params.ParameterByName('id').Value := sTeam;
-      reqTeamMembers.Params.ParameterByName('signature').Value := signature('getTeamMembers');
-      reqTeamMembers.Params.ParameterByName('key').Value := getApiKey;
-      reqTeamMembers.Execute;
-      sResult := getResultString(respTeamMembers.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaTeamMembers.Response := respTeamMembers;
-          rdsaTeamMembers.UpdateDataSet;
-          fdmTeamMembers.Open;
-      end;
-  end;
-end;
-
-procedure TfrmTeam.getTeamOwnership(sTeam : String);
-var
-  sResult : String;
-begin
-  with dmdDataModule do
-  begin
-      reqGeneric.Params.Clear;
-      reqGeneric.Resource := 'r/teams/isOwner';
-      reqGeneric.Params.addItem('user',memberId);
-      reqGeneric.Params.addItem('team',id);
-      reqGeneric.Params.AddItem('signature',signature('isOwner'));
-      reqGeneric.Params.AddItem('key',getAPIKey());
-      reqGeneric.Execute;
-      sResult := getResultString(respGeneric.Content);
-      if (sResult = 'OK') then
-      begin
-        isOwner := getResultBoolean(respGeneric.Content,'Result');
-        btnNewEvent.Visible := isOwner;
-        btnInvite.Visible := isOwner;
-      end;
-  end;
-end;
-
-procedure TfrmTeam.getTeamWall(sTeam: String);
-var
-  sResult : String;
-begin
-  with dmdDataModule do
-  begin
-      // Open up the data.
-      rdsaTeamWall.ClearDataSet;
-      fdmTeamWall.Close;
-      respTeamWall.Content.Empty;
-      reqTeamWall.ClearBody;
-      reqTeamWall.Params.ParameterByName('id').Value := sTeam;
-      reqTeamWall.Params.ParameterByName('signature').Value := signature('getTeamWall');
-      reqTeamWall.Params.ParameterByName('key').Value := getApiKey;
-      reqTeamWall.Execute;
-      sResult := getResultString(respTeamWall.Content);
-      if (sResult = 'OK') then
-      begin
-          rdsaTeamWall.Response := respTeamWall;
-          rdsaTeamWall.UpdateDataSet;
-          fdmTeamWall.Open;
-      end;
+      respAllTeamData.Content.Empty;
+      reqAllTeamData.ClearBody;
+      reqAllTeamData.Params.ParameterByName('id').Value := sTeam;
+      reqAllTeamData.Params.ParameterByName('member_id').Value := memberId;
+//      reqAllTeamData.Params.ParameterByName('signature').Value := signature('getTeamWall');
+//      reqAllTeamData.Params.ParameterByName('key').Value := getApiKey;
+      reqAllTeamData.ExecuteAsync(teamLoaded);
   end;
 end;
 
@@ -223,6 +109,52 @@ procedure TfrmTeam.lvWwallClick(Sender: TObject);
 begin
   inherited;
   showNewFormWithId('TfrmTeamWall',id);
+end;
+
+procedure TfrmTeam.teamLoaded;
+var
+  sResult : String;
+  bOwner  : Boolean;
+begin
+  with dmdDataMOdule do
+  begin
+      sResult := getResultString(respAllTeamData.Content);
+      if (sResult = 'OK') then
+      begin
+          rdsaTeam.UpdateDataSet;
+          fdmTeam.Open;
+          sResult := getResultElementAsString(respAllTeamData.Content,'members');
+          if (sResult <> '[]') then
+          begin
+            rdsaTeamMembers.UpdateDataSet;
+            fdmTeamMembers.Open;
+          end else
+          begin
+            fdmTeamMembers.close;
+          end;
+          sResult := getResultElementAsString(respAllTeamData.Content,'wall');
+          if (sResult <> '[]') then
+          begin
+            rdsaTeamWall.UpdateDataSet;
+            fdmTeamWall.Open;
+          end else
+          begin
+              fdmTeamWall.close;
+          end;
+          sResult := getResultElementAsString(respAllTeamData.Content,'events');
+          if (sResult <> '[]') then
+          begin
+            rdsaTeamEvents.UpdateDataSet;
+            fdmTeamWall.Open;
+          end else
+          begin
+              fdmTeamEvents.close;
+          end;
+          bOwner := fdmTeam.FieldByName('isOwner').AsString = 'Yes';
+          btnInvite.Visible := bOwner;
+//          btnNewEvent.Visible := bOwner;
+      end;
+  end;
 end;
 
 initialization

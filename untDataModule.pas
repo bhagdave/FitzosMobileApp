@@ -101,17 +101,6 @@ type
     fdmMembersalt: TWideStringField;
     fdmMemberemail: TWideStringField;
     fdmMemberimage: TWideStringField;
-    fdmTeamid: TWideStringField;
-    fdmTeamname: TWideStringField;
-    fdmTeamcontent: TWideStringField;
-    fdmTeamdate: TWideStringField;
-    fdmTeamactive: TWideStringField;
-    fdmTeamdate_added: TWideStringField;
-    fdmTeamlast_modified: TWideStringField;
-    fdmTeamimage: TWideStringField;
-    fdmTeamowner: TWideStringField;
-    fdmTeampublic: TWideStringField;
-    fdmTeamsport_id: TWideStringField;
     dsTeam: TBindSourceDB;
     reqFriends: TRESTRequest;
     respFriends: TRESTResponse;
@@ -225,6 +214,18 @@ type
     fdmNotificationsread: TWideStringField;
     fdmNotificationstype: TWideStringField;
     fdmNotificationsFrom: TWideStringField;
+    fdmTeamid: TWideStringField;
+    fdmTeamname: TWideStringField;
+    fdmTeamcontent: TWideStringField;
+    fdmTeamdate: TWideStringField;
+    fdmTeamactive: TWideStringField;
+    fdmTeamdate_added: TWideStringField;
+    fdmTeamlast_modified: TWideStringField;
+    fdmTeamimage: TWideStringField;
+    fdmTeamowner: TWideStringField;
+    fdmTeampublic: TWideStringField;
+    fdmTeamsport_id: TWideStringField;
+    fdmTeamisOwner: TWideStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }
