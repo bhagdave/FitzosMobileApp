@@ -29,7 +29,7 @@ inherited frmTeamWall: TfrmTeamWall
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 395.000000000000000000
+      Height = 467.000000000000000000
       TabOrder = 1
       Width = 320.000000000000000000
       ItemAppearanceObjects.ItemObjects.Accessory.Visible = False

@@ -20,6 +20,7 @@ type
   private
     { Private declarations }
     procedure getWall();
+    procedure teamLoaded();
   public
     { Public declarations }
   end;
@@ -67,22 +68,56 @@ begin
   with dmdDataModule do
   begin
       // Open up the data.
-      rdsaTeamWall.ClearDataSet;
-      fdmTeamWall.Close;
-      respTeamWall.Content.Empty;
-      reqTeamWall.ClearBody;
-      reqTeamWall.Params.ParameterByName('id').Value := id;
-      reqTeamWall.Params.ParameterByName('signature').Value := signature('getTeamWall');
-      reqTeamWall.Params.ParameterByName('key').Value := getApiKey;
-      try
-        reqTeamWall.Execute;
-      except on E: Exception do
-      end;
-      sResult := getResultString(respTeamWall.Content);
+      rdsaTeam.ClearDataSet;
+      fdmTeam.Close;
+      respAllTeamData.Content.Empty;
+      reqAllTeamData.ClearBody;
+      reqAllTeamData.Params.ParameterByName('id').Value := ID;
+      reqAllTeamData.Params.ParameterByName('member_id').Value := memberId;
+//      reqAllTeamData.Params.ParameterByName('signature').Value := signature('getTeamWall');
+//      reqAllTeamData.Params.ParameterByName('key').Value := getApiKey;
+      reqAllTeamData.ExecuteAsync(teamLoaded);
+  end;
+end;
+
+procedure TfrmTeamWall.teamLoaded;
+var
+  sResult : String;
+begin
+  with dmdDataMOdule do
+  begin
+      sResult := getResultString(respAllTeamData.Content);
       if (sResult = 'OK') then
       begin
-          rdsaTeamWall.Response := respTeamWall;
-          fdmTeamWall.Open;
+          rdsaTeam.UpdateDataSet;
+          fdmTeam.Open;
+          sResult := getResultElementAsString(respAllTeamData.Content,'members');
+          if (sResult <> '[]') then
+          begin
+            rdsaTeamMembers.UpdateDataSet;
+            fdmTeamMembers.Open;
+          end else
+          begin
+            fdmTeamMembers.close;
+          end;
+          sResult := getResultElementAsString(respAllTeamData.Content,'wall');
+          if (sResult <> '[]') then
+          begin
+            rdsaTeamWall.UpdateDataSet;
+            fdmTeamWall.Open;
+          end else
+          begin
+              fdmTeamWall.close;
+          end;
+          sResult := getResultElementAsString(respAllTeamData.Content,'events');
+          if (sResult <> '[]') then
+          begin
+            rdsaTeamEvents.UpdateDataSet;
+            fdmTeamWall.Open;
+          end else
+          begin
+              fdmTeamEvents.close;
+          end;
       end;
   end;
 end;
