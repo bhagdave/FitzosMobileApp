@@ -48,7 +48,6 @@ type
     procedure btnCancelClick(Sender: TObject);
     procedure btnSendClick(Sender: TObject);
   private
-    isOwner : Boolean;
     { Private declarations }
     procedure teamLoaded();
     procedure getTeam(sTeam: String);
@@ -109,8 +108,6 @@ begin
 end;
 
 procedure TfrmTeam.getTeam(sTeam: String);
-var
-  sResult : String;
 begin
   with dmdDataModule do
   begin
@@ -156,7 +153,6 @@ end;
 procedure TfrmTeam.teamLoaded;
 var
   sResult : String;
-  bOwner  : Boolean;
 begin
   with dmdDataMOdule do
   begin

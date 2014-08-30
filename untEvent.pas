@@ -42,7 +42,7 @@ type
     procedure eventLoaded;
     procedure eventThreadTerminated(Sender : TObject);
     procedure postWallCompleted;
-    procedure getData;
+    procedure getEventData;
   public
     { Public declarations }
   end;
@@ -77,10 +77,6 @@ end;
 procedure TfrmEvent.eventLoaded;
 var
   sStatus,sResult : String;
-  lJsonResponse : TJsonValue;
-  lJsonObject,lResult,LLine:TJsonObject;
-  lJsonArray,lArray : TJsonArray;
-  lData : TJsonPair;
 begin
   with dmdEvent do
   begin
@@ -122,12 +118,12 @@ end;
 
 procedure TfrmEvent.FormActivate(Sender: TObject);
 begin
-  getData();
+  getEventData();
 end;
 
 
 
-procedure TfrmEvent.getData;
+procedure TfrmEvent.getEventData;
 begin
   with dmdEvent do
   begin
