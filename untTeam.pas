@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts,
-  FMX.ListBox;
+  FMX.ListBox, Rest.client, Rest.Types;
 
 type
   TfrmTeam = class(TfrmBase)
@@ -85,16 +85,24 @@ end;
 procedure TfrmTeam.btnSendClick(Sender: TObject);
 var
   i : Integer;
+  sParams : String;
+  aParam: TRESTRequestParameter;
 begin
+  sParams := '[';
   for i := 0 to lbFriends.Items.Count - 1 do
   begin
     if lbFriends.Listitems[i].IsChecked then
     begin
-       //AddPair('member',dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsInteger);
+      sParams := '"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
     end;
     dmdDataModule.fdmFriendsToInvite.next;
   end;
-
+  if sParams <> '[' then
+  begin
+    aParam := dmdDataModule.reqAllTeamData.Params.AddItem();
+    aParam.Value := TJSONObject.ParseJSONValue(sParams);
+    aParam.ContentType := ctAPPLICATION_JSON;
+  end;
 end;
 
 procedure TfrmTeam.FormActivate(Sender: TObject);
