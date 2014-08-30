@@ -93,14 +93,22 @@ begin
   begin
     if lbFriends.Listitems[i].IsChecked then
     begin
-      sParams := '"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+      if sParams <> '[' then
+      begin
+        sParams := ',"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+      end
+      else
+      begin
+        sParams := '"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+      end;
     end;
     dmdDataModule.fdmFriendsToInvite.next;
   end;
   if sParams <> '[' then
   begin
+    sParams := sParams + ']';
     aParam := dmdDataModule.reqAllTeamData.Params.AddItem();
-    aParam.Value := TJSONObject.ParseJSONValue(sParams);
+    aParam.Value := sParams;
     aParam.ContentType := ctAPPLICATION_JSON;
   end;
 end;
