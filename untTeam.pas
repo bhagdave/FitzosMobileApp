@@ -95,11 +95,11 @@ begin
     begin
       if sParams <> '[' then
       begin
-        sParams := ',"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+        sParams := sParams + ',"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
       end
       else
       begin
-        sParams := '"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+        sParams := sParams + '"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
       end;
     end;
     dmdDataModule.fdmFriendsToInvite.next;
@@ -107,9 +107,15 @@ begin
   if sParams <> '[' then
   begin
     sParams := sParams + ']';
-    aParam := dmdDataModule.reqAllTeamData.Params.AddItem();
-    aParam.Value := sParams;
-    aParam.ContentType := ctAPPLICATION_JSON;
+    dmdDataModule.rdsaGeneric.ClearDataSet;
+    dmdDataModule.respGeneric.Content.Empty;
+    dmdDataModule.reqGeneric.Params.Clear;
+    dmdDataModule.reqGeneric.ClearBody;
+    dmdDataModule.reqGeneric.Resource := 'r/teams/sendInvites';
+    dmdDataModule.reqGeneric.Params.addItem('members',sParams);
+    dmdDataModule.reqGeneric.Params.addItem('user',dmdDataModule.memberId);
+    dmdDataModule.reqGeneric.Params.addItem('team',id);
+    dmdDataModule.reqGeneric.Execute;
   end;
 end;
 

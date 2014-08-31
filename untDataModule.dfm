@@ -140,6 +140,7 @@ object dmdDataModule: TdmdDataModule
     Top = 136
   end
   object rdsaGeneric: TRESTResponseDataSetAdapter
+    AutoUpdate = False
     Dataset = fdmGeneric
     FieldDefs = <>
     Response = respGeneric
