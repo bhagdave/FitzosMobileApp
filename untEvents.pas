@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
 
 type
   TfrmEvents = class(TfrmBase)
@@ -17,14 +17,24 @@ type
     btnCreateEvent: TButton;
     pnlWait: TPanel;
     lblMessage: TLabel;
+    btnInvites: TSpeedButton;
+    pnlInvites: TPanel;
+    barInvites: TToolBar;
+    lblInvites: TLabel;
+    lvInvites: TListView;
+    BindSourceDB1: TBindSourceDB;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
+    procedure btnInvitesClick(Sender: TObject);
+    procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
   private
     { Private declarations }
    procedure threadTerminated(Sender : TObject);
    procedure eventsLoaded;
+   procedure invitesLoaded;
   public
     { Public declarations }
   end;
@@ -33,7 +43,7 @@ type
 implementation
 
 uses
-  untJsonFunctions,untFormRegistry,Rest.Client;
+  untJsonFunctions,untFormRegistry,Rest.Client,untEventDataModule;
 {$R *.fmx}
 
 var
@@ -49,6 +59,12 @@ begin
   showNewForm('TfrmEventCreation');
 end;
 
+procedure TfrmEvents.btnInvitesClick(Sender: TObject);
+begin
+  inherited;
+  pnlInvites.Visible := not pnlInvites.Visible;
+end;
+
 procedure TfrmEvents.eventsLoaded;
 var
   sResult : String;
@@ -59,6 +75,9 @@ begin
         dmdDatamodule.rdsaEvents.UpdateDataSet;
         dmdDatamodule.fdmEvents.Open;
     end;
+    // get the event invites.
+    dmdEvent.reqEventInvites.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
+    dmdEvent.reqEventInvites.ExecuteAsync(invitesLoaded);
 end;
 
 procedure TfrmEvents.FormActivate(Sender: TObject);
@@ -80,6 +99,22 @@ begin
   pnlWait.Visible := false;
 end;
 
+procedure TfrmEvents.invitesLoaded;
+var
+  sStatus : String;
+begin
+  sStatus := getResultString(dmdEvent.respEventInvites.Content);
+  if sStatus = 'OK' then
+  begin
+    dmdEvent.rdsaEventInvites.UpdateDataSet;
+    dmdEvent.fdmEventInvites.Open;
+    btnInvites.Visible := true;
+  end else
+  begin
+    btnInvites.Visible := false;
+  end;
+end;
+
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 var
@@ -88,6 +123,12 @@ begin
   inherited;
   LValue := GetSelectedValue(lvEvents);
   showNewFormWithId('TfrmEvent',LValue.ToString);
+end;
+
+procedure TfrmEvents.lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
+begin
+  inherited;
+  // ok send a message to the back end saying no...
 end;
 
 procedure TfrmEvents.threadTerminated(Sender: TObject);

@@ -18,6 +18,15 @@ inherited frmEvents: TfrmEvents
       IconTintColor = claWhite
       TextSettings.FontColor = claWhite
     end
+    object btnInvites: TSpeedButton
+      Align = Right
+      Height = 44.000000000000000000
+      Position.X = 247.000000000000000000
+      Text = 'Invites'
+      Visible = False
+      Width = 73.000000000000000000
+      OnClick = btnInvitesClick
+    end
   end
   inherited pnlTop: TPanel
     inherited lblCaption: TLabel
@@ -2919,6 +2928,41 @@ inherited frmEvents: TfrmEvents
       Width = 305.000000000000000000
     end
   end
+  object pnlInvites: TPanel
+    Align = Client
+    Height = 383.000000000000000000
+    Visible = False
+    Width = 320.000000000000000000
+    TabOrder = 14
+    object barInvites: TToolBar
+      Height = 40.000000000000000000
+      TabOrder = 0
+      Width = 320.000000000000000000
+      object lblInvites: TLabel
+        Align = Client
+        Height = 40.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Invites'
+        Width = 320.000000000000000000
+      end
+    end
+    object lvInvites: TListView
+      ItemAppearanceClassName = 'TListItemAppearance'
+      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      EditMode = True
+      Align = Client
+      Height = 343.000000000000000000
+      TabOrder = 1
+      Width = 320.000000000000000000
+      ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
+      ItemAppearanceObjects.ItemEditObjects.Accessory.Visible = False
+      ItemAppearanceObjects.ItemEditObjects.GlyphButton.ButtonType = Add
+      OnDeleteItem = lvInvitesDeleteItem
+      DeleteButtonText = 'Decline'
+    end
+  end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
@@ -2938,5 +2982,25 @@ inherited frmEvents: TfrmEvents
       FillHeaderFieldName = 'date'
       FillBreakGroups = <>
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvInvites
+      Track = True
+      FillDataSource = BindSourceDB1
+      FillValueFieldName = 'event_id'
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakFieldName = 'location'
+      FillHeaderFieldName = 'date'
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmdEvent.fdmEventInvites
+    ScopeMappings = <>
+    Left = 144
+    Top = 216
   end
 end
