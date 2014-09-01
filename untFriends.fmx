@@ -2914,14 +2914,16 @@ inherited frmFriends: TfrmFriends
       end
     end
     object lvRequests: TListView
-      ItemAppearanceClassName = 'TListItemAppearance'
-      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+      ItemAppearanceClassName = 'TImageListItemRightButtonAppearance'
+      ItemEditAppearanceClassName = 'TImageListItemRightButtonDeleteAppearance'
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
+      EditMode = True
       Align = Client
       Height = 217.000000000000000000
       TabOrder = 2
       Width = 257.000000000000000000
+      ItemAppearanceObjects.ItemObjects.TextButton.Text = 'Accept'
       OnItemClick = lvRequestsItemClick
       OnDeleteItem = lvRequestsDeleteItem
       DeleteButtonText = 'Decline'
