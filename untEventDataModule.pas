@@ -101,6 +101,10 @@ type
     fdmEventlast_name: TWideStringField;
     fdmEventisOwner: TWideStringField;
     fdmEventisAttendee: TWideStringField;
+    reqEventInvites: TRESTRequest;
+    respEventInvites: TRESTResponse;
+    rdsaEventInvites: TRESTResponseDataSetAdapter;
+    fdmEventInvites: TFDMemTable;
   private
     { Private declarations }
   public

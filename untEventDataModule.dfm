@@ -836,4 +836,34 @@ object dmdEvent: TdmdEvent
     Left = 104
     Top = 64
   end
+  object reqEventInvites: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Response = respEventInvites
+    SynchronizedEvents = False
+    Left = 704
+    Top = 48
+  end
+  object respEventInvites: TRESTResponse
+    Left = 704
+    Top = 104
+  end
+  object rdsaEventInvites: TRESTResponseDataSetAdapter
+    AutoUpdate = False
+    Dataset = fdmEventInvites
+    FieldDefs = <>
+    Response = respEventInvites
+    Left = 704
+    Top = 168
+  end
+  object fdmEventInvites: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 696
+    Top = 232
+  end
 end
