@@ -2059,4 +2059,82 @@ object dmdDataModule: TdmdDataModule
       Size = 255
     end
   end
+  object reqFriendRequests: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'member_id'
+        Value = '9'
+      end>
+    Resource = 'r/members/getFriendRequests'
+    Response = respFriendRequests
+    SynchronizedEvents = False
+    Left = 464
+    Top = 368
+  end
+  object respFriendRequests: TRESTResponse
+    ContentType = 'text/html'
+    Left = 456
+    Top = 424
+  end
+  object rdsaFriendRequests: TRESTResponseDataSetAdapter
+    Active = True
+    AutoUpdate = False
+    Dataset = fdmFriendRequests
+    FieldDefs = <>
+    Response = respFriendRequests
+    RootElement = 'Result'
+    Left = 464
+    Top = 480
+  end
+  object fdmFriendRequests: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'friend_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'first_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 472
+    Top = 536
+    object fdmFriendRequestsfriend_id: TWideStringField
+      FieldName = 'friend_id'
+      Size = 255
+    end
+    object fdmFriendRequestsfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 255
+    end
+    object fdmFriendRequestslast_name: TWideStringField
+      FieldName = 'last_name'
+      Size = 255
+    end
+    object fdmFriendRequestsimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+  end
 end

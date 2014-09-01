@@ -230,6 +230,14 @@ type
     fdmFriendsToInvite: TFDMemTable;
     fdmFriendsToInviteid: TWideStringField;
     fdmFriendsToInvitefirst_name: TWideStringField;
+    reqFriendRequests: TRESTRequest;
+    respFriendRequests: TRESTResponse;
+    rdsaFriendRequests: TRESTResponseDataSetAdapter;
+    fdmFriendRequests: TFDMemTable;
+    fdmFriendRequestsfriend_id: TWideStringField;
+    fdmFriendRequestsfirst_name: TWideStringField;
+    fdmFriendRequestslast_name: TWideStringField;
+    fdmFriendRequestsimage: TWideStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }
