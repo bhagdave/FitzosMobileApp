@@ -141,7 +141,8 @@ var
 begin
   inherited;
     LValue := GetSelectedValue(lvRequests);
-//    lvRequests.Items.Delete(aindex);
+    tmrRemove.Tag := aindex;
+    tmrRemove.Enabled := true;
     with dmdDatamodule do
     begin
       reqGeneric.Params.Clear;
