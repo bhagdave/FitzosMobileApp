@@ -26,8 +26,6 @@ type
     cboGender: TComboBox;
     lblLocation: TLabel;
     edtLocation: TEdit;
-    lblNickname: TLabel;
-    edtNickname: TEdit;
     lblUnits: TLabel;
     cboUnits: TComboBox;
     lblHeight: TLabel;
@@ -62,7 +60,6 @@ type
     LinkControlToField3: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
-    LinkControlToField4: TLinkControlToField;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);

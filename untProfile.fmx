@@ -2920,7 +2920,7 @@ object frmProfile: TfrmProfile
       TabOrder = 0
       object grdLayout: TGridPanelLayout
         Align = MostTop
-        Height = 200.000000000000000000
+        Height = 175.000000000000000000
         Width = 320.000000000000000000
         TabOrder = 0
         ColumnCollection = <
@@ -2963,59 +2963,45 @@ object frmProfile: TfrmProfile
           end
           item
             Column = 0
-            Control = lblNickname
-            Row = 3
-          end
-          item
-            Column = 1
-            Control = edtNickname
-            Row = 3
-          end
-          item
-            Column = 0
             Control = lblUnits
-            Row = 4
+            Row = 3
           end
           item
             Column = 1
             Control = cboUnits
-            Row = 4
+            Row = 3
           end
           item
             Column = 0
             Control = lblHeight
-            Row = 5
+            Row = 4
           end
           item
             Column = 1
             Control = edtHeight
-            Row = 5
+            Row = 4
           end
           item
             Column = 0
             Control = lblWeight
-            Row = 6
+            Row = 5
           end
           item
             Column = 1
             Control = edtWeight
-            Row = 6
+            Row = 5
           end
           item
             Column = 0
             Control = lblBodyFat
-            Row = 7
+            Row = 6
           end
           item
             Column = 1
             Control = edtBodyFat
-            Row = 7
+            Row = 6
           end>
         RowCollection = <
-          item
-            SizeStyle = Absolute
-            Value = 25.000000000000000000
-          end
           item
             SizeStyle = Absolute
             Value = 25.000000000000000000
@@ -3088,19 +3074,6 @@ object frmProfile: TfrmProfile
           Width = 223.276580810546900000
           Height = 25.000000000000000000
         end
-        object lblNickname: TLabel
-          Align = Client
-          Height = 25.000000000000000000
-          Text = 'Nickname'
-          Width = 96.723419189453130000
-        end
-        object edtNickname: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = Client
-          TabOrder = 7
-          Width = 223.276580810546900000
-          Height = 25.000000000000000000
-        end
         object lblUnits: TLabel
           Align = Client
           Height = 25.000000000000000000
@@ -3114,7 +3087,7 @@ object frmProfile: TfrmProfile
           Items.Strings = (
             'Metric'
             'Imperial')
-          TabOrder = 9
+          TabOrder = 8
           Width = 223.276580810546900000
         end
         object lblHeight: TLabel
@@ -3126,7 +3099,7 @@ object frmProfile: TfrmProfile
         object edtHeight: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
-          TabOrder = 11
+          TabOrder = 10
           Width = 223.276580810546900000
           Height = 25.000000000000000000
         end
@@ -3139,7 +3112,7 @@ object frmProfile: TfrmProfile
         object edtWeight: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
-          TabOrder = 13
+          TabOrder = 12
           Width = 223.276580810546900000
           Height = 25.000000000000000000
         end
@@ -3152,7 +3125,7 @@ object frmProfile: TfrmProfile
         object edtBodyFat: TNumberBox
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
-          TabOrder = 15
+          TabOrder = 14
           Cursor = crIBeam
           Width = 223.276580810546900000
           Height = 25.000000000000000000
@@ -3163,7 +3136,7 @@ object frmProfile: TfrmProfile
         Align = Top
         Height = 30.000000000000000000
         IsExpanded = False
-        Position.Y = 230.000000000000000000
+        Position.Y = 205.000000000000000000
         ShowCheck = False
         Text = 'Options'
         Width = 320.000000000000000000
@@ -3213,7 +3186,7 @@ object frmProfile: TfrmProfile
         Align = Top
         Height = 30.000000000000000000
         IsExpanded = False
-        Position.Y = 200.000000000000000000
+        Position.Y = 175.000000000000000000
         ShowCheck = False
         Text = 'Profile Image'
         Width = 320.000000000000000000
@@ -3380,13 +3353,6 @@ object frmProfile: TfrmProfile
       FieldName = 'body_fat_percentage'
       Component = edtBodyFat
       ComponentProperty = 'Text'
-    end
-    object LinkControlToField4: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'nickname'
-      Control = edtNickname
-      Track = False
     end
   end
 end

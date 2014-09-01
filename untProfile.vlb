@@ -24,10 +24,6 @@ Visible=False
 [cbMessaging]
 Coordinates=70,500,90,58
 
-[lblNickname]
-Coordinates=490,20,75,51
-Visible=False
-
 [TakePhotoFromLibraryAction1]
 Coordinates=732,1,189,36
 
@@ -127,9 +123,6 @@ Visible=False
 
 [edtHeight]
 Coordinates=780,280,70,58
-
-[edtNickname]
-Coordinates=770,210,89,58
 
 [edtAge]
 Coordinates=200,440,55,58
@@ -367,7 +360,7 @@ Visible=False
 Coordinates=170,1,82,33
 
 []
-Coordinates=517,422,72,58
+Coordinates=490,20,75,51
 Visible=False
 
 [dmdDataModule.fdmSearchNames]
