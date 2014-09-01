@@ -17,15 +17,30 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkFillControlToField: TLinkFillControlToField;
+    btnInvites: TSpeedButton;
+    pnlInvites: TPanel;
+    barInvites: TToolBar;
+    lblInvites: TLabel;
+    lvInvites: TListView;
+    BindSourceDB2: TBindSourceDB;
+    LinkFillControlToField1: TLinkFillControlToField;
+    tmrRefresh: TTimer;
     procedure btnCreateClick(Sender: TObject);
     procedure lvTeamsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure FormActivate(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
+    procedure lvInvitesButtonClick(const Sender: TObject;
+      const AItem: TListViewItem; const AObject: TListItemSimpleControl);
+    procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
+    procedure btnInvitesClick(Sender: TObject);
+    procedure tmrRefreshTimer(Sender: TObject);
   private
     { Private declarations }
     procedure teamsLoaded;
     procedure threadTerminated(Sender : TObject);
+    procedure loadInvites();
+    procedure invitesLoaded();
   public
     { Public declarations }
   end;
@@ -51,6 +66,12 @@ begin
   showNewForm('TfrmTeamCreate');
 end;
 
+procedure TfrmTeams.btnInvitesClick(Sender: TObject);
+begin
+  inherited;
+  pnlInvites.Visible := not pnlInvites.Visible;
+end;
+
 procedure TfrmTeams.FormActivate(Sender: TObject);
 begin
   inherited;
@@ -67,6 +88,76 @@ begin
     myThread := reqMemberTeams.ExecuteAsync(teamsLoaded);
     myThread.OnTerminate := threadTerminated;
   end;
+end;
+
+procedure TfrmTeams.invitesLoaded;
+var
+  sResult : String;
+begin
+    sResult := getResultString(dmdDataModule.respTeamInvites.Content);
+    if (sResult = 'OK') then
+    begin
+      btnInvites.Visible := true;
+      dmdDataModule.rdsaTeamInvites.UpdateDataSet;
+      dmdDataModule.fdmTeamInvites.Open;
+    end
+    else
+    begin
+      btnInvites.Visible := false;
+    end;
+end;
+
+procedure TfrmTeams.loadInvites;
+begin
+  with dmdDataModule do
+  begin
+    // Open up the data.
+    rdsaTeamInvites.ClearDataSet;
+    fdmTeamInvites.Close;
+    respTeamInvites.Content.Empty;
+    reqTeamInvites.ClearBody;
+    reqTeamInvites.Params.ParameterByName('member_id').Value := memberId;
+    reqTeamInvites.ExecuteAsync(invitesLoaded);
+  end;
+end;
+
+procedure TfrmTeams.lvInvitesButtonClick(const Sender: TObject;
+  const AItem: TListViewItem; const AObject: TListItemSimpleControl);
+var
+  LValue : TValue;
+begin
+  inherited;
+    LValue := GetSelectedValue(lvInvites);
+    tmrRefresh.Tag := aItem.index;
+    tmrRefresh.Enabled := true;
+    with dmdDatamodule do
+    begin
+//      fdmFriendRequests.close;
+      reqGeneric.Params.Clear;
+      reqGeneric.Resource := 'r/teams/acceptTeamInvite';
+      reqGeneric.Params.addItem('team',lValue.ToString);
+      reqGeneric.Params.addItem('member_id',memberId);
+      reqGeneric.Execute;
+    end;
+end;
+
+procedure TfrmTeams.lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
+var
+  LValue : TValue;
+begin
+  inherited;
+    LValue := GetSelectedValue(lvInvites);
+    tmrRefresh.Tag := aindex;
+    tmrRefresh.Enabled := true;
+    with dmdDatamodule do
+    begin
+//      fdmFriendRequests.close;
+      reqGeneric.Params.Clear;
+      reqGeneric.Resource := 'r/teams/declineTeamInvite';
+      reqGeneric.Params.addItem('team',lValue.ToString);
+      reqGeneric.Params.addItem('member_id',memberId);
+      reqGeneric.Execute;
+    end;
 end;
 
 procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;
@@ -97,12 +188,20 @@ begin
         lvTeams.EndUpdate;
         lvTeams.Visible := true;
     end;
+    loadInvites();
 end;
 
 procedure TfrmTeams.threadTerminated(Sender: TObject);
 begin
   if myThread <> nil then
      myThread := nil;
+end;
+
+procedure TfrmTeams.tmrRefreshTimer(Sender: TObject);
+begin
+  inherited;
+  tmrRefresh.Enabled := false;
+  loadInvites();
 end;
 
 initialization

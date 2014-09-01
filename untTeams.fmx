@@ -14,6 +14,16 @@ inherited frmTeams: TfrmTeams
     inherited btnBack: TButton
       Height = 44.000000000000000000
     end
+    object btnInvites: TSpeedButton
+      Align = Right
+      Height = 44.000000000000000000
+      Position.X = 247.000000000000000000
+      StyleLookup = 'buttonstyle'
+      Text = 'Invites'
+      Visible = False
+      Width = 73.000000000000000000
+      OnClick = btnInvitesClick
+    end
   end
   inherited pnlTop: TPanel
     inherited lblCaption: TLabel
@@ -2896,6 +2906,40 @@ inherited frmTeams: TfrmTeams
       7474696E67732E466F6E74436F6C6F72070C636C61536C617465677261790557
       696474680500000000000000F005400000}
   end
+  object pnlInvites: TPanel
+    Align = Client
+    Height = 257.000000000000000000
+    Visible = False
+    Width = 249.000000000000000000
+    TabOrder = 11
+    object barInvites: TToolBar
+      Height = 40.000000000000000000
+      TabOrder = 1
+      Width = 249.000000000000000000
+      object lblInvites: TLabel
+        Align = Client
+        Height = 40.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Team Invites'
+        Width = 249.000000000000000000
+      end
+    end
+    object lvInvites: TListView
+      ItemAppearanceClassName = 'TImageListItemRightButtonAppearance'
+      ItemEditAppearanceClassName = 'TImageListItemRightButtonDeleteAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      Align = Client
+      Height = 217.000000000000000000
+      TabOrder = 2
+      Width = 249.000000000000000000
+      ItemAppearanceObjects.ItemObjects.Text.WordWrap = True
+      ItemAppearanceObjects.ItemObjects.TextButton.Text = 'Accept'
+      OnButtonClick = lvInvitesButtonClick
+      OnDeleteItem = lvInvitesDeleteItem
+      DeleteButtonText = 'Decline'
+    end
+  end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>
     Left = 176
@@ -2918,5 +2962,30 @@ inherited frmTeams: TfrmTeams
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvInvites
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dmdDataModule.fdmTeamInvites
+    ScopeMappings = <>
+    Left = 144
+    Top = 216
+  end
+  object tmrRefresh: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = tmrRefreshTimer
+    Left = 24
+    Top = 329
   end
 end

@@ -2137,4 +2137,181 @@ object dmdDataModule: TdmdDataModule
       Size = 255
     end
   end
+  object reqTeamInvites: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'member_id'
+        Value = '9'
+      end>
+    Resource = 'r/teams/getInvites'
+    Response = respTeamInvites
+    SynchronizedEvents = False
+    Left = 568
+    Top = 376
+  end
+  object respTeamInvites: TRESTResponse
+    ContentType = 'text/html'
+    Left = 568
+    Top = 440
+  end
+  object rdsaTeamInvites: TRESTResponseDataSetAdapter
+    Active = True
+    AutoUpdate = False
+    Dataset = fdmTeamInvites
+    FieldDefs = <>
+    Response = respTeamInvites
+    RootElement = 'Result'
+    Left = 568
+    Top = 496
+  end
+  object fdmTeamInvites: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'team_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'member_id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'status'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'invite_sent'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'owner'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 568
+    Top = 552
+    object fdmTeamInvitesid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmTeamInvitesteam_id: TWideStringField
+      FieldName = 'team_id'
+      Size = 255
+    end
+    object fdmTeamInvitesmember_id: TWideStringField
+      FieldName = 'member_id'
+      Size = 255
+    end
+    object fdmTeamInvitesstatus: TWideStringField
+      FieldName = 'status'
+      Size = 255
+    end
+    object fdmTeamInvitesinvite_sent: TWideStringField
+      FieldName = 'invite_sent'
+      Size = 255
+    end
+    object fdmTeamInvitesname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmTeamInvitescontent: TWideStringField
+      FieldName = 'content'
+      Size = 255
+    end
+    object fdmTeamInvitesdate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmTeamInvitesactive: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object fdmTeamInvitesdate_added: TWideStringField
+      FieldName = 'date_added'
+      Size = 255
+    end
+    object fdmTeamInviteslast_modified: TWideStringField
+      FieldName = 'last_modified'
+      Size = 255
+    end
+    object fdmTeamInvitesimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmTeamInvitesowner: TWideStringField
+      FieldName = 'owner'
+      Size = 255
+    end
+    object fdmTeamInvitespublic: TWideStringField
+      FieldName = 'public'
+      Size = 255
+    end
+    object fdmTeamInvitessport_id: TWideStringField
+      FieldName = 'sport_id'
+      Size = 255
+    end
+  end
 end

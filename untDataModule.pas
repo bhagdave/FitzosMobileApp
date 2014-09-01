@@ -238,6 +238,25 @@ type
     fdmFriendRequestsfirst_name: TWideStringField;
     fdmFriendRequestslast_name: TWideStringField;
     fdmFriendRequestsimage: TWideStringField;
+    reqTeamInvites: TRESTRequest;
+    respTeamInvites: TRESTResponse;
+    rdsaTeamInvites: TRESTResponseDataSetAdapter;
+    fdmTeamInvites: TFDMemTable;
+    fdmTeamInvitesid: TWideStringField;
+    fdmTeamInvitesteam_id: TWideStringField;
+    fdmTeamInvitesmember_id: TWideStringField;
+    fdmTeamInvitesstatus: TWideStringField;
+    fdmTeamInvitesinvite_sent: TWideStringField;
+    fdmTeamInvitesname: TWideStringField;
+    fdmTeamInvitescontent: TWideStringField;
+    fdmTeamInvitesdate: TWideStringField;
+    fdmTeamInvitesactive: TWideStringField;
+    fdmTeamInvitesdate_added: TWideStringField;
+    fdmTeamInviteslast_modified: TWideStringField;
+    fdmTeamInvitesimage: TWideStringField;
+    fdmTeamInvitesowner: TWideStringField;
+    fdmTeamInvitespublic: TWideStringField;
+    fdmTeamInvitessport_id: TWideStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
   private
     { Private declarations }

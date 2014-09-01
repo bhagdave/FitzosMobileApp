@@ -41,7 +41,7 @@ Coordinates=245,896,176,80
 Visible=False
 
 [lvTeams]
-Coordinates=10,10,107,168
+Coordinates=326,10,89,141
 Visible=True
 
 [dmdDataModule.respGeneric]
@@ -122,7 +122,7 @@ Visible=False
 Coordinates=693,529,91,36
 
 [dmdDataModule.fdmMemberTeams]
-Coordinates=197,32,211,124
+Coordinates=495,28,181,105
 Visible=False
 
 [Module Settings]
@@ -131,7 +131,7 @@ ActiveLayerNames=
 EditingLayerName=
 
 [dmdDataModule.dsMemberTeams]
-Coordinates=197,32,211,124
+Coordinates=495,28,181,105
 
 [dmdDataModule.]
 Coordinates=443,830,153,51
@@ -323,4 +323,62 @@ Visible=False
 [dmdDataModule.reqSearch]
 Coordinates=841,724,171,124
 Visible=False
+
+[dmdDataModule.respFriendRequests]
+Coordinates=46,842,196,267
+Visible=False
+
+[dmdDataModule.respAllTeamData]
+Coordinates=428,842,181,267
+Visible=False
+
+[dmdDataModule.reqAllTeamData]
+Coordinates=245,842,175,105
+Visible=False
+
+[dmdDataModule.respTeamInvites]
+Coordinates=246,537,178,267
+Visible=False
+
+[dmdDataModule.reqTeamInvites]
+Coordinates=836,500,172,87
+Visible=False
+
+[dmdDataModule.fdmFriendRequests]
+Coordinates=635,518,194,123
+Visible=False
+
+[dmdDataModule.reqFriendRequests]
+Coordinates=1026,206,191,87
+Visible=False
+
+[dmdDataModule.fdmTeamInvites]
+Coordinates=10,10,158,339
+Visible=False
+
+[dmdDataModule.fdmFriendsToInvite]
+Coordinates=1026,312,192,87
+Visible=False
+
+[pnlInvites]
+Coordinates=653,314,62,33
+Visible=False
+
+[lblInvites]
+Coordinates=594,1147,58,51
+Visible=False
+
+[lvInvites]
+Coordinates=211,10,89,177
+
+[barInvites]
+Coordinates=653,848,62,33
+Visible=False
+
+[btnInvites]
+Coordinates=653,660,62,51
+Visible=False
+
+[BindSourceDB2]
+Coordinates=10,10,158,339
 
