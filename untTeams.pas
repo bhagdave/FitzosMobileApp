@@ -104,6 +104,7 @@ begin
     else
     begin
       btnInvites.Visible := false;
+      pnlInvites.Visible := false;
     end;
 end;
 
