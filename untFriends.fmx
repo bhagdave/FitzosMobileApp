@@ -2919,15 +2919,15 @@ inherited frmFriends: TfrmFriends
       ItemEditAppearanceClassName = 'TImageListItemRightButtonDeleteAppearance'
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
-      EditMode = True
       Align = Client
       Height = 217.000000000000000000
       TabOrder = 2
       Width = 257.000000000000000000
       ItemAppearanceObjects.ItemObjects.TextButton.Text = 'Accept'
-      OnItemClick = lvRequestsItemClick
+      OnButtonClick = lvRequestsButtonClick
       OnDeleteItem = lvRequestsDeleteItem
       DeleteButtonText = 'Decline'
+      ShowSelection = False
     end
   end
   object BindingsList1: TBindingsList
@@ -2947,10 +2947,10 @@ inherited frmFriends: TfrmFriends
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
-    object LinkFillControlToField2: TLinkFillControlToField
+    object LinkFillControlToField: TLinkFillControlToField
       Category = 'Quick Bindings'
       Control = lvRequests
-      Track = True
+      Track = False
       FillDataSource = BindSourceDB1
       FillValueFieldName = 'friend_id'
       FillDisplayFieldName = 'first_name'
@@ -2965,5 +2965,12 @@ inherited frmFriends: TfrmFriends
     ScopeMappings = <>
     Left = 144
     Top = 216
+  end
+  object tmrRemove: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = tmrRemoveTimer
+    Left = 120
+    Top = 353
   end
 end

@@ -20,14 +20,16 @@ type
     lblFriendRequests: TLabel;
     lvRequests: TListView;
     BindSourceDB1: TBindSourceDB;
-    LinkFillControlToField2: TLinkFillControlToField;
+    LinkFillControlToField: TLinkFillControlToField;
+    tmrRemove: TTimer;
     procedure FormActivate(Sender: TObject);
     procedure lvFriendsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure lvRequestsDeleteItem(Sender: TObject; AIndex: Integer);
-    procedure lvRequestsItemClick(const Sender: TObject;
-      const AItem: TListViewItem);
     procedure btnRequestsClick(Sender: TObject);
+    procedure lvRequestsButtonClick(const Sender: TObject;
+      const AItem: TListViewItem; const AObject: TListItemSimpleControl);
+    procedure tmrRemoveTimer(Sender: TObject);
   private
     { Private declarations }
     procedure friendsLoaded;
@@ -97,8 +99,8 @@ begin
   with dmdDataModule do
   begin
     fdmFriendRequests.Close;
-    respFriendRequests.Content.Empty;
-    reqFriendRequests.ClearBody;
+//    respFriendRequests.Content.Empty;
+//    reqFriendRequests.ClearBody;
     reqFriendRequests.Params.ParameterByName('member_id').Value := memberId;
     reqFriendRequests.ExecuteAsync(requestsLoaded);
   end;
@@ -114,17 +116,39 @@ begin
   showNewFormWithId('TfrmFriend',lValue.ToString);
 end;
 
-procedure TfrmFriends.lvRequestsDeleteItem(Sender: TObject; AIndex: Integer);
+procedure TfrmFriends.lvRequestsButtonClick(const Sender: TObject;
+  const AItem: TListViewItem; const AObject: TListItemSimpleControl);
+var
+  LValue : TValue;
 begin
   inherited;
-  //
+    LValue := GetSelectedValue(lvRequests);
+    tmrRemove.Tag := aItem.index;
+    tmrRemove.Enabled := true;
+    with dmdDatamodule do
+    begin
+//      fdmFriendRequests.close;
+      reqGeneric.Params.Clear;
+      reqGeneric.Resource := 'r/members/acceptFriendRequest';
+      reqGeneric.Params.addItem('id',lValue.ToString);
+      reqGeneric.Execute;
+    end;
 end;
 
-procedure TfrmFriends.lvRequestsItemClick(const Sender: TObject;
-  const AItem: TListViewItem);
+procedure TfrmFriends.lvRequestsDeleteItem(Sender: TObject; AIndex: Integer);
+var
+  LValue : TValue;
 begin
   inherited;
-  //
+    LValue := GetSelectedValue(lvRequests);
+//    lvRequests.Items.Delete(aindex);
+    with dmdDatamodule do
+    begin
+      reqGeneric.Params.Clear;
+      reqGeneric.Resource := 'r/members/declineFriendRequest';
+      reqGeneric.Params.addItem('id',lValue.ToString);
+      reqGeneric.Execute;
+    end;
 end;
 
 procedure TfrmFriends.requestsLoaded;
@@ -137,12 +161,24 @@ begin
     btnRequests.Visible := true;
     dmdDataModule.rdsaFriendRequests.UpdateDataSet;
     dmdDataModule.fdmFriendRequests.Open;
+  end
+  else
+  begin
+    pnlRequests.Visible := false;
+    btnRequests.Visible := false;
   end;
 end;
 
 procedure TfrmFriends.threadTerminated(Sender: TObject);
 begin
   myThread := nil;
+end;
+
+procedure TfrmFriends.tmrRemoveTimer(Sender: TObject);
+begin
+  inherited;
+  tmrRemove.Enabled := false;
+  loadRequests();
 end;
 
 initialization
