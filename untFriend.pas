@@ -181,7 +181,6 @@ begin
           rdsaGeneric.Response := respGeneric;
           fdmGeneric.Open;
           lblGender.Text := fdmGeneric.FieldByName('gender').AsString;
-          lblNickname.Text := fdmGeneric.FieldByName('nickname').AsString;
           lblAge.Text := fdmGeneric.FieldByName('age').AsString;
       end;
   end;
