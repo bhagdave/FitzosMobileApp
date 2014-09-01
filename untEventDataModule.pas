@@ -105,6 +105,27 @@ type
     respEventInvites: TRESTResponse;
     rdsaEventInvites: TRESTResponseDataSetAdapter;
     fdmEventInvites: TFDMemTable;
+    fdmEventInvitesid: TWideStringField;
+    fdmEventInvitesevent_id: TWideStringField;
+    fdmEventInvitesmember_id: TWideStringField;
+    fdmEventInvitesstatus: TWideStringField;
+    fdmEventInvitesinvite_sent: TWideStringField;
+    fdmEventInvitesname: TWideStringField;
+    fdmEventInvitescontent: TWideStringField;
+    fdmEventInvitesdate: TWideStringField;
+    fdmEventInvitespublished: TWideStringField;
+    fdmEventInvitesdate_added: TWideStringField;
+    fdmEventInviteslast_modified: TWideStringField;
+    fdmEventInvitesimage: TWideStringField;
+    fdmEventInvitestype: TWideStringField;
+    fdmEventInvitessub_type: TWideStringField;
+    fdmEventInvitespublic: TWideStringField;
+    fdmEventInvitesteam_id: TWideStringField;
+    fdmEventInvitestime: TWideStringField;
+    fdmEventInviteslocation: TWideStringField;
+    fdmEventInvitesend_time: TWideStringField;
+    fdmEventInvitessport_id: TWideStringField;
+    fdmEventInvitesend_date: TWideStringField;
   private
     { Private declarations }
   public
