@@ -37,6 +37,7 @@ type
    procedure threadTerminated(Sender : TObject);
    procedure eventsLoaded;
    procedure invitesLoaded;
+   procedure loadInvites;
   public
     { Public declarations }
   end;
@@ -77,9 +78,7 @@ begin
         dmdDatamodule.rdsaEvents.UpdateDataSet;
         dmdDatamodule.fdmEvents.Open;
     end;
-    // get the event invites.
-    dmdEvent.reqEventInvites.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
-    dmdEvent.reqEventInvites.ExecuteAsync(invitesLoaded);
+    loadInvites();
 end;
 
 procedure TfrmEvents.FormActivate(Sender: TObject);
@@ -114,7 +113,15 @@ begin
   end else
   begin
     btnInvites.Visible := false;
+    pnlInvites.Visible := false;
   end;
+end;
+
+procedure TfrmEvents.loadInvites;
+begin
+    // get the event invites.
+    dmdEvent.reqEventInvites.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
+    dmdEvent.reqEventInvites.ExecuteAsync(invitesLoaded);
 end;
 
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
@@ -128,9 +135,21 @@ begin
 end;
 
 procedure TfrmEvents.lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
+var
+  LValue : TValue;
 begin
   inherited;
-  // ok send a message to the back end saying no...
+    LValue := GetSelectedValue(lvInvites);
+    with dmdEvent do
+    begin
+      reqGeneric.Resource := 'r/events/declineEvent';
+      reqGeneric.Params.addItem('member_id',dmdDataModule.memberId);
+      reqGeneric.Params.AddItem('event',lValue.ToString);
+      reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
+      reqGeneric.Params.addItem('key',dmdDatamodule.getApiKey);
+      reqGeneric.Execute;
+    end;
+    loadInvites;
 end;
 
 procedure TfrmEvents.lvInvitesItemClick(const Sender: TObject;
