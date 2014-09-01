@@ -22,6 +22,7 @@ inherited frmFriends: TfrmFriends
       Text = 'Requests'
       Visible = False
       Width = 73.000000000000000000
+      OnClick = btnRequestsClick
     end
   end
   inherited pnlTop: TPanel
@@ -2946,5 +2947,23 @@ inherited frmFriends: TfrmFriends
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvRequests
+      Track = True
+      FillDataSource = BindSourceDB1
+      FillValueFieldName = 'friend_id'
+      FillDisplayFieldName = 'first_name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmdDataModule.fdmFriendRequests
+    ScopeMappings = <>
+    Left = 144
+    Top = 216
   end
 end

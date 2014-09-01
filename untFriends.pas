@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
 
 type
   TfrmFriends = class(TfrmBase)
@@ -19,12 +19,15 @@ type
     barRequests: TToolBar;
     lblFriendRequests: TLabel;
     lvRequests: TListView;
+    BindSourceDB1: TBindSourceDB;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure FormActivate(Sender: TObject);
     procedure lvFriendsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure lvRequestsDeleteItem(Sender: TObject; AIndex: Integer);
     procedure lvRequestsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure btnRequestsClick(Sender: TObject);
   private
     { Private declarations }
     procedure friendsLoaded;
@@ -45,6 +48,12 @@ var
 
 
 {$R *.fmx}
+
+procedure TfrmFriends.btnRequestsClick(Sender: TObject);
+begin
+  inherited;
+  pnlRequests.Visible := not pnlRequests.Visible;
+end;
 
 procedure TfrmFriends.FormActivate(Sender: TObject);
 begin
@@ -85,7 +94,14 @@ end;
 
 procedure TfrmFriends.loadRequests;
 begin
-//
+  with dmdDataModule do
+  begin
+    fdmFriendRequests.Close;
+    respFriendRequests.Content.Empty;
+    reqFriendRequests.ClearBody;
+    reqFriendRequests.Params.ParameterByName('member_id').Value := memberId;
+    reqFriendRequests.ExecuteAsync(requestsLoaded);
+  end;
 end;
 
 procedure TfrmFriends.lvFriendsItemClick(const Sender: TObject;
@@ -101,7 +117,7 @@ end;
 procedure TfrmFriends.lvRequestsDeleteItem(Sender: TObject; AIndex: Integer);
 begin
   inherited;
-//
+  //
 end;
 
 procedure TfrmFriends.lvRequestsItemClick(const Sender: TObject;
@@ -112,8 +128,16 @@ begin
 end;
 
 procedure TfrmFriends.requestsLoaded;
+var
+  sResult : String;
 begin
-//
+  sResult := getResultString(dmdDataModule.respFriendRequests.Content);
+  if (sResult = 'OK') then
+  begin
+    btnRequests.Visible := true;
+    dmdDataModule.rdsaFriendRequests.UpdateDataSet;
+    dmdDataModule.fdmFriendRequests.Open;
+  end;
 end;
 
 procedure TfrmFriends.threadTerminated(Sender: TObject);
