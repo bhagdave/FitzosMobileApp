@@ -142,7 +142,7 @@ begin
     LValue := GetSelectedValue(lvInvites);
     with dmdEvent do
     begin
-      reqGeneric.Resource := 'r/events/declineEvent';
+      reqGeneric.Resource := 'r/events/declineInvite';
       reqGeneric.Params.addItem('member_id',dmdDataModule.memberId);
       reqGeneric.Params.AddItem('event',lValue.ToString);
       reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
