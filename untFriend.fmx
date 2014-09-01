@@ -9,10 +9,10 @@ inherited frmFriend: TfrmFriend
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 412.000000000000000000
+    Height = 44.000000000000000000
+    Position.Y = 416.000000000000000000
     inherited btnBack: TButton
       Height = 44.000000000000000000
-      Position.Y = 2.000000000000000000
     end
     object BeFriend: TButton
       Align = Center
@@ -30,10 +30,10 @@ inherited frmFriend: TfrmFriend
     end
   end
   inherited pnlCenter: TPanel
-    Height = 355.000000000000000000
+    Height = 383.000000000000000000
     object grdLayout: TGridPanelLayout
       Align = Client
-      Height = 355.000000000000000000
+      Height = 383.000000000000000000
       Width = 320.000000000000000000
       TabOrder = 2
       ColumnCollection = <
@@ -75,12 +75,12 @@ inherited frmFriend: TfrmFriend
           item
           end>
         Align = Client
-        Height = 177.500000000000000000
+        Height = 191.500000000000000000
         Width = 160.000000000000000000
       end
       object pnlMemberDetails: TPanel
         Align = Client
-        Height = 177.500000000000000000
+        Height = 191.500000000000000000
         Width = 160.000000000000000000
         TabOrder = 1
         object lblAge: TLabel
@@ -104,14 +104,6 @@ inherited frmFriend: TfrmFriend
           Height = 23.000000000000000000
           Width = 160.000000000000000000
         end
-        object lblNickname: TLabel
-          Align = Top
-          Anchors = []
-          Height = 21.000000000000000000
-          Position.Y = 65.000000000000000000
-          Text = 'lblNickname'
-          Width = 160.000000000000000000
-        end
       end
       object lvSports: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
@@ -119,7 +111,7 @@ inherited frmFriend: TfrmFriend
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
-        Height = 177.500000000000000000
+        Height = 191.500000000000000000
         TabOrder = 2
         Width = 320.000000000000000000
         ItemAppearanceObjects.ItemObjects.Accessory.Visible = False

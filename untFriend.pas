@@ -21,7 +21,6 @@ type
     BindingsList1: TBindingsList;
     LinkPropertyToFieldText: TLinkPropertyToField;
     lblGender: TLabel;
-    lblNickname: TLabel;
     lblAge: TLabel;
     grdLayout: TGridPanelLayout;
     lvSports: TListView;

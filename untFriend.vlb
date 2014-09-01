@@ -244,9 +244,6 @@ Coordinates=10,140,139,213
 [BindingsList1]
 Coordinates=1226,914,91,36
 
-[lblNickname]
-Coordinates=10,0,75,51
-
 [lblGender]
 Coordinates=100,0,62,51
 
@@ -282,4 +279,7 @@ Visible=False
 
 [dmdDataModule.fdmSports]
 Visible=False
+
+[]
+Coordinates=10,0,75,51
 
