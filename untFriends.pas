@@ -14,12 +14,22 @@ type
     lvFriends: TListView;
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
+    btnRequests: TSpeedButton;
+    pnlRequests: TPanel;
+    barRequests: TToolBar;
+    lblFriendRequests: TLabel;
+    lvRequests: TListView;
     procedure FormActivate(Sender: TObject);
     procedure lvFriendsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
+    procedure lvRequestsDeleteItem(Sender: TObject; AIndex: Integer);
+    procedure lvRequestsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
   private
     { Private declarations }
     procedure friendsLoaded;
+    procedure loadRequests;
+    procedure requestsLoaded;
     procedure threadTerminated(Sender : TObject);
   public
     { Public declarations }
@@ -70,6 +80,12 @@ begin
         lvFriends.EndUpdate;
         lvFriends.Visible := true;
     end;
+    loadRequests();
+end;
+
+procedure TfrmFriends.loadRequests;
+begin
+//
 end;
 
 procedure TfrmFriends.lvFriendsItemClick(const Sender: TObject;
@@ -80,6 +96,24 @@ begin
   inherited;
   LValue := GetSelectedValue(lvFriends);
   showNewFormWithId('TfrmFriend',lValue.ToString);
+end;
+
+procedure TfrmFriends.lvRequestsDeleteItem(Sender: TObject; AIndex: Integer);
+begin
+  inherited;
+//
+end;
+
+procedure TfrmFriends.lvRequestsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+begin
+  inherited;
+  //
+end;
+
+procedure TfrmFriends.requestsLoaded;
+begin
+//
 end;
 
 procedure TfrmFriends.threadTerminated(Sender: TObject);
