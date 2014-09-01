@@ -29,11 +29,13 @@ type
     LinkFillControlToField2: TLinkFillControlToField;
     btnEdit: TButton;
     btnPost: TButton;
+    btnAttend: TSpeedButton;
     procedure FormActivate(Sender: TObject);
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnPostClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
+    procedure btnAttendClick(Sender: TObject);
   private
     { Private declarations }
     bOwner : Boolean;
@@ -55,6 +57,21 @@ var
   eventThread : TRESTExecutionThread;
 {$R *.fmx}
 
+
+procedure TfrmEvent.btnAttendClick(Sender: TObject);
+begin
+  inherited;
+    with dmdEvent do
+    begin
+      reqGeneric.Resource := 'r/events/acceptInvite';
+      reqGeneric.Params.addItem('member_id',dmdDataModule.memberId);
+      reqGeneric.Params.AddItem('event',id);
+      reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
+      reqGeneric.Params.addItem('key',dmdDatamodule.getApiKey);
+      reqGeneric.Execute;
+      btnAttend.Visible := false;
+    end;
+end;
 
 procedure TfrmEvent.btnEditClick(Sender: TObject);
 begin
@@ -107,6 +124,7 @@ begin
           bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
           btnEdit.Visible := bOwner;
           btnPost.Visible := bOwner or bAttending;
+          btnAttend.Visible := not bAttending;
       end;
   end;
 end;

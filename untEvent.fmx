@@ -4,7 +4,7 @@ inherited frmEvent: TfrmEvent
   OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 460
+  DesignerHeight = 480
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -22,6 +22,16 @@ inherited frmEvent: TfrmEvent
       Visible = False
       Width = 105.000000000000000000
       OnClick = btnEditClick
+    end
+    object btnAttend: TSpeedButton
+      Align = Right
+      Height = 44.000000000000000000
+      Position.X = 247.000000000000000000
+      StyleLookup = 'buttonstyle'
+      Text = 'Attend'
+      Visible = False
+      Width = 73.000000000000000000
+      OnClick = btnAttendClick
     end
   end
   inherited pnlTop: TPanel
