@@ -30,6 +30,8 @@ type
     procedure btnCreateEventClick(Sender: TObject);
     procedure btnInvitesClick(Sender: TObject);
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
+    procedure lvInvitesItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
    procedure threadTerminated(Sender : TObject);
@@ -129,6 +131,15 @@ procedure TfrmEvents.lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
 begin
   inherited;
   // ok send a message to the back end saying no...
+end;
+
+procedure TfrmEvents.lvInvitesItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  lValue : TValue;
+begin
+  lValue := GetSelectedValue(lvInvites);
+  ShowNewFormWithId('TfrmEvent',LValue.ToString);
 end;
 
 procedure TfrmEvents.threadTerminated(Sender: TObject);

@@ -2959,6 +2959,7 @@ inherited frmEvents: TfrmEvents
       ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
       ItemAppearanceObjects.ItemEditObjects.Accessory.Visible = False
       ItemAppearanceObjects.ItemEditObjects.GlyphButton.ButtonType = Add
+      OnItemClick = lvInvitesItemClick
       OnDeleteItem = lvInvitesDeleteItem
       DeleteButtonText = 'Decline'
     end
