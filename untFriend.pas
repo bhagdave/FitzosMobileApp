@@ -60,7 +60,7 @@ begin
     reqGeneric.Resource := 'r/members/setFriendRequest';
     reqGeneric.Params.addItem('to',id);
     reqGeneric.Params.addItem('from',memberId);
-    reqGeneric.Params.AddItem('signature',signature('loadProfile'));
+    reqGeneric.Params.AddItem('signature',signature('setFriendRequest'));
     reqGeneric.Params.AddItem('key',getAPIKey());
     reqGeneric.Execute;
     sResult := getResultString(respGeneric.Content);

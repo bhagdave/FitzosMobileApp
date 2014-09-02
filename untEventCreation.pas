@@ -67,12 +67,10 @@ type
     procedure getSportsAndTeams;
     procedure addParams(request : TRestRequest);
     function validate : boolean;
-    procedure clearOutFields();
     procedure sportsLoaded;
     procedure teamsLoaded;
     procedure eventLoaded;
     procedure saveCompleted;
-    procedure eventThreadTerminated(Sender : TObject);
   public
     { Public declarations }
   end;
@@ -83,8 +81,6 @@ implementation
 uses
   untDataModule, untJsonFunctions,untFormRegistry;
 
-var
-  myThread : TRESTExecutionThread;
 {$R *.fmx}
 procedure TfrmEventCreation.addParams(request: TRestRequest);
 var
@@ -165,13 +161,6 @@ begin
   expOptions.IsExpanded := true;
 end;
 
-procedure TfrmEventCreation.clearOutFields;
-begin
-  edtName.Text := '';
-  edtLocation.Text := '';
-  memContent.Lines.Clear;
-end;
-
 procedure TfrmEventCreation.eventLoaded;
 begin
   with dmdEvent do begin
@@ -180,11 +169,6 @@ begin
       edtDate.text := fdmEvent.FieldByName('date').AsString;
       edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
   end;
-end;
-
-procedure TfrmEventCreation.eventThreadTerminated(Sender: TObject);
-begin
-  myThread := nil;
 end;
 
 procedure TfrmEventCreation.FormActivate(Sender: TObject);
