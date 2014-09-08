@@ -1363,8 +1363,8 @@ object TStyleContainer
     StyleName = 'comboeditstyle'
     DesignVisible = False
     Height = 22.000000000000000000
-    Position.X = 457.000000000000000000
-    Position.Y = 334.000000000000000000
+    Position.X = 530.000000000000000000
+    Position.Y = 431.000000000000000000
     Width = 100.999992370605500000
     TabOrder = 23
     object TBrushObject
@@ -1430,10 +1430,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'comboboxstyle'
-    DesignVisible = False
     Height = 22.000000000000000000
-    Position.X = 457.000000000000000000
-    Position.Y = 334.000000000000000000
+    Position.X = 530.000000000000000000
+    Position.Y = 431.000000000000000000
     Width = 100.999992370605500000
     TabOrder = 24
     object TRectangle
@@ -1450,8 +1449,8 @@ object TStyleContainer
       object TColorAnimation
         Duration = 0.200000002980232200
         PropertyName = 'Fill.Color'
-        StartValue = xFF505050
-        StopValue = xFF707070
+        StartValue = xFFED7307
+        StopValue = xFFED7200
         Trigger = 'IsMouseOver=true'
       end
       object TColorAnimation
@@ -2863,8 +2862,8 @@ object TStyleContainer
     StyleName = 'editstyle'
     DesignVisible = False
     Height = 22.000000000000000000
-    Position.X = 454.000000000000000000
-    Position.Y = 334.000000000000000000
+    Position.X = 526.000000000000000000
+    Position.Y = 431.000000000000000000
     Width = 107.000000000000000000
     TabOrder = 43
     object TRectangle
@@ -3331,6 +3330,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'buttonstyle'
+    DesignVisible = False
     Height = 26.000000000000000000
     Position.X = 470.000000000000000000
     Position.Y = 332.000000000000000000
