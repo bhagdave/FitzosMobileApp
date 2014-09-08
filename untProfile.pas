@@ -141,7 +141,6 @@ begin
     else
       multiStream.AddFormField('message', 'No');
     multiStream.AddFormField('age', edtAge.Text);
-//    multiStream.AddFormField('nickname', edtNickname.Text);
     idhttpimage.Post('http://beta.fitzos.com/athlete/saveProfileImage/' + dmdDatamodule.memberId, multiStream);
   finally
     multiStream.Free;
