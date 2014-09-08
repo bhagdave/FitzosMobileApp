@@ -36,9 +36,12 @@ type
     LinkControlToField2: TLinkControlToField;
     LinkControlToField3: TLinkControlToField;
     LinkControlToField4: TLinkControlToField;
+    btnNewstat: TButton;
     procedure btnAddClick(Sender: TObject);
     procedure btnAddStatClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure btnNewstatClick(Sender: TObject);
+    procedure btnBackClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,6 +82,19 @@ begin
   begin
     showmessage(dmdSports.respAddStat.Content);
   end;
+end;
+
+procedure TfrmStats.btnBackClick(Sender: TObject);
+begin
+  inherited;
+  pnlAddStat.visible := false;
+  close;
+end;
+
+procedure TfrmStats.btnNewstatClick(Sender: TObject);
+begin
+  inherited;
+  pnlAddStat.Visible := true;
 end;
 
 procedure TfrmStats.FormActivate(Sender: TObject);

@@ -159,6 +159,7 @@ begin
     rdsaProfile.Active := false;
     rdsaProfile.Dataset := fdmProfile;
     respProfile.Content.Empty;
+    rdsaProfile.ClearDataSet;
     reqProfile.ClearBody;
     reqProfile.Params.ParameterByName('id').Value := memberId;
     reqProfile.Params.ParameterByName('signature').Value := signature('getAthlete');
