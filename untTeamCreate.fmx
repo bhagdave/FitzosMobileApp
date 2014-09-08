@@ -9,7 +9,11 @@ inherited frmTeamCreate: TfrmTeamCreate
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Position.Y = 412.000000000000000000
+    Height = 44.000000000000000000
+    Position.Y = 416.000000000000000000
+    inherited btnBack: TButton
+      Height = 44.000000000000000000
+    end
     object btnSave: TButton
       Align = Center
       Height = 44.000000000000000000
@@ -25,7 +29,7 @@ inherited frmTeamCreate: TfrmTeamCreate
     end
   end
   inherited pnlCenter: TPanel
-    Height = 355.000000000000000000
+    Height = 383.000000000000000000
     object pnlLayout: TGridPanelLayout
       Align = Top
       Height = 105.000000000000000000
@@ -80,7 +84,7 @@ inherited frmTeamCreate: TfrmTeamCreate
         Align = Client
         TabOrder = 1
         Width = 205.787780761718800000
-        Height = 37.068321228027340000
+        Height = 30.000000000000000000
       end
       object lblSport: TLabel
         Align = Client
@@ -91,7 +95,7 @@ inherited frmTeamCreate: TfrmTeamCreate
       object cboSport: TComboBox
         Align = Client
         DisableFocusEffect = False
-        Height = 38.776451110839840000
+        Height = 30.000000000000000000
         TabOrder = 3
         Width = 205.787780761718800000
       end
@@ -142,13 +146,13 @@ inherited frmTeamCreate: TfrmTeamCreate
       end
     end
     object ToolBar1: TToolBar
-      Height = 40.000000000000000000
+      Height = 44.000000000000000000
       Position.Y = 140.000000000000000000
       TabOrder = 4
       Width = 320.000000000000000000
       object lblDescription: TLabel
         Align = Client
-        Height = 40.000000000000000000
+        Height = 44.000000000000000000
         TextSettings.HorzAlign = Center
         Text = 'Description'
         Width = 320.000000000000000000
@@ -158,7 +162,7 @@ inherited frmTeamCreate: TfrmTeamCreate
       Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
       Align = Top
       Height = 133.000000000000000000
-      Position.Y = 180.000000000000000000
+      Position.Y = 184.000000000000000000
       TabOrder = 5
       Width = 320.000000000000000000
     end
