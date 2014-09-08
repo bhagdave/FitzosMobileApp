@@ -179,6 +179,7 @@ begin
       if (sResult = 'OK') then
       begin
           rdsaGeneric.Response := respGeneric;
+          rdsaGeneric.UpdateDataSet;
           fdmGeneric.Open;
           lblGender.Text := fdmGeneric.FieldByName('gender').AsString;
           lblAge.Text := fdmGeneric.FieldByName('age').AsString;
