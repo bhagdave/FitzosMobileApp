@@ -6,7 +6,7 @@
         <MainSource>FitzosApp.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">iOSSimulator</Platform>
         <TargetedPlatforms>89</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -183,6 +183,17 @@
         <AUP_ACCESS_WIFI_STATE>true</AUP_ACCESS_WIFI_STATE>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_iOSSimulator)'!=''">
+        <iPhone_AppIcon120>logo120_120.png</iPhone_AppIcon120>
+        <iPhone_Spotlight29>logo29_29.png</iPhone_Spotlight29>
+        <iPhone_AppIcon114>logo114_114.png</iPhone_AppIcon114>
+        <iPhone_Spotlight58>logo58_58.png</iPhone_Spotlight58>
+        <iPhone_Spotlight80>logo80_80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight40>logo40_40.png</iPhone_Spotlight40>
+        <iPhone_Launch320>logo320_480.png</iPhone_Launch320>
+        <iPhone_AppIcon60>logo60_60.png</iPhone_AppIcon60>
+        <iPhone_Launch640x1136>logo640_1136.png</iPhone_Launch640x1136>
+        <iPhone_Launch640>logo640_960.png</iPhone_Launch640>
+        <iPhone_AppIcon57>logo57_57.png</iPhone_AppIcon57>
         <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=6.0;CFBundleVersion=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;CFBundleResourceSpecification=ResourceRules.plist</VerInfo_Keys>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
