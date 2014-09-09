@@ -7,7 +7,12 @@ object dmdDataModule: TdmdDataModule
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
     BaseURL = 'http://beta.fitzos.com/api'
-    Params = <>
+    Params = <
+      item
+        Kind = pkHTTPHEADER
+        name = 'Cache-Control'
+        Value = 'no-cache'
+      end>
     HandleRedirects = True
     Left = 32
     Top = 16
