@@ -156,10 +156,10 @@ begin
   with dmdDataModule do
   begin
     // Open up the data.
-    rdsaProfile.Active := false;
     rdsaProfile.Dataset := fdmProfile;
     respProfile.Content.Empty;
     rdsaProfile.ClearDataSet;
+    fdmProfile.Close;
     reqProfile.ClearBody;
     reqProfile.Params.ParameterByName('id').Value := memberId;
     reqProfile.Params.ParameterByName('signature').Value := signature('getAthlete');
@@ -168,7 +168,6 @@ begin
     sResult := getResultString(respProfile.Content);
     if (sResult = 'OK') then
     begin
-        rdsaProfile.Response := respNotifications;
         rdsaProfile.UpdateDataSet;
         fdmProfile.Open;
         setupCheckBoxes();
