@@ -6,7 +6,7 @@
         <MainSource>FitzosApp.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Android</Platform>
         <TargetedPlatforms>89</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -172,6 +172,11 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Android)'!=''">
+        <Android_LauncherIcon48>logo48_48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>logo72_72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon36>logo36_36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon96>logo96_96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>logo144_144.png</Android_LauncherIcon144>
         <VerInfo_Build>1</VerInfo_Build>
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
         <AUP_INTERNET>true</AUP_INTERNET>
