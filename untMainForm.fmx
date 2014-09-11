@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnActivate = FormActivate
   OnCreate = FormCreate
   DesignerMobile = True
   DesignerWidth = 320
@@ -3269,5 +3270,20 @@ object frmMain: TfrmMain
     Position.Y = 64.000000000000000000
     Visible = False
     Width = 320.000000000000000000
+  end
+  object idTCPConnection: TIdTCPClient
+    ConnectTimeout = 0
+    IPVersion = Id_IPv4
+    Port = 0
+    ReadTimeout = -1
+    Left = 224
+    Top = 376
+  end
+  object tmrConnected: TTimer
+    Enabled = False
+    Interval = 10000
+    OnTimer = tmrConnectedTimer
+    Left = 56
+    Top = 264
   end
 end

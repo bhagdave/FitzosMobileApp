@@ -20,14 +20,19 @@ type
     txtWelcomeMessage: TText;
     StyleBook1: TStyleBook;
     AniIndicator1: TAniIndicator;
+    idTCPConnection: TIdTCPClient;
+    tmrConnected: TTimer;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure tmrConnectedTimer(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
     sUserSalt   : String;
     procedure loginComplete;
     procedure threadTerminated(Sender : TObject);
+    function connected : boolean;
   public
     { Public declarations }
   end;
@@ -63,6 +68,33 @@ end;
 procedure TfrmMain.btnSignupClick(Sender: TObject);
 begin
   showNewForm('TfrmSignup');
+end;
+
+function TfrmMain.connected: boolean;
+begin
+  result := false;
+  try
+     IdTCPConnection.ReadTimeout := 2000;
+     IdTCPConnection.ConnectTimeout := 2000;
+     IdTCPConnection.port := 80;
+     IdTCPConnection.host := 'www.reach-your-peak.com';
+     IdTCPConnection.Connect;
+     IdTCPConnection.Disconnect;
+     result := true;
+  except on E: Exception do
+    result := false;
+  end;
+end;
+
+procedure TfrmMain.FormActivate(Sender: TObject);
+begin
+    if not connected then
+    begin
+      showmessage('Unable to connect to Internet!');
+      btnLogin.Enabled := false;
+      btnSignUp.Enabled := false;
+      tmrConnected.Enabled := true;
+    end;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
@@ -103,6 +135,20 @@ begin
     mythread := nil;
     AniIndicator1.Visible := false;
     AniIndicator1.enabled := false;
+end;
+
+procedure TfrmMain.tmrConnectedTimer(Sender: TObject);
+begin
+  tmrConnected.Enabled := false;
+  if connected then
+  begin
+      btnLogin.Enabled := true;
+      btnSignUp.Enabled := true;
+  end
+  else
+  begin
+    tmrConnected.Enabled := true;
+  end;
 end;
 
 end.
