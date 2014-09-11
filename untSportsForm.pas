@@ -26,10 +26,13 @@ type
     edtDate: TDateEdit;
     btnAdd: TButton;
     LinkFillControlToField2: TLinkFillControlToField;
+    btnAddSport: TButton;
+    pnlAddSportForm: TPanel;
     procedure FormActivate(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
     procedure lvExistingSportsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure btnAddSportClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,6 +68,13 @@ begin
   end;
 end;
 
+procedure TfrmSports.btnAddSportClick(Sender: TObject);
+begin
+  inherited;
+  pnlAddSportForm.Visible := true;
+  edtDate.Align := TAlignLayout.client;
+end;
+
 procedure TfrmSports.FormActivate(Sender: TObject);
 var
   sResult : String;
@@ -88,6 +98,7 @@ begin
         rdsaMemberSports.UpdateDataSet;
         fdmMemberSports.Open;
     end;
+    pnlAddSportForm.Visible := false;
   end;
 end;
 
