@@ -168,6 +168,8 @@ begin
       fdmEvent.Open;
       edtDate.text := fdmEvent.FieldByName('date').AsString;
       edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
+      cboPrivacy.ItemIndex := 0;
+      cboType.ItemIndex := 0;
   end;
 end;
 
@@ -202,6 +204,8 @@ begin
     btnTimesNext.Visible := true;
     edtDate.Data := '';
     edtEndDate.Data := '';
+    cboPrivacy.ItemIndex := 0;
+    cboType.ItemIndex := 0;
   end;
 end;
 

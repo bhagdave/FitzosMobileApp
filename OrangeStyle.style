@@ -1430,9 +1430,10 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'comboboxstyle'
+    DesignVisible = False
     Height = 22.000000000000000000
     Position.X = 530.000000000000000000
-    Position.Y = 431.000000000000000000
+    Position.Y = 346.000000000000000000
     Width = 100.999992370605500000
     TabOrder = 24
     object TRectangle
@@ -1457,8 +1458,8 @@ object TStyleContainer
         Duration = 0.200000002980232200
         Inverse = True
         PropertyName = 'Fill.Color'
-        StartValue = xFF505050
-        StopValue = xFF707070
+        StartValue = xFFED7307
+        StopValue = xFFED7200
         Trigger = 'IsMouseOver=false'
       end
     end
@@ -3838,12 +3839,12 @@ object TStyleContainer
   end
   object TRectangle
     StyleName = 'panelstyle'
-    DesignVisible = False
     Fill.Color = xFFEAA56A
     Height = 50.000000000000000000
     HitTest = False
-    Position.X = 482.000000000000000000
-    Position.Y = 320.000000000000000000
+    Position.X = 555.000000000000000000
+    Position.Y = 332.000000000000000000
+    Sides = []
     Stroke.Color = xFF303030
     XRadius = 2.000000000000000000
     YRadius = 2.000000000000000000
