@@ -133,7 +133,7 @@ Coordinates=167,478,65,51
 Visible=False
 
 [edtLocation]
-Coordinates=88,1,72,51
+Coordinates=140,90,72,51
 
 [lyoEvent]
 Coordinates=679,518,57,33
@@ -448,4 +448,13 @@ Coordinates=81,1,53,51
 
 [dmdEvent.respAllEventData]
 Coordinates=528,1294,152,267
+
+[dmdEvent.fdmEventInvites]
+Coordinates=457,40,146,429
+
+[dmdEvent.respEventInvites]
+Coordinates=533,970,149,267
+
+[dmdEvent.reqEventInvites]
+Coordinates=838,606,143,87
 

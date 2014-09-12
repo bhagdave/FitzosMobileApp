@@ -58,10 +58,10 @@ type
     lblName: TLabel;
     lblLocation: TLabel;
     LinkFillControlToField1: TLinkFillControlToField;
-    procedure FormActivate(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
     procedure btnSubmitClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     procedure getSportsAndTeams;
@@ -173,7 +173,7 @@ begin
   end;
 end;
 
-procedure TfrmEventCreation.FormActivate(Sender: TObject);
+procedure TfrmEventCreation.FormShow(Sender: TObject);
 begin
   inherited;
   edtDate.Align := TAlignLayout.client;
@@ -199,6 +199,7 @@ begin
   else
   begin
     // just when inserting...
+    dmdEvent.fdmEvent.insert;
     lblCaption.Text := 'Create Event';
     btnNext.Visible := true;
     btnTimesNext.Visible := true;
@@ -207,6 +208,7 @@ begin
     cboPrivacy.ItemIndex := 0;
     cboType.ItemIndex := 0;
   end;
+
 end;
 
 procedure TfrmEventCreation.getSportsAndTeams;

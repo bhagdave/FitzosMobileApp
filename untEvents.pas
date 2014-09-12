@@ -59,7 +59,7 @@ var
 procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
 begin
   inherited;
-  showNewForm('TfrmEventCreation');
+  showNewFormWithId('TfrmEventCreation','');
 end;
 
 procedure TfrmEvents.btnInvitesClick(Sender: TObject);

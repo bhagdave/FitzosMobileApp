@@ -1,7 +1,7 @@
 inherited frmEventCreation: TfrmEventCreation
   Caption = 'Event Creation'
   ClientHeight = 460
-  OnActivate = FormActivate
+  OnShow = FormShow
   DesignerMobile = True
   DesignerWidth = 320
   DesignerHeight = 480
@@ -9,11 +9,9 @@ inherited frmEventCreation: TfrmEventCreation
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Height = 44.000000000000000000
     Position.Y = 416.000000000000000000
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
-      Height = 44.000000000000000000
       IconTintColor = claWhite
       TextSettings.FontColor = claWhite
     end
@@ -291,7 +289,6 @@ inherited frmEventCreation: TfrmEventCreation
               'Please select an event type'
               'LIVE'
               'VIRTUAL')
-            ItemIndex = 0
             Position.Y = 113.000000000000000000
             TabOrder = 1
             Width = 320.000000000000000000
@@ -304,7 +301,6 @@ inherited frmEventCreation: TfrmEventCreation
               'Please select privacy'
               'PRIVATE'
               'PUBLIC')
-            ItemIndex = 0
             Position.Y = 143.000000000000000000
             TabOrder = 2
             Width = 320.000000000000000000
