@@ -9,11 +9,7 @@ inherited frmFriends: TfrmFriends
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Height = 44.000000000000000000
     Position.Y = 416.000000000000000000
-    inherited btnBack: TButton
-      Height = 44.000000000000000000
-    end
     object btnRequests: TSpeedButton
       Align = Right
       Height = 44.000000000000000000
@@ -2896,7 +2892,7 @@ inherited frmFriends: TfrmFriends
       7474696E67732E466F6E74436F6C6F72070C636C61536C617465677261790557
       696474680500000000000000F005400000}
   end
-  object pnlRequests: TPanel
+  object pnlRequests: TPanel [4]
     Align = Client
     Height = 257.000000000000000000
     Visible = False
@@ -2929,6 +2925,13 @@ inherited frmFriends: TfrmFriends
       DeleteButtonText = 'Decline'
       ShowSelection = False
     end
+  end
+  object tmrRemove: TTimer [5]
+    Enabled = False
+    Interval = 100
+    OnTimer = tmrRemoveTimer
+    Left = 120
+    Top = 353
   end
   object BindingsList1: TBindingsList
     Methods = <>
@@ -2965,12 +2968,5 @@ inherited frmFriends: TfrmFriends
     ScopeMappings = <>
     Left = 144
     Top = 216
-  end
-  object tmrRemove: TTimer
-    Enabled = False
-    Interval = 100
-    OnTimer = tmrRemoveTimer
-    Left = 120
-    Top = 353
   end
 end

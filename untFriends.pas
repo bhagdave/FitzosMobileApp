@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmFriends = class(TfrmBase)
@@ -60,18 +61,26 @@ end;
 procedure TfrmFriends.FormActivate(Sender: TObject);
 begin
   inherited;
-  with dmdDataModule do
+  if connected then
   begin
-    // Open up the data.
-    rdsaFriends.ClearDataSet;
-    fdmFriends.Close;
-    respFriends.Content.Empty;
-    reqFriends.ClearBody;
-    reqFriends.Params.ParameterByName('id').Value := memberId;
-    reqFriends.Params.ParameterByName('signature').Value := signature('getFriends');
-    reqFriends.Params.ParameterByName('key').Value := getApiKey;
-    myThread := reqFriends.ExecuteAsync(friendsLoaded);
-    myThread.OnTerminate := threadTerminated;
+    with dmdDataModule do
+    begin
+      // Open up the data.
+      rdsaFriends.ClearDataSet;
+      fdmFriends.Close;
+      respFriends.Content.Empty;
+      reqFriends.ClearBody;
+      reqFriends.Params.ParameterByName('id').Value := memberId;
+      reqFriends.Params.ParameterByName('signature').Value := signature('getFriends');
+      reqFriends.Params.ParameterByName('key').Value := getApiKey;
+      myThread := reqFriends.ExecuteAsync(friendsLoaded);
+      myThread.OnTerminate := threadTerminated;
+    end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+    close;
   end;
 end;
 
@@ -122,16 +131,23 @@ var
   LValue : TValue;
 begin
   inherited;
-    LValue := GetSelectedValue(lvRequests);
-    tmrRemove.Tag := aItem.index;
-    tmrRemove.Enabled := true;
-    with dmdDatamodule do
+    if connected then
     begin
-//      fdmFriendRequests.close;
-      reqGeneric.Params.Clear;
-      reqGeneric.Resource := 'r/members/acceptFriendRequest';
-      reqGeneric.Params.addItem('id',lValue.ToString);
-      reqGeneric.Execute;
+      LValue := GetSelectedValue(lvRequests);
+      tmrRemove.Tag := aItem.index;
+      tmrRemove.Enabled := true;
+      with dmdDatamodule do
+      begin
+  //      fdmFriendRequests.close;
+        reqGeneric.Params.Clear;
+        reqGeneric.Resource := 'r/members/acceptFriendRequest';
+        reqGeneric.Params.addItem('id',lValue.ToString);
+        reqGeneric.Execute;
+      end;
+    end
+    else
+    begin
+      showmessage('No internet connection at the moment');
     end;
 end;
 
@@ -140,6 +156,8 @@ var
   LValue : TValue;
 begin
   inherited;
+  if connected then
+  begin
     LValue := GetSelectedValue(lvRequests);
     tmrRemove.Tag := aindex;
     tmrRemove.Enabled := true;
@@ -150,6 +168,11 @@ begin
       reqGeneric.Params.addItem('id',lValue.ToString);
       reqGeneric.Execute;
     end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment!');
+  end;
 end;
 
 procedure TfrmFriends.requestsLoaded;
