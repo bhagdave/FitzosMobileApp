@@ -98,6 +98,9 @@ var
     Style: TFMXObject;
 begin
   dmdSignup := TdmdSignup.Create(self);
+    {$IFDEF MSWINDOWS}
+        Style := TStyleStreaming.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
+    {$ENDIF}
     {$IFDEF Android}
         Style := TStyleManager.LoadFromResource(HInstance, 'OrangeStyle', RT_RCDATA);
     {$ENDIF}
