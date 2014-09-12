@@ -40,7 +40,8 @@ Visible=True
 Coordinates=112,204,70,33
 
 []
-Coordinates=109,10,62,51
+Coordinates=1080,1142,58,36
+Visible=False
 
 [dmdDataModule.fdmMemberTeams]
 Visible=False
@@ -250,10 +251,6 @@ Visible=False
 Coordinates=1696,2054,61,58
 Visible=False
 
-[lblMessage]
-Coordinates=703,1142,80,58
-Visible=False
-
 [dmdDataModule.respCreateTeam]
 Coordinates=899,1036,208,322
 Visible=False
@@ -296,10 +293,6 @@ Visible=False
 
 [dmdDataModule.fdmFriendsToInvite]
 Coordinates=1797,1904,222,102
-Visible=False
-
-[pnlWait]
-Coordinates=1080,1142,58,36
 Visible=False
 
 [btnCreateEvent]

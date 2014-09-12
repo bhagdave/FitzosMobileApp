@@ -15,8 +15,6 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     btnCreateEvent: TButton;
-    pnlWait: TPanel;
-    lblMessage: TLabel;
     btnInvites: TSpeedButton;
     pnlInvites: TPanel;
     barInvites: TToolBar;
@@ -24,7 +22,7 @@ type
     lvInvites: TListView;
     BindSourceDB1: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
-    procedure FormActivate(Sender: TObject);
+    btnRefresh: TButton;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
@@ -32,12 +30,15 @@ type
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
     procedure lvInvitesItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure FormShow(Sender: TObject);
+    procedure btnRefreshClick(Sender: TObject);
   private
     { Private declarations }
    procedure threadTerminated(Sender : TObject);
    procedure eventsLoaded;
    procedure invitesLoaded;
    procedure loadInvites;
+   procedure getEvents();
   public
     { Public declarations }
   end;
@@ -58,7 +59,6 @@ var
 procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
 begin
   inherited;
-  pnlWait.Visible := true;
   showNewForm('TfrmEventCreation');
 end;
 
@@ -66,6 +66,12 @@ procedure TfrmEvents.btnInvitesClick(Sender: TObject);
 begin
   inherited;
   pnlInvites.Visible := not pnlInvites.Visible;
+end;
+
+procedure TfrmEvents.btnRefreshClick(Sender: TObject);
+begin
+  inherited;
+  getEvents();
 end;
 
 procedure TfrmEvents.eventsLoaded;
@@ -81,9 +87,14 @@ begin
     loadInvites();
 end;
 
-procedure TfrmEvents.FormActivate(Sender: TObject);
+procedure TfrmEvents.FormShow(Sender: TObject);
 begin
   inherited;
+  getEvents();
+end;
+
+procedure TfrmEvents.getEvents;
+begin
   with dmdDataModule do
   begin
     // Open up the data.
@@ -97,7 +108,6 @@ begin
     myThread := reqEvents.ExecuteAsync(eventsLoaded);
     mythread.OnTerminate := threadTerminated;
   end;
-  pnlWait.Visible := false;
 end;
 
 procedure TfrmEvents.invitesLoaded;

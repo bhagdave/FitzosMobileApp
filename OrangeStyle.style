@@ -1911,8 +1911,8 @@ object TStyleContainer
     StyleName = 'tabitemstyle'
     DesignVisible = False
     Height = 20.000000000000000000
-    Position.X = 398.000000000000000000
-    Position.Y = 491.000000000000000000
+    Position.X = 557.000000000000000000
+    Position.Y = 347.000000000000000000
     Width = 46.000000000000000000
     TabOrder = 29
     object TRectangle
@@ -3475,8 +3475,8 @@ object TStyleContainer
     StyleName = 'expanderstyle'
     DesignVisible = False
     Height = 121.000000000000000000
-    Position.X = 428.000000000000000000
-    Position.Y = 366.000000000000000000
+    Position.X = 500.000000000000000000
+    Position.Y = 296.000000000000000000
     Width = 159.000000000000000000
     TabOrder = 53
     object TRectangle
@@ -3839,6 +3839,7 @@ object TStyleContainer
   end
   object TRectangle
     StyleName = 'panelstyle'
+    DesignVisible = False
     Fill.Color = xFFEAA56A
     Height = 50.000000000000000000
     HitTest = False
@@ -5350,5 +5351,19 @@ object TStyleContainer
     Position.Y = 336.000000000000000000
     TextSettings.FontColor = claSlategray
     Width = 120.000000000000000000
+  end
+  object TRectangle
+    StyleName = 'refreshbutton'
+    Fill.Color = xFFED7307
+    Height = 50.000000000000000000
+    Position.X = 555.000000000000000000
+    Position.Y = 332.000000000000000000
+    Width = 50.000000000000000000
+    object TPath
+      StyleName = 'Path1'
+      Align = Client
+      Height = 50.000000000000000000
+      Width = 50.000000000000000000
+    end
   end
 end
