@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.StdCtrls, FMX.ListBox, FMX.Edit,untDmdSignup, Data.Bind.Components,
-  System.Rtti;
+  System.Rtti, FMX.Layouts;
 
 type
   TfrmSignup = class(TForm)
@@ -18,6 +18,11 @@ type
     edtPassword: TEdit;
     btnSignup: TButton;
     StyleBook1: TStyleBook;
+    pnlForm: TGridPanelLayout;
+    lblMemberType: TLabel;
+    lblName: TLabel;
+    lblEmail: TLabel;
+    lblPassword: TLabel;
     procedure btnSignupClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);

@@ -360,61 +360,6 @@ object frmSignup: TfrmSignup
     TextSettings.FontColor = claAqua
     Width = 320.000000000000000000
   end
-  object cboType: TComboBox
-    Align = Top
-    DisableFocusEffect = False
-    Height = 30.000000000000000000
-    Items.Strings = (
-      'Athlete'
-      'Trainer')
-    ItemIndex = 0
-    Position.Y = 113.000000000000000000
-    TabOrder = 2
-    Width = 320.000000000000000000
-  end
-  object edtName: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    Align = Top
-    StyleLookup = 'roundededit'
-    TabOrder = 3
-    Position.Y = 143.000000000000000000
-    Width = 320.000000000000000000
-    Height = 30.000000000000000000
-    TextPrompt = 'Name'
-    StyledSettings = [Family, Size, Style, FontColor, Other]
-  end
-  object edtEmail: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    Align = Top
-    StyleLookup = 'roundededit'
-    TabOrder = 4
-    KeyboardType = EmailAddress
-    Position.Y = 173.000000000000000000
-    Width = 320.000000000000000000
-    Height = 30.000000000000000000
-    TextPrompt = 'Email address'
-    StyledSettings = [Family, Size, Style, FontColor, Other]
-  end
-  object edtPassword: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    Align = Top
-    StyleLookup = 'roundededit'
-    TabOrder = 5
-    Password = True
-    Position.Y = 203.000000000000000000
-    Width = 320.000000000000000000
-    Height = 30.000000000000000000
-    TextPrompt = 'Password'
-  end
-  object btnSignup: TButton
-    Align = Top
-    Height = 44.000000000000000000
-    Position.Y = 233.000000000000000000
-    TabOrder = 6
-    Text = 'Sign up!'
-    Width = 320.000000000000000000
-    OnClick = btnSignupClick
-  end
   object StyleBook1: TStyleBook
     Left = 160
     Top = 312
@@ -3271,5 +3216,169 @@ object frmSignup: TfrmSignup
       736974696F6E2E590500000000000000A80740165465787453657474696E6773
       2E466F6E74436F6C6F72070C636C61536C617465677261790557696474680500
       000000000000F005400000}
+  end
+  object pnlForm: TGridPanelLayout
+    Align = Top
+    Height = 154.000000000000000000
+    Position.Y = 113.000000000000000000
+    Width = 320.000000000000000000
+    TabOrder = 5
+    ColumnCollection = <
+      item
+        Value = 33.808762925493820000
+      end
+      item
+        Value = 66.191237074506180000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = lblMemberType
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = cboType
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = lblName
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = edtName
+        Row = 1
+      end
+      item
+        Column = 0
+        Control = lblEmail
+        Row = 2
+      end
+      item
+        Column = 1
+        Control = edtEmail
+        Row = 2
+      end
+      item
+        Column = 0
+        Control = lblPassword
+        Row = 3
+      end
+      item
+        Column = 1
+        Control = edtPassword
+        Row = 3
+      end
+      item
+        Column = 0
+        ColumnSpan = 2
+        Control = btnSignup
+        Row = 4
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        SizeStyle = Auto
+      end
+      item
+        SizeStyle = Auto
+      end
+      item
+        SizeStyle = Auto
+      end>
+    object lblMemberType: TLabel
+      Align = Client
+      Height = 25.000000000000000000
+      Text = 'Membership Type'
+      Width = 108.188041687011700000
+    end
+    object cboType: TComboBox
+      Align = Top
+      Anchors = []
+      DisableFocusEffect = False
+      Height = 30.000000000000000000
+      Items.Strings = (
+        'Athlete'
+        'Trainer')
+      ItemIndex = 0
+      Position.X = 108.188041687011700000
+      TabOrder = 1
+      Width = 211.811950683593800000
+    end
+    object lblName: TLabel
+      Align = Client
+      Height = 25.000000000000000000
+      Text = 'Name'
+      Width = 108.188041687011700000
+    end
+    object edtName: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      Anchors = []
+      StyleLookup = 'roundededit'
+      TabOrder = 3
+      Position.X = 108.188041687011700000
+      Position.Y = 25.000000000000000000
+      Width = 211.811950683593800000
+      Height = 30.000000000000000000
+      TextPrompt = 'Name'
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+    end
+    object lblEmail: TLabel
+      Align = Client
+      Height = 30.000000000000000000
+      Text = 'Email address'
+      Width = 108.188041687011700000
+    end
+    object edtEmail: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      Anchors = []
+      StyleLookup = 'roundededit'
+      TabOrder = 5
+      KeyboardType = EmailAddress
+      Position.X = 108.188041687011700000
+      Position.Y = 50.000000000000000000
+      Width = 211.811950683593800000
+      Height = 30.000000000000000000
+      TextPrompt = 'Email address'
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+    end
+    object lblPassword: TLabel
+      Align = Client
+      Height = 30.000000000000000000
+      Text = 'Password'
+      Width = 108.188041687011700000
+    end
+    object edtPassword: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      Anchors = []
+      StyleLookup = 'roundededit'
+      TabOrder = 7
+      Password = True
+      Position.X = 108.188041687011700000
+      Position.Y = 80.000000000000000000
+      Width = 211.811950683593800000
+      Height = 30.000000000000000000
+      TextPrompt = 'Password'
+    end
+    object btnSignup: TButton
+      Align = Top
+      Anchors = []
+      Height = 44.000000000000000000
+      Position.Y = 110.000000000000000000
+      TabOrder = 8
+      Text = 'Sign up!'
+      Width = 320.000000000000000000
+      OnClick = btnSignupClick
+    end
   end
 end
