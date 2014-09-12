@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.ListView.Types,
-  FMX.ListView;
+  FMX.ListView, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmEvent = class(TfrmBase)
@@ -61,6 +61,8 @@ var
 procedure TfrmEvent.btnAttendClick(Sender: TObject);
 begin
   inherited;
+  if connected then
+  begin
     with dmdEvent do
     begin
       reqGeneric.Resource := 'r/events/acceptInvite';
@@ -71,6 +73,11 @@ begin
       reqGeneric.Execute;
       btnAttend.Visible := false;
     end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment!');
+  end;
 end;
 
 procedure TfrmEvent.btnEditClick(Sender: TObject);
@@ -84,10 +91,17 @@ var
   sMessage : String;
 begin
   inherited;
-  sMessage := inputbox('Wall Message','Please enter your post','');
-  if (sMessage <> '') then
+  if connected then
   begin
-    postWallMessage(sMessage);
+    sMessage := inputbox('Wall Message','Please enter your post','');
+    if (sMessage <> '') then
+    begin
+      postWallMessage(sMessage);
+    end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
   end;
 end;
 
@@ -136,7 +150,15 @@ end;
 
 procedure TfrmEvent.FormActivate(Sender: TObject);
 begin
-  getEventData();
+  if connected then
+  begin
+    getEventData();
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment!');
+    close;
+  end;
 end;
 
 
