@@ -174,7 +174,8 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 0
             object edtDate: TDateEdit
-              Date = 41869.000000000000000000
+              Date = 41894.000000000000000000
+              TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
@@ -217,7 +218,8 @@ inherited frmEventCreation: TfrmEventCreation
             Width = 304.000000000000000000
             TabOrder = 2
             object edtEndDate: TDateEdit
-              Date = 41869.000000000000000000
+              Date = 41894.000000000000000000
+              TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Height = 35.000000000000000000
               Position.X = 144.000000000000000000
