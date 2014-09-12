@@ -130,29 +130,35 @@ end;
 procedure TfrmEventCreation.btnSubmitClick(Sender: TObject);
 begin
   inherited;
-  // Validate..
-  if validate then // true = invalid
+  if connected then
   begin
-
-  end
-  else
-  begin
-    // if we have an id then updatre otherwise insert
-    if id <> '' then
+    // Validate..
+    if validate then // true = invalid
     begin
-      // update
-      addParams(dmdEvent.reqUpdateEvent);
-      dmdEvent.reqUpdateEvent.ExecuteAsync(saveCompleted);
-//      clearOutFields();
+
     end
     else
     begin
-      // insert
-      addParams(dmdEvent.reqCreateEvent);
-      dmdEvent.reqCreateEvent.ExecuteAsync(saveCompleted);
+      // if we have an id then updatre otherwise insert
+      if id <> '' then
+      begin
+        // update
+        addParams(dmdEvent.reqUpdateEvent);
+        dmdEvent.reqUpdateEvent.ExecuteAsync(saveCompleted);
+  //      clearOutFields();
+      end
+      else
+      begin
+        // insert
+        addParams(dmdEvent.reqCreateEvent);
+        dmdEvent.reqCreateEvent.ExecuteAsync(saveCompleted);
+      end;
     end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
   end;
-
 end;
 
 procedure TfrmEventCreation.btnTimesNextClick(Sender: TObject);
@@ -179,37 +185,44 @@ begin
   inherited;
   edtDate.Align := TAlignLayout.client;
   edtEndDate.Align := TAlignLayout.Client;
-  getSportsAndTeams();
-  if id <> '' then
+  if connected then
   begin
-    // change UI
-    lblCaption.Text := 'Update Event';
-    btnNext.Visible := false;
-    btnTimesNext.Visible := false;
-    // Get data!
-    with dmdEvent do
+    getSportsAndTeams();
+    if id <> '' then
     begin
-      rdsaEvent.ClearDataSet;
-      fdmEvent.Close;
-      respAllEventData.Content.Empty;
-      reqAllEventData.ClearBody;
-      reqAllEventData.Params.ParameterByName('id').Value := Id;
-      reqAllEventData.ExecuteAsync(eventLoaded);
+      // change UI
+      lblCaption.Text := 'Update Event';
+      btnNext.Visible := false;
+      btnTimesNext.Visible := false;
+      // Get data!
+      with dmdEvent do
+      begin
+        rdsaEvent.ClearDataSet;
+        fdmEvent.Close;
+        respAllEventData.Content.Empty;
+        reqAllEventData.ClearBody;
+        reqAllEventData.Params.ParameterByName('id').Value := Id;
+        reqAllEventData.ExecuteAsync(eventLoaded);
+      end;
+    end
+    else
+    begin
+      // just when inserting...
+      dmdEvent.fdmEvent.insert;
+      lblCaption.Text := 'Create Event';
+      btnNext.Visible := true;
+      btnTimesNext.Visible := true;
+      edtDate.Data := '';
+      edtEndDate.Data := '';
+      cboPrivacy.ItemIndex := 0;
+      cboType.ItemIndex := 0;
     end;
   end
   else
   begin
-    // just when inserting...
-    dmdEvent.fdmEvent.insert;
-    lblCaption.Text := 'Create Event';
-    btnNext.Visible := true;
-    btnTimesNext.Visible := true;
-    edtDate.Data := '';
-    edtEndDate.Data := '';
-    cboPrivacy.ItemIndex := 0;
-    cboType.ItemIndex := 0;
+    showmessage('No internet connection at the moment');
+    close;
   end;
-
 end;
 
 procedure TfrmEventCreation.getSportsAndTeams;
