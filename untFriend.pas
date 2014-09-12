@@ -54,25 +54,32 @@ var
   sResult : String;
 begin
   inherited;
-  with dmdDataModule do
+  if connected then
   begin
-    reqGeneric.Params.Clear;
-    reqGeneric.Resource := 'r/members/setFriendRequest';
-    reqGeneric.Params.addItem('to',id);
-    reqGeneric.Params.addItem('from',memberId);
-    reqGeneric.Params.AddItem('signature',signature('setFriendRequest'));
-    reqGeneric.Params.AddItem('key',getAPIKey());
-    reqGeneric.Execute;
-    sResult := getResultString(respGeneric.Content);
-      if (sResult = 'OK') then
-      begin
-        showmessage('Friend request requested!');
-        self.close;
-      end
-      else
-      begin
-        showmessage('Friend request failed please try again later!');
-      end;
+    with dmdDataModule do
+    begin
+      reqGeneric.Params.Clear;
+      reqGeneric.Resource := 'r/members/setFriendRequest';
+      reqGeneric.Params.addItem('to',id);
+      reqGeneric.Params.addItem('from',memberId);
+      reqGeneric.Params.AddItem('signature',signature('setFriendRequest'));
+      reqGeneric.Params.AddItem('key',getAPIKey());
+      reqGeneric.Execute;
+      sResult := getResultString(respGeneric.Content);
+        if (sResult = 'OK') then
+        begin
+          showmessage('Friend request requested!');
+          self.close;
+        end
+        else
+        begin
+          showmessage('Friend request failed please try again later!');
+        end;
+    end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
   end;
 end;
 
@@ -106,10 +113,18 @@ procedure TfrmFriend.FormActivate(Sender: TObject);
 begin
   // clear out image man
   imgUser.Visible := false;
-  getMember();
-  getMemberSports();
-  getProfile();
-  checkIfFriends();
+  if connected then
+  begin
+    getMember();
+    getMemberSports();
+    getProfile();
+    checkIfFriends();
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+    close;
+  end;
 end;
 
 procedure TfrmFriend.getMember;
