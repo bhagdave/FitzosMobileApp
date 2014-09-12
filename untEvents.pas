@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmEvents = class(TfrmBase)
@@ -23,6 +24,7 @@ type
     BindSourceDB1: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
     btnRefresh: TButton;
+    AniIndicator1: TAniIndicator;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
@@ -95,18 +97,28 @@ end;
 
 procedure TfrmEvents.getEvents;
 begin
-  with dmdDataModule do
+  if connected then
   begin
-    // Open up the data.
-    rdsaEvents.ClearDataSet;
-    fdmEvents.Close;
-    respEvents.Content.Empty;
-    reqEvents.ClearBody;
-    reqEvents.Params.ParameterByName('id').Value := memberId;
-    reqEvents.Params.ParameterByName('signature').Value := signature('getEventsForMember');
-    reqEvents.Params.ParameterByName('key').Value := getApiKey;
-    myThread := reqEvents.ExecuteAsync(eventsLoaded);
-    mythread.OnTerminate := threadTerminated;
+    with dmdDataModule do
+    begin
+      // Open up the data.
+      rdsaEvents.ClearDataSet;
+      fdmEvents.Close;
+      respEvents.Content.Empty;
+      reqEvents.ClearBody;
+      reqEvents.Params.ParameterByName('id').Value := memberId;
+      reqEvents.Params.ParameterByName('signature').Value := signature('getEventsForMember');
+      reqEvents.Params.ParameterByName('key').Value := getApiKey;
+      AniIndicator1.Visible := true;
+      AniIndicator1.enabled := true;
+      myThread := reqEvents.ExecuteAsync(eventsLoaded);
+      mythread.OnTerminate := threadTerminated;
+    end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+    close;
   end;
 end;
 
@@ -174,6 +186,8 @@ end;
 procedure TfrmEvents.threadTerminated(Sender: TObject);
 begin
   myThread := nil;
+    AniIndicator1.Visible := false;
+    AniIndicator1.enabled := false;
 end;
 
 initialization

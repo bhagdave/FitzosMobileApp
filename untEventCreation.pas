@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, FMX.Layouts, FMX.Memo,
   FMX.DateTimeCtrls, FMX.ListBox,REST.Client, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmEventCreation = class(TfrmBase)

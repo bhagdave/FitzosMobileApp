@@ -29,12 +29,13 @@ type
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
-    sUserSalt   : String;
+    isConnected : Boolean;
     procedure loginComplete;
     procedure threadTerminated(Sender : TObject);
     function connected : boolean;
   public
     { Public declarations }
+    property internet : boolean read isConnected;
   end;
 
 var
@@ -49,19 +50,20 @@ uses
 
 
 procedure TfrmMain.btnLoginClick(Sender: TObject);
-var
-  signature : string;
 begin
-  //  open a session first.....
-  dmdDataModule.openSession;
-  dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
-  dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
-  dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
-  dmdDataModule.reqLogin.Params.ParameterByName('key').Value  := dmdDataModule.sessionKey;
-  AniIndicator1.Visible := true;
-  AniIndicator1.enabled := true;
-  mythread := dmdDataModule.reqLogin.ExecuteAsync(loginComplete, true, true);
-  mythread.OnTerminate := threadTerminated;
+  if isConnected then
+  begin
+    //  open a session first.....
+    dmdDataModule.openSession;
+    dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
+    dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
+    dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
+    dmdDataModule.reqLogin.Params.ParameterByName('key').Value  := dmdDataModule.sessionKey;
+    AniIndicator1.Visible := true;
+    AniIndicator1.enabled := true;
+    mythread := dmdDataModule.reqLogin.ExecuteAsync(loginComplete, true, true);
+    mythread.OnTerminate := threadTerminated;
+  end;
 end;
 
 
@@ -73,6 +75,7 @@ end;
 function TfrmMain.connected: boolean;
 begin
   result := false;
+  isConnected := false;
   try
      IdTCPConnection.ReadTimeout := 2000;
      IdTCPConnection.ConnectTimeout := 2000;
@@ -81,8 +84,12 @@ begin
      IdTCPConnection.Connect;
      IdTCPConnection.Disconnect;
      result := true;
+     isConnected := true;
   except on E: Exception do
+  begin
+    isConnected := false;
     result := false;
+  end;
   end;
 end;
 
@@ -91,8 +98,6 @@ begin
     if not connected then
     begin
       showmessage('Unable to connect to Internet!');
-      btnLogin.Enabled := false;
-      btnSignUp.Enabled := false;
       tmrConnected.Enabled := true;
     end;
 end;

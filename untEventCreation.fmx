@@ -3195,7 +3195,7 @@ inherited frmEventCreation: TfrmEventCreation
       72070C636C61536C617465677261790557696474680500000000000000F00540
       0000}
   end
-  object BindingsList1: TBindingsList
+  object BindingsList1: TBindingsList [4]
     Methods = <>
     OutputConverters = <>
     Left = 20
@@ -3295,7 +3295,7 @@ inherited frmEventCreation: TfrmEventCreation
       FillBreakGroups = <>
     end
   end
-  object BindSourceDB1: TBindSourceDB
+  object BindSourceDB1: TBindSourceDB [5]
     DataSet = dmdEvent.fdmEvent
     ScopeMappings = <>
     Left = 248

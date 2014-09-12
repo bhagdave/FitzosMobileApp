@@ -2926,7 +2926,7 @@ inherited frmEvents: TfrmEvents
       064865696768740500000000000000C804400557696474680500000000000000
       C80440000000}
   end
-  object pnlInvites: TPanel
+  object pnlInvites: TPanel [4]
     Align = Client
     DesignVisible = False
     Height = 383.000000000000000000
@@ -2963,7 +2963,13 @@ inherited frmEvents: TfrmEvents
       DeleteButtonText = 'Decline'
     end
   end
-  object BindingsList1: TBindingsList
+  object AniIndicator1: TAniIndicator [5]
+    Align = Client
+    Height = 383.000000000000000000
+    StyleLookup = 'iOS 7aniindicator.png'
+    Width = 320.000000000000000000
+  end
+  object BindingsList1: TBindingsList [6]
     Methods = <>
     OutputConverters = <>
     Left = 20
@@ -2997,7 +3003,7 @@ inherited frmEvents: TfrmEvents
       FillBreakGroups = <>
     end
   end
-  object BindSourceDB1: TBindSourceDB
+  object BindSourceDB1: TBindSourceDB [7]
     DataSet = dmdEvent.fdmEventInvites
     ScopeMappings = <>
     Left = 144

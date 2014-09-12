@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
-  FMX.Objects, FMX.StdCtrls, untDataModule, Data.Bind.Components, System.RTTI;
+  FMX.Objects, FMX.StdCtrls, untDataModule, Data.Bind.Components, System.RTTI,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmBase = class(TForm)
@@ -15,6 +16,7 @@ type
     lblCaption: TLabel;
     StyleBook1: TStyleBook;
     btnBack: TButton;
+    idTCPConnection: TIdTCPClient;
     procedure edtSearchExit(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -22,6 +24,8 @@ type
     { Private declarations }
     fId : String;
     procedure setId(sId : String);
+  protected
+    function connected : boolean;
   public
     { Public declarations }
     function getSelectedValue(AObject : TObject): TValue;
@@ -37,6 +41,24 @@ uses
 procedure TfrmBase.btnBackClick(Sender: TObject);
 begin
   close;
+end;
+
+function TfrmBase.connected: boolean;
+begin
+  result := false;
+  try
+     IdTCPConnection.ReadTimeout := 2000;
+     IdTCPConnection.ConnectTimeout := 2000;
+     IdTCPConnection.port := 80;
+     IdTCPConnection.host := 'www.reach-your-peak.com';
+     IdTCPConnection.Connect;
+     IdTCPConnection.Disconnect;
+     result := true;
+  except on E: Exception do
+  begin
+    result := false;
+  end;
+  end;
 end;
 
 procedure TfrmBase.edtSearchExit(Sender: TObject);

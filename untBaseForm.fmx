@@ -5948,4 +5948,12 @@ object frmBase: TfrmBase
     Left = 160
     Top = 169
   end
+  object idTCPConnection: TIdTCPClient
+    ConnectTimeout = 0
+    IPVersion = Id_IPv4
+    Port = 0
+    ReadTimeout = -1
+    Left = 224
+    Top = 376
+  end
 end
