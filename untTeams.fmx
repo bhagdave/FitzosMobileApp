@@ -9,11 +9,7 @@ inherited frmTeams: TfrmTeams
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Height = 44.000000000000000000
     Position.Y = 416.000000000000000000
-    inherited btnBack: TButton
-      Height = 44.000000000000000000
-    end
     object btnInvites: TSpeedButton
       Align = Right
       Height = 44.000000000000000000
@@ -2906,7 +2902,7 @@ inherited frmTeams: TfrmTeams
       7474696E67732E466F6E74436F6C6F72070C636C61536C617465677261790557
       696474680500000000000000F005400000}
   end
-  object pnlInvites: TPanel
+  object pnlInvites: TPanel [4]
     Align = Client
     Height = 257.000000000000000000
     Visible = False
@@ -2939,6 +2935,13 @@ inherited frmTeams: TfrmTeams
       OnDeleteItem = lvInvitesDeleteItem
       DeleteButtonText = 'Decline'
     end
+  end
+  object tmrRefresh: TTimer [5]
+    Enabled = False
+    Interval = 100
+    OnTimer = tmrRefreshTimer
+    Left = 24
+    Top = 329
   end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>
@@ -2980,12 +2983,5 @@ inherited frmTeams: TfrmTeams
     ScopeMappings = <>
     Left = 144
     Top = 216
-  end
-  object tmrRefresh: TTimer
-    Enabled = False
-    Interval = 100
-    OnTimer = tmrRefreshTimer
-    Left = 24
-    Top = 329
   end
 end

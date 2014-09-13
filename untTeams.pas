@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope,
-  Data.Bind.Controls, FMX.Layouts, Fmx.Bind.Navigator;
+  Data.Bind.Controls, FMX.Layouts, Fmx.Bind.Navigator, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmTeams = class(TfrmBase)
@@ -75,18 +76,26 @@ end;
 procedure TfrmTeams.FormActivate(Sender: TObject);
 begin
   inherited;
-  with dmdDataModule do
+  if connected then
   begin
-    // Open up the data.
-    rdsaMemberTeams.ClearDataSet;
-    fdmMemberTeams.Close;
-    respMemberTeams.Content.Empty;
-    reqMemberTeams.ClearBody;
-    reqMemberTeams.Params.ParameterByName('id').Value := memberId;
-    reqMemberTeams.Params.ParameterByName('signature').Value := signature('getMembersTeams');
-    reqMemberTeams.Params.ParameterByName('key').Value := getApiKey;
-    myThread := reqMemberTeams.ExecuteAsync(teamsLoaded);
-    myThread.OnTerminate := threadTerminated;
+    with dmdDataModule do
+    begin
+      // Open up the data.
+      rdsaMemberTeams.ClearDataSet;
+      fdmMemberTeams.Close;
+      respMemberTeams.Content.Empty;
+      reqMemberTeams.ClearBody;
+      reqMemberTeams.Params.ParameterByName('id').Value := memberId;
+      reqMemberTeams.Params.ParameterByName('signature').Value := signature('getMembersTeams');
+      reqMemberTeams.Params.ParameterByName('key').Value := getApiKey;
+      myThread := reqMemberTeams.ExecuteAsync(teamsLoaded);
+      myThread.OnTerminate := threadTerminated;
+    end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment!');
+    close;
   end;
 end;
 
@@ -128,6 +137,8 @@ var
   LValue : TValue;
 begin
   inherited;
+  if connected then
+  begin
     LValue := GetSelectedValue(lvInvites);
     tmrRefresh.Tag := aItem.index;
     tmrRefresh.Enabled := true;
@@ -140,6 +151,11 @@ begin
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Execute;
     end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+  end;
 end;
 
 procedure TfrmTeams.lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
@@ -147,6 +163,8 @@ var
   LValue : TValue;
 begin
   inherited;
+  if connected then
+  begin
     LValue := GetSelectedValue(lvInvites);
     tmrRefresh.Tag := aindex;
     tmrRefresh.Enabled := true;
@@ -159,6 +177,11 @@ begin
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Execute;
     end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+  end;
 end;
 
 procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;
