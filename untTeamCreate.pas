@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListBox, FMX.Layouts, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Memo;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Memo, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmTeamCreate = class(TfrmBase)
@@ -70,16 +71,30 @@ end;
 procedure TfrmTeamCreate.btnSaveClick(Sender: TObject);
 begin
   inherited;
-  addParams;
-  dmdDataModule.reqCreateTeam.Execute;
-  showmessage('Team created!');
-  close;
+  if connected then
+  begin
+    addParams;
+    dmdDataModule.reqCreateTeam.Execute;
+    showmessage('Team created!');
+    close;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+  end;
 end;
 
 procedure TfrmTeamCreate.FormActivate(Sender: TObject);
 begin
   inherited;
-  getSports;
+  if connected then
+  begin
+    getSports;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+  end;
 end;
 
 procedure TfrmTeamCreate.getSports;
