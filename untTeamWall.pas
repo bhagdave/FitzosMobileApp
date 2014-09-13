@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, IdBaseComponent, IdComponent,
+  IdTCPConnection, IdTCPClient;
 
 type
   TfrmTeamWall = class(TfrmBase)
@@ -16,7 +17,6 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     procedure btnPostClick(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
     procedure getWall();
@@ -35,30 +35,31 @@ procedure TfrmTeamWall.btnPostClick(Sender: TObject);
 var
   sPost : String;
 begin
-  if InputQuery('Post','Please enter your message',sPost) and (sPost.Trim <> '') then
+  if connected then
   begin
-    with dmdDataModule do
+    if InputQuery('Post','Please enter your message',sPost) and (sPost.Trim <> '') then
     begin
-      rdsaGeneric.ClearDataSet;
-      respGeneric.Content.Empty;
-      reqGeneric.Params.Clear;
-      reqGeneric.ClearBody;
-      reqGeneric.Resource := 'r/teams/addWallPost';
-      reqGeneric.Params.addItem('team_id',ID);
-      reqGeneric.Params.addItem('message',sPost);
-      reqGeneric.Params.addItem('signature',signature('addWallPost'));
-      reqGeneric.Params.addItem('member_id',memberId);
-      reqGeneric.Params.addItem('key',getApiKey);
-      reqGeneric.Execute;
-      getWall();
+      with dmdDataModule do
+      begin
+        rdsaGeneric.ClearDataSet;
+        respGeneric.Content.Empty;
+        reqGeneric.Params.Clear;
+        reqGeneric.ClearBody;
+        reqGeneric.Resource := 'r/teams/addWallPost';
+        reqGeneric.Params.addItem('team_id',ID);
+        reqGeneric.Params.addItem('message',sPost);
+        reqGeneric.Params.addItem('signature',signature('addWallPost'));
+        reqGeneric.Params.addItem('member_id',memberId);
+        reqGeneric.Params.addItem('key',getApiKey);
+        reqGeneric.Execute;
+        getWall();
+      end;
     end;
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
   end;
-end;
-
-procedure TfrmTeamWall.FormActivate(Sender: TObject);
-begin
-  inherited;
-//
 end;
 
 procedure TfrmTeamWall.getWall();

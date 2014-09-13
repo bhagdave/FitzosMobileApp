@@ -1,9 +1,8 @@
 inherited frmTeamWall: TfrmTeamWall
   Caption = 'Team Wall'
-  OnActivate = FormActivate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 548
+  DesignerHeight = 568
   DesignerDeviceName = 'iPhone5'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -29,7 +28,7 @@ inherited frmTeamWall: TfrmTeamWall
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 467.000000000000000000
+      Height = 471.000000000000000000
       TabOrder = 1
       Width = 320.000000000000000000
       ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
