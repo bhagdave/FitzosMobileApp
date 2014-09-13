@@ -9,11 +9,7 @@ inherited frmTeam: TfrmTeam
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Height = 44.000000000000000000
     Position.Y = 416.000000000000000000
-    inherited btnBack: TButton
-      Height = 44.000000000000000000
-    end
     object btnNewEvent: TButton
       Align = Left
       Height = 44.000000000000000000
@@ -2991,7 +2987,7 @@ inherited frmTeam: TfrmTeam
       7474696E67732E466F6E74436F6C6F72070C636C61536C617465677261790557
       696474680500000000000000F005400000}
   end
-  object layInvites: TLayout
+  object layInvites: TLayout [4]
     Align = Client
     Height = 383.000000000000000000
     Visible = False

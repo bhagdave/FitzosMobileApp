@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts,
-  FMX.ListBox, Rest.client, Rest.Types;
+  FMX.ListBox, Rest.client, Rest.Types, IdBaseComponent, IdComponent,
+  IdTCPConnection, IdTCPClient;
 
 type
   TfrmTeam = class(TfrmBase)
@@ -88,45 +89,56 @@ var
   sParams : String;
   aParam: TRESTRequestParameter;
 begin
-  sParams := '[';
-  for i := 0 to lbFriends.Items.Count - 1 do
+  if connected then
   begin
-    if lbFriends.Listitems[i].IsChecked then
+    sParams := '[';
+    for i := 0 to lbFriends.Items.Count - 1 do
     begin
-      if sParams <> '[' then
+      if lbFriends.Listitems[i].IsChecked then
       begin
-        sParams := sParams + ',"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
-      end
-      else
-      begin
-        sParams := sParams + '"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+        if sParams <> '[' then
+        begin
+          sParams := sParams + ',"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+        end
+        else
+        begin
+          sParams := sParams + '"' + dmdDataModule.fdmFriendsToInvite.FieldByname('id').AsString + '"';
+        end;
       end;
+      dmdDataModule.fdmFriendsToInvite.next;
     end;
-    dmdDataModule.fdmFriendsToInvite.next;
-  end;
-  if sParams <> '[' then
+    if sParams <> '[' then
+    begin
+      sParams := sParams + ']';
+      dmdDataModule.rdsaGeneric.ClearDataSet;
+      dmdDataModule.respGeneric.Content.Empty;
+      dmdDataModule.reqGeneric.Params.Clear;
+      dmdDataModule.reqGeneric.ClearBody;
+      dmdDataModule.reqGeneric.Resource := 'r/teams/sendInvites';
+      dmdDataModule.reqGeneric.Params.addItem('members',sParams);
+      dmdDataModule.reqGeneric.Params.addItem('user',dmdDataModule.memberId);
+      dmdDataModule.reqGeneric.Params.addItem('team',id);
+      dmdDataModule.reqGeneric.Execute;
+    end;
+  end
+  else
   begin
-    sParams := sParams + ']';
-    dmdDataModule.rdsaGeneric.ClearDataSet;
-    dmdDataModule.respGeneric.Content.Empty;
-    dmdDataModule.reqGeneric.Params.Clear;
-    dmdDataModule.reqGeneric.ClearBody;
-    dmdDataModule.reqGeneric.Resource := 'r/teams/sendInvites';
-    dmdDataModule.reqGeneric.Params.addItem('members',sParams);
-    dmdDataModule.reqGeneric.Params.addItem('user',dmdDataModule.memberId);
-    dmdDataModule.reqGeneric.Params.addItem('team',id);
-    dmdDataModule.reqGeneric.Execute;
+    showmessage('No internet connection at the moment!');
   end;
 end;
 
 procedure TfrmTeam.FormActivate(Sender: TObject);
-var
-  sTeam : String;
 begin
   inherited;
-//  sTeam := dmdDataModule.fdmMemberTeamsid.AsString;
-  sTeam := Id;
-  getTeam(sTeam);
+  if connected then
+  begin
+    getTeam(id);
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment');
+    close;
+  end;
 end;
 
 procedure TfrmTeam.getTeam(sTeam: String);
