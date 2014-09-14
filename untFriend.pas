@@ -146,7 +146,7 @@ begin
       sResult := getResultString(respMember.Content);
       if (sResult = 'OK') then
       begin
-          rdsaMember.Response := respMember;
+          rdsaMember.UpdateDataSet;
           fdmMember.Open;
           sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
           loadPicture(sURL);
@@ -171,7 +171,6 @@ begin
       sResult := getResultString(respMemberSports.Content);
       if (sResult = 'OK') then
       begin
-          rdsaMemberSports.Response := respMemberSports;
           rdsaMemberSports.UpdateDataSet;
           fdmMemberSports.Open;
       end;

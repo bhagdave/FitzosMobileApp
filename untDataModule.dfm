@@ -125,6 +125,7 @@ object dmdDataModule: TdmdDataModule
   end
   object rdsaMember: TRESTResponseDataSetAdapter
     Active = True
+    AutoUpdate = False
     Dataset = fdmMember
     FieldDefs = <>
     Response = respMember
