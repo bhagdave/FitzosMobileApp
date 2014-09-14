@@ -148,8 +148,11 @@ begin
       begin
           rdsaMember.UpdateDataSet;
           fdmMember.Open;
-          sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
-          loadPicture(sURL);
+          if fdmMember.FieldByName('image').AsString <> '' then
+          begin
+            sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
+            loadPicture(sURL);
+          end;
       end;
   end;
 end;
