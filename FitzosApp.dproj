@@ -189,11 +189,12 @@
         <AUP_ACCESS_WIFI_STATE>true</AUP_ACCESS_WIFI_STATE>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_iOSDevice)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <PF_DevAdHoc>iPhone Distribution: David Gill</PF_DevAdHoc>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_BundleId>RYPTest (com.reach-your-peak.*)</VerInfo_BundleId>
-        <PF_AdHoc>/Users/davegill/Library/MobileDevices/Provisioning Profiles/5f4c72d9-b53e-4aa1-a5a1-24217b73e0f6.mobileprovision</PF_AdHoc>
+        <PF_AdHoc>/Users/davegill/Library/MobileDevice/Provisioning Profiles/169da64a-a4cb-4971-8acd-6b8c0e62040a.mobileprovision</PF_AdHoc>
+        <BT_BuildType>Adhoc</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_iOSSimulator)'!=''">
         <iPhone_AppIcon120>logo120_120.png</iPhone_AppIcon120>
