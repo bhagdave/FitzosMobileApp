@@ -87,7 +87,6 @@ procedure TfrmTeam.btnSendClick(Sender: TObject);
 var
   i : Integer;
   sParams : String;
-  aParam: TRESTRequestParameter;
 begin
   if connected then
   begin

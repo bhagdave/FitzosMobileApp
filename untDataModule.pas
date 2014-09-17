@@ -295,7 +295,6 @@ const
 function TdmdDataModule.checkLogin: Boolean;
 var
   lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
   lResult,lStatus,lItem  : TJsonValue;
 begin
   result := false;
@@ -339,7 +338,6 @@ end;
 function TdmdDataModule.openSession: Boolean;
 var
   lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
   lResult,lStatus  : TJsonValue;
 begin
     reqOpenSession.Params.ParameterByName('key').Value  :=  self.md5(API_COMBINED);
