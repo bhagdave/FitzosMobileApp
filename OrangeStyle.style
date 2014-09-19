@@ -1898,9 +1898,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'tabitemstyle'
-    Height = 20.000000000000000000
+    Height = 30.000000000000000000
     Position.X = 484.000000000000000000
-    Position.Y = 287.000000000000000000
+    Position.Y = 282.000000000000000000
     Width = 46.000000000000000000
     TabOrder = 29
     object TRectangle
@@ -1908,7 +1908,7 @@ object TStyleContainer
       Corners = [TopLeft, TopRight]
       Fill.Color = xFFEAA56A
       Locked = True
-      Height = 18.000000000000000000
+      Height = 28.000000000000000000
       HitTest = False
       Margins.Left = 2.000000000000000000
       Margins.Top = 2.000000000000000000
@@ -1973,7 +1973,7 @@ object TStyleContainer
         StyleName = 'text'
         Align = Client
         Locked = True
-        Height = 13.000000000000000000
+        Height = 23.000000000000000000
         HitTest = False
         Margins.Left = 8.000000000000000000
         Margins.Top = 3.000000000000000000
