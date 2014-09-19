@@ -142,6 +142,8 @@ object TStyleContainer
     StyleName = 'timeeditstyle'
     DesignVisible = False
     Height = 50.000000000000000000
+    Position.X = 482.000000000000000000
+    Position.Y = 272.000000000000000000
     Width = 50.000000000000000000
     TabOrder = 2
     object TGlowEffect
@@ -990,27 +992,14 @@ object TStyleContainer
     StyleName = 'tabcontrolstyle'
     DesignVisible = False
     Height = 100.999992370605500000
-    Position.X = 350.000000000000000000
-    Position.Y = 450.000000000000000000
+    Position.X = 436.000000000000000000
+    Position.Y = 247.000000000000000000
     Width = 142.000000000000000000
     TabOrder = 16
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Kind = Gradient
-      Fill.Gradient.Points = <
-        item
-          Color = xFF404040
-          Offset = 0.000000000000000000
-        end
-        item
-          Color = xFF404040
-          Offset = 0.698181807994842500
-        end
-        item
-          Color = xFF303030
-          Offset = 1.000000000000000000
-        end>
+      Fill.Color = xFFEFA56A
       Locked = True
       Height = 100.999992370605500000
       HitTest = False
@@ -1909,25 +1898,15 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'tabitemstyle'
-    DesignVisible = False
     Height = 20.000000000000000000
-    Position.X = 557.000000000000000000
-    Position.Y = 347.000000000000000000
+    Position.X = 484.000000000000000000
+    Position.Y = 287.000000000000000000
     Width = 46.000000000000000000
     TabOrder = 29
     object TRectangle
       Align = Contents
       Corners = [TopLeft, TopRight]
-      Fill.Kind = Gradient
-      Fill.Gradient.Points = <
-        item
-          Color = xFF606060
-          Offset = 0.000000000000000000
-        end
-        item
-          Color = xFF404040
-          Offset = 1.000000000000000000
-        end>
+      Fill.Color = xFFEAA56A
       Locked = True
       Height = 18.000000000000000000
       HitTest = False
@@ -3601,7 +3580,7 @@ object TStyleContainer
     Height = 50.000000000000000000
     HitTest = False
     Position.X = 482.000000000000000000
-    Position.Y = 402.000000000000000000
+    Position.Y = 272.000000000000000000
     Sides = [Bottom]
     Stroke.Color = xFF222222
     Width = 50.000000000000000000
@@ -3843,8 +3822,8 @@ object TStyleContainer
     Fill.Color = xFFEAA56A
     Height = 50.000000000000000000
     HitTest = False
-    Position.X = 555.000000000000000000
-    Position.Y = 332.000000000000000000
+    Position.X = 482.000000000000000000
+    Position.Y = 272.000000000000000000
     Sides = []
     Stroke.Color = xFF303030
     XRadius = 2.000000000000000000
@@ -4149,8 +4128,8 @@ object TStyleContainer
     StyleName = 'scrollbarstyle'
     DesignVisible = False
     Height = 53.000000000000000000
-    Position.X = 333.000000000000000000
-    Position.Y = 474.000000000000000000
+    Position.X = 419.000000000000000000
+    Position.Y = 270.000000000000000000
     Width = 176.000000000000000000
     TabOrder = 67
     object TRectangle
@@ -5354,6 +5333,7 @@ object TStyleContainer
   end
   object TRectangle
     StyleName = 'refreshbutton'
+    DesignVisible = False
     Fill.Color = xFFED7307
     Height = 50.000000000000000000
     Position.X = 555.000000000000000000

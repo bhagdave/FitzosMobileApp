@@ -6,7 +6,7 @@
         <MainSource>FitzosApp.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">iOSDevice</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>89</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -406,7 +406,7 @@
             </Delphi.Personality>
             <Deployment>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_57x57.png" Configuration="Release" Class="iPhone_AppIcon57">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -423,7 +423,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_2048x1496.png" Configuration="Release" Class="iPad_Launch2048">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <RemoteName>Default-Landscape@2x.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -447,12 +447,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\14.0\lib\android\debug\classes.dex" Configuration="Debug" Class="AndroidClassesDexFile">
-                    <Platform Name="Android">
-                        <RemoteName>classes.dex</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="iOSSimulator\Debug\FitzosApp.entitlements" Configuration="Debug" Class="ProjectiOSEntitlements">
                     <Platform Name="iOSSimulator">
                         <RemoteName>Entitlements.plist</RemoteName>
@@ -461,6 +455,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_29x29.png" Configuration="Debug" Class="iPhone_Spotlight29">
                     <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\14.0\lib\android\debug\classes.dex" Configuration="Debug" Class="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteName>classes.dex</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -503,19 +503,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_2048x1536.png" Configuration="Release" Class="iPad_Launch2048x1536">
+                    <Platform Name="iOSSimulator">
+                        <RemoteName>Default-Landscape@2x~ipad.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android\Release\AndroidManifest.xml" Configuration="Release" Class="ProjectAndroidManifest">
                     <Platform Name="Android">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png" Configuration="Debug" Class="iPad_AppIcon152">
-                    <Platform Name="iOSSimulator">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="iOSDevice\Release\FitzosApp" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="iOSDevice">
-                        <RemoteName>FitzosApp</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -525,14 +520,25 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="iOSDevice\Release\FitzosApp" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="iOSDevice">
+                        <RemoteName>FitzosApp</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Configuration="Release" Class="Android_LauncherIcon48">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png" Configuration="Debug" Class="iPad_AppIcon152">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_640x1136.png" Configuration="Release" Class="iPhone_Launch640x1136">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <RemoteName>Default-568h@2x.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -544,7 +550,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_80x80.png" Configuration="Release" Class="iPad_SpotLight80">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -561,6 +567,11 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_100x100.png" Configuration="Debug" Class="iPad_SpotLight100">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png" Configuration="Release" Class="iPad_AppIcon152">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -586,6 +597,16 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_144x144.png" Configuration="Release" Class="iPad_AppIcon144">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_50x50.png" Configuration="Release" Class="iPad_SpotLight50">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_1024x748.png" Configuration="Debug" Class="iPad_Launch1024">
                     <Platform Name="iOSSimulator">
                         <RemoteName>Default-Landscape.png</RemoteName>
@@ -599,7 +620,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_76x76.png" Configuration="Release" Class="iPad_AppIcon76">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -628,7 +649,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_120x120.png" Configuration="Release" Class="iPhone_AppIcon120">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -639,12 +660,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_60x60.png" Configuration="Release" Class="iPhone_AppIcon60">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_40x40.png" Configuration="Release" Class="iPad_SpotLight40">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -671,7 +692,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_40x40.png" Configuration="Release" Class="iPhone_Spotlight40">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -699,12 +720,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_72x72.png" Configuration="Release" Class="iPad_AppIcon72">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_768x1004.png" Configuration="Release" Class="iPad_Launch768">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <RemoteName>Default~ipad.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -712,6 +733,11 @@
                 <DeployFile LocalName="Android\Release\libFitzosApp.so" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Android">
                         <RemoteName>libFitzosApp.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_29x29.png" Configuration="Release" Class="iPhone_Spotlight29">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -750,7 +776,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_320x480.png" Configuration="Release" Class="iPhone_Launch320">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <RemoteName>Default.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -782,8 +808,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_768x1024.png" Configuration="Release" Class="iPad_Launch768x1024">
+                    <Platform Name="iOSSimulator">
+                        <RemoteName>Default-Portrait~ipad.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_58x58.png" Configuration="Release" Class="iPad_Setting58">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -837,6 +869,11 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_114x114.png" Configuration="Release" Class="iPhone_AppIcon114">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_60x60.png" Configuration="Debug" Class="iPhone_AppIcon60">
                     <Platform Name="iOSDevice">
                         <Overwrite>true</Overwrite>
@@ -855,7 +892,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_1536x2048.png" Configuration="Release" Class="iPad_Launch1536x2048">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <RemoteName>Default-Portrait@2x~ipad.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -871,7 +908,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_100x100.png" Configuration="Release" Class="iPad_SpotLight100">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -908,6 +945,17 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_29x29.png" Configuration="Release" Class="iPad_Setting29">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_1536x2008.png" Configuration="Release" Class="iPad_Launch1536">
+                    <Platform Name="iOSSimulator">
+                        <RemoteName>Default-Portrait@2x.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="iOSSimulator\Release\FitzosApp.entitlements" Configuration="Release" Class="ProjectiOSEntitlements">
                     <Platform Name="iOSSimulator">
                         <RemoteName>Entitlements.plist</RemoteName>
@@ -917,6 +965,12 @@
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_768x1024.png" Configuration="Debug" Class="iPad_Launch768x1024">
                     <Platform Name="iOSSimulator">
                         <RemoteName>Default-Portrait~ipad.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_640x960.png" Configuration="Release" Class="iPhone_Launch640">
+                    <Platform Name="iOSSimulator">
+                        <RemoteName>Default@2x.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -943,7 +997,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_1024x768.png" Configuration="Release" Class="iPad_Launch1024x768">
-                    <Platform Name="iOSDevice">
+                    <Platform Name="iOSSimulator">
                         <RemoteName>Default-Landscape~ipad.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -990,6 +1044,12 @@
                 <DeployFile LocalName="iOSDevice\Debug\ResourceRules.plist" Configuration="Debug" Class="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice">
                         <RemoteName>ResourceRules.plist</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_1024x748.png" Configuration="Release" Class="iPad_Launch1024">
+                    <Platform Name="iOSSimulator">
+                        <RemoteName>Default-Landscape.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient;
+  IdComponent, IdTCPConnection, IdTCPClient, FMX.TabControl;
 
 type
   TfrmEvents = class(TfrmBase)
@@ -25,6 +25,9 @@ type
     LinkFillControlToField2: TLinkFillControlToField;
     btnRefresh: TButton;
     AniIndicator1: TAniIndicator;
+    tabEvents: TTabControl;
+    tabMine: TTabItem;
+    tabUpcoming: TTabItem;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
