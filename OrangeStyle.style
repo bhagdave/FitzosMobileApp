@@ -1921,29 +1921,29 @@ object TStyleContainer
       object TColorAnimation
         Duration = 0.000099999997473788
         PropertyName = 'Fill.Color'
-        StartValue = xFF303030
-        StopValue = xFF505050
+        StartValue = xFFEAA56A
+        StopValue = x0FAAA56A
         Trigger = 'IsMouseOver=true;IsSelected=false'
       end
       object TColorAnimation
         Duration = 0.000099999997473788
         PropertyName = 'Fill.Color'
-        StartValue = xFF505050
-        StopValue = xFF303030
+        StartValue = xFFEAA56A
+        StopValue = x0FEAA50A
         Trigger = 'IsMouseOver=false;IsSelected=false'
       end
       object TColorAnimation
         Duration = 0.000000999999997475
         PropertyName = 'Fill.Color'
-        StartValue = xFF303030
-        StopValue = xFF606060
+        StartValue = xFFFAF56A
+        StopValue = xFFFAF56A
         Trigger = 'IsSelected=true'
       end
       object TColorAnimation
         Duration = 0.000009999999747379
         PropertyName = 'Fill.Color'
-        StartValue = xFF606060
-        StopValue = xFF303030
+        StartValue = xFFEAA56A
+        StopValue = xFFEAA56A
         Trigger = 'IsSelected=false'
       end
       object TRectAnimation
@@ -1980,7 +1980,6 @@ object TStyleContainer
         Margins.Right = 8.000000000000000000
         Margins.Bottom = 2.000000000000000000
         Text = 'item'
-        TextSettings.FontColor = claWhite
         TextSettings.WordWrap = False
         Width = 31.000000000000000000
       end
