@@ -16,10 +16,6 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     btnCreateEvent: TButton;
-    btnInvites: TSpeedButton;
-    pnlInvites: TPanel;
-    barInvites: TToolBar;
-    lblInvites: TLabel;
     lvInvites: TListView;
     BindSourceDB1: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
@@ -28,10 +24,10 @@ type
     tabEvents: TTabControl;
     tabMine: TTabItem;
     tabUpcoming: TTabItem;
+    tabInvites: TTabItem;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
-    procedure btnInvitesClick(Sender: TObject);
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
     procedure lvInvitesItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -65,12 +61,6 @@ procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
 begin
   inherited;
   showNewFormWithId('TfrmEventCreation','');
-end;
-
-procedure TfrmEvents.btnInvitesClick(Sender: TObject);
-begin
-  inherited;
-  pnlInvites.Visible := not pnlInvites.Visible;
 end;
 
 procedure TfrmEvents.btnRefreshClick(Sender: TObject);
@@ -134,11 +124,8 @@ begin
   begin
     dmdEvent.rdsaEventInvites.UpdateDataSet;
     dmdEvent.fdmEventInvites.Open;
-    btnInvites.Visible := true;
   end else
   begin
-    btnInvites.Visible := false;
-    pnlInvites.Visible := false;
   end;
 end;
 
