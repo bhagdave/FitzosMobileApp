@@ -317,12 +317,15 @@ Coordinates=10,992,126,124
 
 [dmdEvent.reqSports]
 Coordinates=511,992,131,102
+Visible=False
 
 [dmdEvent.reqAllEventData]
 Coordinates=316,992,169,124
+Visible=False
 
 [dmdEvent.dsSports]
 Coordinates=10,992,126,124
+Visible=False
 
 [lvInvites]
 Coordinates=580,430,107,168
@@ -341,6 +344,7 @@ Visible=False
 
 [dmdEvent.reqTeams]
 Coordinates=668,992,133,102
+Visible=False
 
 [dmdEvent.respTeams]
 Coordinates=10,688,140,322
@@ -368,6 +372,7 @@ Visible=False
 
 [dmdEvent.dsTeams]
 Coordinates=162,992,128,124
+Visible=False
 
 [dmdEvent.fdmAttending]
 Coordinates=10,10,152,652
@@ -387,6 +392,7 @@ Visible=False
 
 [dmdEvent.reqEventInvites]
 Coordinates=827,992,165,102
+Visible=False
 
 [dmdEvent.reqGeneric]
 Coordinates=1018,992,139,80
@@ -397,4 +403,59 @@ Visible=False
 
 [BindSourceDB1]
 Coordinates=340,280,154,542
+
+[AniIndicator1]
+Coordinates=181,637,90,36
+
+[idTCPConnection]
+Coordinates=396,243,115,36
+
+[dmdDataModule.reqTeamInvites]
+Coordinates=725,505,201,102
+
+[dmdDataModule.respTeamInvites]
+Coordinates=369,351,207,322
+
+[dmdDataModule.reqFriendRequests]
+Coordinates=1164,505,221,102
+
+[dmdDataModule.fdmTeamInvites]
+Coordinates=260,920,203,388
+
+[dmdDataModule.fdmFriendRequests]
+Coordinates=369,1,224,146
+
+[dmdDataModule.respFriendRequests]
+Coordinates=1164,1377,228,322
+
+[btnRefresh]
+Coordinates=396,166,77,58
+
+[tabMine]
+Coordinates=674,626,60,36
+
+[tabEvents]
+Coordinates=976,483,72,36
+
+[tabInvites]
+Coordinates=976,538,70,36
+
+[tabUpcoming]
+Coordinates=976,593,90,36
+
+[dmdEvent.reqUpcomingEvents]
+Coordinates=1568,342,191,80
+
+[lvUpcoming]
+Coordinates=580,950,107,168
+
+[dmdEvent.respUpcomingEvents]
+Coordinates=1568,1,198,322
+
+[dmdEvent.fdmUpcomingEvents]
+Coordinates=790,960,180,190
+Visible=False
+
+[BindSourceDB2]
+Coordinates=790,960,180,190
 

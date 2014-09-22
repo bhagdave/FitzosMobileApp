@@ -3015,11 +3015,30 @@ inherited frmEvents: TfrmEvents
       FillHeaderFieldName = 'date'
       FillBreakGroups = <>
     end
+    object LinkFillControlToField3: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvUpcoming
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'time'
+      FillBreakGroups = <>
+    end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dmdEvent.fdmEventInvites
     ScopeMappings = <>
     Left = 144
     Top = 216
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dmdEvent.fdmUpcomingEvents
+    ScopeMappings = <>
+    Left = 152
+    Top = 224
   end
 end

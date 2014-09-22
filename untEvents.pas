@@ -26,6 +26,8 @@ type
     tabUpcoming: TTabItem;
     tabInvites: TTabItem;
     lvUpcoming: TListView;
+    BindSourceDB2: TBindSourceDB;
+    LinkFillControlToField3: TLinkFillControlToField;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
@@ -40,6 +42,7 @@ type
    procedure eventsLoaded;
    procedure invitesLoaded;
    procedure loadInvites;
+   procedure loadUpcoming();
    procedure getEvents();
   public
     { Public declarations }
@@ -81,6 +84,7 @@ begin
         dmdDatamodule.fdmEvents.Open;
     end;
     loadInvites();
+    loadUpcoming();
 end;
 
 procedure TfrmEvents.FormShow(Sender: TObject);
@@ -135,6 +139,13 @@ begin
     // get the event invites.
     dmdEvent.reqEventInvites.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
     dmdEvent.reqEventInvites.ExecuteAsync(invitesLoaded);
+end;
+
+procedure TfrmEvents.loadUpcoming;
+begin
+  dmdEvent.reqUpcomingEvents.Execute;
+  dmdEvent.rdsaUpcomingEvents.UpdateDataSet;
+  dmdEvent.fdmUpcomingEvents.Open;
 end;
 
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
