@@ -25,6 +25,7 @@ type
     tabMine: TTabItem;
     tabUpcoming: TTabItem;
     tabInvites: TTabItem;
+    lvUpcoming: TListView;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);

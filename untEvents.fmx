@@ -2939,6 +2939,16 @@ inherited frmEvents: TfrmEvents
       TabOrder = 0
       Text = 'Upcoming events'
       Width = 109.000000000000000000
+      object lvUpcoming: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Height = 395.000000000000000000
+        TabOrder = 0
+        Width = 320.000000000000000000
+      end
     end
     object tabInvites: TTabItem
       CustomIcon = <
