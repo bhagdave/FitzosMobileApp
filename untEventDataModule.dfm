@@ -1,7 +1,7 @@
 object dmdEvent: TdmdEvent
   OldCreateOrder = False
   Height = 321
-  Width = 834
+  Width = 883
   object restAPI: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
@@ -1064,6 +1064,89 @@ object dmdEvent: TdmdEvent
     end
     object fdmEventInvitesend_date: TWideStringField
       FieldName = 'end_date'
+      Size = 255
+    end
+  end
+  object reqUpcomingEvents: TRESTRequest
+    Client = restAPI
+    Params = <>
+    Resource = 'r/events/getUpcomingEvents'
+    Response = respUpcomingEvents
+    SynchronizedEvents = False
+    Left = 784
+    Top = 56
+  end
+  object respUpcomingEvents: TRESTResponse
+    ContentType = 'text/html'
+    Left = 792
+    Top = 112
+  end
+  object rdsaUpcomingEvents: TRESTResponseDataSetAdapter
+    Active = True
+    AutoUpdate = False
+    Dataset = fdmUpcomingEvents
+    FieldDefs = <>
+    Response = respUpcomingEvents
+    RootElement = 'Result'
+    Left = 792
+    Top = 184
+  end
+  object fdmUpcomingEvents: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'location'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'time'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 792
+    Top = 248
+    object fdmUpcomingEventsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmUpcomingEventsname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmUpcomingEventssport: TWideStringField
+      FieldName = 'sport'
+      Size = 255
+    end
+    object fdmUpcomingEventslocation: TWideStringField
+      FieldName = 'location'
+      Size = 255
+    end
+    object fdmUpcomingEventstime: TWideStringField
+      FieldName = 'time'
       Size = 255
     end
   end
