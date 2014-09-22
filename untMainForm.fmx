@@ -353,50 +353,6 @@ object frmMain: TfrmMain
     TabOrder = 0
     Width = 320.000000000000000000
   end
-  object edtUsername: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    Align = Top
-    TabOrder = 1
-    KeyboardType = EmailAddress
-    TextSettings.FontColor = claSlategray
-    Position.Y = 113.000000000000000000
-    Width = 320.000000000000000000
-    Height = 30.000000000000000000
-    TextPrompt = 'Username'
-    StyledSettings = [Family, Size, Style]
-  end
-  object edtPassword: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    Align = Top
-    TabOrder = 2
-    Password = True
-    TextSettings.FontColor = claSlategray
-    Position.Y = 143.000000000000000000
-    Width = 320.000000000000000000
-    Height = 30.000000000000000000
-    TextPrompt = 'Password'
-    StyledSettings = [Family, Size, Style]
-  end
-  object btnLogin: TButton
-    Align = Top
-    Height = 50.000000000000000000
-    Position.Y = 173.000000000000000000
-    TabOrder = 3
-    Text = 'Login'
-    TintColor = claGreenyellow
-    Width = 320.000000000000000000
-    OnClick = btnLoginClick
-  end
-  object btnSignup: TButton
-    Align = Top
-    Height = 50.000000000000000000
-    Position.Y = 223.000000000000000000
-    TabOrder = 4
-    Text = 'Signup Here'
-    TintColor = claDarkorange
-    Width = 320.000000000000000000
-    OnClick = btnSignupClick
-  end
   object txtWelcomeMessage: TText
     Align = Top
     Height = 56.000000000000000000
@@ -3273,6 +3229,122 @@ object frmMain: TfrmMain
     OnTimer = tmrConnectedTimer
     Left = 56
     Top = 264
+  end
+  object pnlLoginFrm: TGridPanelLayout
+    Align = Top
+    Height = 184.000000000000000000
+    Position.Y = 113.000000000000000000
+    Width = 320.000000000000000000
+    TabOrder = 8
+    ColumnCollection = <
+      item
+        Value = 33.333333333333340000
+      end
+      item
+        Value = 66.666666666666670000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = lblUsername
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = edtUsername
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = lblPassword
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = edtPassword
+        Row = 1
+      end
+      item
+        Column = 0
+        ColumnSpan = 2
+        Control = btnLogin
+        Row = 2
+      end
+      item
+        Column = 0
+        ColumnSpan = 2
+        Control = btnSignup
+        Row = 3
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        SizeStyle = Auto
+      end
+      item
+        SizeStyle = Auto
+      end>
+    object lblUsername: TLabel
+      Align = Client
+      Height = 42.000000000000000000
+      Text = 'Username'
+      Width = 106.666664123535200000
+    end
+    object edtUsername: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 1
+      KeyboardType = EmailAddress
+      TextSettings.FontColor = claSlategray
+      Width = 213.333343505859400000
+      Height = 30.000000000000000000
+      TextPrompt = 'Username'
+      StyledSettings = [Family, Size, Style]
+    end
+    object lblPassword: TLabel
+      Align = Client
+      Height = 42.000000000000000000
+      Text = 'Password'
+      Width = 106.666664123535200000
+    end
+    object edtPassword: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 3
+      Password = True
+      TextSettings.FontColor = claSlategray
+      Width = 213.333343505859400000
+      Height = 30.000000000000000000
+      TextPrompt = 'Password'
+      StyledSettings = [Family, Size, Style]
+    end
+    object btnLogin: TButton
+      Align = Top
+      Anchors = []
+      Height = 50.000000000000000000
+      Position.Y = 84.000000000000000000
+      TabOrder = 4
+      Text = 'Login'
+      TintColor = claGreenyellow
+      Width = 320.000000000000000000
+      OnClick = btnLoginClick
+    end
+    object btnSignup: TButton
+      Align = Top
+      Anchors = []
+      Height = 50.000000000000000000
+      Position.Y = 134.000000000000000000
+      TabOrder = 5
+      Text = 'Signup Here'
+      TintColor = claDarkorange
+      Width = 320.000000000000000000
+      OnClick = btnSignupClick
+    end
   end
   object idTCPConnection: TIdTCPClient
     ConnectTimeout = 0
