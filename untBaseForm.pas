@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
   FMX.Objects, FMX.StdCtrls, untDataModule, Data.Bind.Components, System.RTTI,
-  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification;
 
 type
   TfrmBase = class(TForm)
@@ -17,6 +17,7 @@ type
     StyleBook1: TStyleBook;
     btnBack: TButton;
     idTCPConnection: TIdTCPClient;
+    Notifications: TNotificationCenter;
     procedure edtSearchExit(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -26,6 +27,7 @@ type
     procedure setId(sId : String);
   protected
     function connected : boolean;
+    procedure showNoConnectionMessage;
   public
     { Public declarations }
     function getSelectedValue(AObject : TObject): TValue;
@@ -99,4 +101,20 @@ begin
   fId := sId;
 end;
 
+procedure TfrmBase.showNoConnectionMessage;
+var
+  MyNotification: TNotification;
+begin
+  MyNotification := Notifications.CreateNotification;
+  try
+    MyNotification.Name := 'MyNotification';
+    MyNotification.AlertBody := 'No internet connection';
+    // Set Icon Badge Number (for iOS) or message number (for Android) as well
+    MyNotification.EnableSound := False;
+    // Send message to the notification center
+    Notifications.PresentNotification(MyNotification);
+  finally
+    MyNotification.DisposeOf;
+  end;
+end;
 end.

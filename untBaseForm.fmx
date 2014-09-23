@@ -5956,4 +5956,8 @@ object frmBase: TfrmBase
     Left = 224
     Top = 376
   end
+  object Notifications: TNotificationCenter
+    Left = 104
+    Top = 105
+  end
 end
