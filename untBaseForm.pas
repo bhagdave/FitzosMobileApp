@@ -109,9 +109,7 @@ begin
   try
     MyNotification.Name := 'MyNotification';
     MyNotification.AlertBody := 'No internet connection';
-    // Set Icon Badge Number (for iOS) or message number (for Android) as well
     MyNotification.EnableSound := False;
-    // Send message to the notification center
     Notifications.PresentNotification(MyNotification);
   finally
     MyNotification.DisposeOf;
