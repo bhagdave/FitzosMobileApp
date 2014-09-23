@@ -3235,7 +3235,7 @@ object frmMain: TfrmMain
     Height = 184.000000000000000000
     Position.Y = 113.000000000000000000
     Width = 320.000000000000000000
-    TabOrder = 8
+    TabOrder = 7
     ColumnCollection = <
       item
         Value = 33.333333333333340000
@@ -3340,7 +3340,7 @@ object frmMain: TfrmMain
       Height = 50.000000000000000000
       Position.Y = 134.000000000000000000
       TabOrder = 5
-      Text = 'Signup Here'
+      Text = 'Signup'
       TintColor = claDarkorange
       Width = 320.000000000000000000
       OnClick = btnSignupClick

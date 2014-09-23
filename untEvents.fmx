@@ -20,7 +20,7 @@ inherited frmEvents: TfrmEvents
       Align = Right
       Height = 44.000000000000000000
       Position.X = 80.000000000000000000
-      TabOrder = 3
+      TabOrder = 2
       Text = 'Create Event'
       Width = 240.000000000000000000
       OnClick = btnCreateEventClick
@@ -2982,7 +2982,7 @@ inherited frmEvents: TfrmEvents
     Height = 416.000000000000000000
     TabOrder = 21
   end
-  object BindingsList1: TBindingsList
+  object BindingsList1: TBindingsList [7]
     Methods = <>
     OutputConverters = <>
     Left = 20
@@ -3029,13 +3029,13 @@ inherited frmEvents: TfrmEvents
       FillBreakGroups = <>
     end
   end
-  object BindSourceDB1: TBindSourceDB
+  object BindSourceDB1: TBindSourceDB [8]
     DataSet = dmdEvent.fdmEventInvites
     ScopeMappings = <>
     Left = 144
     Top = 216
   end
-  object BindSourceDB2: TBindSourceDB
+  object BindSourceDB2: TBindSourceDB [9]
     DataSet = dmdEvent.fdmUpcomingEvents
     ScopeMappings = <>
     Left = 152

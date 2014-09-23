@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient, FMX.TabControl;
+  IdComponent, IdTCPConnection, IdTCPClient, FMX.TabControl, FMX.Notification;
 
 type
   TfrmEvents = class(TfrmBase)
@@ -83,8 +83,8 @@ begin
         dmdDatamodule.rdsaEvents.UpdateDataSet;
         dmdDatamodule.fdmEvents.Open;
     end;
-    loadInvites();
     loadUpcoming();
+    loadInvites();
 end;
 
 procedure TfrmEvents.FormShow(Sender: TObject);
@@ -143,9 +143,14 @@ end;
 
 procedure TfrmEvents.loadUpcoming;
 begin
+  dmdEvent.rdsaUpcomingEvents.ClearDataSet;
+  dmdEvent.fdmUpcomingEvents.Close;
+  dmdEvent.respUpcomingEvents.Content.Empty;
+  dmdEvent.reqUpcomingEvents.ClearBody;
   dmdEvent.reqUpcomingEvents.Execute;
   dmdEvent.rdsaUpcomingEvents.UpdateDataSet;
   dmdEvent.fdmUpcomingEvents.Open;
+  showmessage(inttostr(dmdEvent.fdmUpcomingEvents.RecordCount));
 end;
 
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
