@@ -36,6 +36,8 @@ type
       const AItem: TListViewItem);
     procedure FormShow(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
+    procedure lvUpcomingItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
    procedure threadTerminated(Sender : TObject);
@@ -150,7 +152,6 @@ begin
   dmdEvent.reqUpcomingEvents.Execute;
   dmdEvent.rdsaUpcomingEvents.UpdateDataSet;
   dmdEvent.fdmUpcomingEvents.Open;
-  showmessage(inttostr(dmdEvent.fdmUpcomingEvents.RecordCount));
 end;
 
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
@@ -187,6 +188,15 @@ var
   lValue : TValue;
 begin
   lValue := GetSelectedValue(lvInvites);
+  ShowNewFormWithId('TfrmEvent',LValue.ToString);
+end;
+
+procedure TfrmEvents.lvUpcomingItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  lValue : TValue;
+begin
+  lValue := GetSelectedValue(lvUpcoming);
   ShowNewFormWithId('TfrmEvent',LValue.ToString);
 end;
 

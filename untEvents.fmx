@@ -2948,6 +2948,7 @@ inherited frmEvents: TfrmEvents
         Height = 395.000000000000000000
         TabOrder = 0
         Width = 320.000000000000000000
+        OnItemClick = lvUpcomingItemClick
       end
     end
     object tabInvites: TTabItem
