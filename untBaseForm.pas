@@ -28,6 +28,7 @@ type
   protected
     function connected : boolean;
     procedure showNoConnectionMessage;
+    procedure showmessage(sMessage:String);
   public
     { Public declarations }
     function getSelectedValue(AObject : TObject): TValue;
@@ -99,6 +100,21 @@ end;
 procedure TfrmBase.setId(sId: String);
 begin
   fId := sId;
+end;
+
+procedure TfrmBase.showmessage(sMessage: String);
+var
+  MyNotification: TNotification;
+begin
+  MyNotification := Notifications.CreateNotification;
+  try
+    MyNotification.Name := 'MyNotification';
+    MyNotification.AlertBody := sMessage;
+    MyNotification.EnableSound := False;
+    Notifications.PresentNotification(MyNotification);
+  finally
+    MyNotification.DisposeOf;
+  end;
 end;
 
 procedure TfrmBase.showNoConnectionMessage;
