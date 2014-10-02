@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, untEventDataModule, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.ListView.Types,
-  FMX.ListView, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
+  FMX.ListView, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
+  FMX.Notification;
 
 type
   TfrmEvent = class(TfrmBase)
@@ -72,11 +73,12 @@ begin
       reqGeneric.Params.addItem('key',dmdDatamodule.getApiKey);
       reqGeneric.Execute;
       btnAttend.Visible := false;
+      getEventData();
     end;
   end
   else
   begin
-    showmessage('No internet connection at the moment!');
+    self.showmessage('No internet connection at the moment!');
   end;
 end;
 
@@ -101,7 +103,7 @@ begin
   end
   else
   begin
-    showmessage('No internet connection at the moment');
+    self.showmessage('No internet connection at the moment');
   end;
 end;
 
@@ -156,7 +158,7 @@ begin
   end
   else
   begin
-    showmessage('No internet connection at the moment!');
+    self.showmessage('No internet connection at the moment!');
     close;
   end;
 end;
@@ -200,7 +202,7 @@ begin
     sResult := getResultString(dmdDatamodule.respGeneric.Content);
     if (sResult = 'OK') then
     begin
-      getData();
+      getEventData();
     end;
 end;
 
