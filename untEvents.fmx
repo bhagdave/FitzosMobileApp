@@ -2910,7 +2910,7 @@ inherited frmEvents: TfrmEvents
     Align = Client
     Height = 416.000000000000000000
     TabHeight = 30.000000000000000000
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 19
     Width = 320.000000000000000000
     object tabMine: TTabItem
@@ -2919,7 +2919,7 @@ inherited frmEvents: TfrmEvents
         item
         end>
       Height = 30.000000000000000000
-      IsSelected = True
+      IsSelected = False
       TabOrder = 0
       Text = 'My Events'
       Width = 71.000000000000000000
@@ -2940,7 +2940,7 @@ inherited frmEvents: TfrmEvents
         item
         end>
       Height = 30.000000000000000000
-      IsSelected = False
+      IsSelected = True
       TabOrder = 0
       Text = 'Upcoming events'
       Width = 109.000000000000000000

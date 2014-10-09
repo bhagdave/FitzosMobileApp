@@ -9,7 +9,7 @@ uses
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope,
   Data.Bind.Controls, FMX.Layouts, Fmx.Bind.Navigator, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient;
+  IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification, FMX.TabControl;
 
 type
   TfrmTeams = class(TfrmBase)
@@ -26,6 +26,9 @@ type
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField1: TLinkFillControlToField;
     tmrRefresh: TTimer;
+    tabTeams: TTabControl;
+    tabmyTeams: TTabItem;
+    tabPublicTeams: TTabItem;
     procedure btnCreateClick(Sender: TObject);
     procedure lvTeamsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
