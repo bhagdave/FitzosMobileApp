@@ -41,7 +41,11 @@ inherited frmEvents: TfrmEvents
       OnClick = btnRefreshClick
     end
   end
-  inherited StyleBook1: TStyleBook [2]
+  inherited pnlCenter: TPanel
+    Height = 416.000000000000000000
+    TabOrder = 21
+  end
+  inherited StyleBook1: TStyleBook
     StyleName = 'Orange'
     UseStyleManager = True
     ResourcesBin = {
@@ -2896,24 +2900,25 @@ inherited frmEvents: TfrmEvents
       0706436C69656E74064865696768740500000000000000C80440055769647468
       0500000000000000C80440000000}
   end
-  object AniIndicator1: TAniIndicator [3]
+  object AniIndicator1: TAniIndicator [4]
     Align = Client
     Height = 416.000000000000000000
     StyleLookup = 'iOS 7aniindicator.png'
     Width = 320.000000000000000000
   end
-  object tabEvents: TTabControl [4]
+  object tabEvents: TTabControl [5]
     Align = Client
     Height = 416.000000000000000000
+    TabHeight = 30.000000000000000000
     TabIndex = 0
-    TabOrder = 20
+    TabOrder = 19
     Width = 320.000000000000000000
     object tabMine: TTabItem
       AutoSize = False
       CustomIcon = <
         item
         end>
-      Height = 21.000000000000000000
+      Height = 30.000000000000000000
       IsSelected = True
       TabOrder = 0
       Text = 'My Events'
@@ -2924,7 +2929,7 @@ inherited frmEvents: TfrmEvents
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
-        Height = 395.000000000000000000
+        Height = 386.000000000000000000
         TabOrder = 0
         Width = 320.000000000000000000
         OnItemClick = lvEventsItemClick
@@ -2934,7 +2939,7 @@ inherited frmEvents: TfrmEvents
       CustomIcon = <
         item
         end>
-      Height = 21.000000000000000000
+      Height = 30.000000000000000000
       IsSelected = False
       TabOrder = 0
       Text = 'Upcoming events'
@@ -2945,7 +2950,7 @@ inherited frmEvents: TfrmEvents
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
-        Height = 395.000000000000000000
+        Height = 386.000000000000000000
         TabOrder = 0
         Width = 320.000000000000000000
         OnItemClick = lvUpcomingItemClick
@@ -2955,7 +2960,7 @@ inherited frmEvents: TfrmEvents
       CustomIcon = <
         item
         end>
-      Height = 21.000000000000000000
+      Height = 30.000000000000000000
       IsSelected = False
       TabOrder = 0
       Text = 'Invites'
@@ -2967,7 +2972,7 @@ inherited frmEvents: TfrmEvents
         FooterAppearanceClassName = 'TListHeaderObjects'
         EditMode = True
         Align = Client
-        Height = 395.000000000000000000
+        Height = 386.000000000000000000
         TabOrder = 0
         Width = 320.000000000000000000
         ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
@@ -2979,11 +2984,7 @@ inherited frmEvents: TfrmEvents
       end
     end
   end
-  inherited pnlCenter: TPanel [5]
-    Height = 416.000000000000000000
-    TabOrder = 21
-  end
-  object BindingsList1: TBindingsList [7]
+  object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
     Left = 20
@@ -3030,13 +3031,13 @@ inherited frmEvents: TfrmEvents
       FillBreakGroups = <>
     end
   end
-  object BindSourceDB1: TBindSourceDB [8]
+  object BindSourceDB1: TBindSourceDB
     DataSet = dmdEvent.fdmEventInvites
     ScopeMappings = <>
     Left = 144
     Top = 216
   end
-  object BindSourceDB2: TBindSourceDB [9]
+  object BindSourceDB2: TBindSourceDB
     DataSet = dmdEvent.fdmUpcomingEvents
     ScopeMappings = <>
     Left = 152
