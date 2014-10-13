@@ -42,6 +42,8 @@ type
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
     procedure btnInvitesClick(Sender: TObject);
     procedure tmrRefreshTimer(Sender: TObject);
+    procedure lvPublicTeamsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
     procedure teamsLoaded;
@@ -203,6 +205,18 @@ begin
   begin
     showmessage('No internet connection at the moment');
   end;
+end;
+
+procedure TfrmTeams.lvPublicTeamsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  LValue : TValue;
+  sTeam : String;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvPublicTeams);
+  sTeam := lValue.ToString;
+  showNewFormWithId('TfrmTeam',sTeam);
 end;
 
 procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;

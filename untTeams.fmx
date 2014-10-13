@@ -2982,6 +2982,7 @@ inherited frmTeams: TfrmTeams
         Height = 386.000000000000000000
         TabOrder = 0
         Width = 320.000000000000000000
+        OnItemClick = lvPublicTeamsItemClick
       end
     end
   end
