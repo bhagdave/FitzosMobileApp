@@ -29,6 +29,9 @@ type
     tabTeams: TTabControl;
     tabmyTeams: TTabItem;
     tabPublicTeams: TTabItem;
+    lvPublicTeams: TListView;
+    BindSourceDB3: TBindSourceDB;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure btnCreateClick(Sender: TObject);
     procedure lvTeamsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -45,6 +48,7 @@ type
     procedure threadTerminated(Sender : TObject);
     procedure loadInvites();
     procedure invitesLoaded();
+    procedure loadPublicTeams();
   public
     { Public declarations }
   end;
@@ -134,6 +138,20 @@ begin
   end;
 end;
 
+procedure TfrmTeams.loadPublicTeams;
+begin
+  with dmdDataModule do
+  begin
+    // Open up the data.
+    rdsaPublicTeams.ClearDataSet;
+    fdmPublicTeams.Close;
+    respPublicTeams.Content.Empty;
+    reqPublicTeams.ClearBody;
+    reqPublicTeams.Params.ParameterByName('id').Value := memberId;
+    reqPublicTeams.Execute;
+  end;
+end;
+
 procedure TfrmTeams.lvInvitesButtonClick(const Sender: TObject;
   const AItem: TListViewItem; const AObject: TListItemSimpleControl);
 var
@@ -215,6 +233,7 @@ begin
         lvTeams.EndUpdate;
         lvTeams.Visible := true;
     end;
+    loadPublicTeams();
     loadInvites();
 end;
 

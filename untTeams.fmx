@@ -22,12 +22,13 @@ inherited frmTeams: TfrmTeams
     end
   end
   inherited pnlTop: TPanel
+    Visible = False
     inherited lblCaption: TLabel
       Text = 'Teams'
     end
   end
   inherited pnlCenter: TPanel
-    Height = 383.000000000000000000
+    Height = 416.000000000000000000
   end
   inherited StyleBook1: TStyleBook
     ResourcesBin = {
@@ -2926,7 +2927,8 @@ inherited frmTeams: TfrmTeams
   end
   object tabTeams: TTabControl [6]
     Align = Client
-    Height = 383.000000000000000000
+    FullSize = True
+    Height = 416.000000000000000000
     TabHeight = 30.000000000000000000
     TabIndex = 1
     TabOrder = 26
@@ -2939,14 +2941,14 @@ inherited frmTeams: TfrmTeams
       IsSelected = False
       TabOrder = 0
       Text = 'My Teams'
-      Width = 71.000000000000000000
+      Width = 158.000000000000000000
       object lvTeams: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
-        Height = 309.000000000000000000
+        Height = 342.000000000000000000
         TabOrder = 0
         Width = 320.000000000000000000
         CanSwipeDelete = False
@@ -2955,7 +2957,7 @@ inherited frmTeams: TfrmTeams
       object btnCreate: TButton
         Align = MostBottom
         Height = 44.000000000000000000
-        Position.Y = 309.000000000000000000
+        Position.Y = 342.000000000000000000
         TabOrder = 1
         Text = 'Create Team'
         Width = 320.000000000000000000
@@ -2970,7 +2972,17 @@ inherited frmTeams: TfrmTeams
       IsSelected = True
       TabOrder = 0
       Text = 'Public Teams'
-      Width = 86.000000000000000000
+      Width = 158.000000000000000000
+      object lvPublicTeams: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Height = 386.000000000000000000
+        TabOrder = 0
+        Width = 320.000000000000000000
+      end
     end
   end
   object BindSourceDB1: TBindSourceDB
@@ -3007,11 +3019,29 @@ inherited frmTeams: TfrmTeams
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvPublicTeams
+      Track = True
+      FillDataSource = BindSourceDB3
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
   object BindSourceDB2: TBindSourceDB
     DataSet = dmdDataModule.fdmTeamInvites
     ScopeMappings = <>
     Left = 144
     Top = 216
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = dmdDataModule.fdmPublicTeams
+    ScopeMappings = <>
+    Left = 152
+    Top = 224
   end
 end
