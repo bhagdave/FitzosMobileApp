@@ -19,7 +19,6 @@ type
     lvInvites: TListView;
     BindSourceDB1: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
-    btnRefresh: TButton;
     AniIndicator1: TAniIndicator;
     tabEvents: TTabControl;
     tabMine: TTabItem;

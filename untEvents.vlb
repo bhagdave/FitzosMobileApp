@@ -40,7 +40,7 @@ Visible=True
 Coordinates=112,204,70,33
 
 []
-Coordinates=985,1142,69,36
+Coordinates=396,166,77,58
 Visible=False
 
 [dmdDataModule.fdmMemberTeams]
@@ -427,9 +427,6 @@ Coordinates=369,1,224,146
 
 [dmdDataModule.respFriendRequests]
 Coordinates=1164,1377,228,322
-
-[btnRefresh]
-Coordinates=396,166,77,58
 
 [tabMine]
 Coordinates=674,626,60,36

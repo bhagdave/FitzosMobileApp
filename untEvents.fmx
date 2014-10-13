@@ -31,15 +31,6 @@ inherited frmEvents: TfrmEvents
     inherited lblCaption: TLabel
       Text = 'Events'
     end
-    object btnRefresh: TButton
-      Align = FitRight
-      Height = 44.000000000000000000
-      Position.X = 287.000000000000000000
-      StyleLookup = 'refreshtoolbutton'
-      TabOrder = 0
-      Width = 44.000000000000000000
-      OnClick = btnRefreshClick
-    end
   end
   inherited pnlCenter: TPanel
     Height = 416.000000000000000000
@@ -2908,6 +2899,7 @@ inherited frmEvents: TfrmEvents
   end
   object tabEvents: TTabControl [5]
     Align = Client
+    FullSize = True
     Height = 416.000000000000000000
     TabHeight = 30.000000000000000000
     TabIndex = 1
@@ -2922,7 +2914,7 @@ inherited frmEvents: TfrmEvents
       IsSelected = False
       TabOrder = 0
       Text = 'My Events'
-      Width = 71.000000000000000000
+      Width = 105.000000000000000000
       object lvEvents: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
@@ -2943,7 +2935,7 @@ inherited frmEvents: TfrmEvents
       IsSelected = True
       TabOrder = 0
       Text = 'Upcoming events'
-      Width = 109.000000000000000000
+      Width = 106.000000000000000000
       object lvUpcoming: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
@@ -2964,7 +2956,7 @@ inherited frmEvents: TfrmEvents
       IsSelected = False
       TabOrder = 0
       Text = 'Invites'
-      Width = 51.000000000000000000
+      Width = 105.000000000000000000
       object lvInvites: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
