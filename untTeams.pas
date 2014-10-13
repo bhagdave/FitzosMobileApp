@@ -151,6 +151,7 @@ begin
     reqPublicTeams.ClearBody;
     reqPublicTeams.Params.ParameterByName('id').Value := memberId;
     reqPublicTeams.Execute;
+    rdsaPublicTeams.UpdateDataSet;
   end;
 end;
 
