@@ -2934,7 +2934,7 @@ inherited frmEvents: TfrmEvents
       Height = 30.000000000000000000
       IsSelected = True
       TabOrder = 0
-      Text = 'Upcoming events'
+      Text = 'Upcoming'
       Width = 106.000000000000000000
       object lvUpcoming: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
