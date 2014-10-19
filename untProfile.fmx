@@ -13,7 +13,7 @@ object frmProfile: TfrmProfile
   OnCreate = FormCreate
   DesignerMobile = True
   DesignerWidth = 320
-  DesignerHeight = 480
+  DesignerHeight = 460
   DesignerDeviceName = 'iPhone'
   DesignerOrientation = 0
   DesignerOSVersion = '7'
@@ -37,7 +37,7 @@ object frmProfile: TfrmProfile
     Width = 320.000000000000000000
     object btnSave: TButton
       Align = MostRight
-      Height = 44.000000000000000000
+      Height = 40.000000000000000000
       Position.X = 247.000000000000000000
       StyleLookup = 'donetoolbutton'
       TabOrder = 0
@@ -47,7 +47,7 @@ object frmProfile: TfrmProfile
     end
     object btnBack: TButton
       Align = MostLeft
-      Height = 44.000000000000000000
+      Height = 40.000000000000000000
       StyleLookup = 'backtoolbutton'
       TabOrder = 1
       Text = 'Back'
@@ -2918,12 +2918,12 @@ object frmProfile: TfrmProfile
     object layDetails: TLayout
       Align = Top
       Height = 700.000000000000000000
-      Width = 320.000000000000000000
+      Width = 50.000000000000000000
       TabOrder = 0
       object grdLayout: TGridPanelLayout
         Align = MostTop
         Height = 175.000000000000000000
-        Width = 320.000000000000000000
+        Width = 50.000000000000000000
         TabOrder = 0
         ColumnCollection = <
           item
@@ -3036,21 +3036,21 @@ object frmProfile: TfrmProfile
           Align = Client
           Height = 25.000000000000000000
           Text = 'Age'
-          Width = 96.723419189453130000
+          Width = 15.113033294677730000
         end
         object edtAge: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 1
           KeyboardType = NumberPad
-          Width = 223.276580810546900000
+          Width = 34.886966705322270000
           Height = 25.000000000000000000
         end
         object lblGender: TLabel
           Align = Client
           Height = 25.000000000000000000
           Text = 'Gender'
-          Width = 96.723419189453130000
+          Width = 15.113033294677730000
         end
         object cboGender: TComboBox
           Align = Client
@@ -3061,26 +3061,26 @@ object frmProfile: TfrmProfile
             'Female'
             'Not sure')
           TabOrder = 3
-          Width = 223.276580810546900000
+          Width = 34.886966705322270000
         end
         object lblLocation: TLabel
           Align = Client
           Height = 25.000000000000000000
           Text = 'Location'
-          Width = 96.723419189453130000
+          Width = 15.113033294677730000
         end
         object edtLocation: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 5
-          Width = 223.276580810546900000
+          Width = 34.886966705322270000
           Height = 25.000000000000000000
         end
         object lblUnits: TLabel
           Align = Client
           Height = 25.000000000000000000
           Text = 'Units'
-          Width = 96.723419189453130000
+          Width = 15.113033294677730000
         end
         object cboUnits: TComboBox
           Align = Client
@@ -3090,46 +3090,46 @@ object frmProfile: TfrmProfile
             'Metric'
             'Imperial')
           TabOrder = 8
-          Width = 223.276580810546900000
+          Width = 34.886966705322270000
         end
         object lblHeight: TLabel
           Align = Client
           Height = 25.000000000000000000
           Text = 'Height'
-          Width = 96.723419189453130000
+          Width = 15.113033294677730000
         end
         object edtHeight: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 10
-          Width = 223.276580810546900000
+          Width = 34.886966705322270000
           Height = 25.000000000000000000
         end
         object lblWeight: TLabel
           Align = Client
           Height = 25.000000000000000000
           Text = 'Weight'
-          Width = 96.723419189453130000
+          Width = 15.113033294677730000
         end
         object edtWeight: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 12
-          Width = 223.276580810546900000
+          Width = 34.886966705322270000
           Height = 25.000000000000000000
         end
         object lblBodyFat: TLabel
           Align = Client
           Height = 25.000000000000000000
           Text = 'Body Fat %'
-          Width = 96.723419189453130000
+          Width = 15.113033294677730000
         end
         object edtBodyFat: TNumberBox
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 14
           Cursor = crIBeam
-          Width = 223.276580810546900000
+          Width = 34.886966705322270000
           Height = 25.000000000000000000
           VertIncrement = 5.000000000000000000
         end
@@ -3141,7 +3141,7 @@ object frmProfile: TfrmProfile
         Position.Y = 205.000000000000000000
         ShowCheck = False
         Text = 'Options'
-        Width = 320.000000000000000000
+        Width = 50.000000000000000000
         TabOrder = 1
         ContentSize = '175'
         object cbStatus: TCheckBox
@@ -3191,7 +3191,7 @@ object frmProfile: TfrmProfile
         Position.Y = 175.000000000000000000
         ShowCheck = False
         Text = 'Profile Image'
-        Width = 320.000000000000000000
+        Width = 50.000000000000000000
         TabOrder = 2
         ContentSize = '175'
         object pnlImage: TGridPanelLayout

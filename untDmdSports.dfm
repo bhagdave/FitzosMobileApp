@@ -6,7 +6,7 @@ object dmdSports: TdmdSports
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
-    BaseURL = 'http://beta.fitzos.com/api'
+    BaseURL = 'http://www.reach-your-peak.com/api'
     Params = <>
     HandleRedirects = True
     Left = 32
