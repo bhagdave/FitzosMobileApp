@@ -276,6 +276,7 @@ type
     fdmPublicTeamssport_id: TWideStringField;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     fdConnection: TFDConnection;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
     procedure fdConnectionBeforeConnect(Sender: TObject);
   private

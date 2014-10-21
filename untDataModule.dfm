@@ -2478,4 +2478,8 @@ object dmdDataModule: TdmdDataModule
     Left = 24
     Top = 200
   end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 24
+    Top = 320
+  end
 end
