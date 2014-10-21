@@ -2468,11 +2468,10 @@ object dmdDataModule: TdmdDataModule
   end
   object fdConnection: TFDConnection
     Params.Strings = (
-      
-        'Database=C:\Users\dave\Documents\Embarcadero\Studio\Projects\Dev' +
-        'Notes\devnotes.sqlite'
+      'Database=E:\FitzosMobileApp\RYP.sqlite'
       'LockingMode=Normal'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     BeforeConnect = fdConnectionBeforeConnect
     Left = 24
@@ -2481,5 +2480,24 @@ object dmdDataModule: TdmdDataModule
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
     Left = 24
     Top = 320
+  end
+  object fdLogin: TFDTable
+    Connection = fdConnection
+    UpdateOptions.UpdateTableName = 'login'
+    TableName = 'login'
+    Left = 56
+    Top = 296
+    object fdLoginlogin: TStringField
+      FieldName = 'login'
+      Origin = 'login'
+      Required = True
+      Size = 32767
+    end
+    object fdLoginpassword: TStringField
+      FieldName = 'password'
+      Origin = 'password'
+      Required = True
+      Size = 32767
+    end
   end
 end

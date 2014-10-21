@@ -10,7 +10,8 @@ uses
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, Data.Bind.DBScope, FireDAC.UI.Intf, FireDAC.FMXUI.Wait,
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
-  FireDAC.Phys.SQLite, FireDAC.Stan.ExprFuncs, FireDAC.Comp.UI,System.IOUtils;
+  FireDAC.Phys.SQLite, FireDAC.Stan.ExprFuncs, FireDAC.Comp.UI,System.IOUtils,
+  FireDAC.DApt;
 
 type
   TdmdDataModule = class(TDataModule)
@@ -277,6 +278,9 @@ type
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     fdConnection: TFDConnection;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    fdLogin: TFDTable;
+    fdLoginlogin: TStringField;
+    fdLoginpassword: TStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
     procedure fdConnectionBeforeConnect(Sender: TObject);
   private
