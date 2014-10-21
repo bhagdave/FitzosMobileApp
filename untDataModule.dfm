@@ -2461,4 +2461,21 @@ object dmdDataModule: TdmdDataModule
       Size = 255
     end
   end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 24
+    Top = 256
+  end
+  object fdConnection: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\dave\Documents\Embarcadero\Studio\Projects\Dev' +
+        'Notes\devnotes.sqlite'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    BeforeConnect = fdConnectionBeforeConnect
+    Left = 24
+    Top = 200
+  end
 end

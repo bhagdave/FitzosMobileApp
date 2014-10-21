@@ -8,7 +8,9 @@ uses
   REST.Response.Adapter, Data.DB, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, Data.Bind.DBScope;
+  FireDAC.Comp.Client, Data.Bind.DBScope, FireDAC.UI.Intf, FireDAC.FMXUI.Wait,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.SQLite, FireDAC.Stan.ExprFuncs, FireDAC.Comp.UI,System.IOUtils;
 
 type
   TdmdDataModule = class(TDataModule)
@@ -272,7 +274,10 @@ type
     fdmPublicTeamsowner: TWideStringField;
     fdmPublicTeamspublic: TWideStringField;
     fdmPublicTeamssport_id: TWideStringField;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    fdConnection: TFDConnection;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
+    procedure fdConnectionBeforeConnect(Sender: TObject);
   private
     { Private declarations }
     sSessionKey : String;
@@ -331,6 +336,14 @@ begin
     finally
       lJSONObject.Free;
     end;
+end;
+
+procedure TdmdDataModule.fdConnectionBeforeConnect(Sender: TObject);
+begin
+  {$IF DEFINED(iOS) or DEFINED(ANDROID)}
+  FDConnection.Params.Values['Database'] :=
+      TPath.Combine(TPath.GetDocumentsPath, 'RYP.sqlite');
+  {$ENDIF}
 end;
 
 function TdmdDataModule.getApiKey: String;
