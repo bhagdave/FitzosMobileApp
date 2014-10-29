@@ -9,7 +9,8 @@ uses
   IdTCPConnection, IdTCPClient, IdHTTP, IdIOHandler, IdIOHandlerStream,
   FMX.Objects, System.Actions, FMX.ActnList, FMX.StdActns,
   FMX.MediaLibrary.Actions, untDataModule, System.Rtti, System.Bindings.Outputs,
-  Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components,
+  FMX.EditBox, FMX.NumberBox, FMX.Controls.Presentation;
 
 type
   TfrmProfile = class(TForm)
