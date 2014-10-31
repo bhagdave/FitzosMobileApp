@@ -9,7 +9,7 @@ uses
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope,
   Data.Bind.Controls, FMX.Layouts, Fmx.Bind.Navigator, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient;
+  IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification, FMX.TabControl;
 
 type
   TfrmTeams = class(TfrmBase)
@@ -26,6 +26,12 @@ type
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField1: TLinkFillControlToField;
     tmrRefresh: TTimer;
+    tabTeams: TTabControl;
+    tabmyTeams: TTabItem;
+    tabPublicTeams: TTabItem;
+    lvPublicTeams: TListView;
+    BindSourceDB3: TBindSourceDB;
+    LinkFillControlToField2: TLinkFillControlToField;
     procedure btnCreateClick(Sender: TObject);
     procedure lvTeamsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -36,12 +42,15 @@ type
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
     procedure btnInvitesClick(Sender: TObject);
     procedure tmrRefreshTimer(Sender: TObject);
+    procedure lvPublicTeamsItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
     procedure teamsLoaded;
     procedure threadTerminated(Sender : TObject);
     procedure loadInvites();
     procedure invitesLoaded();
+    procedure loadPublicTeams();
   public
     { Public declarations }
   end;
@@ -131,6 +140,21 @@ begin
   end;
 end;
 
+procedure TfrmTeams.loadPublicTeams;
+begin
+  with dmdDataModule do
+  begin
+    // Open up the data.
+    rdsaPublicTeams.ClearDataSet;
+    fdmPublicTeams.Close;
+    respPublicTeams.Content.Empty;
+    reqPublicTeams.ClearBody;
+    reqPublicTeams.Params.ParameterByName('id').Value := memberId;
+    reqPublicTeams.Execute;
+    rdsaPublicTeams.UpdateDataSet;
+  end;
+end;
+
 procedure TfrmTeams.lvInvitesButtonClick(const Sender: TObject;
   const AItem: TListViewItem; const AObject: TListItemSimpleControl);
 var
@@ -184,6 +208,18 @@ begin
   end;
 end;
 
+procedure TfrmTeams.lvPublicTeamsItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  LValue : TValue;
+  sTeam : String;
+begin
+  inherited;
+  LValue := GetSelectedValue(lvPublicTeams);
+  sTeam := lValue.ToString;
+  showNewFormWithId('TfrmTeam',sTeam);
+end;
+
 procedure TfrmTeams.lvTeamsItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 var
@@ -212,6 +248,7 @@ begin
         lvTeams.EndUpdate;
         lvTeams.Visible := true;
     end;
+    loadPublicTeams();
     loadInvites();
 end;
 

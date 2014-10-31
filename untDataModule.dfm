@@ -6,7 +6,7 @@ object dmdDataModule: TdmdDataModule
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
-    BaseURL = 'http://beta.fitzos.com/api'
+    BaseURL = 'http://www.reach-your-peak.com/api'
     Params = <
       item
         Kind = pkHTTPHEADER
@@ -2318,6 +2318,186 @@ object dmdDataModule: TdmdDataModule
     object fdmTeamInvitessport_id: TWideStringField
       FieldName = 'sport_id'
       Size = 255
+    end
+  end
+  object reqPublicTeams: TRESTRequest
+    Client = restAPI
+    Params = <
+      item
+        name = 'id'
+        Value = '9'
+      end>
+    Resource = 'r/teams/getPublicTeams'
+    Response = respPublicTeams
+    SynchronizedEvents = False
+    Left = 656
+    Top = 384
+  end
+  object respPublicTeams: TRESTResponse
+    ContentType = 'text/html'
+    Left = 656
+    Top = 440
+  end
+  object rdsaPublicTeams: TRESTResponseDataSetAdapter
+    Active = True
+    AutoUpdate = False
+    Dataset = fdmPublicTeams
+    FieldDefs = <>
+    Response = respPublicTeams
+    RootElement = 'Result'
+    Left = 664
+    Top = 504
+  end
+  object fdmPublicTeams: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'content'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'date_added'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'last_modified'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'image'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'owner'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'public'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'sport_id'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 664
+    Top = 560
+    object fdmPublicTeamsid: TWideStringField
+      FieldName = 'id'
+      Size = 255
+    end
+    object fdmPublicTeamsname: TWideStringField
+      FieldName = 'name'
+      Size = 255
+    end
+    object fdmPublicTeamscontent: TWideStringField
+      FieldName = 'content'
+      Size = 255
+    end
+    object fdmPublicTeamsdate: TWideStringField
+      FieldName = 'date'
+      Size = 255
+    end
+    object fdmPublicTeamsactive: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object fdmPublicTeamsdate_added: TWideStringField
+      FieldName = 'date_added'
+      Size = 255
+    end
+    object fdmPublicTeamslast_modified: TWideStringField
+      FieldName = 'last_modified'
+      Size = 255
+    end
+    object fdmPublicTeamsimage: TWideStringField
+      FieldName = 'image'
+      Size = 255
+    end
+    object fdmPublicTeamsowner: TWideStringField
+      FieldName = 'owner'
+      Size = 255
+    end
+    object fdmPublicTeamspublic: TWideStringField
+      FieldName = 'public'
+      Size = 255
+    end
+    object fdmPublicTeamssport_id: TWideStringField
+      FieldName = 'sport_id'
+      Size = 255
+    end
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 24
+    Top = 256
+  end
+  object fdConnection: TFDConnection
+    Params.Strings = (
+      'Database=E:\FitzosMobileApp\RYP.sqlite'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    BeforeConnect = fdConnectionBeforeConnect
+    Left = 24
+    Top = 200
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 24
+    Top = 320
+  end
+  object fdLogin: TFDTable
+    Connection = fdConnection
+    UpdateOptions.UpdateTableName = 'login'
+    TableName = 'login'
+    Left = 56
+    Top = 296
+    object fdLoginlogin: TStringField
+      FieldName = 'login'
+      Origin = 'login'
+      Required = True
+      Size = 32767
+    end
+    object fdLoginpassword: TStringField
+      FieldName = 'password'
+      Origin = 'password'
+      Required = True
+      Size = 32767
     end
   end
 end

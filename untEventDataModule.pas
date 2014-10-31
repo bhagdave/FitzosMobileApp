@@ -126,6 +126,15 @@ type
     fdmEventInvitesend_time: TWideStringField;
     fdmEventInvitessport_id: TWideStringField;
     fdmEventInvitesend_date: TWideStringField;
+    reqUpcomingEvents: TRESTRequest;
+    respUpcomingEvents: TRESTResponse;
+    rdsaUpcomingEvents: TRESTResponseDataSetAdapter;
+    fdmUpcomingEvents: TFDMemTable;
+    fdmUpcomingEventsid: TWideStringField;
+    fdmUpcomingEventsname: TWideStringField;
+    fdmUpcomingEventssport: TWideStringField;
+    fdmUpcomingEventslocation: TWideStringField;
+    fdmUpcomingEventstime: TWideStringField;
   private
     { Private declarations }
   public

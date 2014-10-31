@@ -8,11 +8,6 @@ inherited frmStats: TfrmStats
   DesignerOrientation = 0
   DesignerOSVersion = '7'
   inherited barBottom: TToolBar
-    Height = 44.000000000000000000
-    Position.Y = 504.000000000000000000
-    inherited btnBack: TButton
-      Height = 44.000000000000000000
-    end
     object btnNewstat: TButton
       Align = Right
       Height = 44.000000000000000000
@@ -29,7 +24,6 @@ inherited frmStats: TfrmStats
     end
   end
   inherited pnlCenter: TPanel
-    Height = 471.000000000000000000
     object lvStats: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
       ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
@@ -2916,7 +2910,7 @@ inherited frmStats: TfrmStats
       7474696E67732E466F6E74436F6C6F72070C636C61536C617465677261790557
       696474680500000000000000F005400000}
   end
-  object pnlAddStat: TPanel
+  object pnlAddStat: TPanel [4]
     Align = Client
     Height = 355.000000000000000000
     Visible = False
@@ -2969,7 +2963,7 @@ inherited frmStats: TfrmStats
         Align = Client
         TabOrder = 1
         Width = 225.000000000000000000
-        Height = 30.000000000000000000
+        Height = 40.000000000000000000
       end
     end
     object pnlDetails: TGridPanelLayout
@@ -3041,7 +3035,7 @@ inherited frmStats: TfrmStats
         Align = Client
         TabOrder = 1
         Width = 225.000000000000000000
-        Height = 30.000000000000000000
+        Height = 40.000000000000000000
       end
       object lblComment: TLabel
         Align = Client

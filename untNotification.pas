@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit,untDataModule, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.Components, Data.Bind.DBScope;
+  Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent, IdComponent,
+  IdTCPConnection, IdTCPClient;
 
 type
   TfrmNotification = class(TfrmBase)
@@ -56,7 +57,6 @@ end;
 
 procedure TfrmNotification.FormShow(Sender: TObject);
 var
-  sResult : String;
   sFrom   : String;
 begin
   inherited;

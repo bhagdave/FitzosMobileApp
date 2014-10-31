@@ -14,7 +14,6 @@ uses
 function getResultString(Content : String):String;
 var
   lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
   lStatus     : TJsonValue;
 begin
     try
@@ -29,7 +28,6 @@ end;
 function getResultBoolean(Content, Value : String):Boolean;
 var
   lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
   lStatus     : TJsonValue;
 begin
     try
@@ -44,8 +42,7 @@ end;
 function getStringFromResult(Content:String):String;
 var
   lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
-  lStatus     : TJsonValue;
+  lStatus     : TJsonValue;
 begin
     try
       lJSONObject := TJSONObject.Create();

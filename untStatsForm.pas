@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDMDSports,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, FMX.Layouts, FMX.ListBox, FMX.Memo,
-  FMX.DateTimeCtrls;
+  FMX.DateTimeCtrls, FMX.Notification, IdBaseComponent, IdComponent,
+  IdTCPConnection, IdTCPClient;
 
 type
   TfrmStats = class(TfrmBase)

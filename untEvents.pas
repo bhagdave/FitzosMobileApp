@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient;
+  IdComponent, IdTCPConnection, IdTCPClient, FMX.TabControl, FMX.Notification;
 
 type
   TfrmEvents = class(TfrmBase)
@@ -16,30 +16,34 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     btnCreateEvent: TButton;
-    btnInvites: TSpeedButton;
-    pnlInvites: TPanel;
-    barInvites: TToolBar;
-    lblInvites: TLabel;
     lvInvites: TListView;
     BindSourceDB1: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
-    btnRefresh: TButton;
     AniIndicator1: TAniIndicator;
+    tabEvents: TTabControl;
+    tabMine: TTabItem;
+    tabUpcoming: TTabItem;
+    tabInvites: TTabItem;
+    lvUpcoming: TListView;
+    BindSourceDB2: TBindSourceDB;
+    LinkFillControlToField3: TLinkFillControlToField;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
-    procedure btnInvitesClick(Sender: TObject);
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
     procedure lvInvitesItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure FormShow(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
+    procedure lvUpcomingItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
    procedure threadTerminated(Sender : TObject);
    procedure eventsLoaded;
    procedure invitesLoaded;
    procedure loadInvites;
+   procedure loadUpcoming();
    procedure getEvents();
   public
     { Public declarations }
@@ -64,12 +68,6 @@ begin
   showNewFormWithId('TfrmEventCreation','');
 end;
 
-procedure TfrmEvents.btnInvitesClick(Sender: TObject);
-begin
-  inherited;
-  pnlInvites.Visible := not pnlInvites.Visible;
-end;
-
 procedure TfrmEvents.btnRefreshClick(Sender: TObject);
 begin
   inherited;
@@ -86,6 +84,7 @@ begin
         dmdDatamodule.rdsaEvents.UpdateDataSet;
         dmdDatamodule.fdmEvents.Open;
     end;
+    loadUpcoming();
     loadInvites();
 end;
 
@@ -131,11 +130,8 @@ begin
   begin
     dmdEvent.rdsaEventInvites.UpdateDataSet;
     dmdEvent.fdmEventInvites.Open;
-    btnInvites.Visible := true;
   end else
   begin
-    btnInvites.Visible := false;
-    pnlInvites.Visible := false;
   end;
 end;
 
@@ -144,6 +140,17 @@ begin
     // get the event invites.
     dmdEvent.reqEventInvites.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
     dmdEvent.reqEventInvites.ExecuteAsync(invitesLoaded);
+end;
+
+procedure TfrmEvents.loadUpcoming;
+begin
+  dmdEvent.rdsaUpcomingEvents.ClearDataSet;
+  dmdEvent.fdmUpcomingEvents.Close;
+  dmdEvent.respUpcomingEvents.Content.Empty;
+  dmdEvent.reqUpcomingEvents.ClearBody;
+  dmdEvent.reqUpcomingEvents.Execute;
+  dmdEvent.rdsaUpcomingEvents.UpdateDataSet;
+  dmdEvent.fdmUpcomingEvents.Open;
 end;
 
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
@@ -180,6 +187,15 @@ var
   lValue : TValue;
 begin
   lValue := GetSelectedValue(lvInvites);
+  ShowNewFormWithId('TfrmEvent',LValue.ToString);
+end;
+
+procedure TfrmEvents.lvUpcomingItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+var
+  lValue : TValue;
+begin
+  lValue := GetSelectedValue(lvUpcoming);
   ShowNewFormWithId('TfrmEvent',LValue.ToString);
 end;
 

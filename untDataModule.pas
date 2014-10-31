@@ -8,7 +8,10 @@ uses
   REST.Response.Adapter, Data.DB, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, Data.Bind.DBScope;
+  FireDAC.Comp.Client, Data.Bind.DBScope, FireDAC.UI.Intf, FireDAC.FMXUI.Wait,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.SQLite, FireDAC.Stan.ExprFuncs, FireDAC.Comp.UI,System.IOUtils,
+  FireDAC.DApt;
 
 type
   TdmdDataModule = class(TDataModule)
@@ -257,7 +260,29 @@ type
     fdmTeamInvitesowner: TWideStringField;
     fdmTeamInvitespublic: TWideStringField;
     fdmTeamInvitessport_id: TWideStringField;
+    reqPublicTeams: TRESTRequest;
+    respPublicTeams: TRESTResponse;
+    rdsaPublicTeams: TRESTResponseDataSetAdapter;
+    fdmPublicTeams: TFDMemTable;
+    fdmPublicTeamsid: TWideStringField;
+    fdmPublicTeamsname: TWideStringField;
+    fdmPublicTeamscontent: TWideStringField;
+    fdmPublicTeamsdate: TWideStringField;
+    fdmPublicTeamsactive: TWideStringField;
+    fdmPublicTeamsdate_added: TWideStringField;
+    fdmPublicTeamslast_modified: TWideStringField;
+    fdmPublicTeamsimage: TWideStringField;
+    fdmPublicTeamsowner: TWideStringField;
+    fdmPublicTeamspublic: TWideStringField;
+    fdmPublicTeamssport_id: TWideStringField;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    fdConnection: TFDConnection;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    fdLogin: TFDTable;
+    fdLoginlogin: TStringField;
+    fdLoginpassword: TStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
+    procedure fdConnectionBeforeConnect(Sender: TObject);
   private
     { Private declarations }
     sSessionKey : String;
@@ -295,7 +320,6 @@ const
 function TdmdDataModule.checkLogin: Boolean;
 var
   lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
   lResult,lStatus,lItem  : TJsonValue;
 begin
   result := false;
@@ -319,6 +343,14 @@ begin
     end;
 end;
 
+procedure TdmdDataModule.fdConnectionBeforeConnect(Sender: TObject);
+begin
+  {$IF DEFINED(iOS) or DEFINED(ANDROID)}
+  FDConnection.Params.Values['Database'] :=
+      TPath.Combine(TPath.GetDocumentsPath, 'RYP.sqlite');
+  {$ENDIF}
+end;
+
 function TdmdDataModule.getApiKey: String;
 begin
   result := API_KEY;
@@ -339,7 +371,6 @@ end;
 function TdmdDataModule.openSession: Boolean;
 var
   lJSONObject : TJSONObject;
-  lJSONPair   : TJSONPair;
   lResult,lStatus  : TJsonValue;
 begin
     reqOpenSession.Params.ParameterByName('key').Value  :=  self.md5(API_COMBINED);

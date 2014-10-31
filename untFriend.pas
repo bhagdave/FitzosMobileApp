@@ -9,7 +9,7 @@ uses
   IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts, FMX.ListView.Types,
-  FMX.ListView ;
+  FMX.ListView, FMX.Notification ;
 
 type
   TfrmFriend = class(TfrmBase)
@@ -150,7 +150,7 @@ begin
           fdmMember.Open;
           if fdmMember.FieldByName('image').AsString <> '' then
           begin
-            sURL := 'http://beta.fitzos.com/' + fdmMember.FieldByName('image').AsString;
+            sURL := 'http://www.reach-your-peak.com/' + fdmMember.FieldByName('image').AsString;
             loadPicture(sURL);
           end;
       end;

@@ -63,8 +63,6 @@ begin
 end;
 
 procedure TfrmTeamWall.getWall();
-var
-  sResult : String;
 begin
   with dmdDataModule do
   begin
