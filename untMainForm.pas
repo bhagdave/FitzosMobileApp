@@ -98,11 +98,18 @@ end;
 
 procedure TfrmMain.FormActivate(Sender: TObject);
 begin
+  if (dmdDataModule.loggedIn) then
+  begin
+    showNewForm('TfrmMenu');
+  end
+  else
+  begin
     if not connected then
     begin
       showmessage('Unable to connect to Internet!');
       tmrConnected.Enabled := true;
     end;
+  end;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);

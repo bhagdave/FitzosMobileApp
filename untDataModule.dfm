@@ -1,5 +1,7 @@
 object dmdDataModule: TdmdDataModule
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
   Height = 807
   Width = 1021
   object restAPI: TRESTClient
@@ -80,7 +82,6 @@ object dmdDataModule: TdmdDataModule
     Resource = 'notifications/getMemberNotifications'
     Response = respNotifications
     SynchronizedEvents = False
-    OnHTTPProtocolError = reqNotificationsHTTPProtocolError
     Left = 176
     Top = 72
   end

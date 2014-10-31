@@ -283,13 +283,15 @@ type
     fdLoginpassword: TStringField;
     fdLoginsalt: TStringField;
     fdLogintype: TStringField;
-    procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
     procedure fdConnectionBeforeConnect(Sender: TObject);
+    procedure DataModuleCreate(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
   private
     { Private declarations }
     sSessionKey : String;
     sMemberSalt : String;
     sMemberType : String;
+    fLoggedIn   : Boolean;
   public
     { Public declarations }
     function openSession : Boolean;
@@ -300,6 +302,7 @@ type
     property sessionKey : String  read sSessionKey;
     property memberId : String read sMemberSalt;
     property memberType : String read sMemberType;
+    property loggedIn : Boolean read fLoggedIn;
   end;
 
 var
@@ -356,6 +359,26 @@ begin
     end;
 end;
 
+procedure TdmdDataModule.DataModuleCreate(Sender: TObject);
+begin
+  fLoggedIn := false;
+  fdConnection.Connected := true;
+  fdLogin.Open;
+  if fdLogin.RecordCount > 0 then
+  begin
+    sMemberSalt := fdLogin.FieldByName('salt').AsString;
+    sMemberType := fdLogin.FieldByName('type').AsString;
+    if sMemberSalt <> '' then
+      fLoggedIn := true;
+  end;
+  fdLogin.Close;
+end;
+
+procedure TdmdDataModule.DataModuleDestroy(Sender: TObject);
+begin
+  fdConnection.Connected := false;
+end;
+
 procedure TdmdDataModule.fdConnectionBeforeConnect(Sender: TObject);
 begin
   {$IF DEFINED(iOS) or DEFINED(ANDROID)}
@@ -404,12 +427,6 @@ begin
     finally
       lJSONObject.Free;
     end;
-end;
-
-procedure TdmdDataModule.reqNotificationsHTTPProtocolError(
-  Sender: TCustomRESTRequest);
-begin
-  showmessage('Skskd');
 end;
 
 function TdmdDataModule.signature(method: String): String;
