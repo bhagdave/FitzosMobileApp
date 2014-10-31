@@ -1,18 +1,14 @@
 inherited frmTeamWall: TfrmTeamWall
   Caption = 'Team Wall'
-  DesignerMobile = True
-  DesignerWidth = 320
-  DesignerHeight = 568
-  DesignerDeviceName = 'iPhone5'
-  DesignerOrientation = 0
-  DesignerOSVersion = '7'
+  DesignerMasterStyle = 2
   inherited barBottom: TToolBar
     object btnPost: TButton
       Align = Center
-      Height = 44.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 4
       Text = 'Post'
-      Width = 73.000000000000000000
       OnClick = btnPostClick
     end
   end
@@ -28,9 +24,10 @@ inherited frmTeamWall: TfrmTeamWall
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Height = 471.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 471.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 1
-      Width = 320.000000000000000000
       ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
     end
   end

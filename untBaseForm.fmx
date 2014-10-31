@@ -5902,45 +5902,45 @@ object frmBase: TfrmBase
   FormFactor.Orientations = [Portrait, Landscape, InvertedPortrait, InvertedLandscape]
   FormFactor.Devices = [Desktop, iPhone, iPad]
   OnCreate = FormCreate
-  DesignerMobile = True
-  DesignerWidth = 320
-  DesignerHeight = 568
-  DesignerDeviceName = 'iPhone5'
-  DesignerOrientation = 0
-  DesignerOSVersion = '7'
+  DesignerMasterStyle = 2
   object barBottom: TToolBar
     Align = Bottom
-    Height = 44.000000000000000000
     Position.Y = 504.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 1
-    Width = 320.000000000000000000
     object btnBack: TButton
       Align = Left
-      Height = 44.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
       StyleLookup = 'backtoolbutton'
       TabOrder = 1
       Text = 'Back'
-      Width = 73.000000000000000000
       OnClick = btnBackClick
     end
   end
   object pnlTop: TPanel
     Align = MostTop
-    Height = 33.000000000000000000
-    Width = 320.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 2
     object lblCaption: TLabel
       Align = MostTop
-      Height = 25.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
       TextSettings.HorzAlign = Center
       Text = 'Base Form'
-      Width = 320.000000000000000000
     end
   end
   object pnlCenter: TPanel
     Align = Client
-    Height = 471.000000000000000000
-    Width = 320.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 471.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 3
   end
   object StyleBook1: TStyleBook

@@ -7,10 +7,5 @@ object frmSettings: TfrmSettings
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  DesignerMobile = True
-  DesignerWidth = 320
-  DesignerHeight = 480
-  DesignerDeviceName = 'iPhone'
-  DesignerOrientation = 0
-  DesignerOSVersion = '7'
+  DesignerMasterStyle = 2
 end

@@ -8,7 +8,7 @@ uses
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
   IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON,
-  FMX.Objects, Rest.Client;
+  FMX.Objects, Rest.Client, FMX.Controls.Presentation;
 
 type
   TfrmMain = class(TForm)
