@@ -22,9 +22,6 @@ type
     AniIndicator1: TAniIndicator;
     idTCPConnection: TIdTCPClient;
     tmrConnected: TTimer;
-    lblUsername: TLabel;
-    lblPassword: TLabel;
-    pnlLoginFrm: TGridPanelLayout;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
