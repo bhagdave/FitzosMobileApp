@@ -81,5 +81,5 @@
     <Transaction>2014/08/19 22:43:36.000.945,E:\FitzosMobileApp\untMenuForm.fmx=E:\FitzosMobileApp\Unit1.fmx</Transaction>
     <Transaction>2014/08/26 10:49:07.000.046,=E:\FitzosMobileApp\OrangeStyle.style</Transaction>
   </Transactions>
-	<MobileDevice>015d21d5491bee0a</MobileDevice>
+	<MobileDevice>015d21d5491bee0a</MobileDevice>  <BT_BuildType>AppStore</BT_BuildType>
 </BorlandProject>
