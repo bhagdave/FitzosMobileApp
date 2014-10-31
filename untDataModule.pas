@@ -11,7 +11,7 @@ uses
   FireDAC.Comp.Client, Data.Bind.DBScope, FireDAC.UI.Intf, FireDAC.FMXUI.Wait,
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.SQLite, FireDAC.Stan.ExprFuncs, FireDAC.Comp.UI,System.IOUtils,
-  FireDAC.DApt;
+  FireDAC.DApt, FireDAC.Phys.SQLiteDef;
 
 type
   TdmdDataModule = class(TDataModule)
@@ -335,6 +335,17 @@ begin
         lItem := TJSONObject(lResult).Get('type').JsonValue;
         sMemberType := lItem.Value;
         result := true;
+        // store shit in the database mannn!
+        fdConnection.Connected := true;
+        fdLogin.Open();
+        fdLogin.Insert;
+        fdLogin.FieldByName('login').AsString := dmdDataModule.reqLogin.Params.ParameterByName('username').ToString;
+        fdLogin.FieldByName('password').AsString := dmdDataModule.reqLogin.Params.ParameterByName('password').ToString;
+        fdLogin.FieldByName('salt').AsString := sMemberSalt;
+        fdLogin.FieldByName('type').AsString := sMemberType;
+        fdLogin.Post;
+        fdLogin.Close;
+        fdConnection.Connected := false;
       end
       else
         result := false;

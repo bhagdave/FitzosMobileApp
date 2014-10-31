@@ -218,6 +218,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 400
     Top = 224
@@ -311,6 +312,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 176
     Top = 232
@@ -380,6 +382,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     Left = 320
     Top = 216
   end
@@ -488,6 +491,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 136
     Top = 544
@@ -676,6 +680,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 216
     Top = 544
@@ -828,6 +833,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 312
     Top = 528
@@ -928,6 +934,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 256
     Top = 224
@@ -1034,6 +1041,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 48
     Top = 536
@@ -1181,6 +1189,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 384
     Top = 512
@@ -1361,6 +1370,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 952
     Top = 232
@@ -1507,6 +1517,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 856
     Top = 240
@@ -1710,6 +1721,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 488
     Top = 216
@@ -1906,6 +1918,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 552
     Top = 224
@@ -1983,6 +1996,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 616
     Top = 224
@@ -2053,6 +2067,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 40
     Top = 448
@@ -2123,6 +2138,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 472
     Top = 536
@@ -2256,6 +2272,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 568
     Top = 552
@@ -2413,6 +2430,7 @@ object dmdDataModule: TdmdDataModule
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 664
     Top = 560
@@ -2468,10 +2486,11 @@ object dmdDataModule: TdmdDataModule
   end
   object fdConnection: TFDConnection
     Params.Strings = (
-      'Database=E:\FitzosMobileApp\RYP.sqlite'
+      
+        'Database=C:\Users\dave\Documents\RAD Studio\Projects\FitzosApp\F' +
+        'itzosMobileApp\RYP.sqlite'
       'LockingMode=Normal'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     BeforeConnect = fdConnectionBeforeConnect
     Left = 24
