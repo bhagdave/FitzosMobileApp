@@ -91,19 +91,27 @@
         <DCC_K>false</DCC_K>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
-        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
-        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
-        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
-        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
-        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
+        <Android_SplashTileMode>disabled</Android_SplashTileMode>
+        <PF_KeyStorePass>54E50DFE644355A9A301713BD13FE36081DA0549A057979297EE0FB48E3E3CD9DB5DA38CE3371C4DC1B0577DFADEC37ABAF93641045722CE16654589E5A6228C18CAB963EE9BA8C4D3D63B1A72298595F7DE</PF_KeyStorePass>
+        <VerInfo_Build>2</VerInfo_Build>
+        <Android_SplashGravity>center</Android_SplashGravity>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <PF_AliasKeyPass>54E50DFE644355A9A301713BD13FE36081DA0549A057979297EE0FB48E3E3CD9DB5DA38CE3371C4DC1B0577DFADEC37ABAF93641045722CE16654589E5A6228C18C8B961EEDEA898D3C23B11722B</PF_AliasKeyPass>
+        <PF_KeyStore>RYPAPP</PF_KeyStore>
+        <PF_AliasKey>ryp</PF_AliasKey>
+        <Android_SplashImage426>splash-small.png</Android_SplashImage426>
+        <Android_SplashImage640>splash-large.png</Android_SplashImage640>
+        <Android_SplashImage960>splash-xlarge.png</Android_SplashImage960>
+        <Android_SplashImage470>splash.png</Android_SplashImage470>
+        <Android_LauncherIcon144>logo144_144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon36>logo36_36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon96>logo96_96.png</Android_LauncherIcon96>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon72>logo72_72.png</Android_LauncherIcon72>
         <BT_BuildType>Debug</BT_BuildType>
-        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon48>logo48_48.png</Android_LauncherIcon48>
         <DCC_UsePackage>FireDACSqliteDriver;bindcompfmx;DBXSqliteDriver;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;FireDACCommon;bindcomp;DBXInterBaseDriver;DataSnapClient;DataSnapCommon;DataSnapProviderClient;xmlrtl;ibxpress;DbxCommonDriver;IndyProtocols;dbxcds;FireDACCommonDriver;bindengine;soaprtl;bindcompdbx;fmxFireDAC;CustomIPTransport;FireDAC;dsnap;IndyCore;FireDACDataSnapDriver;IndyIPCommon;CloudService;FireDACIBDriver;inet;FireDACDBXDriver;dbexpress;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
+        <VerInfo_Keys>package=com.reach-your-peak.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=2;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice)'!=''">
         <iPad_Launch2048x1536>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_2048x1536.png</iPad_Launch2048x1536>
@@ -250,13 +258,14 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
         <PF_KeyStore>RYPAPP</PF_KeyStore>
-        <PF_KeyStorePass>8527479F5F85078FCF757131D12CE37981B20541A00D978D97E60FBE8E6C3C8ADB57A3DEE3551C63C1E35725FAC7C317BA95360204642291163A459CE5B722BEC916F341D513FACCBFF83B1A72298595F7DE</PF_KeyStorePass>
+        <PF_KeyStorePass>8527479F645855D8A342711DD129E36881D0051BA043979397B40FAB8E363C94DB04A3D7E3401C39C1CC5752FACFC338BAF83613042722C3164B45C2E5BA22DBC90AF35DEE9BA8C4D3D63B1A72298595F7DE</PF_KeyStorePass>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
-        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Build>3</VerInfo_Build>
         <BT_BuildType>AppStore</BT_BuildType>
         <Android_SplashGravity>center</Android_SplashGravity>
-        <PF_AliasKeyPass>8525479D5FC007D3CF61E533D171E33F81850535A05F97C997AA0FF88E783C8ADB56A385E3111C2FC1E2577DFAC4C363BA95367E043722D3163A459DE5E4229DC938F341D558FA9BBFF8AF11722B</PF_AliasKeyPass>
+        <PF_AliasKeyPass>8525479D645855D8A342711DD129E36881D0051BA043979397B40FAB8E363C94DB04A3D7E3401C39C1CC5752FACFC338BAF83613042722C3164B45C2E5BA22DBC90AF35DEEDEA898D3C23B11722B</PF_AliasKeyPass>
         <PF_AliasKey>ryp</PF_AliasKey>
     </PropertyGroup>
     <ItemGroup>
@@ -421,7 +430,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Configuration="Release" Class="Android_SplashImage640">
+                <DeployFile LocalName="splash-large.png" Configuration="Release" Class="Android_SplashImage640">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -438,9 +447,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="OrangeStyle.style" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName="splash-small.png" Configuration="Release" Class="Android_SplashImage426">
                     <Platform Name="Android">
-                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -450,9 +459,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Configuration="Release" Class="Android_SplashImage426">
+                <DeployFile LocalName="OrangeStyle.style" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Android">
-                        <RemoteName>splash_image.png</RemoteName>
+                        <RemoteDir>.\assets\internal\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -472,7 +481,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Configuration="Debug" Class="Android_SplashImage426">
+                <DeployFile LocalName="splash-small.png" Configuration="Debug" Class="Android_SplashImage426">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -497,6 +506,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="splash.png" Configuration="Debug" Class="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_57x57.png" Configuration="Debug" Class="iPhone_AppIcon57">
                     <Platform Name="iOSDevice">
                         <Overwrite>true</Overwrite>
@@ -508,9 +523,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Configuration="Debug" Class="Android_SplashImage470">
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\release\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile">
                     <Platform Name="Android">
-                        <RemoteName>splash_image.png</RemoteName>
+                        <RemoteName>libFitzosApp.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -525,7 +540,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Configuration="Release" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="logo144_144.png" Configuration="Release" Class="Android_LauncherIcon144">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -542,7 +557,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Configuration="Release" Class="Android_SplashImage960">
+                <DeployFile LocalName="splash-xlarge.png" Configuration="Release" Class="Android_SplashImage960">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -570,7 +585,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Configuration="Release" Class="Android_SplashImage470">
+                <DeployFile LocalName="splash.png" Configuration="Release" Class="Android_SplashImage470">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -588,7 +603,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Configuration="Debug" Class="Android_SplashImage640">
+                <DeployFile LocalName="splash-large.png" Configuration="Debug" Class="Android_SplashImage640">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -606,6 +621,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\release\classes.dex" Configuration="Release" Class="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteName>classes.dex</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android\Release\splash_image_def.xml" Configuration="Release" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
                         <Overwrite>true</Overwrite>
@@ -619,6 +640,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_80x80.png" Configuration="Debug" Class="iPad_SpotLight80">
                     <Platform Name="iOSDevice">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\debug\classes.dex" Configuration="Debug" Class="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteName>classes.dex</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -659,6 +686,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_40x40.png" Configuration="Debug" Class="iPad_SpotLight40">
                     <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteName>libFitzosApp.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -711,7 +744,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Configuration="Release" Class="Android_LauncherIcon48">
+                <DeployFile LocalName="logo48_48.png" Configuration="Release" Class="Android_LauncherIcon48">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -735,6 +768,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteName>libFitzosApp.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_640x1136.png" Configuration="Debug" Class="iPhone_Launch640x1136">
                     <Platform Name="iOSSimulator">
                         <RemoteName>Default-568h@2x.png</RemoteName>
@@ -749,6 +788,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_40x40.png" Configuration="Debug" Class="iPhone_Spotlight40">
                     <Platform Name="iOSDevice">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\debug\x86\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteName>libFitzosApp.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -767,6 +812,12 @@
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_1536x2008.png" Configuration="Release" Class="iPad_Launch1536">
                     <Platform Name="iOSDevice">
                         <RemoteName>Default-Portrait@2x.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\release\armeabi\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteName>libFitzosApp.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -797,6 +848,10 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="RYP.sqlite" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteName>RYP.sqlite</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="iOSSimulator">
                         <RemoteName>RYP.sqlite</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -818,6 +873,10 @@
                         <RemoteName>RYP.sqlite</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
+                    <Platform Name="Android">
+                        <RemoteName>RYP.sqlite</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                 </DeployFile>
                 <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\release\classes.dex" Configuration="Release" Class="AndroidClassesDexFile">
                     <Platform Name="Android">
@@ -825,7 +884,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Configuration="Release" Class="Android_LauncherIcon36">
+                <DeployFile LocalName="logo36_36.png" Configuration="Release" Class="Android_LauncherIcon36">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -854,6 +913,10 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="RYP.sqlite" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteName>RYP.sqlite</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Win32">
                         <RemoteName>RYP.sqlite</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -988,6 +1051,10 @@
                         <RemoteName>RYP.sqlite</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
+                    <Platform Name="Android">
+                        <RemoteName>RYP.sqlite</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_50x50.png" Configuration="Debug" Class="iPad_SpotLight50">
                     <Platform Name="iOSSimulator">
@@ -1000,7 +1067,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Configuration="Debug" Class="Android_SplashImage960">
+                <DeployFile LocalName="splash-xlarge.png" Configuration="Debug" Class="Android_SplashImage960">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -1015,6 +1082,12 @@
                 <DeployFile LocalName="logo72_72.png" Configuration="Debug" Class="Android_LauncherIcon72">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\program files\embarcadero\studio\15.0\lib\android\release\x86\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteName>libFitzosApp.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1076,13 +1149,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Configuration="Release" Class="Android_LauncherIcon72">
+                <DeployFile LocalName="logo72_72.png" Configuration="Release" Class="Android_LauncherIcon72">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Configuration="Release" Class="Android_LauncherIcon96">
+                <DeployFile LocalName="logo96_96.png" Configuration="Release" Class="Android_LauncherIcon96">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -1090,6 +1163,11 @@
                 </DeployFile>
                 <DeployFile LocalName="RYP.sqlite" Configuration="Release" Class="File">
                     <Platform Name="iOSDevice">
+                        <RemoteName>RYP.sqlite</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                    <Platform Name="Android">
+                        <RemoteDir>assets\internal</RemoteDir>
                         <RemoteName>RYP.sqlite</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
