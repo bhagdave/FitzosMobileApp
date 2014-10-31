@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient;
+  IdTCPConnection, IdTCPClient, FMX.Notification;
 
 type
   TfrmTeamWall = class(TfrmBase)

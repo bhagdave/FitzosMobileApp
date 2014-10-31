@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   untBaseForm, FMX.Objects, FMX.Edit, untDataModule, FMX.ListView.Types,
   FMX.ListView, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components;
+  Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Notification,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
 
 type
   TfrmSearch = class(TfrmBase)

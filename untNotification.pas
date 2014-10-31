@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit,untDataModule, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient;
+  IdTCPConnection, IdTCPClient, FMX.Notification;
 
 type
   TfrmNotification = class(TfrmBase)
