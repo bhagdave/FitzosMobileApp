@@ -28,6 +28,14 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\assets\internal\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\x86\libnative-activity.so" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp\library\lib\x86\</RemoteDir>
             <RemoteName>libFitzosApp.so</RemoteName>
@@ -251,6 +259,14 @@
         <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_76x76.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>FM_ApplicationIcon_76x76.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -546,13 +562,54 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
     </ItemGroup>
-    <ItemGroup Condition="'$(Platform)'=='Win32'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win32'">
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='OSX32'">
         <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
             <RemoteDir>FitzosApp.app\Contents\MacOS\</RemoteDir>
             <RemoteName>libcgunwind.1.0.dylib</RemoteName>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -586,6 +643,14 @@
         <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_144x144.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>FM_ApplicationIcon_144x144.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -711,6 +776,14 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_1024x768.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>Default-Landscape~ipad.png</RemoteName>
@@ -809,5 +882,22 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
     </ItemGroup>
-    <ItemGroup Condition="'$(Platform)'=='Win64'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win64'">
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
 </Project>

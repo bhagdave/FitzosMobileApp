@@ -2491,6 +2491,7 @@ object dmdDataModule: TdmdDataModule
         'itzosMobileApp\RYP.sqlite'
       'LockingMode=Normal'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     BeforeConnect = fdConnectionBeforeConnect
     Left = 24
@@ -2516,6 +2517,16 @@ object dmdDataModule: TdmdDataModule
       FieldName = 'password'
       Origin = 'password'
       Required = True
+      Size = 32767
+    end
+    object fdLoginsalt: TStringField
+      FieldName = 'salt'
+      Origin = 'salt'
+      Size = 32767
+    end
+    object fdLogintype: TStringField
+      FieldName = 'type'
+      Origin = 'type'
       Size = 32767
     end
   end

@@ -281,6 +281,8 @@ type
     fdLogin: TFDTable;
     fdLoginlogin: TStringField;
     fdLoginpassword: TStringField;
+    fdLoginsalt: TStringField;
+    fdLogintype: TStringField;
     procedure reqNotificationsHTTPProtocolError(Sender: TCustomRESTRequest);
     procedure fdConnectionBeforeConnect(Sender: TObject);
   private

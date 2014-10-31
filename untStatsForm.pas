@@ -9,7 +9,7 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, FMX.Layouts, FMX.ListBox, FMX.Memo,
   FMX.DateTimeCtrls, FMX.Notification, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient;
+  IdTCPConnection, IdTCPClient, FMX.Controls.Presentation;
 
 type
   TfrmStats = class(TfrmBase)
@@ -151,3 +151,4 @@ RegisterFMXClasses([TfrmStats]);
 
 
 end.
+
