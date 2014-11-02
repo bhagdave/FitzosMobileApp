@@ -3590,4 +3590,10 @@ object frmMain: TfrmMain
     Left = 224
     Top = 376
   end
+  object fgActivityDialog: TfgActivityDialog
+    Message = 'Please, Wait'
+    Title = 'Loggin in'
+    Left = 256
+    Top = 48
+  end
 end

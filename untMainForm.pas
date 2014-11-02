@@ -8,7 +8,7 @@ uses
   FMX.ExtCtrls, FMX.Edit, IdBaseComponent, IdComponent, IdTCPConnection,
   IdTCPClient, FMX.Memo, IdHTTP, untDataModule,untNotifications,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,DBXJSON,
-  FMX.Objects, Rest.Client, FMX.Controls.Presentation;
+  FMX.Objects, Rest.Client, FMX.Controls.Presentation, FGX.ProgressDialog;
 
 type
   TfrmMain = class(TForm)
@@ -22,6 +22,7 @@ type
     AniIndicator1: TAniIndicator;
     idTCPConnection: TIdTCPClient;
     tmrConnected: TTimer;
+    fgActivityDialog: TfgActivityDialog;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -51,16 +52,17 @@ uses
 
 procedure TfrmMain.btnLoginClick(Sender: TObject);
 begin
-  if isConnected then
+  if Connected then
   begin
+    fgActivityDialog.Show;
+    fgActivityDialog.message := 'Opening session';
     //  open a session first.....
     dmdDataModule.openSession;
     dmdDataModule.reqLogin.Params.ParameterByName('signature').Value := dmdDataModule.signature('login');
     dmdDataModule.reqLogin.Params.ParameterByName('username').Value  := edtUsername.Text;
     dmdDataModule.reqLogin.Params.ParameterByName('password').Value  := edtPassword.Text;
     dmdDataModule.reqLogin.Params.ParameterByName('key').Value  := dmdDataModule.sessionKey;
-    AniIndicator1.Visible := true;
-    AniIndicator1.enabled := true;
+    fgActivityDialog.Message := 'Sending login details';
     mythread := dmdDataModule.reqLogin.ExecuteAsync(loginComplete, true, true);
     mythread.OnTerminate := threadTerminated;
   end;
@@ -130,10 +132,12 @@ procedure TfrmMain.loginComplete;
 var
   bLoggedIn : Boolean;
 begin
+  fgActivityDialog.Message := 'Creating menu';
   // check if valid or invalid... by getting the datamodule to check.
   bLoggedIn := dmdDataModule.checkLogin;
   if bLoggedIn then
   begin
+    fgActivityDialog.Hide;
     showNewForm('TfrmMenu');
   end
   else

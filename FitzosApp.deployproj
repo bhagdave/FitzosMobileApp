@@ -4,14 +4,6 @@
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <ItemGroup Condition="'$(Platform)'=='Android'">
-        <DeployFile Include="splash-large.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\res\drawable-large\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="splash-small.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
@@ -36,15 +28,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="splash-small.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp\res\drawable-small\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <Operation>1</Operation>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\assets\internal\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp\assets\internal\</RemoteDir>
             <RemoteName>RYP.sqlite</RemoteName>
             <Operation>0</Operation>
@@ -55,14 +47,6 @@
         <DeployFile Include="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\x86\libnative-activity.so" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp\library\lib\x86\</RemoteDir>
             <RemoteName>libFitzosApp.so</RemoteName>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="splash.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp\res\drawable-normal\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -85,14 +69,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="logo144_144.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\res\drawable-xxhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="Android\Release\styles.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
@@ -109,15 +85,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="splash-xlarge.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\res\drawable-xlarge\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="splash.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="splash.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <Operation>1</Operation>
@@ -125,9 +93,17 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="splash-large.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp\res\drawable-large\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
+        <DeployFile Include="logo144_144.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="logo72_72.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -165,6 +141,14 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="splash-xlarge.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-xlarge\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="Android\Release\libFitzosApp.so" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>libFitzosApp.so</RemoteName>
@@ -182,17 +166,17 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="logo48_48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\res\drawable-mdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
+        <DeployFile Include="c:\program files\embarcadero\studio\15.0\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libFitzosApp.so</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="c:\program files\embarcadero\studio\15.0\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp\library\lib\armeabi\</RemoteDir>
-            <RemoteName>libFitzosApp.so</RemoteName>
+        <DeployFile Include="logo48_48.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -214,10 +198,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\</RemoteDir>
-            <RemoteName>RYP.sqlite</RemoteName>
-            <Operation>0</Operation>
+        <DeployFile Include="splash-xlarge.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\res\drawable-xlarge\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -226,6 +210,22 @@
             <RemoteDir>FitzosApp\</RemoteDir>
             <RemoteName>RYP.sqlite</RemoteName>
             <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="splash-small.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\res\drawable-small\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="logo36_36.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-ldpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -238,9 +238,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="logo36_36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\res\drawable-ldpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
+        <DeployFile Include="splash-large.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FitzosApp\res\drawable-large\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -318,6 +318,14 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="splash.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-normal\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="c:\program files (x86)\embarcadero\studio\14.0\lib\android\debug\x86\libnative-activity.so" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp\library\lib\x86\</RemoteDir>
             <RemoteName>libFitzosApp.so</RemoteName>
@@ -329,6 +337,14 @@
         <DeployFile Include="c:\program files (x86)\embarcadero\studio\14.0\lib\android\debug\classes.dex" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp\classes\</RemoteDir>
             <RemoteName>classes.dex</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="logo96_96.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -350,25 +366,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\</RemoteDir>
-            <RemoteName>RYP.sqlite</RemoteName>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\classes.dex" Condition="'$(Config)'=='Debug'">
             <RemoteDir>FitzosApp\classes\</RemoteDir>
             <RemoteName>classes.dex</RemoteName>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="splash-xlarge.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp\res\drawable-xlarge\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -406,26 +406,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="logo72_72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\res\drawable-hdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
+        <DeployFile Include="splash-large.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp\res\drawable-large\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
             <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="logo96_96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\res\drawable-xhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp\assets\internal\</RemoteDir>
-            <RemoteName>RYP.sqlite</RemoteName>
-            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -467,6 +451,14 @@
         <DeployFile Include="$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_144x144.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp.app\</RemoteDir>
             <RemoteName>FM_ApplicationIcon_144x144.png</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
+            <RemoteDir>FitzosApp.app\</RemoteDir>
+            <RemoteName>RYP.sqlite</RemoteName>
             <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -746,14 +738,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
-            <RemoteDir>FitzosApp.app\</RemoteDir>
-            <RemoteName>RYP.sqlite</RemoteName>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Win32'">
         <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
@@ -783,14 +767,6 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp.app\Contents\MacOS\</RemoteDir>
-            <RemoteName>RYP.sqlite</RemoteName>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp.app\Contents\MacOS\</RemoteDir>
             <RemoteName>RYP.sqlite</RemoteName>
             <Operation>0</Operation>
@@ -1068,14 +1044,6 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Win64'">
         <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FitzosApp\</RemoteDir>
-            <RemoteName>RYP.sqlite</RemoteName>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="RYP.sqlite" Condition="'$(Config)'=='Release'">
             <RemoteDir>FitzosApp\</RemoteDir>
             <RemoteName>RYP.sqlite</RemoteName>
             <Operation>0</Operation>
