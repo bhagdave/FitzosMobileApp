@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
-  FMX.StdCtrls, FMX.Objects, untDataModule;
+  FMX.StdCtrls, FMX.Objects, untDataModule, FGX.ProgressDialog;
 
 type
   TfrmMenu = class(TForm)
@@ -29,6 +29,7 @@ type
     imgFriends: TImage;
     imgSports: TImage;
     imgProfile: TImage;
+    fgActivityDialog: TfgActivityDialog;
     procedure btnEventsClick(Sender: TObject);
     procedure btnFriendsClick(Sender: TObject);
     procedure btnNotificationsClick(Sender: TObject);
@@ -38,8 +39,10 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
+    procedure showActivityDialog(Title,Mesg : String);
   public
     { Public declarations }
   end;
@@ -54,38 +57,49 @@ uses
 
 procedure TfrmMenu.btnEventsClick(Sender: TObject);
 begin
+  showActivityDialog('Loading Events','Please wait');
   shownewForm('TFrmEvents');
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.btnFriendsClick(Sender: TObject);
 begin
-  lblFriends.Text := 'Loading...';
+  showActivityDialog('Loading Friends','Please wait');
   showNewForm('TfrmFriends');
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.btnNotificationsClick(Sender: TObject);
 begin
+  showActivityDialog('Loading Notifications','Please wait');
   showNewForm('TfrmNotifications');
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.btnProfileClick(Sender: TObject);
 begin
+  showActivityDialog('Loading Profile','Please wait');
   showNewFormWithId('TfrmProfile',dmdDataModule.memberId);
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.btnSportsClick(Sender: TObject);
 begin
+  showActivityDialog('Loading Sports','Please wait');
   showNewForm('TfrmSports');
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.btnTeamsClick(Sender: TObject);
 begin
+  showActivityDialog('Loading Teams','Please wait');
   showNewForm('TfrmTeams');
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.FormActivate(Sender: TObject);
 begin
-  lblFriends.Text := 'Friends';
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.FormCreate(Sender: TObject);
@@ -104,6 +118,11 @@ begin
     {$ENDIF}
     if Style<> nil then
         TStyleManager.SetStyle(Style);
+end;
+
+procedure TfrmMenu.FormDeactivate(Sender: TObject);
+begin
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmMenu.FormResize(Sender: TObject);
@@ -138,6 +157,13 @@ begin
     lblSports.Visible := true;
     lblProfile.Visible := true;
   end;
+end;
+
+procedure TfrmMenu.showActivityDialog(Title, Mesg: String);
+begin
+  fgActivityDialog.Title := title;
+  fgActivityDialog.Message := Mesg;
+  fgActivityDialog.Show;
 end;
 
 initialization

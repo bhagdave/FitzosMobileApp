@@ -31,6 +31,7 @@ type
     function connected : boolean;
     procedure showNoConnectionMessage;
     procedure showmessage(sMessage:String);
+    procedure showActivityDialog(Title, Mesg: String);
   public
     { Public declarations }
     function getSelectedValue(AObject : TObject): TValue;
@@ -102,6 +103,13 @@ end;
 procedure TfrmBase.setId(sId: String);
 begin
   fId := sId;
+end;
+
+procedure TfrmBase.showActivityDialog(Title, Mesg: String);
+begin
+  fgActivityDialog.Title := title;
+  fgActivityDialog.Message := Mesg;
+  fgActivityDialog.Show;
 end;
 
 procedure TfrmBase.showmessage(sMessage: String);
