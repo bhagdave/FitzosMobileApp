@@ -258,6 +258,7 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
+        <AUP_INTERNET>true</AUP_INTERNET>
         <Debugger_RunParams>-cleaninstall</Debugger_RunParams>
         <DCC_UnitSearchPath>E:\XE7\Library;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
