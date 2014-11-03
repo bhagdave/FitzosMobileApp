@@ -5960,4 +5960,10 @@ object frmBase: TfrmBase
     Left = 104
     Top = 105
   end
+  object fgActivityDialog: TfgActivityDialog
+    Message = 'Please, Wait'
+    Title = 'Loading Data'
+    Left = 256
+    Top = 48
+  end
 end

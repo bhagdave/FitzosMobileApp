@@ -142,6 +142,7 @@ begin
   end
   else
   begin
+      fgActivityDialog.Hide;
       showmessage('Error in login!');
   end;
 end;

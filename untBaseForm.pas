@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
   FMX.Objects, FMX.StdCtrls, untDataModule, Data.Bind.Components, System.RTTI,
-  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification;
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification,
+  FGX.ProgressDialog;
 
 type
   TfrmBase = class(TForm)
@@ -18,6 +19,7 @@ type
     btnBack: TButton;
     idTCPConnection: TIdTCPClient;
     Notifications: TNotificationCenter;
+    fgActivityDialog: TfgActivityDialog;
     procedure edtSearchExit(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
