@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient;
+  IdComponent, IdTCPConnection, IdTCPClient, FGX.ProgressDialog,
+  FMX.Notification;
 
 type
   TfrmFriends = class(TfrmBase)
@@ -31,6 +32,7 @@ type
     procedure lvRequestsButtonClick(const Sender: TObject;
       const AItem: TListViewItem; const AObject: TListItemSimpleControl);
     procedure tmrRemoveTimer(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
     procedure friendsLoaded;
@@ -61,6 +63,7 @@ end;
 procedure TfrmFriends.FormActivate(Sender: TObject);
 begin
   inherited;
+  showActivityDialog('Loading friends','Please wait');
   if connected then
   begin
     with dmdDataModule do
@@ -82,6 +85,12 @@ begin
     showmessage('No internet connection at the moment');
     close;
   end;
+end;
+
+procedure TfrmFriends.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmFriends.friendsLoaded;
@@ -122,6 +131,7 @@ var
 begin
   inherited;
   LValue := GetSelectedValue(lvFriends);
+  showActivityDialog('Creating friend page','Please wait');
   showNewFormWithId('TfrmFriend',lValue.ToString);
 end;
 
@@ -158,6 +168,7 @@ begin
   inherited;
   if connected then
   begin
+    showActivityDialog('Deleting request','Please wait');
     LValue := GetSelectedValue(lvRequests);
     tmrRemove.Tag := aindex;
     tmrRemove.Enabled := true;
@@ -168,6 +179,7 @@ begin
       reqGeneric.Params.addItem('id',lValue.ToString);
       reqGeneric.Execute;
     end;
+    fgActivityDialog.Hide;
   end
   else
   begin
@@ -191,6 +203,7 @@ begin
     pnlRequests.Visible := false;
     btnRequests.Visible := false;
   end;
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmFriends.threadTerminated(Sender: TObject);
