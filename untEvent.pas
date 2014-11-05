@@ -9,7 +9,7 @@ uses
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.ListView.Types,
   FMX.ListView, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
-  FMX.Notification;
+  FMX.Notification, FGX.ProgressDialog;
 
 type
   TfrmEvent = class(TfrmBase)
@@ -37,6 +37,7 @@ type
     procedure btnPostClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnAttendClick(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
     bOwner : Boolean;
@@ -64,6 +65,7 @@ begin
   inherited;
   if connected then
   begin
+    showActivityDialog('Recording attendance','Please wait');
     with dmdEvent do
     begin
       reqGeneric.Resource := 'r/events/acceptInvite';
@@ -85,6 +87,7 @@ end;
 procedure TfrmEvent.btnEditClick(Sender: TObject);
 begin
   inherited;
+  showActivityDialog('Event Edit','Loading all data');
   showNewFormWithId('TfrmEventCreation',id);
 end;
 
@@ -98,6 +101,7 @@ begin
     sMessage := inputbox('Wall Message','Please enter your post','');
     if (sMessage <> '') then
     begin
+      showActivityDialog('Posting message','Please wait');
       postWallMessage(sMessage);
     end;
   end
@@ -143,6 +147,7 @@ begin
           btnAttend.Visible := not bAttending;
       end;
   end;
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmEvent.eventThreadTerminated(Sender: TObject);
@@ -154,6 +159,7 @@ procedure TfrmEvent.FormActivate(Sender: TObject);
 begin
   if connected then
   begin
+    showActivityDialog('Loading event','Please wait');
     getEventData();
   end
   else
@@ -165,11 +171,18 @@ end;
 
 
 
+procedure TfrmEvent.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+  fgActivityDialog.Hide;
+end;
+
 procedure TfrmEvent.getEventData;
 begin
   with dmdEvent do
   begin
       // Open up the data.
+      fgActivityDialog.Message := 'Loading all event data';
       rdsaEvent.ClearDataSet;
       fdmEvent.Close;
       respAllEventData.Content.Empty;
@@ -191,6 +204,7 @@ var
 begin
   inherited;
   LValue := GetSelectedValue(lvAttending);
+  showActivityDialog('Loading friend details','Please wait');
   showNewFormWithId('TfrmFriend',lValue.ToString);
 end;
 
