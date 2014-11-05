@@ -1,6 +1,7 @@
 inherited frmEventCreation: TfrmEventCreation
   Caption = 'Event Creation'
   ClientHeight = 460
+  OnDeactivate = FormDeactivate
   OnShow = FormShow
   DesignerMasterStyle = 2
   inherited barBottom: TToolBar
@@ -182,7 +183,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TabOrder = 0
             object edtDate: TDateEdit
-              Date = 41946.000000000000000000
+              Date = 41948.000000000000000000
               TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Position.X = 144.000000000000000000
@@ -194,7 +195,7 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblStartDate: TLabel
               Align = FitLeft
-              Size.Width = 92.999969482421880000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'Start Date'
@@ -211,14 +212,14 @@ inherited frmEventCreation: TfrmEventCreation
               IsEmpty = True
               Time = 0.622222222222222200
               Align = Client
-              Size.Width = 227.000030517578100000
+              Size.Width = 227.000015258789100000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 0
             end
             object lblStartTime: TLabel
               Align = FitLeft
-              Size.Width = 92.999969482421880000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'Start Time'
@@ -232,7 +233,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TabOrder = 2
             object edtEndDate: TDateEdit
-              Date = 41946.000000000000000000
+              Date = 41948.000000000000000000
               TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Position.X = 144.000000000000000000
@@ -244,7 +245,7 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblEndDate: TLabel
               Align = FitLeft
-              Size.Width = 92.999969482421880000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'End Date'
@@ -261,14 +262,14 @@ inherited frmEventCreation: TfrmEventCreation
               IsEmpty = True
               Time = 0.622222222222222200
               Align = Client
-              Size.Width = 227.000030517578100000
+              Size.Width = 227.000015258789100000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 0
             end
             object lblEndTime: TLabel
               Align = FitLeft
-              Size.Width = 92.999969482421880000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'End Time'

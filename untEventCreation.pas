@@ -64,6 +64,7 @@ type
     procedure btnTimesNextClick(Sender: TObject);
     procedure btnSubmitClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
     procedure getSportsAndTeams;
@@ -143,6 +144,7 @@ begin
       // if we have an id then updatre otherwise insert
       if id <> '' then
       begin
+        showActivityDialog('Saving event details','Please wait');
         // update
         addParams(dmdEvent.reqUpdateEvent);
         dmdEvent.reqUpdateEvent.ExecuteAsync(saveCompleted);
@@ -178,12 +180,20 @@ begin
       edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
       cboPrivacy.ItemIndex := 0;
       cboType.ItemIndex := 0;
+      fgActivityDialog.Hide;
   end;
+end;
+
+procedure TfrmEventCreation.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmEventCreation.FormShow(Sender: TObject);
 begin
   inherited;
+  showActivityDialog('Loading data','Please wait');
   edtDate.Align := TAlignLayout.client;
   edtEndDate.Align := TAlignLayout.Client;
   if connected then
@@ -230,6 +240,7 @@ procedure TfrmEventCreation.getSportsAndTeams;
 begin
   with dmdEvent do
   begin
+    fgActivityDialog.Message := 'Loading sports and teams';
     // Open up the data.
     fdmSports.Close;
     reqSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
@@ -245,6 +256,7 @@ end;
 
 procedure TfrmEventCreation.saveCompleted;
 begin
+  fgActivityDialog.Hide;
   if id <> '' then
   begin
     showmessage('Event saved!');
@@ -293,6 +305,7 @@ var
   invalid : boolean;
   errors  : String;
 begin
+  fgActivityDialog.Message := 'Validating event data';
   invalid := false;
   if not(edtName.Text <> '') then
   begin
@@ -318,6 +331,7 @@ begin
     cboTeam.SetFocus;
     errors := errors + 'Team';
   end;
+  fgActivityDialog.Hide;
   if invalid then
     showmessage('Please complete the following fields ' + errors);
   result := invalid;
