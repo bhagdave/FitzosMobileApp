@@ -2,6 +2,7 @@ inherited frmEvents: TfrmEvents
   Caption = 'Events'
   ClientHeight = 460
   StyleLookup = 'panelstyle'
+  OnDeactivate = FormDeactivate
   OnShow = FormShow
   DesignerMasterStyle = 2
   inherited barBottom: TToolBar
@@ -3219,7 +3220,7 @@ inherited frmEvents: TfrmEvents
         item
         end>
       IsSelected = False
-      Size.Width = 107.000000000000000000
+      Size.Width = 105.000000000000000000
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -3242,7 +3243,7 @@ inherited frmEvents: TfrmEvents
         item
         end>
       IsSelected = True
-      Size.Width = 107.000000000000000000
+      Size.Width = 106.000000000000000000
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -3265,7 +3266,7 @@ inherited frmEvents: TfrmEvents
         item
         end>
       IsSelected = False
-      Size.Width = 106.000000000000000000
+      Size.Width = 105.000000000000000000
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0

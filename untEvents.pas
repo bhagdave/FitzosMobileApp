@@ -38,6 +38,7 @@ type
     procedure btnRefreshClick(Sender: TObject);
     procedure lvUpcomingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
    procedure threadTerminated(Sender : TObject);
@@ -66,12 +67,14 @@ var
 procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
 begin
   inherited;
+  showActivityDialog('Loading event creation','Please wait');
   showNewFormWithId('TfrmEventCreation','');
 end;
 
 procedure TfrmEvents.btnRefreshClick(Sender: TObject);
 begin
   inherited;
+    showActivityDialog('Refreshing data','Please wait');
   getEvents();
 end;
 
@@ -89,9 +92,16 @@ begin
     loadInvites();
 end;
 
+procedure TfrmEvents.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+  fgActivityDialog.Hide;
+end;
+
 procedure TfrmEvents.FormShow(Sender: TObject);
 begin
   inherited;
+  showActivityDialog('Loading all data','Please wait');
   getEvents();
 end;
 
@@ -99,6 +109,7 @@ procedure TfrmEvents.getEvents;
 begin
   if connected then
   begin
+    fgActivityDialog.Message := 'Loading events';
     with dmdDataModule do
     begin
       // Open up the data.
@@ -138,6 +149,7 @@ end;
 
 procedure TfrmEvents.loadInvites;
 begin
+    fgActivityDialog.Message := 'Loading invites';
     // get the event invites.
     dmdEvent.reqEventInvites.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
     dmdEvent.reqEventInvites.ExecuteAsync(invitesLoaded);
@@ -145,6 +157,7 @@ end;
 
 procedure TfrmEvents.loadUpcoming;
 begin
+  fgActivityDialog.Message := 'Loading upcoming events';
   dmdEvent.rdsaUpcomingEvents.ClearDataSet;
   dmdEvent.fdmUpcomingEvents.Close;
   dmdEvent.respUpcomingEvents.Content.Empty;
@@ -160,6 +173,7 @@ var
   LValue : TValue;
 begin
   inherited;
+  showActivityDialog('Going to required event','Please wait');
   LValue := GetSelectedValue(lvEvents);
   showNewFormWithId('TfrmEvent',LValue.ToString);
 end;
@@ -187,6 +201,7 @@ procedure TfrmEvents.lvInvitesItemClick(const Sender: TObject;
 var
   lValue : TValue;
 begin
+  showActivityDialog('Showing event','Please wait');
   lValue := GetSelectedValue(lvInvites);
   ShowNewFormWithId('TfrmEvent',LValue.ToString);
 end;
@@ -196,6 +211,7 @@ procedure TfrmEvents.lvUpcomingItemClick(const Sender: TObject;
 var
   lValue : TValue;
 begin
+  showActivityDialog('Showing event','Please wait');
   lValue := GetSelectedValue(lvUpcoming);
   ShowNewFormWithId('TfrmEvent',LValue.ToString);
 end;
