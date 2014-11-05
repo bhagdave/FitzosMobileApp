@@ -9,7 +9,7 @@ uses
   IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts, FMX.ListView.Types,
-  FMX.ListView, FMX.Notification ;
+  FMX.ListView, FMX.Notification, FGX.ProgressDialog ;
 
 type
   TfrmFriend = class(TfrmBase)
@@ -29,6 +29,7 @@ type
     BeFriend: TButton;
     procedure FormActivate(Sender: TObject);
     procedure BeFriendClick(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
     procedure getProfile();
@@ -54,6 +55,7 @@ var
   sResult : String;
 begin
   inherited;
+  showActivityDialog('Making a friend','Please wait');
   if connected then
   begin
     with dmdDataModule do
@@ -68,11 +70,13 @@ begin
       sResult := getResultString(respGeneric.Content);
         if (sResult = 'OK') then
         begin
+          fgActivityDialog.Hide;
           showmessage('Friend request requested!');
           self.close;
         end
         else
         begin
+          fgActivityDialog.Hide;
           showmessage('Friend request failed please try again later!');
         end;
     end;
@@ -90,6 +94,7 @@ var
 begin
   with dmdDataModule do
   begin
+    fgActivityDialog.Message := 'Checking to see if a friend';
     reqGeneric.Params.Clear;
     reqGeneric.Resource := 'r/members/isFriends';
     reqGeneric.Params.addItem('user',id);
@@ -115,10 +120,12 @@ begin
   imgUser.Visible := false;
   if connected then
   begin
+    showActivityDialog('Getting profile data','Please wait');
     getMember();
     getMemberSports();
     getProfile();
     checkIfFriends();
+    fgActivityDialog.Hide;
   end
   else
   begin
@@ -127,11 +134,18 @@ begin
   end;
 end;
 
+procedure TfrmFriend.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+ fgActivityDialog.Hide;
+end;
+
 procedure TfrmFriend.getMember;
 var
   sResult : String;
   sURL    : String;
 begin
+  fgActivityDialog.Message := 'Getting member details';
   with dmdDataModule do
   begin
       // Open up the data.
@@ -161,6 +175,7 @@ procedure TfrmFriend.getMemberSports;
 var
   sResult : String;
 begin
+  fgActivityDialog.Message := 'Getting member sports';
   with dmdDataModule do
   begin
       rdsaMemberSports.ClearDataSet;
@@ -184,6 +199,7 @@ procedure TfrmFriend.getProfile;
 var
   sResult : String;
 begin
+  fgActivityDialog.Message := 'Getting user profile';
   // ok lets try and get some data
   with dmdDataModule do
   begin
@@ -208,6 +224,7 @@ procedure TfrmFriend.loadPicture(sURL : String);
 var
     M: TMemoryStream;
 begin
+  fgActivityDialog.Message := 'Getting member picture';
   try
     if sUrl <> '' then
     begin
