@@ -1,28 +1,26 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'E:\FitzosMobileApp\untMenuForm.pas',0,1,105,25,125,0,0,,
-File_1=TSourceModule,'E:\FitzosMobileApp\untProfile.pas',0,1,16,17,37,0,0,,
-File_2=TSourceModule,'E:\FitzosMobileApp\untNotification.pas',0,1,52,5,67,0,0,,
+File_0=TSourceModule,'E:\FitzosMobileApp\untEventCreation.pas',0,1,303,44,324,0,0,,
+File_1=TSourceModule,'E:\FitzosMobileApp\untFormRegistry.pas',0,1,34,41,73,0,0,,
+File_2=TSourceModule,'E:\FitzosMobileApp\untEvents.pas',0,1,189,1,229,0,0,,
+File_3=TSourceModule,'E:\FitzosMobileApp\untEvent.pas',0,1,1,18,82,0,0,,
+File_4=TSourceModule,'E:\FitzosMobileApp\untMenuForm.pas',0,1,105,25,125,0,0,,
+File_5=TSourceModule,'E:\FitzosMobileApp\untProfile.pas',0,1,16,17,37,0,0,,
+File_6=TSourceModule,'E:\FitzosMobileApp\untNotification.pas',0,1,52,5,67,0,0,,
 
 [Modules]
-Module0=E:\FitzosMobileApp\untEventCreation.pas
-Module1=E:\FitzosMobileApp\untFormRegistry.pas
-Module2=E:\FitzosMobileApp\untEvents.pas
-Module3=E:\FitzosMobileApp\untBaseForm.pas
-Module4=E:\FitzosMobileApp\untMainForm.pas
-Count=5
+Module0=E:\FitzosMobileApp\untFriends.pas
+Module1=E:\FitzosMobileApp\untFriend.pas
+Module2=E:\FitzosMobileApp\untBaseForm.pas
+Module3=E:\FitzosMobileApp\untMainForm.pas
+Count=4
 EditWindowCount=1
 
-[E:\FitzosMobileApp\untEventCreation.pas]
+[E:\FitzosMobileApp\untFriends.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=1
-
-[E:\FitzosMobileApp\untFormRegistry.pas]
-ModuleType=TSourceModule
-FormState=0
 FormOnTop=0
 
-[E:\FitzosMobileApp\untEvents.pas]
+[E:\FitzosMobileApp\untFriend.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
@@ -35,25 +33,23 @@ FormOnTop=0
 [E:\FitzosMobileApp\untMainForm.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=1
-
-[E:\FitzosMobileApp\untDataModule.pas]
-FormState=1
 FormOnTop=0
 
 [E:\FitzosMobileApp\untEventDataModule.pas]
 FormState=1
 FormOnTop=0
 
+[E:\FitzosMobileApp\untDataModule.pas]
+FormState=1
+FormOnTop=0
+
 [EditWindow0]
-ViewCount=6
-CurrentView=5
+ViewCount=4
+CurrentEditView=E:\FitzosMobileApp\untFriends.pas
 View0=0
 View1=1
 View2=2
 View3=3
-View4=4
-View5=5
 PercentageSizes=1
 Create=1
 Visible=1
@@ -86,20 +82,20 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untMainForm.pas
-CursorX=3
-CursorY=114
+CursorX=52
+CursorY=148
 TopLine=114
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=Borland.FormDesignerView
+EditViewName=E:\FitzosMobileApp\untMainForm.pas
 
 [View1]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untBaseForm.pas
-CursorX=48
-CursorY=63
-TopLine=29
+CursorX=33
+CursorY=34
+TopLine=8
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -107,39 +103,25 @@ EditViewName=E:\FitzosMobileApp\untBaseForm.pas
 
 [View2]
 CustomEditViewType=TEditView
-Module=E:\FitzosMobileApp\untEvents.pas
-CursorX=1
-CursorY=95
-TopLine=92
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=E:\FitzosMobileApp\untEvents.pas
-
-[View3]
-CustomEditViewType=TEditView
-Module=E:\FitzosMobileApp\untFormRegistry.pas
-CursorX=41
-CursorY=73
-TopLine=34
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=E:\FitzosMobileApp\untFormRegistry.pas
-
-[View4]
-CustomEditViewType=TEditView
-Module=E:\FitzosMobileApp\untEventCreation.pas
-CursorX=1
-CursorY=1
+Module=E:\FitzosMobileApp\untFriend.pas
+CursorX=36
+CursorY=24
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=Borland.FormDesignerView
+EditViewName=E:\FitzosMobileApp\untFriend.pas
 
-[View5]
-CustomEditViewType=TOTACustomEditView
+[View3]
+CustomEditViewType=TEditView
+Module=E:\FitzosMobileApp\untFriends.pas
+CursorX=6
+CursorY=224
+TopLine=184
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=E:\FitzosMobileApp\untFriends.pas
 
 [Watches]
 Count=0
@@ -282,8 +264,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Caption,Action
-ExpandedItems="LiveBindings Designer=0",Anchors=0,BitmapMargins=0,LiveBindings=0,Font=0,Margins=0,Padding=0,Position=0,RotationCenter=0,Scale=0,Size=0,StyledSettings=0,Corners=0,Fill=1,Sides=0,Stroke=1,Touch=0,Stroke.Bitmap=0,Stroke.Resource=0,Fill.Bitmap=0,Fill.Resource=0,Border=0,BorderIcons=0,FormFactor=0
+SelectedItem=Action,OnDeactivate
+ExpandedItems=Border=0,BorderIcons=0,Fill=0,FormFactor=0,"LiveBindings Designer=0",Padding=0
 
 [ModelViewTool]
 PercentageSizes=1

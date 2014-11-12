@@ -32,6 +32,7 @@ object dmdSignup: TdmdSignup
     Top = 80
   end
   object respCheckExists: TRESTResponse
+    ContentType = 'text/html'
     Left = 40
     Top = 136
   end
