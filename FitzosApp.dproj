@@ -258,6 +258,8 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
+        <AUP_CHANGE_NETWORK_STATE>true</AUP_CHANGE_NETWORK_STATE>
+        <AUP_CHANGE_WIFI_STATE>true</AUP_CHANGE_WIFI_STATE>
         <AUP_INTERNET>true</AUP_INTERNET>
         <Debugger_RunParams>-cleaninstall</Debugger_RunParams>
         <DCC_UnitSearchPath>E:\XE7\Library;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
