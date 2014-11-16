@@ -128,6 +128,7 @@ begin
   end
   else
   begin
+    fgActivityDialog.Hide;
     showmessage('No internet connection at the moment');
     close;
   end;
@@ -145,6 +146,7 @@ begin
   end else
   begin
   end;
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmEvents.loadInvites;

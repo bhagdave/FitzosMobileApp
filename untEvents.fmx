@@ -3211,7 +3211,7 @@ inherited frmEvents: TfrmEvents
     Size.Height = 416.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 30.000000000000000000
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 19
     TabPosition = Top
     object tabMine: TTabItem
@@ -3219,7 +3219,7 @@ inherited frmEvents: TfrmEvents
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 105.000000000000000000
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
@@ -3242,7 +3242,7 @@ inherited frmEvents: TfrmEvents
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 106.000000000000000000
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
