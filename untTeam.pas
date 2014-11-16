@@ -9,7 +9,7 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts,
   FMX.ListBox, Rest.client, Rest.Types, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient;
+  IdTCPConnection, IdTCPClient, FGX.ProgressDialog, FMX.Notification;
 
 type
   TfrmTeam = class(TfrmBase)
@@ -90,6 +90,7 @@ var
 begin
   if connected then
   begin
+    showActivityDialog('Inviting friend','Please wait!');
     sParams := '[';
     for i := 0 to lbFriends.Items.Count - 1 do
     begin
@@ -119,6 +120,7 @@ begin
       dmdDataModule.reqGeneric.Params.addItem('team',id);
       dmdDataModule.reqGeneric.Execute;
     end;
+    fgActivityDialog.Hide;
   end
   else
   begin
@@ -128,6 +130,7 @@ end;
 
 procedure TfrmTeam.FormActivate(Sender: TObject);
 begin
+  showActivityDialog('Loading Team','Please wait');
   inherited;
   if connected then
   begin
@@ -234,6 +237,7 @@ begin
 //          btnNewEvent.Visible := bOwner;
       end;
   end;
+  fgActivityDialog.Hide;
 end;
 
 initialization
