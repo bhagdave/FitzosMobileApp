@@ -130,7 +130,7 @@ inherited frmTeam: TfrmTeam
             HeaderAppearanceClassName = 'TListHeaderObjects'
             FooterAppearanceClassName = 'TListHeaderObjects'
             Align = Client
-            Size.Width = 200.000000000000000000
+            Size.Width = 320.000000000000000000
             Size.Height = 118.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0

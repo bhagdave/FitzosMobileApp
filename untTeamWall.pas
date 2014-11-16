@@ -8,7 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient, FMX.Notification;
+  IdTCPConnection, IdTCPClient, FMX.Notification, FGX.ProgressDialog;
 
 type
   TfrmTeamWall = class(TfrmBase)
@@ -21,6 +21,7 @@ type
     { Private declarations }
     procedure getWall();
     procedure teamLoaded();
+    procedure OnPostClose(const AResult: TModalResult; const AValues: array of string);
   public
     { Public declarations }
   end;
@@ -33,33 +34,10 @@ uses
 {$R *.fmx}
 procedure TfrmTeamWall.btnPostClick(Sender: TObject);
 var
-  sPost : String;
+  Values: array[0 .. 0] of String;
 begin
-  if connected then
-  begin
-    if InputQuery('Post','Please enter your message',sPost) and (sPost.Trim <> '') then
-    begin
-      with dmdDataModule do
-      begin
-        rdsaGeneric.ClearDataSet;
-        respGeneric.Content.Empty;
-        reqGeneric.Params.Clear;
-        reqGeneric.ClearBody;
-        reqGeneric.Resource := 'r/teams/addWallPost';
-        reqGeneric.Params.addItem('team_id',ID);
-        reqGeneric.Params.addItem('message',sPost);
-        reqGeneric.Params.addItem('signature',signature('addWallPost'));
-        reqGeneric.Params.addItem('member_id',memberId);
-        reqGeneric.Params.addItem('key',getApiKey);
-        reqGeneric.Execute;
-        getWall();
-      end;
-    end;
-  end
-  else
-  begin
-    showmessage('No internet connection at the moment');
-  end;
+  Values[0] := String.Empty;
+  InputQuery('Enter New Post', ['Post'], Values, Self.OnPostClose)
 end;
 
 procedure TfrmTeamWall.getWall();
@@ -79,6 +57,42 @@ begin
   end;
 end;
 
+procedure TfrmTeamWall.OnPostClose(const AResult: TModalResult;
+  const AValues: array of string);
+var
+  WallPost: String;
+begin
+  WallPost := string.Empty;
+  if AResult <> mrOk then
+    Exit;
+  WallPost := AValues[0];
+  try
+    if (WallPost.Trim <> '')
+    then
+    begin
+      with dmdDataModule do
+      begin
+        rdsaGeneric.ClearDataSet;
+        respGeneric.Content.Empty;
+        reqGeneric.Params.Clear;
+        reqGeneric.ClearBody;
+        reqGeneric.Resource := 'r/teams/addWallPost';
+        reqGeneric.Params.addItem('team_id',ID);
+        reqGeneric.Params.addItem('message',WallPost);
+        reqGeneric.Params.addItem('signature',signature('addWallPost'));
+        reqGeneric.Params.addItem('member_id',memberId);
+        reqGeneric.Params.addItem('key',getApiKey);
+        reqGeneric.Execute;
+        getWall();
+      end;
+    end;
+  except
+    on e: Exception do
+    begin
+      ShowMessage(e.Message);
+    end;
+ end;
+end;
 procedure TfrmTeamWall.teamLoaded;
 var
   sResult : String;
