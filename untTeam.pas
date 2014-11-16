@@ -48,6 +48,7 @@ type
     procedure btnInviteClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnSendClick(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
     procedure teamLoaded();
@@ -141,6 +142,12 @@ begin
     showmessage('No internet connection at the moment');
     close;
   end;
+end;
+
+procedure TfrmTeam.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmTeam.getTeam(sTeam: String);

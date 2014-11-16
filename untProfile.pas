@@ -10,7 +10,7 @@ uses
   FMX.Objects, System.Actions, FMX.ActnList, FMX.StdActns,
   FMX.MediaLibrary.Actions, untDataModule, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components,
-  FMX.EditBox, FMX.NumberBox, FMX.Controls.Presentation;
+  FMX.EditBox, FMX.NumberBox, FMX.Controls.Presentation, FGX.ProgressDialog;
 
 type
   TfrmProfile = class(TForm)
@@ -61,12 +61,14 @@ type
     LinkControlToField3: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
+    fgActivityDialog: TfgActivityDialog;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
     procedure setupCheckBoxes();
@@ -96,6 +98,9 @@ var
   Height, weight : Double;
 begin
 //  sNickname := edtNickname.Text;
+  fgActivityDialog.Title := 'Saving profile';
+  fgActivityDialog.Message := 'Please wait!';
+  fgActivityDialog.Show();
   multiStream := TIdMultiPartFormDataStream.Create;
   mStream := TMemoryStream.Create();
   try
@@ -147,13 +152,16 @@ begin
     multiStream.Free;
     mStream.Free;
   end;
-  close;
+  fgActivityDialog.Hide();
 end;
 
 procedure TfrmProfile.FormActivate(Sender: TObject);
 var
   sResult : String;
 begin
+  fgActivityDialog.Title := 'Loading profile';
+  fgActivityDialog.message := 'Please Wait';
+  fgActivityDialog.Show();
   with dmdDataModule do
   begin
     // Open up the data.
@@ -175,6 +183,7 @@ begin
         loadPicture(fdmProfileimage.AsString);
     end;
   end;
+  fgActivityDialog.hide;
 end;
 
 procedure TfrmProfile.FormCreate(Sender: TObject);
@@ -194,6 +203,11 @@ begin
         TStyleManager.SetStyle(Style);
 end;
 
+procedure TfrmProfile.FormDeactivate(Sender: TObject);
+begin
+  fgActivityDialog.Hide;
+end;
+
 procedure TfrmProfile.loadPicture(sUrl : String);
 var
   m : TMemoryStream;
@@ -201,7 +215,6 @@ begin
 try
     if sUrl <> '' then
     begin
-    showmessage(sUrl);
       M := TMemoryStream.Create();
      IdHTTPImage.Get(sURL,M);
      M.Seek(0,0);
