@@ -5942,6 +5942,24 @@ object frmBase: TfrmBase
     Size.Height = 471.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
+    object pnlSaved: TCalloutPanel
+      Align = Center
+      Padding.Top = 11.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 305.000000000000000000
+      Size.PlatformDefault = False
+      Visible = False
+      TabOrder = 1
+      CalloutWidth = 23.000000000000000000
+      CalloutLength = 11.000000000000000000
+      CalloutPosition = Bottom
+      object lblSaveMessage: TLabel
+        Align = Center
+        Size.Width = 165.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
   end
   object StyleBook1: TStyleBook
     FileName = 'OrangeStyle.style'

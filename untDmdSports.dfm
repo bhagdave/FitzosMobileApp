@@ -6,7 +6,7 @@ object dmdSports: TdmdSports
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
-    BaseURL = 'http://www.reach-your-peak.com/api'
+    BaseURL = 'https://www.reach-your-peak.com/api'
     Params = <>
     HandleRedirects = True
     Left = 32
@@ -48,6 +48,7 @@ object dmdSports: TdmdSports
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 48
     Top = 260
@@ -127,6 +128,7 @@ object dmdSports: TdmdSports
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 141
     Top = 252
@@ -203,6 +205,7 @@ object dmdSports: TdmdSports
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 256
     Top = 256
@@ -274,6 +277,7 @@ object dmdSports: TdmdSports
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 360
     Top = 264

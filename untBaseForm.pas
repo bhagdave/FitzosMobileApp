@@ -20,6 +20,8 @@ type
     idTCPConnection: TIdTCPClient;
     Notifications: TNotificationCenter;
     fgActivityDialog: TfgActivityDialog;
+    pnlSaved: TCalloutPanel;
+    lblSaveMessage: TLabel;
     procedure edtSearchExit(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

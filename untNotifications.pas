@@ -9,7 +9,8 @@ uses
   FMX.ListView.Types, FMX.ListView, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components,
   Data.Bind.DBScope, Fmx.Bind.Grid, Data.Bind.Grid, FMX.Grid,System.JSON,
-  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
+  FGX.ProgressDialog, FMX.Notification;
 
 type
   TfrmNotifications = class(TfrmBase)

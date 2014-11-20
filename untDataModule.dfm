@@ -8,7 +8,7 @@ object dmdDataModule: TdmdDataModule
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
-    BaseURL = 'http://www.reach-your-peak.com/api'
+    BaseURL = 'https://www.reach-your-peak.com/api'
     Params = <
       item
         Kind = pkHTTPHEADER
@@ -2492,7 +2492,6 @@ object dmdDataModule: TdmdDataModule
         'itzosMobileApp\RYP.sqlite'
       'LockingMode=Normal'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     BeforeConnect = fdConnectionBeforeConnect
     Left = 24
