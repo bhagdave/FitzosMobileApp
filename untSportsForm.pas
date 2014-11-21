@@ -65,6 +65,7 @@ begin
       reqGeneric.Params.addItem('signature',signature('addSport'));
       reqGeneric.Params.addItem('key',getApiKey);
       reqGeneric.Execute;
+      saveMessage.Now('Sport added to your profile.');
       self.FormActivate(nil);
   end;
 end;

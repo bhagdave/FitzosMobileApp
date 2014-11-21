@@ -71,7 +71,7 @@ begin
         if (sResult = 'OK') then
         begin
           fgActivityDialog.Hide;
-          showmessage('Friend request requested!');
+          saveMessage.Now('Friend request sent');
           self.close;
         end
         else

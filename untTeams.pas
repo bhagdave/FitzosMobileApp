@@ -175,6 +175,7 @@ begin
       reqGeneric.Params.addItem('team',lValue.ToString);
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Execute;
+      saveMessage.Now('Invite accepted');
     end;
   end
   else
@@ -201,6 +202,7 @@ begin
       reqGeneric.Params.addItem('team',lValue.ToString);
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Execute;
+      saveMessage.Now('Invite declined');
     end;
   end
   else

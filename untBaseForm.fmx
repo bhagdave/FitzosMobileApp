@@ -5948,24 +5948,6 @@ object frmBase: TfrmBase
     Left = 160
     Top = 169
   end
-  object idTCPConnection: TIdTCPClient
-    ConnectTimeout = 0
-    IPVersion = Id_IPv4
-    Port = 0
-    ReadTimeout = -1
-    Left = 224
-    Top = 376
-  end
-  object Notifications: TNotificationCenter
-    Left = 104
-    Top = 105
-  end
-  object fgActivityDialog: TfgActivityDialog
-    Message = 'Please, Wait'
-    Title = 'Loading Data'
-    Left = 256
-    Top = 48
-  end
   object saveMessage: TToast
     AppearanceDuration = 300
     DisappearanceDuration = 300
@@ -5984,5 +5966,23 @@ object frmBase: TfrmBase
     WordWrap = True
     Left = 176
     Top = 321
+  end
+  object idTCPConnection: TIdTCPClient
+    ConnectTimeout = 0
+    IPVersion = Id_IPv4
+    Port = 0
+    ReadTimeout = -1
+    Left = 224
+    Top = 376
+  end
+  object Notifications: TNotificationCenter
+    Left = 104
+    Top = 105
+  end
+  object fgActivityDialog: TfgActivityDialog
+    Message = 'Please, Wait'
+    Title = 'Loading Data'
+    Left = 256
+    Top = 48
   end
 end

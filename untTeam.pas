@@ -123,6 +123,7 @@ begin
       dmdDataModule.reqGeneric.Execute;
     end;
     fgActivityDialog.Hide;
+    saveMessage.Now('Invite sent.');
   end
   else
   begin
