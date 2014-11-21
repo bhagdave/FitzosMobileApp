@@ -29,7 +29,7 @@ inherited frmFriend: TfrmFriend
       Size.Width = 320.000000000000000000
       Size.Height = 383.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 1
       ColumnCollection = <
         item
           Value = 50.000000000000000000
@@ -3275,6 +3275,14 @@ inherited frmFriend: TfrmFriend
       00008803401453697A652E506C6174666F726D44656661756C74081654657874
       53657474696E67732E466F6E74436F6C6F72070C636C61536C61746567726179
       0000}
+  end
+  inherited saveMessage: TToast [4]
+  end
+  inherited idTCPConnection: TIdTCPClient [5]
+  end
+  inherited Notifications: TNotificationCenter [6]
+  end
+  inherited fgActivityDialog: TfgActivityDialog [7]
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dmdDataModule.fdmMember

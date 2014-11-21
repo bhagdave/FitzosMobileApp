@@ -65,13 +65,13 @@ inherited frmTeam: TfrmTeam
       ShowScrollBars = False
       object layTeam: TLayout
         Align = Top
-        Size.Width = 320.000000000000000000
+        Size.Width = 50.000000000000000000
         Size.Height = 800.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object lblEvents: TLabel
           Align = MostTop
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
           TextSettings.HorzAlign = Center
@@ -84,7 +84,7 @@ inherited frmTeam: TfrmTeam
           FooterAppearanceClassName = 'TListHeaderObjects'
           Align = MostTop
           Position.Y = 23.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 136.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
@@ -95,7 +95,7 @@ inherited frmTeam: TfrmTeam
           IsExpanded = False
           Position.Y = 159.000000000000000000
           ShowCheck = False
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Members'
@@ -119,7 +119,7 @@ inherited frmTeam: TfrmTeam
           IsExpanded = False
           Position.Y = 184.000000000000000000
           ShowCheck = False
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Team Wall'
@@ -3395,6 +3395,14 @@ inherited frmTeam: TfrmTeam
         end
       end
     end
+  end
+  inherited saveMessage: TToast [5]
+  end
+  inherited idTCPConnection: TIdTCPClient [6]
+  end
+  inherited Notifications: TNotificationCenter [7]
+  end
+  inherited fgActivityDialog: TfgActivityDialog [8]
   end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>
