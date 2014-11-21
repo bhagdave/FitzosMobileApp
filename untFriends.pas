@@ -9,7 +9,7 @@ uses
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, FGX.ProgressDialog,
-  FMX.Notification;
+  FMX.Notification, FMX.AndroidLike.Toast;
 
 type
   TfrmFriends = class(TfrmBase)
@@ -153,6 +153,7 @@ begin
         reqGeneric.Resource := 'r/members/acceptFriendRequest';
         reqGeneric.Params.addItem('id',lValue.ToString);
         reqGeneric.Execute;
+        saveMessage.Now('Friend accepted');
       end;
     end
     else
@@ -178,6 +179,7 @@ begin
       reqGeneric.Resource := 'r/members/declineFriendRequest';
       reqGeneric.Params.addItem('id',lValue.ToString);
       reqGeneric.Execute;
+      saveMessage.Now('Friend request declined');
     end;
     fgActivityDialog.Hide;
   end

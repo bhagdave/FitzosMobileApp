@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit,untDataModule, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient, FMX.Notification;
+  IdTCPConnection, IdTCPClient, FMX.Notification, FGX.ProgressDialog,
+  FMX.AndroidLike.Toast;
 
 type
   TfrmNotification = class(TfrmBase)
@@ -51,6 +52,7 @@ begin
       reqGeneric.Params.addItem('key',getApiKey);
       reqGeneric.Execute;
       btnRead.Enabled := false;
+      saveMessage.Now('Notification read');
   end;
   close;
 end;

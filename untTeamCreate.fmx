@@ -78,7 +78,7 @@ inherited frmTeamCreate: TfrmTeamCreate
         Align = Client
         TabOrder = 1
         Size.Width = 205.787780761718800000
-        Size.Height = 30.000000000000000000
+        Size.Height = 37.068321228027340000
         Size.PlatformDefault = False
       end
       object lblSport: TLabel
@@ -92,7 +92,7 @@ inherited frmTeamCreate: TfrmTeamCreate
         Align = Client
         DisableFocusEffect = False
         Size.Width = 205.787780761718800000
-        Size.Height = 30.000000000000000000
+        Size.Height = 38.776451110839840000
         Size.PlatformDefault = False
         TabOrder = 3
       end

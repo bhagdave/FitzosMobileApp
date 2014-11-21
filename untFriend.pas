@@ -9,7 +9,7 @@ uses
   IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts, FMX.ListView.Types,
-  FMX.ListView, FMX.Notification, FGX.ProgressDialog ;
+  FMX.ListView, FMX.Notification, FGX.ProgressDialog, FMX.AndroidLike.Toast ;
 
 type
   TfrmFriend = class(TfrmBase)
@@ -71,7 +71,7 @@ begin
         if (sResult = 'OK') then
         begin
           fgActivityDialog.Hide;
-          showmessage('Friend request requested!');
+          saveMessage.Now('Friend request sent');
           self.close;
         end
         else

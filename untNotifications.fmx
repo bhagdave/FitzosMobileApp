@@ -23,7 +23,7 @@ inherited frmNotifications: TfrmNotifications
       Size.Width = 320.000000000000000000
       Size.Height = 383.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 1
       ItemAppearanceObjects.ItemObjects.TextButton.ButtonType = Delete
       ItemAppearanceObjects.ItemObjects.TextButton.Text = 'READ'
       ItemAppearanceObjects.HeaderObjects.Text.TextAlign = Center
@@ -3193,6 +3193,14 @@ inherited frmNotifications: TfrmNotifications
       0000F005400B53697A652E48656967687405000000000000008803401453697A
       652E506C6174666F726D44656661756C7408165465787453657474696E67732E
       466F6E74436F6C6F72070C636C61536C617465677261790000}
+  end
+  inherited saveMessage: TToast [4]
+  end
+  inherited idTCPConnection: TIdTCPClient [5]
+  end
+  inherited Notifications: TNotificationCenter [6]
+  end
+  inherited fgActivityDialog: TfgActivityDialog [7]
   end
   object BindingsList1: TBindingsList
     Methods = <>
