@@ -6,7 +6,7 @@
         <MainSource>FitzosApp.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">iOSDevice</Platform>
         <TargetedPlatforms>89</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -117,7 +117,7 @@
         <VerInfo_Keys>package=com.reach-your-peak.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=2;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice)'!=''">
-        <DCC_UnitSearchPath>E:\XE7\Library;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>E:\XE7\Library;E:\FMXToast;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <iPad_Launch2048x1536>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_2048x1536.png</iPad_Launch2048x1536>
         <iPad_AppIcon76>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_76x76.png</iPad_AppIcon76>
         <iPad_Launch1536x2048>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_1536x2048.png</iPad_Launch1536x2048>
@@ -262,21 +262,19 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
-        <PF_AliasKey>ryp-app</PF_AliasKey>
-        <PF_AliasKeyPass>8527479F5F85078FCF75E538A458E36281C30502A02B979B97EE0FB48E3E3C9EDB56A384E34A1C6BC1AE577CFA9CC360BAE1367E044B22801678459DE5E522CEC91BF36FD558FAD0BFAFAF1107028595F7DE</PF_AliasKeyPass>
-        <PF_KeyStorePass>8527479F645855D8A342711DD129E36881D0051BA043979397B40FAB8E363C94DB04A3D7E3401C39C1CC5752FACFC338BAF83613042722C3164B45C2E5BA22DBC90AF35DEE9BA8C4D3D63B1A72298595F7DE</PF_KeyStorePass>
-        <PF_KeyStore>C:\Users\dave\AppData\Roaming\Embarcadero\BDS\15.0\play.keystore</PF_KeyStore>
+        <DCC_AdditionalSwitches>--ios-version-min:&lt;6.0&gt;</DCC_AdditionalSwitches>
         <AUP_CHANGE_NETWORK_STATE>true</AUP_CHANGE_NETWORK_STATE>
         <AUP_CHANGE_WIFI_STATE>true</AUP_CHANGE_WIFI_STATE>
         <AUP_INTERNET>true</AUP_INTERNET>
         <Debugger_RunParams>-cleaninstall</Debugger_RunParams>
         <DCC_UnitSearchPath>E:\XE7\Library;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=13;versionName=1.0.5;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
-        <VerInfo_Build>13</VerInfo_Build>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=11;versionName=1.0.5;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
+        <VerInfo_Build>11</VerInfo_Build>
         <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSDevice)'!=''">
+        <BRCC_IncludePath>E:\FMXToast;$(BRCC_IncludePath)</BRCC_IncludePath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_BundleId>RYPTest (com.reach-your-peak.*)</VerInfo_BundleId>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
