@@ -9,7 +9,7 @@ uses
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, FMX.TabControl, FMX.Notification,
-  FGX.ProgressDialog;
+  FGX.ProgressDialog, FMX.AndroidLike.Toast;
 
 type
   TfrmEvents = class(TfrmBase)
@@ -194,6 +194,7 @@ begin
       reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
       reqGeneric.Params.addItem('key',dmdDatamodule.getApiKey);
       reqGeneric.Execute;
+      saveMessage.Now('Event invite declined');
     end;
     loadInvites;
 end;

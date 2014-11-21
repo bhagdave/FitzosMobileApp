@@ -3242,6 +3242,14 @@ inherited frmFriends: TfrmFriends
     Left = 120
     Top = 353
   end
+  inherited saveMessage: TToast [6]
+  end
+  inherited idTCPConnection: TIdTCPClient [7]
+  end
+  inherited Notifications: TNotificationCenter [8]
+  end
+  inherited fgActivityDialog: TfgActivityDialog [9]
+  end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>

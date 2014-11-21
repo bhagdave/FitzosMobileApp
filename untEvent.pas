@@ -9,7 +9,7 @@ uses
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.ListView.Types,
   FMX.ListView, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
-  FMX.Notification, FGX.ProgressDialog;
+  FMX.Notification, FGX.ProgressDialog, FMX.AndroidLike.Toast;
 
 type
   TfrmEvent = class(TfrmBase)
@@ -75,6 +75,7 @@ begin
       reqGeneric.Params.addItem('key',dmdDatamodule.getApiKey);
       reqGeneric.Execute;
       btnAttend.Visible := false;
+      saveMessage.Now('Event invitation accepted');
       getEventData();
     end;
   end
@@ -216,6 +217,7 @@ begin
     sResult := getResultString(dmdDatamodule.respGeneric.Content);
     if (sResult = 'OK') then
     begin
+      saveMessage.Now('Wall post saved');
       getEventData();
     end;
 end;
