@@ -5948,25 +5948,6 @@ object frmBase: TfrmBase
     Left = 160
     Top = 169
   end
-  object saveMessage: TToast
-    AppearanceDuration = 300
-    DisappearanceDuration = 300
-    ToastBoxStrokeColor = claNull
-    TextColor = claBlack
-    ToastBoxColor = claGray
-    ToastBoxStrokeDash = Solid
-    TextAlign = Center
-    Duration = 3000
-    Opacity = 0.800000011920929000
-    OptimalWidth = False
-    ToastBoxAlign = Center
-    ToastBoxHeight = 50.000000000000000000
-    ToastBoxStrokeThickness = 1.000000000000000000
-    ToastBoxWidth = 100.000000000000000000
-    WordWrap = True
-    Left = 176
-    Top = 321
-  end
   object idTCPConnection: TIdTCPClient
     ConnectTimeout = 0
     IPVersion = Id_IPv4

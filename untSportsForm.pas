@@ -8,8 +8,7 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Layouts, FMX.ListBox,
-  FMX.DateTimeCtrls, FMX.AndroidLike.Toast, FGX.ProgressDialog,
-  FMX.Notification, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
+  FMX.DateTimeCtrls;
 
 type
   TfrmSports = class(TfrmBase)
@@ -65,7 +64,6 @@ begin
       reqGeneric.Params.addItem('signature',signature('addSport'));
       reqGeneric.Params.addItem('key',getApiKey);
       reqGeneric.Execute;
-      saveMessage.Now('Sport added to your profile.');
       self.FormActivate(nil);
   end;
 end;

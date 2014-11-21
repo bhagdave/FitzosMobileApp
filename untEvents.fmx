@@ -3197,14 +3197,14 @@ inherited frmEvents: TfrmEvents
       00000000C804400B53697A652E4865696768740500000000000000C804401453
       697A652E506C6174666F726D44656661756C7408000000}
   end
-  object AniIndicator1: TAniIndicator [5]
+  object AniIndicator1: TAniIndicator [4]
     Align = Client
     StyleLookup = 'iOS 7aniindicator.png'
     Size.Width = 320.000000000000000000
     Size.Height = 416.000000000000000000
     Size.PlatformDefault = False
   end
-  object tabEvents: TTabControl [6]
+  object tabEvents: TTabControl [5]
     Align = Client
     FullSize = True
     Size.Width = 320.000000000000000000

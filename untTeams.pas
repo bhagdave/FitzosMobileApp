@@ -9,8 +9,7 @@ uses
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope,
   Data.Bind.Controls, FMX.Layouts, Fmx.Bind.Navigator, IdBaseComponent,
-  IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification, FMX.TabControl,
-  FMX.AndroidLike.Toast, FGX.ProgressDialog;
+  IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification, FMX.TabControl;
 
 type
   TfrmTeams = class(TfrmBase)
@@ -175,7 +174,6 @@ begin
       reqGeneric.Params.addItem('team',lValue.ToString);
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Execute;
-      saveMessage.Now('Invite accepted');
     end;
   end
   else
@@ -202,7 +200,6 @@ begin
       reqGeneric.Params.addItem('team',lValue.ToString);
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Execute;
-      saveMessage.Now('Invite declined');
     end;
   end
   else
