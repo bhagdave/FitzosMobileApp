@@ -5966,4 +5966,23 @@ object frmBase: TfrmBase
     Left = 256
     Top = 48
   end
+  object saveMessage: TToast
+    AppearanceDuration = 300
+    DisappearanceDuration = 300
+    ToastBoxStrokeColor = claNull
+    TextColor = claBlack
+    ToastBoxColor = claGray
+    ToastBoxStrokeDash = Solid
+    TextAlign = Center
+    Duration = 3000
+    Opacity = 1.000000000000000000
+    OptimalWidth = False
+    ToastBoxAlign = Center
+    ToastBoxHeight = 50.000000000000000000
+    ToastBoxStrokeThickness = 1.000000000000000000
+    ToastBoxWidth = 100.000000000000000000
+    WordWrap = True
+    Left = 200
+    Top = 105
+  end
 end
