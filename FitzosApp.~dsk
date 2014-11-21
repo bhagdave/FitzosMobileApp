@@ -10,6 +10,7 @@ File_7=TSourceModule,'E:\FitzosMobileApp\untEvent.pas',0,1,1,18,82,0,0,,
 File_8=TSourceModule,'E:\FitzosMobileApp\untMenuForm.pas',0,1,105,25,125,0,0,,
 
 [Modules]
+<<<<<<< HEAD
 Module0=E:\FitzosMobileApp\untBaseForm.pas
 Module1=E:\FitzosMobileApp\untProfile.pas
 Module2=E:\FitzosMobileApp\untDataModule.pas
@@ -31,30 +32,58 @@ FormState=1
 FormOnTop=0
 
 [E:\FitzosMobileApp\untProfile.pas]
+=======
+Module0=E:\FitzosMobileApp\untTeam.pas
+Module1=E:\FitzosMobileApp\untTeams.pas
+Module2=E:\FitzosMobileApp\untSportsForm.pas
+Module3=E:\FitzosMobileApp\untDataModule.pas
+Module4=E:\FitzosMobileApp\untMainForm.pas
+Count=5
+EditWindowCount=1
+
+[E:\FitzosMobileApp\untTeam.pas]
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+<<<<<<< HEAD
 [E:\FitzosMobileApp\untDataModule.pas]
+=======
+[E:\FitzosMobileApp\untTeams.pas]
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+<<<<<<< HEAD
 [E:\FitzosMobileApp\untFriend.pas]
+=======
+[E:\FitzosMobileApp\untSportsForm.pas]
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+<<<<<<< HEAD
 [E:\FitzosMobileApp\untMainForm.pas]
+=======
+[E:\FitzosMobileApp\untDataModule.pas]
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+<<<<<<< HEAD
 [E:\FitzosMobileApp\untEventDataModule.pas]
+=======
+[E:\FitzosMobileApp\untMainForm.pas]
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+<<<<<<< HEAD
 [E:\FitzosMobileApp\untDmdSports.pas]
 ModuleType=TSourceModule
 FormState=1
@@ -82,17 +111,26 @@ FormOnTop=0
 
 [E:\FitzosMobileApp\untSportsForm.pas]
 ModuleType=TSourceModule
+=======
+[E:\FitzosMobileApp\untBaseForm.pas]
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 FormState=1
 FormOnTop=0
 
 [EditWindow0]
+<<<<<<< HEAD
 ViewCount=12
 CurrentEditView=E:\FitzosMobileApp\untBaseForm.pas
+=======
+ViewCount=5
+CurrentEditView=E:\FitzosMobileApp\untTeam.pas
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 View0=0
 View1=1
 View2=2
 View3=3
 View4=4
+<<<<<<< HEAD
 View5=5
 View6=6
 View7=7
@@ -100,6 +138,8 @@ View8=8
 View9=9
 View10=10
 View11=11
+=======
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 PercentageSizes=1
 Create=1
 Visible=1
@@ -118,6 +158,7 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1893
 LeftPanelClients=PropertyInspector,DockSite3
+<<<<<<< HEAD
 LeftPanelData=00000800010100000000E11100000000000001650700000000000001000000005C0E000009000000446F636B536974653301000000009C1C00001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=2000
 RightPanelClients=DockSite2,DockSite4
@@ -128,6 +169,18 @@ BottomPanelData=0000080001020100000009000000446F636B5369746531803E00000000000002
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779D1D00000000000002F506000000000000FFFFFFFF
+=======
+LeftPanelData=00000800010100000000B8150000000000000165070000000000000100000000D60C000009000000446F636B53697465330100000000BF2200001100000050726F7065727479496E73706563746F72FFFFFFFF
+RightPanelSize=2000
+RightPanelClients=DockSite2,DockSite4
+RightPanelData=00000800010100000000B81500000000000001D00700000000000001000000005E10000009000000446F636B53697465320100000000BF22000009000000446F636B5369746534FFFFFFFF
+BottomPanelSize=0
+BottomPanelClients=DockSite1,MessageView
+BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D9D2E000000000000028205000000000000FFFFFFFF
+BottomMiddlePanelSize=0
+BottomMiddlePanelClients=DockSite0,GraphDrawingModel
+BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965777D1A000000000000023606000000000000FFFFFFFF
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 
 [View0]
 CustomEditViewType=TEditView
@@ -208,6 +261,7 @@ EditViewName=E:\FitzosMobileApp\untTeam.pas
 
 [View7]
 CustomEditViewType=TEditView
+<<<<<<< HEAD
 Module=E:\FitzosMobileApp\untNotifications.pas
 CursorX=1
 CursorY=63
@@ -252,6 +306,8 @@ EditViewName=E:\FitzosMobileApp\untProfile.pas
 
 [View11]
 CustomEditViewType=TEditView
+=======
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 Module=E:\FitzosMobileApp\untTeams.pas
 CursorX=1
 CursorY=218
@@ -275,12 +331,12 @@ State=0
 Left=0
 Top=0
 Width=3827
-Height=1168
+Height=1020
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3827
-ClientHeight=1168
-TBDockHeight=218
+ClientHeight=1020
+TBDockHeight=188
 LRDockWidth=13601
 Dockable=1
 StayOnTop=0
@@ -312,11 +368,11 @@ State=2
 Left=143
 Top=277
 Width=8929
-Height=8525
+Height=7594
 MaxLeft=-6
 MaxTop=-10
 MaxWidth=8929
-MaxHeight=8525
+MaxHeight=7594
 ClientWidth=10000
 ClientHeight=9782
 BottomPanelSize=8895
@@ -332,12 +388,12 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=4347
+Height=3842
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=4347
-TBDockHeight=5901
+ClientHeight=3842
+TBDockHeight=5257
 LRDockWidth=2351
 Dockable=1
 StayOnTop=0
@@ -349,6 +405,7 @@ Visible=1
 Docked=1
 State=0
 Left=0
+<<<<<<< HEAD
 Top=23
 Width=10000
 Height=1347
@@ -357,6 +414,16 @@ MaxTop=-1
 ClientWidth=10000
 ClientHeight=1347
 TBDockHeight=1347
+=======
+Top=0
+Width=2768
+Height=1267
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2768
+ClientHeight=1267
+TBDockHeight=1267
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 LRDockWidth=2768
 Dockable=1
 StayOnTop=0
@@ -370,12 +437,21 @@ State=0
 Left=0
 Top=0
 Width=2000
+<<<<<<< HEAD
 Height=2525
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
 ClientHeight=2525
 TBDockHeight=7158
+=======
+Height=4663
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2000
+ClientHeight=4663
+TBDockHeight=6376
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 LRDockWidth=2000
 Dockable=1
 StayOnTop=0
@@ -387,19 +463,36 @@ Visible=1
 Docked=1
 State=0
 Left=0
-Top=409
+Top=368
 Width=1893
+<<<<<<< HEAD
 Height=3564
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1893
 ClientHeight=3564
 TBDockHeight=9000
+=======
+Height=5604
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1893
+ClientHeight=5604
+TBDockHeight=7911
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 LRDockWidth=1893
 Dockable=1
 StayOnTop=0
 SplitPos=111
 
+<<<<<<< HEAD
+=======
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=AutoSize,Action
+ExpandedItems=Border=0,BorderIcons=0,Fill=0,FormFactor=0,"LiveBindings Designer=0",Padding=0,StyleBook=0,Margins=0,Position=0,RotationCenter=0,Scale=0,Size=0,StyledSettings=0,TextSettings=0,LiveBindings=0
+
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 [ModelViewTool]
 PercentageSizes=1
 Create=1
@@ -409,12 +502,12 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=8752
+Height=7663
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=8752
-TBDockHeight=4881
+ClientHeight=7663
+TBDockHeight=4347
 LRDockWidth=5304
 Dockable=1
 StayOnTop=0
@@ -428,12 +521,12 @@ State=0
 Left=-159
 Top=-101
 Width=1845
-Height=3149
+Height=2802
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1845
-ClientHeight=3149
-TBDockHeight=3149
+ClientHeight=2802
+TBDockHeight=2802
 LRDockWidth=1845
 Dockable=1
 StayOnTop=0
@@ -447,12 +540,12 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1228
+Height=1069
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1228
-TBDockHeight=4832
+ClientHeight=1069
+TBDockHeight=4307
 LRDockWidth=3560
 Dockable=1
 StayOnTop=0
@@ -466,12 +559,12 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1228
+Height=1069
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1228
-TBDockHeight=4832
+ClientHeight=1069
+TBDockHeight=4307
 LRDockWidth=3560
 Dockable=1
 StayOnTop=0
@@ -485,12 +578,12 @@ State=0
 Left=-1344
 Top=-101
 Width=2845
-Height=6208
+Height=5525
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2845
-ClientHeight=6208
-TBDockHeight=6208
+ClientHeight=5525
+TBDockHeight=5525
 LRDockWidth=2845
 Dockable=1
 StayOnTop=0
@@ -504,12 +597,12 @@ State=0
 Left=-1512
 Top=-101
 Width=274
-Height=356
+Height=317
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=274
-ClientHeight=356
-TBDockHeight=356
+ClientHeight=317
+TBDockHeight=317
 LRDockWidth=274
 Dockable=1
 StayOnTop=0
@@ -526,12 +619,12 @@ State=0
 Left=0
 Top=0
 Width=3827
-Height=1168
+Height=1020
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3827
-ClientHeight=1168
-TBDockHeight=406
+ClientHeight=1020
+TBDockHeight=366
 LRDockWidth=4952
 Dockable=1
 StayOnTop=0
@@ -545,12 +638,12 @@ State=0
 Left=0
 Top=0
 Width=3827
-Height=1168
+Height=1020
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3827
-ClientHeight=1168
-TBDockHeight=218
+ClientHeight=1020
+TBDockHeight=188
 LRDockWidth=7405
 Dockable=1
 StayOnTop=0
@@ -568,12 +661,12 @@ State=0
 Left=0
 Top=0
 Width=3827
-Height=1168
+Height=1020
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3827
-ClientHeight=1168
-TBDockHeight=1535
+ClientHeight=1020
+TBDockHeight=1366
 LRDockWidth=3482
 Dockable=1
 StayOnTop=0
@@ -587,12 +680,12 @@ State=0
 Left=0
 Top=0
 Width=3827
-Height=1168
+Height=1020
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3827
-ClientHeight=1168
-TBDockHeight=2059
+ClientHeight=1020
+TBDockHeight=1832
 LRDockWidth=3482
 Dockable=1
 StayOnTop=0
@@ -606,12 +699,12 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1228
+Height=1069
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1228
-TBDockHeight=2317
+ClientHeight=1069
+TBDockHeight=2059
 LRDockWidth=2827
 Dockable=1
 StayOnTop=0
@@ -625,12 +718,12 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1228
+Height=1069
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1228
-TBDockHeight=3208
+ClientHeight=1069
+TBDockHeight=2851
 LRDockWidth=2827
 Dockable=1
 StayOnTop=0
@@ -644,12 +737,12 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1228
+Height=1069
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1228
-TBDockHeight=1158
+ClientHeight=1069
+TBDockHeight=1030
 LRDockWidth=3673
 Dockable=1
 StayOnTop=0
@@ -671,12 +764,12 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=8752
+Height=7663
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=8752
-TBDockHeight=4881
+ClientHeight=7663
+TBDockHeight=4347
 LRDockWidth=7149
 Dockable=1
 StayOnTop=0
@@ -690,12 +783,21 @@ State=0
 Left=0
 Top=0
 Width=2857
+<<<<<<< HEAD
 Height=3208
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2857
 ClientHeight=3208
 TBDockHeight=3208
+=======
+Height=2861
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2857
+ClientHeight=2861
+TBDockHeight=2861
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 LRDockWidth=2857
 Dockable=1
 StayOnTop=0
@@ -709,12 +811,12 @@ State=0
 Left=0
 Top=0
 Width=3827
-Height=1168
+Height=1020
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3827
-ClientHeight=1168
-TBDockHeight=1545
+ClientHeight=1020
+TBDockHeight=1376
 LRDockWidth=8744
 Dockable=1
 StayOnTop=0
@@ -735,12 +837,12 @@ State=0
 Left=0
 Top=0
 Width=1893
-Height=3554
+Height=3149
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1893
-ClientHeight=3554
-TBDockHeight=3673
+ClientHeight=3149
+TBDockHeight=3277
 LRDockWidth=1893
 Dockable=1
 StayOnTop=0
@@ -754,12 +856,12 @@ State=0
 Left=0
 Top=0
 Width=1827
-Height=6178
+Height=5505
 MaxLeft=-6
 MaxTop=-10
 ClientWidth=1732
-ClientHeight=5842
-TBDockHeight=6178
+ClientHeight=5168
+TBDockHeight=5505
 LRDockWidth=1827
 Dockable=1
 StayOnTop=0
@@ -778,12 +880,12 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1475
+Height=1317
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1475
-TBDockHeight=1475
+ClientHeight=1317
+TBDockHeight=1317
 LRDockWidth=2339
 Dockable=1
 StayOnTop=0
@@ -802,12 +904,12 @@ State=0
 Left=0
 Top=0
 Width=3827
-Height=1416
+Height=1267
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3827
-ClientHeight=1416
-TBDockHeight=1416
+ClientHeight=1267
+TBDockHeight=1267
 LRDockWidth=3827
 Dockable=1
 StayOnTop=0
@@ -826,12 +928,12 @@ State=0
 Left=0
 Top=23
 Width=2000
-Height=4594
+Height=4089
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=4594
-TBDockHeight=9000
+ClientHeight=4089
+TBDockHeight=7911
 LRDockWidth=2000
 Dockable=1
 StayOnTop=0
@@ -850,12 +952,12 @@ State=0
 Left=0
 Top=23
 Width=1893
-Height=3554
+Height=3149
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1893
-ClientHeight=3554
-TBDockHeight=9000
+ClientHeight=3149
+TBDockHeight=7911
 LRDockWidth=1893
 Dockable=1
 StayOnTop=0
@@ -872,14 +974,23 @@ Visible=1
 Docked=1
 State=0
 Left=0
-Top=514
+Top=463
 Width=2000
+<<<<<<< HEAD
 Height=2525
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
 ClientHeight=2525
 TBDockHeight=9000
+=======
+Height=4663
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2000
+ClientHeight=4663
+TBDockHeight=7911
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
 LRDockWidth=2000
 Dockable=1
 StayOnTop=0

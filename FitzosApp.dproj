@@ -6,7 +6,7 @@
         <MainSource>FitzosApp.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">iOSDevice</Platform>
+        <Platform Condition="'$(Platform)'==''">Android</Platform>
         <TargetedPlatforms>89</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -77,12 +77,6 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSDevice' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice)'!=''">
-        <Cfg_2_iOSDevice>true</Cfg_2_iOSDevice>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <BRCC_IncludePath>E:\FMXToast;$(BRCC_IncludePath)</BRCC_IncludePath>
@@ -99,9 +93,13 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
+        <PF_KeyStorePass>54E50DFE644355A9A301713BD13FE36081DA0549A057979297EE0FB48E3E3CD9DB5DA38CE3371C4DC1B0577DFADEC37ABAF93641045722CE16654589E5A6228C18CAB963EE9BA8C4D3D63B1A72298595F7DE</PF_KeyStorePass>
         <VerInfo_Build>2</VerInfo_Build>
         <Android_SplashGravity>center</Android_SplashGravity>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <PF_AliasKeyPass>54E50DFE644355A9A301713BD13FE36081DA0549A057979297EE0FB48E3E3CD9DB5DA38CE3371C4DC1B0577DFADEC37ABAF93641045722CE16654589E5A6228C18C8B961EEDEA898D3C23B11722B</PF_AliasKeyPass>
+        <PF_KeyStore>RYPAPP</PF_KeyStore>
+        <PF_AliasKey>ryp</PF_AliasKey>
         <Android_SplashImage426>splash-small.png</Android_SplashImage426>
         <Android_SplashImage640>splash-large.png</Android_SplashImage640>
         <Android_SplashImage960>splash-xlarge.png</Android_SplashImage960>
@@ -117,7 +115,10 @@
         <VerInfo_Keys>package=com.reach-your-peak.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=2;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice)'!=''">
+<<<<<<< HEAD
         <DCC_UnitSearchPath>E:\XE7\Library;E:\FMXToast;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+=======
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
         <iPad_Launch2048x1536>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageLandscape_2048x1536.png</iPad_Launch2048x1536>
         <iPad_AppIcon76>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_76x76.png</iPad_AppIcon76>
         <iPad_Launch1536x2048>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImagePortrait_1536x2048.png</iPad_Launch1536x2048>
@@ -262,13 +263,13 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
-        <DCC_AdditionalSwitches>--ios-version-min:&lt;6.0&gt;</DCC_AdditionalSwitches>
         <AUP_CHANGE_NETWORK_STATE>true</AUP_CHANGE_NETWORK_STATE>
         <AUP_CHANGE_WIFI_STATE>true</AUP_CHANGE_WIFI_STATE>
         <AUP_INTERNET>true</AUP_INTERNET>
         <Debugger_RunParams>-cleaninstall</Debugger_RunParams>
         <DCC_UnitSearchPath>E:\XE7\Library;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+<<<<<<< HEAD
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=11;versionName=1.0.5;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
         <VerInfo_Build>11</VerInfo_Build>
         <BT_BuildType>AppStore</BT_BuildType>
@@ -278,6 +279,10 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_BundleId>RYPTest (com.reach-your-peak.*)</VerInfo_BundleId>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+=======
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=10;versionName=1.0.5;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
+        <VerInfo_Build>10</VerInfo_Build>
+>>>>>>> parent of 7391955... Starting to get IOS stuff off the ground
         <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <ItemGroup>
