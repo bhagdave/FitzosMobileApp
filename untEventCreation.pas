@@ -10,7 +10,7 @@ uses
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, FMX.Controls.Presentation,
-  FGX.ProgressDialog, FMX.Notification, FMX.AndroidLike.Toast;
+  FGX.ProgressDialog, FMX.Notification;
 
 type
   TfrmEventCreation = class(TfrmBase)
@@ -259,11 +259,11 @@ begin
   fgActivityDialog.Hide;
   if id <> '' then
   begin
-    saveMessage.Now('Event saved');
+    showmessage('Event saved!');
   end
   else
   begin
-    saveMessage.Now('Event created');
+    showmessage('Event created');
     close;
   end;
 end;

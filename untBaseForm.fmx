@@ -5942,30 +5942,29 @@ object frmBase: TfrmBase
     Size.Height = 471.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
+    object pnlSaved: TCalloutPanel
+      Align = Center
+      Padding.Top = 11.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 305.000000000000000000
+      Size.PlatformDefault = False
+      Visible = False
+      TabOrder = 1
+      CalloutWidth = 23.000000000000000000
+      CalloutLength = 11.000000000000000000
+      CalloutPosition = Bottom
+      object lblSaveMessage: TLabel
+        Align = Center
+        Size.Width = 165.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
   end
   object StyleBook1: TStyleBook
     FileName = 'OrangeStyle.style'
     Left = 160
     Top = 169
-  end
-  object saveMessage: TToast
-    AppearanceDuration = 300
-    DisappearanceDuration = 300
-    ToastBoxStrokeColor = claNull
-    TextColor = claBlack
-    ToastBoxColor = claGray
-    ToastBoxStrokeDash = Solid
-    TextAlign = Center
-    Duration = 3000
-    Opacity = 0.800000011920929000
-    OptimalWidth = False
-    ToastBoxAlign = Center
-    ToastBoxHeight = 50.000000000000000000
-    ToastBoxStrokeThickness = 1.000000000000000000
-    ToastBoxWidth = 100.000000000000000000
-    WordWrap = True
-    Left = 176
-    Top = 321
   end
   object idTCPConnection: TIdTCPClient
     ConnectTimeout = 0

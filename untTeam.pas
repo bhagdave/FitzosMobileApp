@@ -9,8 +9,7 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts,
   FMX.ListBox, Rest.client, Rest.Types, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient, FGX.ProgressDialog, FMX.Notification,
-  FMX.AndroidLike.Toast;
+  IdTCPConnection, IdTCPClient, FGX.ProgressDialog, FMX.Notification;
 
 type
   TfrmTeam = class(TfrmBase)
@@ -123,7 +122,6 @@ begin
       dmdDataModule.reqGeneric.Execute;
     end;
     fgActivityDialog.Hide;
-    saveMessage.Now('Invite sent.');
   end
   else
   begin

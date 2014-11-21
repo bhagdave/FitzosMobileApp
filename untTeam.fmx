@@ -3396,14 +3396,6 @@ inherited frmTeam: TfrmTeam
       end
     end
   end
-  inherited saveMessage: TToast [5]
-  end
-  inherited idTCPConnection: TIdTCPClient [6]
-  end
-  inherited Notifications: TNotificationCenter [7]
-  end
-  inherited fgActivityDialog: TfgActivityDialog [8]
-  end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>
     Left = 176

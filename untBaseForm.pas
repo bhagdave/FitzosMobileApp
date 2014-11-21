@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
   FMX.Objects, FMX.StdCtrls, untDataModule, Data.Bind.Components, System.RTTI,
   IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, FMX.Notification,
-  FGX.ProgressDialog, FMX.AndroidLike.Toast;
+  FGX.ProgressDialog;
 
 type
   TfrmBase = class(TForm)
@@ -20,7 +20,8 @@ type
     idTCPConnection: TIdTCPClient;
     Notifications: TNotificationCenter;
     fgActivityDialog: TfgActivityDialog;
-    saveMessage: TToast;
+    pnlSaved: TCalloutPanel;
+    lblSaveMessage: TLabel;
     procedure edtSearchExit(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

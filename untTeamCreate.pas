@@ -9,7 +9,7 @@ uses
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Memo, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, FMX.Controls.Presentation,
-  FMX.Notification, FGX.ProgressDialog, FMX.AndroidLike.Toast;
+  FMX.Notification;
 
 type
   TfrmTeamCreate = class(TfrmBase)
@@ -76,7 +76,7 @@ begin
   begin
     addParams;
     dmdDataModule.reqCreateTeam.Execute;
-    saveMessage.Now('Team created');
+    showmessage('Team created!');
     close;
   end
   else

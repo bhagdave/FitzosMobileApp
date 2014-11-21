@@ -10,8 +10,7 @@ uses
   FMX.Objects, System.Actions, FMX.ActnList, FMX.StdActns,
   FMX.MediaLibrary.Actions, untDataModule, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components,
-  FMX.EditBox, FMX.NumberBox, FMX.Controls.Presentation, FGX.ProgressDialog,
-  FMX.AndroidLike.Toast;
+  FMX.EditBox, FMX.NumberBox, FMX.Controls.Presentation, FGX.ProgressDialog;
 
 type
   TfrmProfile = class(TForm)
@@ -63,7 +62,6 @@ type
     LinkControlToField5: TLinkControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;
     fgActivityDialog: TfgActivityDialog;
-    saveMessage: TToast;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
@@ -155,7 +153,6 @@ begin
     mStream.Free;
   end;
   fgActivityDialog.Hide();
-  saveMessage.Now('Profile saved.');
 end;
 
 procedure TfrmProfile.FormActivate(Sender: TObject);

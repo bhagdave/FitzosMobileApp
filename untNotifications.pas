@@ -10,7 +10,7 @@ uses
   Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components,
   Data.Bind.DBScope, Fmx.Bind.Grid, Data.Bind.Grid, FMX.Grid,System.JSON,
   IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
-  FGX.ProgressDialog, FMX.Notification, FMX.AndroidLike.Toast;
+  FGX.ProgressDialog, FMX.Notification;
 
 type
   TfrmNotifications = class(TfrmBase)

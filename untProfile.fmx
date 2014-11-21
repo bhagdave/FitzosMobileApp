@@ -38,7 +38,7 @@ object frmProfile: TfrmProfile
       Align = MostRight
       Position.X = 247.000000000000000000
       Size.Width = 73.000000000000000000
-      Size.Height = 44.000000000000000000
+      Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'donetoolbutton'
       TabOrder = 0
@@ -48,7 +48,7 @@ object frmProfile: TfrmProfile
     object btnBack: TButton
       Align = MostLeft
       Size.Width = 73.000000000000000000
-      Size.Height = 44.000000000000000000
+      Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'backtoolbutton'
       TabOrder = 1
@@ -3226,13 +3226,13 @@ object frmProfile: TfrmProfile
     ShowScrollBars = False
     object layDetails: TLayout
       Align = Top
-      Size.Width = 320.000000000000000000
+      Size.Width = 50.000000000000000000
       Size.Height = 700.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object grdLayout: TGridPanelLayout
         Align = MostTop
-        Size.Width = 320.000000000000000000
+        Size.Width = 50.000000000000000000
         Size.Height = 175.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -3345,7 +3345,7 @@ object frmProfile: TfrmProfile
           end>
         object lblAge: TLabel
           Align = Client
-          Size.Width = 96.723419189453130000
+          Size.Width = 15.113033294677730000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Age'
@@ -3355,13 +3355,13 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 1
           KeyboardType = NumberPad
-          Size.Width = 223.276580810546900000
+          Size.Width = 34.886966705322270000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
         end
         object lblGender: TLabel
           Align = Client
-          Size.Width = 96.723419189453130000
+          Size.Width = 15.113033294677730000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Gender'
@@ -3373,14 +3373,14 @@ object frmProfile: TfrmProfile
             'Male'
             'Female'
             'Not sure')
-          Size.Width = 223.276580810546900000
+          Size.Width = 34.886966705322270000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
         end
         object lblLocation: TLabel
           Align = Client
-          Size.Width = 96.723419189453130000
+          Size.Width = 15.113033294677730000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Location'
@@ -3389,13 +3389,13 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 5
-          Size.Width = 223.276580810546900000
+          Size.Width = 34.886966705322270000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
         end
         object lblUnits: TLabel
           Align = Client
-          Size.Width = 96.723419189453130000
+          Size.Width = 15.113033294677730000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Units'
@@ -3406,14 +3406,14 @@ object frmProfile: TfrmProfile
           Items.Strings = (
             'Metric'
             'Imperial')
-          Size.Width = 223.276580810546900000
+          Size.Width = 34.886966705322270000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 8
         end
         object lblHeight: TLabel
           Align = Client
-          Size.Width = 96.723419189453130000
+          Size.Width = 15.113033294677730000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Height'
@@ -3422,13 +3422,13 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 10
-          Size.Width = 223.276580810546900000
+          Size.Width = 34.886966705322270000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
         end
         object lblWeight: TLabel
           Align = Client
-          Size.Width = 96.723419189453130000
+          Size.Width = 15.113033294677730000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Weight'
@@ -3437,13 +3437,13 @@ object frmProfile: TfrmProfile
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
           TabOrder = 12
-          Size.Width = 223.276580810546900000
+          Size.Width = 34.886966705322270000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
         end
         object lblBodyFat: TLabel
           Align = Client
-          Size.Width = 96.723419189453130000
+          Size.Width = 15.113033294677730000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Body Fat %'
@@ -3453,7 +3453,7 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 14
           Cursor = crIBeam
-          Size.Width = 223.276580810546900000
+          Size.Width = 34.886966705322270000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
         end
@@ -3463,7 +3463,7 @@ object frmProfile: TfrmProfile
         IsExpanded = False
         Position.Y = 205.000000000000000000
         ShowCheck = False
-        Size.Width = 320.000000000000000000
+        Size.Width = 50.000000000000000000
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         Text = 'Options'
@@ -3519,7 +3519,7 @@ object frmProfile: TfrmProfile
         IsExpanded = False
         Position.Y = 175.000000000000000000
         ShowCheck = False
-        Size.Width = 320.000000000000000000
+        Size.Width = 50.000000000000000000
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         Text = 'Profile Image'
@@ -3701,24 +3701,5 @@ object frmProfile: TfrmProfile
     Title = 'Loading Data'
     Left = 256
     Top = 48
-  end
-  object saveMessage: TToast
-    AppearanceDuration = 300
-    DisappearanceDuration = 300
-    ToastBoxStrokeColor = claNull
-    TextColor = claBlack
-    ToastBoxColor = claGray
-    ToastBoxStrokeDash = Solid
-    TextAlign = Center
-    Duration = 3000
-    Opacity = 1.000000000000000000
-    OptimalWidth = False
-    ToastBoxAlign = Center
-    ToastBoxHeight = 50.000000000000000000
-    ToastBoxStrokeThickness = 1.000000000000000000
-    ToastBoxWidth = 100.000000000000000000
-    WordWrap = True
-    Left = 184
-    Top = 304
   end
 end
