@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, FMX.ListView.Types, FMX.ListView, untDataModule,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient, FMX.Notification, FGX.ProgressDialog;
+  IdTCPConnection, IdTCPClient, FMX.Notification, FGX.ProgressDialog,
+  FMX.AndroidLike.Toast;
 
 type
   TfrmTeamWall = class(TfrmBase)
@@ -83,6 +84,7 @@ begin
         reqGeneric.Params.addItem('member_id',memberId);
         reqGeneric.Params.addItem('key',getApiKey);
         reqGeneric.Execute;
+        saveMessage.Now('Message posted');
         getWall();
       end;
     end;

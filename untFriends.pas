@@ -153,6 +153,7 @@ begin
         reqGeneric.Resource := 'r/members/acceptFriendRequest';
         reqGeneric.Params.addItem('id',lValue.ToString);
         reqGeneric.Execute;
+        saveMessage.Now('Friend request accepted');
       end;
     end
     else
@@ -178,6 +179,7 @@ begin
       reqGeneric.Resource := 'r/members/declineFriendRequest';
       reqGeneric.Params.addItem('id',lValue.ToString);
       reqGeneric.Execute;
+      saveMessage.Now('Friend request declined');
     end;
     fgActivityDialog.Hide;
   end

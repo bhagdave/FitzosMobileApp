@@ -3300,7 +3300,7 @@ inherited frmTeam: TfrmTeam
       7A652E506C6174666F726D44656661756C7408165465787453657474696E6773
       2E466F6E74436F6C6F72070C636C61536C617465677261790000}
   end
-  object layInvites: TLayout [4]
+  object layInvites: TLayout [5]
     Align = Client
     Size.Width = 320.000000000000000000
     Size.Height = 383.000000000000000000
@@ -3349,7 +3349,7 @@ inherited frmTeam: TfrmTeam
           end>
         RowCollection = <
           item
-            Value = 72.289156626506030000
+            Value = 72.289156626506020000
           end
           item
             Value = 27.710843373493980000

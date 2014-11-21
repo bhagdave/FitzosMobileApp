@@ -26,7 +26,7 @@ inherited frmTeams: TfrmTeams
   inherited pnlCenter: TPanel
     Size.Height = 416.000000000000000000
   end
-  object pnlInvites: TPanel [4]
+  object pnlInvites: TPanel [5]
     Align = Client
     Size.Width = 249.000000000000000000
     Size.Height = 257.000000000000000000
@@ -64,14 +64,14 @@ inherited frmTeams: TfrmTeams
       DeleteButtonText = 'Decline'
     end
   end
-  object tmrRefresh: TTimer [5]
+  object tmrRefresh: TTimer [6]
     Enabled = False
     Interval = 100
     OnTimer = tmrRefreshTimer
     Left = 24
     Top = 329
   end
-  object tabTeams: TTabControl [6]
+  object tabTeams: TTabControl [7]
     Align = Client
     FullSize = True
     Size.Width = 320.000000000000000000

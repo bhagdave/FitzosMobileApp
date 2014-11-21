@@ -9,7 +9,8 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, FMX.Layouts, FMX.ListBox, FMX.Memo,
   FMX.DateTimeCtrls, FMX.Notification, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient, FMX.Controls.Presentation;
+  IdTCPConnection, IdTCPClient, FMX.Controls.Presentation, FGX.ProgressDialog,
+  FMX.AndroidLike.Toast;
 
 type
   TfrmStats = class(TfrmBase)
@@ -77,6 +78,7 @@ begin
   sResult := getResultString(dmdSports.respAddStat.Content);
   if sResult.Trim = 'OK' then
   begin
+    saveMessage.Now('Stats saved');
     self.FormActivate(nil);
   end
   else
