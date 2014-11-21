@@ -6,7 +6,7 @@ object dmdEvent: TdmdEvent
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'UTF-8, *;q=0.8'
     AcceptEncoding = 'identity'
-    BaseURL = 'http://www.reach-your-peak.com/api'
+    BaseURL = 'https://www.reach-your-peak.com/api'
     Params = <>
     HandleRedirects = True
     Left = 32
@@ -142,6 +142,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 88
     Top = 160
@@ -389,6 +390,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 152
     Top = 176
@@ -571,6 +573,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 240
     Top = 192
@@ -622,6 +625,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     Left = 308
     Top = 192
   end
@@ -707,6 +711,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 456
     Top = 192
@@ -777,6 +782,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 528
     Top = 200
@@ -979,6 +985,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 696
     Top = 232
@@ -1126,6 +1133,7 @@ object dmdEvent: TdmdEvent
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
     StoreDefs = True
     Left = 792
     Top = 248
