@@ -3711,8 +3711,8 @@ object frmSignup: TfrmSignup
     ToastBoxStrokeDash = Solid
     TextAlign = Center
     Duration = 3000
-    Opacity = 1.000000000000000000
-    OptimalWidth = False
+    Opacity = 0.800000011920929000
+    OptimalWidth = True
     ToastBoxAlign = Center
     ToastBoxHeight = 50.000000000000000000
     ToastBoxStrokeThickness = 1.000000000000000000
@@ -3724,5 +3724,11 @@ object frmSignup: TfrmSignup
   object Notifications: TNotificationCenter
     Left = 104
     Top = 105
+  end
+  object fgActivityDialog: TfgActivityDialog
+    Message = 'Please, Wait'
+    Title = 'Loading Data'
+    Left = 256
+    Top = 48
   end
 end

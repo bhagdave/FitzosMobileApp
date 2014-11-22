@@ -1,2 +1,0 @@
-.\assets\internal\RYP.sqlite
-.\assets\internal\OrangeStyle.style

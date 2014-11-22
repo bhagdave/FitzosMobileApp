@@ -44,6 +44,22 @@ object dmdSignup: TdmdSignup
       end
       item
         name = 'key'
+      end
+      item
+        name = 'name'
+        Value = 'fsg'
+      end
+      item
+        name = 'choice'
+        Value = 'athlete'
+      end
+      item
+        name = 'email'
+        Value = 'david.g.h.gill@gmail.com'
+      end
+      item
+        name = 'password'
+        Value = 'iamdave'
       end>
     Resource = 'r/members/createMember'
     Response = respCreateMember

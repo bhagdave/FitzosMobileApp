@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.StdCtrls, FMX.ListBox, FMX.Edit,untDmdSignup, Data.Bind.Components,
   System.Rtti, FMX.Layouts, FMX.Controls.Presentation, FMX.Notification,
-  FMX.AndroidLike.Toast, FMX.Memo;
+  FMX.AndroidLike.Toast, FMX.Memo, FGX.ProgressDialog;
 
 type
   TfrmSignup = class(TForm)
@@ -26,6 +26,7 @@ type
     lblPassword: TLabel;
     saveMessage: TToast;
     Notifications: TNotificationCenter;
+    fgActivityDialog: TfgActivityDialog;
     procedure btnSignupClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -33,6 +34,7 @@ type
     { Private declarations }
     dmdSignup: TdmdSignup;
     procedure showmessage(mesg : String);
+    procedure showActivityDialog(Title, Mesg: String);
     function getSelectedValue(AObject: TObject): TValue;
   public
     { Public declarations }
@@ -51,9 +53,11 @@ var
   lValue : TValue;
   sType : String;
 begin
+  showActivityDialog('Creating account','Please Wait');
   // ok lets check to see if the user exists already
   with dmdSignup do
   begin
+      fgActivityDialog.Title :='Checking if email already in use!';
       respCheckExists.Content.Empty;
       reqCheckExists.ClearBody;
       reqCheckExists.Params.ParameterByName('email').Value := edtEmail.Text;
@@ -73,19 +77,20 @@ begin
       end
       else
       begin
+          fgActivityDialog.Title :='Creating account!';
           // ok we can process the call
           lValue := GetSelectedValue(cboType);
           sType := lValue.ToString;
           respCreateMember.content.Empty;
           reqCreateMember.ClearBody;
+          reqCreateMember.Params.Clear;
           reqCreateMember.Params.AddItem('name',edtName.Text);
           reqCreateMember.Params.AddItem('password',edtPassword.Text);
           reqCreateMember.Params.AddItem('choice',sType);
           reqCreateMember.Params.AddItem('email',edtEmail.Text);
-
           reqCreateMember.Execute;
           sResult := getResultString(respCreateMember.Content);
-
+          fgActivityDialog.hide();
           if (sResult = 'OK') then
           begin
             showmessage('Please check your email for an activation link.');
@@ -128,6 +133,13 @@ var
 begin
   LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
   Result := Leditor.SelectedValue;
+end;
+
+procedure TfrmSignup.showActivityDialog(Title, Mesg: String);
+begin
+  fgActivityDialog.Title := title;
+  fgActivityDialog.Message := Mesg;
+  fgActivityDialog.Show;
 end;
 
 procedure TfrmSignup.showmessage(mesg: String);
