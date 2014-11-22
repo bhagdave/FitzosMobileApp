@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.StdCtrls, FMX.ListBox, FMX.Edit,untDmdSignup, Data.Bind.Components,
-  System.Rtti, FMX.Layouts, FMX.Controls.Presentation;
+  System.Rtti, FMX.Layouts, FMX.Controls.Presentation, FMX.Notification,
+  FMX.AndroidLike.Toast, FMX.Memo;
 
 type
   TfrmSignup = class(TForm)
@@ -23,12 +24,15 @@ type
     lblName: TLabel;
     lblEmail: TLabel;
     lblPassword: TLabel;
+    saveMessage: TToast;
+    Notifications: TNotificationCenter;
     procedure btnSignupClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
     dmdSignup: TdmdSignup;
+    procedure showmessage(mesg : String);
     function getSelectedValue(AObject: TObject): TValue;
   public
     { Public declarations }
@@ -52,43 +56,45 @@ begin
   begin
       respCheckExists.Content.Empty;
       reqCheckExists.ClearBody;
-      reqCheckExists.Params.ParameterByName('data[email]').Value := edtEmail.Text;
+      reqCheckExists.Params.ParameterByName('email').Value := edtEmail.Text;
       reqCheckExists.Execute;
       sResult := getResultString(respCheckExists.Content);
       if (sResult = 'OK') then
       begin
+        // if here then they exist already
         bExists := getResultBoolean(respCheckExists.Content,'Result');
         if bExists then
         begin
-          showmessage('That email address is already in use!');
+          savemessage.now('That email address is already in use!');
         end
         else
         begin
+        end;
+      end
+      else
+      begin
           // ok we can process the call
           lValue := GetSelectedValue(cboType);
           sType := lValue.ToString;
           respCreateMember.content.Empty;
           reqCreateMember.ClearBody;
-          reqCreateMember.Params.AddItem('data[name]',edtName.Text);
-          reqCreateMember.Params.AddItem('data[password]',edtPassword.Text);
-          reqCreateMember.Params.AddItem('data[choice]',sType);
-          reqCreateMember.Params.AddItem('data[email]',edtEmail.Text);
+          reqCreateMember.Params.AddItem('name',edtName.Text);
+          reqCreateMember.Params.AddItem('password',edtPassword.Text);
+          reqCreateMember.Params.AddItem('choice',sType);
+          reqCreateMember.Params.AddItem('email',edtEmail.Text);
+
           reqCreateMember.Execute;
           sResult := getResultString(respCreateMember.Content);
+
           if (sResult = 'OK') then
           begin
             showmessage('Please check your email for an activation link.');
           end
           else
           begin
-            showmessage('There was an error creating the account.');
+            savemessage.now('There was an error creating the account.');
           end;
           close;
-        end;
-      end
-      else
-      begin
-        showmessage('Unable to connect to server. Please try later!');
       end;
   end;
 end;
@@ -122,6 +128,21 @@ var
 begin
   LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
   Result := Leditor.SelectedValue;
+end;
+
+procedure TfrmSignup.showmessage(mesg: String);
+var
+  MyNotification: TNotification;
+begin
+  MyNotification := Notifications.CreateNotification;
+  try
+    MyNotification.Name := 'MyNotification';
+    MyNotification.AlertBody := mesg;
+    MyNotification.EnableSound := False;
+    Notifications.PresentNotification(MyNotification);
+  finally
+    MyNotification.DisposeOf;
+  end;
 end;
 
 initialization

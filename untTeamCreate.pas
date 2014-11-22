@@ -9,7 +9,7 @@ uses
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Memo, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, FMX.Controls.Presentation,
-  FMX.Notification;
+  FMX.Notification, FGX.ProgressDialog, FMX.AndroidLike.Toast;
 
 type
   TfrmTeamCreate = class(TfrmBase)

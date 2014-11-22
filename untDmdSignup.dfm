@@ -22,8 +22,8 @@ object dmdSignup: TdmdSignup
         name = 'key'
       end
       item
-        name = 'data[email]'
-        Value = 'dave_gill@blueyonder.co.uk'
+        name = 'email'
+        Value = 'david.g.h.gill@gmail.com'
       end>
     Resource = 'r/members/checkIfMemberExists'
     Response = respCheckExists
@@ -52,6 +52,7 @@ object dmdSignup: TdmdSignup
     Top = 88
   end
   object respCreateMember: TRESTResponse
+    ContentType = 'text/html'
     Left = 152
     Top = 144
   end
