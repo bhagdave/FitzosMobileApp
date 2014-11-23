@@ -39,6 +39,7 @@ type
     btnCancel: TButton;
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField3: TLinkFillControlToField;
+    btnJoin: TButton;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -50,6 +51,7 @@ type
     procedure btnCancelClick(Sender: TObject);
     procedure btnSendClick(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
+    procedure btnJoinClick(Sender: TObject);
   private
     { Private declarations }
     procedure teamLoaded();
@@ -77,6 +79,30 @@ begin
   inherited;
   layInvites.Visible := true;
   barBottom.Visible := false;
+end;
+
+procedure TfrmTeam.btnJoinClick(Sender: TObject);
+var
+  sParams : String;
+begin
+  if connected then
+  begin
+    showActivityDialog('Joining team','Please wait!');
+    dmdDataModule.rdsaGeneric.ClearDataSet;
+    dmdDataModule.respGeneric.Content.Empty;
+    dmdDataModule.reqGeneric.Params.Clear;
+    dmdDataModule.reqGeneric.ClearBody;
+    dmdDataModule.reqGeneric.Resource := 'r/teams/setMemberRequest';
+    dmdDataModule.reqGeneric.Params.addItem('member',sParams);
+    dmdDataModule.reqGeneric.Params.addItem('team',id);
+    dmdDataModule.reqGeneric.Execute;
+    fgActivityDialog.Hide;
+    saveMessage.Now('Request sent');
+  end
+  else
+  begin
+    showmessage('No internet connection at the moment!');
+  end;
 end;
 
 procedure TfrmTeam.btnNewEventClick(Sender: TObject);
@@ -243,6 +269,7 @@ begin
               fdmFriendsToInvite.close;
           end;
           btnInvite.Visible := fdmTeam.FieldByName('isOwner').AsBoolean;
+          btnJoin.Visible := not(fdmTeam.FieldByName('isMember').AsBoolean);
 //          btnNewEvent.Visible := bOwner;
       end;
   end;
