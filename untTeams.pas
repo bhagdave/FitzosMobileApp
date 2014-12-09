@@ -97,7 +97,7 @@ begin
       reqMemberTeams.ClearBody;
       reqMemberTeams.Params.ParameterByName('id').Value := memberId;
       reqMemberTeams.Params.ParameterByName('signature').Value := signature('getMembersTeams');
-      reqMemberTeams.Params.ParameterByName('key').Value := getApiKey;
+      reqMemberTeams.Params.ParameterByName('key').Value := sessionkey;
       myThread := reqMemberTeams.ExecuteAsync(teamsLoaded);
       myThread.OnTerminate := threadTerminated;
     end;
@@ -137,6 +137,7 @@ begin
     respTeamInvites.Content.Empty;
     reqTeamInvites.ClearBody;
     reqTeamInvites.Params.ParameterByName('member_id').Value := memberId;
+    reqTeamInvites.Params.ParameterByName('key').Value := sessionkey;
     reqTeamInvites.ExecuteAsync(invitesLoaded);
   end;
 end;
@@ -174,6 +175,7 @@ begin
       reqGeneric.Resource := 'r/teams/acceptTeamInvite';
       reqGeneric.Params.addItem('team',lValue.ToString);
       reqGeneric.Params.addItem('member_id',memberId);
+      reqGeneric.Params.addItem('key',sessionkey);
       reqGeneric.Execute;
       saveMessage.Now('Team invite accepted');
     end;
@@ -201,6 +203,7 @@ begin
       reqGeneric.Resource := 'r/teams/declineTeamInvite';
       reqGeneric.Params.addItem('team',lValue.ToString);
       reqGeneric.Params.addItem('member_id',memberId);
+      reqGeneric.Params.addItem('key',sessionkey);
       reqGeneric.Execute;
       saveMessage.Now('Team invite declined');
     end;

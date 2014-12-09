@@ -1855,6 +1855,9 @@ object dmdDataModule: TdmdDataModule
       item
         name = 'id'
         Value = '9'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/search/getSearchResults'
     Response = respSearch
@@ -2026,6 +2029,9 @@ object dmdDataModule: TdmdDataModule
       item
         name = 'member_id'
         Value = '9'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/teams/getAllTeamData'
     Response = respAllTeamData
@@ -2087,6 +2093,9 @@ object dmdDataModule: TdmdDataModule
       item
         name = 'member_id'
         Value = '9'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/members/getFriendRequests'
     Response = respFriendRequests
@@ -2166,6 +2175,9 @@ object dmdDataModule: TdmdDataModule
       item
         name = 'member_id'
         Value = '9'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/teams/getInvites'
     Response = respTeamInvites

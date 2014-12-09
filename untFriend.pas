@@ -65,7 +65,7 @@ begin
       reqGeneric.Params.addItem('to',id);
       reqGeneric.Params.addItem('from',memberId);
       reqGeneric.Params.AddItem('signature',signature('setFriendRequest'));
-      reqGeneric.Params.AddItem('key',getAPIKey());
+      reqGeneric.Params.AddItem('key',sessionkey);
       reqGeneric.Execute;
       sResult := getResultString(respGeneric.Content);
         if (sResult = 'OK') then
@@ -100,7 +100,7 @@ begin
     reqGeneric.Params.addItem('user',id);
     reqGeneric.Params.addItem('id',memberId);
     reqGeneric.Params.AddItem('signature',signature('loadProfile'));
-    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Params.AddItem('key',sessionkey);
     reqGeneric.Execute;
     sResult := getResultString(respGeneric.Content);
       if (sResult = 'OK') then
@@ -155,7 +155,7 @@ begin
       reqMember.ClearBody;
       reqMember.Params.ParameterByName('id').Value := id;
       reqMember.Params.ParameterByName('signature').Value := signature('getMember');
-      reqMember.Params.ParameterByName('key').Value := getApiKey;
+      reqMember.Params.ParameterByName('key').Value := sessionkey;
       reqMember.Execute;
       sResult := getResultString(respMember.Content);
       if (sResult = 'OK') then
@@ -184,7 +184,7 @@ begin
       reqMemberSports.ClearBody;
       reqMemberSports.Params.ParameterByName('id').Value := id;
       reqMemberSports.Params.ParameterByName('signature').Value := signature('getSports');
-      reqMemberSports.Params.ParameterByName('key').Value := getApiKey;
+      reqMemberSports.Params.ParameterByName('key').Value := sessionkey;
       reqMemberSports.Execute;
       sResult := getResultString(respMemberSports.Content);
       if (sResult = 'OK') then
@@ -206,7 +206,7 @@ begin
     reqGeneric.Resource := 'athletes/loadProfile';
     reqGeneric.Params.addItem('id',id);
     reqGeneric.Params.AddItem('signature',signature('loadProfile'));
-    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Params.AddItem('key',sessionkey);
     reqGeneric.Execute;
     sResult := getResultString(respGeneric.Content);
       if (sResult = 'OK') then

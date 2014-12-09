@@ -183,7 +183,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TabOrder = 0
             object edtDate: TDateEdit
-              Date = 41964.000000000000000000
+              Date = 41982.000000000000000000
               TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Position.X = 144.000000000000000000
@@ -195,7 +195,7 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblStartDate: TLabel
               Align = FitLeft
-              Size.Width = 92.999984741210930000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'Start Date'
@@ -219,7 +219,7 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblStartTime: TLabel
               Align = FitLeft
-              Size.Width = 92.999984741210930000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'Start Time'
@@ -233,7 +233,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TabOrder = 2
             object edtEndDate: TDateEdit
-              Date = 41964.000000000000000000
+              Date = 41982.000000000000000000
               TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Position.X = 144.000000000000000000
@@ -245,7 +245,7 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblEndDate: TLabel
               Align = FitLeft
-              Size.Width = 92.999984741210930000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'End Date'
@@ -269,7 +269,7 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblEndTime: TLabel
               Align = FitLeft
-              Size.Width = 92.999984741210930000
+              Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               Text = 'End Time'
@@ -3559,14 +3559,6 @@ inherited frmEventCreation: TfrmEventCreation
       69656E740A53697A652E57696474680500000000000000C804400B53697A652E
       4865696768740500000000000000C804401453697A652E506C6174666F726D44
       656661756C7408000000}
-  end
-  inherited saveMessage: TToast [4]
-  end
-  inherited idTCPConnection: TIdTCPClient [5]
-  end
-  inherited Notifications: TNotificationCenter [6]
-  end
-  inherited fgActivityDialog: TfgActivityDialog [7]
   end
   object BindingsList1: TBindingsList
     Methods = <>

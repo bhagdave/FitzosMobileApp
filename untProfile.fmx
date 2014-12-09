@@ -3345,7 +3345,7 @@ object frmProfile: TfrmProfile
           end>
         object lblAge: TLabel
           Align = Client
-          Size.Width = 96.723419189453120000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Age'
@@ -3361,7 +3361,7 @@ object frmProfile: TfrmProfile
         end
         object lblGender: TLabel
           Align = Client
-          Size.Width = 96.723419189453120000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Gender'
@@ -3380,7 +3380,7 @@ object frmProfile: TfrmProfile
         end
         object lblLocation: TLabel
           Align = Client
-          Size.Width = 96.723419189453120000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Location'
@@ -3395,7 +3395,7 @@ object frmProfile: TfrmProfile
         end
         object lblUnits: TLabel
           Align = Client
-          Size.Width = 96.723419189453120000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Units'
@@ -3413,7 +3413,7 @@ object frmProfile: TfrmProfile
         end
         object lblHeight: TLabel
           Align = Client
-          Size.Width = 96.723419189453120000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Height'
@@ -3428,7 +3428,7 @@ object frmProfile: TfrmProfile
         end
         object lblWeight: TLabel
           Align = Client
-          Size.Width = 96.723419189453120000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Weight'
@@ -3443,7 +3443,7 @@ object frmProfile: TfrmProfile
         end
         object lblBodyFat: TLabel
           Align = Client
-          Size.Width = 96.723419189453120000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Body Fat %'

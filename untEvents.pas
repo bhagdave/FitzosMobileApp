@@ -119,7 +119,7 @@ begin
       reqEvents.ClearBody;
       reqEvents.Params.ParameterByName('id').Value := memberId;
       reqEvents.Params.ParameterByName('signature').Value := signature('getEventsForMember');
-      reqEvents.Params.ParameterByName('key').Value := getApiKey;
+      reqEvents.Params.ParameterByName('key').Value := sessionkey;
       AniIndicator1.Visible := true;
       AniIndicator1.enabled := true;
       myThread := reqEvents.ExecuteAsync(eventsLoaded);
@@ -154,6 +154,7 @@ begin
     fgActivityDialog.Message := 'Loading invites';
     // get the event invites.
     dmdEvent.reqEventInvites.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
+    dmdEvent.reqEventInvites.Params.ParameterByName('key').Value := dmdDataModule.sessionkey;
     dmdEvent.reqEventInvites.ExecuteAsync(invitesLoaded);
 end;
 
@@ -192,7 +193,7 @@ begin
       reqGeneric.Params.addItem('member_id',dmdDataModule.memberId);
       reqGeneric.Params.AddItem('event',lValue.ToString);
       reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
-      reqGeneric.Params.addItem('key',dmdDatamodule.getApiKey);
+      reqGeneric.Params.addItem('key',dmdDatamodule.sessionkey);
       reqGeneric.Execute;
       saveMessage.Now('Event invite declined');
     end;

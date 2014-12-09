@@ -43,7 +43,7 @@ type
 implementation
 
 uses
-  untJsonFunctions,untFormRegistry, FMX.Styles;
+  untJsonFunctions,untFormRegistry, FMX.Styles, untDataModule;
 
 {$R *.fmx}
 procedure TfrmSignup.btnSignupClick(Sender: TObject);
@@ -88,6 +88,7 @@ begin
           reqCreateMember.Params.AddItem('password',edtPassword.Text);
           reqCreateMember.Params.AddItem('choice',sType);
           reqCreateMember.Params.AddItem('email',edtEmail.Text);
+          reqCreateMember.Params.AddItem('key',dmdDataModule.sessionKey);
           reqCreateMember.Execute;
           sResult := getResultString(respCreateMember.Content);
           fgActivityDialog.hide();

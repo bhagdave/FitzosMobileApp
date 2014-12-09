@@ -174,6 +174,9 @@ object dmdSports: TdmdSports
       item
         name = 'sport'
         Value = '26'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/athletes/getStatsForAthleteSport'
     Response = respSportsStats
@@ -247,6 +250,9 @@ object dmdSports: TdmdSports
       item
         name = 'id'
         Value = '26'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'sports/getStatsForSport'
     Response = respStatsForSport
@@ -344,6 +350,9 @@ object dmdSports: TdmdSports
       end
       item
         name = 'comment'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/athletes/saveStats'
     Response = respAddStat

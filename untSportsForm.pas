@@ -91,7 +91,7 @@ begin
     reqMemberSports.ClearBody;
     reqMemberSports.Params.ParameterByName('id').Value := memberId;
     reqMemberSports.Params.ParameterByName('signature').Value := signature('getSports');
-    reqMemberSports.Params.ParameterByName('key').Value := getApiKey;
+    reqMemberSports.Params.ParameterByName('key').Value := sessionkey;
     reqMemberSports.Execute;
     sResult := getResultString(respMemberSports.Content);
     if (sResult = 'OK') then

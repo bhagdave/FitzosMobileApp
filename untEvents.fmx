@@ -3197,8 +3197,6 @@ inherited frmEvents: TfrmEvents
       00000000C804400B53697A652E4865696768740500000000000000C804401453
       697A652E506C6174666F726D44656661756C7408000000}
   end
-  inherited saveMessage: TToast [4]
-  end
   object AniIndicator1: TAniIndicator [5]
     Align = Client
     StyleLookup = 'iOS 7aniindicator.png'
@@ -3292,12 +3290,6 @@ inherited frmEvents: TfrmEvents
         DeleteButtonText = 'Decline'
       end
     end
-  end
-  inherited idTCPConnection: TIdTCPClient [7]
-  end
-  inherited Notifications: TNotificationCenter [8]
-  end
-  inherited fgActivityDialog: TfgActivityDialog [9]
   end
   object BindingsList1: TBindingsList
     Methods = <>

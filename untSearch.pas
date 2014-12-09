@@ -8,7 +8,8 @@ uses
   untBaseForm, FMX.Objects, FMX.Edit, untDataModule, FMX.ListView.Types,
   FMX.ListView, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components, FMX.Notification,
-  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient;
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
+  FGX.ProgressDialog, FMX.AndroidLike.Toast;
 
 type
   TfrmSearch = class(TfrmBase)
@@ -48,6 +49,7 @@ begin
     reqSearch.ClearBody;
     reqSearch.Params.ParameterByName('criteria[name]').Value := id;
     reqSearch.Params.ParameterByName('id').Value := memberId;
+    reqSearch.Params.ParameterByName('key').Value := sessionkey;
     reqSearch.Execute;
     sResult := getResultString(respSearch.Content);
     if (sResult = 'OK') then

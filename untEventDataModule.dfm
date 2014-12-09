@@ -669,6 +669,9 @@ object dmdEvent: TdmdEvent
       item
         name = 'id'
         Value = '9'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'teams/getMembersTeams'
     Response = respTeams
@@ -730,6 +733,9 @@ object dmdEvent: TdmdEvent
       item
         name = 'id'
         Value = '9'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'members/getSports'
     Response = respSports
@@ -830,6 +836,9 @@ object dmdEvent: TdmdEvent
       item
         name = 'member_id'
         Value = '9'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/events/getAllEventData'
     Response = respAllEventData
@@ -848,6 +857,9 @@ object dmdEvent: TdmdEvent
       item
         name = 'member_id'
         Value = '11'
+      end
+      item
+        name = 'key'
       end>
     Resource = 'r/events/getMemberInvites'
     Response = respEventInvites

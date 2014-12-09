@@ -3197,7 +3197,7 @@ inherited frmFriends: TfrmFriends
       7A652E506C6174666F726D44656661756C7408165465787453657474696E6773
       2E466F6E74436F6C6F72070C636C61536C617465677261790000}
   end
-  object pnlRequests: TPanel [4]
+  object pnlRequests: TPanel [5]
     Align = Client
     Size.Width = 257.000000000000000000
     Size.Height = 257.000000000000000000
@@ -3235,20 +3235,12 @@ inherited frmFriends: TfrmFriends
       ShowSelection = False
     end
   end
-  object tmrRemove: TTimer [5]
+  object tmrRemove: TTimer [6]
     Enabled = False
     Interval = 100
     OnTimer = tmrRemoveTimer
     Left = 120
     Top = 353
-  end
-  inherited saveMessage: TToast [6]
-  end
-  inherited idTCPConnection: TIdTCPClient [7]
-  end
-  inherited Notifications: TNotificationCenter [8]
-  end
-  inherited fgActivityDialog: TfgActivityDialog [9]
   end
   object BindingsList1: TBindingsList
     Methods = <>

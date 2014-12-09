@@ -3276,14 +3276,6 @@ inherited frmFriend: TfrmFriend
       53657474696E67732E466F6E74436F6C6F72070C636C61536C61746567726179
       0000}
   end
-  inherited saveMessage: TToast [4]
-  end
-  inherited idTCPConnection: TIdTCPClient [5]
-  end
-  inherited Notifications: TNotificationCenter [6]
-  end
-  inherited fgActivityDialog: TfgActivityDialog [7]
-  end
   object BindSourceDB1: TBindSourceDB
     DataSet = dmdDataModule.fdmMember
     ScopeMappings = <>

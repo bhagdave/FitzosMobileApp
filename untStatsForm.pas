@@ -68,6 +68,7 @@ var
 begin
   inherited;
   pnlAddStat.Visible := false;
+  dmdSports.reqAddStat.Params.ParameterByName('key').Value := dmdDataModule.sessionkey;
   dmdSports.reqAddStat.Params.ParameterByName('source_id').Value := dmdDataModule.memberId;
   dmdSports.reqAddStat.Params.ParameterByName('sport_id').Value := id;
   if cboStats.Visible then
@@ -113,7 +114,7 @@ begin
     reqStatsForSport.ClearBody;
     reqStatsForSport.Params.ParameterByName('id').Value := Id;
 //    reqStatsForSport.Params.ParameterByName('signature').Value := dmdDatamodule.signature('getSports');
-//    reqStatsForSport.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+    reqStatsForSport.Params.ParameterByName('key').Value := dmdDataModule.sessionkey;
     reqStatsForSport.Execute;
     sResult := getResultString(respStatsForSport.Content);
     if (sResult = 'OK') then
@@ -136,7 +137,7 @@ begin
     reqSportsStats.Params.ParameterByName('id').Value := dmdDataModule.memberId;
     reqSportsStats.Params.ParameterByName('sport').Value := Id;
 //    reqSportsStats.Params.ParameterByName('signature').Value := dmdDatamodule.signature('getSports');
-//    reqSportsStats.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+    reqSportsStats.Params.ParameterByName('key').Value := dmdDataModule.sessionkey;
     reqSportsStats.Execute;
     sResult := getResultString(respSportsStats.Content);
     if (sResult = 'OK') then

@@ -95,6 +95,7 @@ begin
     dmdDataModule.reqGeneric.Resource := 'r/teams/setMemberRequest';
     dmdDataModule.reqGeneric.Params.addItem('member',sParams);
     dmdDataModule.reqGeneric.Params.addItem('team',id);
+    dmdDataModule.reqGeneric.Params.addItem('key',dmdDataModule.sessionKey);
     dmdDataModule.reqGeneric.Execute;
     fgActivityDialog.Hide;
     saveMessage.Now('Request sent');
@@ -145,7 +146,7 @@ begin
       dmdDataModule.reqGeneric.Resource := 'r/teams/sendInvites';
       dmdDataModule.reqGeneric.Params.addItem('members',sParams);
       dmdDataModule.reqGeneric.Params.addItem('user',dmdDataModule.memberId);
-      dmdDataModule.reqGeneric.Params.addItem('team',id);
+      dmdDataModule.reqGeneric.Params.addItem('key',dmdDataModule.sessionkey);
       dmdDataModule.reqGeneric.Execute;
     end;
     fgActivityDialog.Hide;
@@ -190,7 +191,7 @@ begin
       reqAllTeamData.Params.ParameterByName('team').Value := sTeam;
       reqAllTeamData.Params.ParameterByName('member_id').Value := memberId;
 //      reqAllTeamData.Params.ParameterByName('signature').Value := signature('getTeamWall');
-//      reqAllTeamData.Params.ParameterByName('key').Value := getApiKey;
+      reqAllTeamData.Params.ParameterByName('key').Value := sessionkey;
       reqAllTeamData.ExecuteAsync(teamLoaded);
   end;
 end;

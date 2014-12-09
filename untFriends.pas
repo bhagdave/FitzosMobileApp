@@ -75,7 +75,7 @@ begin
       reqFriends.ClearBody;
       reqFriends.Params.ParameterByName('id').Value := memberId;
       reqFriends.Params.ParameterByName('signature').Value := signature('getFriends');
-      reqFriends.Params.ParameterByName('key').Value := getApiKey;
+      reqFriends.Params.ParameterByName('key').Value := sessionkey;
       myThread := reqFriends.ExecuteAsync(friendsLoaded);
       myThread.OnTerminate := threadTerminated;
     end;
@@ -120,6 +120,7 @@ begin
 //    respFriendRequests.Content.Empty;
 //    reqFriendRequests.ClearBody;
     reqFriendRequests.Params.ParameterByName('member_id').Value := memberId;
+    reqFriendRequests.Params.ParameterByName('key').Value := sessionkey;
     reqFriendRequests.ExecuteAsync(requestsLoaded);
   end;
 end;
@@ -152,6 +153,7 @@ begin
         reqGeneric.Params.Clear;
         reqGeneric.Resource := 'r/members/acceptFriendRequest';
         reqGeneric.Params.addItem('id',lValue.ToString);
+        reqGeneric.Params.addItem('key',sessionkey);
         reqGeneric.Execute;
         saveMessage.Now('Friend request accepted');
       end;
@@ -178,6 +180,7 @@ begin
       reqGeneric.Params.Clear;
       reqGeneric.Resource := 'r/members/declineFriendRequest';
       reqGeneric.Params.addItem('id',lValue.ToString);
+      reqGeneric.Params.addItem('id',sessionkey);
       reqGeneric.Execute;
       saveMessage.Now('Friend request declined');
     end;

@@ -72,7 +72,7 @@ begin
       reqGeneric.Params.addItem('member_id',dmdDataModule.memberId);
       reqGeneric.Params.AddItem('event',id);
       reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
-      reqGeneric.Params.addItem('key',dmdDatamodule.getApiKey);
+      reqGeneric.Params.addItem('key',dmdDatamodule.sessionKey);
       reqGeneric.Execute;
       btnAttend.Visible := false;
       saveMessage.Now('Event invitation accepted');
@@ -191,7 +191,7 @@ begin
       reqAllEventData.Params.ParameterByName('id').Value := id;
       reqAllEventData.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
 //      reqAllEventData.Params.ParameterByName('signature').Value := dmdDataModule.signature('getAllEventData');
-//      reqAllEventData.Params.ParameterByName('key').Value := dmdDataModule.getApiKey;
+      reqAllEventData.Params.ParameterByName('key').Value := dmdDataModule.sessionKey;
       eventThread := reqAllEventData.ExecuteAsync(eventLoaded);
       eventThread.OnTerminate := eventThreadTerminated;
   end;
@@ -231,7 +231,7 @@ begin
     reqGeneric.Params.addItem('event_id',id);
     reqGeneric.Params.AddItem('message',sMessage);
     reqGeneric.Params.AddItem('signature',signature('isOwner'));
-    reqGeneric.Params.AddItem('key',getAPIKey());
+    reqGeneric.Params.AddItem('key',sessionKey);
     reqGeneric.ExecuteAsync(postWallCompleted);
   end;
 end;

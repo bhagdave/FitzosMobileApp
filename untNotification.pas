@@ -49,7 +49,7 @@ begin
       reqGeneric.Resource := 'notifications/markRead';
       reqGeneric.Params.addItem('id',fdmNotifications.FieldByName('id').AsString);
       reqGeneric.Params.addItem('signature',signature('markRead'));
-      reqGeneric.Params.addItem('key',getApiKey);
+      reqGeneric.Params.addItem('key',sessionkey);
       reqGeneric.Execute;
       saveMessage.Now('Notification read');
       btnRead.Enabled := false;

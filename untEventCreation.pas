@@ -101,6 +101,7 @@ begin
   request.Params.Clear;
   if id <> '' then
     request.Params.AddItem('id',id);
+  request.Params.AddItem('key',dmdDataModule.sessionKey);
   request.Params.AddItem('name',edtName.Text);
   request.Params.AddItem('content',memContent.Lines.GetText);
   request.Params.AddItem('date',DateToStr(edtDate.Date));
@@ -213,6 +214,7 @@ begin
         respAllEventData.Content.Empty;
         reqAllEventData.ClearBody;
         reqAllEventData.Params.ParameterByName('id').Value := Id;
+        reqAllEventData.Params.ParameterByName('key').Value := dmdDataModule.sessionKey;
         reqAllEventData.ExecuteAsync(eventLoaded);
       end;
     end
@@ -244,11 +246,13 @@ begin
     // Open up the data.
     fdmSports.Close;
     reqSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
+    reqSports.Params.ParameterByName('key').Value := dmdDataModule.sessionKey;
     reqSports.Execute();
     sportsLoaded;
     // Open up the data.
     fdmTeams.Close;
     reqTeams.Params.ParameterByName('id').Value := dmdDataModule.memberId;
+    reqTeams.Params.ParameterByName('key').Value := dmdDataModule.sessionKey;
     reqTeams.Execute();
     teamsLoaded();
   end;

@@ -47,7 +47,7 @@ begin
     reqNotifications.ClearBody;
     reqNotifications.Params.ParameterByName('id').Value := memberId;
     reqNotifications.Params.ParameterByName('signature').Value := signature('getMemberNotifications');
-    reqNotifications.Params.ParameterByName('key').Value := getApiKey;
+    reqNotifications.Params.ParameterByName('key').Value := sessionkey;
     reqNotifications.ExecuteAsync(notificationsLoaded);
   end;
 end;

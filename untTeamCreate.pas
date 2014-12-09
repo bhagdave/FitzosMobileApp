@@ -67,6 +67,7 @@ begin
   dmdDataModule.reqCreateTeam.Params.AddItem('active', sActive);
   dmdDataModule.reqCreateTeam.Params.AddItem('owner',dmdDataModule.memberId);
   dmdDataModule.reqCreateTeam.Params.AddItem('sport_id',sSport);
+  dmdDataModule.reqCreateTeam.Params.AddItem('key',dmdDatamodule.sessionKey);
 end;
 
 procedure TfrmTeamCreate.btnSaveClick(Sender: TObject);
@@ -110,6 +111,7 @@ begin
     respMemberSports.Content.Empty;
     reqMemberSports.ClearBody;
     reqMemberSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
+    reqMemberSports.Params.ParameterByName('key').Value := dmdDataModule.sessionkey;
     reqMemberSports.Execute;
     sResult := getResultString(respMemberSports.Content);
     if (sResult = 'OK') then

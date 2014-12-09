@@ -175,7 +175,7 @@ begin
     reqProfile.ClearBody;
     reqProfile.Params.ParameterByName('id').Value := memberId;
     reqProfile.Params.ParameterByName('signature').Value := signature('getAthlete');
-    reqProfile.Params.ParameterByName('key').Value := getApiKey;
+    reqProfile.Params.ParameterByName('key').Value := sessionkey;
     reqProfile.Execute;
     sResult := getResultString(respProfile.Content);
     if (sResult = 'OK') then

@@ -53,7 +53,7 @@ begin
       reqAllTeamData.Params.ParameterByName('team').Value := ID;
       reqAllTeamData.Params.ParameterByName('member_id').Value := memberId;
 //      reqAllTeamData.Params.ParameterByName('signature').Value := signature('getTeamWall');
-//      reqAllTeamData.Params.ParameterByName('key').Value := getApiKey;
+      reqAllTeamData.Params.ParameterByName('key').Value := sessionkey;
       reqAllTeamData.ExecuteAsync(teamLoaded);
   end;
 end;
@@ -82,7 +82,7 @@ begin
         reqGeneric.Params.addItem('message',WallPost);
         reqGeneric.Params.addItem('signature',signature('addWallPost'));
         reqGeneric.Params.addItem('member_id',memberId);
-        reqGeneric.Params.addItem('key',getApiKey);
+        reqGeneric.Params.addItem('key',sessionkey);
         reqGeneric.Execute;
         saveMessage.Now('Message posted');
         getWall();
