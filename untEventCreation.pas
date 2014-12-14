@@ -229,10 +229,12 @@ begin
       edtEndDate.Data := '';
       cboPrivacy.ItemIndex := 0;
       cboType.ItemIndex := 0;
+      fgActivityDialog.Hide;
     end;
   end
   else
   begin
+    fgActivityDialog.Hide;
     showmessage('No internet connection at the moment');
     close;
   end;
