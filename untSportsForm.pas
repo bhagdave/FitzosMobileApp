@@ -62,8 +62,7 @@ begin
       reqGeneric.Params.addItem('member_id',memberId);
       reqGeneric.Params.addItem('sport_id',lValue.ToString);
       reqGeneric.Params.AddItem('from_date',DateToStr(edtDate.Date));
-      reqGeneric.Params.addItem('signature',signature('addSport'));
-      reqGeneric.Params.addItem('key',getApiKey);
+      reqGeneric.Params.addItem('key',sessionKey);
       reqGeneric.Execute;
       saveMessage.Now('Sport added');
       self.FormActivate(nil);
