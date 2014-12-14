@@ -168,6 +168,7 @@ begin
   end
   else
   begin
+    fgActivityDialog.Hide;
     showmessage('No internet connection at the moment');
     close;
   end;
