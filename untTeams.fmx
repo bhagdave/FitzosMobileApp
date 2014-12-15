@@ -141,8 +141,8 @@ inherited frmTeams: TfrmTeams
   end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>
-    Left = 176
-    Top = 272
+    Left = 192
+    Top = 216
   end
   object BindingsList1: TBindingsList
     Methods = <>
@@ -189,13 +189,13 @@ inherited frmTeams: TfrmTeams
   object BindSourceDB2: TBindSourceDB
     DataSet = dmdDataModule.fdmTeamInvites
     ScopeMappings = <>
-    Left = 144
+    Left = 112
     Top = 216
   end
   object BindSourceDB3: TBindSourceDB
     DataSet = dmdDataModule.fdmPublicTeams
     ScopeMappings = <>
-    Left = 152
+    Left = 64
     Top = 224
   end
 end
