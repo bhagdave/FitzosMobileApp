@@ -54,18 +54,21 @@ begin
   lValue := getSelectedValue(cboSport);
   with dmdDataModule do
   begin
-      rdsaGeneric.ClearDataSet;
-      respGeneric.Content.Empty;
-      reqGeneric.Params.Clear;
-      reqGeneric.ClearBody;
-      reqGeneric.Resource := 'r/members/addSport';
-      reqGeneric.Params.addItem('member_id',memberId);
-      reqGeneric.Params.addItem('sport_id',lValue.ToString);
-      reqGeneric.Params.AddItem('from_date',DateToStr(edtDate.Date));
-      reqGeneric.Params.addItem('key',sessionKey);
-      reqGeneric.Execute;
-      saveMessage.Now('Sport added');
-      self.FormActivate(nil);
+      if lValue.ToString <> '' then
+      begin
+        rdsaGeneric.ClearDataSet;
+        respGeneric.Content.Empty;
+        reqGeneric.Params.Clear;
+        reqGeneric.ClearBody;
+        reqGeneric.Resource := 'r/members/addSport';
+        reqGeneric.Params.addItem('member_id',memberId);
+        reqGeneric.Params.addItem('sport_id',lValue.ToString);
+        reqGeneric.Params.AddItem('from_date',DateToStr(edtDate.Date));
+        reqGeneric.Params.addItem('key',sessionKey);
+        reqGeneric.Execute;
+        saveMessage.Now('Sport added');
+        self.FormActivate(nil);
+      end;
   end;
 end;
 
