@@ -218,6 +218,7 @@ begin
 try
     if sUrl <> '' then
     begin
+     sURL := 'http://www.reach-your-peak.com/' + sURL;
       M := TMemoryStream.Create();
      IdHTTPImage.Get(sURL,M);
      M.Seek(0,0);
