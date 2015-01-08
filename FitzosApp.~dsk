@@ -1,27 +1,32 @@
 ﻿[Closed Files]
 File_0=TSourceModule,'E:\FitzosMobileApp\untNotification.pas',0,1,39,29,53,0,0,,
 File_1=TSourceModule,'E:\FitzosMobileApp\untNotifications.pas',0,1,1,6,37,0,0,,
-File_2=TSourceModule,'E:\FitzosMobileApp\untProfile.pas',0,1,61,1,61,0,0,,
-File_3=TSourceModule,'E:\FitzosMobileApp\untSportsForm.pas',0,1,121,35,68,0,0,,
-File_4=TSourceModule,'E:\FitzosMobileApp\untStatsForm.pas',0,1,149,33,81,0,0,,
-File_5=TSourceModule,'E:\FitzosMobileApp\untTeamCreate.pas',0,1,115,18,121,0,0,,
-File_6=TSourceModule,'E:\FitzosMobileApp\untDmdSignup.pas',0,1,1,1,1,0,0,,
-File_7=TSourceModule,'E:\FitzosMobileApp\untSignUpForm.pas',0,1,77,19,107,0,0,,
-File_8=TSourceModule,'E:\FitzosMobileApp\untTeamWall.pas',0,1,58,27,83,0,0,,
-File_9=TSourceModule,'c:\program files\embarcadero\studio\15.0\source\fmx\FMX.Dialogs.pas',0,1,256,1,277,0,0,,
-File_10=TSourceModule,'E:\FitzosMobileApp\untEventDataModule.pas',0,1,1,1,1,0,0,,
+File_2=TSourceModule,'E:\FitzosMobileApp\untStatsForm.pas',0,1,149,33,81,0,0,,
+File_3=TSourceModule,'E:\FitzosMobileApp\untTeamCreate.pas',0,1,115,18,121,0,0,,
+File_4=TSourceModule,'E:\FitzosMobileApp\untDmdSignup.pas',0,1,1,1,1,0,0,,
+File_5=TSourceModule,'E:\FitzosMobileApp\untSignUpForm.pas',0,1,77,19,107,0,0,,
+File_6=TSourceModule,'E:\FitzosMobileApp\untTeamWall.pas',0,1,58,27,83,0,0,,
+File_7=TSourceModule,'c:\program files\embarcadero\studio\15.0\source\fmx\FMX.Dialogs.pas',0,1,256,1,277,0,0,,
+File_8=TSourceModule,'E:\FitzosMobileApp\untEventDataModule.pas',0,1,1,1,1,0,0,,
 
 [Modules]
-Module0=E:\FitzosMobileApp\untTeam.pas
-Module1=E:\FitzosMobileApp\untDataModule.pas
-Module2=E:\FitzosMobileApp\untTeams.pas
-Count=3
+Module0=E:\FitzosMobileApp\untSportsForm.pas
+Module1=E:\FitzosMobileApp\untProfile.pas
+Module2=E:\FitzosMobileApp\untDataModule.pas
+Module3=E:\FitzosMobileApp\untTeams.pas
+Module4=E:\FitzosMobileApp\untTeam.pas
+Count=5
 EditWindowCount=1
 
-[E:\FitzosMobileApp\untTeam.pas]
+[E:\FitzosMobileApp\untSportsForm.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=0
+FormOnTop=1
+
+[E:\FitzosMobileApp\untProfile.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=1
 
 [E:\FitzosMobileApp\untDataModule.pas]
 ModuleType=TSourceModule
@@ -33,7 +38,8 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[E:\FitzosMobileApp\untDmdSports.pas]
+[E:\FitzosMobileApp\untTeam.pas]
+ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
@@ -42,11 +48,13 @@ FormState=1
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=3
-CurrentEditView=E:\FitzosMobileApp\untTeam.pas
+ViewCount=5
+CurrentEditView=E:\FitzosMobileApp\untSportsForm.pas
 View0=0
 View1=1
 View2=2
+View3=3
+View4=4
 PercentageSizes=1
 Create=1
 Visible=1
@@ -79,9 +87,9 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untTeam.pas
-CursorX=29
-CursorY=98
-TopLine=74
+CursorX=20
+CursorY=94
+TopLine=77
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -92,7 +100,7 @@ CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untDataModule.pas
 CursorX=34
 CursorY=339
-TopLine=355
+TopLine=214
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -101,13 +109,35 @@ EditViewName=E:\FitzosMobileApp\untDataModule.pas
 [View2]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untTeams.pas
-CursorX=23
-CursorY=149
-TopLine=144
+CursorX=43
+CursorY=132
+TopLine=123
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=E:\FitzosMobileApp\untTeams.pas
+
+[View3]
+CustomEditViewType=TEditView
+Module=E:\FitzosMobileApp\untSportsForm.pas
+CursorX=26
+CursorY=58
+TopLine=33
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=Borland.FormDesignerView
+
+[View4]
+CustomEditViewType=TEditView
+Module=E:\FitzosMobileApp\untProfile.pas
+CursorX=30
+CursorY=220
+TopLine=167
+LeftCol=1
+Elisions={{87,52},{94,3},{''}}{{96,52},{159,3},{''}}{{192,50},{207,3},{''}}{{209,54},{212,3},{''}}{{233,38},{240,3},{''}}{{242,80},{245,3},{''}}{{248,18},{251,3},{''}}
+Bookmarks=
+EditViewName=Borland.FormDesignerView
 
 [Watches]
 Count=0
@@ -251,8 +281,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Action,
-ExpandedItems="LiveBindings Designer=0",Border=0,BorderIcons=0,Fill=0,FormFactor=0,Padding=0,BindSource=0,Client=0,Response=0,Anchors=0,LiveBindings=0,Margins=0,Position=0,RotationCenter=0,Scale=0,Size=0,StyledSettings=0,TextSettings=0,Touch=0,TouchTargetExpansion=0
+SelectedItem=Name,LookupDataSet
+ExpandedItems=Anchors=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0
 
 [ModelViewTool]
 PercentageSizes=1
