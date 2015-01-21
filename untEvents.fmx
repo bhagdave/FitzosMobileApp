@@ -14,12 +14,14 @@ inherited frmEvents: TfrmEvents
     end
     object btnCreateEvent: TButton
       Align = Right
+      StyledSettings = [Family, Size, FontColor]
       Position.X = 80.000000000000000000
       Size.Width = 240.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'Create Event'
+      TextSettings.Font.Style = [fsBold]
       OnClick = btnCreateEventClick
     end
   end
@@ -3210,7 +3212,7 @@ inherited frmEvents: TfrmEvents
     Size.Width = 320.000000000000000000
     Size.Height = 416.000000000000000000
     Size.PlatformDefault = False
-    TabHeight = 30.000000000000000000
+    TabHeight = 44.000000000000000000
     TabIndex = 0
     TabOrder = 19
     TabPosition = Top
@@ -3219,9 +3221,11 @@ inherited frmEvents: TfrmEvents
       CustomIcon = <
         item
         end>
+      TextSettings.Font.Style = [fsBold]
+      StyledSettings = [Family, Size, FontColor]
       IsSelected = True
       Size.Width = 105.000000000000000000
-      Size.Height = 30.000000000000000000
+      Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       Text = 'My Events'
@@ -3232,7 +3236,7 @@ inherited frmEvents: TfrmEvents
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
         Size.Width = 320.000000000000000000
-        Size.Height = 386.000000000000000000
+        Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         OnItemClick = lvEventsItemClick
@@ -3242,9 +3246,11 @@ inherited frmEvents: TfrmEvents
       CustomIcon = <
         item
         end>
+      TextSettings.Font.Style = [fsBold]
+      StyledSettings = [Family, Size, FontColor]
       IsSelected = False
       Size.Width = 106.000000000000000000
-      Size.Height = 30.000000000000000000
+      Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       Text = 'Upcoming'
@@ -3255,7 +3261,7 @@ inherited frmEvents: TfrmEvents
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
         Size.Width = 320.000000000000000000
-        Size.Height = 386.000000000000000000
+        Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         OnItemClick = lvUpcomingItemClick
@@ -3265,9 +3271,11 @@ inherited frmEvents: TfrmEvents
       CustomIcon = <
         item
         end>
+      TextSettings.Font.Style = [fsBold]
+      StyledSettings = [Size, FontColor]
       IsSelected = False
       Size.Width = 105.000000000000000000
-      Size.Height = 30.000000000000000000
+      Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       Text = 'Invites'
@@ -3279,7 +3287,7 @@ inherited frmEvents: TfrmEvents
         EditMode = True
         Align = Client
         Size.Width = 320.000000000000000000
-        Size.Height = 386.000000000000000000
+        Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
@@ -3294,8 +3302,8 @@ inherited frmEvents: TfrmEvents
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 20
-    Top = 5
+    Left = 44
+    Top = 61
     object LinkFillControlToField1: TLinkFillControlToField
       Category = 'Quick Bindings'
       Control = lvEvents
