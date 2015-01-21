@@ -4,12 +4,13 @@ inherited frmEvents: TfrmEvents
   StyleLookup = 'panelstyle'
   OnDeactivate = FormDeactivate
   OnShow = FormShow
-  DesignerMasterStyle = 2
+  DesignerMasterStyle = 3
   inherited barBottom: TToolBar
     Position.Y = 416.000000000000000000
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
       IconTintColor = claWhite
+      Size.Height = 48.000000000000000000
       TextSettings.FontColor = claWhite
     end
     object btnCreateEvent: TButton
@@ -3239,6 +3240,9 @@ inherited frmEvents: TfrmEvents
         Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.Text.Font.Style = [fsBold]
+        ItemAppearanceObjects.HeaderObjects.Text.Font.Style = [fsBold]
+        ItemAppearanceObjects.FooterObjects.Text.Font.Style = [fsBold]
         OnItemClick = lvEventsItemClick
       end
     end
@@ -3264,6 +3268,9 @@ inherited frmEvents: TfrmEvents
         Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.Text.Font.Style = [fsBold]
+        ItemAppearanceObjects.HeaderObjects.Text.Font.Style = [fsBold]
+        ItemAppearanceObjects.FooterObjects.Text.Font.Style = [fsBold]
         OnItemClick = lvUpcomingItemClick
       end
     end
@@ -3290,9 +3297,12 @@ inherited frmEvents: TfrmEvents
         Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.Text.Font.Style = [fsBold]
         ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
         ItemAppearanceObjects.ItemEditObjects.Accessory.Visible = False
         ItemAppearanceObjects.ItemEditObjects.GlyphButton.ButtonType = Add
+        ItemAppearanceObjects.HeaderObjects.Text.Font.Style = [fsBold]
+        ItemAppearanceObjects.FooterObjects.Text.Font.Style = [fsBold]
         OnItemClick = lvInvitesItemClick
         OnDeleteItem = lvInvitesDeleteItem
         DeleteButtonText = 'Decline'
