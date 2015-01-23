@@ -13,6 +13,7 @@ inherited frmEventCreation: TfrmEventCreation
     end
     object btnSubmit: TButton
       Align = Client
+      StyledSettings = [Family, Size, FontColor]
       Padding.Left = 1.000000000000000000
       Padding.Top = 1.000000000000000000
       Padding.Right = 1.000000000000000000
@@ -26,20 +27,24 @@ inherited frmEventCreation: TfrmEventCreation
       Size.PlatformDefault = False
       TabOrder = 3
       Text = 'Submit'
+      TextSettings.Font.Style = [fsBold]
       OnClick = btnSubmitClick
     end
   end
   inherited pnlTop: TPanel
+    Size.Height = 44.000000000000000000
     inherited lblCaption: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      TextSettings.Font.Style = [fsBold]
       Text = 'Event Creation'
     end
   end
   inherited pnlCenter: TPanel
-    Size.Height = 383.000000000000000000
+    Size.Height = 372.000000000000000000
     object vsbDetails: TVertScrollBox
       Align = Client
       Size.Width = 320.000000000000000000
-      Size.Height = 383.000000000000000000
+      Size.Height = 372.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       ShowScrollBars = False
@@ -183,7 +188,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TabOrder = 0
             object edtDate: TDateEdit
-              Date = 41987.000000000000000000
+              Date = 42027.000000000000000000
               TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Position.X = 144.000000000000000000
@@ -233,7 +238,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TabOrder = 2
             object edtEndDate: TDateEdit
-              Date = 41987.000000000000000000
+              Date = 42027.000000000000000000
               TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Position.X = 144.000000000000000000
