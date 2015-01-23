@@ -5,12 +5,14 @@ inherited frmStats: TfrmStats
   inherited barBottom: TToolBar
     object btnNewstat: TButton
       Align = Right
+      StyledSettings = [Family, Size, FontColor]
       Position.X = 247.000000000000000000
       Size.Width = 73.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
       Text = 'New Stat'
+      TextSettings.Font.Style = [fsBold]
       OnClick = btnNewstatClick
     end
   end
@@ -27,7 +29,7 @@ inherited frmStats: TfrmStats
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
       Size.Width = 320.000000000000000000
-      Size.Height = 427.000000000000000000
+      Size.Height = 416.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
     end
@@ -38,10 +40,12 @@ inherited frmStats: TfrmStats
       TabOrder = 1
       object lblExisting: TLabel
         Align = Client
+        StyledSettings = [Family, Size, FontColor]
         Size.Width = 294.000000000000000000
         Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxheaderlabel'
+        TextSettings.Font.Style = [fsBold]
         TextSettings.HorzAlign = Center
         Text = 'Your Stats'
       end

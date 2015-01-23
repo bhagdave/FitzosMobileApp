@@ -3231,8 +3231,8 @@ inherited frmEvents: TfrmEvents
       TabOrder = 0
       Text = 'My Events'
       object lvEvents: TListView
-        ItemAppearanceClassName = 'TListItemAppearance'
-        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        ItemAppearanceClassName = 'TImageListItemBottomDetailAppearance'
+        ItemEditAppearanceClassName = 'TImageListItemBottomDetailShowCheckAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
@@ -3240,7 +3240,6 @@ inherited frmEvents: TfrmEvents
         Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        ItemAppearanceObjects.ItemObjects.Text.Font.Style = [fsBold]
         ItemAppearanceObjects.HeaderObjects.Text.Font.Style = [fsBold]
         ItemAppearanceObjects.FooterObjects.Text.Font.Style = [fsBold]
         OnItemClick = lvEventsItemClick
@@ -3322,7 +3321,11 @@ inherited frmEvents: TfrmEvents
       FillValueFieldName = 'id'
       FillDisplayFieldName = 'name'
       AutoFill = True
-      FillExpressions = <>
+      FillExpressions = <
+        item
+          SourceMemberName = 'content'
+          ControlMemberName = 'Detail'
+        end>
       FillHeaderExpressions = <>
       FillBreakFieldName = 'location'
       FillHeaderFieldName = 'date'

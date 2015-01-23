@@ -5924,14 +5924,16 @@ object frmBase: TfrmBase
   object pnlTop: TPanel
     Align = MostTop
     Size.Width = 320.000000000000000000
-    Size.Height = 33.000000000000000000
+    Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     object lblCaption: TLabel
       Align = MostTop
+      StyledSettings = [Family, Size, FontColor]
       Size.Width = 320.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Font.Style = [fsBold]
       TextSettings.HorzAlign = Center
       Text = 'Base Form'
     end
@@ -5939,7 +5941,7 @@ object frmBase: TfrmBase
   object pnlCenter: TPanel
     Align = Client
     Size.Width = 320.000000000000000000
-    Size.Height = 471.000000000000000000
+    Size.Height = 460.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
   end
@@ -5947,24 +5949,6 @@ object frmBase: TfrmBase
     FileName = 'OrangeStyle.style'
     Left = 160
     Top = 169
-  end
-  object idTCPConnection: TIdTCPClient
-    ConnectTimeout = 0
-    IPVersion = Id_IPv4
-    Port = 0
-    ReadTimeout = -1
-    Left = 224
-    Top = 376
-  end
-  object Notifications: TNotificationCenter
-    Left = 104
-    Top = 105
-  end
-  object fgActivityDialog: TfgActivityDialog
-    Message = 'Please, Wait'
-    Title = 'Loading Data'
-    Left = 256
-    Top = 48
   end
   object saveMessage: TToast
     AppearanceDuration = 300
@@ -5984,5 +5968,23 @@ object frmBase: TfrmBase
     WordWrap = True
     Left = 200
     Top = 105
+  end
+  object idTCPConnection: TIdTCPClient
+    ConnectTimeout = 0
+    IPVersion = Id_IPv4
+    Port = 0
+    ReadTimeout = -1
+    Left = 224
+    Top = 376
+  end
+  object Notifications: TNotificationCenter
+    Left = 104
+    Top = 105
+  end
+  object fgActivityDialog: TfgActivityDialog
+    Message = 'Please, Wait'
+    Title = 'Loading Data'
+    Left = 256
+    Top = 48
   end
 end

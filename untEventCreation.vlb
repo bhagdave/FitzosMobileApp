@@ -4,7 +4,7 @@ Coordinates=950,120,181,105
 
 [dmdDataModule.fdmNotifications]
 Visible=False
-Coordinates=1070,660,171,285
+Coordinates=1070,660,171,303
 
 [dmdDataModule.fdmTeamMembers]
 Visible=False
@@ -20,7 +20,7 @@ Coordinates=70,890,157,249
 
 [dmdDataModule.fdmTeam]
 Visible=False
-Coordinates=800,560,136,267
+Coordinates=800,560,136,285
 
 [dmdDataModule.fdmFriends]
 Visible=False
@@ -275,7 +275,7 @@ Coordinates=810,170,151,267
 Visible=False
 
 [dmdEvent.reqUpdateEvent]
-Coordinates=179,1,145,69
+Coordinates=179,1,145,87
 
 [BindSourceDB1]
 Coordinates=670,70,99,465
@@ -293,7 +293,7 @@ Coordinates=970,640,152,267
 Visible=False
 
 [dmdDataModule.dsNotifications]
-Coordinates=1070,660,171,285
+Coordinates=1070,660,171,303
 
 [dmdDataModule.dsTeamWall]
 Coordinates=70,890,157,249
@@ -337,10 +337,10 @@ Coordinates=1338,287,179,267
 Visible=False
 
 [dmdDataModule.reqFriends]
-Coordinates=730,980,150,123
+Coordinates=730,980,150,141
 
 [dmdDataModule.dsTeam]
-Coordinates=800,560,136,267
+Coordinates=800,560,136,285
 
 [dmdDataModule.dsFriends]
 Coordinates=546,611,146,231
@@ -400,7 +400,7 @@ Visible=False
 Coordinates=950,120,181,105
 
 [dmdDataModule.reqNotifications]
-Coordinates=885,897,175,123
+Coordinates=885,897,175,141
 
 [dmdDataModule.restAPI]
 Coordinates=79,375,133,69
@@ -411,22 +411,26 @@ Coordinates=1052,246,170,393
 
 [dmdDataModule.fdmMemberSports]
 Visible=False
+Coordinates=1042,1343,181,141
 
 [dmdDataModule.fdmProfile]
 Visible=False
+Coordinates=172,836,141,501
 
 [dmdDataModule.fdmSearchNames]
 Visible=False
+Coordinates=1372,107,177,177
 
 [dmdDataModule.fdmSports]
 Visible=False
+Coordinates=0,0,141,105
 
 []
 Coordinates=0,0,62,51
 Visible=False
 
 [dmdEvent.reqAllEventData]
-Coordinates=324,251,146,105
+Coordinates=324,251,146,141
 
 [lblName]
 Coordinates=0,0,54,51
@@ -447,14 +451,122 @@ Coordinates=62,77,54,51
 Coordinates=81,1,53,51
 
 [dmdEvent.respAllEventData]
-Coordinates=528,1294,152,267
+Coordinates=528,1294,152,285
 
 [dmdEvent.fdmEventInvites]
 Coordinates=457,40,146,429
 
 [dmdEvent.respEventInvites]
-Coordinates=533,970,149,267
+Coordinates=533,970,149,285
 
 [dmdEvent.reqEventInvites]
-Coordinates=838,606,143,87
+Coordinates=838,606,143,123
+
+[dmdEvent.reqUpcomingEvents]
+Coordinates=1338,963,167,87
+
+[dmdDataModule.respTeamInvites]
+Coordinates=855,1837,178,285
+
+[fgActivityDialog]
+Coordinates=362,213,92,33
+
+[dmdDataModule.reqFriendRequests]
+Coordinates=1372,1069,191,123
+
+[dmdDataModule.respUpdateProfile]
+Coordinates=352,1375,186,285
+
+[dmdDataModule.dsProfile]
+Coordinates=172,836,141,501
+
+[dmdDataModule.dsSearchNames]
+Coordinates=1372,107,177,177
+
+[dmdDataModule.respProfile]
+Coordinates=13,836,151,285
+
+[dmdDataModule.respFriendRequests]
+Coordinates=764,554,196,285
+
+[dmdDataModule.reqTeamInvites]
+Coordinates=821,1,172,123
+
+[dmdDataModule.reqPublicTeams]
+Coordinates=1372,733,176,105
+
+[Notifications]
+Coordinates=764,907,76,33
+
+[dmdDataModule.fdmPublicTeams]
+Coordinates=1372,305,179,249
+
+[dmdDataModule.reqSearch]
+Coordinates=1338,573,147,141
+
+[dmdDataModule.reqAllTeamData]
+Coordinates=821,143,175,141
+
+[dmdEvent.fdmUpcomingEvents]
+Coordinates=333,53,170,141
+
+[dmdDataModule.respSports]
+Coordinates=192,262,151,285
+
+[dmdDataModule.fdmFriendRequests]
+Coordinates=821,303,194,123
+
+[dmdDataModule.respCreateTeam]
+Coordinates=173,1375,178,285
+
+[dmdDataModule.fdLogin]
+Coordinates=898,1375,135,123
+
+[dmdEvent.respUpcomingEvents]
+Coordinates=541,1018,172,285
+
+[saveMessage]
+Coordinates=751,1698,80,33
+
+[dmdDataModule.reqUpdateProfile]
+Coordinates=144,141,180,105
+
+[dmdDataModule.fdmTeamInvites]
+Coordinates=1053,1503,175,321
+
+[dmdDataModule.respMemberSports]
+Coordinates=541,1322,191,285
+
+[dmdDataModule.reqMemberSports]
+Coordinates=541,554,185,141
+
+[dmdDataModule.dsSports]
+Coordinates=0,0,141,105
+
+[dmdDataModule.respAllTeamData]
+Coordinates=541,714,181,285
+
+[dmdDataModule.respSearch]
+Coordinates=14,1375,153,285
+
+[dmdDataModule.reqProfile]
+Coordinates=1338,1211,145,141
+
+[idTCPConnection]
+Coordinates=656,1,100,33
+
+[dmdDataModule.respPublicTeams]
+Coordinates=1034,1837,182,285
+
+[dmdDataModule.dsMemberSports]
+Coordinates=1042,1343,181,141
+
+[dmdDataModule.reqCreateTeam]
+Coordinates=1372,857,172,87
+
+[dmdDataModule.fdmFriendsToInvite]
+Coordinates=1372,1,192,87
+
+[dmdDataModule.reqSports]
+Coordinates=1338,1371,145,87
 

@@ -33,7 +33,7 @@ Coordinates=809,1142,70,36
 Visible=False
 
 [lvEvents]
-Coordinates=537,164,107,168
+Coordinates=537,164,107,212
 Visible=True
 
 [StyleBook1]
@@ -378,7 +378,7 @@ Visible=False
 Coordinates=10,10,152,652
 
 [dmdEvent.reqUpdateEvent]
-Coordinates=1183,992,168,80
+Coordinates=1183,992,168,102
 
 [dmdEvent.fdmWall]
 Coordinates=10,688,122,278
@@ -395,7 +395,7 @@ Coordinates=827,992,165,102
 Visible=False
 
 [dmdEvent.reqGeneric]
-Coordinates=1018,992,139,80
+Coordinates=1018,992,139,102
 
 [dmdEvent.restAPI]
 Coordinates=10,1142,118,80
@@ -411,13 +411,13 @@ Coordinates=181,637,90,36
 Coordinates=396,243,115,36
 
 [dmdDataModule.reqTeamInvites]
-Coordinates=725,505,201,102
+Coordinates=725,505,201,146
 
 [dmdDataModule.respTeamInvites]
-Coordinates=369,351,207,322
+Coordinates=369,351,207,344
 
 [dmdDataModule.reqFriendRequests]
-Coordinates=1164,505,221,102
+Coordinates=1164,505,221,146
 
 [dmdDataModule.fdmTeamInvites]
 Coordinates=260,920,203,388
@@ -426,7 +426,7 @@ Coordinates=260,920,203,388
 Coordinates=369,1,224,146
 
 [dmdDataModule.respFriendRequests]
-Coordinates=1164,1377,228,322
+Coordinates=1164,1377,228,344
 
 [tabMine]
 Coordinates=674,626,60,36
@@ -441,13 +441,13 @@ Coordinates=976,538,70,36
 Coordinates=976,593,90,36
 
 [dmdEvent.reqUpcomingEvents]
-Coordinates=1568,342,191,80
+Coordinates=1568,342,191,102
 
 [lvUpcoming]
 Coordinates=580,950,107,168
 
 [dmdEvent.respUpcomingEvents]
-Coordinates=1568,1,198,322
+Coordinates=1568,1,198,344
 
 [dmdEvent.fdmUpcomingEvents]
 Coordinates=790,960,180,190
@@ -455,4 +455,25 @@ Visible=False
 
 [BindSourceDB2]
 Coordinates=790,960,180,190
+
+[dmdDataModule.reqPublicTeams]
+Coordinates=1164,505,205,124
+
+[Notifications]
+Coordinates=396,166,85,36
+
+[dmdDataModule.respPublicTeams]
+Coordinates=944,1418,211,344
+
+[fgActivityDialog]
+Coordinates=614,1418,103,36
+
+[dmdDataModule.fdLogin]
+Coordinates=725,1399,154,146
+
+[saveMessage]
+Coordinates=515,1418,93,36
+
+[dmdDataModule.fdmPublicTeams]
+Coordinates=725,1051,208,300
 

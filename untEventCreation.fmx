@@ -83,12 +83,14 @@ inherited frmEventCreation: TfrmEventCreation
           end
           object btnNext: TButton
             Align = MostBottom
+            StyledSettings = [Family, Size, FontColor]
             Position.Y = 122.000000000000000000
             Size.Width = 320.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             Text = 'Next'
+            TextSettings.Font.Style = [fsBold]
             OnClick = btnNextClick
           end
           object grdPanelEdits: TGridPanelLayout
@@ -134,9 +136,11 @@ inherited frmEventCreation: TfrmEventCreation
               end>
             object lblName: TLabel
               Align = Client
+              StyledSettings = [Family, Size, FontColor]
               Size.Width = 101.540138244628900000
               Size.Height = 25.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Font.Style = [fsBold]
               Text = 'Name'
             end
             object edtName: TEdit
@@ -152,9 +156,11 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblLocation: TLabel
               Align = Client
+              StyledSettings = [Family, Size, FontColor]
               Size.Width = 101.540138244628900000
               Size.Height = 25.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Font.Style = [fsBold]
               Text = 'Location'
             end
             object edtLocation: TEdit
@@ -200,9 +206,11 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblStartDate: TLabel
               Align = FitLeft
+              StyledSettings = [Family, Size, FontColor]
               Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Font.Style = [fsBold]
               Text = 'Start Date'
             end
           end
@@ -224,9 +232,11 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblStartTime: TLabel
               Align = FitLeft
+              StyledSettings = [Family, Size, FontColor]
               Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Font.Style = [fsBold]
               Text = 'Start Time'
             end
           end
@@ -250,9 +260,11 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblEndDate: TLabel
               Align = FitLeft
+              StyledSettings = [Family, Size, FontColor]
               Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Font.Style = [fsBold]
               Text = 'End Date'
             end
           end
@@ -274,9 +286,11 @@ inherited frmEventCreation: TfrmEventCreation
             end
             object lblEndTime: TLabel
               Align = FitLeft
+              StyledSettings = [Family, Size, FontColor]
               Size.Width = 92.999984741210940000
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Font.Style = [fsBold]
               Text = 'End Time'
             end
           end
