@@ -60,6 +60,8 @@ type
     lblName: TLabel;
     lblLocation: TLabel;
     LinkFillControlToField1: TLinkFillControlToField;
+    lblEventType: TLabel;
+    lblPrivacy: TLabel;
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
     procedure btnSubmitClick(Sender: TObject);

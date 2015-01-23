@@ -12,12 +12,12 @@ File_9=TSourceModule,'c:\program files\embarcadero\studio\15.0\source\fmx\FMX.Di
 
 [Modules]
 Module0=E:\FitzosMobileApp\untEvents.pas
-Module1=E:\FitzosMobileApp\untMenuForm.pas
-Module2=E:\FitzosMobileApp\untMainForm.pas
-Module3=E:\FitzosMobileApp\untDataModule.pas
-Module4=E:\FitzosMobileApp\untTeams.pas
-Module5=E:\FitzosMobileApp\untTeam.pas
-Module6=default.htm
+Module1=default.htm
+Module2=E:\FitzosMobileApp\untDataModule.pas
+Module3=E:\FitzosMobileApp\untMenuForm.pas
+Module4=E:\FitzosMobileApp\untMainForm.pas
+Module5=E:\FitzosMobileApp\untTeams.pas
+Module6=E:\FitzosMobileApp\untTeam.pas
 Count=7
 EditWindowCount=1
 
@@ -26,17 +26,20 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=1
 
-[E:\FitzosMobileApp\untMenuForm.pas]
-ModuleType=TSourceModule
-FormState=1
-FormOnTop=1
+[default.htm]
+ModuleType=TURLModule
 
-[E:\FitzosMobileApp\untMainForm.pas]
+[E:\FitzosMobileApp\untDataModule.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[E:\FitzosMobileApp\untDataModule.pas]
+[E:\FitzosMobileApp\untMenuForm.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=0
+
+[E:\FitzosMobileApp\untMainForm.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
@@ -50,9 +53,6 @@ FormOnTop=0
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
-
-[default.htm]
-ModuleType=TURLModule
 
 [E:\FitzosMobileApp\untBaseForm.pas]
 FormState=1
@@ -313,8 +313,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Action,
-ExpandedItems=Border=0,BorderIcons=0,Fill=1,FormFactor=0,"LiveBindings Designer=0",Padding=0,LiveBindings=0,Margins=0,Scale=0,Size=0,StyledSettings=0,TextSettings=1,ActiveTab=0,Anchors=0,Position=0,RotationCenter=0,Touch=0,TouchTargetExpansion=0,TextSettings.Font=1,TextSettings.Font.Style=1,TextSettings.FontColorForState=0,BitmapMargins=0,Corners=0,Sides=0,Stroke=0,Stroke.Bitmap=0,Stroke.Resource=0,Fill.Bitmap=0,Fill.Resource=0
+SelectedItem=Align,
+ExpandedItems=Border=0,BorderIcons=0,Fill=1,FormFactor=0,"LiveBindings Designer=0",Padding=0,LiveBindings=0,Margins=0,Scale=0,Size=0,StyledSettings=0,TextSettings=1,ActiveTab=0,Anchors=0,Position=0,RotationCenter=0,Touch=0,TouchTargetExpansion=0,TextSettings.Font=1,TextSettings.Font.Style=1,TextSettings.FontColorForState=0,BitmapMargins=0,Corners=0,Sides=0,Stroke=0,Stroke.Bitmap=0,Stroke.Resource=0,Fill.Bitmap=0,Fill.Resource=0,ItemAppearance=0,ItemAppearanceObjects=0,Font=1,PlaceOffset=0,Font.Style=1
 
 [ModelViewTool]
 PercentageSizes=1
