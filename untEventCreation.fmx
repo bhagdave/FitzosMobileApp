@@ -1,8 +1,8 @@
 inherited frmEventCreation: TfrmEventCreation
   Caption = 'Event Creation'
   ClientHeight = 460
+  OnActivate = FormActivate
   OnDeactivate = FormDeactivate
-  OnShow = FormShow
   DesignerMasterStyle = 2
   inherited barBottom: TToolBar
     Position.Y = 416.000000000000000000
@@ -326,7 +326,6 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             DisableFocusEffect = False
             Items.Strings = (
-              'Please select an event type'
               'LIVE'
               'VIRTUAL')
             Position.Y = 121.000000000000000000
@@ -339,7 +338,6 @@ inherited frmEventCreation: TfrmEventCreation
             Align = Top
             DisableFocusEffect = False
             Items.Strings = (
-              'Please select privacy'
               'PRIVATE'
               'PUBLIC')
             Position.Y = 172.000000000000000000

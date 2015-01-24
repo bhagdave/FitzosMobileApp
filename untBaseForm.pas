@@ -27,6 +27,7 @@ type
   private
     { Private declarations }
     fId : String;
+    fParent : TCustomForm;
     procedure setId(sId : String);
   protected
     function connected : boolean;
@@ -37,6 +38,7 @@ type
     { Public declarations }
     function getSelectedValue(AObject : TObject): TValue;
     property Id : String read fId write setId;
+    property parent: TCustomForm read fParent write fParent;
   end;
 
 implementation
