@@ -349,50 +349,24 @@ object frmMain: TfrmMain
     Size.PlatformDefault = False
     TabOrder = 0
   end
-  object edtUsername: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    Align = Top
-    TabOrder = 1
-    KeyboardType = EmailAddress
-    TextSettings.FontColor = claSlategray
-    Position.Y = 113.000000000000000000
-    Size.Width = 320.000000000000000000
-    Size.Height = 32.000000000000000000
-    Size.PlatformDefault = False
-    TextPrompt = 'Username'
-    StyledSettings = []
-  end
-  object edtPassword: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    Align = Top
-    TabOrder = 2
-    Password = True
-    TextSettings.FontColor = claSlategray
-    Position.Y = 145.000000000000000000
-    Size.Width = 320.000000000000000000
-    Size.Height = 32.000000000000000000
-    Size.PlatformDefault = False
-    TextPrompt = 'Password'
-    StyledSettings = [Family, Size, Style]
-  end
   object btnLogin: TButton
     Align = Top
-    Position.Y = 177.000000000000000000
+    Position.Y = 163.000000000000000000
     Size.Width = 320.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 3
+    TabOrder = 1
     Text = 'Login'
     TintColor = claGreenyellow
     OnClick = btnLoginClick
   end
   object btnSignup: TButton
-    Align = Top
-    Position.Y = 227.000000000000000000
+    Align = Bottom
+    Position.Y = 410.000000000000000000
     Size.Width = 320.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 4
+    TabOrder = 2
     Text = 'Signup Here'
     TintColor = claDarkorange
     OnClick = btnSignupClick
@@ -3581,6 +3555,87 @@ object frmMain: TfrmMain
     OnTimer = tmrConnectedTimer
     Left = 56
     Top = 264
+  end
+  object pnlLogin: TGridPanelLayout
+    Align = Top
+    Position.Y = 113.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    ColumnCollection = <
+      item
+        Value = 28.571428571428570000
+      end
+      item
+        Value = 71.428571428571430000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = lblEmail
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = edtUsername
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = lblPassword
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = edtPassword
+        Row = 1
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    object lblEmail: TLabel
+      Align = Client
+      Size.Width = 91.428573608398440000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Email'
+    end
+    object edtUsername: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 1
+      KeyboardType = EmailAddress
+      TextSettings.FontColor = claSlategray
+      Size.Width = 228.571426391601600000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Username'
+      StyledSettings = []
+    end
+    object lblPassword: TLabel
+      Align = Client
+      Size.Width = 91.428573608398440000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Password'
+    end
+    object edtPassword: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 3
+      Password = True
+      TextSettings.FontColor = claSlategray
+      Size.Width = 228.571426391601600000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Password'
+      StyledSettings = [Family, Size, Style]
+    end
   end
   object idTCPConnection: TIdTCPClient
     ConnectTimeout = 0

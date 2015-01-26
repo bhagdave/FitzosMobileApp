@@ -23,6 +23,9 @@ type
     idTCPConnection: TIdTCPClient;
     tmrConnected: TTimer;
     fgActivityDialog: TfgActivityDialog;
+    pnlLogin: TGridPanelLayout;
+    lblEmail: TLabel;
+    lblPassword: TLabel;
     procedure btnLoginClick(Sender: TObject);
     procedure btnSignupClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
