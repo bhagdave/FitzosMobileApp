@@ -7,12 +7,14 @@ inherited frmSports: TfrmSports
     Position.Y = 416.000000000000000000
     object btnAddSport: TButton
       Align = Right
+      StyledSettings = [Family, Size, FontColor]
       Position.X = 247.000000000000000000
       Size.Width = 73.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'Add'
+      TextSettings.Font.Style = [fsBold]
       OnClick = btnAddSportClick
     end
   end
@@ -22,7 +24,7 @@ inherited frmSports: TfrmSports
     end
   end
   inherited pnlCenter: TPanel
-    Size.Height = 383.000000000000000000
+    Size.Height = 372.000000000000000000
     object lvExistingSports: TListView
       ItemAppearanceClassName = 'TListItemAppearance'
       ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
@@ -46,11 +48,12 @@ inherited frmSports: TfrmSports
       TabOrder = 2
       object lblSports: TLabel
         Align = Client
-        StyledSettings = [Family, Size, Style]
+        StyledSettings = [Family, Size]
         Size.Width = 320.000000000000000000
         Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'listboxheaderlabel'
+        TextSettings.Font.Style = [fsBold]
         TextSettings.FontColor = claWhitesmoke
         TextSettings.HorzAlign = Center
         Text = 'Existing Sports'

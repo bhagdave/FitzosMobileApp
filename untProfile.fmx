@@ -20,9 +20,11 @@ object frmProfile: TfrmProfile
     TabOrder = 2
     object lblTitle: TLabel
       Align = Client
+      StyledSettings = [Family, Size, FontColor]
       Size.Width = 320.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Font.Style = [fsBold]
       TextSettings.HorzAlign = Center
       Text = 'Profile'
     end
@@ -3345,9 +3347,11 @@ object frmProfile: TfrmProfile
           end>
         object lblAge: TLabel
           Align = Client
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           Text = 'Age'
         end
         object edtAge: TEdit
@@ -3361,9 +3365,11 @@ object frmProfile: TfrmProfile
         end
         object lblGender: TLabel
           Align = Client
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           Text = 'Gender'
         end
         object cboGender: TComboBox
@@ -3380,9 +3386,11 @@ object frmProfile: TfrmProfile
         end
         object lblLocation: TLabel
           Align = Client
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           Text = 'Location'
         end
         object edtLocation: TEdit
@@ -3395,9 +3403,11 @@ object frmProfile: TfrmProfile
         end
         object lblUnits: TLabel
           Align = Client
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           Text = 'Units'
         end
         object cboUnits: TComboBox
@@ -3413,9 +3423,11 @@ object frmProfile: TfrmProfile
         end
         object lblHeight: TLabel
           Align = Client
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           Text = 'Height'
         end
         object edtHeight: TEdit
@@ -3428,9 +3440,11 @@ object frmProfile: TfrmProfile
         end
         object lblWeight: TLabel
           Align = Client
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           Text = 'Weight'
         end
         object edtWeight: TEdit
@@ -3443,9 +3457,11 @@ object frmProfile: TfrmProfile
         end
         object lblBodyFat: TLabel
           Align = Client
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           Text = 'Body Fat %'
         end
         object edtBodyFat: TNumberBox
@@ -3460,6 +3476,8 @@ object frmProfile: TfrmProfile
       end
       object expOptions: TExpander
         Align = Top
+        Font.Style = [fsBold]
+        StyledSettings = [Family, Size, FontColor]
         IsExpanded = False
         Position.Y = 205.000000000000000000
         ShowCheck = False
@@ -3516,6 +3534,8 @@ object frmProfile: TfrmProfile
       end
       object expImage: TExpander
         Align = Top
+        Font.Style = [fsBold]
+        StyledSettings = [Family, Size, FontColor]
         IsExpanded = False
         Position.Y = 175.000000000000000000
         ShowCheck = False

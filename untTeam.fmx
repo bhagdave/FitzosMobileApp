@@ -49,8 +49,10 @@ inherited frmTeam: TfrmTeam
     end
     object btnJoin: TButton
       Align = Center
+      StyledSettings = [Family, Size, FontColor]
       TabOrder = 4
       Text = 'Join'
+      TextSettings.Font.Style = [fsBold]
       OnClick = btnJoinClick
     end
   end
@@ -60,11 +62,11 @@ inherited frmTeam: TfrmTeam
     end
   end
   inherited pnlCenter: TPanel
-    Size.Height = 383.000000000000000000
+    Size.Height = 372.000000000000000000
     object vsbScroller: TVertScrollBox
       Align = Client
       Size.Width = 320.000000000000000000
-      Size.Height = 383.000000000000000000
+      Size.Height = 372.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       AutoHide = False
@@ -77,9 +79,11 @@ inherited frmTeam: TfrmTeam
         TabOrder = 0
         object lblEvents: TLabel
           Align = MostTop
+          StyledSettings = [Family, Size, FontColor]
           Size.Width = 320.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
           TextSettings.HorzAlign = Center
           Text = 'Events'
         end
@@ -98,6 +102,8 @@ inherited frmTeam: TfrmTeam
         end
         object expMembers: TExpander
           Align = Top
+          Font.Style = [fsBold]
+          StyledSettings = [Family, Size, FontColor]
           IsExpanded = False
           Position.Y = 159.000000000000000000
           ShowCheck = False
@@ -122,6 +128,8 @@ inherited frmTeam: TfrmTeam
         end
         object expWall: TExpander
           Align = Top
+          Font.Style = [fsBold]
+          StyledSettings = [Family, Size, FontColor]
           IsExpanded = False
           Position.Y = 184.000000000000000000
           ShowCheck = False

@@ -34,11 +34,11 @@ type
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
     procedure lvInvitesItemClick(const Sender: TObject;
       const AItem: TListViewItem);
-    procedure FormShow(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
     procedure lvUpcomingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure FormDeactivate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
    procedure threadTerminated(Sender : TObject);
@@ -49,6 +49,7 @@ type
    procedure getEvents();
   public
     { Public declarations }
+    procedure refresh();override;
   end;
 
 
@@ -68,7 +69,8 @@ procedure TfrmEvents.btnCreateEventClick(Sender: TObject);
 begin
   inherited;
   showActivityDialog('Loading event creation','Please wait');
-  showNewFormWithId('TfrmEventCreation','');
+  showNewFormWithIdFromParent('TfrmEventCreation','',self);
+  self.Deactivate;
 end;
 
 procedure TfrmEvents.btnRefreshClick(Sender: TObject);
@@ -92,17 +94,17 @@ begin
     loadInvites();
 end;
 
-procedure TfrmEvents.FormDeactivate(Sender: TObject);
-begin
-  inherited;
-  fgActivityDialog.Hide;
-end;
-
-procedure TfrmEvents.FormShow(Sender: TObject);
+procedure TfrmEvents.FormActivate(Sender: TObject);
 begin
   inherited;
   showActivityDialog('Loading all data','Please wait');
   getEvents();
+end;
+
+procedure TfrmEvents.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+  fgActivityDialog.Hide;
 end;
 
 procedure TfrmEvents.getEvents;
@@ -160,14 +162,21 @@ end;
 
 procedure TfrmEvents.loadUpcoming;
 begin
-  fgActivityDialog.Message := 'Loading upcoming events';
-  dmdEvent.rdsaUpcomingEvents.ClearDataSet;
-  dmdEvent.fdmUpcomingEvents.Close;
-  dmdEvent.respUpcomingEvents.Content.Empty;
-  dmdEvent.reqUpcomingEvents.ClearBody;
-  dmdEvent.reqUpcomingEvents.Execute;
-  dmdEvent.rdsaUpcomingEvents.UpdateDataSet;
-  dmdEvent.fdmUpcomingEvents.Open;
+  try
+    fgActivityDialog.Message := 'Loading upcoming events';
+    dmdEvent.rdsaUpcomingEvents.ClearDataSet;
+    dmdEvent.fdmUpcomingEvents.Close;
+    dmdEvent.respUpcomingEvents.Content.Empty;
+    dmdEvent.reqUpcomingEvents.ClearBody;
+    dmdEvent.reqUpcomingEvents.Params.AddItem('key',dmdDatamodule.sessionkey);
+    dmdEvent.reqUpcomingEvents.Execute;
+    dmdEvent.rdsaUpcomingEvents.UpdateDataSet;
+    dmdEvent.fdmUpcomingEvents.Open;
+  except on E: Exception do  begin
+    fgActivityDialog.Hide;
+    showmessage(e.Message);
+  end;
+  end;
 end;
 
 procedure TfrmEvents.lvEventsItemClick(const Sender: TObject;
@@ -207,7 +216,7 @@ var
 begin
   showActivityDialog('Showing event','Please wait');
   lValue := GetSelectedValue(lvInvites);
-  ShowNewFormWithId('TfrmEvent',LValue.ToString);
+  ShowNewFormWithIdFromParent('TfrmEvent',LValue.ToString,self);
 end;
 
 procedure TfrmEvents.lvUpcomingItemClick(const Sender: TObject;
@@ -217,7 +226,13 @@ var
 begin
   showActivityDialog('Showing event','Please wait');
   lValue := GetSelectedValue(lvUpcoming);
-  ShowNewFormWithId('TfrmEvent',LValue.ToString);
+  ShowNewFormWithIdFromParent('TfrmEvent',LValue.ToString,self);
+end;
+
+procedure TfrmEvents.refresh;
+begin
+  inherited;
+  getEvents();
 end;
 
 procedure TfrmEvents.threadTerminated(Sender: TObject);

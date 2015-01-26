@@ -34,7 +34,7 @@ inherited frmEvent: TfrmEvent
     end
   end
   inherited pnlCenter: TPanel
-    Size.Height = 383.000000000000000000
+    Size.Height = 372.000000000000000000
     object lblContent: TLabel
       Align = Top
       StyledSettings = [Family, Size, Style]
@@ -56,6 +56,8 @@ inherited frmEvent: TfrmEvent
     end
     object expAttending: TExpander
       Align = Top
+      Font.Style = [fsBold]
+      StyledSettings = [Family, Size, FontColor]
       IsExpanded = False
       Position.Y = 73.000000000000000000
       ShowCheck = False
@@ -81,6 +83,8 @@ inherited frmEvent: TfrmEvent
     end
     object expWall: TExpander
       Align = Top
+      Font.Style = [fsBold]
+      StyledSettings = [Family, Size, FontColor]
       IsExpanded = False
       Position.Y = 98.000000000000000000
       ShowCheck = False

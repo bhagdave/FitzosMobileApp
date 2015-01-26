@@ -370,6 +370,7 @@ begin
     sMemberType := fdLogin.FieldByName('type').AsString;
     if sMemberSalt <> '' then
       fLoggedIn := true;
+    openSession();
   end;
   fdLogin.Close;
 end;

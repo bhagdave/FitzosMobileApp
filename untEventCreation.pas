@@ -60,11 +60,13 @@ type
     lblName: TLabel;
     lblLocation: TLabel;
     LinkFillControlToField1: TLinkFillControlToField;
+    lblEventType: TLabel;
+    lblPrivacy: TLabel;
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
     procedure btnSubmitClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
     procedure getSportsAndTeams;
@@ -135,6 +137,10 @@ begin
   inherited;
   if connected then
   begin
+    if (assigned(parent)) then
+    begin
+      parent.Deactivate;
+    end;
     // Validate..
     if validate then // true = invalid
     begin
@@ -154,6 +160,7 @@ begin
       else
       begin
         // insert
+        showActivityDialog('Saving event details','Please wait');
         addParams(dmdEvent.reqCreateEvent);
         dmdEvent.reqCreateEvent.ExecuteAsync(saveCompleted);
       end;
@@ -185,13 +192,7 @@ begin
   end;
 end;
 
-procedure TfrmEventCreation.FormDeactivate(Sender: TObject);
-begin
-  inherited;
-  fgActivityDialog.Hide;
-end;
-
-procedure TfrmEventCreation.FormShow(Sender: TObject);
+procedure TfrmEventCreation.FormActivate(Sender: TObject);
 begin
   inherited;
   showActivityDialog('Loading data','Please wait');
@@ -240,6 +241,14 @@ begin
   end;
 end;
 
+procedure TfrmEventCreation.FormDeactivate(Sender: TObject);
+begin
+  inherited;
+  fgActivityDialog.Hide;
+  if Assigned(fParent) then
+    TfrmBase(fParent).Activate;
+end;
+
 procedure TfrmEventCreation.getSportsAndTeams;
 begin
   with dmdEvent do
@@ -271,6 +280,10 @@ begin
   begin
     saveMessage.Now('Event created');
     close;
+    if (assigned(parent)) then
+    begin
+      parent.refresh;
+    end;
   end;
 end;
 

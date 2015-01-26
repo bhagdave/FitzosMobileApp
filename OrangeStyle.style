@@ -95,7 +95,6 @@ object TStyleContainer
       Margins.Bottom = 2.000000000000000000
       Size.Height = 46.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.FontColor = xFFEAEAEA
       ShadowVisible = False
     end
     object TBrushObject
@@ -158,7 +157,6 @@ object TStyleContainer
     Size.Width = 50.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
     TabOrder = 2
     object TGlowEffect
       Softness = 0.200000002980232200
@@ -236,7 +234,6 @@ object TStyleContainer
       Margins.Bottom = 2.000000000000000000
       Size.Height = 46.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.FontColor = xFFEAEAEA
       ShadowVisible = False
     end
     object TBrushObject
@@ -1353,10 +1350,10 @@ object TStyleContainer
   object TLayout
     StyleName = 'expanderbuttonstyle'
     Margins.Top = 1.000000000000000000
-    Position.X = 410.000000000000000000
-    Position.Y = 490.000000000000000000
+    Position.X = 496.000000000000000000
+    Position.Y = 326.000000000000000000
     Size.Width = 22.000000000000000000
-    Size.Height = 22.000000000000000000
+    Size.Height = 35.000000000000000000
     Size.PlatformDefault = False
     Visible = False
     TabOrder = 21
@@ -3395,8 +3392,8 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'circlebuttonstyle'
-    Position.X = 384.000000000000000000
-    Position.Y = 488.000000000000000000
+    Position.X = 470.000000000000000000
+    Position.Y = 328.000000000000000000
     Size.Width = 73.000000000000000000
     Size.Height = 26.000000000000000000
     Size.PlatformDefault = False
@@ -3687,8 +3684,8 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'expanderstyle'
-    Position.X = 500.000000000000000000
-    Position.Y = 296.000000000000000000
+    Position.X = 428.000000000000000000
+    Position.Y = 280.000000000000000000
     Size.Width = 159.000000000000000000
     Size.Height = 121.000000000000000000
     Size.PlatformDefault = False
@@ -4769,6 +4766,7 @@ object TStyleContainer
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
+    Visible = False
     XRadius = 2.000000000000000000
     YRadius = 2.000000000000000000
     object TPath
