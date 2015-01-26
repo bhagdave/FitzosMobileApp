@@ -27,7 +27,7 @@ type
   private
     { Private declarations }
     fId : String;
-    fParent : TCustomForm;
+    fParent : TfrmBase;
     procedure setId(sId : String);
   protected
     function connected : boolean;
@@ -36,9 +36,11 @@ type
     procedure showActivityDialog(Title, Mesg: String);
   public
     { Public declarations }
+    procedure hideActivityDialog();
+    procedure refresh();virtual;
     function getSelectedValue(AObject : TObject): TValue;
     property Id : String read fId write setId;
-    property parent: TCustomForm read fParent write fParent;
+    property parent: TfrmBase read fParent write fParent;
   end;
 
 implementation
@@ -99,6 +101,18 @@ var
 begin
   LEditor := GetBindEditor(AObject, IBindListEditorCommon) as IBindListEditorCommon;
   Result := Leditor.SelectedValue;
+end;
+
+procedure TfrmBase.hideActivityDialog;
+begin
+  fgActivityDialog.Title   := '';
+  fgActivityDialog.Message := '';
+  fgActivityDialog.Hide;
+end;
+
+procedure TfrmBase.refresh;
+begin
+//
 end;
 
 //

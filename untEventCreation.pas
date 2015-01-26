@@ -137,6 +137,10 @@ begin
   inherited;
   if connected then
   begin
+    if (assigned(parent)) then
+    begin
+      parent.Deactivate;
+    end;
     // Validate..
     if validate then // true = invalid
     begin
@@ -276,6 +280,10 @@ begin
   begin
     saveMessage.Now('Event created');
     close;
+    if (assigned(parent)) then
+    begin
+      parent.refresh;
+    end;
   end;
 end;
 

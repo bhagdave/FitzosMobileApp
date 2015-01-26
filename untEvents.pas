@@ -49,6 +49,7 @@ type
    procedure getEvents();
   public
     { Public declarations }
+    procedure refresh();override;
   end;
 
 
@@ -215,7 +216,7 @@ var
 begin
   showActivityDialog('Showing event','Please wait');
   lValue := GetSelectedValue(lvInvites);
-  ShowNewFormWithId('TfrmEvent',LValue.ToString);
+  ShowNewFormWithIdFromParent('TfrmEvent',LValue.ToString,self);
 end;
 
 procedure TfrmEvents.lvUpcomingItemClick(const Sender: TObject;
@@ -225,7 +226,13 @@ var
 begin
   showActivityDialog('Showing event','Please wait');
   lValue := GetSelectedValue(lvUpcoming);
-  ShowNewFormWithId('TfrmEvent',LValue.ToString);
+  ShowNewFormWithIdFromParent('TfrmEvent',LValue.ToString,self);
+end;
+
+procedure TfrmEvents.refresh;
+begin
+  inherited;
+  getEvents();
 end;
 
 procedure TfrmEvents.threadTerminated(Sender: TObject);

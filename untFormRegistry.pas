@@ -2,18 +2,18 @@ unit untFormRegistry;
 
 interface
 uses
-  System.Classes, fmx.forms;
+  untBaseForm, System.Classes, fmx.forms;
 
   procedure showNewForm(ClassName : String);
   procedure showNewFormWithId(ClassName, sId : String);
-  procedure showNewFormWithIdFromParent(ClassName,sId : String; parentForm : TCustomform);
+  procedure showNewFormWithIdFromParent(ClassName,sId : String; parentForm : TfrmBase);
 
 var
   FormRegistry : TStringList;
 
   implementation
 uses
-  untBaseForm, System.SysUtils, fmx.types;
+  System.SysUtils, fmx.types;
 
 procedure showNewForm(ClassName : String);
 var ObjClass: TFmxObjectClass;
@@ -65,7 +65,7 @@ begin
     end;
   end
 end;
-procedure showNewFormWithIdFromParent(ClassName,sId : String; parentForm : TCustomform);
+procedure showNewFormWithIdFromParent(ClassName,sId : String; parentForm : TfrmBase);
 var ObjClass: TFmxObjectClass;
     NewForm: TCustomForm;
     idx : Integer;
@@ -88,6 +88,7 @@ begin
     begin
       TfrmBase(NewForm).id := sId;
       TfrmBase(newForm).Parent := parentForm;
+      parentForm.hideActivityDialog;
       NewForm.Show;
     end;
   end

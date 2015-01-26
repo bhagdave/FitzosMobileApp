@@ -10,7 +10,6 @@ inherited frmEvents: TfrmEvents
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
       IconTintColor = claWhite
-      Size.Height = 48.000000000000000000
       TextSettings.FontColor = claWhite
     end
     object btnCreateEvent: TButton
@@ -3249,7 +3248,7 @@ inherited frmEvents: TfrmEvents
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
       IsSelected = True
-      Size.Width = 105.000000000000000000
+      Size.Width = 107.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -3276,7 +3275,7 @@ inherited frmEvents: TfrmEvents
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
       IsSelected = False
-      Size.Width = 106.000000000000000000
+      Size.Width = 107.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -3304,7 +3303,7 @@ inherited frmEvents: TfrmEvents
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Size, FontColor]
       IsSelected = False
-      Size.Width = 105.000000000000000000
+      Size.Width = 106.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
