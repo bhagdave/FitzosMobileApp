@@ -11,7 +11,7 @@ object frmSignup: TfrmSignup
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  DesignerMasterStyle = 2
+  DesignerMasterStyle = 3
   object imgLogo: TImageControl
     Align = Top
     Bitmap.PNG = {
@@ -3591,10 +3591,10 @@ object frmSignup: TfrmSignup
       end>
     RowCollection = <
       item
-        Value = 50.000000000000000000
+        Value = 40.000000000000000000
       end
       item
-        Value = 50.000000000000000000
+        Value = 60.000000000000000000
       end
       item
         SizeStyle = Auto
@@ -3608,9 +3608,10 @@ object frmSignup: TfrmSignup
     object lblMemberType: TLabel
       Align = Client
       Size.Width = 108.188041687011700000
-      Size.Height = 25.000000000000000000
+      Size.Height = 20.000000000000000000
       Size.PlatformDefault = False
       Text = 'Membership Type'
+      Visible = False
     end
     object cboType: TComboBox
       Align = Top
@@ -3625,11 +3626,12 @@ object frmSignup: TfrmSignup
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
+      Visible = False
     end
     object lblName: TLabel
       Align = Client
       Size.Width = 108.188041687011700000
-      Size.Height = 25.000000000000000000
+      Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       Text = 'Name'
     end
@@ -3640,7 +3642,7 @@ object frmSignup: TfrmSignup
       StyleLookup = 'roundededit'
       TabOrder = 3
       Position.X = 108.188041687011700000
-      Position.Y = 25.000000000000000000
+      Position.Y = 20.000000000000000000
       Size.Width = 211.811950683593800000
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False

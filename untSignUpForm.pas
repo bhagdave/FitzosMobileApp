@@ -79,14 +79,12 @@ begin
       begin
           fgActivityDialog.Title :='Creating account!';
           // ok we can process the call
-          lValue := GetSelectedValue(cboType);
-          sType := lValue.ToString;
           respCreateMember.content.Empty;
           reqCreateMember.ClearBody;
           reqCreateMember.Params.Clear;
           reqCreateMember.Params.AddItem('name',edtName.Text);
           reqCreateMember.Params.AddItem('password',edtPassword.Text);
-          reqCreateMember.Params.AddItem('choice',sType);
+          reqCreateMember.Params.AddItem('choice','Athlete');
           reqCreateMember.Params.AddItem('email',edtEmail.Text);
           reqCreateMember.Params.AddItem('key',dmdDataModule.sessionKey);
           reqCreateMember.Execute;
