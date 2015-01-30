@@ -7,9 +7,9 @@ inherited frmMenu_NmXhdpiPh: TfrmMenu_NmXhdpiPh
     Size.Height = 495.000000000000000000
     inherited btnEvents: TRectangle
       Size.Width = 200.000000000000000000
-      Size.Height = 165.667251586914100000
+      Size.Height = 246.858093261718800000
       inherited lblEvents: TLabel
-        Position.Y = 107.790679931640600000
+        Position.Y = 188.981521606445300000
         Size.Width = 200.000000000000000000
       end
       inherited imgEvents: TImage
@@ -18,9 +18,9 @@ inherited frmMenu_NmXhdpiPh: TfrmMenu_NmXhdpiPh
     end
     inherited btnTeams: TRectangle
       Size.Width = 200.000000000000000000
-      Size.Height = 165.667251586914100000
+      Size.Height = 246.858093261718800000
       inherited lblTeams: TLabel
-        Position.Y = 107.790679931640600000
+        Position.Y = 188.981521606445300000
         Size.Width = 200.000000000000000000
       end
       inherited imgTeams: TImage
@@ -29,9 +29,9 @@ inherited frmMenu_NmXhdpiPh: TfrmMenu_NmXhdpiPh
     end
     inherited btnNotifications: TRectangle
       Size.Width = 200.000000000000000000
-      Size.Height = 166.528823852539100000
+      Size.Height = 248.141906738281300000
       inherited lblNotifications: TLabel
-        Position.Y = 108.652252197265600000
+        Position.Y = 190.265335083007800000
         Size.Width = 200.000000000000000000
       end
       inherited imgNotifications: TImage
@@ -40,9 +40,9 @@ inherited frmMenu_NmXhdpiPh: TfrmMenu_NmXhdpiPh
     end
     inherited btnProfile: TRectangle
       Size.Width = 200.000000000000000000
-      Size.Height = 166.528823852539100000
+      Size.Height = 248.141906738281300000
       inherited lblProfile: TLabel
-        Position.Y = 108.652252197265600000
+        Position.Y = 190.265335083007800000
         Size.Width = 200.000000000000000000
       end
       inherited imgProfile: TImage

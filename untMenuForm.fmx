@@ -50,27 +50,24 @@ object frmMenu: TfrmMenu
       end>
     RowCollection = <
       item
-        Value = 33.468130865490700000
+        Value = 49.870320386428110000
       end
       item
-        Value = 33.642187668975420000
-      end
-      item
-        Value = 32.889681465533890000
+        Value = 50.129679613571890000
       end>
     object btnEvents: TRectangle
       Align = Client
       Fill.Color = xFFED7307
       Sides = []
       Size.Width = 160.000000000000000000
-      Size.Height = 113.791641235351600000
+      Size.Height = 169.559082031250000000
       Size.PlatformDefault = False
       OnClick = btnEventsClick
       object lblEvents: TLabel
         Align = Bottom
         StyledSettings = [Family, Size]
         Margins.Bottom = 10.000000000000000000
-        Position.Y = 55.915069580078130000
+        Position.Y = 111.682510375976600000
         Size.Width = 160.000000000000000000
         Size.Height = 47.876571655273440000
         Size.PlatformDefault = False
@@ -126,14 +123,14 @@ object frmMenu: TfrmMenu
       Fill.Color = xFFF18526
       Sides = []
       Size.Width = 160.000000000000000000
-      Size.Height = 113.791641235351600000
+      Size.Height = 169.559082031250000000
       Size.PlatformDefault = False
       OnClick = btnTeamsClick
       object lblTeams: TLabel
         Align = Bottom
         StyledSettings = [Family, Size]
         Margins.Bottom = 10.000000000000000000
-        Position.Y = 55.915069580078130000
+        Position.Y = 111.682510375976600000
         Size.Width = 160.000000000000000000
         Size.Height = 47.876571655273440000
         Size.PlatformDefault = False
@@ -205,14 +202,14 @@ object frmMenu: TfrmMenu
       Fill.Color = xFFEB9448
       Sides = []
       Size.Width = 160.000000000000000000
-      Size.Height = 114.383438110351600000
+      Size.Height = 170.440917968750000000
       Size.PlatformDefault = False
       OnClick = btnNotificationsClick
       object lblNotifications: TLabel
         Align = Bottom
         StyledSettings = [Family, Size]
         Margins.Bottom = 10.000000000000000000
-        Position.Y = 56.506866455078130000
+        Position.Y = 112.564346313476600000
         Size.Width = 160.000000000000000000
         Size.Height = 47.876571655273440000
         Size.PlatformDefault = False
@@ -270,14 +267,14 @@ object frmMenu: TfrmMenu
       Fill.Color = xFFEAC9AB
       Sides = []
       Size.Width = 160.000000000000000000
-      Size.Height = 114.383438110351600000
+      Size.Height = 170.440917968750000000
       Size.PlatformDefault = False
       OnClick = btnProfileClick
       object lblProfile: TLabel
         Align = Bottom
         StyledSettings = [Family, Size]
         Margins.Bottom = 10.000000000000000000
-        Position.Y = 56.506866455078130000
+        Position.Y = 112.564346313476600000
         Size.Width = 160.000000000000000000
         Size.Height = 47.876571655273440000
         Size.PlatformDefault = False
