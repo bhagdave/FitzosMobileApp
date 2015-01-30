@@ -255,8 +255,8 @@
         <Debugger_RunParams>-cleaninstall</Debugger_RunParams>
         <DCC_UnitSearchPath>E:\XE7\Library;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=27;versionName=1.0.5;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
-        <VerInfo_Build>27</VerInfo_Build>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=28;versionName=1.0.5;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
+        <VerInfo_Build>28</VerInfo_Build>
         <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <ItemGroup>
@@ -276,9 +276,6 @@
         <DCCReference Include="untNotifications.pas">
             <Form>frmNotifications</Form>
         </DCCReference>
-        <DCCReference Include="untFriends.pas">
-            <Form>frmFriends</Form>
-        </DCCReference>
         <DCCReference Include="untEvents.pas">
             <Form>frmEvents</Form>
         </DCCReference>
@@ -290,9 +287,6 @@
         </DCCReference>
         <DCCReference Include="untSearch.pas">
             <Form>frmSearch</Form>
-        </DCCReference>
-        <DCCReference Include="untFriend.pas">
-            <Form>frmFriend</Form>
         </DCCReference>
         <DCCReference Include="untEvent.pas">
             <Form>frmEvent</Form>
