@@ -31,12 +31,6 @@ type
     edtLocation: TEdit;
     cboTeam: TComboBox;
     cboSport: TComboBox;
-    lyoEndDate: TLayout;
-    edtEndDate: TDateEdit;
-    lblEndDate: TLabel;
-    lyoEndTime: TLayout;
-    edtEndTime: TTimeEdit;
-    lblEndTime: TLabel;
     expTimes: TExpander;
     expDetails: TExpander;
     expOptions: TExpander;
@@ -47,7 +41,6 @@ type
     LinkFillControlToField2: TLinkFillControlToField;
     BindSourceDB1: TBindSourceDB;
     LinkControlToField1: TLinkControlToField;
-    LinkControlToField2: TLinkControlToField;
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
     LinkFillControlToField3: TLinkFillControlToField;
@@ -115,8 +108,6 @@ begin
   request.Params.AddItem('member_id',dmdDataModule.memberId);
   request.Params.AddItem('time',edtStartTime.Text);
   request.Params.AddItem('location',edtLocation.Text);
-  request.Params.AddItem('end_time',edtEndTime.Text);
-  request.Params.AddItem('end_date',DateToStr(edtEndDate.Date));
   request.Params.AddItem('sport_id',sSport);
 end;
 
@@ -184,8 +175,6 @@ begin
   with dmdEvent do begin
       rdsaEvent.UpdateDataSet;
       fdmEvent.Open;
-      edtDate.text := fdmEvent.FieldByName('date').AsString;
-      edtEndDate.Text := fdmEvent.FieldByName('end_date').AsString;
       cboPrivacy.ItemIndex := 0;
       cboType.ItemIndex := 0;
       fgActivityDialog.Hide;
@@ -197,7 +186,6 @@ begin
   inherited;
   showActivityDialog('Loading data','Please wait');
   edtDate.Align := TAlignLayout.client;
-  edtEndDate.Align := TAlignLayout.Client;
   if connected then
   begin
     getSportsAndTeams();
@@ -227,7 +215,6 @@ begin
       btnNext.Visible := true;
       btnTimesNext.Visible := true;
       edtDate.Data := '';
-      edtEndDate.Data := '';
       cboPrivacy.ItemIndex := 0;
       cboType.ItemIndex := 0;
       fgActivityDialog.Hide;

@@ -174,11 +174,10 @@ inherited frmEventCreation: TfrmEventCreation
         object expTimes: TExpander
           Align = Top
           HitTest = False
-          IsExpanded = False
           Position.Y = 167.000000000000000000
           ShowCheck = False
           Size.Width = 320.000000000000000000
-          Size.Height = 25.000000000000000000
+          Size.Height = 224.000000000000000000
           Size.PlatformDefault = False
           Text = 'Times'
           TabOrder = 2
@@ -190,7 +189,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TabOrder = 0
             object edtDate: TDateEdit
-              Date = 42030.000000000000000000
+              Date = 42034.000000000000000000
               TodayDefault = True
               Anchors = [akLeft, akTop, akRight, akBottom]
               Position.X = 144.000000000000000000
@@ -236,67 +235,13 @@ inherited frmEventCreation: TfrmEventCreation
               Text = 'Start Time'
             end
           end
-          object lyoEndDate: TLayout
-            Align = Top
-            Position.Y = 88.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 44.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 2
-            object edtEndDate: TDateEdit
-              Date = 42030.000000000000000000
-              TodayDefault = True
-              Anchors = [akLeft, akTop, akRight, akBottom]
-              Position.X = 144.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 169.000000000000000000
-              Size.Height = 35.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 0
-            end
-            object lblEndDate: TLabel
-              Align = FitLeft
-              StyledSettings = [Family, Size, FontColor]
-              Size.Width = 92.999984741210940000
-              Size.Height = 44.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Style = [fsBold]
-              Text = 'End Date'
-            end
-          end
-          object lyoEndTime: TLayout
-            Align = Top
-            Position.Y = 132.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 44.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 3
-            object edtEndTime: TTimeEdit
-              IsEmpty = True
-              Time = 0.622222222222222200
-              Align = Client
-              Size.Width = 227.000015258789100000
-              Size.Height = 44.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 0
-            end
-            object lblEndTime: TLabel
-              Align = FitLeft
-              StyledSettings = [Family, Size, FontColor]
-              Size.Width = 92.999984741210940000
-              Size.Height = 44.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Style = [fsBold]
-              Text = 'End Time'
-            end
-          end
           object btnTimesNext: TButton
             Align = MostBottom
             Position.Y = 169.000000000000000000
             Size.Width = 320.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 4
+            TabOrder = 2
             Text = 'Next'
             OnClick = btnTimesNextClick
           end
@@ -305,7 +250,7 @@ inherited frmEventCreation: TfrmEventCreation
           Align = Top
           HitTest = False
           IsExpanded = False
-          Position.Y = 192.000000000000000000
+          Position.Y = 391.000000000000000000
           ShowCheck = False
           Size.Width = 320.000000000000000000
           Size.Height = 25.000000000000000000
@@ -3614,13 +3559,6 @@ inherited frmEventCreation: TfrmEventCreation
       FieldName = 'content'
       Control = memContent
       Track = False
-    end
-    object LinkControlToField2: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'end_time'
-      Control = edtEndTime
-      Track = True
     end
     object LinkControlToField4: TLinkControlToField
       Category = 'Quick Bindings'
