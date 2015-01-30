@@ -63,6 +63,8 @@ uses
   untDataModule, untJsonFunctions,untFormRegistry;
 
 {$R *.fmx}
+{$R *.SmXhdpiPh.fmx ANDROID}
+
 procedure TfrmEventCreation.addParams(request: TRestRequest);
 var
   sPublic, sSport, sTeam : String;

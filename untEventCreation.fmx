@@ -3,12 +3,13 @@ inherited frmEventCreation: TfrmEventCreation
   ClientHeight = 460
   OnActivate = FormActivate
   OnDeactivate = FormDeactivate
-  DesignerMasterStyle = 2
+  DesignerMasterStyle = 3
   inherited barBottom: TToolBar
     Position.Y = 416.000000000000000000
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
       IconTintColor = claWhite
+      Size.Height = 48.000000000000000000
       TextSettings.FontColor = claWhite
     end
     object btnSubmit: TButton
