@@ -128,27 +128,23 @@ begin
   if (self.Height < 460) then
   begin
     imgEvents.Margins.Top := 0;
-    imgFriends.Margins.Top := 0;
     imgTeams.Margins.Top := 0;
     imgNotifications.Margins.Top := 0;
     imgProfile.Margins.Top := 0;
     lblEvents.Visible := false;
     lblTeams.Visible := false;
     lblNotifications.Visible := false;
-    lblFriends.Visible := false;
     lblProfile.Visible := false;
   end
   else
   begin
     imgEvents.Margins.Top := 15;
-    imgFriends.Margins.Top := 15;
     imgTeams.Margins.Top := 15;
     imgNotifications.Margins.Top := 15;
     imgProfile.Margins.Top := 15;
     lblEvents.Visible := true;
     lblTeams.Visible := true;
     lblNotifications.Visible := true;
-    lblFriends.Visible := true;
     lblProfile.Visible := true;
   end;
 end;
