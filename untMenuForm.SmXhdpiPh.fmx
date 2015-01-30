@@ -4,12 +4,12 @@ inherited frmMenu_SmXhdpiPh: TfrmMenu_SmXhdpiPh
   DesignerMasterStyle = 3
   inherited GridPanelLayout1: TGridPanelLayout
     Size.Width = 250.000000000000000000
-    Size.Height = 318.000000000000000000
+    Size.Height = 255.000000000000000000
     inherited btnEvents: TRectangle
       Size.Width = 125.000000000000000000
-      Size.Height = 106.428657531738300000
+      Size.Height = 85.343734741210940000
       inherited lblEvents: TLabel
-        Position.Y = 58.552085876464840000
+        Position.Y = 37.467163085937500000
         Size.Width = 125.000000000000000000
       end
       inherited imgEvents: TImage
@@ -18,9 +18,9 @@ inherited frmMenu_SmXhdpiPh: TfrmMenu_SmXhdpiPh
     end
     inherited btnTeams: TRectangle
       Size.Width = 125.000000000000000000
-      Size.Height = 106.428657531738300000
+      Size.Height = 85.343734741210940000
       inherited lblTeams: TLabel
-        Position.Y = 58.552085876464840000
+        Position.Y = 37.467163085937500000
         Size.Width = 125.000000000000000000
       end
       inherited imgTeams: TImage
@@ -29,31 +29,20 @@ inherited frmMenu_SmXhdpiPh: TfrmMenu_SmXhdpiPh
     end
     inherited btnNotifications: TRectangle
       Size.Width = 125.000000000000000000
-      Size.Height = 106.982154846191400000
+      Size.Height = 85.787582397460940000
       inherited lblNotifications: TLabel
-        Position.Y = 59.105583190917970000
+        Position.Y = 37.911010742187500000
         Size.Width = 125.000000000000000000
       end
       inherited imgNotifications: TImage
         Size.Width = 125.000000000000000000
       end
     end
-    inherited btnFriends: TRectangle
-      Size.Width = 125.000000000000000000
-      Size.Height = 106.982154846191400000
-      inherited lblFriends: TLabel
-        Position.Y = 59.105583190917970000
-        Size.Width = 125.000000000000000000
-      end
-      inherited imgFriends: TImage
-        Size.Width = 125.000000000000000000
-      end
-    end
     inherited btnProfile: TRectangle
       Size.Width = 125.000000000000000000
-      Size.Height = 104.589187622070300000
+      Size.Height = 85.787582397460940000
       inherited lblProfile: TLabel
-        Position.Y = 56.712615966796880000
+        Position.Y = 37.911010742187500000
         Size.Width = 125.000000000000000000
       end
       inherited imgProfile: TImage

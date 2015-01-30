@@ -2,35 +2,29 @@ inherited frmMenu_iPhone4in: TfrmMenu_iPhone4in
   ClientHeight = 548
   DesignerMasterStyle = 3
   inherited GridPanelLayout1: TGridPanelLayout
-    Size.Height = 491.000000000000000000
+    Size.Height = 428.000000000000000000
     inherited btnEvents: TRectangle
-      Size.Height = 164.328521728515600000
+      Size.Height = 143.243606567382800000
       inherited lblEvents: TLabel
-        Position.Y = 106.451950073242200000
+        Position.Y = 85.367034912109380000
       end
     end
     inherited btnTeams: TRectangle
-      Size.Height = 164.328521728515600000
+      Size.Height = 143.243606567382800000
       inherited lblTeams: TLabel
-        Position.Y = 106.451950073242200000
+        Position.Y = 85.367034912109380000
       end
     end
     inherited btnNotifications: TRectangle
-      Size.Height = 165.183135986328100000
+      Size.Height = 143.988571166992200000
       inherited lblNotifications: TLabel
-        Position.Y = 107.306564331054700000
-      end
-    end
-    inherited btnFriends: TRectangle
-      Size.Height = 165.183135986328100000
-      inherited lblFriends: TLabel
-        Position.Y = 107.306564331054700000
+        Position.Y = 86.111999511718750000
       end
     end
     inherited btnProfile: TRectangle
-      Size.Height = 161.488342285156300000
+      Size.Height = 143.988571166992200000
       inherited lblProfile: TLabel
-        Position.Y = 103.611770629882800000
+        Position.Y = 86.111999511718750000
       end
     end
   end

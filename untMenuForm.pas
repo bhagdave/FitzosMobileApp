@@ -15,16 +15,13 @@ type
     btnTeams: TRectangle;
     lblTeams: TLabel;
     btnNotifications: TRectangle;
-    btnFriends: TRectangle;
     lblNotifications: TLabel;
-    lblFriends: TLabel;
     btnProfile: TRectangle;
     lblProfile: TLabel;
     imgLogo: TImageControl;
     imgEvents: TImage;
     imgTeams: TImage;
     imgNotifications: TImage;
-    imgFriends: TImage;
     imgProfile: TImage;
     fgActivityDialog: TfgActivityDialog;
     procedure btnEventsClick(Sender: TObject);
