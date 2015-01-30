@@ -1,12 +1,4 @@
-﻿[btnNext]
-Coordinates=230,80,52,51
-Visible=False
-
-[btnTimesNext]
-Coordinates=503,232,82,51
-Visible=False
-
-[lblStartDate]
+﻿[lblStartDate]
 Coordinates=327,78,72,51
 Visible=False
 
@@ -47,9 +39,6 @@ Visible=False
 Coordinates=327,155,83,51
 Visible=False
 
-[cbPublished]
-Coordinates=810,180,75,51
-
 [lblStartTime]
 Coordinates=246,478,73,51
 Visible=False
@@ -69,20 +58,8 @@ Visible=False
 [StyleBook1]
 Coordinates=679,408,79,36
 
-[expOptions]
-Coordinates=503,309,70,51
-Visible=False
-
-[expTimes]
-Coordinates=335,478,61,51
-Visible=False
-
 [lyoStartTime]
 Coordinates=679,463,76,33
-Visible=False
-
-[expDetails]
-Coordinates=167,478,65,51
 Visible=False
 
 [edtLocation]
@@ -249,7 +226,7 @@ Coordinates=1338,573,191,267
 Visible=False
 
 []
-Coordinates=700,510,84,105
+Coordinates=167,478,65,51
 Visible=False
 
 [dmdEvent.reqAllEventData]

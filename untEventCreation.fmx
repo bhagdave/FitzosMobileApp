@@ -51,239 +51,175 @@ inherited frmEventCreation: TfrmEventCreation
         Size.Height = 433.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        object expDetails: TExpander
-          Align = Top
-          ShowCheck = False
+        object grdPanelEdits: TGridPanelLayout
+          Align = MostTop
           Size.Width = 320.000000000000000000
-          Size.Height = 167.000000000000000000
+          Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
-          Text = 'Details'
           TabOrder = 1
-          ContentSize = '142'
-          object memContent: TMemo
-            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-            Align = Top
-            Position.Y = 71.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 50.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 3
-          end
-          object lblDescription: TLabel
-            Align = Top
-            Position.Y = 50.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 21.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.HorzAlign = Center
-            Text = 'Description'
-          end
-          object btnNext: TButton
-            Align = MostBottom
+          ColumnCollection = <
+            item
+              Value = 31.731294374658660000
+            end
+            item
+              Value = 68.268705625341340000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = lblName
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = edtName
+              Row = 0
+            end
+            item
+              Column = 0
+              Control = lblLocation
+              Row = 1
+            end
+            item
+              Column = 1
+              Control = edtLocation
+              Row = 1
+            end>
+          RowCollection = <
+            item
+              Value = 50.000000000000000000
+            end
+            item
+              Value = 50.000000000000000000
+            end>
+          object lblName: TLabel
+            Align = Client
             StyledSettings = [Family, Size, FontColor]
-            Position.Y = 112.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 30.000000000000000000
+            Size.Width = 101.540138244628900000
+            Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 1
-            Text = 'Next'
             TextSettings.Font.Style = [fsBold]
-            OnClick = btnNextClick
+            Text = 'Name'
           end
-          object grdPanelEdits: TGridPanelLayout
-            Align = MostTop
-            Size.Width = 320.000000000000000000
-            Size.Height = 50.000000000000000000
+          object edtName: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Size.Width = 218.459869384765600000
+            Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
+            TextPrompt = 'Name'
+            StyledSettings = [Family, Size, Style]
+          end
+          object lblLocation: TLabel
+            Align = Client
+            StyledSettings = [Family, Size, FontColor]
+            Size.Width = 101.540138244628900000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Style = [fsBold]
+            Text = 'Location'
+          end
+          object edtLocation: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
             TabOrder = 2
-            ColumnCollection = <
-              item
-                Value = 31.731294374658660000
-              end
-              item
-                Value = 68.268705625341340000
-              end>
-            ControlCollection = <
-              item
-                Column = 0
-                Control = lblName
-                Row = 0
-              end
-              item
-                Column = 1
-                Control = edtName
-                Row = 0
-              end
-              item
-                Column = 0
-                Control = lblLocation
-                Row = 1
-              end
-              item
-                Column = 1
-                Control = edtLocation
-                Row = 1
-              end>
-            RowCollection = <
-              item
-                Value = 50.000000000000000000
-              end
-              item
-                Value = 50.000000000000000000
-              end>
-            object lblName: TLabel
-              Align = Client
-              StyledSettings = [Family, Size, FontColor]
-              Size.Width = 101.540138244628900000
-              Size.Height = 25.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Style = [fsBold]
-              Text = 'Name'
-            end
-            object edtName: TEdit
-              Touch.InteractiveGestures = [LongTap, DoubleTap]
-              Align = Client
-              TabOrder = 1
-              Size.Width = 218.459869384765600000
-              Size.Height = 25.000000000000000000
-              Size.PlatformDefault = False
-              TextPrompt = 'Name'
-              StyledSettings = [Family, Size, Style]
-            end
-            object lblLocation: TLabel
-              Align = Client
-              StyledSettings = [Family, Size, FontColor]
-              Size.Width = 101.540138244628900000
-              Size.Height = 25.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Style = [fsBold]
-              Text = 'Location'
-            end
-            object edtLocation: TEdit
-              Touch.InteractiveGestures = [LongTap, DoubleTap]
-              Align = Client
-              TabOrder = 2
-              Size.Width = 218.459869384765600000
-              Size.Height = 25.000000000000000000
-              Size.PlatformDefault = False
-              TextPrompt = 'Location'
-              StyledSettings = [Family, Size, Style]
-            end
+            Size.Width = 218.459869384765600000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Location'
+            StyledSettings = [Family, Size, Style]
           end
         end
-        object expTimes: TExpander
+        object lyoStartDate: TLayout
           Align = Top
-          HitTest = False
-          IsExpanded = False
-          Position.Y = 167.000000000000000000
-          ShowCheck = False
+          Position.Y = 121.000000000000000000
           Size.Width = 320.000000000000000000
-          Size.Height = 25.000000000000000000
+          Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
-          Text = 'Times'
           TabOrder = 2
-          ContentSize = '199'
-          object lyoStartDate: TLayout
-            Align = Top
-            Size.Width = 320.000000000000000000
-            Size.Height = 44.000000000000000000
+          object edtDate: TDateEdit
+            Date = 42034.000000000000000000
+            TodayDefault = True
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            Position.X = 144.000000000000000000
+            Position.Y = 8.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 35.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object edtDate: TDateEdit
-              Date = 42034.000000000000000000
-              TodayDefault = True
-              Anchors = [akLeft, akTop, akRight, akBottom]
-              Position.X = 144.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 169.000000000000000000
-              Size.Height = 35.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 0
-            end
-            object lblStartDate: TLabel
-              Align = FitLeft
-              StyledSettings = [Family, Size, FontColor]
-              Size.Width = 92.999984741210940000
-              Size.Height = 44.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Style = [fsBold]
-              Text = 'Start Date'
-            end
           end
-          object lyoStartTime: TLayout
-            Align = Top
-            Position.Y = 44.000000000000000000
-            Size.Width = 320.000000000000000000
+          object lblStartDate: TLabel
+            Align = FitLeft
+            StyledSettings = [Family, Size, FontColor]
+            Size.Width = 92.999984741210940000
             Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 1
-            object edtStartTime: TTimeEdit
-              IsEmpty = True
-              Time = 0.622222222222222200
-              Align = Client
-              Size.Width = 227.000015258789100000
-              Size.Height = 44.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 0
-            end
-            object lblStartTime: TLabel
-              Align = FitLeft
-              StyledSettings = [Family, Size, FontColor]
-              Size.Width = 92.999984741210940000
-              Size.Height = 44.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Style = [fsBold]
-              Text = 'Start Time'
-            end
-          end
-          object btnTimesNext: TButton
-            Align = MostBottom
-            Position.Y = 169.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 30.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 2
-            Text = 'Next'
-            OnClick = btnTimesNextClick
+            TextSettings.Font.Style = [fsBold]
+            Text = 'Start Date'
           end
         end
-        object expOptions: TExpander
+        object lyoStartTime: TLayout
           Align = Top
-          HitTest = False
-          Position.Y = 192.000000000000000000
-          ShowCheck = False
+          Position.Y = 165.000000000000000000
           Size.Width = 320.000000000000000000
-          Size.Height = 255.000000000000000000
+          Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
-          Text = 'Options'
           TabOrder = 3
-          ContentSize = '230'
-          object cbPublished: TCheckBox
-            Align = Bottom
-            Position.Y = 211.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 19.000000000000000000
+          object edtStartTime: TTimeEdit
+            IsEmpty = True
+            Time = 0.622222222222222200
+            Align = Client
+            Size.Width = 227.000015258789100000
+            Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            Text = 'Published'
           end
-          object cboTeam: TComboBox
-            Align = Top
-            DisableFocusEffect = False
-            Position.Y = 20.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 30.000000000000000000
+          object lblStartTime: TLabel
+            Align = FitLeft
+            StyledSettings = [Family, Size, FontColor]
+            Size.Width = 92.999984741210940000
+            Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 1
+            TextSettings.Font.Style = [fsBold]
+            Text = 'Start Time'
           end
-          object lblTeam: TLabel
-            Align = Top
-            Size.Width = 320.000000000000000000
-            Size.Height = 20.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.HorzAlign = Center
-            Text = 'Team'
-          end
+        end
+        object lblDescription: TLabel
+          Align = Top
+          Position.Y = 50.000000000000000000
+          Size.Width = 320.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Description'
+        end
+        object memContent: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          Align = Top
+          Position.Y = 71.000000000000000000
+          Size.Width = 320.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+        end
+        object cboTeam: TComboBox
+          Align = Top
+          DisableFocusEffect = False
+          Position.Y = 229.000000000000000000
+          Size.Width = 320.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+        end
+        object lblTeam: TLabel
+          Align = Top
+          Position.Y = 209.000000000000000000
+          Size.Width = 320.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Team'
         end
       end
     end
@@ -3505,15 +3441,6 @@ inherited frmEventCreation: TfrmEventCreation
       FieldName = 'name'
       Control = edtName
       Track = False
-    end
-    object LinkControlToField5: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'published'
-      Control = cbPublished
-      Track = True
-      CustomFormat = '%s = '#39'yes'#39
-      CustomParse = 'IfThen(ToStr(%s) = '#39'True'#39', '#39'yes'#39', '#39'no'#39')'
     end
     object LinkControlToField7: TLinkControlToField
       Category = 'Quick Bindings'

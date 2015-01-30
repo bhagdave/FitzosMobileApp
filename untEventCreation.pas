@@ -22,24 +22,17 @@ type
     edtDate: TDateEdit;
     lyoStartDate: TLayout;
     lblStartDate: TLabel;
-    cbPublished: TCheckBox;
     edtStartTime: TTimeEdit;
     lyoStartTime: TLayout;
     lblStartTime: TLabel;
     edtLocation: TEdit;
     cboTeam: TComboBox;
-    expTimes: TExpander;
-    expDetails: TExpander;
-    expOptions: TExpander;
-    btnNext: TButton;
-    btnTimesNext: TButton;
     btnSubmit: TButton;
     BindingsList1: TBindingsList;
     LinkFillControlToField2: TLinkFillControlToField;
     BindSourceDB1: TBindSourceDB;
     LinkControlToField1: TLinkControlToField;
     LinkControlToField4: TLinkControlToField;
-    LinkControlToField5: TLinkControlToField;
     LinkControlToField7: TLinkControlToField;
     LinkControlToField8: TLinkControlToField;
     lblTeam: TLabel;
@@ -47,8 +40,6 @@ type
     lblName: TLabel;
     lblLocation: TLabel;
     LinkFillControlToField1: TLinkFillControlToField;
-    procedure btnNextClick(Sender: TObject);
-    procedure btnTimesNextClick(Sender: TObject);
     procedure btnSubmitClick(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -77,10 +68,6 @@ var
   sPublic, sSport, sTeam : String;
   lValue : TValue;
 begin
-  if cbPublished.IsChecked then
-    sPublic := 'yes'
-  else
-    sPublic := 'no';
   lValue := GetSelectedValue(cboTeam);
   sTeam := lValue.ToString;
   request.Params.Clear;
@@ -90,7 +77,7 @@ begin
   request.Params.AddItem('name',edtName.Text);
   request.Params.AddItem('content',memContent.Lines.GetText);
   request.Params.AddItem('date',DateToStr(edtDate.Date));
-  request.Params.AddItem('published', sPublic);
+  request.Params.AddItem('published', 'Yes');
   request.Params.AddItem('type','LIVE');
   request.Params.AddItem('public','PUBLIC');
   request.Params.AddItem('sub_type','FREE');
@@ -99,18 +86,6 @@ begin
   request.Params.AddItem('time',edtStartTime.Text);
   request.Params.AddItem('location',edtLocation.Text);
   request.Params.AddItem('sport_id',sSport);
-end;
-
-procedure TfrmEventCreation.btnNextClick(Sender: TObject);
-begin
-  inherited;
-  if edtName.Text <> '' then
-  begin
-    expDetails.IsExpanded := false;
-    expTimes.IsExpanded := true;
-  end
-  else
-    showmessage('Please enter a name for the event');
 end;
 
 procedure TfrmEventCreation.btnSubmitClick(Sender: TObject);
@@ -153,13 +128,6 @@ begin
   end;
 end;
 
-procedure TfrmEventCreation.btnTimesNextClick(Sender: TObject);
-begin
-  inherited;
-  expTimes.IsExpanded := false;
-  expOptions.IsExpanded := true;
-end;
-
 procedure TfrmEventCreation.eventLoaded;
 begin
   with dmdEvent do begin
@@ -181,8 +149,6 @@ begin
     begin
       // change UI
       lblCaption.Text := 'Update Event';
-      btnNext.Visible := false;
-      btnTimesNext.Visible := false;
       // Get data!
       with dmdEvent do
       begin
@@ -200,8 +166,6 @@ begin
       // just when inserting...
       dmdEvent.fdmEvent.insert;
       lblCaption.Text := 'Create Event';
-      btnNext.Visible := true;
-      btnTimesNext.Visible := true;
       edtDate.Data := '';
       fgActivityDialog.Hide;
     end;
