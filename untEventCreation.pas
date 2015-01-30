@@ -23,14 +23,11 @@ type
     lyoStartDate: TLayout;
     lblStartDate: TLabel;
     cbPublished: TCheckBox;
-    cboType: TComboBox;
-    cboPrivacy: TComboBox;
     edtStartTime: TTimeEdit;
     lyoStartTime: TLayout;
     lblStartTime: TLabel;
     edtLocation: TEdit;
     cboTeam: TComboBox;
-    cboSport: TComboBox;
     expTimes: TExpander;
     expDetails: TExpander;
     expOptions: TExpander;
@@ -43,18 +40,13 @@ type
     LinkControlToField1: TLinkControlToField;
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
-    LinkFillControlToField3: TLinkFillControlToField;
-    LinkFillControlToField4: TLinkFillControlToField;
     LinkControlToField7: TLinkControlToField;
     LinkControlToField8: TLinkControlToField;
     lblTeam: TLabel;
-    lblSport: TLabel;
     grdPanelEdits: TGridPanelLayout;
     lblName: TLabel;
     lblLocation: TLabel;
     LinkFillControlToField1: TLinkFillControlToField;
-    lblEventType: TLabel;
-    lblPrivacy: TLabel;
     procedure btnNextClick(Sender: TObject);
     procedure btnTimesNextClick(Sender: TObject);
     procedure btnSubmitClick(Sender: TObject);
@@ -91,8 +83,6 @@ begin
     sPublic := 'no';
   lValue := GetSelectedValue(cboTeam);
   sTeam := lValue.ToString;
-  lValue := GetSelectedValue(cboSport);
-  sSport := lValue.ToString;
   request.Params.Clear;
   if id <> '' then
     request.Params.AddItem('id',id);
@@ -101,8 +91,8 @@ begin
   request.Params.AddItem('content',memContent.Lines.GetText);
   request.Params.AddItem('date',DateToStr(edtDate.Date));
   request.Params.AddItem('published', sPublic);
-  request.Params.AddItem('type',cboType.Selected.Text);
-  request.Params.AddItem('public',cboPrivacy.Selected.Text);
+  request.Params.AddItem('type','LIVE');
+  request.Params.AddItem('public','PUBLIC');
   request.Params.AddItem('sub_type','FREE');
   request.Params.AddItem('team_id',sTeam);
   request.Params.AddItem('member_id',dmdDataModule.memberId);
@@ -175,8 +165,6 @@ begin
   with dmdEvent do begin
       rdsaEvent.UpdateDataSet;
       fdmEvent.Open;
-      cboPrivacy.ItemIndex := 0;
-      cboType.ItemIndex := 0;
       fgActivityDialog.Hide;
   end;
 end;
@@ -215,8 +203,6 @@ begin
       btnNext.Visible := true;
       btnTimesNext.Visible := true;
       edtDate.Data := '';
-      cboPrivacy.ItemIndex := 0;
-      cboType.ItemIndex := 0;
       fgActivityDialog.Hide;
     end;
   end
@@ -324,12 +310,6 @@ begin
     invalid := true;
     edtDate.SetFocus;
     errors := errors + 'Event Date ';
-  end;
-  if not(Assigned(cboSport.Selected)) then
-  begin
-    invalid := true;
-    cboSport.SetFocus;
-    errors := errors + 'Sport ';
   end;
   if not(Assigned(cboTeam.Selected)) then
   begin

@@ -174,10 +174,11 @@ inherited frmEventCreation: TfrmEventCreation
         object expTimes: TExpander
           Align = Top
           HitTest = False
+          IsExpanded = False
           Position.Y = 167.000000000000000000
           ShowCheck = False
           Size.Width = 320.000000000000000000
-          Size.Height = 224.000000000000000000
+          Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Times'
           TabOrder = 2
@@ -249,11 +250,10 @@ inherited frmEventCreation: TfrmEventCreation
         object expOptions: TExpander
           Align = Top
           HitTest = False
-          IsExpanded = False
-          Position.Y = 391.000000000000000000
+          Position.Y = 192.000000000000000000
           ShowCheck = False
           Size.Width = 320.000000000000000000
-          Size.Height = 25.000000000000000000
+          Size.Height = 255.000000000000000000
           Size.PlatformDefault = False
           Text = 'Options'
           TabOrder = 3
@@ -267,39 +267,6 @@ inherited frmEventCreation: TfrmEventCreation
             TabOrder = 0
             Text = 'Published'
           end
-          object cboType: TComboBox
-            Align = Top
-            DisableFocusEffect = False
-            Items.Strings = (
-              'LIVE'
-              'VIRTUAL')
-            Position.Y = 121.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 30.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 1
-          end
-          object cboPrivacy: TComboBox
-            Align = Top
-            DisableFocusEffect = False
-            Items.Strings = (
-              'PRIVATE'
-              'PUBLIC')
-            Position.Y = 172.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 30.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 2
-          end
-          object cboSport: TComboBox
-            Align = Top
-            DisableFocusEffect = False
-            Position.Y = 70.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 30.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 3
-          end
           object cboTeam: TComboBox
             Align = Top
             DisableFocusEffect = False
@@ -307,7 +274,7 @@ inherited frmEventCreation: TfrmEventCreation
             Size.Width = 320.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 4
+            TabOrder = 1
           end
           object lblTeam: TLabel
             Align = Top
@@ -316,33 +283,6 @@ inherited frmEventCreation: TfrmEventCreation
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Center
             Text = 'Team'
-          end
-          object lblSport: TLabel
-            Align = Top
-            Position.Y = 50.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 20.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.HorzAlign = Center
-            Text = 'Sport'
-          end
-          object lblEventType: TLabel
-            Align = Top
-            Position.Y = 100.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 21.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.HorzAlign = Center
-            Text = 'Event Type'
-          end
-          object lblPrivacy: TLabel
-            Align = Top
-            Position.Y = 151.000000000000000000
-            Size.Width = 320.000000000000000000
-            Size.Height = 21.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.HorzAlign = Center
-            Text = 'Private/Public'
           end
         end
       end
@@ -3543,7 +3483,6 @@ inherited frmEventCreation: TfrmEventCreation
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'sport_id'
-      Control = cboSport
       Track = True
       FillDataSource = dmdEvent.dsSports
       FillValueFieldName = 'id'
@@ -3575,28 +3514,6 @@ inherited frmEventCreation: TfrmEventCreation
       Track = True
       CustomFormat = '%s = '#39'yes'#39
       CustomParse = 'IfThen(ToStr(%s) = '#39'True'#39', '#39'yes'#39', '#39'no'#39')'
-    end
-    object LinkFillControlToField3: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'type'
-      Control = cboType
-      Track = True
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
-    object LinkFillControlToField4: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'public'
-      Control = cboPrivacy
-      Track = True
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
     end
     object LinkControlToField7: TLinkControlToField
       Category = 'Quick Bindings'

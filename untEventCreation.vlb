@@ -104,9 +104,6 @@ Visible=False
 Coordinates=679,573,62,33
 Visible=False
 
-[cboSport]
-Coordinates=800,20,84,105
-
 [btnTeams]
 Coordinates=541,574,62,33
 Visible=False
@@ -117,9 +114,6 @@ Visible=False
 
 [cboTeam]
 Coordinates=500,230,84,105
-
-[cboType]
-Coordinates=700,510,84,105
 
 [dmdEvent.fdmTeams]
 Visible=False
@@ -212,9 +206,6 @@ Visible=False
 [BindingsList1]
 Coordinates=805,56,91,36
 
-[cboPrivacy]
-Coordinates=850,360,84,105
-
 [dmdEvent.respUpdateEvent]
 Coordinates=810,170,151,267
 Visible=False
@@ -258,7 +249,7 @@ Coordinates=1338,573,191,267
 Visible=False
 
 []
-Coordinates=1030,110,72,33
+Coordinates=700,510,84,105
 Visible=False
 
 [dmdEvent.reqAllEventData]
@@ -272,9 +263,6 @@ Coordinates=49,176,83,33
 
 [lblLocation]
 Coordinates=207,157,69,51
-
-[lblSport]
-Coordinates=148,173,53,51
 
 [btnBack]
 Coordinates=62,77,54,51
@@ -314,4 +302,40 @@ Coordinates=751,1698,80,33
 
 [idTCPConnection]
 Coordinates=656,1,100,33
+
+[dmdDataModule.fdmMemberTeams]
+Visible=False
+
+[dmdDataModule.fdmNotifications]
+Visible=False
+
+[dmdDataModule.fdmTeamMembers]
+Visible=False
+
+[dmdDataModule.fdmTeamEvents]
+Visible=False
+
+[dmdDataModule.fdmTeamWall]
+Visible=False
+
+[dmdDataModule.fdmTeam]
+Visible=False
+
+[dmdDataModule.fdmFriends]
+Visible=False
+
+[dmdDataModule.fdmEvents]
+Visible=False
+
+[dmdDataModule.fdmMemberSports]
+Visible=False
+
+[dmdDataModule.fdmProfile]
+Visible=False
+
+[dmdDataModule.fdmSearchNames]
+Visible=False
+
+[dmdDataModule.fdmSports]
+Visible=False
 
