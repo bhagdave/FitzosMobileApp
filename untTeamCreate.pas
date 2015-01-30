@@ -18,10 +18,7 @@ type
     edtName: TEdit;
     lblSport: TLabel;
     cboSport: TComboBox;
-    cbActive: TCheckBox;
-    cbPublic: TCheckBox;
     btnSave: TButton;
-    pnlCheckBoxes: TGridPanelLayout;
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     ToolBar1: TToolBar;
@@ -50,21 +47,13 @@ var
   sSport  : String;
   lValue : TValue;
 begin
-  if cbPublic.IsChecked then
-    sPublic := 'yes'
-  else
-    sPublic := 'no';
-  if cbActive.IsChecked then
-    sActive := 'yes'
-  else
-    sActive := 'no';
   lValue := GetSelectedValue(cboSport);
   sSport := lValue.ToString;
   dmdDataModule.reqCreateTeam.Params.Clear;
   dmdDataModule.reqCreateTeam.Params.AddItem('name',edtName.Text);
   dmdDataModule.reqCreateTeam.Params.AddItem('content',memContents.Lines.GetText);
-  dmdDataModule.reqCreateTeam.Params.AddItem('public', sPublic);
-  dmdDataModule.reqCreateTeam.Params.AddItem('active', sActive);
+  dmdDataModule.reqCreateTeam.Params.AddItem('public', 'yes');
+  dmdDataModule.reqCreateTeam.Params.AddItem('active', 'yes');
   dmdDataModule.reqCreateTeam.Params.AddItem('owner',dmdDataModule.memberId);
   dmdDataModule.reqCreateTeam.Params.AddItem('sport_id',sSport);
   dmdDataModule.reqCreateTeam.Params.AddItem('key',dmdDatamodule.sessionKey);

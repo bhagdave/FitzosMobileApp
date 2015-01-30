@@ -82,7 +82,7 @@ inherited frmTeamCreate: TfrmTeamCreate
         Align = Client
         TabOrder = 1
         Size.Width = 205.787780761718800000
-        Size.Height = 37.068321228027340000
+        Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
       end
       object lblSport: TLabel
@@ -98,69 +98,17 @@ inherited frmTeamCreate: TfrmTeamCreate
         Align = Client
         DisableFocusEffect = False
         Size.Width = 205.787780761718800000
-        Size.Height = 38.776451110839840000
+        Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
       end
     end
-    object pnlCheckBoxes: TGridPanelLayout
-      Align = Top
-      Position.Y = 105.000000000000000000
-      Size.Width = 320.000000000000000000
-      Size.Height = 35.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
-      ColumnCollection = <
-        item
-          Value = 50.000000000000000000
-        end
-        item
-          Value = 50.000000000000000000
-        end>
-      ControlCollection = <
-        item
-          Column = 0
-          Control = cbActive
-          Row = 0
-        end
-        item
-          Column = 1
-          Control = cbPublic
-          Row = 0
-        end>
-      RowCollection = <
-        item
-          Value = 100.000000000000000000
-        end>
-      object cbActive: TCheckBox
-        Align = Client
-        Anchors = []
-        StyledSettings = [Family, Size, FontColor]
-        Size.Width = 160.000000000000000000
-        Size.Height = 35.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        Text = 'Active?'
-        TextSettings.Font.Style = [fsBold]
-      end
-      object cbPublic: TCheckBox
-        Align = Client
-        Anchors = []
-        StyledSettings = [Family, Size, FontColor]
-        Size.Width = 160.000000000000000000
-        Size.Height = 35.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        Text = 'Public?'
-        TextSettings.Font.Style = [fsBold]
-      end
-    end
     object ToolBar1: TToolBar
-      Position.Y = 140.000000000000000000
+      Position.Y = 105.000000000000000000
       Size.Width = 320.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 3
       object lblDescription: TLabel
         Align = Client
         StyledSettings = [Family, Size, FontColor]
@@ -175,11 +123,11 @@ inherited frmTeamCreate: TfrmTeamCreate
     object memContents: TMemo
       Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
       Align = Top
-      Position.Y = 184.000000000000000000
+      Position.Y = 149.000000000000000000
       Size.Width = 320.000000000000000000
       Size.Height = 133.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 5
+      TabOrder = 4
     end
   end
   object BindingsList1: TBindingsList

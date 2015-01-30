@@ -13,9 +13,6 @@ Visible=False
 Coordinates=1221,1316,67,51
 Visible=False
 
-[cbPublic]
-Coordinates=208,177,57,51
-
 [pnlLayout]
 Coordinates=664,1450,63,33
 Visible=False
@@ -26,9 +23,6 @@ Visible=False
 
 [cboSport]
 Coordinates=10,28,84,105
-
-[cbActive]
-Coordinates=10,272,57,51
 
 [StyleBook1]
 Coordinates=344,166,79,36
@@ -261,10 +255,6 @@ Visible=False
 Coordinates=1553,828,215,146
 Visible=False
 
-[pnlCheckBoxes]
-Coordinates=1721,1316,91,33
-Visible=False
-
 [dmdDataModule.dsMemberSports]
 Coordinates=174,10,181,141
 
@@ -281,6 +271,6 @@ Visible=False
 Visible=False
 
 []
-Coordinates=1142,1316,69,58
+Coordinates=1721,1316,91,33
 Visible=False
 

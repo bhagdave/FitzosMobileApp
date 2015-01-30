@@ -24,12 +24,9 @@ type
     lvAttending: TListView;
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField1: TLinkFillControlToField;
-    expWall: TExpander;
-    lvWall: TListView;
     BindSourceDB3: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
     btnEdit: TButton;
-    btnPost: TButton;
     btnAttend: TSpeedButton;
     procedure FormActivate(Sender: TObject);
     procedure lvAttendingItemClick(const Sender: TObject;

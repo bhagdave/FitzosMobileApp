@@ -81,44 +81,6 @@ inherited frmEvent: TfrmEvent
         OnItemClick = lvAttendingItemClick
       end
     end
-    object expWall: TExpander
-      Align = Top
-      Font.Style = [fsBold]
-      StyledSettings = [Family, Size, FontColor]
-      IsExpanded = False
-      Position.Y = 98.000000000000000000
-      ShowCheck = False
-      Size.Width = 320.000000000000000000
-      Size.Height = 25.000000000000000000
-      Size.PlatformDefault = False
-      StyleLookup = 'expenderstyle'
-      Text = 'Event Wall'
-      TabOrder = 1
-      ContentSize = '135'
-      object lvWall: TListView
-        ItemAppearanceClassName = 'TListItemAppearance'
-        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
-        HeaderAppearanceClassName = 'TListHeaderObjects'
-        FooterAppearanceClassName = 'TListHeaderObjects'
-        Align = Client
-        Size.Width = 200.000000000000000000
-        Size.Height = 135.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
-      end
-      object btnPost: TButton
-        Align = Bottom
-        Position.Y = 104.000000000000000000
-        Size.Width = 320.000000000000000000
-        Size.Height = 31.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        Text = 'Post Message'
-        Visible = False
-        OnClick = btnPostClick
-      end
-    end
   end
   inherited StyleBook1: TStyleBook
     ResourcesBin = {
@@ -3329,7 +3291,6 @@ inherited frmEvent: TfrmEvent
     end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
-      Control = lvWall
       Track = True
       FillDataSource = BindSourceDB3
       FillDisplayFieldName = 'message'
