@@ -326,9 +326,6 @@
             <Form>dmdSignup</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="untSportsForm.pas">
-            <Form>frmSports</Form>
-        </DCCReference>
         <DCCReference Include="untStatsForm.pas">
             <Form>frmStats</Form>
         </DCCReference>

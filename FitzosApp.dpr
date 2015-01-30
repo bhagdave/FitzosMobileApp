@@ -25,7 +25,6 @@ uses
   untSignUpForm in 'untSignUpForm.pas' {frmSignup},
   untTeamWall in 'untTeamWall.pas' {frmTeamWall},
   untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule},
-  untSportsForm in 'untSportsForm.pas' {frmSports},
   untStatsForm in 'untStatsForm.pas' {frmStats},
   untDmdSports in 'untDmdSports.pas' {dmdSports: TDataModule},
   untFormRegistry in 'untFormRegistry.pas',

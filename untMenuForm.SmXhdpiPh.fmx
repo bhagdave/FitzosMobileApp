@@ -49,17 +49,6 @@ inherited frmMenu_SmXhdpiPh: TfrmMenu_SmXhdpiPh
         Size.Width = 125.000000000000000000
       end
     end
-    inherited btnSports: TRectangle
-      Size.Width = 125.000000000000000000
-      Size.Height = 104.589187622070300000
-      inherited lblSports: TLabel
-        Position.Y = 56.712615966796880000
-        Size.Width = 125.000000000000000000
-      end
-      inherited imgSports: TImage
-        Size.Width = 125.000000000000000000
-      end
-    end
     inherited btnProfile: TRectangle
       Size.Width = 125.000000000000000000
       Size.Height = 104.589187622070300000
