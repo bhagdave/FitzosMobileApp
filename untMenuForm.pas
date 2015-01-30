@@ -54,6 +54,7 @@ uses
   untFormRegistry,FMX.Styles;
 
 {$R *.fmx}
+{$R *.SmXhdpiPh.fmx ANDROID}
 
 procedure TfrmMenu.btnEventsClick(Sender: TObject);
 begin
