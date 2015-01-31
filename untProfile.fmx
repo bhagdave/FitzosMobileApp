@@ -3275,46 +3275,6 @@ object frmProfile: TfrmProfile
             Column = 1
             Control = edtLocation
             Row = 2
-          end
-          item
-            Column = 0
-            Control = lblUnits
-            Row = 3
-          end
-          item
-            Column = 1
-            Control = cboUnits
-            Row = 3
-          end
-          item
-            Column = 0
-            Control = lblHeight
-            Row = 4
-          end
-          item
-            Column = 1
-            Control = edtHeight
-            Row = 4
-          end
-          item
-            Column = 0
-            Control = lblWeight
-            Row = 5
-          end
-          item
-            Column = 1
-            Control = edtWeight
-            Row = 5
-          end
-          item
-            Column = 0
-            Control = lblBodyFat
-            Row = 6
-          end
-          item
-            Column = 1
-            Control = edtBodyFat
-            Row = 6
           end>
         RowCollection = <
           item
@@ -3401,221 +3361,6 @@ object frmProfile: TfrmProfile
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
         end
-        object lblUnits: TLabel
-          Align = Client
-          StyledSettings = [Family, Size, FontColor]
-          Size.Width = 96.723419189453130000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Style = [fsBold]
-          Text = 'Units'
-        end
-        object cboUnits: TComboBox
-          Align = Client
-          DisableFocusEffect = False
-          Items.Strings = (
-            'Metric'
-            'Imperial')
-          Size.Width = 223.276580810546900000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 8
-        end
-        object lblHeight: TLabel
-          Align = Client
-          StyledSettings = [Family, Size, FontColor]
-          Size.Width = 96.723419189453130000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Style = [fsBold]
-          Text = 'Height'
-        end
-        object edtHeight: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = Client
-          TabOrder = 10
-          Size.Width = 223.276580810546900000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-        end
-        object lblWeight: TLabel
-          Align = Client
-          StyledSettings = [Family, Size, FontColor]
-          Size.Width = 96.723419189453130000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Style = [fsBold]
-          Text = 'Weight'
-        end
-        object edtWeight: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = Client
-          TabOrder = 12
-          Size.Width = 223.276580810546900000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-        end
-        object lblBodyFat: TLabel
-          Align = Client
-          StyledSettings = [Family, Size, FontColor]
-          Size.Width = 96.723419189453130000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Style = [fsBold]
-          Text = 'Body Fat %'
-        end
-        object edtBodyFat: TNumberBox
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = Client
-          TabOrder = 14
-          Cursor = crIBeam
-          Size.Width = 223.276580810546900000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-        end
-      end
-      object expOptions: TExpander
-        Align = Top
-        Font.Style = [fsBold]
-        StyledSettings = [Family, Size, FontColor]
-        IsExpanded = False
-        Position.Y = 205.000000000000000000
-        ShowCheck = False
-        Size.Width = 320.000000000000000000
-        Size.Height = 30.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Options'
-        TabOrder = 1
-        ContentSize = '175'
-        object cbStatus: TCheckBox
-          Align = Top
-          Size.Width = 368.000000000000000000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          Text = 'Share Status'
-        end
-        object cbProgress: TCheckBox
-          Align = Top
-          Position.Y = 25.000000000000000000
-          Size.Width = 368.000000000000000000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 1
-          Text = 'Share Progress'
-        end
-        object cbLeague: TCheckBox
-          Align = Top
-          Position.Y = 50.000000000000000000
-          Size.Width = 368.000000000000000000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 2
-          Text = 'Show in league tables'
-        end
-        object cbSearch: TCheckBox
-          Align = Top
-          Position.Y = 75.000000000000000000
-          Size.Width = 368.000000000000000000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 3
-          Text = 'Appear in search'
-        end
-        object cbMessaging: TCheckBox
-          Align = Top
-          Position.Y = 100.000000000000000000
-          Size.Width = 368.000000000000000000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 4
-          Text = 'Messaging'
-        end
-      end
-      object expImage: TExpander
-        Align = Top
-        Font.Style = [fsBold]
-        StyledSettings = [Family, Size, FontColor]
-        IsExpanded = False
-        Position.Y = 175.000000000000000000
-        ShowCheck = False
-        Size.Width = 320.000000000000000000
-        Size.Height = 30.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Profile Image'
-        TabOrder = 2
-        ContentSize = '175'
-        object pnlImage: TGridPanelLayout
-          Align = Client
-          Size.Width = 368.000000000000000000
-          Size.Height = 175.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          ColumnCollection = <
-            item
-              Value = 50.000000000000000000
-            end
-            item
-              Value = 50.000000000000000000
-            end>
-          ControlCollection = <
-            item
-              Column = 0
-              Control = imgProfile
-              Row = 0
-              RowSpan = 2
-            end
-            item
-              Column = 1
-              Control = btnGetImage
-              Row = 0
-            end
-            item
-              Column = 1
-              Control = btnTakePhoto
-              Row = 1
-            end>
-          RowCollection = <
-            item
-              Value = 50.000000000000000000
-            end
-            item
-              Value = 50.000000000000000000
-            end
-            item
-              SizeStyle = Auto
-            end>
-          object imgProfile: TImage
-            MultiResBitmap = <
-              item
-              end>
-            Align = Client
-            Size.Width = 184.000000000000000000
-            Size.Height = 175.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object btnGetImage: TButton
-            Action = TakePhotoFromLibraryAction1
-            Align = Client
-            Enabled = True
-            Size.Width = 184.000000000000000000
-            Size.Height = 87.500000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 1
-            Text = 'Get Photo'
-            Visible = True
-          end
-          object btnTakePhoto: TButton
-            Action = TakePhotoFromCameraAction1
-            Align = Client
-            Enabled = True
-            Size.Width = 184.000000000000000000
-            Size.Height = 87.500000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 2
-            Visible = True
-          end
-        end
       end
     end
   end
@@ -3688,36 +3433,11 @@ object frmProfile: TfrmProfile
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
-    object LinkFillControlToField2: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'units'
-      Control = cboUnits
-      Track = True
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
     object LinkControlToField1: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = dmdDataModule.dsProfile
       FieldName = 'age'
       Control = edtAge
-      Track = False
-    end
-    object LinkControlToField2: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'weight'
-      Control = edtWeight
-      Track = False
-    end
-    object LinkControlToField3: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'height'
-      Control = edtHeight
       Track = False
     end
     object LinkControlToField5: TLinkControlToField
@@ -3726,13 +3446,6 @@ object frmProfile: TfrmProfile
       FieldName = 'location'
       Control = edtLocation
       Track = False
-    end
-    object LinkPropertyToFieldText: TLinkPropertyToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'body_fat_percentage'
-      Component = edtBodyFat
-      ComponentProperty = 'Text'
     end
   end
   object fgActivityDialog: TfgActivityDialog

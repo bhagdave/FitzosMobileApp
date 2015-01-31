@@ -2,38 +2,12 @@
 Coordinates=673,130,52,58
 Visible=False
 
-[edtBodyFat]
-Coordinates=60,220,80,58
-ExplicitSubNodes=Text
-
-[cbSearch]
-Coordinates=310,20,69,58
-
 [btnBack]
 Coordinates=191,1426,61,58
 Visible=False
 
-[expOptions]
-Coordinates=828,422,79,58
-Visible=False
-
-[lblBodyFat]
-Coordinates=735,130,75,58
-Visible=False
-
-[cbMessaging]
-Coordinates=70,500,90,58
-
 [TakePhotoFromLibraryAction1]
 Coordinates=732,1,189,36
-
-[imgProfile]
-Coordinates=661,10,72,58
-Visible=False
-
-[expImage]
-Coordinates=210,180,71,58
-Visible=False
 
 [barBottom]
 Coordinates=543,1494,74,36
@@ -46,26 +20,12 @@ Coordinates=605,265,79,36
 Coordinates=629,490,71,36
 Visible=False
 
-[btnGetImage]
-Coordinates=450,1426,89,58
-Visible=False
-
-[pnlImage]
-Coordinates=552,490,67,36
-Visible=False
-
 [vsbScroller]
 Coordinates=464,490,78,36
 Visible=False
 
 [edtLocation]
 Coordinates=760,470,81,58
-
-[cbLeague]
-Coordinates=670,50,71,58
-
-[cbStatus]
-Coordinates=300,450,65,58
 
 [IdHTTPImage]
 Coordinates=605,485,94,36
@@ -74,22 +34,8 @@ Coordinates=605,485,94,36
 Coordinates=232,1494,55,36
 Visible=False
 
-[cbProgress]
-Coordinates=680,160,79,58
-
 [lblLocation]
 Coordinates=155,521,69,51
-Visible=False
-
-[cboUnits]
-Coordinates=200,270,101,124
-
-[lblWeight]
-Coordinates=421,10,60,51
-Visible=False
-
-[lblHeight]
-Coordinates=320,390,65,58
 Visible=False
 
 [lblAge]
@@ -114,22 +60,8 @@ Coordinates=965,1,132,36
 Coordinates=907,1426,62,58
 Visible=False
 
-[edtWeight]
-Coordinates=730,370,72,58
-
-[btnTakePhoto]
-Coordinates=549,1426,94,58
-Visible=False
-
-[edtHeight]
-Coordinates=780,280,70,58
-
 [edtAge]
 Coordinates=200,440,55,58
-
-[lblUnits]
-Coordinates=599,422,57,58
-Visible=False
 
 [cboGender]
 Coordinates=210,90,101,124
@@ -360,8 +292,9 @@ Visible=False
 Coordinates=170,1,82,33
 
 []
-Coordinates=490,20,75,51
+Coordinates=828,422,79,58
 Visible=False
+ExplicitSubNodes=Text
 
 [dmdDataModule.fdmSearchNames]
 Visible=False

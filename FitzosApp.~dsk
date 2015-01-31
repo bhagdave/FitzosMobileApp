@@ -15,12 +15,12 @@ File_12=TSourceModule,'E:\FitzosMobileApp\untTeamWall.pas',0,1,58,27,83,0,0,,
 
 [Modules]
 Module0=E:\FitzosMobileApp\untEvent.pas
-Module1=E:\FitzosMobileApp\untTeamCreate.pas
-Module2=E:\FitzosMobileApp\untEvents.pas
-Module3=E:\FitzosMobileApp\untBaseForm.pas
-Module4=E:\FitzosMobileApp\untDataModule.pas
-Module5=E:\FitzosMobileApp\untEventDataModule.pas
-Module6=default.htm
+Module1=default.htm
+Module2=E:\FitzosMobileApp\untBaseForm.pas
+Module3=E:\FitzosMobileApp\untEventDataModule.pas
+Module4=E:\FitzosMobileApp\untTeamCreate.pas
+Module5=E:\FitzosMobileApp\untDataModule.pas
+Module6=E:\FitzosMobileApp\untEvents.pas
 Count=7
 EditWindowCount=1
 
@@ -29,17 +29,20 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=1
 
-[E:\FitzosMobileApp\untTeamCreate.pas]
+[default.htm]
+ModuleType=TURLModule
+
+[E:\FitzosMobileApp\untBaseForm.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[E:\FitzosMobileApp\untEvents.pas]
+[E:\FitzosMobileApp\untEventDataModule.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=1
+FormOnTop=0
 
-[E:\FitzosMobileApp\untBaseForm.pas]
+[E:\FitzosMobileApp\untTeamCreate.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
@@ -49,13 +52,10 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[E:\FitzosMobileApp\untEventDataModule.pas]
+[E:\FitzosMobileApp\untEvents.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=1
-
-[default.htm]
-ModuleType=TURLModule
+FormOnTop=0
 
 [EditWindow0]
 ViewCount=7
