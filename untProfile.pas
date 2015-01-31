@@ -83,48 +83,48 @@ begin
   multiStream := TIdMultiPartFormDataStream.Create;
   mStream := TMemoryStream.Create();
   try
-    if not imgProfile.Bitmap.IsEmpty then
-    begin
-      imgProfile.Bitmap.SaveToStream(mStream);
-      multiStream.AddFormField('file', 'image/jpeg', '', mStream, dmdDataModule.memberId + '.jpg');
-    end;
+//    if not imgProfile.Bitmap.IsEmpty then
+//    begin
+//      imgProfile.Bitmap.SaveToStream(mStream);
+//      multiStream.AddFormField('file', 'image/jpeg', '', mStream, dmdDataModule.memberId + '.jpg');
+//    end;
     multiStream.AddFormField('id', dmdDataModule.memberId);
     multiStream.AddFormField('gender', cboGender.Selected.Text);
-    if cboUnits.Selected.Text = 'Metric' then
-    begin
-      multiStream.AddFormField('height', edtHeight.Text);
-      multiStream.AddFormField('weight', edtWeight.Text);
-    end
-    else
-    begin
-      weight := StrToFloat(edtWeight.Text) * 0.453592;
-      height := StrToFloat(edtHeight.Text) * 2.54;
-      multiStream.AddFormField('height', Format('%.2f',[height]));
-      multiStream.AddFormField('weight', Format('%.2f',[weight]));
-    end;
-    multiStream.AddFormField('body_fat_percentage', FloatToStr(edtBodyFat.Value));
-    multiStream.AddFormField('units', cboUnits.Selected.Text);
-    multiStream.AddFormField('location', edtLocation.Text);
-    if cbStatus.IsChecked then
-      multiStream.AddFormField('show_status', 'Yes')
-    else
-      multiStream.AddFormField('show_status', 'No');
-    if cbProgress.IsChecked then
-      multiStream.AddFormField('show_progress', 'Yes')
-    else
-      multiStream.AddFormField('show_progress', 'No');
-    if cbLeague.IsChecked then
-      multiStream.AddFormField('show_tables', 'Yes')
-    else
-      multiStream.AddFormField('show_tables', 'No');
-    if cbSearch.IsChecked then
-      multiStream.AddFormField('search', 'Yes')
-    else
-      multiStream.AddFormField('search', 'No');
-    if cbMessaging.IsChecked then
-      multiStream.AddFormField('message', 'Yes')
-    else
-      multiStream.AddFormField('message', 'No');
+//    if cboUnits.Selected.Text = 'Metric' then
+//    begin
+//      multiStream.AddFormField('height', edtHeight.Text);
+//      multiStream.AddFormField('weight', edtWeight.Text);
+//    end
+//    else
+//    begin
+//      weight := StrToFloat(edtWeight.Text) * 0.453592;
+//      height := StrToFloat(edtHeight.Text) * 2.54;
+//      multiStream.AddFormField('height', Format('%.2f',[height]));
+//      multiStream.AddFormField('weight', Format('%.2f',[weight]));
+//    end;
+//    multiStream.AddFormField('body_fat_percentage', FloatToStr(edtBodyFat.Value));
+//    multiStream.AddFormField('units', cboUnits.Selected.Text);
+//    multiStream.AddFormField('location', edtLocation.Text);
+//    if cbStatus.IsChecked then
+//      multiStream.AddFormField('show_status', 'Yes')
+//    else
+//      multiStream.AddFormField('show_status', 'No');
+//    if cbProgress.IsChecked then
+//      multiStream.AddFormField('show_progress', 'Yes')
+//    else
+//      multiStream.AddFormField('show_progress', 'No');
+//    if cbLeague.IsChecked then
+//      multiStream.AddFormField('show_tables', 'Yes')
+//    else
+//      multiStream.AddFormField('show_tables', 'No');
+//    if cbSearch.IsChecked then
+//      multiStream.AddFormField('search', 'Yes')
+//    else
+//      multiStream.AddFormField('search', 'No');
+//    if cbMessaging.IsChecked then
+//      multiStream.AddFormField('message', 'Yes')
+//    else
+//      multiStream.AddFormField('message', 'No');
     multiStream.AddFormField('age', edtAge.Text);
     idhttpimage.Post('https://www.reach-your-peak.com/athlete/saveProfileImage/' + dmdDatamodule.memberId, multiStream);
   finally
@@ -189,42 +189,42 @@ begin
 end;
 
 procedure TfrmProfile.loadPicture(sUrl : String);
-var
-  m : TMemoryStream;
+//var
+//  m : TMemoryStream;
 begin
-try
-    if sUrl <> '' then
-    begin
-     sURL := 'http://www.reach-your-peak.com/' + sURL;
-      M := TMemoryStream.Create();
-     IdHTTPImage.Get(sURL,M);
-     M.Seek(0,0);
-     imgProfile.Bitmap.LoadFromStream(M);
-     imgProfile.Visible := true;
-     m.DisposeOf;
-    end;
-  except on E: Exception do
-  end;
+//try
+//    if sUrl <> '' then
+//    begin
+//     sURL := 'http://www.reach-your-peak.com/' + sURL;
+//      M := TMemoryStream.Create();
+//     IdHTTPImage.Get(sURL,M);
+//     M.Seek(0,0);
+//     imgProfile.Bitmap.LoadFromStream(M);
+//     imgProfile.Visible := true;
+//     m.DisposeOf;
+//    end;
+//  except on E: Exception do
+//  end;
 end;
 
 procedure TfrmProfile.setupCheckBoxes;
 begin
-    cbStatus.IsChecked    := dmdDataModule.fdmProfileshow_status.AsString = 'yes';
-    cbProgress.IsChecked  := dmdDataModule.fdmProfileshow_progress.AsString = 'yes';
-    cbleague.IsChecked    := dmdDataModule.fdmProfileshow_tables.AsString = 'yes';
-    cbSearch.IsChecked    := dmdDataModule.fdmProfilesearch.AsString = 'yes';
-    cbMessaging.IsChecked := dmdDataModule.fdmProfilemessage.AsString = 'yes';
+//    cbStatus.IsChecked    := dmdDataModule.fdmProfileshow_status.AsString = 'yes';
+//    cbProgress.IsChecked  := dmdDataModule.fdmProfileshow_progress.AsString = 'yes';
+//    cbleague.IsChecked    := dmdDataModule.fdmProfileshow_tables.AsString = 'yes';
+//    cbSearch.IsChecked    := dmdDataModule.fdmProfilesearch.AsString = 'yes';
+//    cbMessaging.IsChecked := dmdDataModule.fdmProfilemessage.AsString = 'yes';
 end;
 
 procedure TfrmProfile.TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
 begin
-  imgProfile.Bitmap.Assign(Image);
+//  imgProfile.Bitmap.Assign(Image);
 end;
 
 procedure TfrmProfile.TakePhotoFromLibraryAction1DidFinishTaking(
   Image: TBitmap);
 begin
-  imgProfile.Bitmap.Assign(Image);
+//  imgProfile.Bitmap.Assign(Image);
 end;
 
 initialization
