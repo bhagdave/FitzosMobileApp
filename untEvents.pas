@@ -183,7 +183,7 @@ var
   LValue : TValue;
 begin
   inherited;
-  showActivityDialog('Going to required event','Please wait');
+//  showActivityDialog('Going to required event','Please wait');
   LValue := GetSelectedValue(lvEvents);
   showNewFormWithId('TfrmEvent',LValue.ToString);
 end;

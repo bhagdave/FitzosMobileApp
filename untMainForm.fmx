@@ -345,13 +345,13 @@ object frmMain: TfrmMain
       842C8D10FF0FB370E8FC9AA937480000000049454E44AE426082}
     HitTest = False
     Size.Width = 320.000000000000000000
-    Size.Height = 57.000000000000000000
+    Size.Height = 120.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
   end
   object btnLogin: TButton
     Align = Top
-    Position.Y = 163.000000000000000000
+    Position.Y = 226.000000000000000000
     Size.Width = 320.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
@@ -373,7 +373,7 @@ object frmMain: TfrmMain
   end
   object txtWelcomeMessage: TText
     Align = Top
-    Position.Y = 57.000000000000000000
+    Position.Y = 120.000000000000000000
     Size.Width = 320.000000000000000000
     Size.Height = 56.000000000000000000
     Size.PlatformDefault = False
@@ -3558,7 +3558,7 @@ object frmMain: TfrmMain
   end
   object pnlLogin: TGridPanelLayout
     Align = Top
-    Position.Y = 113.000000000000000000
+    Position.Y = 176.000000000000000000
     Size.Width = 320.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False

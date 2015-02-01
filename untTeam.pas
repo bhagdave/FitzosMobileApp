@@ -158,7 +158,7 @@ end;
 
 procedure TfrmTeam.FormActivate(Sender: TObject);
 begin
-  showActivityDialog('Loading Team','Please wait');
+//  showActivityDialog('Loading Team','Please wait');
   inherited;
   if connected then
   begin
