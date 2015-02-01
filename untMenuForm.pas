@@ -52,6 +52,7 @@ uses
 {$R *.NmXhdpiPh.fmx ANDROID}
 {$R *.iPhone.fmx IOS}
 {$R *.iPhone4in.fmx IOS}
+{$R *.LgXhdpiTb.fmx ANDROID}
 
 procedure TfrmMenu.btnEventsClick(Sender: TObject);
 begin

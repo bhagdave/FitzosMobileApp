@@ -1,0 +1,64 @@
+inherited frmMenu_LgXhdpiTb: TfrmMenu_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited GridPanelLayout1: TGridPanelLayout
+    Size.Width = 480.000000000000000000
+    Size.Height = 709.000000000000000000
+    inherited btnEvents: TRectangle
+      Size.Width = 240.000000000000000000
+      Size.Height = 353.580566406250000000
+      inherited lblEvents: TLabel
+        Position.Y = 295.703979492187500000
+        Size.Width = 240.000000000000000000
+        Size.Height = 47.876586914062500000
+      end
+      inherited imgEvents: TImage
+        Size.Width = 240.000000000000000000
+        Size.Height = 226.000000000000000000
+      end
+    end
+    inherited btnTeams: TRectangle
+      Size.Width = 240.000000000000000000
+      Size.Height = 353.580566406250000000
+      inherited lblTeams: TLabel
+        Position.Y = 295.703979492187500000
+        Size.Width = 240.000000000000000000
+        Size.Height = 47.876586914062500000
+      end
+      inherited imgTeams: TImage
+        Size.Width = 240.000000000000000000
+        Size.Height = 226.000000000000000000
+      end
+    end
+    inherited btnNotifications: TRectangle
+      Size.Width = 240.000000000000000000
+      Size.Height = 355.419433593750000000
+      inherited lblNotifications: TLabel
+        Position.Y = 297.542846679687500000
+        Size.Width = 240.000000000000000000
+        Size.Height = 47.876586914062500000
+      end
+      inherited imgNotifications: TImage
+        Size.Width = 240.000000000000000000
+        Size.Height = 226.000000000000000000
+      end
+    end
+    inherited btnProfile: TRectangle
+      Size.Width = 240.000000000000000000
+      Size.Height = 355.419433593750000000
+      inherited lblProfile: TLabel
+        Position.Y = 297.542846679687500000
+        Size.Width = 240.000000000000000000
+        Size.Height = 47.876586914062500000
+      end
+      inherited imgProfile: TImage
+        Size.Width = 240.000000000000000000
+        Size.Height = 226.000000000000000000
+      end
+    end
+  end
+  inherited imgLogo: TImageControl
+    Size.Width = 480.000000000000000000
+  end
+end
