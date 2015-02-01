@@ -89,7 +89,7 @@ begin
         dmdDatamodule.fdmEvents.Open;
     end;
     loadUpcoming();
-    loadInvites();
+//    loadInvites();
 end;
 
 procedure TfrmEvents.FormActivate(Sender: TObject);

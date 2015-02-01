@@ -3238,7 +3238,7 @@ inherited frmEvents: TfrmEvents
     Size.Height = 416.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 44.000000000000000000
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 19
     TabPosition = Top
     object tabMine: TTabItem
@@ -3248,7 +3248,7 @@ inherited frmEvents: TfrmEvents
         end>
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
-      IsSelected = True
+      IsSelected = False
       Size.Width = 158.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
@@ -3275,7 +3275,7 @@ inherited frmEvents: TfrmEvents
         end>
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
-      IsSelected = False
+      IsSelected = True
       Size.Width = 158.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
