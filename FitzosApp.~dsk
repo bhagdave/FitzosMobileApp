@@ -6,31 +6,33 @@ File_3=TSourceModule,'E:\FitzosMobileApp\untEventCreation.pas',0,1,93,25,118,0,0
 File_4=TSourceModule,'E:\FitzosMobileApp\untFormRegistry.pas',0,1,63,50,90,0,0,,
 File_5=TSourceModule,'E:\FitzosMobileApp\untNotifications.pas',0,1,1,6,37,0,0,,
 File_6=TSourceModule,'E:\FitzosMobileApp\untStatsForm.pas',0,1,81,33,81,0,0,,
-File_7=TSourceModule,'E:\FitzosMobileApp\untProfile.pas',0,1,61,1,61,0,0,,
-File_8=TSourceModule,'E:\FitzosMobileApp\untSportsForm.pas',0,1,68,35,68,0,0,,
-File_9=TSourceModule,'E:\FitzosMobileApp\untFriends.pas',0,1,1,1,1,0,0,,
-File_10=TSourceModule,'E:\FitzosMobileApp\untFriend.pas',0,1,1,1,1,0,0,,
-File_11=TSourceModule,'E:\FitzosMobileApp\untTeams.pas',0,1,1,59,17,0,0,,
-File_12=TSourceModule,'E:\FitzosMobileApp\untTeamWall.pas',0,1,58,27,83,0,0,,
+File_7=TSourceModule,'E:\FitzosMobileApp\untSportsForm.pas',0,1,68,35,68,0,0,,
+File_8=TSourceModule,'E:\FitzosMobileApp\untFriends.pas',0,1,1,1,1,0,0,,
+File_9=TSourceModule,'E:\FitzosMobileApp\untFriend.pas',0,1,1,1,1,0,0,,
+File_10=TSourceModule,'E:\FitzosMobileApp\untTeams.pas',0,1,1,59,17,0,0,,
+File_11=TSourceModule,'E:\FitzosMobileApp\untTeamWall.pas',0,1,58,27,83,0,0,,
 
 [Modules]
-Module0=E:\FitzosMobileApp\untEvent.pas
-Module1=default.htm
+Module0=E:\FitzosMobileApp\untProfile.pas
+Module1=E:\FitzosMobileApp\untEvent.pas
 Module2=E:\FitzosMobileApp\untBaseForm.pas
 Module3=E:\FitzosMobileApp\untEventDataModule.pas
 Module4=E:\FitzosMobileApp\untTeamCreate.pas
 Module5=E:\FitzosMobileApp\untDataModule.pas
 Module6=E:\FitzosMobileApp\untEvents.pas
-Count=7
+Module7=default.htm
+Count=8
 EditWindowCount=1
+
+[E:\FitzosMobileApp\untProfile.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=1
 
 [E:\FitzosMobileApp\untEvent.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=1
-
-[default.htm]
-ModuleType=TURLModule
 
 [E:\FitzosMobileApp\untBaseForm.pas]
 ModuleType=TSourceModule
@@ -57,9 +59,12 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+[default.htm]
+ModuleType=TURLModule
+
 [EditWindow0]
-ViewCount=7
-CurrentEditView=E:\FitzosMobileApp\untEvent.pas
+ViewCount=8
+CurrentEditView=E:\FitzosMobileApp\untProfile.pas
 View0=0
 View1=1
 View2=2
@@ -67,6 +72,7 @@ View3=3
 View4=4
 View5=5
 View6=6
+View7=7
 PercentageSizes=1
 Create=1
 Visible=1
@@ -85,13 +91,13 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1893
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=00000800010100000000E11100000000000001650700000000000001000000005C0E000009000000446F636B536974653301000000009C1C00001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=00000800010100000000B81500000000000001650700000000000001000000005C0E000009000000446F636B53697465330100000000BF2200001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=2000
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=00000800010100000000E11100000000000001D00700000000000001000000004412000009000000446F636B536974653201000000009C1C000009000000446F636B5369746534FFFFFFFF
-BottomPanelSize=1514
+RightPanelData=00000800010100000000B81500000000000001D00700000000000001000000004412000009000000446F636B53697465320100000000BF22000009000000446F636B5369746534FFFFFFFF
+BottomPanelSize=0
 BottomPanelClients=DockSite1,MessageView
-BottomPanelData=0000080001020100000009000000446F636B5369746531803E00000000000002EA050000000000000100000000803E00000F0000004D65737361676556696577466F726DFFFFFFFF
+BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D1534000000000000022306000000000000FFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779D1D00000000000002F506000000000000FFFFFFFF
@@ -146,6 +152,17 @@ EditViewName=Borland.FormDesignerView
 
 [View5]
 CustomEditViewType=TEditView
+Module=E:\FitzosMobileApp\untProfile.pas
+CursorX=1
+CursorY=46
+TopLine=46
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=Borland.FormDesignerView
+
+[View6]
+CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untDataModule.pas
 CursorX=19
 CursorY=373
@@ -155,7 +172,7 @@ Elisions=
 Bookmarks=
 EditViewName=E:\FitzosMobileApp\untDataModule.pas
 
-[View6]
+[View7]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untEventDataModule.pas
 CursorX=1
@@ -251,18 +268,18 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
-Top=23
-Width=10000
-Height=1347
+Top=0
+Width=2768
+Height=1416
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=10000
-ClientHeight=1347
-TBDockHeight=1347
+ClientWidth=2768
+ClientHeight=1416
+TBDockHeight=1416
 LRDockWidth=2768
 Dockable=1
 StayOnTop=0
@@ -276,11 +293,11 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=2525
+Height=4158
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=2525
+ClientHeight=4158
 TBDockHeight=7158
 LRDockWidth=2000
 Dockable=1
@@ -295,11 +312,11 @@ State=0
 Left=0
 Top=409
 Width=1893
-Height=3564
+Height=5198
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1893
-ClientHeight=3564
+ClientHeight=5198
 TBDockHeight=9000
 LRDockWidth=1893
 Dockable=1
@@ -308,8 +325,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Action,BindSource
-ExpandedItems=Anchors=0,Font=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,DataSet=0,DataSource=0,Padding=0,Position=0,RotationCenter=0,Scale=0,Size=0,StyledSettings=0,Caret=0,BindSource=0,Client=0,Response=0,Border=0,BorderIcons=0,Fill=0,FormFactor=0,Touch=0,TouchTargetExpansion=0
+SelectedItem=Name,
+ExpandedItems=Border=0,BorderIcons=0,Fill=0,FormFactor=0,"LiveBindings Designer=0",Padding=0,DataSource=0
 
 [ModelViewTool]
 PercentageSizes=1
@@ -785,11 +802,11 @@ State=0
 Left=0
 Top=514
 Width=2000
-Height=2525
+Height=4158
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=2525
+ClientHeight=4158
 TBDockHeight=9000
 LRDockWidth=2000
 Dockable=1

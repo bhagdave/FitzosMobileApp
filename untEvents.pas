@@ -17,14 +17,12 @@ type
     BindingsList1: TBindingsList;
     LinkFillControlToField1: TLinkFillControlToField;
     btnCreateEvent: TButton;
-    lvInvites: TListView;
     BindSourceDB1: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
     AniIndicator1: TAniIndicator;
     tabEvents: TTabControl;
     tabMine: TTabItem;
     tabUpcoming: TTabItem;
-    tabInvites: TTabItem;
     lvUpcoming: TListView;
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField3: TLinkFillControlToField;
@@ -191,32 +189,32 @@ begin
 end;
 
 procedure TfrmEvents.lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
-var
-  LValue : TValue;
+//var
+//  LValue : TValue;
 begin
-  inherited;
-    LValue := GetSelectedValue(lvInvites);
-    with dmdEvent do
-    begin
-      reqGeneric.Resource := 'r/events/declineInvite';
-      reqGeneric.Params.addItem('member_id',dmdDataModule.memberId);
-      reqGeneric.Params.AddItem('event',lValue.ToString);
-      reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
-      reqGeneric.Params.addItem('key',dmdDatamodule.sessionkey);
-      reqGeneric.Execute;
-      saveMessage.Now('Event invite declined');
-    end;
-    loadInvites;
+//  inherited;
+//    LValue := GetSelectedValue(lvInvites);
+//    with dmdEvent do
+//    begin
+//      reqGeneric.Resource := 'r/events/declineInvite';
+//      reqGeneric.Params.addItem('member_id',dmdDataModule.memberId);
+//      reqGeneric.Params.AddItem('event',lValue.ToString);
+//      reqGeneric.Params.addItem('signature',dmdDatamodule.signature('declineEvent'));
+//      reqGeneric.Params.addItem('key',dmdDatamodule.sessionkey);
+//      reqGeneric.Execute;
+//      saveMessage.Now('Event invite declined');
+//    end;
+//    loadInvites;
 end;
 
 procedure TfrmEvents.lvInvitesItemClick(const Sender: TObject;
   const AItem: TListViewItem);
-var
-  lValue : TValue;
+//var
+//  lValue : TValue;
 begin
-  showActivityDialog('Showing event','Please wait');
-  lValue := GetSelectedValue(lvInvites);
-  ShowNewFormWithIdFromParent('TfrmEvent',LValue.ToString,self);
+//  showActivityDialog('Showing event','Please wait');
+//  lValue := GetSelectedValue(lvInvites);
+//  ShowNewFormWithIdFromParent('TfrmEvent',LValue.ToString,self);
 end;
 
 procedure TfrmEvents.lvUpcomingItemClick(const Sender: TObject;

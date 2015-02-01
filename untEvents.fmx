@@ -3249,7 +3249,7 @@ inherited frmEvents: TfrmEvents
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
       IsSelected = True
-      Size.Width = 105.000000000000000000
+      Size.Width = 158.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -3276,7 +3276,7 @@ inherited frmEvents: TfrmEvents
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
       IsSelected = False
-      Size.Width = 106.000000000000000000
+      Size.Width = 158.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -3295,40 +3295,6 @@ inherited frmEvents: TfrmEvents
         ItemAppearanceObjects.HeaderObjects.Text.Font.Style = [fsBold]
         ItemAppearanceObjects.FooterObjects.Text.Font.Style = [fsBold]
         OnItemClick = lvUpcomingItemClick
-      end
-    end
-    object tabInvites: TTabItem
-      CustomIcon = <
-        item
-        end>
-      TextSettings.Font.Style = [fsBold]
-      StyledSettings = [Size, FontColor]
-      IsSelected = False
-      Size.Width = 105.000000000000000000
-      Size.Height = 44.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      Text = 'Invites'
-      object lvInvites: TListView
-        ItemAppearanceClassName = 'TListItemAppearance'
-        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
-        HeaderAppearanceClassName = 'TListHeaderObjects'
-        FooterAppearanceClassName = 'TListHeaderObjects'
-        EditMode = True
-        Align = Client
-        Size.Width = 320.000000000000000000
-        Size.Height = 372.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        ItemAppearanceObjects.ItemObjects.Text.Font.Style = [fsBold]
-        ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
-        ItemAppearanceObjects.ItemEditObjects.Accessory.Visible = False
-        ItemAppearanceObjects.ItemEditObjects.GlyphButton.ButtonType = Add
-        ItemAppearanceObjects.HeaderObjects.Text.Font.Style = [fsBold]
-        ItemAppearanceObjects.FooterObjects.Text.Font.Style = [fsBold]
-        OnItemClick = lvInvitesItemClick
-        OnDeleteItem = lvInvitesDeleteItem
-        DeleteButtonText = 'Decline'
       end
     end
   end
@@ -3357,7 +3323,6 @@ inherited frmEvents: TfrmEvents
     end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
-      Control = lvInvites
       Track = True
       FillDataSource = BindSourceDB1
       FillValueFieldName = 'event_id'
