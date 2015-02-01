@@ -23,8 +23,6 @@ type
     LinkFillControlToField: TLinkFillControlToField;
     expMembers: TExpander;
     lvMembers: TListView;
-    expWall: TExpander;
-    lvWwall: TListView;
     LinkFillControlToField1: TLinkFillControlToField;
     LinkFillControlToField2: TLinkFillControlToField;
     LinkPropertyToFieldText: TLinkPropertyToField;

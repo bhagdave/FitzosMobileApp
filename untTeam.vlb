@@ -45,9 +45,9 @@ Coordinates=87,71,73,58
 Coordinates=227,71,75,36
 
 []
-Coordinates=156,132,55,36
+Coordinates=257,675,53,51
 LayerNames=team
-Visible=True
+Visible=False
 
 [lvEvents]
 Coordinates=10,136,89,141
@@ -221,14 +221,6 @@ Visible=False
 [lvMembers]
 Coordinates=375,127,89,141
 LayerNames=team
-
-[lvWwall]
-Coordinates=379,483,89,141
-LayerNames=team
-
-[expWall]
-Coordinates=257,675,53,51
-Visible=False
 
 [dmdDataModule.fdmFriends]
 Visible=False

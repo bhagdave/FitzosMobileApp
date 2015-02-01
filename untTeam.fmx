@@ -126,32 +126,6 @@ inherited frmTeam: TfrmTeam
             OnItemClick = lvMembersItemClick
           end
         end
-        object expWall: TExpander
-          Align = Top
-          Font.Style = [fsBold]
-          StyledSettings = [Family, Size, FontColor]
-          IsExpanded = False
-          Position.Y = 184.000000000000000000
-          ShowCheck = False
-          Size.Width = 320.000000000000000000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          Text = 'Team Wall'
-          TabOrder = 3
-          ContentSize = '118'
-          object lvWwall: TListView
-            ItemAppearanceClassName = 'TListItemAppearance'
-            ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
-            HeaderAppearanceClassName = 'TListHeaderObjects'
-            FooterAppearanceClassName = 'TListHeaderObjects'
-            Align = Client
-            Size.Width = 320.000000000000000000
-            Size.Height = 118.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 0
-            OnClick = lvWwallClick
-          end
-        end
       end
     end
   end
@@ -3447,7 +3421,6 @@ inherited frmTeam: TfrmTeam
     end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
-      Control = lvWwall
       Track = True
       FillDataSource = dmdDataModule.dsTeamWall
       FillValueFieldName = 'id'
