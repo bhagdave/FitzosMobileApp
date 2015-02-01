@@ -438,17 +438,17 @@ Coordinates=976,593,90,36
 Coordinates=1568,342,191,102
 
 [lvUpcoming]
-Coordinates=580,950,107,168
+Coordinates=580,950,107,212
 
 [dmdEvent.respUpcomingEvents]
 Coordinates=1568,1,198,344
 
 [dmdEvent.fdmUpcomingEvents]
-Coordinates=790,960,180,190
+Coordinates=780,790,180,190
 Visible=False
 
 [BindSourceDB2]
-Coordinates=790,960,180,190
+Coordinates=780,790,180,190
 
 [dmdDataModule.reqPublicTeams]
 Coordinates=1164,505,205,124

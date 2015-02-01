@@ -3282,8 +3282,8 @@ inherited frmEvents: TfrmEvents
       TabOrder = 0
       Text = 'Upcoming'
       object lvUpcoming: TListView
-        ItemAppearanceClassName = 'TListItemAppearance'
-        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        ItemAppearanceClassName = 'TImageListItemBottomDetailAppearance'
+        ItemEditAppearanceClassName = 'TImageListItemBottomDetailShowCheckAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
@@ -3291,7 +3291,6 @@ inherited frmEvents: TfrmEvents
         Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        ItemAppearanceObjects.ItemObjects.Text.Font.Style = [fsBold]
         ItemAppearanceObjects.HeaderObjects.Text.Font.Style = [fsBold]
         ItemAppearanceObjects.FooterObjects.Text.Font.Style = [fsBold]
         OnItemClick = lvUpcomingItemClick
@@ -3303,24 +3302,6 @@ inherited frmEvents: TfrmEvents
     OutputConverters = <>
     Left = 44
     Top = 61
-    object LinkFillControlToField1: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      Control = lvEvents
-      Track = True
-      FillDataSource = dmdDataModule.dsEvents
-      FillValueFieldName = 'id'
-      FillDisplayFieldName = 'name'
-      AutoFill = True
-      FillExpressions = <
-        item
-          SourceMemberName = 'content'
-          ControlMemberName = 'Detail'
-        end>
-      FillHeaderExpressions = <>
-      FillBreakFieldName = 'location'
-      FillHeaderFieldName = 'date'
-      FillBreakGroups = <>
-    end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
       Track = True
@@ -3342,9 +3323,29 @@ inherited frmEvents: TfrmEvents
       FillValueFieldName = 'id'
       FillDisplayFieldName = 'name'
       AutoFill = True
-      FillExpressions = <>
+      FillExpressions = <
+        item
+          SourceMemberName = 'location'
+          ControlMemberName = 'Detail'
+        end>
       FillHeaderExpressions = <>
       FillHeaderFieldName = 'time'
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = lvEvents
+      Track = True
+      FillDataSource = dmdDataModule.dsEvents
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'content'
+          ControlMemberName = 'Detail'
+        end>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'date'
       FillBreakGroups = <>
     end
   end

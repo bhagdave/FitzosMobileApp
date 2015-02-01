@@ -152,6 +152,7 @@ begin
     respPublicTeams.Content.Empty;
     reqPublicTeams.ClearBody;
     reqPublicTeams.Params.ParameterByName('id').Value := memberId;
+    reqPublicTeams.Params.ParameterByName('key').Value := sessionkey;
     reqPublicTeams.Execute;
     rdsaPublicTeams.UpdateDataSet;
   end;
@@ -255,7 +256,7 @@ begin
         lvTeams.Visible := true;
     end;
     loadPublicTeams();
-    loadInvites();
+//    loadInvites();
 end;
 
 procedure TfrmTeams.threadTerminated(Sender: TObject);

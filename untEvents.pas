@@ -15,7 +15,6 @@ type
   TfrmEvents = class(TfrmBase)
     lvEvents: TListView;
     BindingsList1: TBindingsList;
-    LinkFillControlToField1: TLinkFillControlToField;
     btnCreateEvent: TButton;
     BindSourceDB1: TBindSourceDB;
     LinkFillControlToField2: TLinkFillControlToField;
@@ -26,6 +25,7 @@ type
     lvUpcoming: TListView;
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField3: TLinkFillControlToField;
+    LinkFillControlToField1: TLinkFillControlToField;
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure btnCreateEventClick(Sender: TObject);
