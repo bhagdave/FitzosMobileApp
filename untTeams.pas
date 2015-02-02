@@ -153,7 +153,6 @@ begin
     reqPublicTeams.Params.ParameterByName('id').Value := memberId;
     reqPublicTeams.Params.addItem('key',sessionkey);
     reqPublicTeams.Execute;
-    showmessage(respPublicTeams.Content);
     rdsaPublicTeams.UpdateDataSet;
   end;
 end;
