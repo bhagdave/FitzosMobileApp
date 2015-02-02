@@ -10,7 +10,7 @@ uses
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.Layouts,
   FMX.ListBox, Rest.client, Rest.Types, IdBaseComponent, IdComponent,
   IdTCPConnection, IdTCPClient, FGX.ProgressDialog, FMX.Notification,
-  FMX.AndroidLike.Toast;
+  FMX.AndroidLike.Toast, FMX.Memo;
 
 type
   TfrmTeam = class(TfrmBase)
@@ -38,6 +38,8 @@ type
     BindSourceDB2: TBindSourceDB;
     LinkFillControlToField3: TLinkFillControlToField;
     btnJoin: TButton;
+    memContent: TMemo;
+    LinkControlToField1: TLinkControlToField;
     procedure FormActivate(Sender: TObject);
     procedure lvEventsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -241,15 +243,15 @@ begin
           begin
             fdmTeamMembers.close;
           end;
-          sResult := getResultElementAsString(respAllTeamData.Content,'wall');
-          if (sResult <> '[]') then
-          begin
-            rdsaTeamWall.UpdateDataSet;
-            fdmTeamWall.Open;
-          end else
-          begin
-              fdmTeamWall.close;
-          end;
+//          sResult := getResultElementAsString(respAllTeamData.Content,'wall');
+//          if (sResult <> '[]') then
+//          begin
+//            rdsaTeamWall.UpdateDataSet;
+//            fdmTeamWall.Open;
+//          end else
+//          begin
+//              fdmTeamWall.close;
+//          end;
           sResult := getResultElementAsString(respAllTeamData.Content,'events');
           if (sResult <> '[]') then
           begin
@@ -259,16 +261,16 @@ begin
           begin
               fdmTeamEvents.close;
           end;
-          sResult := getResultElementAsString(respAllTeamData.Content,'invites');
-          if (sResult <> '[]') then
-          begin
-            rdsaFriendsToInvite.UpdateDataSet;
-            fdmFriendsToInvite.Open;
-          end else
-          begin
-              fdmFriendsToInvite.close;
-          end;
-          btnInvite.Visible := fdmTeam.FieldByName('isOwner').AsBoolean;
+//          sResult := getResultElementAsString(respAllTeamData.Content,'invites');
+//          if (sResult <> '[]') then
+//          begin
+//            rdsaFriendsToInvite.UpdateDataSet;
+//            fdmFriendsToInvite.Open;
+//          end else
+//          begin
+//              fdmFriendsToInvite.close;
+//          end;
+//          btnInvite.Visible := fdmTeam.FieldByName('isOwner').AsBoolean;
           btnJoin.Visible := not(fdmTeam.FieldByName('isMember').AsBoolean);
 //          btnNewEvent.Visible := bOwner;
       end;

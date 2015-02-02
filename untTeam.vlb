@@ -50,7 +50,7 @@ LayerNames=team
 Visible=False
 
 [lvEvents]
-Coordinates=10,136,89,141
+Coordinates=10,164,89,141
 LayerNames=team
 
 [Module Settings]
@@ -68,15 +68,15 @@ Coordinates=710,1269,171,303
 
 [dmdDataModule.fdmTeamMembers]
 Visible=False
-Coordinates=544,10,181,375
+Coordinates=607,10,181,375
 
 [dmdDataModule.fdmTeamEvents]
 Visible=False
-Coordinates=179,10,170,393
+Coordinates=197,10,170,393
 
 [dmdDataModule.fdmTeamWall]
 Visible=False
-Coordinates=548,429,157,249
+Coordinates=918,512,183,300
 
 [dmdDataModule.reqTeamEvents]
 Coordinates=932,905,202,146
@@ -107,8 +107,9 @@ Coordinates=932,373,175,123
 Visible=False
 
 [dmdDataModule.dsTeamWall]
-Coordinates=548,429,157,249
+Coordinates=918,512,183,300
 LayerNames=team
+Visible=False
 
 [dmdDataModule.reqOpenSession]
 Coordinates=932,515,179,105
@@ -122,7 +123,7 @@ Visible=False
 Coordinates=521,1290,209,322
 
 [dmdDataModule.dsTeamEvents]
-Coordinates=179,10,170,393
+Coordinates=197,10,170,393
 LayerNames=team
 
 [dmdDataModule.reqMember]
@@ -137,7 +138,7 @@ Coordinates=710,269,184,267
 Visible=False
 
 [dmdDataModule.dsTeamMembers]
-Coordinates=544,10,181,375
+Coordinates=607,10,181,375
 LayerNames=team
 
 [dmdDataModule.dsNotifications]
@@ -192,10 +193,10 @@ Visible=False
 
 [dmdDataModule.fdmTeam]
 Visible=False
-Coordinates=10,429,136,285
+Coordinates=10,512,136,285
 
 [dmdDataModule.dsTeam]
-Coordinates=10,429,136,285
+Coordinates=10,512,136,285
 LayerNames=team
 
 [dmdDataModule.fdmMember]
@@ -219,7 +220,7 @@ Coordinates=168,514,77,51
 Visible=False
 
 [lvMembers]
-Coordinates=375,127,89,141
+Coordinates=420,153,89,141
 LayerNames=team
 
 [dmdDataModule.fdmFriends]
@@ -299,7 +300,8 @@ Coordinates=356,125,186,267
 Visible=False
 
 [dmdDataModule.respAllTeamData]
-Coordinates=172,429,181,267
+Coordinates=1073,10,211,344
+Visible=False
 
 [btnBack]
 Coordinates=382,779,54,51
@@ -358,11 +360,11 @@ Coordinates=580,384,55,51
 Visible=False
 
 [lbFriends]
-Coordinates=10,740,89,195
+Coordinates=428,512,89,195
 Visible=True
 
 [dmdDataModule.fdmFriendsToInvite]
-Coordinates=260,730,172,105
+Coordinates=615,567,172,105
 Visible=False
 
 [layInvites]
@@ -386,5 +388,62 @@ Coordinates=317,740,63,33
 Visible=False
 
 [BindSourceDB2]
-Coordinates=260,730,172,105
+Coordinates=615,567,172,105
+
+[dmdDataModule.reqPublicTeams]
+Coordinates=190,882,205,124
+Visible=False
+
+[dmdDataModule.respFriendRequests]
+Coordinates=194,512,228,344
+Visible=False
+
+[saveMessage]
+Coordinates=814,187,93,36
+
+[dmdDataModule.reqFriendRequests]
+Coordinates=907,882,221,146
+Visible=False
+
+[dmdDataModule.reqTeamInvites]
+Coordinates=680,882,201,146
+Visible=False
+
+[dmdDataModule.fdLogin]
+Coordinates=10,882,154,146
+Visible=False
+
+[btnJoin]
+Coordinates=421,882,51,51
+
+[idTCPConnection]
+Coordinates=814,918,115,36
+
+[dmdDataModule.fdmTeamInvites]
+Coordinates=844,10,203,388
+Visible=False
+
+[dmdDataModule.fdmFriendRequests]
+Coordinates=430,882,224,146
+Visible=False
+
+[dmdDataModule.respPublicTeams]
+Coordinates=448,512,211,344
+Visible=False
+
+[dmdDataModule.fdmPublicTeams]
+Coordinates=194,512,179,249
+
+[fgActivityDialog]
+Coordinates=54,1218,103,36
+
+[Notifications]
+Coordinates=1103,1468,85,36
+
+[dmdDataModule.respTeamInvites]
+Coordinates=685,512,207,344
+Visible=False
+
+[memContent]
+Coordinates=100,430,77,51
 

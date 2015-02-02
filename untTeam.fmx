@@ -48,8 +48,12 @@ inherited frmTeam: TfrmTeam
       OnClick = btnInviteClick
     end
     object btnJoin: TButton
-      Align = Center
+      Align = Left
       StyledSettings = [Family, Size, FontColor]
+      Position.X = 73.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 4
       Text = 'Join'
       TextSettings.Font.Style = [fsBold]
@@ -78,8 +82,9 @@ inherited frmTeam: TfrmTeam
         Size.PlatformDefault = False
         TabOrder = 0
         object lblEvents: TLabel
-          Align = MostTop
+          Align = Top
           StyledSettings = [Family, Size, FontColor]
+          Position.Y = 75.000000000000000000
           Size.Width = 320.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
@@ -92,10 +97,10 @@ inherited frmTeam: TfrmTeam
           ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
           HeaderAppearanceClassName = 'TListHeaderObjects'
           FooterAppearanceClassName = 'TListHeaderObjects'
-          Align = MostTop
-          Position.Y = 23.000000000000000000
+          Align = Top
+          Position.Y = 98.000000000000000000
           Size.Width = 320.000000000000000000
-          Size.Height = 136.000000000000000000
+          Size.Height = 82.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           OnItemClick = lvEventsItemClick
@@ -105,7 +110,7 @@ inherited frmTeam: TfrmTeam
           Font.Style = [fsBold]
           StyledSettings = [Family, Size, FontColor]
           IsExpanded = False
-          Position.Y = 159.000000000000000000
+          Position.Y = 50.000000000000000000
           ShowCheck = False
           Size.Width = 320.000000000000000000
           Size.Height = 25.000000000000000000
@@ -125,6 +130,14 @@ inherited frmTeam: TfrmTeam
             TabOrder = 0
             OnItemClick = lvMembersItemClick
           end
+        end
+        object memContent: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          Align = MostTop
+          Size.Width = 320.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
         end
       end
     end
@@ -3448,6 +3461,13 @@ inherited frmTeam: TfrmTeam
       FillExpressions = <>
       FillHeaderExpressions = <>
       FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = dmdDataModule.dsTeam
+      FieldName = 'content'
+      Control = memContent
+      Track = False
     end
   end
   object BindSourceDB2: TBindSourceDB
