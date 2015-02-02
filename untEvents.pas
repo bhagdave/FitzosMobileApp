@@ -170,8 +170,8 @@ begin
     dmdEvent.reqUpcomingEvents.Execute;
     dmdEvent.rdsaUpcomingEvents.UpdateDataSet;
     dmdEvent.fdmUpcomingEvents.Open;
-  except on E: Exception do  begin
     fgActivityDialog.Hide;
+  except on E: Exception do  begin
     showmessage(e.Message);
   end;
   end;

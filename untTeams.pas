@@ -42,7 +42,6 @@ type
       const AItem: TListViewItem; const AObject: TListItemSimpleControl);
     procedure lvInvitesDeleteItem(Sender: TObject; AIndex: Integer);
     procedure btnInvitesClick(Sender: TObject);
-    procedure tmrRefreshTimer(Sender: TObject);
     procedure lvPublicTeamsItemClick(const Sender: TObject;
       const AItem: TListViewItem);
   private
@@ -129,17 +128,17 @@ end;
 
 procedure TfrmTeams.loadInvites;
 begin
-  with dmdDataModule do
-  begin
-    // Open up the data.
-    rdsaTeamInvites.ClearDataSet;
-    fdmTeamInvites.Close;
-    respTeamInvites.Content.Empty;
-    reqTeamInvites.ClearBody;
-    reqTeamInvites.Params.ParameterByName('member_id').Value := memberId;
-    reqTeamInvites.Params.ParameterByName('key').Value := sessionkey;
-    reqTeamInvites.ExecuteAsync(invitesLoaded);
-  end;
+//  with dmdDataModule do
+//  begin
+//    // Open up the data.
+//    rdsaTeamInvites.ClearDataSet;
+//    fdmTeamInvites.Close;
+//    respTeamInvites.Content.Empty;
+//    reqTeamInvites.ClearBody;
+//    reqTeamInvites.Params.ParameterByName('member_id').Value := memberId;
+//    reqTeamInvites.Params.ParameterByName('key').Value := sessionkey;
+//    reqTeamInvites.ExecuteAsync(invitesLoaded);
+//  end;
 end;
 
 procedure TfrmTeams.loadPublicTeams;
@@ -152,8 +151,9 @@ begin
     respPublicTeams.Content.Empty;
     reqPublicTeams.ClearBody;
     reqPublicTeams.Params.ParameterByName('id').Value := memberId;
-    reqPublicTeams.Params.ParameterByName('key').Value := sessionkey;
+    reqPublicTeams.Params.addItem('key',sessionkey);
     reqPublicTeams.Execute;
+    showmessage(respPublicTeams.Content);
     rdsaPublicTeams.UpdateDataSet;
   end;
 end;
@@ -263,13 +263,6 @@ procedure TfrmTeams.threadTerminated(Sender: TObject);
 begin
   if myThread <> nil then
      myThread := nil;
-end;
-
-procedure TfrmTeams.tmrRefreshTimer(Sender: TObject);
-begin
-  inherited;
-  tmrRefresh.Enabled := false;
-  loadInvites();
 end;
 
 initialization

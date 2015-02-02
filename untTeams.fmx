@@ -3255,7 +3255,6 @@ inherited frmTeams: TfrmTeams
   object tmrRefresh: TTimer [6]
     Enabled = False
     Interval = 100
-    OnTimer = tmrRefreshTimer
     Left = 24
     Top = 329
   end
@@ -3266,7 +3265,7 @@ inherited frmTeams: TfrmTeams
     Size.Height = 416.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 44.000000000000000000
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 26
     TabPosition = Top
     object tabmyTeams: TTabItem
@@ -3275,7 +3274,7 @@ inherited frmTeams: TfrmTeams
         end>
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
-      IsSelected = False
+      IsSelected = True
       Size.Width = 158.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
@@ -3311,7 +3310,7 @@ inherited frmTeams: TfrmTeams
         end>
       TextSettings.Font.Style = [fsBold]
       StyledSettings = [Family, Size, FontColor]
-      IsSelected = True
+      IsSelected = False
       Size.Width = 158.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
