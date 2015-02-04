@@ -81,7 +81,7 @@ begin
   fgActivityDialog.Message := 'Please wait!';
   fgActivityDialog.Show();
   multiStream := TIdMultiPartFormDataStream.Create;
-  mStream := TMemoryStream.Create();
+//  mStream := TMemoryStream.Create();
   try
 //    if not imgProfile.Bitmap.IsEmpty then
 //    begin
@@ -90,6 +90,7 @@ begin
 //    end;
     multiStream.AddFormField('id', dmdDataModule.memberId);
     multiStream.AddFormField('gender', cboGender.Selected.Text);
+  fgActivityDialog.Message := 'Adding fields!';
 //    if cboUnits.Selected.Text = 'Metric' then
 //    begin
 //      multiStream.AddFormField('height', edtHeight.Text);
@@ -126,10 +127,11 @@ begin
 //    else
 //      multiStream.AddFormField('message', 'No');
     multiStream.AddFormField('age', edtAge.Text);
+      fgActivityDialog.Message := 'Sending to server!';
     idhttpimage.Post('https://www.reach-your-peak.com/athlete/saveProfileImage/' + dmdDatamodule.memberId, multiStream);
   finally
     multiStream.Free;
-    mStream.Free;
+//    mStream.Free;
   end;
   fgActivityDialog.Hide();
   saveMessage.Now('Profile Saved');

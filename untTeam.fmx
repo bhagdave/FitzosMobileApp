@@ -97,10 +97,9 @@ inherited frmTeam: TfrmTeam
           ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
           HeaderAppearanceClassName = 'TListHeaderObjects'
           FooterAppearanceClassName = 'TListHeaderObjects'
-          Align = Top
-          Position.Y = 98.000000000000000000
+          Align = Client
           Size.Width = 320.000000000000000000
-          Size.Height = 82.000000000000000000
+          Size.Height = 702.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           OnItemClick = lvEventsItemClick
