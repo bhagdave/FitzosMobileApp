@@ -113,6 +113,7 @@ procedure TfrmEvent.eventLoaded;
 var
   sStatus,sResult : String;
 begin
+  fgActivityDialog.Hide;
   with dmdEvent do
   begin
       sStatus := getResultString(respAllEventData.Content);
@@ -129,15 +130,6 @@ begin
           begin
             fdmAttending.close;
           end;
-          sResult := getResultElementAsString(respAllEventData.Content,'wall');
-          if (sResult <> '[]') then
-          begin
-            rdsaWall.UpdateDataSet;
-            fdmWall.Open;
-          end else
-          begin
-              fdmWall.close;
-          end;
           bOwner := fdmEvent.FieldByName('isOwner').AsString = 'Yes';
           bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
           btnEdit.Visible := bOwner;
@@ -145,7 +137,6 @@ begin
           btnAttend.Visible := not bAttending;
       end;
   end;
-  fgActivityDialog.Hide;
 end;
 
 procedure TfrmEvent.eventThreadTerminated(Sender: TObject);
@@ -187,7 +178,6 @@ begin
       reqAllEventData.ClearBody;
       reqAllEventData.Params.ParameterByName('id').Value := id;
       reqAllEventData.Params.ParameterByName('member_id').Value := dmdDataModule.memberId;
-//      reqAllEventData.Params.ParameterByName('signature').Value := dmdDataModule.signature('getAllEventData');
       reqAllEventData.Params.ParameterByName('key').Value := dmdDataModule.sessionKey;
       eventThread := reqAllEventData.ExecuteAsync(eventLoaded);
       eventThread.OnTerminate := eventThreadTerminated;
