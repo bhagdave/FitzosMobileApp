@@ -32,9 +32,9 @@ uses
 
 begin
   Application.Initialize;
-  AApplication.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmdDataModule, dmdDataModule);
   Application.CreateForm(TdmdEvent, dmdEvent);
   Application.CreateForm(TdmdSports, dmdSports);
-  pplication.Run;
+  Application.Run;
 end.

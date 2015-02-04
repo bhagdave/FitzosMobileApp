@@ -161,8 +161,6 @@ begin
     begin
         rdsaProfile.UpdateDataSet;
         fdmProfile.Open;
-        setupCheckBoxes();
-        loadPicture(fdmProfileimage.AsString);
     end;
   end;
   fgActivityDialog.hide;
