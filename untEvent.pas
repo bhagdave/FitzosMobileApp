@@ -134,7 +134,7 @@ begin
           bAttending := fdmEvent.FieldByName('isAttendee').AsString = 'Yes';
           btnEdit.Visible := bOwner;
 //          btnPost.Visible := bOwner or bAttending;
-          btnAttend.Visible := not bAttending;
+          btnAttend.Visible := not(bAttending or bOwner);
       end;
   end;
 end;
