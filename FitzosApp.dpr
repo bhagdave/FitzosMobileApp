@@ -23,7 +23,6 @@ uses
   untSignUpForm in 'untSignUpForm.pas' {frmSignup},
   untTeamWall in 'untTeamWall.pas' {frmTeamWall},
   untDmdSignup in 'untDmdSignup.pas' {dmdSignup: TDataModule},
-  untStatsForm in 'untStatsForm.pas' {frmStats},
   untDmdSports in 'untDmdSports.pas' {dmdSports: TDataModule},
   untFormRegistry in 'untFormRegistry.pas',
   untJSONFunctions in 'untJSONFunctions.pas',
@@ -33,9 +32,9 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmMain, frmMain);
+  AApplication.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmdDataModule, dmdDataModule);
   Application.CreateForm(TdmdEvent, dmdEvent);
   Application.CreateForm(TdmdSports, dmdSports);
-  Application.Run;
+  pplication.Run;
 end.
