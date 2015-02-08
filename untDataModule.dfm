@@ -1831,11 +1831,8 @@ object dmdDataModule: TdmdDataModule
   end
   object reqUpdateProfile: TRESTRequest
     Client = restAPI
-    Params = <
-      item
-        name = 'file'
-        ContentType = ctIMAGE_JPEG
-      end>
+    Params = <>
+    Resource = 'r/athletes/saveProfile'
     Response = respUpdateProfile
     SynchronizedEvents = False
     Left = 760

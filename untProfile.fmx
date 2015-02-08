@@ -40,7 +40,7 @@ object frmProfile: TfrmProfile
       Align = MostRight
       Position.X = 247.000000000000000000
       Size.Width = 73.000000000000000000
-      Size.Height = 40.000000000000000000
+      Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'donetoolbutton'
       TabOrder = 0
@@ -50,7 +50,7 @@ object frmProfile: TfrmProfile
     object btnBack: TButton
       Align = MostLeft
       Size.Width = 73.000000000000000000
-      Size.Height = 40.000000000000000000
+      Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'backtoolbutton'
       TabOrder = 1
@@ -3228,13 +3228,13 @@ object frmProfile: TfrmProfile
     ShowScrollBars = False
     object layDetails: TLayout
       Align = Top
-      Size.Width = 50.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 700.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object grdLayout: TGridPanelLayout
         Align = MostTop
-        Size.Width = 50.000000000000000000
+        Size.Width = 320.000000000000000000
         Size.Height = 175.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -3258,29 +3258,15 @@ object frmProfile: TfrmProfile
           end
           item
             Column = 0
-            Control = lblGender
-            Row = 1
-          end
-          item
-            Column = 1
-            Control = cboGender
-            Row = 1
-          end
-          item
-            Column = 0
             Control = lblLocation
-            Row = 2
+            Row = 1
           end
           item
             Column = 1
             Control = edtLocation
-            Row = 2
+            Row = 1
           end>
         RowCollection = <
-          item
-            SizeStyle = Absolute
-            Value = 25.000000000000000000
-          end
           item
             SizeStyle = Absolute
             Value = 25.000000000000000000
@@ -3308,7 +3294,7 @@ object frmProfile: TfrmProfile
         object lblAge: TLabel
           Align = Client
           StyledSettings = [Family, Size, FontColor]
-          Size.Width = 15.113033294677730000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Style = [fsBold]
@@ -3319,35 +3305,14 @@ object frmProfile: TfrmProfile
           Align = Client
           TabOrder = 1
           KeyboardType = NumberPad
-          Size.Width = 34.886966705322270000
+          Size.Width = 223.276580810546900000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
-        end
-        object lblGender: TLabel
-          Align = Client
-          StyledSettings = [Family, Size, FontColor]
-          Size.Width = 15.113033294677730000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Style = [fsBold]
-          Text = 'Gender'
-        end
-        object cboGender: TComboBox
-          Align = Client
-          DisableFocusEffect = False
-          Items.Strings = (
-            'Male'
-            'Female'
-            'Not sure')
-          Size.Width = 34.886966705322270000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 3
         end
         object lblLocation: TLabel
           Align = Client
           StyledSettings = [Family, Size, FontColor]
-          Size.Width = 15.113033294677730000
+          Size.Width = 96.723419189453130000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Style = [fsBold]
@@ -3356,8 +3321,8 @@ object frmProfile: TfrmProfile
         object edtLocation: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Client
-          TabOrder = 5
-          Size.Width = 34.886966705322270000
+          TabOrder = 4
+          Size.Width = 223.276580810546900000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
         end
@@ -3422,17 +3387,6 @@ object frmProfile: TfrmProfile
     OutputConverters = <>
     Left = 20
     Top = 5
-    object LinkFillControlToField1: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = dmdDataModule.dsProfile
-      FieldName = 'gender'
-      Control = cboGender
-      Track = True
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
     object LinkControlToField1: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = dmdDataModule.dsProfile
@@ -3440,7 +3394,17 @@ object frmProfile: TfrmProfile
       Control = edtAge
       Track = False
     end
-    object LinkControlToField5: TLinkControlToField
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Track = True
+      FillDataSource = dmdDataModule.dsProfile
+      FillDisplayFieldName = 'gender'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkControlToField2: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = dmdDataModule.dsProfile
       FieldName = 'location'

@@ -24,10 +24,7 @@ type
     grdLayout: TGridPanelLayout;
     lblAge: TLabel;
     edtAge: TEdit;
-    lblGender: TLabel;
-    cboGender: TComboBox;
     lblLocation: TLabel;
-    edtLocation: TEdit;
     vsbScroller: TVertScrollBox;
     layDetails: TLayout;
     IdHTTPImage: TIdHTTP;
@@ -36,11 +33,12 @@ type
     TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction;
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
     BindingsList1: TBindingsList;
-    LinkFillControlToField1: TLinkFillControlToField;
     LinkControlToField1: TLinkControlToField;
-    LinkControlToField5: TLinkControlToField;
     fgActivityDialog: TfgActivityDialog;
     saveMessage: TToast;
+    LinkFillControlToField1: TLinkFillControlToField;
+    edtLocation: TEdit;
+    LinkControlToField2: TLinkControlToField;
     procedure btnBackClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
@@ -71,70 +69,27 @@ begin
 end;
 
 procedure TfrmProfile.btnSaveClick(Sender: TObject);
-var
-  mStream  : TMemoryStream;
-  multiStream: TIdMultiPartFormDataStream;
-  Height, weight : Double;
 begin
-//  sNickname := edtNickname.Text;
+try
   fgActivityDialog.Title := 'Saving profile';
   fgActivityDialog.Message := 'Please wait!';
   fgActivityDialog.Show();
-  multiStream := TIdMultiPartFormDataStream.Create;
-//  mStream := TMemoryStream.Create();
-  try
-//    if not imgProfile.Bitmap.IsEmpty then
-//    begin
-//      imgProfile.Bitmap.SaveToStream(mStream);
-//      multiStream.AddFormField('file', 'image/jpeg', '', mStream, dmdDataModule.memberId + '.jpg');
-//    end;
-    multiStream.AddFormField('id', dmdDataModule.memberId);
-    multiStream.AddFormField('gender', cboGender.Selected.Text);
-  fgActivityDialog.Message := 'Adding fields!';
-//    if cboUnits.Selected.Text = 'Metric' then
-//    begin
-//      multiStream.AddFormField('height', edtHeight.Text);
-//      multiStream.AddFormField('weight', edtWeight.Text);
-//    end
-//    else
-//    begin
-//      weight := StrToFloat(edtWeight.Text) * 0.453592;
-//      height := StrToFloat(edtHeight.Text) * 2.54;
-//      multiStream.AddFormField('height', Format('%.2f',[height]));
-//      multiStream.AddFormField('weight', Format('%.2f',[weight]));
-//    end;
-//    multiStream.AddFormField('body_fat_percentage', FloatToStr(edtBodyFat.Value));
-//    multiStream.AddFormField('units', cboUnits.Selected.Text);
-//    multiStream.AddFormField('location', edtLocation.Text);
-//    if cbStatus.IsChecked then
-//      multiStream.AddFormField('show_status', 'Yes')
-//    else
-//      multiStream.AddFormField('show_status', 'No');
-//    if cbProgress.IsChecked then
-//      multiStream.AddFormField('show_progress', 'Yes')
-//    else
-//      multiStream.AddFormField('show_progress', 'No');
-//    if cbLeague.IsChecked then
-//      multiStream.AddFormField('show_tables', 'Yes')
-//    else
-//      multiStream.AddFormField('show_tables', 'No');
-//    if cbSearch.IsChecked then
-//      multiStream.AddFormField('search', 'Yes')
-//    else
-//      multiStream.AddFormField('search', 'No');
-//    if cbMessaging.IsChecked then
-//      multiStream.AddFormField('message', 'Yes')
-//    else
-//      multiStream.AddFormField('message', 'No');
-    multiStream.AddFormField('age', edtAge.Text);
-      fgActivityDialog.Message := 'Sending to server!';
-    idhttpimage.Post('https://www.reach-your-peak.com/athlete/saveProfileImage/' + dmdDatamodule.memberId, multiStream);
-  finally
-    multiStream.Free;
-//    mStream.Free;
+  with dmdDataModule do
+  begin
+      reqUpdateProfile.Params.AddItem('key',sessionkey);
+      reqUpdateProfile.Params.AddItem('age',edtAge.Text);
+      reqUpdateProfile.Params.AddItem('location',edtLocation.Text);
+      reqUpdateProfile.Params.AddItem('id',memberId);
+      reqUpdateProfile.Execute;
   end;
   fgActivityDialog.Hide();
   saveMessage.Now('Profile Saved');
+except on E: Exception do
+  begin
+    saveMessage.Now('Failed to save profile please try later');
+    fgActivityDialog.Hide();
+  end;
+end;
 end;
 
 procedure TfrmProfile.FormActivate(Sender: TObject);

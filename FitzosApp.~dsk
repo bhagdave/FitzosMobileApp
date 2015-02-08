@@ -10,19 +10,28 @@ File_7=TSourceModule,'E:\FitzosMobileApp\untFriends.pas',0,1,1,1,1,0,0,,
 File_8=TSourceModule,'E:\FitzosMobileApp\untFriend.pas',0,1,1,1,1,0,0,,
 
 [Modules]
-Module0=E:\FitzosMobileApp\untProfile.pas
-Module1=E:\FitzosMobileApp\untBaseForm.pas
-Module2=E:\FitzosMobileApp\untTeamCreate.pas
-Module3=E:\FitzosMobileApp\untDataModule.pas
-Module4=E:\FitzosMobileApp\untTeam.pas
-Module5=E:\FitzosMobileApp\untEvent.pas
-Module6=E:\FitzosMobileApp\untTeams.pas
-Module7=E:\FitzosMobileApp\untEvents.pas
-Module8=E:\FitzosMobileApp\untMainForm.pas
-Module9=E:\FitzosMobileApp\untMenuForm.pas
-Module10=default.htm
-Count=11
+Module0=E:\FitzosMobileApp\FitzosApp.dproj
+Module1=E:\FitzosMobileApp\untDataModule.pas
+Module2=E:\FitzosMobileApp\untProfile.pas
+Module3=E:\FitzosMobileApp\untBaseForm.pas
+Module4=E:\FitzosMobileApp\untTeamCreate.pas
+Module5=E:\FitzosMobileApp\untTeam.pas
+Module6=E:\FitzosMobileApp\untEvent.pas
+Module7=E:\FitzosMobileApp\untTeams.pas
+Module8=E:\FitzosMobileApp\untEvents.pas
+Module9=E:\FitzosMobileApp\untMainForm.pas
+Module10=E:\FitzosMobileApp\untMenuForm.pas
+Module11=default.htm
+Count=12
 EditWindowCount=1
+
+[E:\FitzosMobileApp\FitzosApp.dproj]
+ModuleType=TBaseProject
+
+[E:\FitzosMobileApp\untDataModule.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=1
 
 [E:\FitzosMobileApp\untProfile.pas]
 ModuleType=TSourceModule
@@ -39,15 +48,10 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[E:\FitzosMobileApp\untDataModule.pas]
-ModuleType=TSourceModule
-FormState=1
-FormOnTop=1
-
 [E:\FitzosMobileApp\untTeam.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=1
+FormOnTop=0
 
 [E:\FitzosMobileApp\untEvent.pas]
 ModuleType=TSourceModule
@@ -82,8 +86,8 @@ FormState=1
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=11
-CurrentEditView=E:\FitzosMobileApp\untProfile.pas
+ViewCount=12
+CurrentEditView=E:\FitzosMobileApp\FitzosApp.dpr
 View0=0
 View1=1
 View2=2
@@ -95,6 +99,7 @@ View7=7
 View8=8
 View9=9
 View10=10
+View11=11
 PercentageSizes=1
 Create=1
 Visible=1
@@ -142,15 +147,26 @@ EditViewName=E:\FitzosMobileApp\untBaseForm.pas
 [View2]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untProfile.pas
-CursorX=1
-CursorY=135
-TopLine=96
+CursorX=22
+CursorY=234
+TopLine=74
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=E:\FitzosMobileApp\untProfile.pas
 
 [View3]
+CustomEditViewType=TEditView
+Module=E:\FitzosMobileApp\FitzosApp.dpr
+CursorX=35
+CursorY=5
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=E:\FitzosMobileApp\FitzosApp.dpr
+
+[View4]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untEvents.pas
 CursorX=41
@@ -161,7 +177,7 @@ Elisions=
 Bookmarks=
 EditViewName=E:\FitzosMobileApp\untEvents.pas
 
-[View4]
+[View5]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untMenuForm.pas
 CursorX=1
@@ -172,7 +188,7 @@ Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View5]
+[View6]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untMainForm.pas
 CursorX=1
@@ -183,7 +199,7 @@ Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View6]
+[View7]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untEvent.pas
 CursorX=48
@@ -194,7 +210,7 @@ Elisions=
 Bookmarks=
 EditViewName=E:\FitzosMobileApp\untEvent.pas
 
-[View7]
+[View8]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untTeams.pas
 CursorX=1
@@ -205,7 +221,7 @@ Elisions=
 Bookmarks=
 EditViewName=E:\FitzosMobileApp\untTeams.pas
 
-[View8]
+[View9]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untDataModule.pas
 CursorX=1
@@ -216,7 +232,7 @@ Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View9]
+[View10]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untTeam.pas
 CursorX=16
@@ -227,7 +243,7 @@ Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View10]
+[View11]
 CustomEditViewType=TEditView
 Module=E:\FitzosMobileApp\untTeamCreate.pas
 CursorX=23
@@ -381,8 +397,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Action,LiveBindings
-ExpandedItems=Anchors=0,Font=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0,Border=0,BorderIcons=0,Fill=0,FormFactor=0,ItemAppearance=0,ItemAppearanceObjects=0,ItemSpaces=0,BindSource=0,Client=0,Response=0
+SelectedItem=Accept,
+ExpandedItems=BindSource=0,Client=0,"LiveBindings Designer=0",Response=0
 
 [ModelViewTool]
 PercentageSizes=1
