@@ -20,10 +20,10 @@ type
     cboSport: TComboBox;
     btnSave: TButton;
     BindingsList1: TBindingsList;
-    LinkFillControlToField1: TLinkFillControlToField;
     ToolBar1: TToolBar;
     lblDescription: TLabel;
     memContents: TMemo;
+    LinkFillControlToField1: TLinkFillControlToField;
     procedure btnSaveClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
   private
@@ -95,19 +95,18 @@ begin
   with dmdDataModule do
   begin
     // Open up the data.
-    rdsaMemberSports.ClearDataSet;
-    fdmMemberSports.Close;
-    respMemberSports.Content.Empty;
-    reqMemberSports.ClearBody;
-    reqMemberSports.Params.ParameterByName('id').Value := dmdDataModule.memberId;
-    reqMemberSports.Params.ParameterByName('key').Value := dmdDataModule.sessionkey;
-    reqMemberSports.Execute;
-    sResult := getResultString(respMemberSports.Content);
+    rdsaSports.ClearDataSet;
+    fdmSports.Close;
+    respSports.Content.Empty;
+    reqSports.ClearBody;
+    reqSports.Params.ParameterByName('key').Value := dmdDataModule.sessionkey;
+    reqSports.Execute;
+    sResult := getResultString(respSports.Content);
     if (sResult = 'OK') then
     begin
-        rdsaMemberSports.Response := respMemberSports;
-        rdsaMemberSports.UpdateDataSet;
-        fdmMemberSports.Open;
+        rdsaSports.Response := respSports;
+        rdsaSports.UpdateDataSet;
+        fdmSports.Open;
     end;
   end;
 end;

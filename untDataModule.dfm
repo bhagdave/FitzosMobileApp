@@ -1956,7 +1956,10 @@ object dmdDataModule: TdmdDataModule
   end
   object reqSports: TRESTRequest
     Client = restAPI
-    Params = <>
+    Params = <
+      item
+        name = 'key'
+      end>
     Resource = 'rest/sports'
     Response = respSports
     SynchronizedEvents = False

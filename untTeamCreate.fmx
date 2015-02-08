@@ -6,8 +6,9 @@ inherited frmTeamCreate: TfrmTeamCreate
   inherited barBottom: TToolBar
     Position.Y = 416.000000000000000000
     object btnSave: TButton
-      Align = Center
+      Align = Right
       StyledSettings = [Family, Size, FontColor]
+      Position.X = 172.000000000000000000
       Size.Width = 148.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
@@ -139,9 +140,9 @@ inherited frmTeamCreate: TfrmTeamCreate
       Category = 'Quick Bindings'
       Control = cboSport
       Track = True
-      FillDataSource = dmdDataModule.dsMemberSports
+      FillDataSource = dmdDataModule.dsSports
       FillValueFieldName = 'id'
-      FillDisplayFieldName = 'sport'
+      FillDisplayFieldName = 'name'
       AutoFill = True
       FillExpressions = <>
       FillHeaderExpressions = <>
