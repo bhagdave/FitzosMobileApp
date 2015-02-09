@@ -77,7 +77,7 @@ inherited frmTeam: TfrmTeam
       ShowScrollBars = False
       object layTeam: TLayout
         Align = Top
-        Size.Width = 320.000000000000000000
+        Size.Width = 50.000000000000000000
         Size.Height = 800.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -85,7 +85,7 @@ inherited frmTeam: TfrmTeam
           Align = Top
           StyledSettings = [Family, Size, FontColor]
           Position.Y = 75.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Style = [fsBold]
@@ -98,7 +98,7 @@ inherited frmTeam: TfrmTeam
           HeaderAppearanceClassName = 'TListHeaderObjects'
           FooterAppearanceClassName = 'TListHeaderObjects'
           Align = Client
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 702.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
@@ -111,7 +111,7 @@ inherited frmTeam: TfrmTeam
           IsExpanded = False
           Position.Y = 50.000000000000000000
           ShowCheck = False
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           Text = 'Members'
@@ -133,7 +133,7 @@ inherited frmTeam: TfrmTeam
         object memContent: TMemo
           Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
           Align = MostTop
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
