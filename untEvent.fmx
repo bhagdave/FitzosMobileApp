@@ -47,7 +47,7 @@ inherited frmEvent: TfrmEvent
     object lblDate: TLabel
       Align = Top
       StyledSettings = [Family, Size, Style]
-      Position.Y = 50.000000000000000000
+      Position.Y = 71.000000000000000000
       Size.Width = 320.000000000000000000
       Size.Height = 23.000000000000000000
       Size.PlatformDefault = False
@@ -60,11 +60,11 @@ inherited frmEvent: TfrmEvent
       StyledSettings = [Family, Size, FontColor]
       ShowCheck = False
       Size.Width = 320.000000000000000000
-      Size.Height = 299.000000000000000000
+      Size.Height = 278.000000000000000000
       Size.PlatformDefault = False
       Text = 'Attending'
       TabOrder = 0
-      ContentSize = '274'
+      ContentSize = '253'
       object lvAttending: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
@@ -72,12 +72,19 @@ inherited frmEvent: TfrmEvent
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
         Size.Width = 320.000000000000000000
-        Size.Height = 274.000000000000000000
+        Size.Height = 253.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Detail
         OnItemClick = lvAttendingItemClick
       end
+    end
+    object lblLocation: TLabel
+      Align = Top
+      Position.Y = 50.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
     end
   end
   inherited StyleBook1: TStyleBook
@@ -3297,6 +3304,13 @@ inherited frmEvent: TfrmEvent
       FillHeaderExpressions = <>
       FillHeaderFieldName = 'first_name'
       FillBreakGroups = <>
+    end
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'location'
+      Component = lblLocation
+      ComponentProperty = 'Text'
     end
   end
   object BindSourceDB2: TBindSourceDB

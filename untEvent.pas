@@ -28,6 +28,8 @@ type
     LinkFillControlToField2: TLinkFillControlToField;
     btnEdit: TButton;
     btnAttend: TSpeedButton;
+    lblLocation: TLabel;
+    LinkPropertyToFieldText: TLinkPropertyToField;
     procedure FormActivate(Sender: TObject);
     procedure lvAttendingItemClick(const Sender: TObject;
       const AItem: TListViewItem);
