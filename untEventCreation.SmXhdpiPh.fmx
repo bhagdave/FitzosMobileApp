@@ -22,57 +22,19 @@ inherited frmEventCreation_SmXhdpiPh: TfrmEventCreation_SmXhdpiPh
       Size.Width = 250.000000000000000000
       Size.Height = 287.000000000000000000
       inherited lyoEvent: TLayout
-        Size.Width = 250.000000000000000000
-        inherited grdPanelEdits: TGridPanelLayout
-          Size.Width = 250.000000000000000000
-          inherited lblName: TLabel
-            Size.Width = 79.328239440917970000
-          end
-          inherited edtName: TEdit
-            Size.Width = 170.671752929687500000
-          end
-          inherited lblLocation: TLabel
-            Size.Width = 79.328239440917970000
-          end
-          inherited edtLocation: TEdit
-            Size.Width = 170.671752929687500000
-          end
-        end
         inherited lyoStartDate: TLayout
-          Size.Width = 250.000000000000000000
-          inherited edtDate: TDateEdit
-            Size.Width = 99.000000000000000000
-          end
           inherited lblStartDate: TLabel
-            Size.Width = 93.000000000000000000
+            Position.Y = 16.000000000000000000
+            Size.Height = 12.718235015869140000
           end
         end
         inherited lyoStartTime: TLayout
-          Size.Width = 250.000000000000000000
-          inherited edtStartTime: TTimeEdit
-            Size.Width = 157.000000000000000000
-            Size.Height = 32.000000000000000000
-          end
           inherited lblStartTime: TLabel
-            Size.Width = 93.000000000000000000
+            Position.Y = 16.000000000000000000
+            Size.Height = 12.718235015869140000
           end
-        end
-        inherited lblDescription: TLabel
-          Size.Width = 250.000000000000000000
-        end
-        inherited memContent: TMemo
-          Size.Width = 250.000000000000000000
-        end
-        inherited cboTeam: TComboBox
-          Size.Width = 250.000000000000000000
-        end
-        inherited lblTeam: TLabel
-          Size.Width = 250.000000000000000000
         end
       end
     end
-  end
-  inherited StyleBook1: TStyleBook
-    ResourcesBin = {464D585F5354594C4520322E350100}
   end
 end

@@ -92,7 +92,7 @@ begin
           fgActivityDialog.hide();
           if (sResult = 'OK') then
           begin
-            showmessage('Please check your email for an activation link.');
+            showmessage('Membership created. Please check your email for an activation link.');
           end
           else
           begin

@@ -9,7 +9,6 @@ inherited frmEventCreation: TfrmEventCreation
     inherited btnBack: TButton
       StyledSettings = [Family, Size, Style]
       IconTintColor = claWhite
-      Size.Height = 48.000000000000000000
       TextSettings.FontColor = claWhite
     end
     object btnSubmit: TButton
@@ -48,13 +47,13 @@ inherited frmEventCreation: TfrmEventCreation
       ShowScrollBars = False
       object lyoEvent: TLayout
         Align = Top
-        Size.Width = 320.000000000000000000
+        Size.Width = 50.000000000000000000
         Size.Height = 433.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object grdPanelEdits: TGridPanelLayout
           Align = MostTop
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
@@ -96,7 +95,7 @@ inherited frmEventCreation: TfrmEventCreation
           object lblName: TLabel
             Align = Client
             StyledSettings = [Family, Size, FontColor]
-            Size.Width = 101.540138244628900000
+            Size.Width = 15.865647315979000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Style = [fsBold]
@@ -106,7 +105,7 @@ inherited frmEventCreation: TfrmEventCreation
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Client
             TabOrder = 1
-            Size.Width = 218.459869384765600000
+            Size.Width = 34.134353637695310000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             TextPrompt = 'Name'
@@ -115,7 +114,7 @@ inherited frmEventCreation: TfrmEventCreation
           object lblLocation: TLabel
             Align = Client
             StyledSettings = [Family, Size, FontColor]
-            Size.Width = 101.540138244628900000
+            Size.Width = 15.865647315979000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Style = [fsBold]
@@ -125,7 +124,7 @@ inherited frmEventCreation: TfrmEventCreation
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Client
             TabOrder = 2
-            Size.Width = 218.459869384765600000
+            Size.Width = 34.134353637695310000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             TextPrompt = 'Location'
@@ -135,17 +134,16 @@ inherited frmEventCreation: TfrmEventCreation
         object lyoStartDate: TLayout
           Align = Top
           Position.Y = 121.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object edtDate: TDateEdit
-            Date = 42034.000000000000000000
+            Date = 42068.000000000000000000
             TodayDefault = True
             Anchors = [akLeft, akTop, akRight, akBottom]
             Position.X = 144.000000000000000000
             Position.Y = 8.000000000000000000
-            Size.Width = 169.000000000000000000
             Size.Height = 35.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
@@ -153,8 +151,9 @@ inherited frmEventCreation: TfrmEventCreation
           object lblStartDate: TLabel
             Align = FitLeft
             StyledSettings = [Family, Size, FontColor]
-            Size.Width = 92.999984741210940000
-            Size.Height = 44.000000000000000000
+            Position.Y = 10.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 23.655918121337890000
             Size.PlatformDefault = False
             TextSettings.Font.Style = [fsBold]
             Text = 'Start Date'
@@ -163,7 +162,7 @@ inherited frmEventCreation: TfrmEventCreation
         object lyoStartTime: TLayout
           Align = Top
           Position.Y = 165.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
@@ -171,7 +170,6 @@ inherited frmEventCreation: TfrmEventCreation
             IsEmpty = True
             Time = 0.622222222222222200
             Align = Client
-            Size.Width = 227.000015258789100000
             Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
@@ -179,8 +177,9 @@ inherited frmEventCreation: TfrmEventCreation
           object lblStartTime: TLabel
             Align = FitLeft
             StyledSettings = [Family, Size, FontColor]
-            Size.Width = 92.999984741210940000
-            Size.Height = 44.000000000000000000
+            Position.Y = 10.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 23.655918121337890000
             Size.PlatformDefault = False
             TextSettings.Font.Style = [fsBold]
             Text = 'Start Time'
@@ -189,7 +188,7 @@ inherited frmEventCreation: TfrmEventCreation
         object lblDescription: TLabel
           Align = Top
           Position.Y = 50.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 21.000000000000000000
           Size.PlatformDefault = False
           TextSettings.HorzAlign = Center
@@ -199,7 +198,7 @@ inherited frmEventCreation: TfrmEventCreation
           Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
           Align = Top
           Position.Y = 71.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 5
@@ -208,7 +207,7 @@ inherited frmEventCreation: TfrmEventCreation
           Align = Top
           DisableFocusEffect = False
           Position.Y = 229.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
@@ -216,7 +215,7 @@ inherited frmEventCreation: TfrmEventCreation
         object lblTeam: TLabel
           Align = Top
           Position.Y = 209.000000000000000000
-          Size.Width = 320.000000000000000000
+          Size.Width = 50.000000000000000000
           Size.Height = 20.000000000000000000
           Size.PlatformDefault = False
           TextSettings.HorzAlign = Center
